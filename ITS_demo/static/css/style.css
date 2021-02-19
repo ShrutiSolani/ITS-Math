@@ -1,0 +1,353 @@
+*, *:before, *:after{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Nunito', sans-serif;
+}
+
+body{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(-45deg,#e73c7e,#b224ef, #23a6d5, #7579ff);
+  background-size: 400% 400%;
+  animation: gradient 4s ease infinite;
+  font-family: 'Nunito', sans-serif;
+}
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+input, button{
+  border:none;
+  outline: none;
+  background: none;
+}
+
+.cont{
+  overflow: hidden;
+  position: relative;
+  width: 900px;
+  height: 640px;
+  background: #fff;
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
+}
+
+.form{
+  position: relative;
+  width: 640px;
+  height: 100%;
+  padding: 30px 30px;
+  /*-webkit-transition:-webkit-transform 1.2s ease-in-out;
+  transition: -webkit-transform 1.2s ease-in-out;
+  transition: transform 1.2s ease-in-out;*/
+  transition: transform 1.2s ease-in-out;
+}
+
+h2{
+  width: 100%;
+  font-size: 18px;
+  text-align: center;
+}
+
+label{
+  display: block;
+  width: 260px;
+  margin: 12px auto 0;
+  text-align: center;
+}
+
+label span{
+  font-size: 10px;
+  font-weight: 600;
+  color: #505f75;
+  text-transform: uppercase;
+}
+
+input{
+  display: block;
+  width: 100%;
+  margin-top: 4px;
+  font-size: 10px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid rgba(109, 93, 93, 0.4);
+  text-align: center;
+  font-family: 'Nunito', sans-serif; 
+}
+
+button{
+  display: block;
+  margin: 0 auto;
+  width: 260px;
+  height: 34px;
+  border-radius: 30px;
+  color: #fff;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.submit{
+  margin-top: 40px;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-family: 'Nunito', sans-serif;
+  background: -webkit-linear-gradient(left, #7579ff, #b224ef);
+}
+
+.submit:hover{
+  background: -webkit-linear-gradient(left, #b224ef, #7579ff);
+}
+
+.forgot-pass{
+  margin-top: 15px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+  color: #0c0101;
+  cursor: pointer;
+}
+
+.forgot-pass:hover{
+  color: red;
+}
+
+
+.social-media{
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.social-media ul{
+  list-style: none;
+}
+
+.social-media ul li{
+  display: inline-block;
+  cursor: pointer;
+  margin: 25px 15px;
+}
+
+.social-media img{
+  width: 40px;
+  height: 40px;
+}
+
+.sub-cont{
+  overflow: hidden;
+  position: absolute;
+  left: 640px;
+  top: 0;
+  width: 900px;
+  height: 100%;
+  padding-left: 260px;
+  background: #fff;
+  transition: transform 1.2s ease-in-out;
+}
+
+.cont.s-signup .sub-cont{
+  transform:translate3d(-640px, 0, 0);
+}
+
+.img{
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 260px;
+  height: 100%;
+  padding-top: 360px;
+}
+
+.img:before{
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 900px;
+  height: 100%;
+  background-image: url('purple.jpeg');
+  background-size: cover;
+  transition: transform 1.2s ease-in-out;
+}
+
+.img:after{
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.3);
+}
+
+.cont.s-signup .img:before{
+  transform:translate3d(640px, 0, 0);
+}
+
+.img-text{
+  z-index: 2;
+  position: absolute;
+  left: 0;
+  top: 50px;
+  width: 100%;
+  padding: 0 20px;
+  text-align: center;
+  color: #fff;
+  transition: transform 1.2s ease-in-out;
+}
+
+.img-text h2{
+  margin-bottom: 10px;
+  font-weight: normal;
+}
+
+.img-text p{
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.cont.s-signup .img-text.m-up{
+  transform:translateX(520px);
+}
+
+.img-text.m-in{
+  transform:translateX(-520px);
+}
+
+.cont.s-signup .img-text.m-in{
+  transform:translateX(0);
+}
+
+
+.sign-in{
+  padding-top: 65px;
+  transition-timing-function:ease-out;
+}
+
+.cont.s-signup .sign-in{
+  transition-timing-function:ease-in-out;
+  transition-duration:1.2s; 
+  transform:translate3d(640px, 0, 0);
+}
+
+.img-btn{
+  overflow: hidden;
+  z-index: 2;
+  position: relative;
+  width: 100px;
+  height: 36px;
+  margin: 0 auto;
+  background: transparent;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.img-btn:after{
+  content: '';
+  z-index: 2;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #fff;
+  border-radius: 30px;
+}
+
+.img-btn span{
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  -webkit-box-pack:center;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  transition: transform 1.2s;
+}
+
+.img-btn span.m-in{
+  transform:translateY(-72px);
+}
+
+.cont.s-signup .img-btn span.m-in{
+  transform:translateY(0);
+}
+
+.cont.s-signup .img-btn span.m-up{
+  transform:translateY(72px);
+}
+
+/*Radio button*/
+.container {
+  display: inline-block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/* Hide the browser's default radio button */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom radio button */
+.checkmark {
+  position: absolute;
+  top: 2px;
+  left: 90px;
+  height: 12px;
+  width: 12px;
+  background-color: #eee;
+  border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: #2196F3;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.container .checkmark:after {
+ 	top: 5px;
+	left: 5px;
+	width: 4px;
+	height: 4px;
+	border-radius: 50%;
+	background: white;
+}
