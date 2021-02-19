@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Q1</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static' , filename='css/q1style.css') }}">
+    <script type="text/javascript" src="{{ url_for('static' , filename='js/q1script.js') }}"></script>
+</head>
+<script type="text/javascript" src="http://ajax.googleapis.com/
+ajax/libs/jquery/1.5/jquery.min.js"></script>
+<script type="text/javascript" src="jquery.form.js"></script>
+<script src="https://use.fontawesome.com/84eb6ff010.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+<script src="semantic/dist/semantic.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+ 
+
+<body>
+    <nav class="n1">
+      <div id="content">
+    <span class="slide">
+        <a href="#" onclick="openSlideMenu();">
+            <i class="fa fa-bars" style="font-size:36px"></i>
+        </a>
+    </span>
+    <div id="menu" class="nav">
+        <a href="#" class="close" onclick="closeSlideMenu();">
+            <i class="fa fa-times" style="font-size:36px"></i>
+        </a>
+        <a href="">Home</a>
+        <a href="">Profile</a>
+        <a href="{{ url_for('index') }}">Logout</a>
+    </div>
+          </div>
+    <div class="title">
+        <h1>ITS-Maths</h1>
+    </div>
+
+        </nav>
+
+<div>
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+<div class="alert alert-info" role="alert" id="scre">
+     <span class="closebtn">&times;</span>
+    {% for message in get_flashed_messages() %}
+  <h4 class="alert-heading">{{ message }}</h4>
+    {% endfor %}
+</div>
+  {% endif %}
+{% endwith %}
+</div>
+<div style="position:relative;">
+<div class = "showhints" id="showhint1" style="position:absolute;top:20%;left:35%; height:200px; width:200px;">{{ hints.h1 }}</div>
+<div class = "showhints" id="showhint2" style="position:absolute;top:50; left:35%; top:50px; height:200px; width:200px;">{{ hints.h2 }}</div>
+<div class = "showhints" id="showhint3" style="position:absolute;top:80%; left:35%; top:100px; height:200px; width:200px;">{{ hints.h3 }}</div>
+</div>
+
+<form method="post" action= "" class="myform" id="f1">
+    {{ answer.que }}
+    <br><br>
+
+    (<input type="text" id="quo" name="quo" maxlength="2" size="2"  required>{{ answer.varx }}+
+    <input type="text" id="quo" name="quo" maxlength="2" size="2"  required>{{ answer.vary }})+
+    (<input type="text" id="quo" name="quo" maxlength="2" size="2"  required>{{ answer.varx }}+
+    <input type="text" id="quo" name="quo" maxlength="2" size="2"  required>{{ answer.vary }})+
+    (<input type="text" id="quo" name="quo" maxlength="2" size="2"  required>{{ answer.varx }}+
+    <input type="text" id="quo" name="quo" maxlength="2" size="2"  required>{{ answer.vary }})
+    <img src="{{ url_for('static', filename='images/tick.png') }}" width="32px" height="22px" class="correct">
+    <img src="{{ url_for('static', filename='images/cross.jpg') }}" width="32px" height="22px" class="wrong">
+    <br><br>
+    (<input type="text" id="quo" name="quo" maxlength="2" size="2"  required>+
+    <input type="text" id="quo" name="quo" maxlength="2" size="2"  required>+
+    <input type="text" id="quo" name="quo" maxlength="2" size="2"  required>){{ answer.varx }}+
+    (<input type="text" id="quo" name="quo" maxlength="2" size="2"  required>+
+    <input type="text" id="quo" name="quo" maxlength="2" size="2"  required>+
+    <input type="text" id="quo" name="quo" maxlength="2" size="2"  required>){{ answer.vary }}
+    <img src="{{ url_for('static', filename='images/tick.png') }}" width="32px" height="22px" class="correct">
+    <img src="{{ url_for('static', filename='images/cross.jpg') }}" width="32px" height="22px" class="wrong">
+    <br><br>
+    <input type="text" id="quo" name="quo" maxlength="2" size="2"  required>{{ answer.varx }}+
+    <input type="text" id="quo" name="quo" maxlength="2" size="2"  required>{{ answer.vary }}
+    <br><br>
+    <input id="b1" type="submit" value="Submit">
+    <input type="button" class="hint-btn" id="hint-btn" value="Hint" target = "_self">
+</form>
+
+
+
+</body>
+</html>
