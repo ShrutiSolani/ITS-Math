@@ -1,8 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Q1</title>
+{% extends "layout.html" %}
+{% block title %}Q1{% endblock %}
+{% block head %}
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
    <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
@@ -20,8 +18,11 @@ ajax/libs/jquery/1.5/jquery.min.js"></script>
   crossorigin="anonymous"></script>
 <script src="semantic/dist/semantic.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<script type="text/javascript">
-    var x = document.getElementsByClassName("correct");
+{% endblock %}
+
+{% block script %}
+
+var x = document.getElementsByClassName("correct");
 var y = document.getElementsByClassName("wrong");
 var feedcount = 0;
 
@@ -238,32 +239,9 @@ for (i = 0; i < close.length; i++) {
   }
 }
 
-</script>
+{% endblock %}
 
-<body>
-    <nav class="n1">
-      <div id="content">
-    <span class="slide">
-        <a href="#" onclick="openSlideMenu();">
-            <i class="fa fa-bars" style="font-size:36px"></i>
-        </a>
-    </span>
-    <div id="menu" class="nav">
-        <a href="#" class="close" onclick="closeSlideMenu();">
-            <i class="fa fa-times" style="font-size:36px"></i>
-        </a>
-        <a href="">Home</a>
-        <a href="">Profile</a>
-        <a href="{{ url_for('index') }}">Logout</a>
-    </div>
-          </div>
-    <div class="title">
-        <h1>ITS-Maths</h1>
-    </div>
-
-        </nav>
-
-<div>
+{% block message %} 
 {% with messages = get_flashed_messages(with_categories=true) %}
   {% if messages %}
 <div class="alert alert-info" role="alert" id="scre">
@@ -275,21 +253,12 @@ for (i = 0; i < close.length; i++) {
   {% endif %}
 {% endwith %}
 </div>
-<div style="position:relative;">
-<div class = "showhints" id="showhint1" style="position:absolute;top:20%;left:70%; height:200px; width:200px;"></div>
-<div class = "showhints" id="showhint2" style="position:absolute;top:50; left:70%; top:50px; height:200px; width:200px;"></div>
-<div class = "showhints" id="showhint3" style="position:absolute;top:80%; left:70%; top:100px; height:200px; width:200px;"></div>
-</div>
-    <!-- <div>
-        <label for="file">Your progress:</label>
-<progress id="file" value="{{scoredict.score}}" max="{{scoredict.total}}"></progress>{{scoredict.tcp}}%
-        <h3 style="display:inline;padding-left: 75%;">Question attemted:{{scoredict.totalqts}}</h3>
-    </div> -->
-    <div class="progress">
-      <label for="file">Your progress:</label>
-      <div class="progress-bar" role="progressbar" style="width:{{ scoredict.tcp }}" ; aria-valuenow="{{scoredict.tcp}}" aria-valuemin="0" aria-valuemax="100">{{scoredict.tcp}}%</div>
-    </div>
-<form method="post" action= "{{url_for('score',counter = 0, feedback = 0)}}" class="myform" id="f1">
+{% endblock %}
+
+
+    {% block progress %}{{scoredict.tcp}}%{% endblock %}
+    {% block pvalue %}{{ scoredict.tcp }}{% endblock %}
+{% block content %}
     {{ answer.que }}
     <br><br>
 
@@ -312,8 +281,8 @@ for (i = 0; i < close.length; i++) {
 <!--               numerator-->
             <td></td>
             <td><input type="text" id="mf2" name="mf" maxlength="2" size="2" onkeyup="check3();" required></td>
-            <td><img src="{{ url_for('static', filename='images/tick.png') }}" width="32px" height="22px" class="correct"></td>
-            <td><img src="{{ url_for('static', filename='images/cross.jpg') }}" width="32px" height="22px" class="wrong"></td>
+            <td><img src="{{ url_for('static', filename='images/tick.png') }}" width="50px" height="50px" class="correct"></td>
+            <td><img src="{{ url_for('static', filename='images/cross.jpg') }}" width="50px" height="50px" class="wrong"></td>
         </tr>
 
         <tr>
@@ -321,8 +290,8 @@ for (i = 0; i < close.length; i++) {
 <!--                mixed fraction-->
             <td><input type="text" id="mf1" name="mf" maxlength="2" size="2" onkeyup="check2();"required></td>
             <td><hr/></td>
-            <td><img src="{{ url_for('static', filename='images/tick.png') }}" width="32px" height="22px" class="correct"></td>
-            <td><img src="{{ url_for('static', filename='images/cross.jpg') }}" width="32px" height="22px" class="wrong"></td>
+            <td><img src="{{ url_for('static', filename='images/tick.png') }}" width="50px" height="50px" class="correct"></td>
+            <td><img src="{{ url_for('static', filename='images/cross.jpg') }}" width="50px" height="50px" class="wrong"></td>
 
         </tr>
 
@@ -330,16 +299,9 @@ for (i = 0; i < close.length; i++) {
 <!--                denominator-->
             <td></td>
             <td><input type="text" id="mf3" name="mf" maxlength="2" size="2" style="border" onkeyup="check4();" required></td>
-            <td><img src="{{ url_for('static', filename='images/tick.png') }}" width="32px" height="22px" class="correct"></td>
-            <td><img src="{{ url_for('static', filename='images/cross.jpg') }}" width="32px" height="22px" class="wrong"></td>
+            <td><img src="{{ url_for('static', filename='images/tick.png') }}" width="50px" height="50px" class="correct"></td>
+            <td><img src="{{ url_for('static', filename='images/cross.jpg') }}" width="50px" height="50px" class="wrong"></td>
         </tr>
     </table>
     <br><br>
-    <input id="b1" type="submit" value="Submit">
-    <input type="button" class="hint-btn" id="hint-btn" value="Hint" target = "_self">
-</form>
-
-
-
-</body>
-</html>
+{% endblock %}

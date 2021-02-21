@@ -4,8 +4,9 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width initial-scale=1">
-	<title></title>
+	<title>{% block title %}{% endblock %}</title>
 	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+	{% block head %}{% endblock %}
 	<style type="text/css" media="screen">
 		body{
 			background-color: #f5efe8;
@@ -165,8 +166,19 @@
 				font-size: 1.3rem;
 			}
 		}
+
+		
+progress::-webkit-progress-value {
+  background:royalblue;
+}
+
+progress::-webkit-progress-bar {
+  background: grey;
+}
 	</style>
 </head>
+<script type="text/javascript">{% block script %}{% endblock %}</script>
+
 <body>
 	<nav class="n1">
 		<div id="d1">
@@ -183,65 +195,30 @@
 		<a href="#"><i class="fa fa-sign-out-alt"></i> Logout</a>
 	</div>
 	<br>
+	{% block message %} {% endblock %}
+	
+	
 	<div>
 		<div id="p1">
 		<span id="s1">Your Progress:</span>
-		<span id="s2">80%</span>
-		<progress value="80" max="100"></progress>
+		<span id="s2">{% block progress %}{% endblock %}</span>
+		<progress value="{% block pvalue %}{% endblock %}" max="100"></progress>
     	</div>
-	</div>
+	</div> 
 	<br>
 	<br>
 	<nav id="d4">
+		<div style="position:relative;">
+			<div class = "showhints" id="showhint1" style="position:absolute;top:20%;left:70%; height:200px; width:200px;"></div>
+			<div class = "showhints" id="showhint2" style="position:absolute;top:50; left:70%; top:50px; height:200px; width:200px;"></div>
+			<div class = "showhints" id="showhint3" style="position:absolute;top:80%; left:70%; top:300px; height:200px; width:200px;"></div>
+		</div>
+		
 		<form method="post" action= "{{url_for('score',counter = 0, feedback = 0)}}" class="myform" id="f1">
-		    {{ answer.que }}
-		    <br><br>
-
-		    <label for="quo">Quotient:</label>
-		    <input type="text" id="quo" name="quo" maxlength="2" size="2" onkeyup="check0();" required>
-		    <img src="{{ url_for('static', filename='images/tick.png') }}" width="32px" height="22px" class="correct">
-		    <img src="{{ url_for('static', filename='images/cross.jpg') }}" width="32px" height="22px" class="wrong">
-		    <br><br>
-
-		    <label for="rem">Remainder:</label>
-		    <input type="text" id="rem" name="rem" maxlength="2" size="2" onkeyup="check1();" required>
-		    <img src="{{ url_for('static', filename='images/tick.png') }}" width="32px" height="22px" class="correct">
-		    <img src="{{ url_for('static', filename='images/cross.jpg') }}" width="32px" height="22px" class="wrong">
-		    <br><br>
-
-		    <label for="mf1">Mixed Fraction:</label>
-		    <br>
-    		<table>
-		        <tr>
-		<!--               numerator-->
-		            <td></td>
-		            <td><input type="text" id="mf2" name="mf" maxlength="2" size="2" onkeyup="check3();" required></td>
-		            <td><img src="{{ url_for('static', filename='images/tick.png') }}" width="32px" height="22px" class="correct"></td>
-		            <td><img src="{{ url_for('static', filename='images/cross.jpg') }}" width="32px" height="22px" class="wrong"></td>
-		        </tr>
-
-		        <tr>
-
-		<!--                mixed fraction-->
-		            <td><input type="text" id="mf1" name="mf" maxlength="2" size="2" onkeyup="check2();"required></td>
-		            <td><hr/></td>
-		            <td><img src="{{ url_for('static', filename='images/tick.png') }}" width="32px" height="22px" class="correct"></td>
-		            <td><img src="{{ url_for('static', filename='images/cross.jpg') }}" width="32px" height="22px" class="wrong"></td>
-
-		        </tr>
-
-		        <tr>
-		<!--                denominator-->
-		            <td></td>
-		            <td><input type="text" id="mf3" name="mf" maxlength="2" size="2" style="border" onkeyup="check4();" required></td>
-		            <td><img src="{{ url_for('static', filename='images/tick.png') }}" width="32px" height="22px" class="correct"></td>
-		            <td><img src="{{ url_for('static', filename='images/cross.jpg') }}" width="32px" height="22px" class="wrong"></td>
-		        </tr>
-		    </table>
-		    <br>
-		    <input id="b1" type="submit" value="Submit">
+			{% block content %}{% endblock %}
+			<input id="b1" type="submit" value="Submit">
 		    <input type="button" class="hint-btn" id="hint-btn" value="Hints" target = "_self">
-		</form>
+			</form>
 	</nav>
 	<script>
 		const opennav=()=>{
