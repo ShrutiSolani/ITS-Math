@@ -204,6 +204,7 @@ progress::-webkit-progress-bar {
 		<div id="d1">
 			<span id="bar1" onclick="opennav();">&#9776;</span>
 		</div>
+
 		<div id="d2">
 			<h1>ITS-Maths</h1>
 		</div>
@@ -229,13 +230,14 @@ progress::-webkit-progress-bar {
 	<br>
 	<nav id="d4">
 		<div style="position:relative;">
-			<div class = "showhints" id="showhint1" style="position:absolute;top:20%;left:70%; height:200px; width:200px;"></div>
-			<div class = "showhints" id="showhint2" style="position:absolute;top:50; left:70%; top:50px; height:200px; width:200px;"></div>
-			<div class = "showhints" id="showhint3" style="position:absolute;top:80%; left:70%; top:300px; height:200px; width:200px;"></div>
+			<div class = "showhints" id="showhint1" style="position:absolute;top:20%;left:80%;top:0px;height:20px;width:200px;"></div>
+			<div class = "showhints" id="showhint2" style="position:absolute;top:50%; left:80%;top:80px; height:80px ; width:200px;"></div>
+			<div class = "showhints" id="showhint3" style="position:absolute;top:80%; left:80%; top:140px; height:200px;  width:200px;"></div>
 		</div>
 		
 		<form method="post" action= "{{url_for('score',counter = 0, feedback = 0)}}" class="myform" id="f1">
 			{% block content %}{% endblock %}
+
 			<input id="b1" type="submit" value="Submit">
 		    <input type="button" class="hint-btn" id="hint-btn" value="Hints" target = "_self">
 			</form>
