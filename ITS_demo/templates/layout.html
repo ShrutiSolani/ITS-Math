@@ -6,8 +6,26 @@
 	<meta name="viewport" content="width=device-width initial-scale=1">
 	<title>{% block title %}{% endblock %}</title>
 	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-	{% block head %}{% endblock %}
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static' , filename='css/q1style.css') }}">
+    <script type="text/javascript" src="{{ url_for('static' , filename='js/q1script.js') }}"></script>
+	
+</head>
+<script type="text/javascript" src="http://ajax.googleapis.com/
+ajax/libs/jquery/1.5/jquery.min.js"></script>
+<script type="text/javascript" src="jquery.form.js"></script>
+<script src="https://use.fontawesome.com/84eb6ff010.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+<script src="semantic/dist/semantic.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<style type="text/css" media="screen">
+
 		body{
 			background-color: #f5efe8;
 		}
@@ -175,6 +193,8 @@ progress::-webkit-progress-value {
 progress::-webkit-progress-bar {
   background: grey;
 }
+
+{% block style %}{% endblock %}
 	</style>
 </head>
 <script type="text/javascript">{% block script %}{% endblock %}</script>
@@ -192,7 +212,7 @@ progress::-webkit-progress-bar {
 		<a href="javascript:void(0)" class="closebtn" id="a1"onclick="closenav()">&times;</a>
 		<a href="#"><i class="fa fa-home"></i> Home</a>
 		<a href="#"><i class="fa fa-user"></i> Profile</a>
-		<a href="#"><i class="fa fa-sign-out-alt"></i> Logout</a>
+		<a href="{{ url_for('index') }}"><i class="fa fa-sign-out"></i> Logout</a>
 	</div>
 	<br>
 	{% block message %} {% endblock %}
