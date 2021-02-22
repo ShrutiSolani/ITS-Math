@@ -4,9 +4,28 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width initial-scale=1">
-	<title></title>
+	<title>{% block title %}{% endblock %}</title>
 	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static' , filename='css/q1style.css') }}">
+    <script type="text/javascript" src="{{ url_for('static' , filename='js/q1script.js') }}"></script>
+	
+</head>
+<script type="text/javascript" src="http://ajax.googleapis.com/
+ajax/libs/jquery/1.5/jquery.min.js"></script>
+<script type="text/javascript" src="jquery.form.js"></script>
+<script src="https://use.fontawesome.com/84eb6ff010.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+<script src="semantic/dist/semantic.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<style type="text/css" media="screen">
+
 		body{
 			background-color: #f5efe8;
 		}
@@ -165,13 +184,27 @@
 				font-size: 1.3rem;
 			}
 		}
+
+		
+progress::-webkit-progress-value {
+  background:royalblue;
+}
+
+progress::-webkit-progress-bar {
+  background: grey;
+}
+
+{% block style %}{% endblock %}
 	</style>
 </head>
+<script type="text/javascript">{% block script %}{% endblock %}</script>
+
 <body>
 	<nav class="n1">
 		<div id="d1">
 			<span id="bar1" onclick="opennav();">&#9776;</span>
 		</div>
+
 		<div id="d2">
 			<h1>ITS-Maths</h1>
 		</div>
@@ -180,68 +213,34 @@
 		<a href="javascript:void(0)" class="closebtn" id="a1"onclick="closenav()">&times;</a>
 		<a href="#"><i class="fa fa-home"></i> Home</a>
 		<a href="#"><i class="fa fa-user"></i> Profile</a>
-		<a href="#"><i class="fa fa-sign-out-alt"></i> Logout</a>
+		<a href="{{ url_for('index') }}"><i class="fa fa-sign-out"></i> Logout</a>
 	</div>
 	<br>
+	{% block message %} {% endblock %}
+	
+	
 	<div>
 		<div id="p1">
 		<span id="s1">Your Progress:</span>
-		<span id="s2">80%</span>
-		<progress value="80" max="100"></progress>
+		<span id="s2">{% block progress %}{% endblock %}</span>
+		<progress value="{% block pvalue %}{% endblock %}" max="100"></progress>
     	</div>
-	</div>
+	</div> 
 	<br>
 	<br>
 	<nav id="d4">
+		<div style="position:relative;">
+			<div class = "showhints" id="showhint1" style="position:absolute;top:20%;left:80%;top:0px;height:20px;width:200px;"></div>
+			<div class = "showhints" id="showhint2" style="position:absolute;top:50%; left:80%;top:80px; height:80px ; width:200px;"></div>
+			<div class = "showhints" id="showhint3" style="position:absolute;top:80%; left:80%; top:140px; height:200px;  width:200px;"></div>
+		</div>
+		
 		<form method="post" action= "{{url_for('score',counter = 0, feedback = 0)}}" class="myform" id="f1">
-		    {{ answer.que }}
-		    <br><br>
+			{% block content %}{% endblock %}
 
-		    <label for="quo">Quotient:</label>
-		    <input type="text" id="quo" name="quo" maxlength="2" size="2" onkeyup="check0();" required>
-		    <img src="{{ url_for('static', filename='images/tick.png') }}" width="32px" height="22px" class="correct">
-		    <img src="{{ url_for('static', filename='images/cross.jpg') }}" width="32px" height="22px" class="wrong">
-		    <br><br>
-
-		    <label for="rem">Remainder:</label>
-		    <input type="text" id="rem" name="rem" maxlength="2" size="2" onkeyup="check1();" required>
-		    <img src="{{ url_for('static', filename='images/tick.png') }}" width="32px" height="22px" class="correct">
-		    <img src="{{ url_for('static', filename='images/cross.jpg') }}" width="32px" height="22px" class="wrong">
-		    <br><br>
-
-		    <label for="mf1">Mixed Fraction:</label>
-		    <br>
-    		<table>
-		        <tr>
-		<!--               numerator-->
-		            <td></td>
-		            <td><input type="text" id="mf2" name="mf" maxlength="2" size="2" onkeyup="check3();" required></td>
-		            <td><img src="{{ url_for('static', filename='images/tick.png') }}" width="32px" height="22px" class="correct"></td>
-		            <td><img src="{{ url_for('static', filename='images/cross.jpg') }}" width="32px" height="22px" class="wrong"></td>
-		        </tr>
-
-		        <tr>
-
-		<!--                mixed fraction-->
-		            <td><input type="text" id="mf1" name="mf" maxlength="2" size="2" onkeyup="check2();"required></td>
-		            <td><hr/></td>
-		            <td><img src="{{ url_for('static', filename='images/tick.png') }}" width="32px" height="22px" class="correct"></td>
-		            <td><img src="{{ url_for('static', filename='images/cross.jpg') }}" width="32px" height="22px" class="wrong"></td>
-
-		        </tr>
-
-		        <tr>
-		<!--                denominator-->
-		            <td></td>
-		            <td><input type="text" id="mf3" name="mf" maxlength="2" size="2" style="border" onkeyup="check4();" required></td>
-		            <td><img src="{{ url_for('static', filename='images/tick.png') }}" width="32px" height="22px" class="correct"></td>
-		            <td><img src="{{ url_for('static', filename='images/cross.jpg') }}" width="32px" height="22px" class="wrong"></td>
-		        </tr>
-		    </table>
-		    <br>
-		    <input id="b1" type="submit" value="Submit">
+			<input id="b1" type="submit" value="Submit">
 		    <input type="button" class="hint-btn" id="hint-btn" value="Hints" target = "_self">
-		</form>
+			</form>
 	</nav>
 	<script>
 		const opennav=()=>{

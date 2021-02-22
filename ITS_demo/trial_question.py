@@ -46,7 +46,7 @@ def q1():
         hints = {'h1': hint1, 'h2': hint2, 'h3': hint3}
         total = qtscnt * 25
         scoredict = {'score': scorecnt, 'total': total, 'totalqts': qtscnt, 'tcp': 0}
-        return render_template('display.html', answer=answer, hints=hints, scoredict=scoredict)
+        return render_template('display copy.html', answer=answer, hints=hints, scoredict=scoredict)
     else:
         return render_template('login.html')
 
@@ -72,7 +72,7 @@ def question():
     total = qtscnt * 25
     tcp = (scorecnt/total)*100
     scoredict = {'score': scorecnt, 'total': total, 'totalqts': qtscnt, 'tcp': tcp}
-    return render_template('display.html', answer=answer, hints=hints, scoredict=scoredict)
+    return render_template('display copy.html', answer=answer, hints=hints, scoredict=scoredict)
 
 
 @app.route('/score/<counter>/<feedback>', methods=['POST'])
@@ -122,7 +122,14 @@ def horizontal_add():
     h2 = 'Add coefficientts of like terms'
     h3 = 'Solution : '+str(x_sum)+rx+'+'+str(y_sum)+ry+'.'
     hints = {'h1':h1,'h2':h2,'h3':h3}    
-    return render_template('algebra_add.html',answer=answer, hints = hints)
+    global qtscnt, scorecnt
+    total = qtscnt * 25
+    try:
+        tcp = (scorecnt/total)*100
+    except:
+        tcp = 0
+    scoredict = {'score': scorecnt, 'total': total, 'totalqts': qtscnt, 'tcp': tcp}
+    return render_template('algebra_add.html',answer=answer, hints = hints, scoredict=scoredict)
 
 
 app.secret_key = 'super secret key'

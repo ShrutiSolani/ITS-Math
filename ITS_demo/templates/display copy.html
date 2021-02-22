@@ -1,0 +1,306 @@
+{% extends "layout.html" %}
+{% block title %}Q1{% endblock %}
+<!-- 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static' , filename='css/q1style.css') }}">
+    <script type="text/javascript" src="{{ url_for('static' , filename='js/q1script.js') }}"></script>
+</head>
+<script type="text/javascript" src="http://ajax.googleapis.com/
+ajax/libs/jquery/1.5/jquery.min.js"></script>
+<script type="text/javascript" src="jquery.form.js"></script>
+<script src="https://use.fontawesome.com/84eb6ff010.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+<script src="semantic/dist/semantic.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+
+{% block script %}
+
+var x = document.getElementsByClassName("correct");
+var y = document.getElementsByClassName("wrong");
+var feedcount = 0;
+
+function check0()
+{
+	if(document.getElementsByTagName("input")[0].value == {{ answer.b0 }})
+	{
+	   $(x[0]).show();
+       $(y[0]).hide();
+    }
+	 else
+	 {
+	 feedcount++;
+        $(x[0]).hide();
+        $(y[0]).show();
+	    document.getElementsByTagName("input")[0].value = "";
+	    swal(
+	    {
+          title: "Oops, Looks like you divided wrong ",
+          text: "for example, if you divide 9/4 then quotient is 2 and remainder is 9-(4*2) = 1",
+          icon: "error",
+          button: true,
+          dangerMode: true,
+        }
+       )
+        .then((willDelete) => {
+          if (willDelete) {
+            swal("Now, try again", {
+
+              icon: "success",
+            });
+          }
+        });
+	 }
+}
+
+function check1()
+{
+	if(document.getElementsByTagName("input")[1].value == {{ answer.b1 }})
+	{
+	    $(x[1]).show();
+	    $(y[1]).hide();
+    }
+	 else
+	 {
+	 feedcount++;
+	    $(x[1]).hide();
+        $(y[1]).show();
+	    document.getElementsByTagName("input")[1].value = "";
+	    swal({
+  title: "Oops, Looks like you divided wrong ",
+  text: "for example, if you divide 9/4 then quotient is 2 and remainder is 9-(4*2) = 1",
+  icon: "error",
+  button: true,
+  dangerMode: true,
+})
+.then((willDelete) => {
+  if (willDelete) {
+    swal("Now try again", {
+      icon: "success",
+    });
+  }
+});
+	 }
+}
+
+function check2()
+{
+	if(document.getElementsByTagName("input")[3].value == {{ answer.b2 }})
+	{
+	   $(x[3]).show();
+	   $(y[3]).hide();
+	  }
+	else
+	{
+	feedcount++;
+	    $(x[3]).hide();
+        $(y[3]).show();
+        document.getElementsByTagName("input")[3].value = "";
+        swal({
+  title: "Oops, Looks like you are confused in the format",
+  text: "Whole number in mixed fraction is the quotient you got in the first step",
+  icon: "error",
+  button: true,
+  dangerMode: true,
+})
+.then((willDelete) => {
+  if (willDelete) {
+    swal("Now try again", {
+      icon: "success",
+    });
+  }
+});
+    }
+}
+
+function check3()
+{
+	if(document.getElementsByTagName("input")[2].value == {{ answer.b3 }})
+	{
+         $(x[2]).show();
+	     $(y[2]).hide();
+	}
+	else
+	{
+	feedcount++;
+	    $(x[2]).hide();
+        $(y[2]).show();
+	    document.getElementsByTagName("input")[2].value = "";
+	    swal({
+  title: "Oops, Looks like you are confused in the format",
+  text: "In mixed fraction, numerator is remainder you got in first step",
+  icon: "error",
+  button: true,
+  dangerMode: true,
+})
+.then((willDelete) => {
+  if (willDelete) {
+    swal("Now try again", {
+      icon: "success",
+    });
+  }
+});
+	}
+}
+
+function check4()
+{
+	if(document.getElementsByTagName("input")[4].value == {{ answer.b4}})
+	{
+        $(x[4]).show();
+	    $(y[4]).hide();
+	}
+	else
+	{
+	    feedcount++;
+	    $(x[4]).hide();
+        $(y[4]).show();
+	    document.getElementsByTagName("input")[4].value = "";
+	    swal({
+  title: "Oops, Looks like you are confused in the format",
+  text: "Denominator in mixed fraction is same as denominator of fraction ",
+  icon: "error",
+  button: true,
+  dangerMode: true,
+})
+.then((willDelete) => {
+  if (willDelete) {
+    swal("Now try again", {
+      icon: "success",
+    });
+  }
+});
+	}
+}
+
+window.onload = function() {
+var count = 0;
+
+var countButton = document.getElementById("hint-btn");
+var displayCount = document.getElementsByClassName("showhints");
+countButton.onclick = function(){
+  count++;
+  if(count == 1)
+  {
+  displayCount[0].innerHTML = "Hint 1 :{{ hints.h1 }}\n" ;
+  }
+  else
+  {
+    if(count == 2) {displayCount[1].innerHTML = "Hint 2 :{{ hints.h2 }}\n" ;}
+    else {displayCount[2].innerHTML = "Hint 3 :{{ hints.h3 }}\n" ;}
+  }
+  }
+
+  var subbutton = document.getElementById("b1");
+  subbutton.onclick = function(){
+     document.querySelector(".myform").setAttribute("action","score/"+count+"/"+feedcount);
+     function time(){
+     var s=document.getElementById("scre");
+     s.style.display="none";
+     }
+     var d=setTimeout(time,500);
+     clearInterval(d);
+<!-- setTimeout(function(){s.style.display="none";},500);-->
+
+  }
+}
+
+function openSlideMenu()
+{
+    document.getElementById('menu').style.width = '250px';
+    document.getElementById('content').style.marginLeft = '250px';
+}
+
+function closeSlideMenu()
+{
+    document.getElementById('menu').style.width = '0px';
+    document.getElementById('content').style.marginLeft = '0px';
+}
+
+var close = document.getElementsByClassName("closebtn");
+var i;
+
+for (i = 0; i < close.length; i++) {
+  close[i].onclick = function(){
+    var div = this.parentElement;
+    div.style.opacity = "0";
+    setTimeout(time,100);
+    function time(){
+     var s=document.getElementById("scre");
+     alert("Bhavya");
+     s.style.display="none";
+    }
+  }
+}
+
+{% endblock %}
+
+{% block message %} 
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+<div class="alert alert-info" role="alert" id="scre">
+     <span class="closebtn">&times;</span>
+    {% for message in get_flashed_messages() %}
+  <h4 class="alert-heading">{{ message }}</h4>
+    {% endfor %}
+</div>
+  {% endif %}
+{% endwith %}
+</div>
+{% endblock %}
+
+
+    {% block progress %}{{scoredict.tcp}}%{% endblock %}
+    {% block pvalue %}{{ scoredict.tcp }}{% endblock %}
+{% block content %}
+    {{ answer.que }}
+    <br><br>
+
+    <label for="quo">Quotient:</label>
+    <input type="text" id="quo" name="quo" maxlength="2" size="2" onkeyup="check0();" required>
+    <img src="{{ url_for('static', filename='images/tick.png') }}" width="32px" height="22px" class="correct">
+    <img src="{{ url_for('static', filename='images/cross.jpg') }}" width="32px" height="22px" class="wrong">
+    <br><br>
+
+    <label for="rem">Remainder:</label>
+    <input type="text" id="rem" name="rem" maxlength="2" size="2" onkeyup="check1();" required>
+    <img src="{{ url_for('static', filename='images/tick.png') }}" width="32px" height="22px" class="correct">
+    <img src="{{ url_for('static', filename='images/cross.jpg') }}" width="32px" height="22px" class="wrong">
+    <br><br>
+
+    <label for="mf1">Mixed Fraction:</label>
+    <br>
+    <table>
+        <tr>
+<!--               numerator-->
+            <td></td>
+            <td><input type="text" id="mf2" name="mf" maxlength="2" size="2" onkeyup="check3();" required></td>
+            <td><img src="{{ url_for('static', filename='images/tick.png') }}" width="50px" height="50px" class="correct"></td>
+            <td><img src="{{ url_for('static', filename='images/cross.jpg') }}" width="50px" height="50px" class="wrong"></td>
+        </tr>
+
+        <tr>
+
+<!--                mixed fraction-->
+            <td><input type="text" id="mf1" name="mf" maxlength="2" size="2" onkeyup="check2();"required></td>
+            <td><hr/></td>
+            <td><img src="{{ url_for('static', filename='images/tick.png') }}" width="50px" height="50px" class="correct"></td>
+            <td><img src="{{ url_for('static', filename='images/cross.jpg') }}" width="50px" height="50px" class="wrong"></td>
+
+        </tr>
+
+        <tr>
+<!--                denominator-->
+            <td></td>
+            <td><input type="text" id="mf3" name="mf" maxlength="2" size="2" style="border" onkeyup="check4();" required></td>
+            <td><img src="{{ url_for('static', filename='images/tick.png') }}" width="50px" height="50px" class="correct"></td>
+            <td><img src="{{ url_for('static', filename='images/cross.jpg') }}" width="50px" height="50px" class="wrong"></td>
+        </tr>
+    </table>
+    <br><br>
+{% endblock %}
