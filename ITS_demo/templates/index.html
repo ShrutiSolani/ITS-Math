@@ -125,6 +125,26 @@
 			font-size: 150%;
 			color: black;
 		}
+
+		.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.button5 {background-color: #555555;}
+		#n3 #d6 p{
+			text-align: justify;
+			font-size: 150%;
+			color: black;
+		}
+
 	</style>
 </head>
 <body>
@@ -142,14 +162,11 @@
 			<h1>Fractions</h1>
 		</div>
 		<div id="d4">
-			<p>
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-			</p>
+			<h1 id="topic">TOPICS:</h1>
+			<h3 id="topic">Mixed Fractions</h3>
+			<button class="button button5">
+				<a href="{{url_for('question')}}">Practice</a>
+			</button>
 		</div>
 	</nav>
 	<nav id="n3">
@@ -157,14 +174,11 @@
 			<h1>Algebra</h1>
 		</div>
 		<div id="d6">
-			<p>
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-			</p>
+			<h1 id="topic">TOPICS:</h1>
+			<h3 id="topic">Add Horizontally</h3>
+			<button class="button button5">
+				<a href="{{url_for('horizontal_add')}}">Practice</a>
+			</button>
 		</div>
 	</nav>
 </body>
