@@ -256,6 +256,7 @@ for (i = 0; i < close.length; i++) {
 
 
     {% block progress %}{{scoredict.tcp}}%{% endblock %}
+    {% block question %}{{scoredict.totalqts}}{% endblock %}
     {% block pvalue %}{{ scoredict.tcp }}{% endblock %}
 {% block content %}
     {{ answer.que }}
