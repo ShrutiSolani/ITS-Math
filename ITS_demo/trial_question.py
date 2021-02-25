@@ -70,7 +70,10 @@ def question():
     hint3 = 'Mixed Fraction Answer :' + str(quo) + " (" + str(rem) + "/" + str(den) + ")"
     hints = {'h1': hint1, 'h2': hint2, 'h3': hint3}
     total = qtscnt * 25
-    tcp = (scorecnt/total)*100
+    try:
+        tcp = (scorecnt/total)*100
+    except:
+        tcp = 0
     scoredict = {'score': scorecnt, 'total': total, 'totalqts': qtscnt, 'tcp': tcp}
     return render_template('display copy.html', answer=answer, hints=hints, scoredict=scoredict)
 
@@ -104,14 +107,21 @@ def score(counter, feedback):
 @app.route("/algebra-add")
 def horizontal_add():
     coeff = random.sample(range(-50,50),6) #6 coefficient
-    varx = ['x','x2','x3'] #x3
-    vary = ['y','y2','y3'] #y2
+    varx = ['x','x\u00b2','x\u00b3'] #x3
+    vary = ['y','y\u00b2','y\u00b3'] #y2
     varz = ['z','z2','y3'] #z
     rx = random.choice(varx)
     ry = random.choice(vary)
     #rz = random.choice(varz)
     print(coeff)
-    haddque = 'Add horizontally '+str(coeff[0])+rx+'+'+str(coeff[1])+ry+','+str(coeff[2])+rx+'+'+str(coeff[3])+ry+','+str(coeff[4])+rx+'+'+str(coeff[5])+ry
+    sign = []
+    for i in coeff[1:6:2]:
+        if i < 0:
+            sign.append('')
+        else:
+            sign.append('+')
+
+    haddque = 'Add horizontally '+str(coeff[0])+rx+sign[0]+str(coeff[1])+ry+','+str(coeff[2])+rx+sign[1]+str(coeff[3])+ry+','+str(coeff[4])+rx+sign[2]+str(coeff[5])+ry
     print(haddque)
     x_like = coeff[0:5:2]
     x_sum = sum(x_like)
