@@ -15,32 +15,26 @@
       #right {
         border:2pt solid green
       }
+
+      #line1{
+        visibility:hidden;
+        <!-- display:none; -->
+      }
+      #line2{
+        visibility:hidden;
+        <!-- display:none; -->
+      }
       
 }
 {% endblock %}
-<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-   <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
-  <link rel="stylesheet" type="text/css" href="{{ url_for('static' , filename='css/q1style.css') }}">
-    <script type="text/javascript" src="{{ url_for('static' , filename='js/q1script.js') }}"></script> -->
-
-<!-- <script type="text/javascript" src="http://ajax.googleapis.com/
-ajax/libs/jquery/1.5/jquery.min.js"></script>
-<script type="text/javascript" src="jquery.form.js"></script>
-<script src="https://use.fontawesome.com/84eb6ff010.js"></script>
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-<script
-  src="https://code.jquery.com/jquery-3.1.1.min.js"
-  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-  crossorigin="anonymous"></script>
-<script src="semantic/dist/semantic.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<script type="text/javascript"> -->
 
 {% block script %}
   var x = document.getElementsByClassName("correct");
 var y = document.getElementsByClassName("wrong");
+
 var feedcount = 0;
+var l1 = document.getElementById("line1");
+var l2 = document.getElementById("line2");
 
 function check0()
 {
@@ -316,18 +310,26 @@ window.onload = function() {
     count++;
     if(count == 1)
     {
-    displayCount[0].innerHTML = "Hint 1 :{{ hints.h1 }}\n" ;
+      if(l1.style.visibility === "hidden"){
+        l1.style.visibility = "visible";
+      }
+     else{
+       l1.style.visibility = "hidden";
+     }
     }
     else
     {
-      if(count == 2) {displayCount[1].innerHTML = "Hint 2 :{{ hints.h2 }}\n" ;}
-      else {displayCount[2].innerHTML = "Hint 3 :{{ hints.h3 }}\n" ;}
+      if(count == 2)
+       {}
+       
+      
+        else {displayCount[2].innerHTML = "Hint 3 :{{ hints.h3 }}\n" ;}
     }
     }
   
     var subbutton = document.getElementById("b1");
     subbutton.onclick = function(){
-       document.querySelector(".myform").setAttribute("action","score/"+count+"/"+feedcount);
+       document.querySelector(".myform").setAttribute("action","score/"+2+"/"+count+"/"+feedcount);
        function time(){
        var s=document.getElementById("scre");
        s.style.display="none";
@@ -338,28 +340,7 @@ window.onload = function() {
     }
   }
 {% endblock %}
-<!-- <body>
-    <nav class="n1">
-      <div id="content">
-    <span class="slide">
-        <a href="#" onclick="openSlideMenu();">
-            <i class="fa fa-bars" style="font-size:36px"></i>
-        </a>
-    </span>
-    <div id="menu" class="nav">
-        <a href="#" class="close" onclick="closeSlideMenu();">
-            <i class="fa fa-times" style="font-size:36px"></i>
-        </a>
-        <a href="">Home</a>
-        <a href="">Profile</a>
-        <a href="{{ url_for('index') }}">Logout</a>
-    </div>
-          </div>
-    <div class="title">
-        <h1>ITS-Maths</h1>
-    </div>
 
-        </nav> -->
         {% block message %}
 <div>
 {% with messages = get_flashed_messages(with_categories=true) %}
@@ -374,44 +355,44 @@ window.onload = function() {
 {% endwith %}
 </div>
 {% endblock %}
+
 {% block progress %}{{scoredict.tcp}}%{% endblock %}
 {% block question %}{{scoredict.totalqts }}{% endblock %}
 {% block pvalue %}{{ scoredict.tcp }}{% endblock %}
-<!-- 
-<div style="position:relative;">
-<div class = "showhints" id="showhint1" style="position:absolute;top:20%;left:35%; height:200px; width:200px;">{{ hints.h1 }}</div>
-<div class = "showhints" id="showhint2" style="position:absolute;top:50; left:35%; top:50px; height:200px; width:200px;">{{ hints.h2 }}</div>
-<div class = "showhints" id="showhint3" style="position:absolute;top:80%; left:35%; top:100px; height:200px; width:200px;">{{ hints.h3 }}</div>
-</div> -->
+
+
+
 {% block content %}
-<!-- <form method="post" action= "" class="myform" id="f1"> -->
+
     {{ answer.que }}
     <br><br>
-    (<input type="text" class="quo" name="quo" maxlength="3" size="3"  onkeyup="check0();"required>{{ answer.varx }}+
-    <input type="text" class="quo" name="quo" maxlength="3" size="3"  onkeyup="check1();" required>{{ answer.vary }})+
-    (<input type="text" class="quo" name="quo" maxlength="3" size="3" onkeyup="check2();" required>{{ answer.varx }}+
-    <input type="text" class="quo" name="quo" maxlength="3" size="3" onkeyup="check3();" required>{{ answer.vary }})+
-    (<input type="text" class="quo" name="quo" maxlength="3" size="3" onkeyup="check4();" required>{{ answer.varx }}+
-    <input type="text" class="quo" name="quo" maxlength="3" size="3" onkeyup="check5();" required>{{ answer.vary }})
+    <div id="line1">
+      (<input type="text" class="quo" name="quo" maxlength="3" size="3"  onblur="check0();"required>{{ answer.varx }}+
+      <input type="text" class="quo" name="quo" maxlength="3" size="3"  onblur="check1();" required>{{ answer.vary }})+
+      (<input type="text" class="quo" name="quo" maxlength="3" size="3" onblur="check2();" required>{{ answer.varx }}+
+      <input type="text" class="quo" name="quo" maxlength="3" size="3" onblur="check3();" required>{{ answer.vary }})+
+      (<input type="text" class="quo" name="quo" maxlength="3" size="3" onblur="check4();" required>{{ answer.varx }}+
+      <input type="text" class="quo" name="quo" maxlength="3" size="3" onblur="check5();" required>{{ answer.vary }})
+      <img src="{{ url_for('static', filename='images/tick.png') }}" width="50px" height="50px" class="correct">
+      <img src="{{ url_for('static', filename='images/cross.jpg') }}" width="50px" height="50px" class="wrong">
+      <br><br>
+    </div>
+    <div id="line2">
+      (<input type="text" class="quo" name="quo" maxlength="3" size="3" onblur="check6();" required>+
+      <input type="text" class="quo" name="quo" maxlength="3" size="3" onblur="check7();" required>+
+      <input type="text" class="quo" name="quo" maxlength="3" size="3" onblur="check8();" required>){{ answer.varx }}+
+      (<input type="text" class="quo" name="quo" maxlength="3" size="3" onblur="check9();" required>+
+      <input type="text" class="quo" name="quo" maxlength="3" size="3" onblur="check10();" required>+
+      <input type="text" class="quo" name="quo" maxlength="3" size="3" onblur="check11();" required>){{ answer.vary }}
+      <img src="{{ url_for('static', filename='images/tick.png') }}" width="50px" height="50px" class="correct">
+      <img src="{{ url_for('static', filename='images/cross.jpg') }}" width="50px" height="50px" class="wrong">
+      <br><br>
+    </div>
+    
+    <input type="text" class="quo" name="quo" maxlength="3" size="3" onblur="check12();" required>{{ answer.varx }}+
+    <input type="text" class="quo" name="quo" maxlength="3" size="3" onblur="check13();" required>{{ answer.vary }}
     <img src="{{ url_for('static', filename='images/tick.png') }}" width="50px" height="50px" class="correct">
     <img src="{{ url_for('static', filename='images/cross.jpg') }}" width="50px" height="50px" class="wrong">
     <br><br>
-    (<input type="text" class="quo" name="quo" maxlength="3" size="3" onkeyup="check6();" required>+
-    <input type="text" class="quo" name="quo" maxlength="3" size="3" onkeyup="check7();" required>+
-    <input type="text" class="quo" name="quo" maxlength="3" size="3" onkeyup="check8();" required>){{ answer.varx }}+
-    (<input type="text" class="quo" name="quo" maxlength="3" size="3" onkeyup="check9();" required>+
-    <input type="text" class="quo" name="quo" maxlength="3" size="3" onkeyup="check10();" required>+
-    <input type="text" class="quo" name="quo" maxlength="3" size="3" onkeyup="check11();" required>){{ answer.vary }}
-    <img src="{{ url_for('static', filename='images/tick.png') }}" width="50px" height="50px" class="correct">
-    <img src="{{ url_for('static', filename='images/cross.jpg') }}" width="50px" height="50px" class="wrong">
-    <br><br>
-    <input type="text" class="quo" name="quo" maxlength="3" size="3" onkeyup="check12();" required>{{ answer.varx }}+
-    <input type="text" class="quo" name="quo" maxlength="3" size="3" onkeyup="check13();" required>{{ answer.vary }}
-    <img src="{{ url_for('static', filename='images/tick.png') }}" width="50px" height="50px" class="correct">
-    <img src="{{ url_for('static', filename='images/cross.jpg') }}" width="50px" height="50px" class="wrong">
-    <br><br>
-    <!-- <input id="b1" type="submit" value="Submit">
-    <input type="button" class="hint-btn" id="hint-btn" value="Hint" target = "_self">
-</form> -->
-
+  
 {% endblock %}
