@@ -194,24 +194,6 @@ progress::-webkit-progress-bar {
   background: grey;
 }
 
-#s3{
-	font-size: 2.5rem;
-			font-style: italic;
-			text-shadow: 2px 2px 3px aliceblue;
-			color: blueviolet;
-			text-decoration: underline;
-			padding-left: 4.7%; 
-			transition: all 1s;
-}
-
-#s4{
-		font-size: 2.5rem;
-			font-style: italic;
-			color: seagreen;
-			padding-left: 0%;
-			transition: all 1s;
-}
-
 {% block style %}{% endblock %}
 	</style>
 </head>
@@ -243,7 +225,6 @@ progress::-webkit-progress-bar {
 		<span id="s2">{% block progress %}{% endblock %}</span>
 		<progress value="{% block pvalue %}{% endblock %}" max="100"></progress>
 		<span id="s3">Questions Attempted:{% block question %}{% endblock %}</span>
-		
     	</div>
 	</div> 
 	<br>
@@ -255,7 +236,7 @@ progress::-webkit-progress-bar {
 			<div class = "showhints" id="showhint3" style="position:absolute;top:80%; left:80%; top:140px; height:200px;  width:200px;"></div>
 		</div>
 		
-		<form method="post" action= "{{url_for('score',counter = 0, feedback = 0)}}" class="myform" id="f1">
+		<form method="post" action= "{{url_for('score',tid=0,counter = 0, feedback = 0)}}" class="myform" id="f1">
 			{% block content %}{% endblock %}
 
 			<input id="b1" type="submit" value="Submit">
@@ -266,17 +247,11 @@ progress::-webkit-progress-bar {
 		const opennav=()=>{
 			document.getElementById("d3").style.width="300px";
 			document.getElementById("p1").style.paddingLeft="30%";
-			document.getElementById("s3").style.display="block";
-			document.getElementById("s4").style.display="inline";
 		}
 		const closenav=()=>{
 			document.getElementById("d3").style.width="0px";
 			document.getElementById("p1").style.paddingLeft="0%";
-			document.getElementById("s3").style.display="inline-block";
-			
 		}
-
-
 	</script>
 </body>
 </html>
