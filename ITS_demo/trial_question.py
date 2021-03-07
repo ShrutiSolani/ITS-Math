@@ -14,8 +14,10 @@ Image_folder = os.path.join('static', 'images')
 app.config['UPLOAD_FOLDER'] = Image_folder
 full_filename = os.path.join(app.config['UPLOAD_FOLDER'], 'cross.jpg')
 
-qtscnt=0
-scorecnt=0
+qtscnt1=0     #fraction
+scorecnt1=0   #fraction
+qtscnt2 = 0   #algebra
+scorecnt2 = 0 #algebra
 
 @app.route("/")
 def index():
@@ -45,7 +47,7 @@ def q1():
         hint3 = 'Mixed Fraction Answer :' + str(quo) + " (" + str(rem) + "/" + str(den) + ")"
         hints = {'h1': hint1, 'h2': hint2, 'h3': hint3}
         total = qtscnt * 25
-        scoredict = {'score': scorecnt, 'total': total, 'totalqts': qtscnt, 'tcp': 0}
+        scoredict = {'score': scorecnt, 'total': total, 'totalqts': qtscnt, 'pct': 0}
         return render_template('display copy.html', answer=answer, hints=hints, scoredict=scoredict)
     else:
         return render_template('login.html')
@@ -53,9 +55,9 @@ def q1():
 
 @app.route("/mixed-fraction")
 def question():
-    global qtscnt, scorecnt
-    print(qtscnt)
-    print(scorecnt)
+    global qtscnt1, scorecnt1
+    # print(qtscnt)
+    # print(scorecnt)
     num = random.randint(1, 100)
     den = random.randint(1, 25)
     while num < den:
@@ -69,40 +71,61 @@ def question():
     hint2 = 'After dividing N/D, quotient =' + str(quo) + ' remainder = ' + str(rem)
     hint3 = 'Mixed Fraction Answer :' + str(quo) + " (" + str(rem) + "/" + str(den) + ")"
     hints = {'h1': hint1, 'h2': hint2, 'h3': hint3}
-    total = qtscnt * 25
+    total = qtscnt1 * 25
     try:
-        tcp = (scorecnt/total)*100
+        tcp = (scorecnt1/total)*100
     except:
         tcp = 0
-    scoredict = {'score': scorecnt, 'total': total, 'totalqts': qtscnt, 'tcp': tcp}
+    scoredict = {'score': scorecnt1, 'total': total, 'totalqts': qtscnt1, 'tcp': tcp}
     return render_template('display copy.html', answer=answer, hints=hints, scoredict=scoredict)
 
 
-@app.route('/score/<counter>/<feedback>', methods=['POST'])
-def score(counter, feedback):
+@app.route('/score/<tid>/<counter>/<feedback>', methods=['POST'])
+def score(counter, feedback, tid):
     if request.method == 'POST':
-        global scorecnt, qtscnt
-        marks = 25-(int(counter)*5) - (int(feedback)*2)
-        scorecnt += marks
-        qtscnt += 1
-        print(scorecnt)
-        print(qtscnt)
-        print(marks)
-        if marks == 25:
-            comment = "Well Done!!!"
-        elif 20 <= marks < 25:
-            comment = "You have just about mastered it"
-        elif 15 <= marks < 20:
-            comment = "Keep working on it you are improving"
+        if tid == '1':
+            global scorecnt1, qtscnt1
+            marks = 25-(int(counter)*5) - (int(feedback)*2)
+            scorecnt1 += marks
+            qtscnt1 += 1
+            # print(scorecnt)
+            # print(qtscnt)
+            # print(marks)
+            if marks == 25:
+                comment = "Well Done!!!"
+            elif 20 <= marks < 25:
+                comment = "You have just about mastered it"
+            elif 15 <= marks < 20:
+                comment = "Keep working on it you are improving"
+            else:
+                comment = "That's not half bad"
+            show_message1 = 'Your points : '+str(marks)+'/25.'
+            flash(show_message1)
+            flash(comment)
+            return redirect(url_for('question'))
+        
         else:
-            comment = "That's not half bad"
-    else:
-        print("Pass")
+            global scorecnt2, qtscnt2
+            marks = 25-(int(counter)*5) - (int(feedback)*2)
+            scorecnt2 += marks
+            qtscnt2 += 1
+            # print(scorecnt)
+            # print(qtscnt)
+            # print(marks)
+            if marks == 25:
+                comment = "Well Done!!!"
+            elif 20 <= marks < 25:
+                comment = "You have just about mastered it"
+            elif 15 <= marks < 20:
+                comment = "Keep working on it you are improving"
+            else:
+                comment = "That's not half bad"
+           
+            show_message1 = 'Your points : '+str(marks)+'/25.'
+            flash(show_message1)
+            flash(comment)
+            return redirect(url_for('horizontal_add'))
 
-    show_message1 = 'Your points : '+str(marks)+'/25.'
-    flash(show_message1)
-    flash(comment)
-    return redirect(url_for('question'))
 
 @app.route("/algebra-add")
 def horizontal_add():
@@ -132,13 +155,13 @@ def horizontal_add():
     h2 = 'Add coefficientts of like terms'
     h3 = 'Solution : '+str(x_sum)+rx+'+'+str(y_sum)+ry+'.'
     hints = {'h1':h1,'h2':h2,'h3':h3}    
-    global qtscnt, scorecnt
-    total = qtscnt * 25
+    global qtscnt2, scorecnt2
+    total = qtscnt2 * 25
     try:
-        tcp = (scorecnt/total)*100
+        pct = round((scorecnt2/total)*100,2)
     except:
-        tcp = 0
-    scoredict = {'score': scorecnt, 'total': total, 'totalqts': qtscnt, 'tcp': tcp}
+        pct = 0
+    scoredict = {'score': scorecnt2, 'total': total, 'totalqts': qtscnt2, 'pct': pct}
     return render_template('algebra_add.html',answer=answer, hints = hints, scoredict=scoredict)
 
 
