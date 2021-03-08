@@ -1,0 +1,398 @@
+{% extends "layout.html" %}
+    {% block title %}Q1{% endblock %}
+    {% block style %}
+
+      .quo {
+        display: inline;
+        width: 6%;
+        height: calc(1.5em + .75rem + -6px);
+      }
+
+      #error {
+            border:2pt solid red;
+        }
+
+      #right {
+        border:2pt solid green
+      }
+
+      #line1{
+        visibility:hidden;
+        <!-- display:none; -->
+      }
+      #line2{
+        visibility:hidden;
+        <!-- display:none; -->
+      }
+
+}
+{% endblock %}
+
+{% block script %}
+  var x = document.getElementsByClassName("correct");
+var y = document.getElementsByClassName("wrong");
+
+var feedcount = 0;
+var l1 = document.getElementById("line1");
+var l2 = document.getElementById("line2");
+
+function check0()
+{
+if(document.getElementsByTagName("input")[0].value == {{ answer.coeff[0] }} )
+{
+   $(x[0]).show();
+     $(y[0]).hide();
+     document.getElementsByClassName("quo")[0].id = 'right';
+  }
+else
+{
+ feedcount++;
+      $(x[0]).hide();
+      $(y[0]).show();
+      document.getElementsByClassName("quo")[0].id = 'error';
+    // document.getElementsByTagName("input")[0].value = "";
+
+ }
+}
+
+function check1()
+{
+if(document.getElementsByTagName("input")[1].value == {{ answer.coeff[1] }} )
+{
+   $(x[0]).show();
+    $(y[0]).hide();
+    document.getElementsByClassName("quo")[1].id = 'right';
+  }
+else
+{
+ feedcount++;
+      $(x[0]).hide();
+      $(y[0]).show();
+    document.getElementsByClassName("quo")[1].id = 'error';
+    // document.getElementsByTagName("input")[1].value = "";
+
+ }
+}
+
+function check2()
+{
+  if(document.getElementsByTagName("input")[2].value == {{ answer.coeff[2] }} )
+  {
+    $(x[0]).show();
+    $(y[0]).hide();
+    document.getElementsByClassName("quo")[2].id = 'right';
+    }
+  else
+  {
+  feedcount++;
+        $(x[0]).hide();
+        $(y[0]).show();
+        document.getElementsByClassName("quo")[2].id = 'error';
+      // document.getElementsByTagName("input")[2].value = "";
+
+  }
+}
+
+function check3()
+{
+if(document.getElementsByTagName("input")[3].value == {{ answer.coeff[3] }} )
+{
+    $(x[0]).show();
+    $(y[0]).hide();
+    document.getElementsByClassName("quo")[3].id = 'right';
+  }
+else
+{
+ feedcount++;
+      $(x[0]).hide();
+      $(y[0]).show();
+      document.getElementsByClassName("quo")[3].id = 'error';
+    // document.getElementsByTagName("input")[3].value = "";
+
+ }
+}
+
+function check4()
+{
+if(document.getElementsByTagName("input")[4].value == {{ answer.coeff[4] }} )
+{
+   $(x[0]).show();
+   $(y[0]).hide();
+   document.getElementsByClassName("quo")[4].id = 'right';
+  }
+else
+{
+ feedcount++;
+      $(x[0]).hide();
+      $(y[0]).show();
+      document.getElementsByClassName("quo")[4].id = 'error';
+    // document.getElementsByTagName("input")[4].value = "";
+
+ }
+}
+
+function check5()
+{
+if(document.getElementsByTagName("input")[5].value == {{ answer.coeff[5] }} )
+{
+      $(x[0]).show();
+      $(y[0]).hide();
+      document.getElementsByClassName("quo")[5].id = 'right';
+  }
+else
+{
+ feedcount++;
+      $(x[0]).hide();
+      $(y[0]).show();
+      document.getElementsByClassName("quo")[5].id = 'error';
+    // document.getElementsByTagName("input")[5].value = "";
+
+ }
+}
+
+function check6()
+{
+if(document.getElementsByTagName("input")[6].value == {{ answer.coeff[0] }} )
+{
+   $(x[1]).show();
+     $(y[1]).hide();
+     document.getElementsByClassName("quo")[6].id = 'right';
+  }
+else
+{
+ feedcount++;
+      $(x[1]).hide();
+      $(y[1]).show();
+      document.getElementsByClassName("quo")[6].id = 'error';
+    // document.getElementsByTagName("input")[6].value = "";
+
+ }
+}
+
+function check7()
+{
+if(document.getElementsByTagName("input")[7].value == {{ answer.coeff[2] }} )
+{
+   $(x[1]).show();
+     $(y[1]).hide();
+     document.getElementsByClassName("quo")[7].id = 'right';
+  }
+else
+{
+ feedcount++;
+      $(x[1]).hide();
+      $(y[1]).show();
+      document.getElementsByClassName("quo")[7].id = 'error';
+    // document.getElementsByTagName("input")[7].value = "";
+
+ }
+}
+
+function check8()
+{
+if(document.getElementsByTagName("input")[8].value == {{ answer.coeff[4] }} )
+{
+   $(x[1]).show();
+     $(y[1]).hide();
+     document.getElementsByClassName("quo")[8].id = 'right';
+  }
+else
+{
+ feedcount++;
+      $(x[1]).hide();
+      $(y[1]).show();
+      document.getElementsByClassName("quo")[8].id = 'error';
+    // document.getElementsByTagName("input")[8].value = "";
+
+ }
+}
+
+function check9()
+{
+if(document.getElementsByTagName("input")[9].value == {{ answer.coeff[1] }} )
+{
+   $(x[1]).show();
+     $(y[1]).hide();
+     document.getElementsByClassName("quo")[9].id = 'right';
+  }
+else
+{
+ feedcount++;
+      $(x[1]).hide();
+      $(y[1]).show();
+      document.getElementsByClassName("quo")[9].id = 'error';
+    // document.getElementsByTagName("input")[9].value = "";
+
+ }
+}
+
+function check10()
+{
+if(document.getElementsByTagName("input")[10].value == {{ answer.coeff[3] }} )
+{
+   $(x[1]).show();
+     $(y[1]).hide();
+     document.getElementsByClassName("quo")[10].id = 'right';
+  }
+else
+{
+ feedcount++;
+      $(x[1]).hide();
+      $(y[1]).show();
+      document.getElementsByClassName("quo")[10].id = 'error';
+    // document.getElementsByTagName("input")[10].value = "";
+
+ }
+}
+
+function check11()
+{
+if(document.getElementsByTagName("input")[11].value == {{ answer.coeff[5] }} )
+{
+   $(x[1]).show();
+     $(y[1]).hide();
+     document.getElementsByClassName("quo")[11].id = 'right';
+  }
+else
+{
+ feedcount++;
+      $(x[1]).hide();
+      $(y[1]).show();
+      document.getElementsByClassName("quo")[11].id = 'error';
+    // document.getElementsByTagName("input")[11].value = "";
+
+ }
+}
+
+function check12()
+{
+if(document.getElementsByTagName("input")[12].value == {{ answer.x_sum }} )
+{
+   $(x[2]).show();
+     $(y[2]).hide();
+     document.getElementsByClassName("quo")[12].id = 'right';
+  }
+else
+{
+ feedcount++;
+      $(x[2]).hide();
+      $(y[2]).show();
+      document.getElementsByClassName("quo")[12].id = 'error';
+    // document.getElementsByTagName("input")[12].value = "";
+
+ }
+}
+
+function check13()
+{
+if(document.getElementsByTagName("input")[13].value == {{ answer.y_sum }} )
+{
+   $(x[2]).show();
+     $(y[2]).hide();
+     document.getElementsByClassName("quo")[13].id = 'right';
+  }
+else
+{
+ feedcount++;
+      $(x[2]).hide();
+      $(y[2]).show();
+       document.getElementsByClassName("quo")[13].id = 'error';
+
+ }
+}
+
+window.onload = function() {
+  var count = 0;
+
+  var countButton = document.getElementById("hint-btn");
+  var displayCount = document.getElementsByClassName("showhints");
+  countButton.onclick = function(){
+    count++;
+    if(count == 1)
+    {
+      if(l1.style.visibility === "hidden"){
+        l1.style.visibility = "visible";
+      }
+     else{
+       l1.style.visibility = "hidden";
+     }
+    }
+    else
+    {
+      if(count == 2)
+       {}
+
+
+        else {displayCount[2].innerHTML = "Hint 3 :{{ hints.h3 }}\n" ;}
+    }
+    }
+
+    var subbutton = document.getElementById("b1");
+    subbutton.onclick = function(){
+       document.querySelector(".myform").setAttribute("action","score/"+2+"/"+count+"/"+feedcount);
+       function time(){
+       var s=document.getElementById("scre");
+       s.style.display="none";
+       }
+       var d=setTimeout(time,500);
+       clearInterval(d);
+
+    }
+  }
+{% endblock %}
+
+        {% block message %}
+<div>
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+<div class="alert alert-info" role="alert" id="scre">
+     <span class="closebtn">&times;</span>
+    {% for message in get_flashed_messages() %}
+  <h4 class="alert-heading">{{ message }}</h4>
+    {% endfor %}
+</div>
+  {% endif %}
+{% endwith %}
+</div>
+{% endblock %}
+
+{% block progress %}{{scoredict.tcp}}%{% endblock %}
+{% block question %}{{scoredict.totalqts }}{% endblock %}
+{% block pvalue %}{{ scoredict.tcp }}{% endblock %}
+
+
+
+{% block content %}
+
+    {{ answer.que }}
+    <br><br>
+    <div id="line1">
+      (<input type="text" class="quo" name="quo" maxlength="3" size="3"  onblur="check0();"required>{{ answer.varx }}+
+      <input type="text" class="quo" name="quo" maxlength="3" size="3"  onblur="check1();" required>{{ answer.vary }})+
+      (<input type="text" class="quo" name="quo" maxlength="3" size="3" onblur="check2();" required>{{ answer.varx }}+
+      <input type="text" class="quo" name="quo" maxlength="3" size="3" onblur="check3();" required>{{ answer.vary }})+
+      (<input type="text" class="quo" name="quo" maxlength="3" size="3" onblur="check4();" required>{{ answer.varx }}+
+      <input type="text" class="quo" name="quo" maxlength="3" size="3" onblur="check5();" required>{{ answer.vary }})
+      <img src="{{ url_for('static', filename='images/tick.png') }}" width="50px" height="50px" class="correct">
+      <img src="{{ url_for('static', filename='images/cross.jpg') }}" width="50px" height="50px" class="wrong">
+      <br><br>
+    </div>
+    <div id="line2">
+      (<input type="text" class="quo" name="quo" maxlength="3" size="3" onblur="check6();" required>+
+      <input type="text" class="quo" name="quo" maxlength="3" size="3" onblur="check7();" required>+
+      <input type="text" class="quo" name="quo" maxlength="3" size="3" onblur="check8();" required>){{ answer.varx }}+
+      (<input type="text" class="quo" name="quo" maxlength="3" size="3" onblur="check9();" required>+
+      <input type="text" class="quo" name="quo" maxlength="3" size="3" onblur="check10();" required>+
+      <input type="text" class="quo" name="quo" maxlength="3" size="3" onblur="check11();" required>){{ answer.vary }}
+      <img src="{{ url_for('static', filename='images/tick.png') }}" width="50px" height="50px" class="correct">
+      <img src="{{ url_for('static', filename='images/cross.jpg') }}" width="50px" height="50px" class="wrong">
+      <br><br>
+    </div>
+
+    <input type="text" class="quo" name="quo" maxlength="3" size="3" onblur="check12();" required>{{ answer.varx }}+
+    <input type="text" class="quo" name="quo" maxlength="3" size="3" onblur="check13();" required>{{ answer.vary }}
+    <img src="{{ url_for('static', filename='images/tick.png') }}" width="50px" height="50px" class="correct">
+    <img src="{{ url_for('static', filename='images/cross.jpg') }}" width="50px" height="50px" class="wrong">
+    <br><br>
+
+{% endblock %}
