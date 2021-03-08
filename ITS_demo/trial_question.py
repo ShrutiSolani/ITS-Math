@@ -164,6 +164,53 @@ def horizontal_add():
     scoredict = {'score': scorecnt2, 'total': total, 'totalqts': qtscnt2, 'pct': pct}
     return render_template('algebra_add.html',answer=answer, hints = hints, scoredict=scoredict)
 
+############################################
+@app.route('/vertical_sub')
+def vertical_sub():
+    coeff = random.sample(range(-50, 50), 6)  # 6 coefficient
+    varx = ['x', 'x\u00b2', 'x\u00b3']  # x3
+    vary = ['y', 'y\u00b2', 'y\u00b3']  # y2
+    varz = ['z', 'z\u00b2', 'z\u00b3']  # z
+    rx = random.choice(varx)
+    ry = random.choice(vary)
+    rz = random.choice(varz)
+    sign_1 = []
+    for i in coeff[1:3]:
+        if i < 0:
+            sign_1.append('')
+        else:
+            sign_1.append('+')
+    sign_2=[]
+    for j in coeff[4:7]:
+        if(i<0):
+            sign_2.append("")
+        else:
+            sign_2.append('+')
+    haddque = 'Sub Vertically ' + str(coeff[0])+rx+str(sign_1[0])+str(coeff[1])+ry+str(sign_1[1])+str(coeff[2])+rz+' , '+str(coeff[3])+rx+str(sign_2[0])+str(coeff[4])+ry+str(sign_2[1])+str(coeff[5])+rz+' . '
+    print(haddque)
+    x_like = coeff[0:5:3]
+    x_sum = sum(x_like)
+    y_like = coeff[1:6:3]
+    y_sum = sum(y_like)
+    z_like = coeff[2:6:3]
+    z_sum = sum(z_like)
+    answer = {'que': haddque, 'varx': rx, 'vary': ry,'varz':rz,'coeff': coeff, 'x_like': x_like, 'y_like': y_like,'z_like':z_like,
+              'x_sum': x_sum, 'y_sum': y_sum,'z_sum':z_sum}
+    h1 = 'Rearrange into like terms (coefficients with same variable and power)'
+    h2 = 'Add coefficientts of like terms'
+    h3 = 'Solution : ' + str(x_sum) + rx + '+' + str(y_sum) + ry + ' + ' + str(z_sum) + rz + '.'
+    hints={'h1':h1,'h2':h2,'h3':h3}
+    print(x_sum,y_sum,z_sum)
+    print(hints)
+
+    global qtscnt2, scorecnt2
+    total = qtscnt2 * 25
+    try:
+        pct = round((scorecnt2 / total) * 100, 2)
+    except:
+        pct = 0
+    scoredict = {'score': scorecnt2, 'total': total, 'totalqts': qtscnt2, 'pct': pct}
+    return render_template('algebra_add.html', answer=answer, hints=hints)
 
 app.secret_key = 'super secret key'
 app.run(debug=True)
