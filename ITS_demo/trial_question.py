@@ -127,6 +127,50 @@ def score(counter, feedback, tid):
             return redirect(url_for('horizontal_add'))
 
 
+###############################################################
+@app.route("/compare")
+def compare():
+    num1=random.randint(1,100)
+    den1=random.randint(1,100)
+    num2 = random.randint(1, 100)
+    den2 = random.randint(1, 100)
+    f1=(fraction(num1,den1))
+    f2=(fraction(num2, den2))
+    que={'f1':f1,'f2':f2}
+    def LCM(a,b):
+        lcm=0
+        if(a>b):
+            greater=a
+        else:
+            greater = b
+        while(True):
+            if(greater%a==0 and greater%b==0):
+                lcm=geater
+                break
+            greater=greater+1
+        return lcm
+    print("Compare "+f1+" and "+f2+" . ")
+    lcm=LCM(den1,den2)
+    eqfrac1=lcm//den1
+    eqfrac2=lcm//den2
+    fract1=Fraction(num1*eqfrac1,den1*eqfrac1)
+    fract2=Fraction(num2*eqfrac2,den2*eqfrac2)
+    if(fract1>fract2):
+        ans=(fract1)
+    else:
+        ans=print(fract2)
+    answer={'que':que,'lcm':lcm,'eqfrac1':eqfrac1,'eqfrac2':eqfrac2,'ans':ans}
+    h1="LCM of both denominators if Fraction are unlike."
+    h2="EXAMPLE : LCM of 5 and 6 is 30."
+    h3="Equivalent Fraction of : 4/5 => 24/30 and 5/6 => 25/30."
+    h4=" 4/5 < 5/6."
+    hints={'h1':h1,'h2':h2,'h3':h3,'h4':h4}
+    print(hints)
+    print(ans)
+    return render_template('compare.html', answer=answer, hints=hints)
+
+
+
 @app.route("/algebra-add")
 def horizontal_add():
     coeff = random.sample(range(-50,50),6) #6 coefficient
@@ -163,6 +207,54 @@ def horizontal_add():
         pct = 0
     scoredict = {'score': scorecnt2, 'total': total, 'totalqts': qtscnt2, 'pct': pct}
     return render_template('algebra_add.html',answer=answer, hints = hints, scoredict=scoredict)
+
+############################################
+@app.route('/vertical_sub')
+def vertical_sub():
+    coeff = random.sample(range(-50, 50), 6)  # 6 coefficient
+    varx = ['x', 'x\u00b2', 'x\u00b3']  # x3
+    vary = ['y', 'y\u00b2', 'y\u00b3']  # y2
+    varz = ['z', 'z\u00b2', 'z\u00b3']  # z
+    rx = random.choice(varx)
+    ry = random.choice(vary)
+    rz = random.choice(varz)
+    sign_1 = []
+    for i in coeff[1:3]:
+        if i < 0:
+            sign_1.append('')
+        else:
+            sign_1.append('+')
+    sign_2=[]
+    for j in coeff[4:7]:
+        if(i<0):
+            sign_2.append("")
+        else:
+            sign_2.append('+')
+    haddque = 'Sub Vertically ' + str(coeff[0])+rx+str(sign_1[0])+str(coeff[1])+ry+str(sign_1[1])+str(coeff[2])+rz+' , '+str(coeff[3])+rx+str(sign_2[0])+str(coeff[4])+ry+str(sign_2[1])+str(coeff[5])+rz+' . '
+    print(haddque)
+    x_like = coeff[0:5:3]
+    x_sum = sum(x_like)
+    y_like = coeff[1:6:3]
+    y_sum = sum(y_like)
+    z_like = coeff[2:6:3]
+    z_sum = sum(z_like)
+    answer = {'que': haddque, 'varx': rx, 'vary': ry,'varz':rz,'coeff': coeff, 'x_like': x_like, 'y_like': y_like,'z_like':z_like,
+              'x_sum': x_sum, 'y_sum': y_sum,'z_sum':z_sum}
+    h1 = 'Rearrange into like terms (coefficients with same variable and power)'
+    h2 = 'Add coefficientts of like terms'
+    h3 = 'Solution : ' + str(x_sum) + rx + '+' + str(y_sum) + ry + ' + ' + str(z_sum) + rz + '.'
+    hints={'h1':h1,'h2':h2,'h3':h3}
+    print(x_sum,y_sum,z_sum)
+    print(hints)
+
+    global qtscnt2, scorecnt2
+    total = qtscnt2 * 25
+    try:
+        pct = round((scorecnt2 / total) * 100, 2)
+    except:
+        pct = 0
+    scoredict = {'score': scorecnt2, 'total': total, 'totalqts': qtscnt2, 'pct': pct}
+    return render_template('algebra_add.html', answer=answer, hints=hints)
 
 
 app.secret_key = 'super secret key'
