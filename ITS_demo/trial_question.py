@@ -127,6 +127,50 @@ def score(counter, feedback, tid):
             return redirect(url_for('horizontal_add'))
 
 
+###############################################################
+@app.route("/compare")
+def compare():
+    num1=random.randint(1,100)
+    den1=random.randint(1,100)
+    num2 = random.randint(1, 100)
+    den2 = random.randint(1, 100)
+    f1=(fraction(num1,den1))
+    f2=(fraction(num2, den2))
+    que={'f1':f1,'f2':f2}
+    def LCM(a,b):
+        lcm=0
+        if(a>b):
+            greater=a
+        else:
+            greater = b
+        while(True):
+            if(greater%a==0 and greater%b==0):
+                lcm=geater
+                break
+            greater=greater+1
+        return lcm
+    print("Compare "+f1+" and "+f2+" . ")
+    lcm=LCM(den1,den2)
+    eqfrac1=lcm//den1
+    eqfrac2=lcm//den2
+    fract1=Fraction(num1*eqfrac1,den1*eqfrac1)
+    fract2=Fraction(num2*eqfrac2,den2*eqfrac2)
+    if(fract1>fract2):
+        ans=(fract1)
+    else:
+        ans=print(fract2)
+    answer={'que':que,'lcm':lcm,'eqfrac1':eqfrac1,'eqfrac2':eqfrac2,'ans':ans}
+    h1="LCM of both denominators if Fraction are unlike."
+    h2="EXAMPLE : LCM of 5 and 6 is 30."
+    h3="Equivalent Fraction of : 4/5 => 24/30 and 5/6 => 25/30."
+    h4=" 4/5 < 5/6."
+    hints={'h1':h1,'h2':h2,'h3':h3,'h4':h4}
+    print(hints)
+    print(ans)
+    return render_template('compare.html', answer=answer, hints=hints)
+
+
+
 @app.route("/algebra-add")
 def horizontal_add():
     coeff = random.sample(range(-50,50),6) #6 coefficient
@@ -211,6 +255,7 @@ def vertical_sub():
         pct = 0
     scoredict = {'score': scorecnt2, 'total': total, 'totalqts': qtscnt2, 'pct': pct}
     return render_template('algebra_add.html', answer=answer, hints=hints)
+
 
 app.secret_key = 'super secret key'
 app.run(debug=True)
