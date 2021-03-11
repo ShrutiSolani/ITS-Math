@@ -1,0 +1,122 @@
+{% extends "layout.html" %}
+{% block title %}Q1{% endblock %}
+
+{% block script %}
+window.onload = function() {
+    var count = 0;
+    
+    var countButton = document.getElementById("hint-btn");
+    var displayCount = document.getElementsByClassName("showhints");
+    countButton.onclick = function(){
+      count++;
+      if(count == 1)
+      {
+      displayCount[0].innerHTML = "Hint 1 :{{ hints.h1 }}\n" ;
+      }
+      else
+      {
+        if(count == 2) {displayCount[1].innerHTML = "Hint 2 :{{ hints.h2 }}\n" ;}
+        else {displayCount[2].innerHTML = "Hint 3 :{{ hints.h3 }}\n" ;}
+      }
+    }
+    
+      var subbutton = document.getElementById("b1");
+      subbutton.onclick = function(){
+         document.querySelector(".myform").setAttribute("action","score/"+1+"/"+count+"/"+feedcount);
+         function time(){
+         var s=document.getElementById("scre");
+         s.style.display="none";
+         }
+         var d=setTimeout(time,500);
+         clearInterval(d);
+      }
+    }
+    
+    {% endblock %}
+
+
+
+
+{% block message %} 
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+<div class="alert alert-info" role="alert" id="scre">
+     <span class="closebtn">&times;</span>
+    {% for message in get_flashed_messages() %}
+  <h4 class="alert-heading">{{ message }}</h4>
+    {% endfor %}
+</div>
+  {% endif %}
+{% endwith %}
+</div>
+{% endblock %}
+
+    {% block progress %}{{scoredict.pct}}%{% endblock %}
+    {% block question %}{{scoredict.totalqts}}{% endblock %}
+    {% block pvalue %}{{ scoredict.pct }}{% endblock %}
+
+{% block content %}
+    {{ answer.que }}
+    <br><br>
+    {% for i in range(5) %}
+    <input type="text" class="mf3" name="quo" maxlength="2" size="2" required>
+    <img src="{{ url_for('static', filename='images/tick.png') }}" width="32px" height="22px" class="correct">
+    <img src="{{ url_for('static', filename='images/cross.jpg') }}" width="32px" height="22px" class="wrong">
+    <br><br>
+    {% endfor %}
+{% endblock %}  
+
+
+{% block scriptend %} 
+var x = document.getElementsByClassName("correct");
+var y = document.getElementsByClassName("wrong");
+var feedcount = 0;
+var box = document.querySelectorAll(".mf3");
+
+box.forEach((key,value)=>{
+    key.onkeyup = function() {check(value)};
+    console.log("key : "+key);
+});
+
+function check(n){
+    console.log(box[n].value)
+    if(box[n].value == {{ answer.ans[n] }})
+    {
+        console.log({{answer.ans[n] }})
+       $(x[n]).show();
+       $(y[n]).hide();
+    }
+     else
+     {
+        console.log("feedcount "+feedcount);
+        feedcount++;
+        $(x[n]).hide();
+        $(y[n]).show();
+        box[n].value = "";
+        swal(
+        {
+          title: "Oops, Looks like you divided wrong ",
+          text: "for example, if you divide 9/4 then quotient is 2 and remainder is 9-(4*2) = 1",
+          icon: "error",
+          button: true,
+          dangerMode: true,
+        }
+       )
+        .then((willDelete) => {
+          if (willDelete) {
+            swal("Now, try again", {
+
+              icon: "success",
+            });
+          }
+        });
+     }
+}
+<!-- box.forEach(function(value, index){
+    value.onkeyup = check(index);
+    console.log("value : "+ value);
+    console.log("index : "+index);
+    console.log("vi : "+arr[index]);
+}); -->
+
+{% endblock %}

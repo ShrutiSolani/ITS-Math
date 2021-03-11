@@ -32,7 +32,7 @@ def login():
 @app.route("/mixed-fraction1", methods=['POST'])
 def q1():
     if request.method == 'POST':
-        global qtscnt,scorecnt
+        global qtscnt1,scorecnt1
         num = random.randint(1, 100)
         den = random.randint(1, 25)
         while num < den:
@@ -41,14 +41,15 @@ def q1():
         quo = num // den
         rem = num % den
         box_ans = [quo, rem, quo, rem, den]
-        answer = {'que': que, 'b0': box_ans[0], 'b1': box_ans[1], 'b2': box_ans[2], 'b3': box_ans[3], 'b4': box_ans[4]}
+        answer = {'que':que,'ans':box_ans}
+        # answer = {'que': que, 'b0': box_ans[0], 'b1': box_ans[1], 'b2': box_ans[2], 'b3': box_ans[3], 'b4': box_ans[4]}
         hint1 = 'Try dividing numerator by denominator'
         hint2 = 'After dividing N/D, quotient =' + str(quo) + ' remainder = ' + str(rem)
         hint3 = 'Mixed Fraction Answer :' + str(quo) + " (" + str(rem) + "/" + str(den) + ")"
         hints = {'h1': hint1, 'h2': hint2, 'h3': hint3}
-        total = qtscnt * 25
-        scoredict = {'score': scorecnt, 'total': total, 'totalqts': qtscnt, 'pct': 0}
-        return render_template('display copy.html', answer=answer, hints=hints, scoredict=scoredict)
+        total = qtscnt1 * 25
+        scoredict = {'score': scorecnt1, 'total': total, 'totalqts': qtscnt1, 'pct': 0}
+        return render_template('short_display.html', answer=answer, hints=hints, scoredict=scoredict)
     else:
         return render_template('login.html')
 
@@ -66,24 +67,27 @@ def question():
     quo = num // den
     rem = num % den
     box_ans = [quo, rem, quo, rem, den]
-    answer = {'que': que, 'b0': box_ans[0], 'b1': box_ans[1], 'b2': box_ans[2], 'b3': box_ans[3], 'b4': box_ans[4]}
+    answer = {'que':que, 'ans':box_ans}
+    # answer = {'que': que, 'b0': box_ans[0], 'b1': box_ans[1], 'b2': box_ans[2], 'b3': box_ans[3], 'b4': box_ans[4]}
     hint1 = 'Try dividing numerator by denominator'
     hint2 = 'After dividing N/D, quotient =' + str(quo) + ' remainder = ' + str(rem)
     hint3 = 'Mixed Fraction Answer :' + str(quo) + " (" + str(rem) + "/" + str(den) + ")"
     hints = {'h1': hint1, 'h2': hint2, 'h3': hint3}
     total = qtscnt1 * 25
     try:
-        tcp = (scorecnt1/total)*100
+        tcp = round((scorecnt1/total)*100, 2)
+        print(tcp)
     except:
         tcp = 0
     scoredict = {'score': scorecnt1, 'total': total, 'totalqts': qtscnt1, 'tcp': tcp}
-    return render_template('display copy.html', answer=answer, hints=hints, scoredict=scoredict)
+    return render_template('short_display.html', answer=answer, hints=hints, scoredict=scoredict)
 
 
 @app.route('/score/<tid>/<counter>/<feedback>', methods=['POST'])
 def score(counter, feedback, tid):
     if request.method == 'POST':
-        if tid == '1':
+        print('tid : ',tid)
+        if tid == 1:
             global scorecnt1, qtscnt1
             marks = 25-(int(counter)*5) - (int(feedback)*2)
             scorecnt1 += marks
@@ -134,9 +138,10 @@ def compare():
     den1=random.randint(1,100)
     num2 = random.randint(1, 100)
     den2 = random.randint(1, 100)
-    f1=(fraction(num1,den1))
-    f2=(fraction(num2, den2))
-    que={'f1':f1,'f2':f2}
+    f1= Fraction(num1,den1)
+    f2= Fraction(num2,den2)
+
+    # que={'f1':f1,'f2':f2}
     def LCM(a,b):
         lcm=0
         if(a>b):
@@ -145,29 +150,38 @@ def compare():
             greater = b
         while(True):
             if(greater%a==0 and greater%b==0):
-                lcm=geater
+                lcm = greater
                 break
-            greater=greater+1
+            greater = greater+1
         return lcm
-    print("Compare "+f1+" and "+f2+" . ")
+    que = "Compare "+str(f1)+" and "+str(f2)+" . "
     lcm=LCM(den1,den2)
     eqfrac1=lcm//den1
     eqfrac2=lcm//den2
     fract1=Fraction(num1*eqfrac1,den1*eqfrac1)
     fract2=Fraction(num2*eqfrac2,den2*eqfrac2)
     if(fract1>fract2):
-        ans=(fract1)
+        ans='>'
+    elif fract2>fract1:
+        ans='<'
     else:
-        ans=print(fract2)
-    answer={'que':que,'lcm':lcm,'eqfrac1':eqfrac1,'eqfrac2':eqfrac2,'ans':ans}
+        ans='='
+    answer={'que':que,'lcm':lcm,'eqfrac1':eqfrac1,'eqfrac2':eqfrac2,'ans':ans, 'f1':f1, 'f2':f2}
     h1="LCM of both denominators if Fraction are unlike."
     h2="EXAMPLE : LCM of 5 and 6 is 30."
     h3="Equivalent Fraction of : 4/5 => 24/30 and 5/6 => 25/30."
     h4=" 4/5 < 5/6."
     hints={'h1':h1,'h2':h2,'h3':h3,'h4':h4}
+    total = qtscnt1 * 25
+    try:
+        tcp = round((scorecnt1/total)*100, 2)
+        print(tcp)
+    except:
+        tcp = 0
+    scoredict = {'score': scorecnt1, 'total': total, 'totalqts': qtscnt1, 'tcp': tcp}
     print(hints)
     print(ans)
-    return render_template('compare.html', answer=answer, hints=hints)
+    return render_template('fracompare.html', answer=answer, hints=hints, scoredict= scoredict)
 
 
 
@@ -226,25 +240,21 @@ def vertical_sub():
             sign_1.append('+')
     sign_2=[]
     for j in coeff[4:7]:
-        if(i<0):
+        if(j<0):
             sign_2.append("")
         else:
             sign_2.append('+')
     haddque = 'Sub Vertically ' + str(coeff[0])+rx+str(sign_1[0])+str(coeff[1])+ry+str(sign_1[1])+str(coeff[2])+rz+' , '+str(coeff[3])+rx+str(sign_2[0])+str(coeff[4])+ry+str(sign_2[1])+str(coeff[5])+rz+' . '
     print(haddque)
-    x_like = coeff[0:5:3]
-    x_sum = sum(x_like)
-    y_like = coeff[1:6:3]
-    y_sum = sum(y_like)
-    z_like = coeff[2:6:3]
-    z_sum = sum(z_like)
-    answer = {'que': haddque, 'varx': rx, 'vary': ry,'varz':rz,'coeff': coeff, 'x_like': x_like, 'y_like': y_like,'z_like':z_like,
-              'x_sum': x_sum, 'y_sum': y_sum,'z_sum':z_sum}
+    x_diff = coeff[0] - coeff[3]
+    y_diff = coeff[1] - coeff[4]
+    z_diff = coeff[2] - coeff[5]
+    answer = {'que': haddque, 'varx': rx, 'vary': ry,'varz':rz,'coeff': coeff,'x_diff': x_diff, 'y_diff': y_diff,'z_diff':z_diff}
     h1 = 'Rearrange into like terms (coefficients with same variable and power)'
     h2 = 'Add coefficientts of like terms'
-    h3 = 'Solution : ' + str(x_sum) + rx + '+' + str(y_sum) + ry + ' + ' + str(z_sum) + rz + '.'
+    h3 = 'Solution : ' + str(x_diff) + rx + '+' + str(y_diff) + ry + ' + ' + str(z_diff) + rz + '.'
     hints={'h1':h1,'h2':h2,'h3':h3}
-    print(x_sum,y_sum,z_sum)
+    # print(x_sum,y_sum,z_sum)
     print(hints)
 
     global qtscnt2, scorecnt2
@@ -254,7 +264,7 @@ def vertical_sub():
     except:
         pct = 0
     scoredict = {'score': scorecnt2, 'total': total, 'totalqts': qtscnt2, 'pct': pct}
-    return render_template('algebra_add.html', answer=answer, hints=hints)
+    return render_template('vertical_sub.html', answer=answer, hints=hints, scoredict=scoredict)
 
 
 app.secret_key = 'super secret key'
