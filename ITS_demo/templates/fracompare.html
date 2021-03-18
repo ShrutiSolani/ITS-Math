@@ -42,7 +42,7 @@ function check0()
 
 function check1()
 {
-	if(document.getElementsByTagName("input")[1].value == {{ answer.b1 }})
+	if(document.getElementsByTagName("input")[1].value == {{ answer.num1 }})
 	{
 	    $(x[1]).show();
 	    $(y[1]).hide();
@@ -72,7 +72,7 @@ function check1()
 
 function check2()
 {
-	if(document.getElementsByTagName("input")[3].value == {{ answer.lcm }})
+	if(document.getElementsByTagName("input")[3].value == {{ answer.den1 }})
 	{
 	   $(x[3]).show();
 	   $(y[3]).hide();
@@ -102,7 +102,7 @@ function check2()
 
 function check3()
 {
-	if(document.getElementsByTagName("input")[2].value == {{ answer.eqfrac1 }})
+	if(document.getElementsByTagName("input")[2].value == {{ answer.num2 }})
 	{
          $(x[2]).show();
 	     $(y[2]).hide();
@@ -132,7 +132,7 @@ function check3()
 
 function check4()
 {
-	if(document.getElementsByTagName("input")[4].value == {{ answer.eqfrac2 }})
+	if(document.getElementsByTagName("input")[4].value == {{ answer.den2 }})
 	{
         $(x[4]).show();
 	    $(y[4]).hide();
@@ -275,30 +275,30 @@ for (i = 0; i < close.length; i++) {
     <br><br>
 
     <label for="quo">LCM:</label>
-    <input type="text" id="quo" name="quo" maxlength="2" size="2" onkeyup="check0();" required>
+    <input type="text" id="quo" name="quo" maxlength="8" size="2" onkeyup="check0();" required>
     <img src="{{ url_for('static', filename='images/tick.png') }}" width="32px" height="22px" class="correct">
     <img src="{{ url_for('static', filename='images/cross.jpg') }}" width="32px" height="22px" class="wrong">
     <br><br>
 
     <label for="rem">Equivalent fraction of {{ answer.f1 }}</label>
-    <input type="text" id="rem" name="rem" maxlength="2" size="2" onkeyup="check1();" required>
+    <input type="text" id="rem" name="rem" maxlength="8" size="2" onkeyup="check1();" required>
     <br>----<br>
-    <input type="text" id="rem" name="rem" maxlength="2" size="2" onkeyup="check2();" required>
+    <input type="text" id="rem" name="rem" maxlength="8" size="2" onkeyup="check2();" required>
     <img src="{{ url_for('static', filename='images/tick.png') }}" width="32px" height="22px" class="correct">
     <img src="{{ url_for('static', filename='images/cross.jpg') }}" width="32px" height="22px" class="wrong">
     <br><br>
 
     <label for="rem">Equivalent fraction of {{ answer.f2 }}</label>
-    <input type="text" id="rem" name="rem" maxlength="2" size="2" onkeyup="check3();" required>
+    <input type="text" id="rem" name="rem" maxlength="8" size="2" onkeyup="check3();" required>
     <br>----<br>
-    <input type="text" id="rem" name="rem" maxlength="2" size="2" onkeyup="check4();" required>
+    <input type="text" id="rem" name="rem" maxlength="8" size="2" onkeyup="check4();" required>
     <img src="{{ url_for('static', filename='images/tick.png') }}" width="32px" height="22px" class="correct">
     <img src="{{ url_for('static', filename='images/cross.jpg') }}" width="32px" height="22px" class="wrong">
     <br><br>
 
     <label for="quo">Solution : </label>
     {{ answer.f1 }}
-    <input type="text" id="quo" name="quo" maxlength="2" size="2" onkeyup="check5();" required>{{ answer.f2 }}
+    <input type="text" id="quo" name="quo" maxlength="8" size="2" onkeyup="check5();" required>{{ answer.f2 }}
     <img src="{{ url_for('static', filename='images/tick.png') }}" width="32px" height="22px" class="correct">
     <img src="{{ url_for('static', filename='images/cross.jpg') }}" width="32px" height="22px" class="wrong">
     <br><br>

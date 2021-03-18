@@ -158,15 +158,24 @@ def compare():
     lcm=LCM(den1,den2)
     eqfrac1=lcm//den1
     eqfrac2=lcm//den2
-    fract1=Fraction(num1*eqfrac1,den1*eqfrac1)
-    fract2=Fraction(num2*eqfrac2,den2*eqfrac2)
+#    fract1=Fraction(num1*eqfrac1,den1*eqfrac1)
+ #   fract2=Fraction(num2*eqfrac2,den2*eqfrac2)
+    num1=num1*eqfrac1
+    den1=den1*eqfrac1
+    num2 = num2 * eqfrac2
+    den2 = den2 * eqfrac2
+    fract1=Fraction(num1,den1)
+    fract2=Fraction(num2,den2)
+    print(fract1,fract2)
     if(fract1>fract2):
         ans='>'
     elif fract2>fract1:
         ans='<'
     else:
         ans='='
-    answer={'que':que,'lcm':lcm,'eqfrac1':eqfrac1,'eqfrac2':eqfrac2,'ans':ans, 'f1':f1, 'f2':f2}
+    print(que)
+    print(eqfrac1,eqfrac2,fract1,fract2)
+    answer={'que':que,'lcm':lcm,'num1':num1,'den1':den1,'num2':num2,'den2':den2,'ans':ans}
     h1="LCM of both denominators if Fraction are unlike."
     h2="EXAMPLE : LCM of 5 and 6 is 30."
     h3="Equivalent Fraction of : 4/5 => 24/30 and 5/6 => 25/30."
