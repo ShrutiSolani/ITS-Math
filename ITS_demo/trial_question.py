@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, flash, redirect, url_for, session
-#from flask.ext.session import Session
+#from flask.ext.session imDortAnacsida
 from fractions import Fraction
 import random
 import os
@@ -158,21 +158,19 @@ def compare():
     lcm=LCM(den1,den2)
     eqfrac1=lcm//den1
     eqfrac2=lcm//den2
-#    fract1=Fraction(num1*eqfrac1,den1*eqfrac1)
- #   fract2=Fraction(num2*eqfrac2,den2*eqfrac2)
     num1=num1*eqfrac1
     den1=den1*eqfrac1
     num2 = num2 * eqfrac2
     den2 = den2 * eqfrac2
     fract1=Fraction(num1,den1)
     fract2=Fraction(num2,den2)
-    print(fract1,fract2)
+  
     if(fract1>fract2):
-        ans='>'
+        ans="1"
     elif fract2>fract1:
-        ans='<'
+        ans="2"
     else:
-        ans='='
+        ans="3"
     print(que)
     print(eqfrac1,eqfrac2,fract1,fract2)
     answer={'que':que,'lcm':lcm,'num1':num1,'den1':den1,'num2':num2,'den2':den2,'ans':ans}

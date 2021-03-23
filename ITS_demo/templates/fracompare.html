@@ -7,23 +7,23 @@ var x = document.getElementsByClassName("correct");
 var y = document.getElementsByClassName("wrong");
 var feedcount = 0;
 
-function check0()
+const check0=()=>
 {
-	if(document.getElementsByTagName("input")[0].value == {{ answer.lcm }})
+	if(document.getElementsByTagName("input")[0].value == {{ answer.lcm }} )
 	{
 	   $(x[0]).show();
        $(y[0]).hide();
     }
 	 else
 	 {
-	 feedcount++;
+	    feedcount++;
         $(x[0]).hide();
         $(y[0]).show();
 	    document.getElementsByTagName("input")[0].value = "";
 	    swal(
 	    {
-          title: "Oops, Looks like you divided wrong ",
-          text: "for example, if you divide 9/4 then quotient is 2 and remainder is 9-(4*2) = 1",
+          title: "Oops, Looks like you are not familiar with LCM ",
+          text: "for example,  LCM of 5 and 6 is 30.",
           icon: "error",
           button: true,
           dangerMode: true,
@@ -42,20 +42,20 @@ function check0()
 
 function check1()
 {
-	if(document.getElementsByTagName("input")[1].value == {{ answer.num1 }})
+	if(document.getElementsByTagName("input")[1].value == {{ answer.num1 }} )
 	{
 	    $(x[1]).show();
 	    $(y[1]).hide();
     }
 	 else
 	 {
-	 feedcount++;
+	    feedcount++;
 	    $(x[1]).hide();
         $(y[1]).show();
 	    document.getElementsByTagName("input")[1].value = "";
 	    swal({
-  title: "Oops, Looks like you divided wrong ",
-  text: "for example, if you divide 9/4 then quotient is 2 and remainder is 9-(4*2) = 1",
+  title: "Oops, Looks like you multiplied wrong ",
+  text: "To get numerator, multipliy it with multiplication factor i.e. lcm/denominator",
   icon: "error",
   button: true,
   dangerMode: true,
@@ -72,20 +72,20 @@ function check1()
 
 function check2()
 {
-	if(document.getElementsByTagName("input")[3].value == {{ answer.den1 }})
+	if(document.getElementsByTagName("input")[2].value == {{ answer.lcm }})
 	{
-	   $(x[3]).show();
-	   $(y[3]).hide();
+	   $(x[2]).show();
+	   $(y[2]).hide();
 	  }
 	else
 	{
-	feedcount++;
-	    $(x[3]).hide();
-        $(y[3]).show();
-        document.getElementsByTagName("input")[3].value = "";
+	    feedcount++;
+	    $(x[2]).hide();
+        $(y[2]).show();
+        document.getElementsByTagName("input")[2].value = "";
         swal({
-  title: "Oops, Looks like you are confused in the format",
-  text: "Whole number in mixed fraction is the quotient you got in the first step",
+  title: "Oops, Looks like you are confused",
+  text: "Denominator would be same as LCM",
   icon: "error",
   button: true,
   dangerMode: true,
@@ -102,20 +102,20 @@ function check2()
 
 function check3()
 {
-	if(document.getElementsByTagName("input")[2].value == {{ answer.num2 }})
+	if(document.getElementsByTagName("input")[3].value == {{ answer.num2 }})
 	{
-         $(x[2]).show();
-	     $(y[2]).hide();
+      $(x[2]).show();
+      $(y[2]).hide();
 	}
 	else
 	{
-	feedcount++;
+	    feedcount++;
 	    $(x[2]).hide();
-        $(y[2]).show();
-	    document.getElementsByTagName("input")[2].value = "";
+      $(y[2]).show();
+	    document.getElementsByTagName("input")[3].value = "";
 	    swal({
-  title: "Oops, Looks like you are confused in the format",
-  text: "In mixed fraction, numerator is remainder you got in first step",
+  title: "Oops, Looks like you multiplied wrong ",
+  text: "To get numerator, multipliy it with multiplication factor i.e. lcm/denominator",
   icon: "error",
   button: true,
   dangerMode: true,
@@ -132,20 +132,20 @@ function check3()
 
 function check4()
 {
-	if(document.getElementsByTagName("input")[4].value == {{ answer.den2 }})
+	if(document.getElementsByTagName("input")[4].value == {{ answer.lcm }})
 	{
-        $(x[4]).show();
-	    $(y[4]).hide();
+        $(x[2]).show();
+	    $(y[2]).hide();
 	}
 	else
 	{
 	    feedcount++;
-	    $(x[4]).hide();
-        $(y[4]).show();
+	    $(x[2]).hide();
+        $(y[2]).show();
 	    document.getElementsByTagName("input")[4].value = "";
 	    swal({
-  title: "Oops, Looks like you are confused in the format",
-  text: "Denominator in mixed fraction is same as denominator of fraction ",
+  title: "Oops, Looks like you are confused",
+  text: "Denominator is same as LCM",
   icon: "error",
   button: true,
   dangerMode: true,
@@ -162,16 +162,17 @@ function check4()
 
 function check5()
 {
-	if(document.getElementsByTagName("input")[5].value == {{ answer.ans}})
+	if(document.getElementsByTagName("input")[5].value == {{ answer.ans }})
 	{
-        $(x[5]).show();
-	    $(y[5]).hide();
+    
+        $(x[3]).show();
+	    $(y[3]).hide();
 	}
 	else
 	{
 	    feedcount++;
-	    $(x[5]).hide();
-        $(y[5]).show();
+	    $(x[3]).hide();
+        $(y[3]).show();
 	    document.getElementsByTagName("input")[5].value = "";
 	    swal({
   title: "Oops, Looks like you are confused in the format",
@@ -188,6 +189,29 @@ function check5()
   }
 });
 	}
+}
+function right1(){
+    document.getElementsByClassName("ryt1")[0].style.display="inline";
+    document.getElementsByClassName("ryt1")[1].style.display="inline";
+    document.getElementById("btn1").innerHTML="Find Equivalent";
+    document.getElementById("btn2").innerHTML="Simplest Form";
+    document.getElementById("btn3").innerHTML="Compare Denominators";
+    document.getElementById("btn4").innerHTML="Compare Numerators";
+}
+function right2(){
+    if(document.getElementById("btn1").innerHTML==="Find Equivalent"){
+        document.getElementsByClassName("ryt2")[0].style.display="inline";
+        document.getElementsByClassName("ryt2")[1].style.display="block";
+        document.getElementsByClassName("ryt2")[2].style.display="block";
+        document.getElementsByClassName("ryt2")[3].style.display="block";
+        document.getElementsByClassName("ryt2")[4].style.display="inline";
+        document.getElementsByClassName("ryt2")[5].style.display="block";
+        document.getElementsByClassName("ryt2")[6].style.display="block";
+        document.getElementsByClassName("ryt2")[7].style.display="block";
+    }
+else{
+ alert("Wrong Option");
+}
 }
 
 window.onload = function() {
@@ -273,33 +297,40 @@ for (i = 0; i < close.length; i++) {
 {% block content %}
     {{ answer.que }}
     <br><br>
+     <div class="btn-group btn-group-vertical" role="group" aria-label="Basic example" style="float:right; margin-right:120px;">
+          <button type="button" class="btn btn-primary" style="margin-bottom:30px;" id="btn1" onclick="right2();">HCF</button>
+          <button type="button" class="btn btn-secondary" style="margin-bottom:30px;" id="btn2">Average</button>
+          <button type="button" class="btn btn-secondary" style="margin-bottom:30px;" onclick="right1();" id="btn3">LCM</button>
+        <button type="button" class="btn btn-secondary" style="margin-bottom:30px;" id="btn4">Multiply</button>
+</div>
 
-    <label for="quo">LCM:</label>
-    <input type="text" id="quo" name="quo" maxlength="8" size="2" onkeyup="check0();" required>
+    <label for="quo1" style="display:none;" class="ryt1">LCM:</label>
+    <input type="text" id="quo1" name="quo" maxlength="8" size="2" onblur="check0();" class="ryt1" style="display:none;">
     <img src="{{ url_for('static', filename='images/tick.png') }}" width="32px" height="22px" class="correct">
     <img src="{{ url_for('static', filename='images/cross.jpg') }}" width="32px" height="22px" class="wrong">
     <br><br>
 
-    <label for="rem">Equivalent fraction of {{ answer.f1 }}</label>
-    <input type="text" id="rem" name="rem" maxlength="8" size="2" onkeyup="check1();" required>
-    <br>----<br>
-    <input type="text" id="rem" name="rem" maxlength="8" size="2" onkeyup="check2();" required>
+    <label for="rem1" class="ryt2" style="display:none;">Equivalent fraction of {{ answer.f1 }}</label>
+    <input type="text" class="ryt2" id="rem1" name="rem" maxlength="8" size="2" onblur="check1();" style="display:none;">
+    <h5 style="display:none;" class="ryt2">---------------</h5>
+    <input type="text" class="ryt2" id="rem2" name="rem" maxlength="8" size="2" onblur="check2();" style="display:none;">
+    <img src="{{ url_for('static', filename='images/tick.png') }}" width="32px" height="22px" class="correct" >
+    <img src="{{ url_for('static', filename='images/cross.jpg') }}" width="32px" height="22px" class="wrong">
+    <br>
+
+    <label for="rem3" class="ryt2" style="display:none;">Equivalent fraction of {{ answer.f2 }}</label>
+    <input type="text" id="rem3" name="rem" maxlength="8" size="2" onblur="check3();" class="ryt2" style="display:none;">
+    <h5 style="display:none;" class="ryt2">---------------</h5>
+    <input type="text" id="rem4" name="rem" maxlength="8" size="2" onblur="check4();" class="ryt2" style="display:none;">
     <img src="{{ url_for('static', filename='images/tick.png') }}" width="32px" height="22px" class="correct">
     <img src="{{ url_for('static', filename='images/cross.jpg') }}" width="32px" height="22px" class="wrong">
-    <br><br>
+    <br>
 
-    <label for="rem">Equivalent fraction of {{ answer.f2 }}</label>
-    <input type="text" id="rem" name="rem" maxlength="8" size="2" onkeyup="check3();" required>
-    <br>----<br>
-    <input type="text" id="rem" name="rem" maxlength="8" size="2" onkeyup="check4();" required>
-    <img src="{{ url_for('static', filename='images/tick.png') }}" width="32px" height="22px" class="correct">
-    <img src="{{ url_for('static', filename='images/cross.jpg') }}" width="32px" height="22px" class="wrong">
-    <br><br>
-
-    <label for="quo">Solution : </label>
+    <label for="quo2">Solution : </label>
     {{ answer.f1 }}
-    <input type="text" id="quo" name="quo" maxlength="8" size="2" onkeyup="check5();" required>{{ answer.f2 }}
+    <input type="text" id="quo2" name="quo" maxlength="8" size="2" onblur="check5();">{{ answer.f2 }}
     <img src="{{ url_for('static', filename='images/tick.png') }}" width="32px" height="22px" class="correct">
     <img src="{{ url_for('static', filename='images/cross.jpg') }}" width="32px" height="22px" class="wrong">
     <br><br>
+
 {% endblock %}
