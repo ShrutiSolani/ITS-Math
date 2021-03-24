@@ -281,6 +281,7 @@ def simplest_form():
     simple = Fraction(num, den)
     answer = {'que': que, 'num_ans': simple.numerator, 'den_ans': simple.denominator}
     print(answer)
+    return render_template('simplest_form.html', answer=answer, hints=hints, scoredict=scoredict)
 
 #simplest_form()
 
@@ -292,9 +293,24 @@ def mixed_to_normal():
     whole = random.randint(2,20)
     que = "Convert "+str(whole)+" "+str(num)+"/"+str(den)+" to normal form and find simplest form"
     num_ans = (den*whole)+num
-    frac = Fraction(num_ans,den)
-    answer = {'que':que, 'num_ans':frac.numerator, 'den_ans':frac.denominator}
+    den_ans=den
+    whole_ans=whole
+    num1=num
+    frac = Fraction(num_ans,den_ans)
+    answer = {'que':que, 'num_ans':num_ans, 'den_ans':den_ans,'whole_ans':whole_ans,'num1':num1}
     print(answer)
+    h1 = 'Rearrange into like terms (coefficients with same variable and power)'
+    h2 = 'Add coefficientts of like terms'
+    h3 = 'Solution : ' + str(num_ans)+ '/' + str(den)
+    hints = {'h1': h1, 'h2': h2, 'h3': h3}
+    global qtscnt2, scorecnt2
+    total = qtscnt2 * 25
+    try:
+        pct = round((scorecnt2 / total) * 100, 2)
+    except:
+        pct = 0
+    scoredict = {'score': scorecnt2, 'total': total, 'totalqts': qtscnt2, 'pct': pct}
+    return render_template('normal-form.html', answer=answer, hints=hints, scoredict=scoredict)
 
 #mixed_to_normal()
 
