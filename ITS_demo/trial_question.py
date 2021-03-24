@@ -135,9 +135,9 @@ def score(counter, feedback, tid):
 @app.route("/compare")
 def compare():
     num1=random.randint(1,100)
-    den1=random.randint(1,100)
+    den1=random.randint(2,100)
     num2 = random.randint(1, 100)
-    den2 = random.randint(1, 100)
+    den2 = random.randint(2, 100)
     f1= Fraction(num1,den1)
     f2= Fraction(num2,den2)
 
@@ -176,7 +176,7 @@ def compare():
     answer={'que':que,'lcm':lcm,'num1':num1,'den1':den1,'num2':num2,'den2':den2,'ans':ans}
     h1="LCM of both denominators if Fraction are unlike."
     h2="EXAMPLE : LCM of 5 and 6 is 30."
-    h3="Equivalent Fraction of : 4/5 => 24/30 and 5/6 => 25/30."
+    h3="Equivalent Fraction of :",str(f1)," => ",num1,"/",den1," and ",str(f2)," => ",num2,"/",den2
     h4=" 4/5 < 5/6."
     hints={'h1':h1,'h2':h2,'h3':h3,'h4':h4}
     total = qtscnt1 * 25
@@ -197,7 +197,7 @@ def horizontal_add():
     coeff = random.sample(range(-50,50),6) #6 coefficient
     varx = ['x','x\u00b2','x\u00b3'] #x3
     vary = ['y','y\u00b2','y\u00b3'] #y2
-    varz = ['z','z2','y3'] #z
+    #svarz = ['z','z2','y3'] #z
     rx = random.choice(varx)
     ry = random.choice(vary)
     #rz = random.choice(varz)
@@ -273,6 +273,30 @@ def vertical_sub():
     scoredict = {'score': scorecnt2, 'total': total, 'totalqts': qtscnt2, 'pct': pct}
     return render_template('vertical_sub.html', answer=answer, hints=hints, scoredict=scoredict)
 
+@app.route('/simplest-form')
+def simplest_form():
+    num = random.randint(1,50)
+    den = random.randint(2,50)
+    que = "Find simplest form of fraction "+ str(num)+"/"+ str(den)
+    simple = Fraction(num, den)
+    answer = {'que': que, 'num_ans': simple.numerator, 'den_ans': simple.denominator}
+    print(answer)
+
+#simplest_form()
+
+#mixed to normal form
+@app.route('/normal-form')
+def mixed_to_normal():
+    num = random.randint(1,50)
+    den = random.randint(2,50)
+    whole = random.randint(2,20)
+    que = "Convert "+str(whole)+" "+str(num)+"/"+str(den)+" to normal form and find simplest form"
+    num_ans = (den*whole)+num
+    frac = Fraction(num_ans,den)
+    answer = {'que':que, 'num_ans':frac.numerator, 'den_ans':frac.denominator}
+    print(answer)
+
+#mixed_to_normal()
 
 app.secret_key = 'super secret key'
 app.run(debug=True)
