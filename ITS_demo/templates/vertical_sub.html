@@ -233,7 +233,7 @@ window.onload = function() {
   }
 {% endblock %}
 
-        {% block message %}
+{% block message %}
 <div>
 {% with messages = get_flashed_messages(with_categories=true) %}
   {% if messages %}

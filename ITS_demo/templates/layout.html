@@ -197,7 +197,9 @@ progress::-webkit-progress-bar {
 {% block style %}{% endblock %}
 	</style>
 </head>
-<script type="text/javascript">{% block script %}{% endblock %}</script>
+<script type="text/javascript"> 
+{% block script %}{% endblock %}
+</script>
 
 <body>
 	<nav class="n1">
@@ -252,11 +254,11 @@ progress::-webkit-progress-bar {
 			document.getElementById("d3").style.width="0px";
 			document.getElementById("p1").style.paddingLeft="0%";
 		}
-		function openSlideMenu()
-{
-    document.getElementById('menu').style.width = '250px';
-    document.getElementById('content').style.marginLeft = '250px';
-}
+<!--		function openSlideMenu()-->
+<!--		{-->
+<!--    		document.getElementById('menu').style.width = '250px';-->
+<!--    		document.getElementById('content').style.marginLeft = '250px';-->
+<!--		}-->
 
 function closeSlideMenu()
 {
@@ -264,24 +266,18 @@ function closeSlideMenu()
     document.getElementById('content').style.marginLeft = '0px';
 }
 
-var close = document.getElementsByClassName("closebtn");
-var i;
+<!--var close = document.getElementsByClassName("closebtn");-->
+<!--var i;-->
 
-for (i = 0; i < close.length; i++) {
-  close[i].onclick = function(){
-    var div = this.parentElement;
-    div.style.opacity = "0";
-    setTimeout(time,100);
-    function time(){
-     var s=document.getElementById("scre");
-     alert("Bhavya");
-     s.style.display="none";
-    }
-  }
-}
+<!--for (i = 0; i < close.length; i++) {-->
+<!--  close[i].onclick = function(){-->
+<!--    var div = this.parentElement;-->
+<!--    div.style.opacity = "0";-->
+<!--  }-->
+<!--}-->
 
 
 	</script>
-	<script>{% block script_end %} {% endblock %} </script>
+	<!-- <script>{% block script_end %} {% endblock %} </script> -->
 </body>
 </html>
