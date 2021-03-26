@@ -174,6 +174,7 @@ def compare():
     print(que)
     print(eqfrac1,eqfrac2,fract1,fract2)
     answer={'que':que,'lcm':lcm,'num1':num1,'den1':den1,'num2':num2,'den2':den2,'ans':ans , 'f1':f1,'f2':f2}
+    print(answer)
     h1="LCM of both denominators if Fraction are unlike."
     h2="EXAMPLE : LCM of 5 and 6 is 30."
     h3="Equivalent Fraction of :",str(f1)," => ",num1,"/",den1," and ",str(f2)," => ",num2,"/",den2
@@ -281,7 +282,7 @@ def simplest_form():
     simple = Fraction(num, den)
     answer = {'que': que, 'num_ans': simple.numerator, 'den_ans': simple.denominator}
     print(answer)
-    scoredict=0
+    scoredict={}
     hints={}
     return render_template('simplestForm.html',answer=answer,hints=hints,scoredict=scoredict)
 
