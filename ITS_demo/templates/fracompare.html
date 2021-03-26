@@ -72,7 +72,7 @@ function check1()
 
 function check2()
 {
-	if(document.getElementsByTagName("input")[2].value == {{ answer.lcm }})
+	if(document.getElementsByTagName("input")[2].value == {{ answer.den1 }})
 	{
 	   $(x[2]).show();
 	   $(y[2]).hide();
@@ -104,14 +104,14 @@ function check3()
 {
 	if(document.getElementsByTagName("input")[3].value == {{ answer.num2 }})
 	{
-      $(x[2]).show();
-      $(y[2]).hide();
+      $(x[3]).show();
+      $(y[3]).hide();
 	}
 	else
 	{
 	    feedcount++;
-	    $(x[2]).hide();
-      $(y[2]).show();
+	    $(x[3]).hide();
+      $(y[3]).show();
 	    document.getElementsByTagName("input")[3].value = "";
 	    swal({
   title: "Oops, Looks like you multiplied wrong ",
@@ -132,16 +132,16 @@ function check3()
 
 function check4()
 {
-	if(document.getElementsByTagName("input")[4].value == {{ answer.lcm }})
+	if(document.getElementsByTagName("input")[4].value == {{ answer.den2 }})
 	{
-        $(x[2]).show();
-	    $(y[2]).hide();
+        $(x[4]).show();
+	    $(y[4]).hide();
 	}
 	else
 	{
 	    feedcount++;
-	    $(x[2]).hide();
-        $(y[2]).show();
+	    $(x[4]).hide();
+        $(y[4]).show();
 	    document.getElementsByTagName("input")[4].value = "";
 	    swal({
   title: "Oops, Looks like you are confused",
@@ -165,14 +165,14 @@ function check5()
 	if(document.getElementsByTagName("input")[5].value == {{ answer.ans }})
 	{
     
-        $(x[3]).show();
-	    $(y[3]).hide();
+        $(x[5]).show();
+	    $(y[5]).hide();
 	}
 	else
 	{
 	    feedcount++;
-	    $(x[3]).hide();
-        $(y[3]).show();
+	    $(x[5]).hide();
+        $(y[5]).show();
 	    document.getElementsByTagName("input")[5].value = "";
 	    swal({
   title: "Oops, Looks like you are confused in the format",
@@ -200,12 +200,12 @@ function right1(){
 }
 function right2(){
     if(document.getElementById("btn1").innerHTML==="Find Equivalent"){
-        document.getElementsByClassName("ryt2")[0].style.display="inline";
-        document.getElementsByClassName("ryt2")[1].style.display="block";
+        document.getElementsByClassName("ryt2")[0].style.display="block";
+        document.getElementsByClassName("ryt2")[1].style.display="inline";
         document.getElementsByClassName("ryt2")[2].style.display="block";
         document.getElementsByClassName("ryt2")[3].style.display="block";
-        document.getElementsByClassName("ryt2")[4].style.display="inline";
-        document.getElementsByClassName("ryt2")[5].style.display="block";
+        document.getElementsByClassName("ryt2")[4].style.display="block";
+        document.getElementsByClassName("ryt2")[5].style.display="inline";
         document.getElementsByClassName("ryt2")[6].style.display="block";
         document.getElementsByClassName("ryt2")[7].style.display="block";
     }
@@ -313,6 +313,8 @@ for (i = 0; i < close.length; i++) {
 
     <label for="rem1" class="ryt2" style="display:none;">Equivalent fraction of {{ answer.f1 }}</label>
     <input type="text" class="ryt2" id="rem1" name="rem" maxlength="8" size="2" onblur="check1();" style="display:none;">
+    <img src="{{ url_for('static', filename='images/tick.png') }}" width="32px" height="22px" class="correct" >
+    <img src="{{ url_for('static', filename='images/cross.jpg') }}" width="32px" height="22px" class="wrong">
     <h5 style="display:none;" class="ryt2">---------------</h5>
     <input type="text" class="ryt2" id="rem2" name="rem" maxlength="8" size="2" onblur="check2();" style="display:none;">
     <img src="{{ url_for('static', filename='images/tick.png') }}" width="32px" height="22px" class="correct" >
@@ -321,7 +323,10 @@ for (i = 0; i < close.length; i++) {
 
     <label for="rem3" class="ryt2" style="display:none;">Equivalent fraction of {{ answer.f2 }}</label>
     <input type="text" id="rem3" name="rem" maxlength="8" size="2" onblur="check3();" class="ryt2" style="display:none;">
+<img src="{{ url_for('static', filename='images/tick.png') }}" width="32px" height="22px" class="correct" >
+    <img src="{{ url_for('static', filename='images/cross.jpg') }}" width="32px" height="22px" class="wrong">
     <h5 style="display:none;" class="ryt2">---------------</h5>
+
     <input type="text" id="rem4" name="rem" maxlength="8" size="2" onblur="check4();" class="ryt2" style="display:none;">
     <img src="{{ url_for('static', filename='images/tick.png') }}" width="32px" height="22px" class="correct">
     <img src="{{ url_for('static', filename='images/cross.jpg') }}" width="32px" height="22px" class="wrong">

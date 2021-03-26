@@ -18,17 +18,17 @@ qtscnt1=0     #fraction
 scorecnt1=0   #fraction
 qtscnt2 = 0   #algebra
 scorecnt2 = 0 #algebra
-
+##########################################3
 @app.route("/")
 def index():
     return render_template('index.html')
 
-
+###########################################
 @app.route("/login")
 def login():
     return render_template('login.html')
 
-
+##############################################
 @app.route("/mixed-fraction1", methods=['POST'])
 def q1():
     if request.method == 'POST':
@@ -53,7 +53,7 @@ def q1():
     else:
         return render_template('login.html')
 
-
+#################################################33
 @app.route("/mixed-fraction")
 def question():
     global qtscnt1, scorecnt1
@@ -82,7 +82,7 @@ def question():
     scoredict = {'score': scorecnt1, 'total': total, 'totalqts': qtscnt1, 'tcp': tcp}
     return render_template('short_display.html', answer=answer, hints=hints, scoredict=scoredict)
 
-
+#################################################################
 @app.route('/score/<tid>/<counter>/<feedback>', methods=['POST'])
 def score(counter, feedback, tid):
     if request.method == 'POST':
@@ -173,7 +173,7 @@ def compare():
         ans="3"
     print(que)
     print(eqfrac1,eqfrac2,fract1,fract2)
-    answer={'que':que,'lcm':lcm,'num1':num1,'den1':den1,'num2':num2,'den2':den2,'ans':ans}
+    answer={'que':que,'lcm':lcm,'num1':num1,'den1':den1,'num2':num2,'den2':den2,'ans':ans , 'f1':f1,'f2':f2}
     h1="LCM of both denominators if Fraction are unlike."
     h2="EXAMPLE : LCM of 5 and 6 is 30."
     h3="Equivalent Fraction of :",str(f1)," => ",num1,"/",den1," and ",str(f2)," => ",num2,"/",den2
@@ -191,7 +191,7 @@ def compare():
     return render_template('fracompare.html', answer=answer, hints=hints, scoredict= scoredict)
 
 
-
+############################################
 @app.route("/algebra-add")
 def horizontal_add():
     coeff = random.sample(range(-50,50),6) #6 coefficient
@@ -281,7 +281,12 @@ def simplest_form():
     simple = Fraction(num, den)
     answer = {'que': que, 'num_ans': simple.numerator, 'den_ans': simple.denominator}
     print(answer)
+    scoredict=0
+    hints={}
+    return render_template('simplestForm.html',answer=answer,hints=hints,scoredict=scoredict)
+
     return render_template('simplest_form.html', answer=answer, hints=hints, scoredict=scoredict)
+
 
 #simplest_form()
 
@@ -293,6 +298,12 @@ def mixed_to_normal():
     whole = random.randint(2,20)
     que = "Convert "+str(whole)+" "+str(num)+"/"+str(den)+" to normal form and find simplest form"
     num_ans = (den*whole)+num
+    frac = Fraction(num_ans,den)
+    answer = {'que':que, 'num_ans':frac.numerator, 'den_ans':frac.denominator,'den':den,'num':num_ans}
+    print(answer)
+    scoredict = 0
+    hints = {}
+    return render_template('normalForm.html', answer=answer, hints=hints, scoredict=scoredict)
     den_ans=den
     whole_ans=whole
     num1=num
