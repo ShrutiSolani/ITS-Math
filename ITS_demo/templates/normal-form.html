@@ -1,5 +1,20 @@
 {% extends "layout.html" %}
 {% block title %}Q1{% endblock %}
+<!--    {% block style %}-->
+<!--        .quo {-->
+<!--        display: inline;-->
+<!--        width: 6%;-->
+<!--        height: calc(1.5em + .75rem + -6px);-->
+<!--      }-->
+
+<!--      #error {-->
+<!--            border:2pt solid red;-->
+<!--        }-->
+
+<!--      #right {-->
+<!--        border:2pt solid green-->
+<!--      }-->
+<!--    {% endblock %}-->
 
 {% block script %}
 
@@ -9,7 +24,7 @@ var feedcount = 0;
 
 function check0()
 {
-	if(document.getElementsByTagName("input")[0].value == {{ answer.b0 }})
+	if(document.getElementsByTagName("input")[0].value == {{ answer.den_ans}})
 	{
 	   $(x[0]).show();
        $(y[0]).hide();
@@ -42,16 +57,16 @@ function check0()
 
 function check1()
 {
-	if(document.getElementsByTagName("input")[1].value == {{ answer.b1 }})
+	if(document.getElementsByTagName("input")[1].value == {{ answer.whole_ans }})
 	{
-	    $(x[1]).show();
-	    $(y[1]).hide();
+	    $(x[0]).show();
+	    $(y[0]).hide();
     }
 	 else
 	 {
 	 feedcount++;
-	    $(x[1]).hide();
-        $(y[1]).show();
+	    $(x[0]).hide();
+        $(y[0]).show();
 	    document.getElementsByTagName("input")[1].value = "";
 	    swal({
   title: "Oops, Looks like you divided wrong ",
@@ -72,17 +87,17 @@ function check1()
 
 function check2()
 {
-	if(document.getElementsByTagName("input")[3].value == {{ answer.b2 }})
+	if(document.getElementsByTagName("input")[2].value == {{ answer.num1 }})
 	{
-	   $(x[3]).show();
-	   $(y[3]).hide();
+	   $(x[0]).show();
+	   $(y[0]).hide();
 	  }
 	else
 	{
 	feedcount++;
-	    $(x[3]).hide();
-        $(y[3]).show();
-        document.getElementsByTagName("input")[3].value = "";
+	    $(x[0]).hide();
+        $(y[0]).show();
+        document.getElementsByTagName("input")[2].value = "";
         swal({
   title: "Oops, Looks like you are confused in the format",
   text: "Whole number in mixed fraction is the quotient you got in the first step",
@@ -102,17 +117,17 @@ function check2()
 
 function check3()
 {
-	if(document.getElementsByTagName("input")[2].value == {{ answer.b3 }})
+	if(document.getElementsByTagName("input")[3].value == {{ answer.den_ans }})
 	{
-         $(x[2]).show();
-	     $(y[2]).hide();
+         $(x[1]).show();
+	     $(y[1]).hide();
 	}
 	else
 	{
 	feedcount++;
-	    $(x[2]).hide();
-        $(y[2]).show();
-	    document.getElementsByTagName("input")[2].value = "";
+	    $(x[1]).hide();
+        $(y[1]).show();
+	    document.getElementsByTagName("input")[3].value = "";
 	    swal({
   title: "Oops, Looks like you are confused in the format",
   text: "In mixed fraction, numerator is remainder you got in first step",
@@ -132,17 +147,47 @@ function check3()
 
 function check4()
 {
-	if(document.getElementsByTagName("input")[4].value == {{ answer.b4}})
+	if(document.getElementsByTagName("input")[4].value == {{ answer.num_ans}})
 	{
-        $(x[4]).show();
-	    $(y[4]).hide();
+        $(x[2]).show();
+	    $(y[2]).hide();
 	}
 	else
 	{
 	    feedcount++;
-	    $(x[4]).hide();
-        $(y[4]).show();
+	    $(x[2]).hide();
+        $(y[2]).show();
 	    document.getElementsByTagName("input")[4].value = "";
+	    swal({
+  title: "Oops, Looks like you are confused in the format",
+  text: "Denominator in mixed fraction is same as denominator of fraction ",
+  icon: "error",
+  button: true,
+  dangerMode: true,
+})
+.then((willDelete) => {
+  if (willDelete) {
+    swal("Now try again", {
+      icon: "success",
+    });
+  }
+});
+	}
+}
+
+function check5()
+{
+	if(document.getElementsByTagName("input")[5].value == {{ answer.den_ans}})
+	{
+        $(x[3]).show();
+	    $(y[3]).hide();
+	}
+	else
+	{
+	    feedcount++;
+	    $(x[3]).hide();
+        $(y[3]).show();
+	    document.getElementsByTagName("input")[5].value = "";
 	    swal({
   title: "Oops, Looks like you are confused in the format",
   text: "Denominator in mixed fraction is same as denominator of fraction ",
@@ -222,7 +267,7 @@ for (i = 0; i < close.length; i++) {
 
 {% endblock %}
 
-{% block message %} 
+{% block message %}
 {% with messages = get_flashed_messages(with_categories=true) %}
   {% if messages %}
 <div class="alert alert-info" role="alert" id="scre">
@@ -244,46 +289,50 @@ for (i = 0; i < close.length; i++) {
     {{ answer.que }}
     <br><br>
 
-    <label for="quo">Quotient:</label>
-    <input type="text" id="quo" name="quo" maxlength="2" size="2" onkeyup="check0();" required>
-    <img src="{{ url_for('static', filename='images/tick.png') }}" width="32px" height="22px" class="correct">
-    <img src="{{ url_for('static', filename='images/cross.jpg') }}" width="32px" height="22px" class="wrong">
-    <br><br>
-
-    <label for="rem">Remainder:</label>
-    <input type="text" id="rem" name="rem" maxlength="2" size="2" onkeyup="check1();" required>
-    <img src="{{ url_for('static', filename='images/tick.png') }}" width="32px" height="22px" class="correct">
-    <img src="{{ url_for('static', filename='images/cross.jpg') }}" width="32px" height="22px" class="wrong">
-    <br><br>
-
+    <div>
     <label for="mf1">Mixed Fraction:</label>
     <br>
     <table>
         <tr>
-<!--               numerator-->
-            <td></td>
-            <td><input type="text" id="mf2" name="mf" maxlength="2" size="2" onkeyup="check3();" required></td>
+<!--               whole+numerator-->
+            <td><span style="font-size:4.3rem;">(</span><input type="text" id="mf0" name="mf" maxlength="2" size="2" onblur="check0();" class="quo" required>*</td>
+            <td><input type="text" id="mf1" name="mf" maxlength="2" size="2" onblur="check1();" class="quo" required><span style="font-size:4.3rem;">)</span></td>
+            <td>+</td>
+            <td><input type="text" id="mf2" name="mf" maxlength="2" size="2" onblur="check2();" class="quo" required style="margin-top:25px;"></td>
             <td><img src="{{ url_for('static', filename='images/tick.png') }}" width="50px" height="50px" class="correct"></td>
             <td><img src="{{ url_for('static', filename='images/cross.jpg') }}" width="50px" height="50px" class="wrong"></td>
         </tr>
 
         <tr>
-
-<!--                mixed fraction-->
-            <td><input type="text" id="mf1" name="mf" maxlength="2" size="2" onkeyup="check2();"required></td>
+<!--                hr line-->
+            <td><hr></td>
             <td><hr/></td>
-            <td><img src="{{ url_for('static', filename='images/tick.png') }}" width="50px" height="50px" class="correct"></td>
-            <td><img src="{{ url_for('static', filename='images/cross.jpg') }}" width="50px" height="50px" class="wrong"></td>
+            <td><hr/></td>
+            <td><hr/></td>
+<!--            <td><img src="{{ url_for('static', filename='images/tick.png') }}" width="50px" height="50px" class="correct"></td>-->
+<!--            <td><img src="{{ url_for('static', filename='images/cross.jpg') }}" width="50px" height="50px" class="wrong"></td>-->
 
         </tr>
 
         <tr>
 <!--                denominator-->
             <td></td>
-            <td><input type="text" id="mf3" name="mf" maxlength="2" size="2" style="border" onkeyup="check4();" required></td>
+            <td><input type="text" id="mf3" name="mf" maxlength="2" size="2" style="border" onblur="check3();" class="quo" required><span></span></td>
+            <td></td>
             <td><img src="{{ url_for('static', filename='images/tick.png') }}" width="50px" height="50px" class="correct"></td>
             <td><img src="{{ url_for('static', filename='images/cross.jpg') }}" width="50px" height="50px" class="wrong"></td>
         </tr>
     </table>
+    </div>
+    <br>
+    <label for="rem3" class="ryt2">Solution</label><br>
+    <input type="text" id="rem3" name="rem" maxlength="8" size="2" onblur="check4();" class="quo">
+    <img src="{{ url_for('static', filename='images/tick.png') }}" width="32px" height="22px" class="correct">
+    <img src="{{ url_for('static', filename='images/cross.jpg') }}" width="32px" height="22px" class="wrong">
+    <h5 class="ryt2">---------------</h5>
+    <input type="text" id="rem4" name="rem" maxlength="8" size="2" onblur="check5();" class="quo">
+    <img src="{{ url_for('static', filename='images/tick.png') }}" width="32px" height="22px" class="correct">
+    <img src="{{ url_for('static', filename='images/cross.jpg') }}" width="32px" height="22px" class="wrong">
     <br><br>
+
 {% endblock %}

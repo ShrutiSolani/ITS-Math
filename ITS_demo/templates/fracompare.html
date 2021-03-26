@@ -223,7 +223,7 @@ countButton.onclick = function(){
   count++;
   if(count == 1)
   {
-  displayCount[0].innerHTML = "Hint 1 :{{ hints.h1 }}\n" ;
+  document.getElementById("btn-grp1").style.visibility="visible";
   }
   else
   {
@@ -257,6 +257,7 @@ function closeSlideMenu()
     document.getElementById('menu').style.width = '0px';
     document.getElementById('content').style.marginLeft = '0px';
 }
+
 
 var close = document.getElementsByClassName("closebtn");
 var i;
@@ -297,7 +298,7 @@ for (i = 0; i < close.length; i++) {
 {% block content %}
     {{ answer.que }}
     <br><br>
-     <div class="btn-group btn-group-vertical" role="group" aria-label="Basic example" style="float:right; margin-right:120px;">
+     <div class="btn-group btn-group-vertical" id="btn-grp1" role="group" aria-label="Basic example" style="float:right; margin-right:120px;visibility:hidden;">
           <button type="button" class="btn btn-primary" style="margin-bottom:30px;" id="btn1" onclick="right2();">HCF</button>
           <button type="button" class="btn btn-secondary" style="margin-bottom:30px;" id="btn2">Average</button>
           <button type="button" class="btn btn-secondary" style="margin-bottom:30px;" onclick="right1();" id="btn3">LCM</button>
