@@ -301,10 +301,10 @@ def mixed_to_normal():
     num_ans = (den*whole)+num
     frac = Fraction(num_ans,den)
     answer = {'que':que, 'num_ans':frac.numerator, 'den_ans':frac.denominator,'den':den,'num':num_ans}
-    print(answer)
-    scoredict = 0
-    hints = {}
-    return render_template('normalForm.html', answer=answer, hints=hints, scoredict=scoredict)
+    # print(answer)
+    # scoredict = 0
+    # hints = {}
+    # return render_template('normalForm.html', answer=answer, hints=hints, scoredict=scoredict)
     den_ans=den
     whole_ans=whole
     num1=num
