@@ -289,6 +289,19 @@ else
     
  }
 }
+function right1(){
+<!--    document.getElementsByClassName("ryt1")[0].style.display="inline";-->
+    document.getElementsByClassName('line1')[0].style.display = 'block';
+    document.getElementById("btn1").innerHTML="Add all terms";
+    document.getElementById("btn2").innerHTML="Write like terms together";
+    document.getElementById("btn3").innerHTML="Add coefficient of each polynomial";
+    document.getElementById("btn4").innerHTML="Add first value of each polynomial";
+}
+function right2(){
+    if(document.getElementById("btn2").innerHTML==="Write like terms together"){
+        document.getElementsByClassName('line1')[1].style.display = 'block';
+    }
+}
 
 window.onload = function() {
   var count = 0;
@@ -299,13 +312,13 @@ window.onload = function() {
     count++;
     if(count == 1)
     {
-      document.getElementById('line1').style.display = 'block';
+      document.getElementById("btn-grp1").style.visibility="visible";
     }
     else
     {
       if(count == 2)
        {
-        document.getElementById('line2').style.display = 'block';
+<!--        document.getElementById('line2').style.display = 'block';-->
        }
        
         else {displayCount[2].innerHTML = "Hint 3 :{{ hints.h3 }}\n" ;}
@@ -351,7 +364,13 @@ window.onload = function() {
 
     {{ answer.que }}
     <br><br>
-    <div id="line1" style="display: none;">
+    <div class="btn-group btn-group-vertical" id="btn-grp1" role="group" aria-label="Basic example" style="float:right; margin-right:120px;margin-top:-40px;visibility:hidden;">
+              <button type="button" class="btn btn-primary" style="margin-bottom:30px;" id="btn1">add all coefficients</button>
+              <button type="button" class="btn btn-secondary" style="margin-bottom:30px;" onclick="right2();" id="btn2">Write all terms with same powers</button>
+              <button type="button" class="btn btn-secondary" style="margin-bottom:30px;" id="btn3">Add first value of each polynomials</button>
+            <button type="button" class="btn btn-secondary" style="margin-bottom:30px;" id="btn4" onclick="right1();">Write all terms</button>
+    </div>
+    <div class="line1" style="display: none;">
       (<input type="text" class="quo" name="quo" maxlength="3" size="3" onblur="check0();">{{ answer.varx }}+
       <input type="text" class="quo" name="quo" maxlength="3" size="3" onblur="check1();">{{ answer.vary }})+
       (<input type="text" class="quo" name="quo" maxlength="3" size="3" onblur="check2();">{{ answer.varx }}+
@@ -362,7 +381,7 @@ window.onload = function() {
       <img src="{{ url_for('static', filename='images/cross.jpg') }}" width="50px" height="50px" class="wrong"> -->
       <br><br>
     </div>
-    <div id="line2" style="display: none;">
+    <div class="line1" style="display: none;">
       (<input type="text" class="quo" name="quo" maxlength="3" size="3" onblur="check6();">+
       <input type="text" class="quo" name="quo" maxlength="3" size="3" onblur="check7();">+
       <input type="text" class="quo" name="quo" maxlength="3" size="3" onblur="check8();">){{ answer.varx }}+

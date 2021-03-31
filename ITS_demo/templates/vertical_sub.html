@@ -195,7 +195,11 @@ else
 
  }
 }
-
+function right1(){
+<!--    document.getElementsByClassName("ryt1")[0].style.display="inline";-->
+    document.getElementsByClassName('line1')[0].style.display = 'block';
+    document.getElementsByClassName('line1')[1].style.display = 'block';
+}
 
 window.onload = function() {
   var count = 0;
@@ -206,13 +210,14 @@ window.onload = function() {
     count++;
     if(count == 1)
     {
-      document.getElementById('line1').style.display = 'block';
+        document.getElementById("btn-grp1").style.visibility="visible";
+
     }
     else
     {
       if(count == 2)
        {
-        document.getElementById('line2').style.display = 'block';
+<!--        document.getElementById('line2').style.display = 'block';-->
        }
        
         else {displayCount[2].innerHTML = "Hint 3 :{{ hints.h3 }}\n" ;}
@@ -256,19 +261,24 @@ window.onload = function() {
 
     {{ answer.que }}
     <br><br>
-    <div id="line1" style="display:none">
+    <div class="btn-group btn-group-vertical" id="btn-grp1" role="group" aria-label="Basic example" style="float:right; margin-right:120px;visibility:hidden;">
+              <button type="button" class="btn btn-primary" style="margin-bottom:30px;" id="btn1">HCF</button>
+              <button type="button" class="btn btn-secondary" style="margin-bottom:30px;" id="btn2">Average</button>
+              <button type="button" class="btn btn-secondary" style="margin-bottom:30px;" onclick="right1();" id="btn3">LCM</button>
+            <button type="button" class="btn btn-secondary" style="margin-bottom:30px;" id="btn4">Multiply</button>
+    </div>
+    <div class="line1" style="display:none">
       <input type="text" class="quo" name="quo" maxlength="3" size="3" onblur="check0();">{{ answer.varx }}+
       <input type="text" class="quo" name="quo" maxlength="3" size="3" onblur="check1();">{{ answer.vary }}+
       <input type="text" class="quo" name="quo" maxlength="3" size="3" onblur="check2();">{{ answer.varz }}
       <br><br>
     </div>
-    <div id="line2" style="display:none">
+    <div class="line1" style="display:none">
       <input type="text" class="quo" name="quo" maxlength="3" size="3" onblur="check3();">{{ answer.varx }}+
       <input type="text" class="quo" name="quo" maxlength="3" size="3" onblur="check4();">{{ answer.vary }}+
       <input type="text" class="quo" name="quo" maxlength="3" size="3" onblur="check5();">{{ answer.varz }}
       <br>
-      <!-- ------------------------------------------ -->
-      <h1><hr style="width: 300px; height: 5px; color: black; "></h1>
+      <h1>--------------------------</h1>
       <br>
     </div>
     <input type="text" class="quo" name="quo" maxlength="3" size="3" onblur="check6();" required>{{ answer.varx }}+
