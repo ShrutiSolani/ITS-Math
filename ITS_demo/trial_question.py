@@ -68,7 +68,9 @@ def question():
     rem = num % den
     box_ans = [quo, rem, quo, rem, den]
     answer = {'que':que, 'ans':box_ans}
-    # answer = {'que': que, 'b0': box_ans[0], 'b1': box_ans[1], 'b2': box_ans[2], 'b3': box_ans[3], 'b4': box_ans[4]}
+    labels = ['Quotient', 'Remainder', 'Numerator', 'Whole Number', 'Denominator']
+    labels = {'labels': labels}
+    #answer = {'que': que, 'b0': box_ans[0], 'b1': box_ans[1], 'b2': box_ans[2], 'b3': box_ans[3], 'b4': box_ans[4]}
     hint1 = 'Try dividing numerator by denominator'
     hint2 = 'After dividing N/D, quotient =' + str(quo) + ' remainder = ' + str(rem)
     hint3 = 'Mixed Fraction Answer :' + str(quo) + " (" + str(rem) + "/" + str(den) + ")"
@@ -80,7 +82,7 @@ def question():
     except:
         tcp = 0
     scoredict = {'score': scorecnt1, 'total': total, 'totalqts': qtscnt1, 'tcp': tcp}
-    return render_template('short_display.html', answer=answer, hints=hints, scoredict=scoredict)
+    return render_template('short_display.html', answer=answer, hints=hints, scoredict=scoredict, labels = labels)
 
 #################################################################
 @app.route('/score/<tid>/<counter>/<feedback>', methods=['POST'])
@@ -174,6 +176,7 @@ def compare():
     print(que)
     print(eqfrac1,eqfrac2,fract1,fract2)
     answer={'que':que,'lcm':lcm,'num1':num1,'den1':den1,'num2':num2,'den2':den2,'ans':ans , 'f1':f1,'f2':f2}
+    print(answer)
     h1="LCM of both denominators if Fraction are unlike."
     h2="EXAMPLE : LCM of 5 and 6 is 30."
     h3="Equivalent Fraction of :",str(f1)," => ",num1,"/",den1," and ",str(f2)," => ",num2,"/",den2
@@ -281,7 +284,7 @@ def simplest_form():
     simple = Fraction(num, den)
     answer = {'que': que, 'num_ans': simple.numerator, 'den_ans': simple.denominator}
     print(answer)
-    scoredict=0
+    scoredict={}
     hints={}
     return render_template('simplestForm.html',answer=answer,hints=hints,scoredict=scoredict)
 
@@ -300,10 +303,10 @@ def mixed_to_normal():
     num_ans = (den*whole)+num
     frac = Fraction(num_ans,den)
     answer = {'que':que, 'num_ans':frac.numerator, 'den_ans':frac.denominator,'den':den,'num':num_ans}
-    print(answer)
-    scoredict = 0
-    hints = {}
-    return render_template('normalForm.html', answer=answer, hints=hints, scoredict=scoredict)
+    # print(answer)
+    # scoredict = 0
+    # hints = {}
+    # return render_template('normalForm.html', answer=answer, hints=hints, scoredict=scoredict)
     den_ans=den
     whole_ans=whole
     num1=num
@@ -324,6 +327,7 @@ def mixed_to_normal():
     return render_template('normal-form.html', answer=answer, hints=hints, scoredict=scoredict)
 
 #mixed_to_normal()
+
 
 app.secret_key = 'super secret key'
 app.run(debug=True)
