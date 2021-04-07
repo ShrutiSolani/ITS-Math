@@ -362,10 +362,58 @@ window.onload = function() {
 
 {% block content %}
 
+    <div class="project">
+  <div class="task pending"></div>
+  <div class="progress"><div> </div> </div>
+  <div class="task"></div>
+  <div class="progress"><div> </div></div>
+  <div class="task"></div>
+</div>
+
+<div class="project">
+  <div class="task running"></div>
+  <div class="progress"><div class="running" data-progress="90%"> </div> </div>
+  <div class="task"></div>
+  <div class="progress"><div> </div></div>
+  <div class="task"></div>
+</div>
+
+<div class="project">
+  <div class="task passed"></div>
+  <div class="progress"><div class="passed"> </div> </div>
+  <div class="task passed"></div>
+  <div class="progress"><div class="passed"> </div></div>
+  <div class="task passed"></div>
+</div>
+
+<div class="project">
+  <div class="task failed"></div>
+  <div class="progress"><div> </div> </div>
+  <div class="task"></div>
+  <div class="progress"><div> </div></div>
+  <div class="task"></div>
+</div>
+
+<div class="project">
+  <div class="task passed"></div>
+  <div class="progress"><div class="passed"> </div> </div>
+  <div class="task passed"></div>
+  <div class="progress"><div class="passed"> </div></div>
+  <div class="task passed"></div>
+</div>
+
+<div class="project">
+  <div class="task failed"></div>
+  <div class="progress"><div class="failed"> </div> </div>
+  <div class="task failed"></div>
+  <div class="progress"><div> </div></div>
+  <div class="task"></div>
+</div>
+
     {{ answer.que }}
     <br><br>
     <div class="btn-group btn-group-vertical" id="btn-grp1" role="group" aria-label="Basic example" style="float:right; margin-right:120px;margin-top:-40px;visibility:hidden;">
-              <button type="button" class="btn btn-primary" style="margin-bottom:30px;" id="btn1">add all coefficients</button>
+              <button type="button" class="btn btn-secondary" style="margin-bottom:30px;" id="btn1">add all coefficients</button>
               <button type="button" class="btn btn-secondary" style="margin-bottom:30px;" onclick="right2();" id="btn2">Write all terms with same powers</button>
               <button type="button" class="btn btn-secondary" style="margin-bottom:30px;" id="btn3">Add first value of each polynomials</button>
             <button type="button" class="btn btn-secondary" style="margin-bottom:30px;" id="btn4" onclick="right1();">Write all terms</button>
