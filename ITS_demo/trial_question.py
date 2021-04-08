@@ -3,6 +3,7 @@ from flask import Flask, render_template, request, flash, redirect, url_for, ses
 from fractions import Fraction
 import random
 import os
+import math
 
 
 app = Flask(__name__)
@@ -144,20 +145,11 @@ def compare():
     f2= Fraction(num2,den2)
 
     # que={'f1':f1,'f2':f2}
-    def LCM(a,b):
-        lcm=0
-        if(a>b):
-            greater=a
-        else:
-            greater = b
-        while(True):
-            if(greater%a==0 and greater%b==0):
-                lcm = greater
-                break
-            greater = greater+1
-        return lcm
+    def LCM(a, b):
+        return abs(a * b) // math.gcd(a, b)
     que = "Compare "+str(f1)+" and "+str(f2)+" . "
     lcm=LCM(den1,den2)
+    print(lcm)
     eqfrac1=lcm//den1
     eqfrac2=lcm//den2
     num1=num1*eqfrac1
