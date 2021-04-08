@@ -1,10 +1,51 @@
 {% extends "layout.html" %}
 {% block title %}Q1{% endblock %}
+{% block style %}
+.project {
+  width: 400px;
+  margin-bottom: 1em;
+}
+  .project > div {
+    display: inline-block;
+    margin: 0 -5px 0 0;
+    vertical-align: middle;
+  }
+.task {
+  width: 33rem;
+  height: 8rem;
+  border: .4em solid #E4E4E7;
+  background: #E4E4E7;
+  border-radius: 100%;
+}
+.progress {
+  width: calc( 50% - 3em);
+  height: .6em;
+  padding: .2em 0;
+  background: #E4E4E7;
+  position: relative;
+}
+  .progress>div {
+    height: .2em;
+    left: -.4em;
+    right: -.4em;
+    position: absolute;
+  }
+.pending { background: #F8AC59; }
+.running { background: #1C84C6; }
+.passed { background: #1AB394; }
+.failed { background: #ED5565; }
+{% endblock %}
 
 {% block script %}
+$(function() {
+	$('.progress>div').each(function() {
+  	$(this).css('width', $(this).data('progress') );
+  });
+})
 
 var x = document.getElementsByClassName("correct");
 var y = document.getElementsByClassName("wrong");
+
 var feedcount = 0;
 
 const check0=()=>
@@ -13,6 +54,8 @@ const check0=()=>
 	{
 	   $(x[0]).show();
        $(y[0]).hide();
+document.getElementById("icon1").style.display="inline";
+
     }
 	 else
 	 {
@@ -167,6 +210,7 @@ function check5()
     
         $(x[5]).show();
 	    $(y[5]).hide();
+document.getElementsByClassName("task")[2].innerHTML="Done";
 	}
 	else
 	{
@@ -296,6 +340,57 @@ for (i = 0; i < close.length; i++) {
     {% block question %}{{scoredict.totalqts}}{% endblock %}
     {% block pvalue %}{{ scoredict.tcp }}{% endblock %}
 {% block content %}
+<!--<div class="project">-->
+<!--  <div class="task pending"></div>-->
+<!--  <div class="progress"><div> </div> </div>-->
+<!--  <div class="task"></div>-->
+<!--  <div class="progress"><div> </div></div>-->
+<!--  <div class="task"></div>-->
+<!--</div>-->
+
+<div class="project">
+    <div style="display:flex;justify-content:center;align-items:center;">
+  <div class="task running ">
+      <i class="far fa-check" id="icon1" style="display:none;color:white;margin:auto;"></i>
+  </div>
+        <div class="progress">
+            <div class="running" data-progress="100%"> </div> </div>
+  <div  class="task running"></div>
+  <div class="progress"  ><div class="running" data-progress="100%"> </div></div>
+        <div class="task running"></div></div>
+</div>
+
+<!--<div class="project">-->
+<!--  <div class="task passed"></div>-->
+<!--  <div class="progress"><div class="passed"> </div> </div>-->
+<!--  <div class="task passed"></div>-->
+<!--  <div class="progress"><div class="passed"> </div></div>-->
+<!--  <div class="task passed"></div>-->
+<!--</div>-->
+
+<!--<div class="project">-->
+<!--  <div class="task failed"></div>-->
+<!--  <div class="progress"><div> </div> </div>-->
+<!--  <div class="task"></div>-->
+<!--  <div class="progress"><div> </div></div>-->
+<!--  <div class="task"></div>-->
+<!--</div>-->
+
+<!--<div class="project">-->
+<!--  <div class="task passed"></div>-->
+<!--  <div class="progress"><div class="passed"> </div> </div>-->
+<!--  <div class="task passed"></div>-->
+<!--  <div class="progress"><div class="passed"> </div></div>-->
+<!--  <div class="task passed"></div>-->
+<!--</div>-->
+
+<!--<div class="project">-->
+<!--  <div class="task failed"></div>-->
+<!--  <div class="progress"><div class="failed"> </div> </div>-->
+<!--  <div class="task failed"></div>-->
+<!--  <div class="progress"><div> </div></div>-->
+<!--  <div class="task"></div>-->
+<!--</div>-->
     {{ answer.que }}
     <br><br>
      <div class="btn-group btn-group-vertical" id="btn-grp1" role="group" aria-label="Basic example" style="float:right; margin-right:120px;visibility:hidden;">

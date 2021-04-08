@@ -204,6 +204,9 @@ function check5()
 });
 	}
 }
+function right1(){
+    document.getElementsByClassName("ryt1")[0].style.display="inline";
+}
 
 window.onload = function() {
 var count = 0;
@@ -214,7 +217,7 @@ countButton.onclick = function(){
   count++;
   if(count == 1)
   {
-  displayCount[0].innerHTML = "Hint 1 :{{ hints.h1 }}\n" ;
+    document.getElementById("btn-grp1").style.visibility="visible";
   }
   else
   {
@@ -288,14 +291,19 @@ for (i = 0; i < close.length; i++) {
 {% block content %}
     {{ answer.que }}
     <br><br>
-
-    <div>
+    <div class="btn-group btn-group-vertical" id="btn-grp1" role="group" aria-label="Basic example" style="float:right; margin-right:120px;visibility:hidden;">
+          <button type="button" class="btn btn-primary" style="margin-bottom:30px;" id="btn1">HCF</button>
+          <button type="button" class="btn btn-secondary" style="margin-bottom:30px;" id="btn2">Average</button>
+          <button type="button" class="btn btn-secondary" style="margin-bottom:30px;" onclick="right1();" id="btn3">LCM</button>
+        <button type="button" class="btn btn-secondary" style="margin-bottom:30px;" id="btn4">Multiply</button>
+</div>
+    <div class="ryt1" style="display:none;">
     <label for="mf1">Mixed Fraction:</label>
     <br>
     <table>
-        <tr>
+        <tr >
 <!--               whole+numerator-->
-            <td><span style="font-size:4.3rem;">(</span><input type="text" id="mf0" name="mf" maxlength="2" size="2" onblur="check0();" class="quo" required>*</td>
+            <td ><span style="font-size:4.3rem;">(</span><input type="text" id="mf0" name="mf" maxlength="2" size="2" onblur="check0();" class="quo" required>*</td>
             <td><input type="text" id="mf1" name="mf" maxlength="2" size="2" onblur="check1();" class="quo" required><span style="font-size:4.3rem;">)</span></td>
             <td>+</td>
             <td><input type="text" id="mf2" name="mf" maxlength="2" size="2" onblur="check2();" class="quo" required style="margin-top:25px;"></td>
