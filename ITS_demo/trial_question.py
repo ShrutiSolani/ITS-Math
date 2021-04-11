@@ -148,7 +148,7 @@ def compare():
     def LCM(a, b):
         return abs(a * b) // math.gcd(a, b)
     que = "Compare "+str(f1)+" and "+str(f2)+" . "
-    lcm=LCM(den1,den2)
+    lcm=LCM(f1.denominator,f2.denominator)
     print(lcm)
     eqfrac1=lcm//den1
     eqfrac2=lcm//den2
