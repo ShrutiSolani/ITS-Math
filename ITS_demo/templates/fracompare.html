@@ -10,9 +10,12 @@
     margin: 0 -5px 0 0;
     vertical-align: middle;
   }
+h2{
+    padding:17px;
+}
 .task {
-  width: 33rem;
-  height: 8rem;
+  width: 42rem;
+  height: 7rem;
   border: .4em solid #E4E4E7;
   background: #E4E4E7;
   border-radius: 100%;
@@ -54,7 +57,9 @@ const check0=()=>
 	{
 	   $(x[0]).show();
        $(y[0]).hide();
+document.getElementsByTagName("h2")[0].innerHTML="";
 document.getElementById("icon1").style.display="inline";
+
 
     }
 	 else
@@ -119,6 +124,9 @@ function check2()
 	{
 	   $(x[2]).show();
 	   $(y[2]).hide();
+document.getElementsByTagName("h2")[1].innerHTML="";
+    document.getElementById("icon2").style.display="inline";
+
 	  }
 	else
 	{
@@ -179,7 +187,9 @@ function check4()
 	{
         $(x[4]).show();
 	    $(y[4]).hide();
-	}
+document.getElementsByTagName("h2")[2].innerHTML="";
+    document.getElementById("icon3").style.display="inline";
+}
 	else
 	{
 	    feedcount++;
@@ -210,7 +220,17 @@ function check5()
     
         $(x[5]).show();
 	    $(y[5]).hide();
-document.getElementsByClassName("task")[2].innerHTML="Done";
+<!--document.getElementsByClassName("task")[2].innerHTML="Done";-->
+<!--document.getElementsByTagName("h2")[3].innerHTML="Sol";-->
+  document.getElementById("icon4").style.display="inline";
+ document.getElementById("icon4").style.color="green";
+document.getElementsByTagName("h2")[0].innerHTML="";
+document.getElementsByTagName("h2")[1].innerHTML="";
+document.getElementsByTagName("h2")[2].innerHTML="";
+  document.getElementById("icon1").style.display="inline";
+  document.getElementById("icon2").style.display="inline";
+  document.getElementById("icon3").style.display="inline";
+
 	}
 	else
 	{
@@ -348,19 +368,28 @@ for (i = 0; i < close.length; i++) {
 <!--  <div class="task"></div>-->
 <!--</div>-->
 
-<div class="project">
+<div class="project" style="margin-left:65%;">
     <div style="display:flex;justify-content:center;align-items:center;">
   <div class="task running ">
-      <i class="far fa-check" id="icon1" style="display:none;color:white;margin:auto;"></i>
+      <h2>1</h2>
+      <i class="far fa-check" id="icon1" style="display:none;color:white;margin-bottom:17px;"></i>
   </div>
         <div class="progress">
             <div class="running" data-progress="100%"> </div> </div>
-  <div  class="task running"></div>
+  <div  class="task running">
+      <h2>2</h2>
+      <i class="far fa-check" id="icon2" style="display:none;color:white;margin:auto;"></i></div>
   <div class="progress"  ><div class="running" data-progress="100%"> </div></div>
-        <div class="task running"></div></div>
+        <div class="task running">
+            <h2>3</h2>
+            <i class="far fa-check" id="icon3" style="display:none;color:white;margin:auto;"></i></div>
+  <div class="progress"  ><div class="running" data-progress="100%"> </div></div>
+        <div class="task running">
+            <h2></h2>
+            <i class="fas fa-pennant" id="icon4" style="color:white;margin:auto;margin-left:10px;margin-top:10px;"></i></div>
+    </div>
 </div>
 
-<!--<div class="project">-->
 <!--  <div class="task passed"></div>-->
 <!--  <div class="progress"><div class="passed"> </div> </div>-->
 <!--  <div class="task passed"></div>-->
