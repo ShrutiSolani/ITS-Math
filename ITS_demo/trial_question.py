@@ -195,8 +195,8 @@ def compare():
     l2 = 'Equivalent fraction of ' + str(answer['f2'])
     labels = ['LCM',l1,'',l2,'','Solution']
     labels = {'labels':labels}
-    # return render_template('fracompare.html', answer=answer, hints=hints, scoredict= scoredict)
-    return render_template('compareFraction.html', answer=answer, hints=hints, scoredict= scoredict, labels=labels)
+    return render_template('fracompare.html', answer=answer, hints=hints, scoredict= scoredict)
+    #return render_template('compareFraction.html', answer=answer, hints=hints, scoredict= scoredict, labels=labels)
 
 
 ############################################
@@ -293,8 +293,6 @@ def simplest_form():
     hints={}
     return render_template('simplestForm.html',answer=answer,hints=hints,scoredict=scoredict)
 
-    return render_template('simplest_form.html', answer=answer, hints=hints, scoredict=scoredict)
-
 
 #simplest_form()
 
@@ -329,7 +327,8 @@ def mixed_to_normal():
     except:
         pct = 0
     scoredict = {'score': scorecnt2, 'total': total, 'totalqts': qtscnt2, 'pct': pct}
-    return render_template('normal-form.html', answer=answer, hints=hints, scoredict=scoredict)
+  #  return render_template('normal-form.html', answer=answer, hints=hints, scoredict=scoredict)
+    return render_template('normalForm.html', answer=answer, hints=hints, scoredict=scoredict)
 
 #mixed_to_normal()
 
