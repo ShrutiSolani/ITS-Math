@@ -1,6 +1,43 @@
 {% extends "layout.html" %}
 {% block title %}Q1{% endblock %}
-
+{% block style %}
+.project {
+  width: 400px;
+  margin-bottom: 1em;
+}
+  .project > div {
+    display: inline-block;
+    margin: 0 -5px 0 0;
+    vertical-align: middle;
+  }
+h2{
+    padding:17px;
+}
+.task {
+  width: 42rem;
+  height: 7rem;
+  border: .4em solid #E4E4E7;
+  background: #E4E4E7;
+  border-radius: 100%;
+}
+.progress {
+  width: calc( 50% - 3em);
+  height: .6em;
+  padding: .2em 0;
+  background: #E4E4E7;
+  position: relative;
+}
+  .progress>div {
+    height: .2em;
+    left: -.4em;
+    right: -.4em;
+    position: absolute;
+  }
+.pending { background: #F8AC59; }
+.running { background: #1C84C6; }
+.passed { background: #1AB394; }
+.failed { background: #ED5565; }
+{% endblock %}
 {% block script %}
 
 var x = document.getElementsByClassName("correct");
@@ -12,6 +49,9 @@ function check_num1()
     if(document.getElementsByTagName("input")[0].value == {{ answer.num }} )
 	{
 	   $(x[0]).show();
+     $(x[0]).style.display="block";
+
+     
        $(y[0]).hide();
     }
 	 else
@@ -44,6 +84,9 @@ function check_den1()
     if(document.getElementsByTagName("input")[1].value == {{ answer.den }} )
 	{
 	   $(x[1]).show();
+     $(x[1]).style.display="block";
+     document.getElementsByTagName("h2")[0].innerHTML="";
+     document.getElementById("icon1").style.display="inline";
        $(y[1]).hide();
     }
 	 else
@@ -110,7 +153,15 @@ function check_den2()
 	{
 	   $(x[3]).show();
        $(y[3]).hide();
-    }
+       document.getElementById("icon4").style.display="inline";
+       document.getElementById("icon4").style.color="green";
+      document.getElementsByTagName("h2")[0].innerHTML="";
+      document.getElementsByTagName("h2")[1].innerHTML="";
+      document.getElementsByTagName("h2")[2].innerHTML="";
+        document.getElementById("icon1").style.display="inline";
+        document.getElementById("icon2").style.display="inline";
+        document.getElementById("icon3").style.display="inline";
+      }
 	 else
 	 {
 	    feedcount++;
@@ -134,10 +185,15 @@ function check_den2()
             });
           }
         });
-	 }
+      }
+   
 }
 function right1(){
-    document.getElementsByClassName("ryt1")[0].style.display="inline";
+    document.getElementsByClassName("fbox")[0].style.display="block";
+    
+    document.getElementsByClassName("fbox")[1].style.display="inline";
+    document.getElementsByClassName("fbox")[2].style.display="block";
+    document.getElementsByClassName("fbox")[3].style.display="inline";
 }
 
 
@@ -222,7 +278,30 @@ for (i = 0; i < close.length; i++) {
     {% block question %}{{scoredict.totalqts}}{% endblock %}
     {% block pvalue %}{{ scoredict.tcp }}{% endblock %}
 {% block content %}
-    {{ answer.que }}
+<div class="project" style="margin-left:65%;">
+  <div style="display:flex;justify-content:center;align-items:center;">
+<div class="task running ">
+    <h2>1</h2>
+    <i class="far fa-check" id="icon1" style="display:none;color:white;margin-bottom:17px;"></i>
+</div>
+      <div class="progress">
+          <div class="running" data-progress="100%"> </div> </div>
+<div  class="task running">
+    <h2>2</h2>
+    <i class="far fa-check" id="icon2" style="display:none;color:white;margin:auto;"></i></div>
+<div class="progress"  ><div class="running" data-progress="100%"> </div></div>
+      <div class="task running">
+          <h2>3</h2>
+          <i class="far fa-check" id="icon3" style="display:none;color:white;margin:auto;"></i></div>
+<div class="progress"  ><div class="running" data-progress="100%"> </div></div>
+      <div class="task running">
+          <h2></h2>
+          <i class="fas fa-pennant" id="icon4" style="color:white;margin:auto;margin-left:10px;margin-top:10px;"></i></div>
+  </div>
+</div>
+<br><br>   
+
+{{ answer.que }}
     <br><br>
 
     <div class="btn-group btn-group-vertical" id="btn-grp1" role="group" aria-label="Basic example" style="float:right; margin-right:120px;visibility:hidden;">
@@ -231,13 +310,13 @@ for (i = 0; i < close.length; i++) {
           <button type="button" class="btn btn-secondary" style="margin-bottom:30px;" onclick="right1();" id="btn3">LCM</button>
         <button type="button" class="btn btn-secondary" style="margin-bottom:30px;" id="btn4">Multiply</button>
 </div>
-    <div class="ryt1" style="display:none;">
-    <label for="mf1">Mixed Fraction:</label>
+    <div class="ryt1" style="">
+    <!-- <label for="mf1">Mixed Fraction:</label>
     <br>
-    <table>
+    
         <tr >
 <!--               whole+numerator-->
-            <td ><span style="font-size:4.3rem;">(</span><input type="text" id="mf0" name="mf" maxlength="2" size="2" onblur="check0();" class="quo" required>*</td>
+            <!-- <td ><span style="font-size:4.3rem;">(</span><input type="text" id="mf0" name="mf" maxlength="2" size="2" onblur="check0();" class="quo" required>*</td>
             <td><input type="text" id="mf1" name="mf" maxlength="2" size="2" onblur="check1();" class="quo" required><span style="font-size:4.3rem;">)</span></td>
             <td>+</td>
             <td><input type="text" id="mf2" name="mf" maxlength="2" size="2" onblur="check2();" class="quo" required style="margin-top:25px;"></td>
@@ -245,24 +324,24 @@ for (i = 0; i < close.length; i++) {
             <td><img src="{{ url_for('static', filename='images/cross.jpg') }}" width="50px" height="50px" class="wrong"></td>
         </tr>
 
-        <tr>
+        <tr> -->
 <!--                hr line-->
-            <td><hr></td>
+            <!-- <td><hr></td>
             <td><hr/></td>
             <td><hr/></td>
-            <td><hr/></td>
+            <td><hr/></td> -->
 <!--            <td><img src="{{ url_for('static', filename='images/tick.png') }}" width="50px" height="50px" class="correct"></td>-->
 <!--            <td><img src="{{ url_for('static', filename='images/cross.jpg') }}" width="50px" height="50px" class="wrong"></td>-->
 
-        </tr>
-=======
+        <!-- </tr> --> 
 
-    <label for="spf" style="display:block">Normal Form : </label>
-    <input type="text" id="spf" name="rem" maxlength="8" size="2" class="num" onblur="check_num1();" required >
+
+    <label for="spf" style="display:none" class="fbox">Normal Form : </label>
+    <input type="text" id="spf" name="rem" maxlength="8" size="2" class="num fbox" onblur="check_num1();" style="display: none;" required >
     <img src="{{ url_for('static', filename='images/tick.png') }}" width="32px" height="22px" class="correct">
     <img src="{{ url_for('static', filename='images/cross.jpg') }}" width="32px" height="22px" class="wrong">
-    <h5 >---------------</h5>
-    <input type="text" id="rem4" name="rem" maxlength="8" size="2" class="den" onblur="check_den1();" required>
+    <h5 class="fbox" style="display: none;">---------------</h5>
+    <input type="text" id="rem4" name="rem" maxlength="8" size="2" class="den fbox" onblur="check_den1();" style="display: none;" required>
     <img src="{{ url_for('static', filename='images/tick.png') }}" width="32px" height="22px" class="correct">
     <img src="{{ url_for('static', filename='images/cross.jpg') }}" width="32px" height="22px" class="wrong">
     <br><br>
@@ -278,7 +357,7 @@ for (i = 0; i < close.length; i++) {
     <img src="{{ url_for('static', filename='images/cross.jpg') }}" width="32px" height="22px" class="wrong">
     <br><br>
 
-
+</div>
 
     <br><br>
 
