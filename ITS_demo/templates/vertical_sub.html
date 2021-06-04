@@ -15,7 +15,43 @@
       #right {
         border:2pt solid green
       }
+
+.project {
+  width: 400px;
+  margin-bottom: 1em;
 }
+  .project > div {
+    display: inline-block;
+    margin: 0 -5px 0 0;
+    vertical-align: middle;
+  }
+h2{
+    padding:17px;
+}
+.task {
+  width: 42rem;
+  height: 7rem;
+  border: .4em solid #E4E4E7;
+  background: #E4E4E7;
+  border-radius: 100%;
+}
+.progress {
+  width: calc( 50% - 3em);
+  height: .6em;
+  padding: .2em 0;
+  background: #E4E4E7;
+  position: relative;
+}
+  .progress>div {
+    height: .2em;
+    left: -.4em;
+    right: -.4em;
+    position: absolute;
+  }
+.pending { background: #F8AC59; }
+.running { background: #1C84C6; }
+.passed { background: #1AB394; }
+.failed { background: #ED5565; }
 {% endblock %}
 
 {% block script %}
@@ -143,58 +179,143 @@ function check6()
 {
 if(document.getElementsByTagName("input")[6].value == {{ answer.x_diff }} )
 {
-   $(x[1]).show();
-     $(y[1]).hide();
-     document.getElementsByClassName("quo")[6].id = 'right';
-  }
+<!--   $(x[1]).show();-->
+<!--     $(y[1]).hide();-->
+<!--     document.getElementsByClassName("quo")[6].id = 'right';-->
+        $(x[0]).show();
+<!--     $(x[1]).style.display="block";-->
+$(x[1]).css("display","block");
+     document.getElementsByTagName("h2")[0].innerHTML="";
+     document.getElementById("icon1").style.display="inline";
+       $(y[0]).hide();
+}
 else
 {
- feedcount++;
-      $(x[1]).hide();
-      $(y[1]).show();
-      document.getElementsByClassName("quo")[6].id = 'error';
-    // document.getElementsByTagName("input")[6].value = "";
+<!-- feedcount++;-->
+<!--      $(x[1]).hide();-->
+<!--      $(y[1]).show();-->
+<!--      document.getElementsByClassName("quo")[6].id = 'error';-->
+<!--     document.getElementsByTagName("input")[6].value = "";-->
+feedcount++;
+        $(x[0]).hide();
+        $(y[0]).show();
+	    document.getElementsByTagName("input")[0].value = "";
+	    swal(
+	    {
+          title: "Oops, Looks like you are not familiar with LCM ",
+          text: "for example,  LCM of 5 and 6 is 30.",
+          icon: "error",
+          button: true,
+          dangerMode: true,
+        }
+       )
+        .then((willDelete) => {
+          if (willDelete) {
+            swal("Now, try again", {
 
- }
-}
+              icon: "success",
+            });
+          }
+        });
+	 }
+
+  }
 
 function check7()
 {
 if(document.getElementsByTagName("input")[7].value == {{ answer.y_diff }} )
 {
-   $(x[1]).show();
-     $(y[1]).hide();
-     document.getElementsByClassName("quo")[7].id = 'right';
+<!--   $(x[1]).show();-->
+<!--     $(y[1]).hide();-->
+<!--     document.getElementsByClassName("quo")[7].id = 'right';-->
+$(x[0]).show();
+$(x[1]).css("display","block");
+     document.getElementsByTagName("h2")[1].innerHTML="";
+     document.getElementById("icon2").style.display="inline";
+       $(y[0]).hide();
+
   }
 else
 {
- feedcount++;
-      $(x[1]).hide();
-      $(y[1]).show();
-      document.getElementsByClassName("quo")[7].id = 'error';
-    // document.getElementsByTagName("input")[7].value = "";
+<!-- feedcount++;-->
+<!--      $(x[1]).hide();-->
+<!--      $(y[1]).show();-->
+<!--      document.getElementsByClassName("quo")[7].id = 'error';-->
+<!--    // document.getElementsByTagName("input")[7].value = "";-->
+feedcount++;
+        $(x[0]).hide();
+        $(y[0]).show();
+	    document.getElementsByTagName("input")[0].value = "";
+	    swal(
+	    {
+          title: "Oops, Looks like you are not familiar with LCM ",
+          text: "for example,  LCM of 5 and 6 is 30.",
+          icon: "error",
+          button: true,
+          dangerMode: true,
+        }
+       )
+        .then((willDelete) => {
+          if (willDelete) {
+            swal("Now, try again", {
+
+              icon: "success",
+            });
+          }
+        });
+	 }
 
  }
-}
 
 function check8()
 {
 if(document.getElementsByTagName("input")[8].value == {{ answer.z_diff }} )
 {
-   $(x[1]).show();
-     $(y[1]).hide();
-     document.getElementsByClassName("quo")[8].id = 'right';
+<!--   $(x[1]).show();-->
+<!--     $(y[1]).hide();-->
+<!--     document.getElementsByClassName("quo")[8].id = 'right';-->
+        $(x[0]).show();
+       $(y[0]).hide();
+       document.getElementById("icon4").style.display="inline";
+       document.getElementById("icon4").style.color="green";
+      document.getElementsByTagName("h2")[0].innerHTML="";
+      document.getElementsByTagName("h2")[1].innerHTML="";
+      <!-- document.getElementsByTagName("h2")[2].innerHTML=""; -->
+        document.getElementById("icon1").style.display="inline";
+        document.getElementById("icon2").style.display="inline";
+        document.getElementById("icon3").style.display="inline";
   }
 else
 {
- feedcount++;
-      $(x[1]).hide();
-      $(y[1]).show();
-      document.getElementsByClassName("quo")[8].id = 'error';
-    // document.getElementsByTagName("input")[8].value = "";
+<!-- feedcount++;-->
+<!--      $(x[1]).hide();-->
+<!--      $(y[1]).show();-->
+<!--      document.getElementsByClassName("quo")[8].id = 'error';-->
+<!--    // document.getElementsByTagName("input")[8].value = "";-->
+feedcount++;
+        $(x[1]).hide();
+        $(y[1]).show();
+	    document.getElementsByTagName("input")[0].value = "";
+	    swal(
+	    {
+          title: "Oops, Looks like you are not familiar with LCM ",
+          text: "for example,  LCM of 5 and 6 is 30.",
+          icon: "error",
+          button: true,
+          dangerMode: true,
+        }
+       )
+        .then((willDelete) => {
+          if (willDelete) {
+            swal("Now, try again", {
+
+              icon: "success",
+            });
+          }
+        });
+	 }
 
  }
-}
 function right1(){
 <!--    document.getElementsByClassName("ryt1")[0].style.display="inline";-->
     document.getElementsByClassName('line1')[0].style.display = 'block';
@@ -258,34 +379,62 @@ window.onload = function() {
 {% block pvalue %}{{ scoredict.pct }}{% endblock %}
 
 {% block content %}
+<div class="project" style="margin-left:55%;">
+  <div style="display:flex;justify-content:center;align-items:center;">
+<div class="task running ">
+    <h2>1</h2>
+    <i class="far fa-check" id="icon1" style="display:none;color:white;margin-bottom:17px;"></i>
+</div>
+      <div class="progress">
+          <div class="running" data-progress="100%"> </div> </div>
+<div  class="task running">
+    <h2>2</h2>
+    <i class="far fa-check" id="icon2" style="display:none;color:white;margin:auto;"></i></div>
+<div class="progress"  ><div class="running" data-progress="100%"> </div></div>
+<div class="progress"  ><div class="running" data-progress="100%"> </div></div>
+      <div class="task running">
+          <h2></h2>
+          <i class="fas fa-pennant" id="icon4" style="color:white;margin:auto;margin-left:10px;margin-top:10px;"></i></div>
+  </div>
+</div>
+<br><br>
 
     {{ answer.que }}
     <br><br>
-    <div class="btn-group btn-group-vertical" id="btn-grp1" role="group" aria-label="Basic example" style="float:right; margin-right:120px;visibility:hidden;">
-              <button type="button" class="btn btn-primary" style="margin-bottom:30px;" id="btn1">HCF</button>
-              <button type="button" class="btn btn-secondary" style="margin-bottom:30px;" id="btn2">Average</button>
-              <button type="button" class="btn btn-secondary" style="margin-bottom:30px;" onclick="right1();" id="btn3">LCM</button>
-            <button type="button" class="btn btn-secondary" style="margin-bottom:30px;" id="btn4">Multiply</button>
+    <div class="btn-group btn-group-vertical" id="btn-grp1" role="group" aria-label="Basic example" style="float:right; margin-right:120px;visibility:hidden;padding-bottom:50px">
+              <button type="button" class="btn btn-secondary" style="margin-bottom:30px;" id="btn1">Change sign of Eq1</button>
+              <button type="button" class="btn btn-secondary" style="margin-bottom:30px;" id="btn2">Write Eq1 & change sign of Eq2</button>
+              <button type="button" class="btn btn-secondary" style="margin-bottom:30px;" onclick="right1();" id="btn3">Write Eq1 & Eq2</button>
+            <button type="button" class="btn btn-secondary" style="margin-bottom:30px;" id="btn4">Change sign of Eq2</button>
     </div>
     <div class="line1" style="display:none">
+        <div style="margin-left:50px;">
       <input type="text" class="quo" name="quo" maxlength="3" size="3" onblur="check0();">{{ answer.varx }}+
       <input type="text" class="quo" name="quo" maxlength="3" size="3" onblur="check1();">{{ answer.vary }}+
       <input type="text" class="quo" name="quo" maxlength="3" size="3" onblur="check2();">{{ answer.varz }}
       <br><br>
     </div>
-    <div class="line1" style="display:none">
+    </div>
+    <div class="line1" style="display:none;">
+        <div>
+            <h1>-</h1>
+        </div>
+       <div style="margin-left:50px;">
       <input type="text" class="quo" name="quo" maxlength="3" size="3" onblur="check3();">{{ answer.varx }}+
       <input type="text" class="quo" name="quo" maxlength="3" size="3" onblur="check4();">{{ answer.vary }}+
       <input type="text" class="quo" name="quo" maxlength="3" size="3" onblur="check5();">{{ answer.varz }}
       <br>
-      <h1>--------------------------</h1>
+      <h1>---------------------</h1>
       <br>
+           </div>
     </div>
-    <input type="text" class="quo" name="quo" maxlength="3" size="3" onblur="check6();" required>{{ answer.varx }}+
+<div style="margin-left:50px;">
+    <input type="text" class="quo" name="quo" maxlength="3" size="3" onblur="check6()" required>{{ answer.varx }}+
     <input type="text" class="quo" name="quo" maxlength="3" size="3" onblur="check7();" required>{{ answer.vary }}+
-    <input type="text" class="quo" name="quo" maxlength="3" size="3" onblur="check8();" required>{{ answer.varz }}
+    <input type="text" class="quo" name="quo" maxlength="3" size="3" onchange="check8();" required>{{ answer.varz }}
     <img src="{{ url_for('static', filename='images/tick.png') }}" width="50px" height="50px" class="correct">
     <img src="{{ url_for('static', filename='images/cross.jpg') }}" width="50px" height="50px" class="wrong">
     <br><br>
+</div>
 
 {% endblock %}
