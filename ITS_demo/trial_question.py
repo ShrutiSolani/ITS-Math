@@ -314,7 +314,7 @@ def mixed_to_normal():
     whole_ans=whole
     num1=num
     frac = Fraction(num_ans,den_ans)
-    answer = {'que':que, 'num_ans':num_ans, 'den_ans':den_ans,'whole_ans':whole_ans,'num1':num1}
+    #answer = {'que':que, 'num_ans':num_ans, 'den_ans':den_ans,'whole_ans':whole_ans,'num1':num1}
     print(answer)
     h1 = 'Rearrange into like terms (coefficients with same variable and power)'
     h2 = 'Add coefficientts of like terms'
