@@ -16,7 +16,42 @@
         border:2pt solid green
       }
       
+.project {
+  width: 400px;
+  margin-bottom: 1em;
 }
+  .project > div {
+    display: inline-block;
+    margin: 0 -5px 0 0;
+    vertical-align: middle;
+  }
+h2{
+    padding:17px;
+}
+.task {
+  width: 42rem;
+  height: 7rem;
+  border: .4em solid #E4E4E7;
+  background: #E4E4E7;
+  border-radius: 100%;
+}
+.progress {
+  width: calc( 50% - 3em);
+  height: .6em;
+  padding: .2em 0;
+  background: #E4E4E7;
+  position: relative;
+}
+  .progress>div {
+    height: .2em;
+    left: -.4em;
+    right: -.4em;
+    position: absolute;
+  }
+.pending { background: #F8AC59; }
+.running { background: #1C84C6; }
+.passed { background: #1AB394; }
+.failed { background: #ED5565; }
 {% endblock %}
 
 {% block script %}
@@ -127,6 +162,10 @@ if(document.getElementsByTagName("input")[5].value == {{ answer.coeff[5] }} )
       $(x[0]).show();
       $(y[0]).hide();
       document.getElementsByClassName("quo")[5].id = 'right';
+$(x[0]).css("display","block");
+     document.getElementsByTagName("h2")[0].innerHTML="";
+     document.getElementById("icon1").style.display="inline";
+       $(y[0]).hide();
   }
 else
 {
@@ -146,6 +185,7 @@ if(document.getElementsByTagName("input")[6].value == {{ answer.coeff[0] }} )
    $(x[1]).show();
      $(y[1]).hide();
      document.getElementsByClassName("quo")[6].id = 'right';
+
   }
 else
 {
@@ -241,6 +281,10 @@ if(document.getElementsByTagName("input")[11].value == {{ answer.coeff[5] }} )
    $(x[1]).show();
      $(y[1]).hide();
      document.getElementsByClassName("quo")[11].id = 'right';
+$(x[1]).css("display","block");
+     document.getElementsByTagName("h2")[1].innerHTML="";
+     document.getElementById("icon2").style.display="inline";
+       $(y[1]).hide();
   }
 else
 {
@@ -279,6 +323,15 @@ if(document.getElementsByTagName("input")[13].value == {{ answer.y_sum }} )
    $(x[2]).show();
      $(y[2]).hide();
      document.getElementsByClassName("quo")[13].id = 'right';
+
+        document.getElementById("icon4").style.display="inline";
+        document.getElementById("icon4").style.color="green";
+        document.getElementsByTagName("h2")[0].innerHTML="";
+        document.getElementsByTagName("h2")[1].innerHTML="";
+      <!-- document.getElementsByTagName("h2")[2].innerHTML=""; -->
+        document.getElementById("icon1").style.display="inline";
+        document.getElementById("icon2").style.display="inline";
+        document.getElementById("icon3").style.display="inline";
   }
 else
 {
@@ -359,57 +412,27 @@ window.onload = function() {
 {% block pvalue %}{{ scoredict.pct }}{% endblock %}
 
 
-
 {% block content %}
 
-    <div class="project">
-  <div class="task pending"></div>
-  <div class="progress"><div> </div> </div>
-  <div class="task"></div>
-  <div class="progress"><div> </div></div>
-  <div class="task"></div>
+<div class="project" style="margin-left:55%;">
+  <div style="display:flex;justify-content:center;align-items:center;">
+<div class="task running ">
+    <h2>1</h2>
+    <i class="far fa-check" id="icon1" style="display:none;color:white;margin-bottom:17px;"></i>
 </div>
-
-<div class="project">
-  <div class="task running"></div>
-  <div class="progress"><div class="running" data-progress="90%"> </div> </div>
-  <div class="task"></div>
-  <div class="progress"><div> </div></div>
-  <div class="task"></div>
+      <div class="progress">
+          <div class="running" data-progress="100%"> </div> </div>
+<div  class="task running">
+    <h2>2</h2>
+    <i class="far fa-check" id="icon2" style="display:none;color:white;margin:auto;"></i></div>
+<div class="progress"  ><div class="running" data-progress="100%"> </div></div>
+<div class="progress"  ><div class="running" data-progress="100%"> </div></div>
+      <div class="task running">
+          <h2></h2>
+          <i class="fas fa-pennant" id="icon4" style="color:white;margin:auto;margin-left:10px;margin-top:10px;"></i></div>
+  </div>
 </div>
-
-<div class="project">
-  <div class="task passed"></div>
-  <div class="progress"><div class="passed"> </div> </div>
-  <div class="task passed"></div>
-  <div class="progress"><div class="passed"> </div></div>
-  <div class="task passed"></div>
-</div>
-
-<div class="project">
-  <div class="task failed"></div>
-  <div class="progress"><div> </div> </div>
-  <div class="task"></div>
-  <div class="progress"><div> </div></div>
-  <div class="task"></div>
-</div>
-
-<div class="project">
-  <div class="task passed"></div>
-  <div class="progress"><div class="passed"> </div> </div>
-  <div class="task passed"></div>
-  <div class="progress"><div class="passed"> </div></div>
-  <div class="task passed"></div>
-</div>
-
-<div class="project">
-  <div class="task failed"></div>
-  <div class="progress"><div class="failed"> </div> </div>
-  <div class="task failed"></div>
-  <div class="progress"><div> </div></div>
-  <div class="task"></div>
-</div>
-
+<br><br>
     {{ answer.que }}
     <br><br>
     <div class="btn-group btn-group-vertical" id="btn-grp1" role="group" aria-label="Basic example" style="float:right; margin-right:120px;margin-top:-40px;visibility:hidden;">
