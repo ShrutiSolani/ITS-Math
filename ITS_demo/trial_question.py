@@ -54,7 +54,7 @@ def q1():
     else:
         return render_template('login.html')
 
-#################################################33
+
 @app.route("/mixed-fraction")
 def question():
     global qtscnt1, scorecnt1
@@ -84,6 +84,7 @@ def question():
         tcp = 0
     scoredict = {'score': scorecnt1, 'total': total, 'totalqts': qtscnt1, 'tcp': tcp}
     return render_template('short_display.html', answer=answer, hints=hints, scoredict=scoredict, labels = labels)
+    # return render_template('display copy.html', answer=answer, hints=hints, scoredict=scoredict, labels = labels)
 
 #################################################################
 @app.route('/score/<tid>/<counter>/<feedback>', methods=['POST'])
@@ -235,7 +236,8 @@ def horizontal_add():
     except:
         pct = 0
     scoredict = {'score': scorecnt2, 'total': total, 'totalqts': qtscnt2, 'pct': pct}
-    return render_template('algebra_add.html',answer=answer, hints = hints, scoredict=scoredict)
+    return render_template('algebra_add.html', answer=answer, hints=hints, scoredict=scoredict)
+
 
 ############################################
 @app.route('/vertical_sub')
