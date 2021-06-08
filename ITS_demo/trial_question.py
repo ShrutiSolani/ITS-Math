@@ -54,7 +54,7 @@ def q1():
     else:
         return render_template('login.html')
 
-#################################################33
+
 @app.route("/mixed-fraction")
 def question():
     global qtscnt1, scorecnt1
@@ -84,6 +84,7 @@ def question():
         tcp = 0
     scoredict = {'score': scorecnt1, 'total': total, 'totalqts': qtscnt1, 'tcp': tcp}
     return render_template('short_display.html', answer=answer, hints=hints, scoredict=scoredict, labels = labels)
+    # return render_template('display copy.html', answer=answer, hints=hints, scoredict=scoredict, labels = labels)
 
 #################################################################
 @app.route('/score/<tid>/<counter>/<feedback>', methods=['POST'])
@@ -138,12 +139,17 @@ def score(counter, feedback, tid):
 @app.route("/compare")
 def compare():
     num1=random.randint(1,100)
-    den1=random.randint(2,100)
+    den1=random.randint(2,25)
     num2 = random.randint(1, 100)
-    den2 = random.randint(2, 100)
+    den2 = random.randint(2, 25)
     f1= Fraction(num1,den1)
     f2= Fraction(num2,den2)
-
+    print('num1 ',num1)
+    print('num2 ',num2)
+    print('den1 ',den1)
+    print('den2 ',den2)
+    print('f1', f1)
+    print('f2 ',f2)
     # que={'f1':f1,'f2':f2}
     def LCM(a, b):
         return abs(a * b) // math.gcd(a, b)
@@ -166,8 +172,11 @@ def compare():
     else:
         ans="3"
     print(que)
+    print('lcm ',lcm)
     print(eqfrac1,eqfrac2,fract1,fract2)
-    answer={'que':que,'lcm':lcm,'num1':num1,'den1':den1,'num2':num2,'den2':den2,'ans':ans , 'f1':f1,'f2':f2}
+    box_ans = [lcm,num1,den1,num2,den2,ans]
+    answer = {'que':que,'ans':box_ans,'f1':f1,'f2':f2}
+    #answer={'que':que,'lcm':lcm,'num1':num1,'den1':den1,'num2':num2,'den2':den2,'ans':ans , 'f1':f1,'f2':f2}
     print(answer)
     h1="LCM of both denominators if Fraction are unlike."
     h2="EXAMPLE : LCM of 5 and 6 is 30."
@@ -183,7 +192,12 @@ def compare():
     scoredict = {'score': scorecnt1, 'total': total, 'totalqts': qtscnt1, 'tcp': tcp}
     print(hints)
     print(ans)
+    l1 = 'Equivalent fraction of ' + str(answer['f1'])
+    l2 = 'Equivalent fraction of ' + str(answer['f2'])
+    labels = ['LCM',l1,'',l2,'','Solution']
+    labels = {'labels':labels}
     return render_template('fracompare.html', answer=answer, hints=hints, scoredict= scoredict)
+    #return render_template('compareFraction.html', answer=answer, hints=hints, scoredict= scoredict, labels=labels)
 
 
 ############################################
@@ -222,7 +236,8 @@ def horizontal_add():
     except:
         pct = 0
     scoredict = {'score': scorecnt2, 'total': total, 'totalqts': qtscnt2, 'pct': pct}
-    return render_template('algebra_add.html',answer=answer, hints = hints, scoredict=scoredict)
+    return render_template('algebra_add.html', answer=answer, hints=hints, scoredict=scoredict)
+
 
 ############################################
 @app.route('/vertical_sub')
@@ -280,8 +295,6 @@ def simplest_form():
     hints={}
     return render_template('simplestForm.html',answer=answer,hints=hints,scoredict=scoredict)
 
-    return render_template('simplest_form.html', answer=answer, hints=hints, scoredict=scoredict)
-
 
 #simplest_form()
 
@@ -316,7 +329,8 @@ def mixed_to_normal():
     except:
         pct = 0
     scoredict = {'score': scorecnt2, 'total': total, 'totalqts': qtscnt2, 'pct': pct}
-    return render_template('normal-form.html', answer=answer, hints=hints, scoredict=scoredict)
+  #  return render_template('normal-form.html', answer=answer, hints=hints, scoredict=scoredict)
+    return render_template('normalForm.html', answer=answer, hints=hints, scoredict=scoredict)
 
 #mixed_to_normal()
 

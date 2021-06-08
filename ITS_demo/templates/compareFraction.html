@@ -1,0 +1,202 @@
+{% extends "layout.html" %}
+{% block title %}Q1{% endblock %}
+{% block style %}
+.project {
+  width: 400px;
+  margin-bottom: 1em;
+}
+  .project > div {
+    display: inline-block;
+    margin: 0 -5px 0 0;
+    vertical-align: middle;
+  }
+.task {
+  width: 33rem;
+  height: 8rem;
+  border: .4em solid #E4E4E7;
+  background: #E4E4E7;
+  border-radius: 100%;
+}
+.progress {
+  width: calc( 50% - 3em);
+  height: .6em;
+  padding: .2em 0;
+  background: #E4E4E7;
+  position: relative;
+}
+  .progress>div {
+    height: .2em;
+    left: -.4em;
+    right: -.4em;
+    position: absolute;
+  }
+.pending { background: #F8AC59; }
+.running { background: #1C84C6; }
+.passed { background: #1AB394; }
+.failed { background: #ED5565; }
+{% endblock %}
+
+{% block script %}
+$(function() {
+	$('.progress>div').each(function() {
+  	$(this).css('width', $(this).data('progress') );
+  });
+})
+
+var x = document.getElementsByClassName("correct");
+var y = document.getElementsByClassName("wrong");
+var feedcount = 0;
+
+var ans = [{{ answer.ans[0] }}, {{ answer.ans[1] }}, {{ answer.ans[2] }}, {{ answer.ans[3] }}, {{ answer.ans[4] }}, {{ answer.ans[5] }} ];
+
+const check=(i)=>
+{
+	if(document.getElementsByTagName("input")[i].value == ans[i])
+	{
+	   $(x[i]).show();
+       $(y[i]).hide();
+       document.getElementById("icon1").style.display="inline";
+    }
+	 else
+	 {
+	    feedcount++;
+        $(x[i]).hide();
+        $(y[i]).show();
+	    document.getElementsByTagName("input")[i].value = "";
+	    
+	 }
+}
+
+function right1(){
+    document.getElementsByClassName("ryt1")[0].style.display="inline";
+    document.getElementsByClassName("ryt1")[1].style.display="inline";
+    document.getElementById("btn1").innerHTML="Find Equivalent";
+    document.getElementById("btn2").innerHTML="Simplest Form";
+    document.getElementById("btn3").innerHTML="Compare Denominators";
+    document.getElementById("btn4").innerHTML="Compare Numerators";
+}
+function right2(){
+    if(document.getElementById("btn1").innerHTML==="Find Equivalent"){
+        document.getElementsByClassName("ryt2")[0].style.display="block";
+        document.getElementsByClassName("ryt2")[1].style.display="inline";
+        document.getElementsByClassName("ryt2")[2].style.display="block";
+        document.getElementsByClassName("ryt2")[3].style.display="block";
+        document.getElementsByClassName("ryt2")[4].style.display="block";
+        document.getElementsByClassName("ryt2")[5].style.display="inline";
+        document.getElementsByClassName("ryt2")[6].style.display="block";
+        document.getElementsByClassName("ryt2")[7].style.display="block";
+    }
+else{
+ alert("Wrong Option");
+}
+}
+
+window.onload = function() {
+var count = 0;
+
+var countButton = document.getElementById("hint-btn");
+var displayCount = document.getElementsByClassName("showhints");
+countButton.onclick = function(){
+  count++;
+  if(count == 1)
+  {
+  document.getElementById("btn-grp1").style.visibility="visible";
+  }
+  else
+  {
+    if(count == 2) {displayCount[1].innerHTML = "Hint 2 :{{ hints.h2 }}\n" ;}
+    else {displayCount[2].innerHTML = "Hint 3 :{{ hints.h3 }}\n" ;}
+  }
+  }
+
+  var subbutton = document.getElementById("b1");
+  subbutton.onclick = function(){
+     document.querySelector(".myform").setAttribute("action","score/"+1+"/"+count+"/"+feedcount);
+     function time(){
+     var s=document.getElementById("scre");
+     s.style.display="none";
+     }
+     var d=setTimeout(time,500);
+     clearInterval(d);
+  }
+}
+
+function openSlideMenu()
+{
+    document.getElementById('menu').style.width = '250px';
+    document.getElementById('content').style.marginLeft = '250px';
+}
+
+function closeSlideMenu()
+{
+    document.getElementById('menu').style.width = '0px';
+    document.getElementById('content').style.marginLeft = '0px';
+}
+
+
+var close = document.getElementsByClassName("closebtn");
+var i;
+
+for (i = 0; i < close.length; i++) {
+  close[i].onclick = function(){
+    var div = this.parentElement;
+    div.style.opacity = "0";
+    setTimeout(time,100);
+    function time(){
+     var s=document.getElementById("scre");
+     alert("Bhavya");
+     s.style.display="none";
+    }
+  }
+}
+
+{% endblock %}
+
+{% block message %} 
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+<div class="alert alert-info" role="alert" id="scre">
+     <span class="closebtn">&times;</span>
+    {% for message in get_flashed_messages() %}
+  <h4 class="alert-heading">{{ message }}</h4>
+    {% endfor %}
+</div>
+  {% endif %}
+{% endwith %}
+</div>
+{% endblock %}
+
+
+    {% block progress %}{{scoredict.tcp}}%{% endblock %}
+    {% block question %}{{scoredict.totalqts}}{% endblock %}
+    {% block pvalue %}{{ scoredict.tcp }}{% endblock %}
+{% block content %}
+
+<div class="project">
+    <div style="display:flex;justify-content:center;align-items:center;">
+  <div class="task running ">
+      <i class="far fa-check" id="icon1" style="display:none;color:white;margin:auto;"></i>
+  </div>
+        <div class="progress">
+            <div class="running" data-progress="100%"> </div> </div>
+  <div  class="task running"></div>
+  <div class="progress"  ><div class="running" data-progress="100%"> </div></div>
+        <div class="task running"></div></div>
+</div>
+
+    {{ answer.que }}
+    <br><br>
+     <div class="btn-group btn-group-vertical" id="btn-grp1" role="group" aria-label="Basic example" style="float:right; margin-right:120px;visibility:hidden;">
+          <button type="button" class="btn btn-primary" style="margin-bottom:30px;" id="btn1" onclick="right2();">HCF</button>
+          <button type="button" class="btn btn-secondary" style="margin-bottom:30px;" id="btn2">Average</button>
+          <button type="button" class="btn btn-secondary" style="margin-bottom:30px;" onclick="right1();" id="btn3">LCM</button>
+        <button type="button" class="btn btn-secondary" style="margin-bottom:30px;" id="btn4">Multiply</button>
+</div>
+{% for i in range(6) %}
+    <label for="quo1" style="display:none;" class="ryt1">{{ labels.labels[i] }}</label>
+    <input type="text" id="quo1" name="quo" maxlength="8" size="2" onblur="check({{i}});" class="ryt1" style="display:none;">
+    <img src="{{ url_for('static', filename='images/tick.png') }}" width="32px" height="22px" class="correct">
+    <img src="{{ url_for('static', filename='images/cross.jpg') }}" width="32px" height="22px" class="wrong">
+    <br><br>
+{% endfor %}
+{% endblock %}
