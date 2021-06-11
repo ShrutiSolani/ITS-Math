@@ -1,6 +1,46 @@
 {% extends "layout.html" %}
 {% block title %}Q1{% endblock %}
 
+{% block style  %}
+
+.project {
+  width: 400px;
+  margin-bottom: 1em;
+}
+  .project > div {
+    display: inline-block;
+    margin: 0 -5px 0 0;
+    vertical-align: middle;
+  }
+h2{
+    padding:17px;
+}
+.task {
+  width: 42rem;
+  height: 7rem;
+  border: .4em solid #E4E4E7;
+  background: #E4E4E7;
+  border-radius: 100%;
+}
+.progress {
+  width: calc( 50% - 3em);
+  height: .6em;
+  padding: .2em 0;
+  background: #E4E4E7;
+  position: relative;
+}
+  .progress>div {
+    height: .2em;
+    left: -.4em;
+    right: -.4em;
+    position: absolute;
+  }
+.pending { background: #F8AC59; }
+.running { background: #1C84C6; }
+.passed { background: #1AB394; }
+.failed { background: #ED5565; }
+{% endblock %}
+
 {% block script %}
 
 var x = document.getElementsByClassName("correct");
@@ -11,8 +51,13 @@ function check0()
 {
 	if(document.getElementsByTagName("input")[0].value == {{ answer.b0 }})
 	{
-	   $(x[0]).show();
+	   <!-- $(x[0]).show(); -->
+       
+     $(x[0]).css("display","inline-block");
+     document.getElementsByTagName("h2")[0].innerHTML="";
+     document.getElementById("icon1").style.display="inline";
        $(y[0]).hide();
+
     }
 	 else
 	 {
@@ -44,8 +89,10 @@ function check1()
 {
 	if(document.getElementsByTagName("input")[1].value == {{ answer.b1 }})
 	{
-	    $(x[1]).show();
-	    $(y[1]).hide();
+    $(x[1]).css("display","inline-block");
+    document.getElementsByTagName("h2")[1].innerHTML="";
+    document.getElementById("icon2").style.display="inline";
+      $(y[1]).hide();
     }
 	 else
 	 {
@@ -136,7 +183,15 @@ function check4()
 	{
         $(x[4]).show();
 	    $(y[4]).hide();
-	}
+      document.getElementById("icon4").style.display="inline";
+      document.getElementById("icon4").style.color="green";
+     document.getElementsByTagName("h2")[0].innerHTML="";
+     document.getElementsByTagName("h2")[1].innerHTML="";
+     <!-- document.getElementsByTagName("h2")[2].innerHTML=""; -->
+       document.getElementById("icon1").style.display="inline";
+       document.getElementById("icon2").style.display="inline";
+       document.getElementById("icon3").style.display="inline";
+    }
 	else
 	{
 	    feedcount++;
@@ -160,6 +215,20 @@ function check4()
 	}
 }
 
+function right1(){
+  <!--    document.getElementsByClassName("ryt1")[0].style.display="inline";-->
+      document.getElementsByClassName('line1')[0].style.display = 'block';
+      document.getElementById("btn1").innerHTML="subtract denominator from numerator";
+      document.getElementById("btn2").innerHTML="subtract quotient from numerator";
+      document.getElementById("btn3").innerHTML="subtract denominator from denominator";
+      document.getElementById("btn4").innerHTML="write remainder";
+  }
+  function right2(){
+      if(document.getElementById("btn4").innerHTML==="write remainder"){
+          document.getElementsByClassName('line1')[1].style.display = 'block';
+      }
+  }
+
 window.onload = function() {
 var count = 0;
 
@@ -169,8 +238,10 @@ countButton.onclick = function(){
   count++;
   if(count == 1)
   {
-  displayCount[0].innerHTML = "Hint 1 :{{ hints.h1 }}\n" ;
-  }
+   
+      document.getElementById("btn-grp1").style.visibility="visible";
+    
+    }
   else
   {
     if(count == 2) {displayCount[1].innerHTML = "Hint 2 :{{ hints.h2 }}\n" ;}
@@ -241,28 +312,60 @@ for (i = 0; i < close.length; i++) {
     {% block question %}{{scoredict.totalqts}}{% endblock %}
     {% block pvalue %}{{ scoredict.tcp }}{% endblock %}
 {% block content %}
+
+<div class="project" style="margin-left:65%;">
+  <div style="display:flex;justify-content:center;align-items:center;">
+<div class="task running ">
+    <h2>1</h2>
+    <i class="far fa-check" id="icon1" style="display:none;color:white;margin-bottom:17px;"></i>
+</div>
+      <div class="progress">
+          <div class="running" data-progress="100%"> </div> </div>
+<div  class="task running">
+    <h2>2</h2>
+    <i class="far fa-check" id="icon2" style="display:none;color:white;margin:auto;"></i></div>
+      
+<div class="progress"  ><div class="running" data-progress="100%"> </div></div>
+      <div class="task running">
+          <h2></h2>
+          <i class="fas fa-pennant" id="icon4" style="color:white;margin:auto;margin-left:10px;margin-top:10px;"></i></div>
+  </div>
+</div>
+<br><br>   
+
+
     {{ answer.que }}
     <br><br>
 
-    <label for="quo">Quotient:</label>
-    <input type="text" id="quo" name="quo" maxlength="2" size="2" onkeyup="check0();" required>
+    <div class="btn-group btn-group-vertical" id="btn-grp1" role="group" aria-label="Basic example" style="float:right; margin-right:120px;visibility:hidden;padding-bottom:50px">
+      <button type="button" class="btn btn-secondary" style="margin-bottom:30px;" id="btn1"> subtract denominator from numerator  </button>
+      <button type="button" class="btn btn-secondary" style="margin-bottom:30px;" onclick="right1();" id="btn2"> divide and write quotient </button>
+      <button type="button" class="btn btn-secondary" style="margin-bottom:30px;"  id="btn3"> find equivalent fraction </button>
+    <button type="button" class="btn btn-secondary" style="margin-bottom:30px;" onclick="right2();" id="btn4">divide and write remainder</button>
+</div>
+
+<div class="line1" style="display: none;">
+    <label for="quo" >Quotient:</label>
+    <input type="text" id="quo" name="quo" maxlength="2" size="2" onblur="check0();" required>
     <img src="{{ url_for('static', filename='images/tick.png') }}" width="32px" height="22px" class="correct">
     <img src="{{ url_for('static', filename='images/cross.jpg') }}" width="32px" height="22px" class="wrong">
     <br><br>
+</div>
 
+<div class="line1" style="display: none;">
     <label for="rem">Remainder:</label>
-    <input type="text" id="rem" name="rem" maxlength="2" size="2" onkeyup="check1();" required>
+    <input type="text" id="rem" name="rem" maxlength="2" size="2" onblur="check1();" required>
     <img src="{{ url_for('static', filename='images/tick.png') }}" width="32px" height="22px" class="correct">
     <img src="{{ url_for('static', filename='images/cross.jpg') }}" width="32px" height="22px" class="wrong">
     <br><br>
-
+  </div>
     <label for="mf1">Mixed Fraction:</label>
     <br>
     <table>
         <tr>
 <!--               numerator-->
             <td></td>
-            <td><input type="text" id="mf2" name="mf" maxlength="2" size="2" onkeyup="check3();" required></td>
+            <td><input type="text" id="mf2" name="mf" maxlength="2" size="2" onblur="check3();" required></td>
             <td><img src="{{ url_for('static', filename='images/tick.png') }}" width="50px" height="50px" class="correct"></td>
             <td><img src="{{ url_for('static', filename='images/cross.jpg') }}" width="50px" height="50px" class="wrong"></td>
         </tr>
@@ -270,7 +373,7 @@ for (i = 0; i < close.length; i++) {
         <tr>
 
 <!--                mixed fraction-->
-            <td><input type="text" id="mf1" name="mf" maxlength="2" size="2" onkeyup="check2();"required></td>
+            <td><input type="text" id="mf1" name="mf" maxlength="2" size="2" onblur="check2();"required></td>
             <td><hr/></td>
             <td><img src="{{ url_for('static', filename='images/tick.png') }}" width="50px" height="50px" class="correct"></td>
             <td><img src="{{ url_for('static', filename='images/cross.jpg') }}" width="50px" height="50px" class="wrong"></td>
@@ -280,7 +383,7 @@ for (i = 0; i < close.length; i++) {
         <tr>
 <!--                denominator-->
             <td></td>
-            <td><input type="text" id="mf3" name="mf" maxlength="2" size="2" style="border" onkeyup="check4();" required></td>
+            <td><input type="text" id="mf3" name="mf" maxlength="2" size="2" style="border" onblur="check4();" required></td>
             <td><img src="{{ url_for('static', filename='images/tick.png') }}" width="50px" height="50px" class="correct"></td>
             <td><img src="{{ url_for('static', filename='images/cross.jpg') }}" width="50px" height="50px" class="wrong"></td>
         </tr>

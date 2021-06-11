@@ -71,7 +71,7 @@ def question():
     answer = {'que':que, 'ans':box_ans}
     labels = ['Quotient', 'Remainder', 'Numerator', 'Whole Number', 'Denominator']
     labels = {'labels': labels}
-    #answer = {'que': que, 'b0': box_ans[0], 'b1': box_ans[1], 'b2': box_ans[2], 'b3': box_ans[3], 'b4': box_ans[4]}
+    answer = {'que': que, 'b0': box_ans[0], 'b1': box_ans[1], 'b2': box_ans[2], 'b3': box_ans[3], 'b4': box_ans[4]}
     hint1 = 'Try dividing numerator by denominator'
     hint2 = 'After dividing N/D, quotient =' + str(quo) + ' remainder = ' + str(rem)
     hint3 = 'Mixed Fraction Answer :' + str(quo) + " (" + str(rem) + "/" + str(den) + ")"
@@ -83,8 +83,8 @@ def question():
     except:
         tcp = 0
     scoredict = {'score': scorecnt1, 'total': total, 'totalqts': qtscnt1, 'tcp': tcp}
-    return render_template('short_display.html', answer=answer, hints=hints, scoredict=scoredict, labels = labels)
-    # return render_template('display copy.html', answer=answer, hints=hints, scoredict=scoredict, labels = labels)
+  #  return render_template('short_display.html', answer=answer, hints=hints, scoredict=scoredict, labels = labels)
+    return render_template('display copy.html', answer=answer, hints=hints, scoredict=scoredict, labels = labels)
 
 #################################################################
 @app.route('/score/<tid>/<counter>/<feedback>', methods=['POST'])
