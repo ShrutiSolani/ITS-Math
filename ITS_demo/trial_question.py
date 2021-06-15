@@ -332,7 +332,21 @@ def mixed_to_normal():
   #  return render_template('normal-form.html', answer=answer, hints=hints, scoredict=scoredict)
     return render_template('normalForm.html', answer=answer, hints=hints, scoredict=scoredict)
 
-#mixed_to_normal()
+# Algebra Easy
+@app.route('/algebra')
+def algebra_easy():
+    terms1 = ['3.14r\u00b2', '5 – 3t\u00b2', '1 + t\u00b3', '4*3.14*r\u00b3/3']
+    terms2 = ['2y + 14z', '20', 'a\u00b2 + b\u00b2 - 2ab', '8xy']
+    terms3 = [['10xy', '22yx'], ['5xy\u00b2', '5x\u00b2y'], ['50x', '23yx'], ['p\u00b2q', 'qp\u00b2']]
+    terms4 = ['– 3p\u00b2 + 4p + 7', 'p + 4p\u00b2 + 2', '7p - 3', '2p\u00b2 – p – 2']
+    q1 = 'Identify the numerical coefficients of terms (other than constants) in the following expressions'
+    q2 = 'Classify into monomials, binomials and trinomials'
+    q3 = 'State whether a given pair of terms is of like or unlike terms'
+    q4 = 'If p = – 2, find the value of '
+
+
+
+
 
 
 app.secret_key = 'super secret key'
