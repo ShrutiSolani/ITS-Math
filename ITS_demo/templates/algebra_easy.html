@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+{% block title %}Algebra {% endblock %}
+
+{% block content %}
+<div>{{ easy.question }}</div>
+<p>
+{% for i in range(4) %}
+  <div>{{ easy.options[i] }}
+  <input type="text">
+  </div>
+{% endfor %}
+</p>
+
+{% endblock %}

@@ -343,7 +343,11 @@ def algebra_easy():
     q2 = 'Classify into monomials, binomials and trinomials'
     q3 = 'State whether a given pair of terms is of like or unlike terms'
     q4 = 'If p = – 2, find the value of '
-
+    questions = [q1, q2, q3, q4]
+    ques_terms = {q1: terms1, q2: terms2, q3: terms3, q4: terms4}
+    x = random.choice(questions)
+    y = ques_terms[x]
+    return render_template('algebra_easy.html', easy={'question': x, 'options': y})
 
 
 
