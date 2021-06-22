@@ -329,10 +329,81 @@ def mixed_to_normal():
     except:
         pct = 0
     scoredict = {'score': scorecnt2, 'total': total, 'totalqts': qtscnt2, 'pct': pct}
-  #  return render_template('normal-form.html', answer=answer, hints=hints, scoredict=scoredict)
-    return render_template('normalForm.html', answer=answer, hints=hints, scoredict=scoredict)
+    return render_template('normal-form.html', answer=answer, hints=hints, scoredict=scoredict)
+    # return render_template('normalForm.html', answer=answer, hints=hints, scoredict=scoredict)
 
-#mixed_to_normal()
+# Algebra Easy
+# @app.route('/algebra')
+# def algebra_easy():
+#     terms1 = ['3.14r\u00b2', '5 – 3t\u00b2', '1 + t\u00b3', '4*3.14*r\u00b3/3']
+#
+#     terms3 = [['10xy', '22yx'], ['5xy\u00b2', '5x\u00b2y'], ['50x', '23yx'], ['p\u00b2q', 'qp\u00b2']]
+#     terms4 = ['– 3p\u00b2 + 4p + 7', 'p + 4p\u00b2 + 2', '7p - 3', '2p\u00b2 – p – 2']
+#     q1 = 'Identify the numerical coefficients of terms (other than constants) in the following expressions'
+#     q2 = 'Classify into monomials, binomials and trinomials'
+#     q3 = 'State whether a given pair of terms is of like or unlike terms'
+#     q4 = 'If p = – 2, find the value of '
+#     questions = [q1, q2, q3, q4]
+#     # ques_terms = {q1: terms1, q2: terms2, q3: terms3, q4: terms4}
+#     # x = random.choice(questions)
+#     # y = ques_terms[x]
+#     # return render_template('algebra_easy.html', easy={'question': x, 'options': y})
+
+@app.route('/monomial')
+def monomial():
+    terms2 = ['2y + 14z', '20', 'a\u00b2 + b\u00b2 - 2ab', '8xy']
+    q2 = 'Classify into monomials, binomials and trinomials'
+    variable = ["x", "y", "z", "xy", "yz", "xz", "xyz"]
+    sign = ["+", "-"]
+    answers = []
+    terms = []
+    # x = random.randint(1, 4)
+    count = 0
+    while count <= 3:
+        x = random.randint(1, 3)
+        answer = ""
+        if x == 1:
+            answer = "Monomial"
+            term = str(random.randint(1, 25)) + random.choice(variable)
+            # print(term)
+        elif x == 2:
+            answer = "Binomial"
+            term = str(random.randint(1, 25)) + random.choice(variable) + random.choice(sign) + str(random.randint(1, 25)) + random.choice(variable)
+        elif x == 3:
+            answer = "Trinomial"
+            term = str(random.randint(1, 25)) + random.choice(variable) + random.choice(sign) + str(
+                random.randint(1, 25)) + random.choice(variable) + random.choice(sign) + str(
+                random.randint(1, 25)) + random.choice(variable)
+        answers.append(answer)
+        print(answers)
+        terms.append(term)
+        count += 1
+    return render_template('algebra2.html', easy={'question': q2, 'options': terms, 'answer': answers})
+
+
+@app.route("/like-unlike")
+def like_unlike():
+    q3 = 'State whether a given pair of terms is of like or unlike terms'
+    term1 = ['x', 'y', 'xy', 'xy\u00b2', 'x\u00b2y']
+    term2 = ['x', 'y', 'yx', random.choice(['y\u00b2x', 'xy\u00b2']), random.choice(['yx\u00b2', 'x\u00b2y'])]
+    answers = []
+    terms = []
+    count = 0
+    while count <= 3:
+        t1 = random.choice(term1)
+        t2 = random.choice(term2)
+        x = str(random.randint(1, 25))
+        y = str(random.randint(1, 25))
+        if term1.index(t1) == term2.index(t2):
+            answer = "Like"
+        else:
+            answer = "Unlike"
+        t1 = x+t1
+        t2 = y+t2
+        terms.append([t1, t2])
+        answers.append(answer)
+        count += 1
+    return render_template('algebra2.html', easy={'question': q3, 'options': terms, 'answer': answers, 'num': 2})
 
 
 app.secret_key = 'super secret key'
