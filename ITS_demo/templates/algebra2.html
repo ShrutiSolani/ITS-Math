@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+{% block title %}Algebra {% endblock %}
+{% block script %}
+window.onload = function(){
+    monobitri = ["","Monomial", "Binomial", "Trinomial"];
+    likeunlike = ["", "Like", "Unlike"];
+    if({{ easy.num }} == '2'){ monobitri = likeunlike; }
+    var select = document.getElementsByClassName("answer_options");
+    for(var j = 0; j < 4; j++){
+    for(var i = 0; i < monobitri.length; i++){
+         var el = document.createElement("option");
+            el.textContent = monobitri[i];
+            el.value = monobitri[i];
+            select[j].appendChild(el);
+        }
+    }
+
+}
+var ans = [ "{{ easy.answer[0] }}", "{{ easy.answer[1] }}", "{{ easy.answer[2] }}", "{{ easy.answer[3] }}" ];
+console.log(ans);
+function check(i){
+
+console.log(document.getElementsByTagName("select")[i].value);
+console.log({{ easy.answer[i] }});
+        if(document.getElementsByTagName("select")[i].value == ans[i])
+	{
+	    alert("Correct");
+    }
+        else{
+            alert("Incorrect");
+        }
+    }
+{% endblock %}
+{% block content %}
+<div>{{ easy.question }}</div>
+<p>
+{% for i in range(4) %}
+  <div>{{ easy.options[i] }}
+  <select class="answer_options" onchange="check({{ i }});">
+
+  </select>
+  </div>
+{% endfor %}
+</p>
+
+{% endblock %}
