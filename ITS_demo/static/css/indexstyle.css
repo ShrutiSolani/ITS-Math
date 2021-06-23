@@ -18,6 +18,7 @@
 			text-decoration: underline;
 			font-style: italic;
 			font-size: 40px;
+			color:yellow;
 			animation: clrs 2s linear infinite;
 			padding-left: 50%;
 		}
@@ -48,7 +49,7 @@
 			width: 100%;
 			background-color: purple;
 		}
-		@keyframes clrs{
+		/* @keyframes clrs{
 			0%{
 				color:red;
 			}
@@ -58,7 +59,7 @@
 			100%{
 				color:yellow;
 			}
-		}
+		} */
 		#n2{
 			width: 100vw;
 			height: 50vh;

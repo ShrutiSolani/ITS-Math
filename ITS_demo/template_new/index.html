@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,200&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&display=swap" rel="stylesheet">   
+
+<title>Home</title>
+    <style>
+        *{
+			margin: 0;
+			padding: 0px;
+			box-sizing: border-box;
+		}
+       
+        #n1 {
+            position: fixed; 
+            height:calc(100%-200px);
+            width: 100vw;
+            top:0;
+            left: 0;
+            z-index: 9999; 
+            background-color: #3A6351!important;
+            
+           
+        }
+
+        .navbar-brand,.nav-link{
+            color: #fff !important;
+            
+        }
+        
+        
+        .main{
+            margin-top: 50px;
+            width: 100vw;
+            height: 100%;
+            /* border: 1px solid red; */
+            /* background-color:#B2B8A3; */
+            background-color: #292929;
+            background-color:#FFE5E2;
+            background-color:#F5E6CA;
+        }
+        #leftsection,#rightsection{
+            padding: 20px 10px;
+        }
+       
+        #rightsection h1{
+            font-family: 'Poppins', sans-serif;
+            color:black;
+            font-size: 4vw;
+            /* margin-top: 25% */
+        }
+        #leftsection,#rightsection{
+            margin: 0% auto;
+        }
+        #leftsection img{
+            width:100%;
+            height: 98%;
+        }
+        .signup {
+            font-family: 'Libre Baskerville', serif;
+            margin: 50px 0;
+            width: 100%;
+            height: auto;  
+            background-color: #F7F6E7;  
+        }
+        @media (max-width:758px) {
+            #rightsection h1{
+                font-size: 10vw;
+            }
+
+            
+        }
+    </style>
+</head>
+<body>
+          <nav id="n1" class="navbar navbar-expand-lg navbar-light mb-3 navbar-fixed-top nav">
+            <a class="navbar-brand" href="#">Logo PhiloMath</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+  
+            <div class="collapse navbar-collapse " id="navbarSupportedContent">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link a1" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link a1" href="#">About Us</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link a1" href="#">Our Team</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link a1" href="#">Contact</a>
+                </li>
+              </ul>
+              <!-- <h1 class="text-center" style="text-align:center;color: black;">PhiloMath</h1> -->
+              <!-- <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0 btn-dark text-white text-center" type="submit">GO</button>
+              </form> -->
+            </div>
+          </nav>
+          <div class="main">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-7 col-md-12 col-11 d-flex justify-content-around align-items-center" id="leftsection">
+                        <img src="../static/images/mainimg.jpg">
+                    </div>
+                    <div class="col-lg-5 col-md-12 col-11" id="rightsection">
+                        <h1>All you need is a Tutor. PhiloMath - The Ultimate Tutoring System</h1>
+                        <button type="button" class="btn signup" style="background-color:#3A6351!important;color:white!important;font-size: 1.5rem;">Sign Up Now</button>
+                        <button type="button" class="btn signup" style="background-color:#3A6351!important;color:white!important;font-size: 1.5rem;">Login </button>
+                    </div>
+                  </div>
+              </div>
+          </div>
+
+          
+          
+          
+    
+</body>
+</html>
