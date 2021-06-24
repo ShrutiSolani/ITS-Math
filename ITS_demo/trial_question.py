@@ -333,21 +333,72 @@ def mixed_to_normal():
     # return render_template('normalForm.html', answer=answer, hints=hints, scoredict=scoredict)
 
 # Algebra Easy
-# @app.route('/algebra')
-# def algebra_easy():
-#     terms1 = ['3.14r\u00b2', '5 – 3t\u00b2', '1 + t\u00b3', '4*3.14*r\u00b3/3']
-#
-#     terms3 = [['10xy', '22yx'], ['5xy\u00b2', '5x\u00b2y'], ['50x', '23yx'], ['p\u00b2q', 'qp\u00b2']]
-#     terms4 = ['– 3p\u00b2 + 4p + 7', 'p + 4p\u00b2 + 2', '7p - 3', '2p\u00b2 – p – 2']
-#     q1 = 'Identify the numerical coefficients of terms (other than constants) in the following expressions'
-#     q2 = 'Classify into monomials, binomials and trinomials'
-#     q3 = 'State whether a given pair of terms is of like or unlike terms'
-#     q4 = 'If p = – 2, find the value of '
-#     questions = [q1, q2, q3, q4]
-#     # ques_terms = {q1: terms1, q2: terms2, q3: terms3, q4: terms4}
-#     # x = random.choice(questions)
-#     # y = ques_terms[x]
-#     # return render_template('algebra_easy.html', easy={'question': x, 'options': y})
+@app.route('/p')
+def algebra_easy():
+    cnt=0
+    variable=["","p","p\u00b2","p\u00b3"]
+    sign = ["+", "-"]
+    terms = []
+    answers = []
+    num=random.randint(2,10)
+    q4 = "If p = "+str(num)+", find the value of "
+    while(cnt<4):   
+        c1 =  random.randint(1,10) 
+        c2 =  random.randint(1,10) 
+        c3 =  random.randint(1,10) 
+        s1 = random.choice(sign)
+        s2 = random.choice(sign)
+        v1 = random.choice(variable)
+        v2 = random.choice(variable)
+        v3 = random.choice(variable)
+        term = str(c1) + str(v1) + str(s1) + str(c2) + str(v2) + str(s2) + str(c3) + str(v3)
+        i1=find_term(v1,variable)
+        i2=find_term(v2,variable)
+        i3=find_term(v3,variable)
+        var1=num**i1
+        var2=num**i2
+        var3=num**i3
+        if(s1 == "+" and s2=="+"):
+            answer =  c1*var1 + c2*var2 + c3*var3
+        elif(s1=="+" and s2=="-"):
+            answer= c1*var1 + c2*var2 - c3*var3
+        elif(s1=="-" and s2=="-"):
+            answer= c1*var1 - c2*var2 - c3*var3
+        elif(s1=="-" and s2=="+"):
+            answer= c1*var1 - c2*var2 + c3*var3 
+        # answer= c1*var1 + s1 + c2*var2 + s2 + c3*var3
+        terms.append(term)      
+        answers.append(answer) 
+        cnt += 1
+
+    return render_template('algebra_easy.html', easy={'question': q4, 'options': terms, 'answer': answers, 'num': 2})
+        
+def find_term(v, a):
+    return a.index(v)
+
+
+@app.route('/coefficient')
+def coefficient():
+    q1 = 'Identify the numerical coefficients of terms (other than constants) in the following expressions'
+    variable = ["x", "x\u00b2", "x\u00b3"]
+    sign = ["+", "-"]
+    terms = []
+    answers = []
+    count = 0
+    while count <= 3:
+        coeff = random.randint(1, 10)
+        num = random.randint(1,30)
+        var = random.choice(variable)
+        op = random.choice(sign)
+        term = str(num) + op + str(coeff) + random.choice(variable)
+        terms.append(term)
+        if(op == "-"):
+            answers.append(-coeff)
+        else:
+            answers.append(coeff)
+        count += 1
+    return render_template('algebra_easy.html', easy={'question': q1, 'options': terms, 'answer': answers, 'num': 1})
+
 
 @app.route('/monomial')
 def monomial():
@@ -378,7 +429,7 @@ def monomial():
         print(answers)
         terms.append(term)
         count += 1
-    return render_template('algebra2.html', easy={'question': q2, 'options': terms, 'answer': answers})
+    return render_template('algebra2.html', easy={'question': q2, 'options': terms, 'answer': answers,'num': 2})
 
 
 @app.route("/like-unlike")
