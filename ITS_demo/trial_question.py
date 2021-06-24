@@ -429,7 +429,11 @@ def monomial():
         print(answers)
         terms.append(term)
         count += 1
+<<<<<<< HEAD
     return render_template('algebra2.html', easy={'question': q2, 'options': terms, 'answer': answers,'num': 2})
+=======
+    return render_template('algebra2.html', easy={'question': q2, 'options': terms, 'answer': answers, 'num': 1})
+>>>>>>> d7a7188fa88bbaf6ac73e64cf59e29d2497fb73a
 
 
 @app.route("/like-unlike")
