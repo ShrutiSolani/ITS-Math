@@ -1,12 +1,35 @@
 {% extends "layout.html" %}
 {% block title %}Algebra {% endblock %}
 
+
+{% block script %}
+var ans = [ "{{ easy.answer[0] }}", "{{ easy.answer[1] }}", "{{ easy.answer[2] }}", "{{ easy.answer[3] }}" ];
+console.log(ans);
+function check(i){
+
+console.log(document.getElementsByTagName("input")[i].value);
+<!-- console.log({{ easy.answer[i] }}); -->
+        if(document.getElementsByTagName("input")[i].value == ans[i])
+	{
+	    alert("Correct");
+    }
+        else{
+            alert("Incorrect");
+        }
+    }
+
+
+{% endblock %}
+
+
+
+
 {% block content %}
 <div>{{ easy.question }}</div>
 <p>
 {% for i in range(4) %}
   <div>{{ easy.options[i] }}
-  <input type="text">
+  <input type="text" onblur="check({{ i }});">
   </div>
 {% endfor %}
 </p>
