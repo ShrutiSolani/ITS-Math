@@ -27,7 +27,12 @@ console.log({{ easy.answer[i] }});
 	    alert("Correct");
     }
         else{
-            alert("Incorrect");
+            if({{ easy.num }} == '1'){
+                alert("An expression which contains two unlike terms is called a binomial. Similarly, think of monomial and trinomial.");
+            }
+            else if({{ easy.num}} == '2'){
+                alert("When term have the same algebraic factors, they are like terms.");
+            }
         }
     }
 {% endblock %}
