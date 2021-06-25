@@ -14,7 +14,13 @@ console.log(document.getElementsByTagName("input")[i].value);
 	    alert("Correct");
     }
         else{
-            alert("Incorrect");
+            if({{ easy.num }} == '1'){
+                alert("A coefficient is a number used to multiply a variable");
+            }
+            else if({{ easy.num }} == '2'){
+                alert("Simply substitue value of p");
+            }
+            <!-- alert("Incorrect"); -->
         }
     }
 
