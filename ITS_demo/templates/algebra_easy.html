@@ -9,20 +9,20 @@ function check(i){
 
 console.log(document.getElementsByTagName("input")[i].value);
 <!-- console.log({{ easy.answer[i] }}); -->
-        if(document.getElementsByTagName("input")[i].value == ans[i])
+    if(document.getElementsByTagName("input")[i].value == ans[i])
 	{
 	    alert("Correct");
     }
-        else{
-            if({{ easy.num }} == '1'){
-                alert("A coefficient is a number used to multiply a variable");
-            }
-            else if({{ easy.num }} == '2'){
-                alert("Simply substitue value of p");
-            }
-            <!-- alert("Incorrect"); -->
+    else{
+        if({{ easy.num }} == '1'){
+            alert("A coefficient is a number used to multiply a variable");
         }
+        else{
+            alert("Simply substitue value of p");
+        }
+        <!-- alert("Incorrect"); -->
     }
+}
 
 
 {% endblock %}
@@ -35,7 +35,7 @@ console.log(document.getElementsByTagName("input")[i].value);
 <p>
 {% for i in range(4) %}
   <div>{{ easy.options[i] }}
-  <input type="text" onblur="check({{ i }});">
+  <input type="text" onchange="check({{ i }});">
   </div>
 {% endfor %}
 </p>
