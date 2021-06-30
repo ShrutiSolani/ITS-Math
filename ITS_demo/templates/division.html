@@ -31,9 +31,9 @@ function checkRem(i){
 {% block content %}
 {% for i in range(0,3,2) %}
     <div>{{contexts.q[i]}}</div>
-    Quotient: <input type="text" id="quo" onblur="checkQuo({{ i}});">
+    {{ contexts.label1 }}: <input type="text" id="quo" onchange="checkQuo({{ i }});">
     <br>
-    Remainder: <input type="text" id="rem" onblur="checkRem({{ i+1 }});">
+    {{ contexts.label2 }}: <input type="text" id="rem" onchange="checkRem({{ i+1 }});">
     <br><br>
 {% endfor %}
 {% endblock %}
