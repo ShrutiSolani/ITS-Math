@@ -523,15 +523,8 @@ def whole():
 
 @app.route('/number-line')
 def number_line():
-    # q = []
-    # answer = []
     x = random.randint(0, 10)
     que = 'Plot fraction '+ str(x)+'/10 on number line'
-    # print(que)
-    # q.append(que)
-    # answer.append(x)
-    # print(q)
-    # print(answer)
     return render_template('number_line.html', nums = {'que': que, 'ans': x})
 
 
