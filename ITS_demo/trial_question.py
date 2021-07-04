@@ -459,6 +459,81 @@ def like_unlike():
         count += 1
     return render_template('algebra2.html', easy={'question': q3, 'options': terms, 'answer': answers, 'num': 2})
 
+@app.route('/division')
+def division():
+    q=[]
+    ans_num=[]
+    ans_den=[]
+    for i in range(2):
+        num=random.randint(1,50)
+        den=random.randint(2,10)
+        qs="Find quotient and remainder of "+str(num)+"/"+str(den)+"."
+        ansnum=(num//den)
+        ansden=(num%den)
+        q.append(qs)
+        ans_num.append(ansnum)
+        ans_den.append(ansden)
+    q.insert(1," ")
+    print(q)
+    contexts={'ans_num':ans_num,'ans_den':ans_den,'q':q, 'label1': 'Quotient', 'label2': 'Remainder'}
+
+    return render_template('division.html',contexts=contexts)
+
+
+@app.route('/add-easy')
+def add_easy():
+    q=[]
+    ans_num=[]
+    ans_den=[]
+    for i in range(2):
+        num1=random.randint(1,25)
+        den=random.randint(2,10)
+        num2=random.randint(1,25)
+        
+        qs="Add this two fractions "+str(num1)+"/"+str(den)+" and "+str(num2)+"/"+str(den)+"."
+        ansnum=num1+num2
+        ansden=den
+        ans_num.append(ansnum)
+        ans_den.append(ansden)
+        q.append(qs)
+    q.insert(1," ")
+    contexts={'ans_num':ans_num,'ans_den':ans_den,'q':q, 'label1': 'Quotient', 'label2' : 'Remainder'}
+    return render_template('division.html',contexts=contexts)
+
+
+@app.route('/whole')
+def whole():
+    q=[]
+    ans_num=[]
+    ans_den=[]
+    for i in range(2):
+        num = random.randint(1,10)
+        den = random.randint(2,25)
+        wh = random.randint(1,10)
+        que = 'Multiply Fraction '+ str(num) + "/" + str(den) + " by whole number " + str(wh)
+        ansnum = num*wh
+        ansden = den
+        ans_num.append(ansnum)
+        ans_den.append(ansden)
+        q.append(que)
+    q.insert(1," ")
+    # print(q)
+    return render_template('division.html',contexts={'ans_num':ans_num,'ans_den':ans_den,'q':q, 'label1': 'Numerator', 'label2': 'Denominator'})
+
+
+@app.route('/number-line')
+def number_line():
+    # q = []
+    # answer = []
+    x = random.randint(0, 10)
+    que = 'Plot fraction '+ str(x)+'/10 on number line'
+    # print(que)
+    # q.append(que)
+    # answer.append(x)
+    # print(q)
+    # print(answer)
+    return render_template('number_line.html', nums = {'que': que, 'ans': x})
+
 
 app.secret_key = 'super secret key'
 app.run(debug=True)
