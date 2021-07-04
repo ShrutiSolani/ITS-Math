@@ -521,5 +521,19 @@ def whole():
     return render_template('division.html',contexts={'ans_num':ans_num,'ans_den':ans_den,'q':q, 'label1': 'Numerator', 'label2': 'Denominator'})
 
 
+@app.route('/number-line')
+def number_line():
+    # q = []
+    # answer = []
+    x = random.randint(0, 10)
+    que = 'Plot fraction '+ str(x)+'/10 on number line'
+    # print(que)
+    # q.append(que)
+    # answer.append(x)
+    # print(q)
+    # print(answer)
+    return render_template('number_line.html', nums = {'que': que, 'ans': x})
+
+
 app.secret_key = 'super secret key'
 app.run(debug=True)
