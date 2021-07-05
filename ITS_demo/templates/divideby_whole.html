@@ -1,0 +1,466 @@
+{% extends "layout.html" %}
+{% block title %}Q1{% endblock %}
+{% block style %}
+.project {
+  width: 400px;
+  margin-bottom: 1em;
+}
+  .project > div {
+    display: inline-block;
+    margin: 0 -5px 0 0;
+    vertical-align: middle;
+  }
+h2{
+    padding:17px;
+}
+.task {
+  width: 42rem;
+  height: 7rem;
+  border: .4em solid #E4E4E7;
+  background: #E4E4E7;
+  border-radius: 100%;
+}
+.progress {
+  width: calc( 50% - 3em);
+  height: .6em;
+  padding: .2em 0;
+  background: #E4E4E7;
+  position: relative;
+}
+  .progress>div {
+    height: .2em;
+    left: -.4em;
+    right: -.4em;
+    position: absolute;
+  }
+.pending { background: #F8AC59; }
+.running { background: #1C84C6; }
+.passed { background: #1AB394; }
+.failed { background: #ED5565; }
+{% endblock %}
+{% block script %}
+
+var x = document.getElementsByClassName("correct");
+var y = document.getElementsByClassName("wrong");
+var feedcount = 0;
+
+console.log({{answer.rec_num}})
+console.log({{answer.rec_den}})
+console.log({{answer.numerator}})
+console.log({{answer.denominator}})
+console.log({{answer.ans_num}})
+console.log({{answer.ans_den}})
+
+function check_num()
+{
+    if(document.getElementsByTagName("input")[0].value == {{ answer.rec_num }} )
+	{
+	   $(x[0]).show();
+     $(y[0]).hide();
+     $(x[0]).style.display="block";
+
+     
+      
+    }
+	 else
+	 {
+	    feedcount++;
+        $(x[0]).hide();
+        $(y[0]).show();
+	    document.getElementsByTagName("input")[0].value = "";
+	    swal(
+	    {
+          title: "Oops, Looks like you are not familiar with LCM ",
+          text: "for example,  LCM of 5 and 6 is 30.",
+          icon: "error",
+          button: true,
+          dangerMode: true,
+        }
+       )
+        .then((willDelete) => {
+          if (willDelete) {
+            swal("Now, try again", {
+
+              icon: "success",
+            });
+          }
+        });
+	 }
+}
+function check_den()
+{
+    if(document.getElementsByTagName("input")[1].value == {{ answer.rec_den }} )
+	{
+	   $(x[1]).show();
+     $(x[1]).style.display="block";
+     document.getElementsByTagName("h2")[0].innerHTML="";
+     document.getElementById("icon1").style.display="inline";
+       $(y[1]).hide();
+    }
+	 else
+	 {
+	    feedcount++;
+        $(x[1]).hide();
+        $(y[1]).show();
+	    document.getElementsByTagName("input")[1].value = "";
+	    swal(
+	    {
+          title: "Oops, Looks like you are not familiar with LCM ",
+          text: "for example,  LCM of 5 and 6 is 30.",
+          icon: "error",
+          button: true,
+          dangerMode: true,
+        }
+       )
+        .then((willDelete) => {
+          if (willDelete) {
+            swal("Now, try again", {
+
+              icon: "success",
+            });
+          }
+        });
+	 }
+}
+
+function check_num1()
+{
+    if(document.getElementsByTagName("input")[2].value == {{ answer.numerator }} )
+	{
+	   $(x[2]).show();
+     $(x[2]).style.display="block";
+
+     
+       $(y[2]).hide();
+    }
+	 else
+	 {
+	    feedcount++;
+        $(x[2]).hide();
+        $(y[2]).show();
+	    document.getElementsByTagName("input")[2].value = "";
+	    swal(
+	    {
+          title: "Oops, Looks like you are not familiar with LCM ",
+          text: "for example,  LCM of 5 and 6 is 30.",
+          icon: "error",
+          button: true,
+          dangerMode: true,
+        }
+       )
+        .then((willDelete) => {
+          if (willDelete) {
+            swal("Now, try again", {
+
+              icon: "success",
+            });
+          }
+        });
+	 }
+}
+function check_den1()
+{
+    if(document.getElementsByTagName("input")[3].value == {{ answer.denominator }} )
+	{
+	   $(x[3]).show();
+     $(x[3]).style.display="block";
+     document.getElementsByTagName("h2")[1].innerHTML="";
+     document.getElementById("icon2").style.display="inline";
+       $(y[3]).hide();
+    }
+	 else
+	 {
+	    feedcount++;
+        $(x[3]).hide();
+        $(y[3]).show();
+	    document.getElementsByTagName("input")[3].value = "";
+	    swal(
+	    {
+          title: "Oops, Looks like you are not familiar with LCM ",
+          text: "for example,  LCM of 5 and 6 is 30.",
+          icon: "error",
+          button: true,
+          dangerMode: true,
+        }
+       )
+        .then((willDelete) => {
+          if (willDelete) {
+            swal("Now, try again", {
+
+              icon: "success",
+            });
+          }
+        });
+	 }
+}
+
+function check_num2()
+{
+    if(document.getElementsByTagName("input")[4].value == {{ answer.ans_num }} )
+	{
+	   $(x[4]).show();
+       $(y[4]).hide();
+    }
+	 else
+	 {
+	    feedcount++;
+        $(x[4]).hide();
+        $(y[4]).show();
+	    document.getElementsByTagName("input")[4].value = "";
+	    swal(
+	    {
+          title: "Oops, Looks like you are not familiar with LCM ",
+          text: "for example,  LCM of 5 and 6 is 30.",
+          icon: "error",
+          button: true,
+          dangerMode: true,
+        }
+       )
+        .then((willDelete) => {
+          if (willDelete) {
+            swal("Now, try again", {
+
+              icon: "success",
+            });
+          }
+        });
+	 }
+}
+function check_den2()
+{
+    if(document.getElementsByTagName("input")[5].value == {{ answer.ans_den }} )
+	{
+	   $(x[5]).show();
+       $(y[5]).hide();
+       document.getElementById("icon4").style.display="inline";
+       document.getElementById("icon4").style.color="green";
+      document.getElementsByTagName("h2")[0].innerHTML="";
+      document.getElementsByTagName("h2")[1].innerHTML="";
+      document.getElementsByTagName("h2")[2].innerHTML="";
+        document.getElementById("icon1").style.display="inline";
+        document.getElementById("icon2").style.display="inline";
+        document.getElementById("icon3").style.display="inline";
+      }
+	 else
+	 {
+	    feedcount++;
+        $(x[5]).hide();
+        $(y[5]).show();
+	    document.getElementsByTagName("input")[5].value = "";
+	    swal(
+	    {
+          title: "Oops, Looks like you are not familiar with LCM ",
+          text: "for example,  LCM of 5 and 6 is 30.",
+          icon: "error",
+          button: true,
+          dangerMode: true,
+        }
+       )
+        .then((willDelete) => {
+          if (willDelete) {
+            swal("Now, try again", {
+
+              icon: "success",
+            });
+          }
+        });
+      }
+   
+}
+function right1(){
+    document.getElementsByClassName("fbox")[0].style.display="block";
+    document.getElementsByClassName("fbox")[1].style.display="inline";
+    document.getElementsByClassName("fbox")[2].style.display="block";
+    document.getElementsByClassName("fbox")[3].style.display="inline";
+
+    document.getElementById("btn1").innerHTML="Multiply Fraction with Reciprocate No.";
+      document.getElementById("btn2").innerHTML="Add Fraction with Reciprocate No.";
+      document.getElementById("btn3").innerHTML="Subtract Fraction with Reciprocate No.";
+      document.getElementById("btn4").innerHTML=" Write Fraction as it is.";
+}
+function right2(){
+    if(document.getElementById("btn1").innerHTML==="Multiply Fraction with Reciprocate No."){
+        document.getElementsByClassName("fbox")[4].style.display="block";
+        document.getElementsByClassName("fbox")[5].style.display="inline";
+        document.getElementsByClassName("fbox")[6].style.display="block";
+        document.getElementsByClassName("fbox")[7].style.display="inline";
+    
+    }
+}
+
+
+window.onload = function() {
+var count = 0;
+
+var countButton = document.getElementById("hint-btn");
+var displayCount = document.getElementsByClassName("showhints");
+countButton.onclick = function(){
+  count++;
+  if(count == 1)
+  {
+    document.getElementById("btn-grp1").style.visibility="visible";
+  }
+  else
+  {
+    if(count == 2) {displayCount[1].innerHTML = "Hint 2 :{{ hints.h2 }}\n" ;}
+    else {displayCount[2].innerHTML = "Hint 3 :{{ hints.h3 }}\n" ;}
+  }
+  }
+
+  var subbutton = document.getElementById("b1");
+  subbutton.onclick = function(){
+     document.querySelector(".myform").setAttribute("action","score/"+1+"/"+count+"/"+feedcount);
+     function time(){
+     var s=document.getElementById("scre");
+     s.style.display="none";
+     }
+     var d=setTimeout(time,500);
+     clearInterval(d);
+<!-- setTimeout(function(){s.style.display="none";},500);-->
+
+  }
+}
+
+function openSlideMenu()
+{
+    document.getElementById('menu').style.width = '250px';
+    document.getElementById('content').style.marginLeft = '250px';
+}
+
+function closeSlideMenu()
+{
+    document.getElementById('menu').style.width = '0px';
+    document.getElementById('content').style.marginLeft = '0px';
+}
+
+var close = document.getElementsByClassName("closebtn");
+var i;
+
+for (i = 0; i < close.length; i++) {
+  close[i].onclick = function(){
+    var div = this.parentElement;
+    div.style.opacity = "0";
+    setTimeout(time,100);
+    function time(){
+     var s=document.getElementById("scre");
+     alert("Bhavya");
+     s.style.display="none";
+    }
+  }
+}
+
+{% endblock %}
+
+{% block message %}
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+<div class="alert alert-info" role="alert" id="scre">
+     <span class="closebtn">&times;</span>
+    {% for message in get_flashed_messages() %}
+  <h4 class="alert-heading">{{ message }}</h4>
+    {% endfor %}
+</div>
+  {% endif %}
+{% endwith %}
+</div>
+{% endblock %}
+
+
+    {% block progress %}{{scoredict.tcp}}%{% endblock %}
+    {% block question %}{{scoredict.totalqts}}{% endblock %}
+    {% block pvalue %}{{ scoredict.tcp }}{% endblock %}
+{% block content %}
+<div class="project" style="margin-left:65%;">
+  <div style="display:flex;justify-content:center;align-items:center;">
+<div class="task running ">
+    <h2>1</h2>
+    <i class="far fa-check" id="icon1" style="display:none;color:white;margin-bottom:17px;"></i>
+</div>
+      <div class="progress">
+          <div class="running" data-progress="100%"> </div> </div>
+<div  class="task running">
+    <h2>2</h2>
+    <i class="far fa-check" id="icon2" style="display:none;color:white;margin:auto;"></i></div>
+<div class="progress"  ><div class="running" data-progress="100%"> </div></div>
+      <div class="task running">
+          <h2>3</h2>
+          <i class="far fa-check" id="icon3" style="display:none;color:white;margin:auto;"></i></div>
+<div class="progress"  ><div class="running" data-progress="100%"> </div></div>
+      <div class="task running">
+          <h2></h2>
+          <i class="fas fa-pennant" id="icon4" style="color:white;margin:auto;margin-left:10px;margin-top:10px;"></i></div>
+  </div>
+</div>
+<br><br>   
+
+{{ answer.que }}
+    <br><br>
+
+    <div class="btn-group btn-group-vertical" id="btn-grp1" role="group" aria-label="Basic example" style="float:right; margin-right:120px;visibility:hidden;">
+          <button type="button" class="btn btn-primary" style="margin-bottom:30px;" onclick="right2();" id="btn1">Reciprocal of Fraction.</button>
+          <button type="button" class="btn btn-secondary" style="margin-bottom:30px;" id="btn2">Reciprocal of Numerator</button>
+          <button type="button" class="btn btn-secondary" style="margin-bottom:30px;" onclick="right1();" id="btn3">Reciprocal of Whole No.</button>
+        <button type="button" class="btn btn-secondary" style="margin-bottom:30px;" id="btn4">Reciprocal of Denominator</button>
+</div>
+    <div class="ryt1" style="">
+    <!-- <label for="mf1">Mixed Fraction:</label>
+    <br>
+    
+        <tr >
+<!--               whole+numerator-->
+            <!-- <td ><span style="font-size:4.3rem;">(</span><input type="text" id="mf0" name="mf" maxlength="2" size="2" onblur="check0();" class="quo" required>*</td>
+            <td><input type="text" id="mf1" name="mf" maxlength="2" size="2" onblur="check1();" class="quo" required><span style="font-size:4.3rem;">)</span></td>
+            <td>+</td>
+            <td><input type="text" id="mf2" name="mf" maxlength="2" size="2" onblur="check2();" class="quo" required style="margin-top:25px;"></td>
+            <td><img src="{{ url_for('static', filename='images/tick.png') }}" width="50px" height="50px" class="correct"></td>
+            <td><img src="{{ url_for('static', filename='images/cross.jpg') }}" width="50px" height="50px" class="wrong"></td>
+        </tr>
+
+        <tr> -->
+<!--                hr line-->
+            <!-- <td><hr></td>
+            <td><hr/></td>
+            <td><hr/></td>
+            <td><hr/></td> -->
+<!--            <td><img src="{{ url_for('static', filename='images/tick.png') }}" width="50px" height="50px" class="correct"></td>-->
+<!--            <td><img src="{{ url_for('static', filename='images/cross.jpg') }}" width="50px" height="50px" class="wrong"></td>-->
+
+        <!-- </tr> --> 
+
+
+    <label for="spf" style="display:none" class="fbox">Reciprocal of Whole No. : </label>
+    <input type="text" id="spf" name="rem" maxlength="8" size="2" class="num fbox" onblur="check_num();" style="display: none;" required >
+    <img src="{{ url_for('static', filename='images/tick.png') }}" width="32px" height="22px" class="correct">
+    <img src="{{ url_for('static', filename='images/cross.jpg') }}" width="32px" height="22px" class="wrong">
+    <h5 class="fbox" style="display: none;">---------------</h5>
+    <input type="text" id="rem4" name="rem" maxlength="8" size="2" class="den fbox" onblur="check_den();" style="display: none;" required>
+    <img src="{{ url_for('static', filename='images/tick.png') }}" width="32px" height="22px" class="correct">
+    <img src="{{ url_for('static', filename='images/cross.jpg') }}" width="32px" height="22px" class="wrong">
+    <br><br>
+
+    <label for="spf" style="display:none" class="fbox">Fractional Form : </label>
+    <input type="text" id="spf" name="rem" maxlength="8" size="2" class="num fbox" onblur="check_num1();" style="display: none;" required >
+    <img src="{{ url_for('static', filename='images/tick.png') }}" width="32px" height="22px" class="correct">
+    <img src="{{ url_for('static', filename='images/cross.jpg') }}" width="32px" height="22px" class="wrong">
+    <h5 class="fbox" style="display: none;">---------------</h5>
+    <input type="text" id="rem4" name="rem" maxlength="8" size="2" class="den fbox" onblur="check_den1();" style="display: none;" required>
+    <img src="{{ url_for('static', filename='images/tick.png') }}" width="32px" height="22px" class="correct">
+    <img src="{{ url_for('static', filename='images/cross.jpg') }}" width="32px" height="22px" class="wrong">
+    <br><br>
+
+
+      <label for="quo3" style="display:block">Simpliest Form : </label>
+    <input type="text" id="quo3" name="rem" maxlength="8" size="2" class="num" onblur="check_num2();" required >
+    <img src="{{ url_for('static', filename='images/tick.png') }}" width="32px" height="22px" class="correct">
+    <img src="{{ url_for('static', filename='images/cross.jpg') }}" width="32px" height="22px" class="wrong">
+    <h5 >---------------</h5>
+    <input type="text" id="rem4" name="rem" maxlength="8" size="2" class="den" onblur="check_den2();" required>
+    <img src="{{ url_for('static', filename='images/tick.png') }}" width="32px" height="22px" class="correct">
+    <img src="{{ url_for('static', filename='images/cross.jpg') }}" width="32px" height="22px" class="wrong">
+    <br><br>
+
+</div>
+
+    <br><br>
+
+{% endblock %}
