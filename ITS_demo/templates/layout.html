@@ -12,7 +12,9 @@
    <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
   <link rel="stylesheet" type="text/css" href="{{ url_for('static' , filename='css/q1style.css') }}">
     <script type="text/javascript" src="{{ url_for('static' , filename='js/q1script.js') }}"></script>
-	
+	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+	{% block addscript %}{% endblock %}
+
 </head>
 <script type="text/javascript" src="http://ajax.googleapis.com/
 ajax/libs/jquery/1.5/jquery.min.js"></script>
@@ -25,6 +27,7 @@ ajax/libs/jquery/1.5/jquery.min.js"></script>
   crossorigin="anonymous"></script>
 <script src="semantic/dist/semantic.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 	<style type="text/css" media="screen">
 
 		body{
@@ -197,6 +200,7 @@ progress::-webkit-progress-bar {
 
 {% block style %}{% endblock %}
 	</style>
+
 </head>
 <script type="text/javascript"> 
 {% block script %}{% endblock %}
@@ -279,6 +283,6 @@ function closeSlideMenu()
 
 
 	</script>
-	<!-- <script>{% block script_end %} {% endblock %} </script> -->
+	
 </body>
 </html>

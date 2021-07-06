@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <title>Practice</title>
+    <style>
+         #n1 {
+            position: fixed; 
+            height:calc(100%-200px);
+            width: 100vw;
+            top:0;
+            left: 0;
+            z-index: 9999; 
+            /* background-color: #3A6351!important; */
+            /* TRIAL */
+            background-color: #F5E6CA!important;  
+        }
+
+        .navbar-brand,.nav-link{
+            color: #000 !important;
+            
+        }
+        .main{
+            margin-top: 70px;
+            width: 100vw;
+            height: 100%;
+            /* background-color:#F5E6CA; */
+        }
+
+        .green {
+            background-color: #3A6351;
+            color:white;
+        }
+
+        .right {
+            margin-left: 75%;
+        }
+
+        .next {
+            margin-left: 5%;
+        }
+
+        i{
+            color: #fff;
+        }
+
+        .done{
+            color:#C0E218;
+        }
+
+    </style>
+</head>
+<body>
+    <nav id="n1" class="navbar navbar-expand-lg navbar-light mb-3 navbar-fixed-top nav">
+        <a class="navbar-brand" href="#">Logo PhiloMath</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse " id="navbarSupportedContent">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link a1" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link a1" href="#">About Us</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link a1" href="#">Our Team</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link a1" href="#">Contact</a>
+            </li>
+          </ul>
+        </div>
+    </nav>
+
+    <div class="container main">
+        <div class="card">
+            <div class="card-header green">
+              Fractions - Mixed Fraction
+              <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="card" aria-label="Close"></button>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Express as mixed fraction</h5>
+              <p class="card-text">5 <br> --- <br> 6</p>
+              <div class="line1">
+                <label for="quo" >Quotient:</label>
+                <input type="text" id="quo" name="quo" maxlength="2" size="2" onblur="check0();">
+                <!-- <img src="{{ url_for('static', filename='images/tick.png') }}" width="32px" height="22px" class="correct"> -->
+                <!-- <img src="{{ url_for('static', filename='images/cross.jpg') }}" width="32px" height="22px" class="wrong"> -->
+                <br><br>
+            </div>
+            
+            <div class="line1">
+                <label for="rem">Remainder:</label>
+                <input type="text" id="rem" name="rem" maxlength="2" size="2" onblur="check1();">
+                <!-- <img src="{{ url_for('static', filename='images/tick.png') }}" width="32px" height="22px" class="correct"> -->
+                <!-- <img src="{{ url_for('static', filename='images/cross.jpg') }}" width="32px" height="22px" class="wrong"> -->
+                <br><br>
+              </div>
+              <table>
+                <tr>
+        <!--               numerator-->
+                    <td></td>
+                    <td><input type="text" id="mf2" name="mf" maxlength="2" size="2" onblur="check3();" required></td>
+                    <!-- <td><img src="{{ url_for('static', filename='images/tick.png') }}" width="50px" height="50px" class="correct"></td> -->
+                    <!-- <td><img src="{{ url_for('static', filename='images/cross.jpg') }}" width="50px" height="50px" class="wrong"></td> -->
+                </tr>
+        
+                <tr>
+        
+        <!--                mixed fraction-->
+                    <td><input type="text" id="mf1" name="mf" maxlength="2" size="2" onblur="check2();"required></td>
+                    <td><hr/></td>
+                    <!-- <td><img src="{{ url_for('static', filename='images/tick.png') }}" width="50px" height="50px" class="correct"></td> -->
+                    <!-- <td><img src="{{ url_for('static', filename='images/cross.jpg') }}" width="50px" height="50px" class="wrong"></td> -->
+        
+                </tr>
+        
+                <tr>
+        <!--                denominator-->
+                    <td></td>
+                    <td><input type="text" id="mf3" name="mf" maxlength="2" size="2" style="border" onblur="check4();" required></td>
+                    <!-- <td><img src="{{ url_for('static', filename='images/tick.png') }}" width="50px" height="50px" class="correct"></td> -->
+                    <!-- <td><img src="{{ url_for('static', filename='images/cross.jpg') }}" width="50px" height="50px" class="wrong"></td> -->
+                </tr>
+                <label for="mf1">Mixed Fraction:</label>
+                <br>
+            </table>
+              
+            </div>
+           
+            <div class="card-footer text-muted green">
+                <a href="#" class="btn btn-info">Hint</a>
+                
+                <i class="bi bi-circle-fill right done"></i>
+                <i class="bi bi-circle-fill"></i>
+                <i class="bi bi-circle-fill"></i>
+                <i class="bi bi-circle-fill"></i>
+                <a href="#" class="btn btn-success next">Next</a>
+              </div>
+          </div>
+      </div>
+
+</body>
+</html>

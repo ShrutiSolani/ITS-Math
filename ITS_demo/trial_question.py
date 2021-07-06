@@ -308,6 +308,7 @@ def mixed_to_normal():
     num_ans = (den*whole)+num
     frac = Fraction(num_ans,den)
     answer = {'que':que, 'num_ans':frac.numerator, 'den_ans':frac.denominator,'den':den,'num':num_ans}
+    print(frac.numerator)
     # print(answer)
     # scoredict = 0
     # hints = {}
@@ -331,6 +332,67 @@ def mixed_to_normal():
     scoredict = {'score': scorecnt2, 'total': total, 'totalqts': qtscnt2, 'pct': pct}
     return render_template('normal-form.html', answer=answer, hints=hints, scoredict=scoredict)
     # return render_template('normalForm.html', answer=answer, hints=hints, scoredict=scoredict)
+
+@app.route('/unlike-add')
+def unlike_add():
+    num1=random.randint(2,50)
+    den1=random.randint(2,20)
+    num2=random.randint(2,50)
+    den2=random.randint(2,20)
+    sign=["+","-"]
+    q=["Add","Subtract"]
+    while(den1==den2):
+        random.randint(2,20)
+    if(random.choice(sign) == "+"):
+        que = q[0] + " (" + str(num1) + "/" + str(den1) + ") by " + "(" + str(num2) + "/" + str(den2) + ")" + "."
+        numerator1=num1
+        denominator1=den1
+        numerator2 = num2
+        denominator2 = den2
+
+        frac1=Fraction(numerator1,denominator1)
+        drac2=Fraction(numerator2,denominator2)
+
+        num_ans=(numerator1*denominator2) + (numerator2*denominator1)
+        den_ans=denominator1*denominator2
+        ans_frac=Fraction(num_ans,den_ans)
+    else:
+        que = q[1] + " (" + str(num2) + "/" + str(den2) + ") by " + "(" + str(num1) + "/" + str(den1) + ")" + "."
+        numerator1 = num1
+        denominator1 = den1
+        numerator2 = num2
+        denominator2 = den2
+
+        frac1 = Fraction(numerator1, denominator1)
+        drac2 = Fraction(numerator2, denominator2)
+
+        num_ans = (numerator1 * denominator2) - (numerator2 * denominator1)
+        den_ans = denominator1 * denominator2
+        ans_frac = Fraction(num_ans, den_ans)
+
+
+    answer = {'que': que, 'num_ans': ans_frac.numerator, 'den_ans': ans_frac.denominator, 'den': den_ans, 'num': num_ans,'num1':num1,'den1':den1,'num2':num2,'den2':den2,'q':que}
+    # global qtscnt2, scorecnt2
+    # total = qtscnt2 * 25
+    # try:
+    #     pct = round((scorecnt2 / total) * 100, 2)
+    # except:
+    #     pct = 0
+    # scoredict = {'score': scorecnt2, 'total': total, 'totalqts': qtscnt2, 'pct': pct}
+    print(answer)
+    h1 = 'Rearrange into like terms (coefficients with same variable and power)'
+    h2 = 'Add coefficientts of like terms'
+    h3 = 'Solution : ' + str(num_ans) + '/' + str(den_ans)
+    hints = {'h1': h1, 'h2': h2, 'h3': h3}
+    global qtscnt2, scorecnt2
+    total = qtscnt2 * 25
+    try:
+        pct = round((scorecnt2 / total) * 100, 2)
+    except:
+        pct = 0
+    scoredict = {'score': scorecnt2, 'total': total, 'totalqts': qtscnt2, 'pct': pct}
+    return render_template('unlike-add.html', answer=answer, hints=hints, scoredict=scoredict)
+
 
 # Algebra Easy
 @app.route('/p')
@@ -458,6 +520,101 @@ def like_unlike():
         answers.append(answer)
         count += 1
     return render_template('algebra2.html', easy={'question': q3, 'options': terms, 'answer': answers, 'num': 2})
+
+@app.route('/division')
+def division():
+    q=[]
+    ans_num=[]
+    ans_den=[]
+    for i in range(2):
+        num=random.randint(1,50)
+        den=random.randint(2,10)
+        qs="Find quotient and remainder of "+str(num)+"/"+str(den)+"."
+        ansnum=(num//den)
+        ansden=(num%den)
+        q.append(qs)
+        ans_num.append(ansnum)
+        ans_den.append(ansden)
+    q.insert(1," ")
+    print(q)
+    contexts={'ans_num':ans_num,'ans_den':ans_den,'q':q, 'label1': 'Quotient', 'label2': 'Remainder'}
+
+    return render_template('division.html',contexts=contexts)
+
+
+@app.route('/add-easy')
+def add_easy():
+    q=[]
+    ans_num=[]
+    ans_den=[]
+    for i in range(2):
+        num1=random.randint(1,25)
+        den=random.randint(2,10)
+        num2=random.randint(1,25)
+        
+        qs="Add this two fractions "+str(num1)+"/"+str(den)+" and "+str(num2)+"/"+str(den)+"."
+        ansnum=num1+num2
+        ansden=den
+        ans_num.append(ansnum)
+        ans_den.append(ansden)
+        q.append(qs)
+    q.insert(1," ")
+    contexts={'ans_num':ans_num,'ans_den':ans_den,'q':q, 'label1': 'Quotient', 'label2' : 'Remainder'}
+    return render_template('division.html',contexts=contexts)
+
+
+@app.route('/whole')
+def whole():
+    q=[]
+    ans_num=[]
+    ans_den=[]
+    for i in range(2):
+        num = random.randint(1,10)
+        den = random.randint(2,25)
+        wh = random.randint(1,10)
+        que = 'Multiply Fraction '+ str(num) + "/" + str(den) + " by whole number " + str(wh)
+        ansnum = num*wh
+        ansden = den
+        ans_num.append(ansnum)
+        ans_den.append(ansden)
+        q.append(que)
+    q.insert(1," ")
+    # print(q)
+    return render_template('division.html',contexts={'ans_num':ans_num,'ans_den':ans_den,'q':q, 'label1': 'Numerator', 'label2': 'Denominator'})
+
+
+@app.route('/number-line')
+def number_line():
+    x = random.randint(0, 10)
+    que = 'Plot fraction '+ str(x)+'/10 on number line'
+    return render_template('number_line.html', nums = {'que': que, 'ans': x})
+
+
+#########################################
+@app.route('/divide-whole')
+def divide_whole():
+    num=random.randint(2,30)
+    den=random.randint(2,20)
+    div=random.randint(2,10)
+
+    que="Divide this "+"("+str(num)+"/"+str(den)+") by a whole number "+str(div)+"."
+    numerator=num
+    denominator=den*div
+
+    frac=Fraction(numerator=numerator , denominator=denominator)
+    ans_num=frac.numerator
+    ans_den=frac.denominator
+
+    h1 = 'Rearrange into like terms (coefficients with same variable and power)'
+    h2 = 'Add coefficientts of like terms'
+    h3 = 'Solution : ' + str(ans_num)+ '/' + str(ans_den)
+    hints = {'h1': h1, 'h2': h2, 'h3': h3}
+    context={'que':que,'numerator':numerator,'hints':hints,'denominator':denominator,'ans_num':ans_num,'ans_den':ans_den,'rec_num':1,'rec_den':div}
+    scoredict = {'score': "", 'total': "", 'totalqts': "", 'pct': ""}
+    return render_template('divideby_whole.html',answer=context,scoredict=scoredict,hints=hints)
+
+
+
 
 
 app.secret_key = 'super secret key'
