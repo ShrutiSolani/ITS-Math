@@ -523,17 +523,32 @@ def whole():
 
 @app.route('/number-line')
 def number_line():
-    # q = []
-    # answer = []
     x = random.randint(0, 10)
     que = 'Plot fraction '+ str(x)+'/10 on number line'
-    # print(que)
-    # q.append(que)
-    # answer.append(x)
-    # print(q)
-    # print(answer)
     return render_template('number_line.html', nums = {'que': que, 'ans': x})
 
 
+#########################################
+@app.route('/divide-whole')
+def divide_whole():
+    num=random.randint(2,30)
+    den=random.randint(2,20)
+    div=random.randint(2,10)
+
+    que="Divide this "+"("+str(num)+"/"+str(den)+") by a whole number "+str(div)+"."
+    numerator=num
+    denominator=den*div
+
+    frac=Fraction(numerator=numerator , denominator=denominator)
+    ans_num=frac.numerator
+    ans_den=frac.denominator
+
+    h1 = 'Rearrange into like terms (coefficients with same variable and power)'
+    h2 = 'Add coefficientts of like terms'
+    h3 = 'Solution : ' + str(ans_num)+ '/' + str(ans_den)
+    hints = {'h1': h1, 'h2': h2, 'h3': h3}
+    context={'que':que,'numerator':numerator,'hints':hints,'denominator':denominator,'ans_num':ans_num,'ans_den':ans_den,'rec_num':1,'rec_den':div}
+    scoredict = {'score': "", 'total': "", 'totalqts': "", 'pct': ""}
+    return render_template('divideby_whole.html',answer=context,scoredict=scoredict,hints=hints)
 app.secret_key = 'super secret key'
 app.run(debug=True)
