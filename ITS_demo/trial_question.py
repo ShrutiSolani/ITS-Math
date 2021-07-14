@@ -615,7 +615,5 @@ def divide_whole():
 
 
 
-
-
 app.secret_key = 'super secret key'
 app.run(debug=True)
