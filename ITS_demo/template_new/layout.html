@@ -53,6 +53,80 @@
             color:#C0E218;
         }
 
+
+        @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700");
+        /* body {
+          font-family: 'Open Sans', sans-serif;
+          margin: 0;
+          padding: 0 4em;
+        } */
+
+timeline {
+  min-width: 300px;
+  max-width: 500px;
+  margin: auto;
+}
+
+p {
+  font-size: 1em;
+  line-height: 1.75em;
+  border-top: 3px solid;
+  border-image: linear-gradient(to right, #743ad5 0%, #d53a9d 100%);
+  border-image-slice: 1;
+  border-width: 3px;
+  margin: 0;
+  padding: 40px;
+  counter-increment: section;
+  position: relative;
+  color: #000;
+} 
+  /* //numbers */
+  p:before {
+    content: counter(section);
+    position: absolute;
+    border-radius: 50%;
+    padding: 10px;
+    height: 1.25em;
+    width: 1.25em;
+    background-color: #000;
+    text-align: center;
+    line-height: 1.25em;
+    color: #fff;
+    font-size: 1em;
+  }
+
+/* //odd number borders */
+p:nth-child(odd) {
+  border-right: 3px solid;
+  padding-left: 0;
+ } 
+  p:nth-child(odd)::before {
+    left: 100%; 
+    margin-left: -20px;
+  }
+
+/* //even number borders */
+p:nth-child(even) {
+  border-left: 3px solid;
+  padding-right: 0;
+}  
+  p:nth-child(even)::before {
+    right: 100%; 
+    margin-right: -20px;
+  }
+
+/* //handle first and last */
+p:first-child {
+  border-top: 0;
+  border-top-right-radius:0;
+  border-top-left-radius:0;
+}
+p:last-child {
+  border-bottom-right-radius:0;
+  border-bottom-left-radius:0;
+}
+
+ 
     </style>
 </head>
 <body>
@@ -88,7 +162,7 @@
             </div>
             <div class="card-body">
               <h5 class="card-title">Express as mixed fraction</h5>
-              <p class="card-text">5 <br> --- <br> 6</p>
+              <h6 class="card-text">5 <br> --- <br> 6</h6>
               <div class="line1">
                 <label for="quo" >Quotient:</label>
                 <input type="text" id="quo" name="quo" maxlength="2" size="2" onblur="check0();">
@@ -135,7 +209,13 @@
             </table>
               
             </div>
-           
+            <timeline>
+              <p></p>
+              <p></p>
+              <p></p>
+              <p></p>
+              <p></p>
+            </timeline>
             <div class="card-footer text-muted green">
                 <a href="#" class="btn btn-info">Hint</a>
                 
