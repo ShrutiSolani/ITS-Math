@@ -27,7 +27,7 @@
         #n1 {
             position: fixed; 
             height:calc(100%-200px);
-            width: 100vw;
+            width:100%;
             top:0;
             left: 0;
             z-index: 9999; 
@@ -42,7 +42,6 @@
         }
         .main{
             margin-top: 50px;
-            width: 100vw;
             height: 100%;
             background-color:#F5E6CA;
         }
@@ -73,17 +72,18 @@
             width: 100%;
             height: auto;  
             background-color: #F7F6E7;  
+            border-radius: 500px;
         }
         .sec{
           background-color: #3A6351;
-          width:100vw;
+          width: 100%;
         }
         .sec .card,.secTeam .card{
           margin: 20px 0;
         }
         .secTeam{
             background-color:#F5E6CA;
-            width:100vw;
+            width:100%;
         }
         @media (max-width:758px) {
             #rightsection h1{
@@ -99,6 +99,9 @@
             background-color: white;
             padding: 5%;
 
+        }
+        .card{
+          min-height: 600px;
         }
         input {
         border-top-style: hidden;
@@ -166,10 +169,10 @@
 
           <section class="sec">
             <h1 style="text-align: center;font-size: 3.8rem;text-decoration: underline;color: white;padding: 10px 0;">Our Features</h1>
-            <div class="container-fluid">
+            <div class="container-fluid" style="width:80%;">
               <div class="row">
                 <div class="col-lg-4 col-md-12 col-sm-11">
-                  <div class="card" >
+                  <div class="card">
                     <h5 class="card-title" style="text-align: center;font-size: 3rem;">Personalized Learning</h5>
                     <img src="../static/images/Mathematics-bro.png" class="card-img-top" alt="...">
                     <div class="card-body">
@@ -201,7 +204,7 @@
           </section>
           <section class="secTeam">
             <h1 style="text-align: center;font-size: 3.8rem;text-decoration: underline;color: black;padding: 10px 0;">Our Team</h1>
-            <div class="container-fluid">
+            <div class="container" style="width: 80%;">
               <div class="row">
                 <div class="col-lg-4 col-md-12 col-sm-11">
                   <div class="card" >
