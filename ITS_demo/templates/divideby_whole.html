@@ -92,10 +92,12 @@ function check_den()
     if(document.getElementsByTagName("input")[1].value == {{ answer.rec_den }} )
 	{
 	   $(x[1]).show();
-     $(x[1]).style.display="block";
+     <!-- $(x[1]).style.display="block"; -->
      document.getElementsByTagName("h2")[0].innerHTML="";
      document.getElementById("icon1").style.display="inline";
        $(y[1]).hide();
+       <!-- document.getElementsByTagName("h2")[1].innerHTML=""; -->
+        <!-- document.getElementById("icon1").style.display="inline"; -->
     }
 	 else
 	 {
@@ -163,7 +165,7 @@ function check_den1()
     if(document.getElementsByTagName("input")[3].value == {{ answer.denominator }} )
 	{
 	   $(x[3]).show();
-     $(x[3]).style.display="block";
+     <!-- $(x[3]).style.display="block"; -->
      document.getElementsByTagName("h2")[1].innerHTML="";
      document.getElementById("icon2").style.display="inline";
        $(y[3]).hide();
@@ -381,10 +383,6 @@ for (i = 0; i < close.length; i++) {
 <div  class="task running">
     <h2>2</h2>
     <i class="far fa-check" id="icon2" style="display:none;color:white;margin:auto;"></i></div>
-<div class="progress"  ><div class="running" data-progress="100%"> </div></div>
-      <div class="task running">
-          <h2>3</h2>
-          <i class="far fa-check" id="icon3" style="display:none;color:white;margin:auto;"></i></div>
 <div class="progress"  ><div class="running" data-progress="100%"> </div></div>
       <div class="task running">
           <h2></h2>
