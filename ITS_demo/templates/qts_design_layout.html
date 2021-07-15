@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width initial-scale=1">
+	<title>{% block title %}{% endblock %}</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static' , filename='css/q1style.css') }}">
+    <script type="text/javascript" src="{{ url_for('static' , filename='js/q1script.js') }}"></script>
+	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+	{% block addscript %}{% endblock %}
+
+</head>
+<script type="text/javascript" src="http://ajax.googleapis.com/
+ajax/libs/jquery/1.5/jquery.min.js"></script>
+<script type="text/javascript" src="jquery.form.js"></script>
+<script src="https://use.fontawesome.com/84eb6ff010.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+<script src="semantic/dist/semantic.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<style type="text/css" media="screen">
+
+		body{
+			background-color: #f5efe8;
+		}
+		*{
+        	margin: 0;
+        	padding: 0;
+        	box-sizing: border-box;
+         }
+		.n1{
+	        width:100vw;
+	        height:10vh;
+	        background-image:linear-gradient(to right,rgba(0,0,0,0.8) 80%,rgba(0,0,0,0.8) 20%);
+	        display:flex;
+	        justify-content:space-around;
+	        align-items:center;
+        }
+         #d1{
+         	width: 10%;
+         	padding-left: 2%;
+           }
+         #d1 span{
+         	font-size: 2.5rem;
+         	cursor: pointer;
+
+         }
+		#d2{
+			width: 90%;
+			padding-left: 35%;
+		}
+		#d2 h1{
+			font-size: 250%;
+	        color:white;
+	        letter-spacing:1px;
+	        text-transform:uppercase;
+	        text-decoration:underline;
+	        /* animation:anm 2s linear infinite;
+	        animation-direction:alternate;
+ */        }
+        /* @keyframes anm{
+        	from{padding-left:5%;}
+        	to{padding-right:50%;}
+        }
+ */		progress{
+			padding-left: 0.5;
+			width: 30%;
+			height: 20px;
+			-webkit-appearance: none;
+			appearance: none;
+		}
+		#bar1{
+			color: white;
+		}
+		#p1{
+			transition: all 1s;
+		}
+		#p1 #s1{
+			font-size: 2.5rem;
+			font-style: italic;
+			text-shadow: 2px 2px 3px aliceblue;
+			color: blueviolet;
+			text-decoration: underline;
+			padding-left: 4.7%;
+		}
+		#p1 #s2{
+			font-size: 2.5rem;
+			font-style: italic;
+			color: seagreen;
+			padding-left: 0%;
+		}
+		#d3{
+			height: 100%;
+			width: 0;
+			overflow-x: hidden;
+			position: fixed;
+			top: 0;
+			left: 0;
+			z-index: 1;
+			background-color: rgba(235,235,235,0.8);
+			padding-top: 120px;
+			transition: all 0.5s linear;
+			display: grid;
+			justify-content: space-around;
+		}
+		#d3 a{
+			text-decoration: none;
+			font-size: 2.5rem;
+			color: black;
+			display: block;
+			padding: 40px 0px 10px 0px;
+			margin-bottom: 100px;
+		}
+		#d3 a:hover{
+			color: rgba(0,0,0,0.7);
+		}
+		#d3 .closebtn{
+			font-size: 4.7rem!important;
+			position: absolute;
+			top: 0;
+			right: 25px;
+		}
+		#d4{
+			height: 73%;
+			width: 80%;
+			margin: auto;
+			border: 5px solid black;
+			border-radius: 25px;
+		}
+		#d4 form{
+			padding-top: 2%;
+			padding-left: 2%;
+			color: black;
+			font-size: 2.3rem;
+		}
+		#b1{
+			margin-right: 2%;
+			margin-bottom: 2%;
+			width: 10%;
+			height: 80px;
+			background-color: transparent;
+			font-size: 1.4rem;
+			border:2px solid black;
+			border-radius: 150px;
+		}
+		#b1:hover{
+			background-color: white;
+		}
+		#hint-btn{
+			margin-bottom: 2%;
+			width: 10%;
+			height: 80px;
+			background-color: transparent;
+			font-size: 1.4rem;
+			border:2px solid black;
+			border-radius: 150px;
+		}
+		#hint-btn:hover{
+			background-color: white;
+		}
+
+		@media (max-width:758px){
+			#d2 h1{
+				font-size: 150%;
+			}
+			progress[value]{
+				/* padding-top: 4%;
+ */				padding-left: 0.5%;
+				width: 70%;
+			}
+			#p1 #s1{
+				padding-top: 4%;
+			}
+			#p1 #s2{
+				padding-top: 4%;
+			}	
+			#d4 form{
+				font-size: 1.3rem;
+			}
+		}
+
+		
+progress::-webkit-progress-value {
+  background:royalblue;
+}
+
+progress::-webkit-progress-bar {
+  background: grey;
+}
+
+{% block style %}{% endblock %}
+	</style>
+
+</head>
+<script type="text/javascript"> 
+{% block script %}{% endblock %}
+</script>
+
+<body>
+	<nav class="n1">
+		<div id="d1">
+			<span id="bar1" onclick="opennav();">&#9776;</span>
+		</div>
+
+		<div id="d2">
+			<h1 style="color: yellow!important;">ITS-Maths</h1>
+		</div>
+	</nav>
+	<div id="d3" class="slidemenu">
+		<a href="javascript:void(0)" class="closebtn" id="a1"onclick="closenav()">&times;</a>
+		<a href="#"><i class="fa fa-home"></i> Home</a>
+		<a href="#"><i class="fa fa-user"></i> Profile</a>
+		<a href="{{ url_for('index') }}"><i class="fa fa-sign-out"></i> Logout</a>
+	</div>
+	<br>
+	{% block message %} {% endblock %}
+	
+	
+	<script>
+		const opennav=()=>{
+			document.getElementById("d3").style.width="300px";
+			document.getElementById("p1").style.paddingLeft="30%";
+		}
+		const closenav=()=>{
+			document.getElementById("d3").style.width="0px";
+			document.getElementById("p1").style.paddingLeft="0%";
+		}
+<!--		function openSlideMenu()-->
+<!--		{-->
+<!--    		document.getElementById('menu').style.width = '250px';-->
+<!--    		document.getElementById('content').style.marginLeft = '250px';-->
+<!--		}-->
+
+function closeSlideMenu()
+{
+    document.getElementById('menu').style.width = '0px';
+    document.getElementById('content').style.marginLeft = '0px';
+}
+
+// <!--var close = document.getElementsByClassName("closebtn");-->
+// <!--var i;-->
+
+// <!--for (i = 0; i < close.length; i++) {-->
+// <!--  close[i].onclick = function(){-->
+// <!--    var div = this.parentElement;-->
+// <!--    div.style.opacity = "0";-->
+// <!--  }-->
+// <!--}-->
+
+
+	</script>
+	
+</body>
+</html>
