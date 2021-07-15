@@ -1,0 +1,58 @@
+{% extends 'qts_design_layout.html' %}
+
+{% block message %} 
+    <div class="container">
+        <div class="jumbotron jumbotron-fluid" style=" padding-top: 25px ;padding-bottom: 15px;background-color:navy;">
+            <div class="container" style="color: white;">
+              <h2 class="display-4">UNIT: FRACTIONS</h2>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-12">
+                <div class="card bg-light mb-3" >
+                    <h3 class="card-header">Mixed Fraction</h3>
+                        <div class="card-body" >
+                            <div  style="  background-color: #E6E4E4; ;margin:1px; padding:15px;display: flex;justify-content: space-between;align-items: center;"><h5 class="card-title">Expressed as Mixed Fraction</h5>
+                            <a href="mixed-fraction" class="btn btn-primary">Practice</a></div>
+                        </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-sm-12">
+                <div class="card bg-light mb-3" >
+                    <h3 class="card-header">Compare</h3>
+                        <div class="card-body" >
+                            <div  style="  background-color: #E6E4E4; ;margin:1px; padding:15px;display: flex;justify-content: space-between;align-items: center;"><h5 class="card-title">Compare Two Fraction</h5>
+                            <a href="/compare" class="btn btn-primary">Practice</a></div>
+                        </div>
+                </div>
+                
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-12">
+                <div class="card bg-light mb-3" >
+                    <h3 class="card-header">Normal Form</h3>
+                        <div class="card-body" >
+                            <div  style="  background-color: #E6E4E4; ;margin:1px; padding:15px;display: flex;justify-content: space-between;align-items: center;"><h5 class="card-title">Convert Mixed to Normal Form</h5>
+                            <a href="/normal-form" class="btn btn-primary">Practice</a></div>
+                        </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-sm-12">
+                <div class="card bg-light mb-3" >
+                    <h3 class="card-header">Fraction Division</h3>
+                        <div class="card-body" >
+                            <div  style="  background-color: #E6E4E4; ;margin:1px; padding:15px;display: flex;justify-content: space-between;align-items: center;"><h5 class="card-title">Divide Fraction by Whole Number</h5>
+                            <a href="/divide-whole"  class="btn btn-primary">Practice</a></div>
+                        </div>
+                </div>
+            </div>
+            
+        </div>
+
+    </div>
+    {% endblock %}

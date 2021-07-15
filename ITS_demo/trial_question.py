@@ -550,5 +550,11 @@ def divide_whole():
     context={'que':que,'numerator':numerator,'hints':hints,'denominator':denominator,'ans_num':ans_num,'ans_den':ans_den,'rec_num':1,'rec_den':div}
     scoredict = {'score': "", 'total': "", 'totalqts': "", 'pct': ""}
     return render_template('divideby_whole.html',answer=context,scoredict=scoredict,hints=hints)
+
+##########################################################
+@app.route('/display-design')
+def design():
+    return render_template('question_display_design.html')
+
 app.secret_key = 'super secret key'
 app.run(debug=True)
