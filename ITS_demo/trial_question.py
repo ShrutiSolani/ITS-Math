@@ -613,7 +613,15 @@ def divide_whole():
     scoredict = {'score': "", 'total': "", 'totalqts': "", 'pct': ""}
     return render_template('divideby_whole.html',answer=context,scoredict=scoredict,hints=hints)
 
+##########################################################
+@app.route('/display-design')
+def design():
+    return render_template('question_display_design.html')
 
+#######################################################
+@app.route('/algebra-design')
+def display():
+    return render_template('algebra_qts_design.html')
 
 app.secret_key = 'super secret key'
 app.run(debug=True)
