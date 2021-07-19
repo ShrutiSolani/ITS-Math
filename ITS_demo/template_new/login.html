@@ -4,69 +4,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<<<<<<< HEAD
-    <title>Document</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,200&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&display=swap" rel="stylesheet"> 
-<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/> 
-<style>
-    *{
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-    body{
-        background-color: #3A6351;
-    }
-    /* .loginform{
-        margin-top: 10%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    } */
-    form{
-        width: 30%;
-        height: auto;
-        left: 50%;
-        top: 50%;
-        position: absolute;
-        transform: translate(-50%,-50%);
-        background-color: #f2edd7;
-    }
-    input{
-        background-color: #f2edd7;
-    }
-</style> 
-</head>
-<body>
-    <br><br>
-    <div class="container loginform">
-            <form>
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Email address</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputPassword1">Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                </div>
-                <div class="form-group form-check">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
-                </form>
-        </div>
-</body>
-</html>
-=======
     <title>Login</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/> 
@@ -78,12 +15,11 @@
 	margin: 0;
 	padding: 0;	
 	font-family: Raleway, sans-serif;
+	overflow: hidden;
 }
 
 body {
-	/* background: linear-gradient(90deg, #C7C5F4, #776BCC);		 */
-    /* background: linear-gradient(90deg, #E48257, #F2EDD7); */
-    background-color: #f2edd7;
+    background-color: #E8F0F2;
 }
 
 .container {
@@ -94,12 +30,11 @@ body {
 }
 
 .screen {		
-	/* background: linear-gradient(90deg, #5D54A4, #7C78B8);		 */
-    background-color: #3A6351;
+    background-color: #AAD8D3;
 	position: relative;	
 	height: 600px;
 	width: 360px;	
-	box-shadow: 0px 0px 24px #3A6351;
+	box-shadow: 0px 0px 24px #AAD8D3;
 }
 
 .screen__content {
@@ -136,7 +71,7 @@ body {
 .screen__background__shape2 {
 	height: 220px;
 	width: 220px;
-	background: #3A6351;	
+	background: #AAD8D3;	
 	top: -172px;
 	right: 0;	
 	border-radius: 32px;
@@ -145,7 +80,6 @@ body {
 .screen__background__shape3 {
 	height: 540px;
 	width: 190px;
-	/* background: linear-gradient(270deg, #5D54A4, #6A679E); */
 	top: -24px;
 	right: 0;	
 	border-radius: 32px;
@@ -154,7 +88,7 @@ body {
 .screen__background__shape4 {
 	height: 400px;
 	width: 200px;
-	background: #f2edd7;	
+	background: #fff;	
 	top: 420px;
 	right: 50px;	
 	border-radius: 60px;
@@ -167,7 +101,7 @@ body {
 	padding-top: 156px;
 }
 
-.login__field {
+.login__field 
 	padding: 20px 0px;	
 	position: relative;	
 }
@@ -175,12 +109,12 @@ body {
 .login__icon {
 	position: absolute;
 	top: 30px;
-	color: #3A6351;
+	color: #AAD8D3;
 }
 
 .login__input {
 	border: none;
-	border-bottom: 2px solid #3A6351;
+	border-bottom: 2px solid #AAD8D3;
 	background: none;
 	padding: 10px;
 	padding-left: 24px;
@@ -193,7 +127,7 @@ body {
 .login__input:focus,
 .login__input:hover {
 	outline: none;
-	border-bottom-color: #3A6351;
+	border-bottom-color: #AAD8D3;
 }
 
 .login__submit {
@@ -202,14 +136,14 @@ body {
 	margin-top: 30px;
 	padding: 16px 20px;
 	border-radius: 26px;
-	border: 1px solid #3A6351;
+	border: 1px solid #AAD8D3;
 	text-transform: uppercase;
 	font-weight: 700;
 	display: flex;
 	align-items: center;
 	width: 100%;
-	color: #3A6351;
-	box-shadow: 0px 2px 2px #3A6351;
+	color: #212529;
+	box-shadow: 0px 2px 2px #AAD8D3;
 	cursor: pointer;
 	transition: .2s;
 }
@@ -217,14 +151,14 @@ body {
 .login__submit:active,
 .login__submit:focus,
 .login__submit:hover {
-	border-color: #3A6351;
+	border-color: #849b91;
 	outline: none;
 }
 
 .button__icon {
 	font-size: 24px;
 	margin-left: auto;
-	color: #3A6351;
+	color: #AAD8D3;
 }
 
 .social-login {	
@@ -247,7 +181,7 @@ body {
 	padding: 20px 10px;
 	color: #000;
 	text-decoration: none;	
-	text-shadow: 0px 0px 8px #3A6351;
+	text-shadow: 0px 0px 8px #AAD8D3;
 }
 
 .social-login__icon:hover {
@@ -273,14 +207,14 @@ body {
                         <i class="button__icon fas fa-chevron-right"></i>
                     </button>				
                 </form>
-                <div class="social-login">
+                <!-- <div class="social-login">
                     <h3>log in via</h3>
                     <div class="social-icons">
                         <a href="#" class="social-login__icon fab fa-instagram"></a>
                         <a href="#" class="social-login__icon fab fa-facebook"></a>
                         <a href="#" class="social-login__icon fab fa-twitter"></a>
                     </div>
-                </div>
+                </div> -->
             </div>
             <div class="screen__background">
                 <span class="screen__background__shape screen__background__shape4"></span>
@@ -293,4 +227,3 @@ body {
 </body>
 </html>
 
->>>>>>> 99ac9fa1203d3de161fd8b2dc791867731683a04
