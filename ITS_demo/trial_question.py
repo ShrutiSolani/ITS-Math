@@ -88,12 +88,13 @@ def question():
 
 #################################################################
 @app.route('/score/<tid>/<counter>/<feedback>', methods=['POST'])
-def score(counter, feedback, tid):
+# new variable to be added - choice_id
+def score(counter, tid, choice_id):
     if request.method == 'POST':
         print('tid : ',tid)
         if tid == 1:
             global scorecnt1, qtscnt1
-            marks = 25-(int(counter)*5) - (int(feedback)*2)
+            marks = 25-(int(counter)*5)
             scorecnt1 += marks
             qtscnt1 += 1
             # print(scorecnt)
@@ -110,11 +111,22 @@ def score(counter, feedback, tid):
             show_message1 = 'Your points : '+str(marks)+'/25.'
             flash(show_message1)
             flash(comment)
-            return redirect(url_for('question'))
-        
+            if qtscnt1 == 4:
+                if choice_id == 2:
+                    return redirect(url_for(design))
+                elif choice_id == 3:
+                    return redirect(url_for(display))
+                elif choice_id == 1:
+                    return redirect(url_for(easy_des))
+                else:
+                    return redirect(url_for(easy_design))    
+            else:
+                
+                # return render_template('eas')
+            # return redirect(url_for('question'))
         else:
             global scorecnt2, qtscnt2
-            marks = 25-(int(counter)*5) - (int(feedback)*2)
+            marks = 25-(int(counter)*5)
             scorecnt2 += marks
             qtscnt2 += 1
             # print(scorecnt)
@@ -614,6 +626,7 @@ def divide_whole():
     return render_template('divideby_whole.html',answer=context,scoredict=scoredict,hints=hints)
 
 ##########################################################
+#2
 @app.route('/fraction-intermediate')
 def design():
     full={'f1':{'q1':'Expressed as Mixed Fraction','h1':'Mixed Fraction','link':'/mixed-fraction'},'f2':{'q1':'Compare Two Fraction','h1':'Compare','link':'/compare'},'f3':{'q1':'Convert Mixed to Normal Form','h1':'Normal Form','link':'/normal-form'},'f4':{'q1':'Divide Fraction by Whole Number','h1':'Fraction Division','link':'/divide-whole'},'f5':{'q1':'Add or Subtract Two Fractions','h1':'Fraction Operation','link':'/unlike-add'}}
@@ -621,13 +634,15 @@ def design():
     # return render_template('question_display_design.html')
 
 #######################################################
+#4
 @app.route('/algebra-intermediate')
 def display():
     # return render_template('algebra_qts_design.html')
     full={'f1':{'q1':'Addition of Algebraic Expressions','h1':'Horizontal Addition','link':'/algebra-add'},'f2':{'q1':'Subtraction of Algebraic Expressions','h1':'Vertical Subtraction','link':'/vertical_sub'}}
-    return render_template('easy_qts_choice.html' , topic=full,unit='UNIT: Fractions')
+    return render_template('easy_qts_choice.html' , topic=full,unit='UNIT: Algebra')
     
 #########################################################
+#1
 @app.route('/fraction-easy')
 def easy_des():
     
@@ -636,6 +651,7 @@ def easy_des():
 
 
 #########################################################
+#3
 @app.route('/algebra-easy')
 def easy_design():
     
