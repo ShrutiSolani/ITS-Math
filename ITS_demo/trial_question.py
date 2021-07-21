@@ -614,14 +614,34 @@ def divide_whole():
     return render_template('divideby_whole.html',answer=context,scoredict=scoredict,hints=hints)
 
 ##########################################################
-@app.route('/display-design')
+@app.route('/fraction-intermediate')
 def design():
-    return render_template('question_display_design.html')
+    full={'f1':{'q1':'Expressed as Mixed Fraction','h1':'Mixed Fraction','link':'/mixed-fraction'},'f2':{'q1':'Compare Two Fraction','h1':'Compare','link':'/compare'},'f3':{'q1':'Convert Mixed to Normal Form','h1':'Normal Form','link':'/normal-form'},'f4':{'q1':'Divide Fraction by Whole Number','h1':'Fraction Division','link':'/divide-whole'},'f5':{'q1':'Add or Subtract Two Fractions','h1':'Fraction Operation','link':'/unlike-add'}}
+    return render_template('easy_qts_choice.html' , topic=full,unit='UNIT: Fractions')
+    # return render_template('question_display_design.html')
 
 #######################################################
-@app.route('/algebra-design')
+@app.route('/algebra-intermediate')
 def display():
-    return render_template('algebra_qts_design.html')
+    # return render_template('algebra_qts_design.html')
+    full={'f1':{'q1':'Addition of Algebraic Expressions','h1':'Horizontal Addition','link':'/algebra-add'},'f2':{'q1':'Subtraction of Algebraic Expressions','h1':'Vertical Subtraction','link':'/vertical_sub'}}
+    return render_template('easy_qts_choice.html' , topic=full,unit='UNIT: Fractions')
+    
+#########################################################
+@app.route('/fraction-easy')
+def easy_des():
+    
+    full={'f1':{'q1':'Convert to Simmplest Form','h1':'Simplest Form','link':''},'f2':{'q1':'Find Quotient and Remainder','h1':'Fraction Division','link':''},'f3':{'q1':'Add / Subtract like Fraction','h1':'Fraction Operation','link':''},'f4':{'q1':'Multiply Fraction by Whole Number','h1':'Fraction Multiplication','link':''}}
+    return render_template('easy_qts_choice.html' , topic=full,unit='UNIT: Fractions')
+
+
+#########################################################
+@app.route('/algebra-easy')
+def easy_design():
+    
+    full={'f1':{'q1':'Find Coefficient of Terms','h1':'Find Coefficient','link':''},'f2':{'q1':'Find value of Variable','h1':'Find value','link':''},'f3':{'q1':'Classify into Monomial, Bionomial, Trinomial ','h1':'Classification','link':''},'f4':{'q1':'Identify Like or Unlike','h1':'Identification','link':''}}
+    return render_template('easy_qts_choice.html' , topic=full , unit='UNIT: Algebra')
+
 
 app.secret_key = 'super secret key'
 app.run(debug=True)
