@@ -19,7 +19,7 @@
 }
 
 body {
-    background-color: #E8F0F2;
+    background-color: #fff;
 }
 
 .container {
@@ -30,11 +30,11 @@ body {
 }
 
 .screen {		
-    background-color: #AAD8D3;
+    background-color: #0070BB;
 	position: relative;	
 	height: 600px;
 	width: 360px;	
-	box-shadow: 0px 0px 24px #AAD8D3;
+	box-shadow: 0px 0px 24px #0070BB;
 }
 
 .screen__content {
@@ -71,7 +71,7 @@ body {
 .screen__background__shape2 {
 	height: 220px;
 	width: 220px;
-	background: #AAD8D3;	
+	background: #0070BB;	
 	top: -172px;
 	right: 0;	
 	border-radius: 32px;
@@ -109,12 +109,12 @@ body {
 .login__icon {
 	position: absolute;
 	top: 30px;
-	color: #AAD8D3;
+	color: #0070BB;
 }
 
 .login__input {
 	border: none;
-	border-bottom: 2px solid #AAD8D3;
+	border-bottom: 2px solid #0070BB;
 	background: none;
 	padding: 10px;
 	padding-left: 24px;
@@ -127,7 +127,7 @@ body {
 .login__input:focus,
 .login__input:hover {
 	outline: none;
-	border-bottom-color: #AAD8D3;
+	border-bottom-color: #0070BB;
 }
 
 .login__submit {
@@ -136,14 +136,14 @@ body {
 	margin-top: 30px;
 	padding: 16px 20px;
 	border-radius: 26px;
-	border: 1px solid #AAD8D3;
+	border: 1px solid #0070BB;
 	text-transform: uppercase;
 	font-weight: 700;
 	display: flex;
 	align-items: center;
 	width: 100%;
 	color: #212529;
-	box-shadow: 0px 2px 2px #AAD8D3;
+	box-shadow: 0px 2px 2px #0070BB;
 	cursor: pointer;
 	transition: .2s;
 }
@@ -151,14 +151,14 @@ body {
 .login__submit:active,
 .login__submit:focus,
 .login__submit:hover {
-	border-color: #849b91;
+	border-color: #0070BB;
 	outline: none;
 }
 
 .button__icon {
 	font-size: 24px;
 	margin-left: auto;
-	color: #AAD8D3;
+	color: #0070BB;
 }
 
 .social-login {	
@@ -181,7 +181,7 @@ body {
 	padding: 20px 10px;
 	color: #000;
 	text-decoration: none;	
-	text-shadow: 0px 0px 8px #AAD8D3;
+	text-shadow: 0px 0px 8px #0070BB;
 }
 
 .social-login__icon:hover {
@@ -193,7 +193,7 @@ body {
     <div class="container">
         <div class="screen">
             <div class="screen__content">
-                <form class="login">
+                <form class="login" method='GET' action="{{ url_for('home') }}">
                     <div class="login__field">
                         <i class="login__icon fas fa-user"></i>
                         <input type="text" class="login__input" placeholder="User name / Email">
@@ -202,10 +202,12 @@ body {
                         <i class="login__icon fas fa-lock"></i>
                         <input type="password" class="login__input" placeholder="Password">
                     </div>
-                    <button class="button login__submit">
-                        <span class="button__text">Log In Now</span>
-                        <i class="button__icon fas fa-chevron-right"></i>
-                    </button>				
+					<!-- <a href="../template_new/home.html"> -->
+						<button class="button login__submit">
+							<span class="button__text">Log In Now</span>
+							<i class="button__icon fas fa-chevron-right"></i>
+						</button>				
+					<!-- </a> -->
                 </form>
                 <!-- <div class="social-login">
                     <h3>log in via</h3>
