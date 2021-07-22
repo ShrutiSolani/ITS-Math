@@ -19,17 +19,26 @@ qtscnt1=0     #fraction
 scorecnt1=0   #fraction
 qtscnt2 = 0   #algebra
 scorecnt2 = 0 #algebra
-##########################################3
+
+
 @app.route("/")
 def index():
-    return render_template('index.html')
+    return render_template('index_new.html')
 
-###########################################
+
 @app.route("/login")
 def login():
-    return render_template('login.html')
+    return render_template('login_new.html')
 
-##############################################
+@app.route("/signup")
+def signup():
+    return render_template('signup_new.html')
+
+
+@app.route("/home")
+def home():
+    return render_template('home.html')
+
 @app.route("/mixed-fraction1", methods=['POST'])
 def q1():
     if request.method == 'POST':
@@ -123,7 +132,7 @@ def score(counter, tid, choice_id):
             else:
                 
                 # return render_template('eas')
-            # return redirect(url_for('question'))
+                return redirect(url_for('question'))
         else:
             global scorecnt2, qtscnt2
             marks = 25-(int(counter)*5)
@@ -408,7 +417,7 @@ def unlike_add():
 
 # Algebra Easy
 @app.route('/p')
-def algebra_easy():
+def a_easy():
     cnt=0
     variable=["","p","p\u00b2","p\u00b3"]
     sign = ["+", "-"]
@@ -628,34 +637,44 @@ def divide_whole():
 ##########################################################
 #2
 @app.route('/fraction-intermediate')
-def design():
-    full={'f1':{'q1':'Expressed as Mixed Fraction','h1':'Mixed Fraction','link':'/mixed-fraction'},'f2':{'q1':'Compare Two Fraction','h1':'Compare','link':'/compare'},'f3':{'q1':'Convert Mixed to Normal Form','h1':'Normal Form','link':'/normal-form'},'f4':{'q1':'Divide Fraction by Whole Number','h1':'Fraction Division','link':'/divide-whole'},'f5':{'q1':'Add or Subtract Two Fractions','h1':'Fraction Operation','link':'/unlike-add'}}
+def fraction_intermediate():
+    full={'f1':{'q1':'Expressed as Mixed Fraction','h1':'Mixed Fraction','link':'/mixed-fraction'},
+    'f2':{'q1':'Compare Two Fraction','h1':'Compare','link':'/compare'},
+    'f3':{'q1':'Convert Mixed to Normal Form','h1':'Normal Form','link':'/normal-form'},
+    'f4':{'q1':'Divide Fraction by Whole Number','h1':'Fraction Division','link':'/divide-whole'},
+    'f5':{'q1':'Add or Subtract Two Fractions','h1':'Fraction Operation','link':'/unlike-add'}}
     return render_template('easy_qts_choice.html' , topic=full,unit='UNIT: Fractions')
     # return render_template('question_display_design.html')
 
 #######################################################
 #4
 @app.route('/algebra-intermediate')
-def display():
+def algebra_intermediate():
     # return render_template('algebra_qts_design.html')
-    full={'f1':{'q1':'Addition of Algebraic Expressions','h1':'Horizontal Addition','link':'/algebra-add'},'f2':{'q1':'Subtraction of Algebraic Expressions','h1':'Vertical Subtraction','link':'/vertical_sub'}}
+    full={'f1':{'q1':'Addition of Algebraic Expressions','h1':'Horizontal Addition','link':'/algebra-add'},
+    'f2':{'q1':'Subtraction of Algebraic Expressions','h1':'Vertical Subtraction','link':'/vertical_sub'}}
     return render_template('easy_qts_choice.html' , topic=full,unit='UNIT: Algebra')
     
 #########################################################
 #1
 @app.route('/fraction-easy')
-def easy_des():
-    
-    full={'f1':{'q1':'Convert to Simmplest Form','h1':'Simplest Form','link':''},'f2':{'q1':'Find Quotient and Remainder','h1':'Fraction Division','link':''},'f3':{'q1':'Add / Subtract like Fraction','h1':'Fraction Operation','link':''},'f4':{'q1':'Multiply Fraction by Whole Number','h1':'Fraction Multiplication','link':''}}
+def fraction_easy():
+    full={'f1':{'q1':'Convert to Simmplest Form','h1':'Simplest Form','link':'/simplest-form'},
+    'f2':{'q1':'Find Quotient and Remainder','h1':'Fraction Division','link':'/division'},
+    'f3':{'q1':'Add / Subtract like Fraction','h1':'Fraction Operation','link':'/add-easy'},
+    'f4':{'q1':'Multiply Fraction by Whole Number','h1':'Fraction Multiplication','link':'/whole'}}
     return render_template('easy_qts_choice.html' , topic=full,unit='UNIT: Fractions')
 
 
 #########################################################
 #3
 @app.route('/algebra-easy')
-def easy_design():
+def algebra_easy():
     
-    full={'f1':{'q1':'Find Coefficient of Terms','h1':'Find Coefficient','link':''},'f2':{'q1':'Find value of Variable','h1':'Find value','link':''},'f3':{'q1':'Classify into Monomial, Bionomial, Trinomial ','h1':'Classification','link':''},'f4':{'q1':'Identify Like or Unlike','h1':'Identification','link':''}}
+    full={'f1':{'q1':'Find Coefficient of Terms','h1':'Find Coefficient','link':'/coefficient'},
+    'f2':{'q1':'Find value of Variable','h1':'Find value','link':'/p'},
+    'f3':{'q1':'Classify into Monomial, Bionomial, Trinomial ','h1':'Classification','link':'/monomial'},
+    'f4':{'q1':'Identify Like or Unlike','h1':'Identification','link':'/like-unlike'}}
     return render_template('easy_qts_choice.html' , topic=full , unit='UNIT: Algebra')
 
 

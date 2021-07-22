@@ -1,7 +1,13 @@
 {% extends 'qts_design_layout.html' %}
-
+{% block style %}
+.main{
+    margin-top: 50px;
+    height: 100%;
+    /* background-color:#262A53; */
+}
+{% endblock %}
 {% block message %} 
-    <div class="container">
+    <div class="main">
         <div class="jumbotron jumbotron-fluid" style=" padding-top: 25px ;padding-bottom: 15px;background-color:navy;">
             <div class="container" style="color: white;">
               <h2 class="display-4">{{unit}}</h2>
