@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous" />
+</head>
+<style type="text/css">
+	*{
+			margin: 0;
+			padding: 0px;
+			box-sizing: border-box;
+
+		}
+        .blue {
+         background-color: #0070BB;
+       }
+
+       .white {
+         background-color: white;
+       }
+       
+        #n1 {
+            position: fixed; 
+            height:calc(100%-200px);
+            width:100%;
+            top:0;
+            left: 0;
+            z-index: 9999; 
+            /* background-color: #3A6351!important; */
+            /* TRIAL */
+            /* background-color: #F5E6CA!important;  */ 
+        }
+
+        .navbar-brand,.nav-link{
+            color: #000 !important;
+            
+        }
+        /* .carousel{
+          background-color: rgb(10,42,102);
+        } */
+        .carousel-item{
+      		width: 100%;
+      		height: 950px;
+      		position: relative;
+      		z-index: 1;
+		    }
+  		.carousel-item img{
+  			height: 100%;
+  			width: 100%;
+  		}
+  		.s1{
+  			margin-top: 40px;
+  		}
+  		 .carousel-caption{
+        width: 50%;
+  			position: absolute;
+  			top: 90px;
+  			left: 50%;
+  			padding-right: 70px;
+  			color: white;
+
+  		} 
+      .carousel-caption h2{
+        color: white;
+        font-size:3rem;
+        margin-bottom:20px;
+        text-align: start;
+      }
+      .carousel-caption h3{
+        color:white;
+        font-size:1.8rem;
+        position: absolute;
+        right: 70px;
+      }
+      /* .main{
+        width: 100%;
+        height: 650px;
+        background-color: #ACACAC;
+      } */
+      .main{
+            width: 100%;
+            /* background-color:#F5E6CA; */
+            height: 100%;
+        }
+        #leftsection,#rightsection{
+            padding: 20px 10px;
+        }
+       
+        #righttsection h3{
+            font-family: 'Poppins', sans-serif;
+            color:black;
+            font-size: 2vw;
+        }
+        #rightsection,#leftsection{
+            margin: 0 auto;
+            display: block;
+        }
+        #leftsection img{
+            border-radius: 10px;
+            width:100%;
+            height: 98%;
+        }
+        .alg{
+            width: 100%;
+            /* background-color:#3A6351; */
+            height: 100%;
+        }
+</style>
+<body>
+	<nav id="n1" class="navbar navbar-expand-lg navbar-light mb-3 navbar-fixed-top nav white">
+            <a class="navbar-brand" href="#">Logo PhiloMath</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+  
+            <div class="collapse navbar-collapse " id="navbarSupportedContent">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link a1" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link a1" href="#">About Us</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link a1" href="#">Our Team</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link a1" href="#">Contact</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+          <div id="demo" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ul class="carousel-indicators">
+              <li data-target="#demo" data-slide-to="0" class="active"></li>
+              <li data-target="#demo" data-slide-to="1"></li>
+              <li data-target="#demo" data-slide-to="2"></li>
+              <li data-target="#demo" data-slide-to="3"></li>
+              <li data-target="#demo" data-slide-to="4"></li>
+            </ul>
+            <!-- The slideshow -->
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="../static/images/carimg1.jpg" alt="Los Angeles">
+                  <div class="carousel-caption">
+                    <h2>"The study of mathematics, like the Nile, begins in minuteness but ends in magnificence."</h2>
+                    <h3>-Charles Caleb Colton</h3>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img src="../static/images/carimg1.jpg" alt="Chicago">
+                  <div class="carousel-caption">
+                    <h2>"Without Mathematics,there's nothing you can do.Everything around you is Mathematics."</h2>
+                    <h3>-Shankuntala Devi</h3>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img src="../static/images/carimg1.jpg" alt="Chicago">
+                  <div class="carousel-caption">
+                    <h2>"To solve math problem, you need to understand the basic mathematics before you can start applying it."</h2>
+                    <h3>-Catherine Asaro</h3>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img src="../static/images/carimg1.jpg" alt="Chicago">
+                  <div class="carousel-caption">
+                    <h2>"Mathematics is the gate and key to science."</h2>
+                    <h3>-Roger Bacon</h3>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img src="../static/images/carimg1.jpg" alt="Chicago">
+                  <div class="carousel-caption">
+                    <h2>"The only way to learn mathematics is to do mathematics."</h2>
+                    <h3>-Paul Halmos</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Left and right controls -->
+            <a class="carousel-control-prev" href="#demo" data-slide="prev">
+              <span class="carousel-control-prev-icon"></span>
+            </a>
+            <a class="carousel-control-next" href="#demo" data-slide="next">
+              <span class="carousel-control-next-icon"></span>
+            </a>
+          </div>
+          <!-- <section class="s1" style="width:100%">
+          		<div class="row">
+          			<div class="card col-lg-10 col-md-12 col-sm-11" style="margin-bottom:8px" >
+                  <div class="row no-gutters">
+                    <div>
+                      <img src="..." class="card-img" alt="...">
+                    </div>
+                    <div>
+                      <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+          			<div class="card col-lg-10 col-md-12 col-sm-11" style="margin-bottom:8px">
+                  <div class="row no-gutters">
+                    <div class="col-md-5">
+                      <img src="..." class="card-img" alt="...">
+                    </div>
+                    <div class="col-md-7">
+                      <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+          </section> -->
+
+          <div class="main">
+            <div class="container-fluid white">
+                <h1 style="text-align:center;">Fractions</h1>
+                <div class="row">
+                    <div class="col-lg-5 col-md-12 col-11" id="leftsection">
+                      <img src="../static/images/fractionbg.jpg">
+                    </div>
+                    <div class="col-lg-7 col-md-12 col-11" id="rightsection">
+                        <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h3>
+                        <div class="col-lg-12 col-md-12 col-12 d-flex justify-content-around align-items-center mt-5">
+                        <a href="{{ url_for('fraction_easy') }}"><button type="button" class="btn signup blue" style="color:white!important;font-size: 1.5rem;border-radius:50px;height:90px;width:200px;padding:5px">EASY</button></a>
+                        <a href="{{ url_for('fraction_intermediate') }}"><button type="button" class="btn signup blue" style="color:white!important;font-size: 1.5rem;border-radius:50px;height:90px;width:200px;padding:5px;">INTERMEDIATE</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+          <div class="alg">
+            <div class="container-fluid blue">
+                <h1 style="text-align:center;color:white;">Algebra</h1>
+                <div class="row">
+                    <div class="col-lg-5 col-md-12 col-11" id="leftsection">
+                      <img src="../static/images/fractionbg.jpg">
+                    </div>
+                    <div class="col-lg-7 col-md-12 col-11" id="rightsection">
+                        <h3 style="color:white;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h3>
+                        <div class="col-lg-12 col-md-12 col-12 d-flex justify-content-around align-items-center mt-5">
+                         <a href="{{ url_for('algebra_easy') }}"><button type="button" class="btn signup white" style="color:black!important;font-size: 1.5rem;border-radius:50px;height:90px;width:200px;padding:5px">EASY</button></a>
+                        <a href="{{ url_for('algebra_intermediate') }}"><button type="button" class="btn signup white" style="color:black!important;font-size: 1.5rem;border-radius:50px;height:90px;width:200px;padding:5px;">INTERMEDIATE</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+</body>
+</html>

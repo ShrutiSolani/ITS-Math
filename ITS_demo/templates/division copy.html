@@ -1,0 +1,39 @@
+{% extends "layout_new.html" %}
+{% block title %} Fraction {% endblock %}
+
+
+{% block script %}
+
+var ans=["{{ contexts.ans_num[0] }}","{{ contexts.ans_den[0] }}","{{ contexts.ans_num[1] }}","{{ contexts.ans_den[1] }}"]
+console.log(ans)
+function checkQuo(i){
+    if(document.getElementsByTagName("input")[i].value == ans[i]){
+        alert("Correct")
+    }
+    else{
+        alert("you have not divided properly...")
+    }
+}
+
+function checkRem(i){
+    if(document.getElementsByTagName("input")[i].value == ans[i]){
+        alert("Correct")
+    }
+    else{
+        alert("you have not divided properly...")
+    }
+}
+
+
+
+{% endblock %}
+
+{% block content %}
+{% for i in range(0,3,2) %}
+    <div>{{contexts.q[i]}}</div>
+    {{ contexts.label1 }}: <input type="text" id="quo" onchange="checkQuo({{ i }});">
+    <br>
+    {{ contexts.label2 }}: <input type="text" id="rem" onchange="checkRem({{ i+1 }});">
+    <br><br>
+{% endfor %}
+{% endblock %}
