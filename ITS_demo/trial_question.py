@@ -37,7 +37,7 @@ def signup():
 
 @app.route("/home")
 def home():
-    return render_template('home.html')
+    return render_template('home_new.html')
 
 @app.route("/mixed-fraction1", methods=['POST'])
 def q1():
@@ -560,7 +560,7 @@ def division():
     print(q)
     contexts={'ans_num':ans_num,'ans_den':ans_den,'q':q, 'label1': 'Quotient', 'label2': 'Remainder'}
 
-    return render_template('division.html',contexts=contexts)
+    return render_template('division copy.html',contexts=contexts)
 
 
 @app.route('/add-easy')
