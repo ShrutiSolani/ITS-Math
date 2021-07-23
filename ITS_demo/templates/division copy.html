@@ -1,9 +1,7 @@
 {% extends "layout_new.html" %}
-{% block title %} Fraction {% endblock %}
-
 
 {% block script %}
-
+  
 var ans=["{{ contexts.ans_num[0] }}","{{ contexts.ans_den[0] }}","{{ contexts.ans_num[1] }}","{{ contexts.ans_den[1] }}"]
 console.log(ans)
 function checkQuo(i){
@@ -24,16 +22,20 @@ function checkRem(i){
     }
 }
 
-
-
 {% endblock %}
+
+{% block chapter %}Fractions{% endblock %} 
+{% block topic %}Division{% endblock %}
+
+
+<!-- {% block question %}Find Quotient and remainder{% endblock%} -->
 
 {% block content %}
 {% for i in range(0,3,2) %}
-    <div>{{contexts.q[i]}}</div>
-    {{ contexts.label1 }}: <input type="text" id="quo" onchange="checkQuo({{ i }});">
+    <h5 class="card-title">{{contexts.q[i]}}</h5>
+    {{ contexts.label1 }}: <input type="text" class="quo" onchange = checkQuo({{ i }});">
     <br>
-    {{ contexts.label2 }}: <input type="text" id="rem" onchange="checkRem({{ i+1 }});">
+    {{ contexts.label2 }}: <input type="text" class="rem" onchange = "checkRem({{ i+1 }});">
     <br><br>
 {% endfor %}
 {% endblock %}
