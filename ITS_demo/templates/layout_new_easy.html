@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>  
     <title>Practice</title>
     
     <style>
@@ -74,13 +74,37 @@
           margin: 0;
           padding: 0 4em;
         } */
+        .card0 {
+    background-color: #F5F5F5;
+    border-radius: 8px;
+    z-index: 0
+}
+
+.card00 {
+    z-index: 0
+}
+
+.card1 {
+    margin-left: 140px;
+    z-index: 0;
+    border-right: 1px solid #F5F5F5
+}
+
+.card2 {
+    display: none
+}
+
+.card2.show {
+    display: block
+}
 
 
 #progressbar {
     position: absolute;
-    left: 35px;
+    right: 10%;
+    top: 20%;
     overflow: hidden;
-    color: #E53935
+    color: #0070bb
 }
 
 #progressbar li {
@@ -106,7 +130,7 @@
     display: block;
     font-size: 20px;
     background: #fff;
-    border: 2px solid #E53935;
+    border: 2px solid #0070bb;
     border-radius: 50%;
     margin: auto
 }
@@ -146,13 +170,13 @@
 }
 
 #progressbar li.active:after {
-    background: #E53935
+    background: #0070bb
 }
 
 #progressbar li.active:before {
-    background: #E53935;
-    font-family: FontAwesome;
-    content: "\f00c"
+    background: #0070bb;
+    /* font-family: "Font Awesome 5 Free"; */
+    /* content: "\f00c"  */
 }
 
 .tick {
@@ -169,7 +193,7 @@
 }
 
 .prev:hover {
-    color: #D50000 !important
+    color: #0070bb !important
 }
 
 {% block style %}{% endblock %}
@@ -237,17 +261,17 @@
                 <li class="step0"></li>
                 <li class="step0"></li>
             </ul> -->
-            <!-- <div class="card1">
+            <div class="card1">
               <ul id="progressbar" class="text-center">
-                  <li class="active step0"></li>
+                  <li class="step0"></li>
                   <li class="step0"></li>
                   <li class="step0"></li>
                   <li class="step0"></li>
               </ul>
-              <h6 class="mb-5">Enter your Email</h6>
+              <!-- <h6 class="mb-5">Enter your Email</h6>
               <h6 class="mb-5">Set password</h6>
-              <h6 class="mb-5">Select your country</h6>
-          </div> -->
+              <h6 class="mb-5">Select your country</h6> -->
+          </div>
             
             <div class = "time-card">
               
@@ -316,11 +340,12 @@
                   
                 </div>
                 <div class="modal-body">
-                  <p>Select the option you think would be the beginning step of this problem</p>
+                  {% block hint %}{% endblock %}
+                  <!-- <p>Select the option you think would be the beginning step of this problem</p>
                   <button class="btn btn-info" style="width: 100%; margin: 10px auto;">Option 1</button>
                   <button class="btn btn-info" style="width: 100%; margin: 10px auto;">Option 1</button>
                   <button class="btn btn-info" style="width: 100%; margin: 10px auto;">Option 1</button>
-                  <button class="btn btn-info" style="width: 100%; margin: 10px auto;">Option 1</button>
+                  <button class="btn btn-info" style="width: 100%; margin: 10px auto;">Option 1</button> -->
                   <!-- <p>Some text in the modal.</p> -->
                 </div>
                 <div class="modal-footer">
@@ -357,10 +382,36 @@
           </div>
       </div>
       <script>
+        var arrayFromStroage = JSON.parse(localStorage.getItem("textValues"));
+        var arrayLength = arrayFromStroage.length;
+        if(localStorage.getItem('textValues') == null || arrayLength > 4){
+          var myArray =[];
+        }else{
+          myArray =  JSON.parse(localStorage.getItem('textValues'));
+        }
+
+        console.log(myArray);
+
+        function addItemToArray(){
+          myArray.push(25);
+          localStorage.setItem('textValues', JSON.stringify(myArray));
+        }
+
         $(document).ready(function(){
           $('.toast').toast('hide');
+          console.log(arrayLength);
+          if(arrayLength < 4){
+            for(i = 0;i < arrayLength;i++){
+              document.getElementsByClassName("bi")[i].classList.add("done");
+            }
+            
+          }
+          
           $('#next-btn').click(function(){
             $('.toast').toast('show');
+            addItemToArray();
+            // document.getElementsByClassName("bi")[arrayLength - 1].classList.add("done");
+            setTimeout(function(){ location.reload() }, 3000);            
           })
         });
       
