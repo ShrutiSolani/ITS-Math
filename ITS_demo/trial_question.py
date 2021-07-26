@@ -1,9 +1,11 @@
+import re
 from flask import Flask, render_template, request, flash, redirect, url_for, session
 #from flask.ext.session imDortAnacsida
 from fractions import Fraction
 import random
 import os
 import math
+import json
 
 
 app = Flask(__name__)
@@ -96,64 +98,69 @@ def question():
     return render_template('display copy.html', answer=answer, hints=hints, scoredict=scoredict, labels = labels)
 
 #################################################################
-@app.route('/score/<tid>/<counter>/<feedback>', methods=['POST'])
+@app.route('/score', methods=['POST'])
 # new variable to be added - choice_id
-def score(counter, tid, choice_id):
+def score():
     if request.method == 'POST':
-        print('tid : ',tid)
-        if tid == 1:
-            global scorecnt1, qtscnt1
-            marks = 25-(int(counter)*5)
-            scorecnt1 += marks
-            qtscnt1 += 1
-            # print(scorecnt)
-            # print(qtscnt)
-            # print(marks)
-            if marks == 25:
-                comment = "Well Done!!!"
-            elif 20 <= marks < 25:
-                comment = "You have just about mastered it"
-            elif 15 <= marks < 20:
-                comment = "Keep working on it you are improving"
-            else:
-                comment = "That's not half bad"
-            show_message1 = 'Your points : '+str(marks)+'/25.'
-            flash(show_message1)
-            flash(comment)
-            if qtscnt1 == 4:
-                if choice_id == 2:
-                    return redirect(url_for(design))
-                elif choice_id == 3:
-                    return redirect(url_for(display))
-                elif choice_id == 1:
-                    return redirect(url_for(easy_des))
-                else:
-                    return redirect(url_for(easy_design))    
-            else:
-                
-                # return render_template('eas')
-                return redirect(url_for('question'))
-        else:
-            global scorecnt2, qtscnt2
-            marks = 25-(int(counter)*5)
-            scorecnt2 += marks
-            qtscnt2 += 1
-            # print(scorecnt)
-            # print(qtscnt)
-            # print(marks)
-            if marks == 25:
-                comment = "Well Done!!!"
-            elif 20 <= marks < 25:
-                comment = "You have just about mastered it"
-            elif 15 <= marks < 20:
-                comment = "Keep working on it you are improving"
-            else:
-                comment = "That's not half bad"
-           
-            show_message1 = 'Your points : '+str(marks)+'/25.'
-            flash(show_message1)
-            flash(comment)
-            return redirect(url_for('horizontal_add'))
+        print(request.json['data'])
+        # print(request.json[data]['qid'])
+        # print(request.json['score'])
+        # print("qid - ", qid)
+        # print("score - ", score)
+        return redirect(url_for("home"))
+        # global scorecnt1, qtscnt1
+        # marks = 25-(int(counter)*5)
+        # scorecnt1 += marks
+        # qtscnt1 += 1
+        # # print(scorecnt)
+        # # print(qtscnt)
+        # # print(marks)
+        # if marks == 25:
+        #     comment = "Well Done!!!"
+        # elif 20 <= marks < 25:
+        #     comment = "You have just about mastered it"
+        # elif 15 <= marks < 20:
+        #     comment = "Keep working on it you are improving"
+        # else:
+        #     comment = "That's not half bad"
+        # show_message1 = 'Your points : '+str(marks)+'/25.'
+        # flash(show_message1)
+        # flash(comment)
+        # if qtscnt1 == 4:
+        #     if choice_id == 2:
+        #         return redirect(url_for(design))
+        #     elif choice_id == 3:
+        #         return redirect(url_for(display))
+        #     elif choice_id == 1:
+        #         return redirect(url_for(easy_des))
+        #     else:
+        #         return redirect(url_for(easy_design))    
+        # else:
+            
+        #     # return render_template('eas')
+        #     return redirect(url_for('question'))
+    else:
+        return redirect(url_for("login"))
+        # global scorecnt2, qtscnt2
+        # marks = 25-(int(counter)*5)
+        # scorecnt2 += marks
+        # qtscnt2 += 1
+        # # print(scorecnt)
+        # # print(qtscnt)
+        # # print(marks)
+        # if marks == 25:
+        #     comment = "Well Done!!!"
+        # elif 20 <= marks < 25:
+        #     comment = "You have just about mastered it"
+        # elif 15 <= marks < 20:
+        #     comment = "Keep working on it you are improving"
+        # else:
+        #     comment = "That's not half bad"
+        
+        # show_message1 = 'Your points : '+str(marks)+'/25.'
+        # flash(show_message1)
+        # flash(comment)
+        # return redirect(url_for('horizontal_add'))
 
 
 ###############################################################
@@ -544,6 +551,7 @@ def like_unlike():
 
 @app.route('/division')
 def division():
+    qid = 'FE1'
     q=[]
     ans_num=[]
     ans_den=[]
@@ -558,7 +566,7 @@ def division():
         ans_den.append(ansden)
     q.insert(1," ")
     print(q)
-    contexts={'ans_num':ans_num,'ans_den':ans_den,'q':q, 'label1': 'Quotient', 'label2': 'Remainder'}
+    contexts={'ans_num':ans_num,'ans_den':ans_den,'q':q, 'label1': 'Quotient', 'label2': 'Remainder', 'qid': qid}
 
     return render_template('division copy.html',contexts=contexts)
 

@@ -276,10 +276,10 @@
             <div class = "time-card">
               
             <div class="card-body" style="width: 80%;">
+              
               <!-- <h5 class="card-title">{% block question %}{% endblock %}</h5> -->
               {% block content %}{% endblock %}
-
-
+              
               <!-- <h6 class="card-text">5 <br> --- <br> 6</h6> -->
               <!-- <div class="line1">
                 <label for="quo" >Quotient:</label>
@@ -371,29 +371,41 @@
         
 
             <div class="card-footer text-muted green">
-                <a href="#" class="btn btn-info" data-toggle="modal" data-target="#myModal">Hint</a>
+                <a href="#" class="btn btn-info" data-toggle="modal" data-target="#myModal" id="hint-btn">Hint</a>
                 
                 <i class="bi bi-circle-fill right"></i>
                 <i class="bi bi-circle-fill"></i>
                 <i class="bi bi-circle-fill"></i>
                 <i class="bi bi-circle-fill"></i>
-                <a href="#" class="btn btn-success next" id="next-btn"> Next</a>
+                <a href="#" class="btn btn-success next" id="next-btn">Next</a>
             </div>
           </div>
       </div>
       <script>
         var arrayFromStroage = JSON.parse(localStorage.getItem("textValues"));
         var arrayLength = arrayFromStroage.length;
-        if(localStorage.getItem('textValues') == null || arrayLength > 4){
+        var total_score = 0;
+        if(localStorage.getItem('textValues') == null || arrayLength >= 4){
+          if(arrayLength == 4){
+            const reducer = (accumulator, curr) => accumulator + curr;
+            total_score = arrayFromStroage.reduce(reducer);
+            // var myArray =[];
+            
+          }
           var myArray =[];
-        }else{
+        }
+        else{
           myArray =  JSON.parse(localStorage.getItem('textValues'));
         }
 
         console.log(myArray);
 
+        var hint_count = 0;
+        var quesid = "{{ contexts.qid }}";
+
         function addItemToArray(){
-          myArray.push(25);
+          let score = 25 - (5*hint_count);
+          myArray.push(score);
           localStorage.setItem('textValues', JSON.stringify(myArray));
         }
 
@@ -403,92 +415,36 @@
           if(arrayLength < 4){
             for(i = 0;i < arrayLength;i++){
               document.getElementsByClassName("bi")[i].classList.add("done");
-            }
-            
+            }  
           }
-          
+        
+          $('#hint-btn').click(function(){
+            hint_count++;
+          })
+           
           $('#next-btn').click(function(){
             $('.toast').toast('show');
             addItemToArray();
-            // document.getElementsByClassName("bi")[arrayLength - 1].classList.add("done");
+            if(arrayLength == 4){
+              // $('#next-btn').html('Submit');
+              var data = {qid: quesid, score: total_score};
+              // var str = quesid+","+total_score;
+              // console.log(total_score);
+              // console.log(str);
+              $.ajax({
+                  type: 'POST',
+                  url: '/score',
+                  contentType: 'application/json; charset=utf-8',
+                  data: JSON.stringify({'data': data}),
+                  dataType: 'json',
+                  success: "AjaxSucceeded",
+                  error: "AjaxFailed"
+              });
+             
+            }
             setTimeout(function(){ location.reload() }, 3000);            
-          })
+          });
         });
-      
         </script>
-
-<script>
-// $(document).ready(function(){
-
-// var current_fs, next_fs, previous_fs;
-
-// // No BACK button on first screen
-// if($(".show").hasClass("first-screen")) {
-// $(".prev").css({ 'display' : 'none' });
-// }
-
-// // Next button
-// $(".next-button").click(function(){
-
-// current_fs = $(this).parent().parent();
-// next_fs = $(this).parent().parent().next();
-
-// $(".prev").css({ 'display' : 'block' });
-
-// $(current_fs).removeClass("show");
-// $(next_fs).addClass("show");
-
-// $("#progressbar li").eq($(".card2").index(next_fs)).addClass("active");
-
-// current_fs.animate({}, {
-// step: function() {
-
-// current_fs.css({
-// 'display': 'none',
-// 'position': 'relative'
-// });
-
-// next_fs.css({
-// 'display': 'block'
-// });
-// }
-// });
-// });
-
-// // Previous button
-// $(".prev").click(function(){
-
-// current_fs = $(".show");
-// previous_fs = $(".show").prev();
-
-// $(current_fs).removeClass("show");
-// $(previous_fs).addClass("show");
-
-// $(".prev").css({ 'display' : 'block' });
-
-// if($(".show").hasClass("first-screen")) {
-// $(".prev").css({ 'display' : 'none' });
-// }
-
-// $("#progressbar li").eq($(".card2").index(current_fs)).removeClass("active");
-
-// current_fs.animate({}, {
-// step: function() {
-
-// current_fs.css({
-// 'display': 'none',
-// 'position': 'relative'
-// });
-
-// previous_fs.css({
-// 'display': 'block'
-// });
-// }
-// });
-// });
-
-// });
-
-</script>
 </body>
 </html>
