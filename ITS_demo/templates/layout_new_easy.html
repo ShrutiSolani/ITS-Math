@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>  
     <title>Practice</title>
     
     <style>
@@ -74,13 +74,37 @@
           margin: 0;
           padding: 0 4em;
         } */
+        .card0 {
+    background-color: #F5F5F5;
+    border-radius: 8px;
+    z-index: 0
+}
+
+.card00 {
+    z-index: 0
+}
+
+.card1 {
+    margin-left: 140px;
+    z-index: 0;
+    border-right: 1px solid #F5F5F5
+}
+
+.card2 {
+    display: none
+}
+
+.card2.show {
+    display: block
+}
 
 
 #progressbar {
     position: absolute;
-    left: 35px;
+    right: 10%;
+    top: 20%;
     overflow: hidden;
-    color: #E53935
+    color: #0070bb
 }
 
 #progressbar li {
@@ -106,7 +130,7 @@
     display: block;
     font-size: 20px;
     background: #fff;
-    border: 2px solid #E53935;
+    border: 2px solid #0070bb;
     border-radius: 50%;
     margin: auto
 }
@@ -146,13 +170,13 @@
 }
 
 #progressbar li.active:after {
-    background: #E53935
+    background: #0070bb
 }
 
 #progressbar li.active:before {
-    background: #E53935;
-    font-family: FontAwesome;
-    content: "\f00c"
+    background: #0070bb;
+    /* font-family: "Font Awesome 5 Free"; */
+    /* content: "\f00c"  */
 }
 
 .tick {
@@ -169,7 +193,7 @@
 }
 
 .prev:hover {
-    color: #D50000 !important
+    color: #0070bb !important
 }
 
 {% block style %}{% endblock %}
@@ -237,25 +261,25 @@
                 <li class="step0"></li>
                 <li class="step0"></li>
             </ul> -->
-            <!-- <div class="card1">
+            <div class="card1">
               <ul id="progressbar" class="text-center">
-                  <li class="active step0"></li>
+                  <li class="step0"></li>
                   <li class="step0"></li>
                   <li class="step0"></li>
                   <li class="step0"></li>
               </ul>
-              <h6 class="mb-5">Enter your Email</h6>
+              <!-- <h6 class="mb-5">Enter your Email</h6>
               <h6 class="mb-5">Set password</h6>
-              <h6 class="mb-5">Select your country</h6>
-          </div> -->
+              <h6 class="mb-5">Select your country</h6> -->
+          </div>
             
             <div class = "time-card">
               
             <div class="card-body" style="width: 80%;">
+              
               <!-- <h5 class="card-title">{% block question %}{% endblock %}</h5> -->
               {% block content %}{% endblock %}
-
-
+              
               <!-- <h6 class="card-text">5 <br> --- <br> 6</h6> -->
               <!-- <div class="line1">
                 <label for="quo" >Quotient:</label>
@@ -316,11 +340,12 @@
                   
                 </div>
                 <div class="modal-body">
-                  <p>Select the option you think would be the beginning step of this problem</p>
+                  {% block hint %}{% endblock %}
+                  <!-- <p>Select the option you think would be the beginning step of this problem</p>
                   <button class="btn btn-info" style="width: 100%; margin: 10px auto;">Option 1</button>
                   <button class="btn btn-info" style="width: 100%; margin: 10px auto;">Option 1</button>
                   <button class="btn btn-info" style="width: 100%; margin: 10px auto;">Option 1</button>
-                  <button class="btn btn-info" style="width: 100%; margin: 10px auto;">Option 1</button>
+                  <button class="btn btn-info" style="width: 100%; margin: 10px auto;">Option 1</button> -->
                   <!-- <p>Some text in the modal.</p> -->
                 </div>
                 <div class="modal-footer">
@@ -346,98 +371,80 @@
         
 
             <div class="card-footer text-muted green">
-                <a href="#" class="btn btn-info" data-toggle="modal" data-target="#myModal">Hint</a>
+                <a href="#" class="btn btn-info" data-toggle="modal" data-target="#myModal" id="hint-btn">Hint</a>
                 
                 <i class="bi bi-circle-fill right"></i>
                 <i class="bi bi-circle-fill"></i>
                 <i class="bi bi-circle-fill"></i>
                 <i class="bi bi-circle-fill"></i>
-                <a href="#" class="btn btn-success next" id="next-btn"> Next</a>
+                <a href="#" class="btn btn-success next" id="next-btn">Next</a>
             </div>
           </div>
       </div>
       <script>
+        var arrayFromStroage = JSON.parse(localStorage.getItem("textValues"));
+        var arrayLength = arrayFromStroage.length;
+        var total_score = 0;
+        if(localStorage.getItem('textValues') == null || arrayLength >= 4){
+          if(arrayLength == 4){
+            const reducer = (accumulator, curr) => accumulator + curr;
+            total_score = arrayFromStroage.reduce(reducer);
+            // var myArray =[];
+            
+          }
+          var myArray =[];
+        }
+        else{
+          myArray =  JSON.parse(localStorage.getItem('textValues'));
+        }
+
+        console.log(myArray);
+
+        var hint_count = 0;
+        var quesid = "{{ contexts.qid }}";
+
+        function addItemToArray(){
+          let score = 25 - (5*hint_count);
+          myArray.push(score);
+          localStorage.setItem('textValues', JSON.stringify(myArray));
+        }
+
         $(document).ready(function(){
           $('.toast').toast('hide');
+          console.log(arrayLength);
+          if(arrayLength < 4){
+            for(i = 0;i < arrayLength;i++){
+              document.getElementsByClassName("bi")[i].classList.add("done");
+            }  
+          }
+        
+          $('#hint-btn').click(function(){
+            hint_count++;
+          })
+           
           $('#next-btn').click(function(){
             $('.toast').toast('show');
-          })
+            addItemToArray();
+            if(arrayLength == 4){
+              // $('#next-btn').html('Submit');
+              var data = {qid: quesid, score: total_score};
+              // var str = quesid+","+total_score;
+              // console.log(total_score);
+              // console.log(str);
+              $.ajax({
+                  type: 'POST',
+                  url: '/score',
+                  contentType: 'application/json; charset=utf-8',
+                  data: JSON.stringify({'data': data}),
+                  dataType: 'json',
+                  success: "AjaxSucceeded",
+                  error: "AjaxFailed"
+              });
+             
+            }
+            setTimeout(function(){ location.reload() }, 3000);            
+          });
         });
-      
         </script>
-
-<script>
-// $(document).ready(function(){
-
-// var current_fs, next_fs, previous_fs;
-
-// // No BACK button on first screen
-// if($(".show").hasClass("first-screen")) {
-// $(".prev").css({ 'display' : 'none' });
-// }
-
-// // Next button
-// $(".next-button").click(function(){
-
-// current_fs = $(this).parent().parent();
-// next_fs = $(this).parent().parent().next();
-
-// $(".prev").css({ 'display' : 'block' });
-
-// $(current_fs).removeClass("show");
-// $(next_fs).addClass("show");
-
-// $("#progressbar li").eq($(".card2").index(next_fs)).addClass("active");
-
-// current_fs.animate({}, {
-// step: function() {
-
-// current_fs.css({
-// 'display': 'none',
-// 'position': 'relative'
-// });
-
-// next_fs.css({
-// 'display': 'block'
-// });
-// }
-// });
-// });
-
-// // Previous button
-// $(".prev").click(function(){
-
-// current_fs = $(".show");
-// previous_fs = $(".show").prev();
-
-// $(current_fs).removeClass("show");
-// $(previous_fs).addClass("show");
-
-// $(".prev").css({ 'display' : 'block' });
-
-// if($(".show").hasClass("first-screen")) {
-// $(".prev").css({ 'display' : 'none' });
-// }
-
-// $("#progressbar li").eq($(".card2").index(current_fs)).removeClass("active");
-
-// current_fs.animate({}, {
-// step: function() {
-
-// current_fs.css({
-// 'display': 'none',
-// 'position': 'relative'
-// });
-
-// previous_fs.css({
-// 'display': 'block'
-// });
-// }
-// });
-// });
-
-// });
-
-</script>
 </body>
 </html>
