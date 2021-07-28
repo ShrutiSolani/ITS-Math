@@ -39,6 +39,7 @@ def signup():
 
 @app.route("/home")
 def home():
+    print("inside home")
     return render_template('home_new.html')
 
 @app.route("/mixed-fraction1", methods=['POST'])
@@ -102,12 +103,19 @@ def question():
 # new variable to be added - choice_id
 def score():
     if request.method == 'POST':
-        print(request.json['data'])
+        print(request.form)
+        tup = request.form
+        print(tup['data[qid]'])
+        print(tup['data[score]'])
+        # print(tup[0])
+        # print(request.args['data'])
+        # print(request.json['data'])
+        return "Score received"
         # print(request.json[data]['qid'])
         # print(request.json['score'])
         # print("qid - ", qid)
         # print("score - ", score)
-        return redirect(url_for("home"))
+        # return redirect(url_for("home"))
         # global scorecnt1, qtscnt1
         # marks = 25-(int(counter)*5)
         # scorecnt1 += marks
@@ -425,6 +433,7 @@ def unlike_add():
 # Algebra Easy
 @app.route('/p')
 def a_easy():
+    qid = "AE2"
     cnt=0
     variable=["","p","p\u00b2","p\u00b3"]
     sign = ["+", "-"]
@@ -461,7 +470,7 @@ def a_easy():
         answers.append(answer) 
         cnt += 1
 
-    return render_template('algebra_easy.html', easy={'question': q4, 'options': terms, 'answer': answers, 'num': 2})
+    return render_template('algebra_easy.html', easy={'topic': 'Value of Expression','question': q4, 'options': terms, 'answer': answers, 'num': 2, 'qid': qid})
         
 def find_term(v, a):
     return a.index(v)
@@ -469,6 +478,7 @@ def find_term(v, a):
 
 @app.route('/coefficient')
 def coefficient():
+    qid = "AE1"
     q1 = 'Identify the numerical coefficients of terms (other than constants) in the following expressions'
     variable = ["x", "x\u00b2", "x\u00b3"]
     sign = ["+", "-"]
@@ -487,7 +497,7 @@ def coefficient():
         else:
             answers.append(coeff)
         count += 1
-    return render_template('algebra_easy.html', easy={'question': q1, 'options': terms, 'answer': answers, 'num': 1})
+    return render_template('algebra_easy.html', easy={'topic': 'Identifying Coefficient','question': q1, 'options': terms, 'answer': answers, 'num': 1, 'qid': qid})
 
 
 @app.route('/monomial')
@@ -566,9 +576,9 @@ def division():
         ans_den.append(ansden)
     q.insert(1," ")
     print(q)
-    contexts={'ans_num':ans_num,'ans_den':ans_den,'q':q, 'label1': 'Quotient', 'label2': 'Remainder', 'qid': qid}
+    easy={'ans_num':ans_num,'ans_den':ans_den,'q':q, 'label1': 'Quotient', 'label2': 'Remainder', 'qid': qid}
 
-    return render_template('division copy.html',contexts=contexts)
+    return render_template('division copy.html',easy=easy)
 
 
 @app.route('/add-easy')
@@ -589,7 +599,7 @@ def add_easy():
         q.append(qs)
     q.insert(1," ")
     contexts={'ans_num':ans_num,'ans_den':ans_den,'q':q, 'label1': 'Quotient', 'label2' : 'Remainder'}
-    return render_template('division.html',contexts=contexts)
+    return render_template('division.html',easy=context)
 
 
 @app.route('/whole')
@@ -609,7 +619,7 @@ def whole():
         q.append(que)
     q.insert(1," ")
     # print(q)
-    return render_template('division.html',contexts={'ans_num':ans_num,'ans_den':ans_den,'q':q, 'label1': 'Numerator', 'label2': 'Denominator'})
+    return render_template('division.html',easy={'ans_num':ans_num,'ans_den':ans_den,'q':q, 'label1': 'Numerator', 'label2': 'Denominator'})
 
 
 @app.route('/number-line')

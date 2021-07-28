@@ -1,5 +1,4 @@
-{% extends "layout.html" %}
-{% block title %}Algebra {% endblock %}
+{% extends "layout_new_easy.html" %}
 
 
 {% block script %}
@@ -12,6 +11,7 @@ console.log(document.getElementsByTagName("input")[i].value);
     if(document.getElementsByTagName("input")[i].value == ans[i])
 	{
 	    alert("Correct");
+        document.getElementsByClassName("step0")[i].classList.add("active");
     }
     else{
         if({{ easy.num }} == '1'){
@@ -26,18 +26,24 @@ console.log(document.getElementsByTagName("input")[i].value);
 
 
 {% endblock %}
-
+{% block chapter %}Algebra{% endblock %} 
+{% block topic %}{{ easy.topic }}{% endblock %}
 
 
 
 {% block content %}
-<div>{{ easy.question }}</div>
+<h5 class="card-title">{{ easy.question }}</h5>
 <p>
 {% for i in range(4) %}
   <div>{{ easy.options[i] }}
-  <input type="text" onchange="check({{ i }});">
+  <input type="text" onchange="check({{ i }});"> <br><br>
   </div>
 {% endfor %}
 </p>
+{% endblock %}
+
+{% block hint %}
+<img src="{{ url_for('static', filename = 'images/algebra_terms.jpeg') }}" alt="" style = "width:80%;">
+
 
 {% endblock %}
