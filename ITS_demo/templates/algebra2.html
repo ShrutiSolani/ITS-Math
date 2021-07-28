@@ -1,10 +1,10 @@
-{% extends "layout.html" %}
-{% block title %}Algebra {% endblock %}
+{% extends "layout_new_easy.html" %}
+<!-- {% block title %}Algebra {% endblock %} -->
 {% block script %}
 window.onload = function(){
     monobitri = ["","Monomial", "Binomial", "Trinomial"];
     likeunlike = ["", "Like", "Unlike"];
-    if({{ easy.num }} == '2'){ monobitri = likeunlike; }
+    if({{ contexts.num }} == '2'){ monobitri = likeunlike; }
     var select = document.getElementsByClassName("answer_options");
     for(var j = 0; j < 4; j++){
     for(var i = 0; i < monobitri.length; i++){
@@ -16,34 +16,36 @@ window.onload = function(){
     }
 
 }
-var ans = [ "{{ easy.answer[0] }}", "{{ easy.answer[1] }}", "{{ easy.answer[2] }}", "{{ easy.answer[3] }}" ];
+var ans = [ "{{ contexts.answer[0] }}", "{{ contexts.answer[1] }}", "{{ contexts.answer[2] }}", "{{ contexts.answer[3] }}" ];
 console.log(ans);
 function check(i){
 
 console.log(document.getElementsByTagName("select")[i].value);
-console.log({{ easy.answer[i] }});
+console.log({{ contexts.answer[i] }});
         if(document.getElementsByTagName("select")[i].value == ans[i])
 	{
 	    alert("Correct");
+        document.getElementsByClassName("step0")[i].classList.add("active");
     }
         else{
-            if({{ easy.num }} == '1'){
+            if({{ contexts.num }} == '1'){
                 alert("An expression which contains two unlike terms is called a binomial. Similarly, think of monomial and trinomial.");
             }
-            else if({{ easy.num}} == '2'){
+            else if({{ contexts.num}} == '2'){
                 alert("When term have the same algebraic factors, they are like terms.");
             }
         }
     }
 {% endblock %}
 {% block content %}
-<div>{{ easy.question }}</div>
+<div>{{ contexts.question }}</div>
 <p>
 {% for i in range(4) %}
-  <div>{{ easy.options[i] }}
-  <select class="answer_options" onchange="check({{ i }});">
+  <div>{{ contexts.options[i] }}
+  <select class="answer_options" onchange="check({{ i }});" style="min-width: 120px;">
 
   </select>
+  <br/><br/>
   </div>
 {% endfor %}
 </p>
