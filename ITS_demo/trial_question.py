@@ -531,7 +531,7 @@ def monomial():
         count += 1
 
     contexts={'question': q2, 'options': terms, 'answer': answers, 'num': 1}
-    return render_template('algebra2.html', contexts=contexts)
+    return render_template('algebra2.html', easy=contexts)
 
 
 
@@ -558,7 +558,7 @@ def like_unlike():
         answers.append(answer)
         count += 1
     contexts={'question': q3, 'options': terms, 'answer': answers, 'num': 2}
-    return render_template('algebra2.html',contexts=contexts)
+    return render_template('algebra2.html',easy=contexts)
 
 @app.route('/division')
 def division():
