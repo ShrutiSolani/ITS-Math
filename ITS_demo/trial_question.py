@@ -530,8 +530,8 @@ def monomial():
         terms.append(term)
         count += 1
 
-
-    return render_template('algebra2.html', easy={'question': q2, 'options': terms, 'answer': answers, 'num': 1})
+    contexts={'question': q2, 'options': terms, 'answer': answers, 'num': 1}
+    return render_template('algebra2.html', contexts=contexts)
 
 
 
@@ -557,7 +557,8 @@ def like_unlike():
         terms.append([t1, t2])
         answers.append(answer)
         count += 1
-    return render_template('algebra2.html', easy={'question': q3, 'options': terms, 'answer': answers, 'num': 2})
+    contexts={'question': q3, 'options': terms, 'answer': answers, 'num': 2}
+    return render_template('algebra2.html',contexts=contexts)
 
 @app.route('/division')
 def division():
