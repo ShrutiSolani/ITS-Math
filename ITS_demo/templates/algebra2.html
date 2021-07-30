@@ -1,10 +1,15 @@
-{% extends "layout.html" %}
-{% block title %}Algebra {% endblock %}
+{% extends "layout_new_easy.html" %}
+<!-- {% block title %}Algebra {% endblock %} -->
 {% block script %}
 window.onload = function(){
     monobitri = ["","Monomial", "Binomial", "Trinomial"];
     likeunlike = ["", "Like", "Unlike"];
-    if({{ easy.num }} == '2'){ monobitri = likeunlike; }
+    var source = "{{ url_for('static', filename = 'images/mono_bio_trio.png') }}";
+    if({{ easy.num }} == '2'){ 
+        monobitri = likeunlike; 
+        source = "{{ url_for('static', filename = 'images/like_unlike.png') }}";
+    }
+    $("#hint_img").attr("src", source);
     var select = document.getElementsByClassName("answer_options");
     for(var j = 0; j < 4; j++){
     for(var i = 0; i < monobitri.length; i++){
@@ -25,6 +30,7 @@ console.log({{ easy.answer[i] }});
         if(document.getElementsByTagName("select")[i].value == ans[i])
 	{
 	    alert("Correct");
+        document.getElementsByClassName("step0")[i].classList.add("active");
     }
         else{
             if({{ easy.num }} == '1'){
@@ -41,11 +47,16 @@ console.log({{ easy.answer[i] }});
 <p>
 {% for i in range(4) %}
   <div>{{ easy.options[i] }}
-  <select class="answer_options" onchange="check({{ i }});">
+  <select class="answer_options" onchange="check({{ i }});" style="min-width: 120px;">
 
   </select>
+  <br/><br/>
   </div>
 {% endfor %}
 </p>
 
+{% endblock %}
+
+{% block hint %}
+    <img src="" alt="" id="hint_img" style="width: 80%;">
 {% endblock %}

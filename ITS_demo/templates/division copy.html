@@ -1,26 +1,25 @@
 {% extends "layout_new_easy.html" %}
 
-
 {% block script %}
-var ans = [ "{{ easy.answer[0] }}", "{{ easy.answer[1] }}", "{{ easy.answer[2] }}", "{{ easy.answer[3] }}" ];
-console.log(ans);
-function check(i){
-
-console.log(document.getElementsByTagName("input")[i].value);
-<!-- console.log({{ easy.answer[i] }}); -->
-    if(document.getElementsByTagName("input")[i].value == ans[i])
-	{
-	    alert("Correct");
+var ans=["{{ easy.ans_num[0] }}","{{ easy.ans_den[0] }}","{{ easy.ans_num[1] }}","{{ easy.ans_den[1] }}"]
+console.log(ans)
+function checkQuo(i){
+    if(document.getElementsByTagName("input")[i].value == ans[i]){
+        alert("Correct");
         document.getElementsByClassName("step0")[i].classList.add("active");
     }
     else{
-        if({{ easy.num }} == '1'){
-            alert("A coefficient is a number used to multiply a variable");
-        }
-        else{
-            alert("Simply substitue value of p");
-        }
-        <!-- alert("Incorrect"); -->
+        alert("you have not divided properly...");
+    }
+}
+
+function checkRem(i){
+    if(document.getElementsByTagName("input")[i].value == ans[i]){
+        alert("Correct");
+        document.getElementsByClassName("step0")[i].classList.add("active");
+    }
+    else{
+        alert("you have not divided properly...");
     }
 }
 
@@ -31,24 +30,24 @@ console.log(document.getElementsByTagName("input")[i].value);
           if(arrayLength == 4){
             const reducer = (accumulator, curr) => accumulator + curr;
             total_score = arrayFromStroage.reduce(reducer);
-            // var algebra =[];
+            // var division =[];
             
           }
-          var algebra =[];
+          var division =[];
         }
         else{
-          algebra =  JSON.parse(localStorage.getItem('textValues'));
+          division =  JSON.parse(localStorage.getItem('textValues'));
         }
 
-        console.log(algebra);
+        console.log(division);
 
         var hint_count = 0;
         var quesid = "{{ easy.qid }}";
 
         function addItemToArray(){
           let score = 25 - (5*hint_count);
-          algebra.push(score);
-          localStorage.setItem('textValues', JSON.stringify(algebra));
+          division.push(score);
+          localStorage.setItem('textValues', JSON.stringify(division));
         }
 
         $(document).ready(function(){
@@ -94,24 +93,27 @@ console.log(document.getElementsByTagName("input")[i].value);
         });
 
 
+
+
 {% endblock %}
-{% block chapter %}Algebra{% endblock %} 
-{% block topic %}{{ easy.topic }}{% endblock %}
+
+{% block chapter %}Fractions{% endblock %} 
+{% block topic %}Division{% endblock %}
 
 
+<!-- {% block question %}Find Quotient and remainder{% endblock%} -->
 
 {% block content %}
-<h5 class="card-title">{{ easy.question }}</h5>
-<p>
-{% for i in range(4) %}
-  <div>{{ easy.options[i] }}
-  <input type="text" onchange="check({{ i }});"> <br><br>
-  </div>
+
+{% for i in range(0,3,2) %}
+    <h5 class="card-title">{{easy.q[i]}}</h5>
+    {{ easy.label1 }}: <input type="text" class="quo" onchange = "checkQuo({{ i }});">
+    <br><br><br>
+    {{ easy.label2 }}: <input type="text" class="rem" onchange = "checkRem({{ i+1 }});">
+    <br><br>
 {% endfor %}
-</p>
 {% endblock %}
 
 {% block hint %}
-<img src="{{ url_for('static', filename = 'images/algebra_terms.jpeg') }}" alt="" style = "width:80%;">
+<img src="{{ url_for('static', filename = 'images/Long Division Calculator with Remainders.png') }}" alt="" style="margin-left: 30%;">
 {% endblock %}
-

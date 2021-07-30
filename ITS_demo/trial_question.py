@@ -1,9 +1,11 @@
+import re
 from flask import Flask, render_template, request, flash, redirect, url_for, session
 #from flask.ext.session imDortAnacsida
 from fractions import Fraction
 import random
 import os
 import math
+import json
 
 
 app = Flask(__name__)
@@ -19,17 +21,27 @@ qtscnt1=0     #fraction
 scorecnt1=0   #fraction
 qtscnt2 = 0   #algebra
 scorecnt2 = 0 #algebra
-##########################################3
+
+
 @app.route("/")
 def index():
-    return render_template('index.html')
+    return render_template('index_new.html')
 
-###########################################
+
 @app.route("/login")
 def login():
-    return render_template('login.html')
+    return render_template('login_new.html')
 
-##############################################
+@app.route("/signup")
+def signup():
+    return render_template('signup_new.html')
+
+
+@app.route("/home")
+def home():
+    print("inside home")
+    return render_template('home_new.html')
+
 @app.route("/mixed-fraction1", methods=['POST'])
 def q1():
     if request.method == 'POST':
@@ -87,52 +99,76 @@ def question():
     return render_template('display copy.html', answer=answer, hints=hints, scoredict=scoredict, labels = labels)
 
 #################################################################
-@app.route('/score/<tid>/<counter>/<feedback>', methods=['POST'])
-def score(counter, feedback, tid):
+@app.route('/score', methods=['POST'])
+# new variable to be added - choice_id
+def score():
     if request.method == 'POST':
-        print('tid : ',tid)
-        if tid == 1:
-            global scorecnt1, qtscnt1
-            marks = 25-(int(counter)*5) - (int(feedback)*2)
-            scorecnt1 += marks
-            qtscnt1 += 1
-            # print(scorecnt)
-            # print(qtscnt)
-            # print(marks)
-            if marks == 25:
-                comment = "Well Done!!!"
-            elif 20 <= marks < 25:
-                comment = "You have just about mastered it"
-            elif 15 <= marks < 20:
-                comment = "Keep working on it you are improving"
-            else:
-                comment = "That's not half bad"
-            show_message1 = 'Your points : '+str(marks)+'/25.'
-            flash(show_message1)
-            flash(comment)
-            return redirect(url_for('question'))
+        print(request.form)
+        tup = request.form
+        print(tup['data[qid]'])
+        print(tup['data[score]'])
+        # print(tup[0])
+        # print(request.args['data'])
+        # print(request.json['data'])
+        return "Score received"
+        # print(request.json[data]['qid'])
+        # print(request.json['score'])
+        # print("qid - ", qid)
+        # print("score - ", score)
+        # return redirect(url_for("home"))
+        # global scorecnt1, qtscnt1
+        # marks = 25-(int(counter)*5)
+        # scorecnt1 += marks
+        # qtscnt1 += 1
+        # # print(scorecnt)
+        # # print(qtscnt)
+        # # print(marks)
+        # if marks == 25:
+        #     comment = "Well Done!!!"
+        # elif 20 <= marks < 25:
+        #     comment = "You have just about mastered it"
+        # elif 15 <= marks < 20:
+        #     comment = "Keep working on it you are improving"
+        # else:
+        #     comment = "That's not half bad"
+        # show_message1 = 'Your points : '+str(marks)+'/25.'
+        # flash(show_message1)
+        # flash(comment)
+        # if qtscnt1 == 4:
+        #     if choice_id == 2:
+        #         return redirect(url_for(design))
+        #     elif choice_id == 3:
+        #         return redirect(url_for(display))
+        #     elif choice_id == 1:
+        #         return redirect(url_for(easy_des))
+        #     else:
+        #         return redirect(url_for(easy_design))    
+        # else:
+            
+        #     # return render_template('eas')
+        #     return redirect(url_for('question'))
+    else:
+        return redirect(url_for("login"))
+        # global scorecnt2, qtscnt2
+        # marks = 25-(int(counter)*5)
+        # scorecnt2 += marks
+        # qtscnt2 += 1
+        # # print(scorecnt)
+        # # print(qtscnt)
+        # # print(marks)
+        # if marks == 25:
+        #     comment = "Well Done!!!"
+        # elif 20 <= marks < 25:
+        #     comment = "You have just about mastered it"
+        # elif 15 <= marks < 20:
+        #     comment = "Keep working on it you are improving"
+        # else:
+        #     comment = "That's not half bad"
         
-        else:
-            global scorecnt2, qtscnt2
-            marks = 25-(int(counter)*5) - (int(feedback)*2)
-            scorecnt2 += marks
-            qtscnt2 += 1
-            # print(scorecnt)
-            # print(qtscnt)
-            # print(marks)
-            if marks == 25:
-                comment = "Well Done!!!"
-            elif 20 <= marks < 25:
-                comment = "You have just about mastered it"
-            elif 15 <= marks < 20:
-                comment = "Keep working on it you are improving"
-            else:
-                comment = "That's not half bad"
-           
-            show_message1 = 'Your points : '+str(marks)+'/25.'
-            flash(show_message1)
-            flash(comment)
-            return redirect(url_for('horizontal_add'))
+        # show_message1 = 'Your points : '+str(marks)+'/25.'
+        # flash(show_message1)
+        # flash(comment)
+        # return redirect(url_for('horizontal_add'))
 
 
 ###############################################################
@@ -396,7 +432,8 @@ def unlike_add():
 
 # Algebra Easy
 @app.route('/p')
-def algebra_easy():
+def a_easy():
+    qid = "AE2"
     cnt=0
     variable=["","p","p\u00b2","p\u00b3"]
     sign = ["+", "-"]
@@ -433,7 +470,7 @@ def algebra_easy():
         answers.append(answer) 
         cnt += 1
 
-    return render_template('algebra_easy.html', easy={'question': q4, 'options': terms, 'answer': answers, 'num': 2})
+    return render_template('algebra_easy.html', easy={'topic': 'Value of Expression','question': q4, 'options': terms, 'answer': answers, 'num': 2, 'qid': qid})
         
 def find_term(v, a):
     return a.index(v)
@@ -441,6 +478,7 @@ def find_term(v, a):
 
 @app.route('/coefficient')
 def coefficient():
+    qid = "AE1"
     q1 = 'Identify the numerical coefficients of terms (other than constants) in the following expressions'
     variable = ["x", "x\u00b2", "x\u00b3"]
     sign = ["+", "-"]
@@ -459,7 +497,7 @@ def coefficient():
         else:
             answers.append(coeff)
         count += 1
-    return render_template('algebra_easy.html', easy={'question': q1, 'options': terms, 'answer': answers, 'num': 1})
+    return render_template('algebra_easy.html', easy={'topic': 'Identifying Coefficient','question': q1, 'options': terms, 'answer': answers, 'num': 1, 'qid': qid})
 
 
 @app.route('/monomial')
@@ -492,8 +530,8 @@ def monomial():
         terms.append(term)
         count += 1
 
-
-    return render_template('algebra2.html', easy={'question': q2, 'options': terms, 'answer': answers, 'num': 1})
+    contexts={'question': q2, 'options': terms, 'answer': answers, 'num': 1}
+    return render_template('algebra2.html', easy=contexts)
 
 
 
@@ -519,10 +557,12 @@ def like_unlike():
         terms.append([t1, t2])
         answers.append(answer)
         count += 1
-    return render_template('algebra2.html', easy={'question': q3, 'options': terms, 'answer': answers, 'num': 2})
+    contexts={'question': q3, 'options': terms, 'answer': answers, 'num': 2}
+    return render_template('algebra2.html',easy=contexts)
 
 @app.route('/division')
 def division():
+    qid = 'FE1'
     q=[]
     ans_num=[]
     ans_den=[]
@@ -537,9 +577,9 @@ def division():
         ans_den.append(ansden)
     q.insert(1," ")
     print(q)
-    contexts={'ans_num':ans_num,'ans_den':ans_den,'q':q, 'label1': 'Quotient', 'label2': 'Remainder'}
+    easy={'ans_num':ans_num,'ans_den':ans_den,'q':q, 'label1': 'Quotient', 'label2': 'Remainder', 'qid': qid}
 
-    return render_template('division.html',contexts=contexts)
+    return render_template('division copy.html',easy=easy)
 
 
 @app.route('/add-easy')
@@ -560,7 +600,7 @@ def add_easy():
         q.append(qs)
     q.insert(1," ")
     contexts={'ans_num':ans_num,'ans_den':ans_den,'q':q, 'label1': 'Quotient', 'label2' : 'Remainder'}
-    return render_template('division.html',contexts=contexts)
+    return render_template('division.html',easy=context)
 
 
 @app.route('/whole')
@@ -580,7 +620,7 @@ def whole():
         q.append(que)
     q.insert(1," ")
     # print(q)
-    return render_template('division.html',contexts={'ans_num':ans_num,'ans_den':ans_den,'q':q, 'label1': 'Numerator', 'label2': 'Denominator'})
+    return render_template('division.html',easy={'ans_num':ans_num,'ans_den':ans_den,'q':q, 'label1': 'Numerator', 'label2': 'Denominator'})
 
 
 @app.route('/number-line')
@@ -614,32 +654,46 @@ def divide_whole():
     return render_template('divideby_whole.html',answer=context,scoredict=scoredict,hints=hints)
 
 ##########################################################
+#2
 @app.route('/fraction-intermediate')
-def design():
-    full={'f1':{'q1':'Expressed as Mixed Fraction','h1':'Mixed Fraction','link':'/mixed-fraction'},'f2':{'q1':'Compare Two Fraction','h1':'Compare','link':'/compare'},'f3':{'q1':'Convert Mixed to Normal Form','h1':'Normal Form','link':'/normal-form'},'f4':{'q1':'Divide Fraction by Whole Number','h1':'Fraction Division','link':'/divide-whole'},'f5':{'q1':'Add or Subtract Two Fractions','h1':'Fraction Operation','link':'/unlike-add'}}
+def fraction_intermediate():
+    full={'f1':{'q1':'Expressed as Mixed Fraction','h1':'Mixed Fraction','link':'/mixed-fraction'},
+    'f2':{'q1':'Compare Two Fraction','h1':'Compare','link':'/compare'},
+    'f3':{'q1':'Convert Mixed to Normal Form','h1':'Normal Form','link':'/normal-form'},
+    'f4':{'q1':'Divide Fraction by Whole Number','h1':'Fraction Division','link':'/divide-whole'},
+    'f5':{'q1':'Add or Subtract Two Fractions','h1':'Fraction Operation','link':'/unlike-add'}}
     return render_template('easy_qts_choice.html' , topic=full,unit='UNIT: Fractions')
     # return render_template('question_display_design.html')
 
 #######################################################
+#4
 @app.route('/algebra-intermediate')
-def display():
+def algebra_intermediate():
     # return render_template('algebra_qts_design.html')
-    full={'f1':{'q1':'Addition of Algebraic Expressions','h1':'Horizontal Addition','link':'/algebra-add'},'f2':{'q1':'Subtraction of Algebraic Expressions','h1':'Vertical Subtraction','link':'/vertical_sub'}}
-    return render_template('easy_qts_choice.html' , topic=full,unit='UNIT: Fractions')
+    full={'f1':{'q1':'Addition of Algebraic Expressions','h1':'Horizontal Addition','link':'/algebra-add'},
+    'f2':{'q1':'Subtraction of Algebraic Expressions','h1':'Vertical Subtraction','link':'/vertical_sub'}}
+    return render_template('easy_qts_choice.html' , topic=full,unit='UNIT: Algebra')
     
 #########################################################
+#1
 @app.route('/fraction-easy')
-def easy_des():
-    
-    full={'f1':{'q1':'Convert to Simmplest Form','h1':'Simplest Form','link':''},'f2':{'q1':'Find Quotient and Remainder','h1':'Fraction Division','link':''},'f3':{'q1':'Add / Subtract like Fraction','h1':'Fraction Operation','link':''},'f4':{'q1':'Multiply Fraction by Whole Number','h1':'Fraction Multiplication','link':''}}
+def fraction_easy():
+    full={'f1':{'q1':'Convert to Simmplest Form','h1':'Simplest Form','link':'/simplest-form'},
+    'f2':{'q1':'Find Quotient and Remainder','h1':'Fraction Division','link':'/division'},
+    'f3':{'q1':'Add / Subtract like Fraction','h1':'Fraction Operation','link':'/add-easy'},
+    'f4':{'q1':'Multiply Fraction by Whole Number','h1':'Fraction Multiplication','link':'/whole'}}
     return render_template('easy_qts_choice.html' , topic=full,unit='UNIT: Fractions')
 
 
 #########################################################
+#3
 @app.route('/algebra-easy')
-def easy_design():
+def algebra_easy():
     
-    full={'f1':{'q1':'Find Coefficient of Terms','h1':'Find Coefficient','link':''},'f2':{'q1':'Find value of Variable','h1':'Find value','link':''},'f3':{'q1':'Classify into Monomial, Bionomial, Trinomial ','h1':'Classification','link':''},'f4':{'q1':'Identify Like or Unlike','h1':'Identification','link':''}}
+    full={'f1':{'q1':'Find Coefficient of Terms','h1':'Find Coefficient','link':'/coefficient'},
+    'f2':{'q1':'Find value of Variable','h1':'Find value','link':'/p'},
+    'f3':{'q1':'Classify into Monomial, Bionomial, Trinomial ','h1':'Classification','link':'/monomial'},
+    'f4':{'q1':'Identify Like or Unlike','h1':'Identification','link':'/like-unlike'}}
     return render_template('easy_qts_choice.html' , topic=full , unit='UNIT: Algebra')
 
 

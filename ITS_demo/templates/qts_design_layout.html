@@ -4,15 +4,15 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width initial-scale=1">
-	<title>{% block title %}{% endblock %}</title>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<title>Choose Question</title>
+	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
 	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-   <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
-  <link rel="stylesheet" type="text/css" href="{{ url_for('static' , filename='css/q1style.css') }}">
-    <script type="text/javascript" src="{{ url_for('static' , filename='js/q1script.js') }}"></script>
-	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+   <!-- <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css"> -->
+  <!-- <link rel="stylesheet" type="text/css" href="{{ url_for('static' , filename='css/q1style.css') }}"> -->
+    <!-- <script type="text/javascript" src="{{ url_for('static' , filename='js/q1script.js') }}"></script> -->
+	<!-- <script src="//code.jquery.com/jquery-1.11.1.min.js"></script> -->
 	{% block addscript %}{% endblock %}
 
 </head>
@@ -28,9 +28,41 @@ ajax/libs/jquery/1.5/jquery.min.js"></script>
 <script src="semantic/dist/semantic.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-	<style type="text/css" media="screen">
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0px;
+			box-sizing: border-box;
 
-		body{
+		}
+    .blue {
+         background-color: #0070BB;
+         color: white;
+       }
+
+       .white {
+         background-color: white;
+       }
+       
+        #n1 {
+            position: fixed; 
+            height:calc(100%-200px);
+			height: 50px;
+			/* height: calc(100% - 700px); */
+            width:100%;
+            top:0;
+            left: 0;
+            z-index: 9999; 
+            /* background-color: #3A6351!important; */
+            /* TRIAL */
+            /* background-color: #F5E6CA!important;  */ 
+        }
+
+        .navbar-brand,.nav-link{
+            color: #000 !important;
+            
+        }
+		/* body{
 			background-color: #f5efe8;
 		}
 		*{
@@ -45,8 +77,8 @@ ajax/libs/jquery/1.5/jquery.min.js"></script>
 	        display:flex;
 	        justify-content:space-around;
 	        align-items:center;
-        }
-         #d1{
+        } */
+         /* #d1{
          	width: 10%;
          	padding-left: 2%;
            }
@@ -65,14 +97,16 @@ ajax/libs/jquery/1.5/jquery.min.js"></script>
 	        letter-spacing:1px;
 	        text-transform:uppercase;
 	        text-decoration:underline;
-	        /* animation:anm 2s linear infinite;
+	        animation:anm 2s linear infinite;
 	        animation-direction:alternate;
- */        }
-        /* @keyframes anm{
+        } */
+        
+		/* @keyframes anm{
         	from{padding-left:5%;}
         	to{padding-right:50%;}
-        }
- */		progress{
+        } */
+ 		
+		/* progress{
 			padding-left: 0.5;
 			width: 30%;
 			height: 20px;
@@ -155,8 +189,8 @@ ajax/libs/jquery/1.5/jquery.min.js"></script>
 		}
 		#b1:hover{
 			background-color: white;
-		}
-		#hint-btn{
+		} */
+		/* #hint-btn{
 			margin-bottom: 2%;
 			width: 10%;
 			height: 80px;
@@ -167,15 +201,15 @@ ajax/libs/jquery/1.5/jquery.min.js"></script>
 		}
 		#hint-btn:hover{
 			background-color: white;
-		}
-
+		} */
+/* 
 		@media (max-width:758px){
 			#d2 h1{
 				font-size: 150%;
 			}
 			progress[value]{
-				/* padding-top: 4%;
- */				padding-left: 0.5%;
+				padding-top: 4%;
+ 				padding-left: 0.5%;
 				width: 70%;
 			}
 			#p1 #s1{
@@ -187,7 +221,7 @@ ajax/libs/jquery/1.5/jquery.min.js"></script>
 			#d4 form{
 				font-size: 1.3rem;
 			}
-		}
+		} */
 
 		
 progress::-webkit-progress-value {
@@ -196,7 +230,7 @@ progress::-webkit-progress-value {
 
 progress::-webkit-progress-bar {
   background: grey;
-}
+} 
 
 {% block style %}{% endblock %}
 	</style>
@@ -207,58 +241,30 @@ progress::-webkit-progress-bar {
 </script>
 
 <body>
-	<nav class="n1">
-		<div id="d1">
-			<span id="bar1" onclick="opennav();">&#9776;</span>
-		</div>
+	<nav id="n1" class="navbar navbar-expand-lg navbar-light mb-3 navbar-fixed-top nav white">
+		<a class="navbar-brand" href="#">Logo PhiloMath</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		  <span class="navbar-toggler-icon"></span>
+		</button>
 
-		<div id="d2">
-			<h1 style="color: yellow!important;">ITS-Maths</h1>
+		<div class="collapse navbar-collapse " id="navbarSupportedContent">
+		  <ul class="navbar-nav">
+			<li class="nav-item">
+			  <a class="nav-link a1" href="#">Home</a>
+			</li>
+			<li class="nav-item">
+			  <a class="nav-link a1" href="#">About Us</a>
+			</li>
+			<li class="nav-item dropdown">
+			  <a class="nav-link a1" href="#">Our Team</a>
+			</li>
+			<li class="nav-item">
+			  <a class="nav-link a1" href="#">Contact</a>
+			</li>
+		  </ul>
 		</div>
-	</nav>
-	<div id="d3" class="slidemenu">
-		<a href="javascript:void(0)" class="closebtn" id="a1"onclick="closenav()">&times;</a>
-		<a href="#"><i class="fa fa-home"></i> Home</a>
-		<a href="#"><i class="fa fa-user"></i> Profile</a>
-		<a href="{{ url_for('index') }}"><i class="fa fa-sign-out"></i> Logout</a>
-	</div>
-	<br>
+	  </nav>
 	{% block message %} {% endblock %}
-	
-	
-	<script>
-		const opennav=()=>{
-			document.getElementById("d3").style.width="300px";
-			document.getElementById("p1").style.paddingLeft="30%";
-		}
-		const closenav=()=>{
-			document.getElementById("d3").style.width="0px";
-			document.getElementById("p1").style.paddingLeft="0%";
-		}
-<!--		function openSlideMenu()-->
-<!--		{-->
-<!--    		document.getElementById('menu').style.width = '250px';-->
-<!--    		document.getElementById('content').style.marginLeft = '250px';-->
-<!--		}-->
-
-function closeSlideMenu()
-{
-    document.getElementById('menu').style.width = '0px';
-    document.getElementById('content').style.marginLeft = '0px';
-}
-
-// <!--var close = document.getElementsByClassName("closebtn");-->
-// <!--var i;-->
-
-// <!--for (i = 0; i < close.length; i++) {-->
-// <!--  close[i].onclick = function(){-->
-// <!--    var div = this.parentElement;-->
-// <!--    div.style.opacity = "0";-->
-// <!--  }-->
-// <!--}-->
-
-
-	</script>
 	
 </body>
 </html>
