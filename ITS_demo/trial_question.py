@@ -105,8 +105,9 @@ def score():
     if request.method == 'POST':
         print(request.form)
         tup = request.form
+        print(tup)
         print(tup['data[qid]'])
-        print(tup['data[score]'])
+        # print(tup['data[\]'])
         # print(tup[0])
         # print(request.args['data'])
         # print(request.json['data'])
@@ -502,6 +503,7 @@ def coefficient():
 
 @app.route('/monomial')
 def monomial():
+    qid = 'AE3'
     terms2 = ['2y + 14z', '20', 'a\u00b2 + b\u00b2 - 2ab', '8xy']
     q2 = 'Classify into monomials, binomials and trinomials'
     variable = ["x", "y", "z", "xy", "yz", "xz", "xyz"]
@@ -530,13 +532,14 @@ def monomial():
         terms.append(term)
         count += 1
 
-    contexts={'question': q2, 'options': terms, 'answer': answers, 'num': 1}
+    contexts={'qid': qid, 'question': q2, 'options': terms, 'answer': answers, 'num': 1, 'topic': 'Monomial Binomial Trinomial'}
     return render_template('algebra2.html', easy=contexts)
 
 
 
 @app.route("/like-unlike")
 def like_unlike():
+    qid = 'AE4'
     q3 = 'State whether a given pair of terms is of like or unlike terms'
     term1 = ['x', 'y', 'xy', 'xy\u00b2', 'x\u00b2y']
     term2 = ['x', 'y', 'yx', random.choice(['y\u00b2x', 'xy\u00b2']), random.choice(['yx\u00b2', 'x\u00b2y'])]
@@ -557,7 +560,7 @@ def like_unlike():
         terms.append([t1, t2])
         answers.append(answer)
         count += 1
-    contexts={'question': q3, 'options': terms, 'answer': answers, 'num': 2}
+    contexts={'qid': qid, 'question': q3, 'options': terms, 'answer': answers, 'num': 2, 'topic': 'Like-Unlike Terms'}
     return render_template('algebra2.html',easy=contexts)
 
 @app.route('/division')
