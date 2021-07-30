@@ -401,7 +401,7 @@
         console.log(myArray);
 
         var hint_count = 0;
-        var quesid = "{{ contexts.qid }}";
+        var quesid = "{{ easy.qid }}";
 
         function addItemToArray(){
           let score = 25 - (5*hint_count);
@@ -426,23 +426,28 @@
             $('.toast').toast('show');
             addItemToArray();
             if(arrayLength == 4){
-              // $('#next-btn').html('Submit');
               var data = {qid: quesid, score: total_score};
-              // var str = quesid+","+total_score;
-              // console.log(total_score);
-              // console.log(str);
-              $.ajax({
-                  type: 'POST',
-                  url: '/score',
-                  contentType: 'application/json; charset=utf-8',
-                  data: JSON.stringify({'data': data}),
-                  dataType: 'json',
-                  success: "AjaxSucceeded",
-                  error: "AjaxFailed"
+              $.post('/score', {'data': data}, function(response){
+                window.location = "{{url_for('home')}}";
               });
-             
+              // $.ajax({
+              //     type: 'POST',
+              //     url: '/score',
+              //     contentType: 'application/json; charset=utf-8',
+              //     data: JSON.stringify({'data': data}),
+              //     dataType: 'json',
+              //     success: function(response){
+              //       return location.replace("{{url_for('home')}}");
+              //     }
+              // });
+
+
+              // event.preventDefault();
             }
-            setTimeout(function(){ location.reload() }, 3000);            
+            else{
+              setTimeout(function(){ location.reload() }, 1000);      
+            }
+                  
           });
         });
         </script>

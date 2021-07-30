@@ -4,7 +4,12 @@
 window.onload = function(){
     monobitri = ["","Monomial", "Binomial", "Trinomial"];
     likeunlike = ["", "Like", "Unlike"];
-    if({{ contexts.num }} == '2'){ monobitri = likeunlike; }
+    var source = "{{ url_for('static', filename = 'images/mono_bio_trio.png') }}";
+    if({{ easy.num }} == '2'){ 
+        monobitri = likeunlike; 
+        source = "{{ url_for('static', filename = 'images/like_unlike.png') }}";
+    }
+    $("#hint_img").attr("src", source);
     var select = document.getElementsByClassName("answer_options");
     for(var j = 0; j < 4; j++){
     for(var i = 0; i < monobitri.length; i++){
@@ -16,32 +21,32 @@ window.onload = function(){
     }
 
 }
-var ans = [ "{{ contexts.answer[0] }}", "{{ contexts.answer[1] }}", "{{ contexts.answer[2] }}", "{{ contexts.answer[3] }}" ];
+var ans = [ "{{ easy.answer[0] }}", "{{ easy.answer[1] }}", "{{ easy.answer[2] }}", "{{ easy.answer[3] }}" ];
 console.log(ans);
 function check(i){
 
 console.log(document.getElementsByTagName("select")[i].value);
-console.log({{ contexts.answer[i] }});
+console.log({{ easy.answer[i] }});
         if(document.getElementsByTagName("select")[i].value == ans[i])
 	{
 	    alert("Correct");
         document.getElementsByClassName("step0")[i].classList.add("active");
     }
         else{
-            if({{ contexts.num }} == '1'){
+            if({{ easy.num }} == '1'){
                 alert("An expression which contains two unlike terms is called a binomial. Similarly, think of monomial and trinomial.");
             }
-            else if({{ contexts.num}} == '2'){
+            else if({{ easy.num}} == '2'){
                 alert("When term have the same algebraic factors, they are like terms.");
             }
         }
     }
 {% endblock %}
 {% block content %}
-<div>{{ contexts.question }}</div>
+<div>{{ easy.question }}</div>
 <p>
 {% for i in range(4) %}
-  <div>{{ contexts.options[i] }}
+  <div>{{ easy.options[i] }}
   <select class="answer_options" onchange="check({{ i }});" style="min-width: 120px;">
 
   </select>
@@ -50,4 +55,8 @@ console.log({{ contexts.answer[i] }});
 {% endfor %}
 </p>
 
+{% endblock %}
+
+{% block hint %}
+    <img src="" alt="" id="hint_img" style="width: 80%;">
 {% endblock %}
