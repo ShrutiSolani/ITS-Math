@@ -317,10 +317,12 @@
                 </div>
                 <div class="modal-body">
                   <p>Select the option you think would be the beginning step of this problem</p>
-                  <button class="btn btn-info" style="width: 100%; margin: 10px auto;">Option 1</button>
-                  <button class="btn btn-info" style="width: 100%; margin: 10px auto;">Option 1</button>
-                  <button class="btn btn-info" style="width: 100%; margin: 10px auto;">Option 1</button>
-                  <button class="btn btn-info" style="width: 100%; margin: 10px auto;">Option 1</button>
+                  {% block hint %}
+                  <!-- <button class="btn btn-info" id = "1" style="width: 100%; margin: 10px auto;">{% block option_1 %}{% endblock%}</button>
+                  <button class="btn btn-info" id = "2" style="width: 100%; margin: 10px auto;">{% block option_2 %}{% endblock%}</button>
+                  <button class="btn btn-info" id = "3" style="width: 100%; margin: 10px auto;">{% block option_3 %}{% endblock%}</button>
+                  <button class="btn btn-info" id = "4" style="width: 100%; margin: 10px auto;">{% block option_4 %}{% endblock%}</button> -->
+                  {% endblock %}
                   <!-- <p>Some text in the modal.</p> -->
                 </div>
                 <div class="modal-footer">

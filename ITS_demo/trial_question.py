@@ -276,7 +276,6 @@ def horizontal_add():
     return render_template('algebra_add.html', answer=answer, hints=hints, scoredict=scoredict)
 
 
-############################################
 @app.route('/vertical_sub')
 def vertical_sub():
     coeff = random.sample(range(-50, 50), 6)  # 6 coefficient
