@@ -342,55 +342,27 @@ else
  }
 }
 function right1(){
-<!--    document.getElementsByClassName("ryt1")[0].style.display="inline";-->
-    document.getElementsByClassName('line1')[0].style.display = 'block';
-    
-    document.getElementById("btn1").innerHTML="Add all terms";
-    document.getElementById("btn2").innerHTML="Write like terms together";
-    document.getElementById("btn3").innerHTML="Add coefficient of each polynomial";
-    document.getElementById("btn4").innerHTML="Add first value of each polynomial";
+    if(document.getElementById("btn4").innerHTML==="Write all terms"){
+      $("#myModal").modal('hide');
+        document.getElementsByClassName('line1')[0].style.display = 'block';
+        document.getElementById("btn1").innerHTML="Add all terms";
+        document.getElementById("btn2").innerHTML="Write like terms together";
+        document.getElementById("btn3").innerHTML="Add coefficient of each polynomial";
+        document.getElementById("btn4").innerHTML="Add first value of each polynomial";
+    }    
 }
+
+
+
 function right2(){
-
     if(document.getElementById("btn2").innerHTML==="Write like terms together"){
+        $("#myModal").modal('hide');
         document.getElementsByClassName('line1')[1].style.display = 'block';
+        document.getElementById("hint-btn").disabled = true;
+        document.getElementById("hint-btn").style.backgroundColor = "grey";
     }
 }
 
-window.onload = function() {
-  var count = 0;
-  
-  var countButton = document.getElementById("hint-btn");
-  var displayCount = document.getElementsByClassName("showhints");
-  countButton.onclick = function(){
-    count++;
-    if(count == 1)
-    {
-      document.getElementById("btn-grp1").style.visibility="visible";
-    }
-    else
-    {
-      if(count == 2)
-       {
-<!--        document.getElementById('line2').style.display = 'block';-->
-       }
-       
-        else {displayCount[2].innerHTML = "Hint 3 :{{ hints.h3 }}\n" ;}
-    }
-    }
-  
-    var subbutton = document.getElementById("b1");
-    subbutton.onclick = function(){
-       document.querySelector(".myform").setAttribute("action","score/"+2+"/"+count+"/"+feedcount);
-       function time(){
-       var s=document.getElementById("scre");
-       s.style.display="none";
-       }
-       var d=setTimeout(time,500);
-       clearInterval(d);
-
-    }
-  }
 {% endblock %}
 {% block chapter %}Algebra{% endblock %} 
 {% block topic %}Horizontal Addition{% endblock %}
