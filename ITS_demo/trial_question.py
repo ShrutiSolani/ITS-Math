@@ -322,15 +322,15 @@ def vertical_sub():
 
 @app.route('/simplest-form')
 def simplest_form():
+    qid = 'FE4'
     num = random.randint(1,50)
     den = random.randint(2,50)
     que = "Find simplest form of fraction "+ str(num)+"/"+ str(den)
     simple = Fraction(num, den)
     answer = {'que': que, 'num_ans': simple.numerator, 'den_ans': simple.denominator}
     print(answer)
-    scoredict={}
-    hints={}
-    return render_template('simplestForm.html',answer=answer,hints=hints,scoredict=scoredict)
+    easy = {'topic': 'Simplest Form', 'qid': qid}
+    return render_template('simplestForm.html',answer=answer, easy = easy)
 
 
 #simplest_form()
@@ -587,6 +587,7 @@ def division():
 
 @app.route('/add-easy')
 def add_easy():
+    qid = 'FE3'
     q=[]
     ans_num=[]
     ans_den=[]
@@ -602,12 +603,13 @@ def add_easy():
         ans_den.append(ansden)
         q.append(qs)
     q.insert(1," ")
-    contexts={'ans_num':ans_num,'ans_den':ans_den,'q':q, 'label1': 'Quotient', 'label2' : 'Remainder'}
-    return render_template('division.html',easy=context)
+    contexts={'num': 1,'qid': qid,'topic': 'Add like fractions','ans_num':ans_num,'ans_den':ans_den,'q':q, 'label1': 'Quotient', 'label2' : 'Remainder'}
+    return render_template('division.html',easy=contexts)
 
 
 @app.route('/whole')
 def whole():
+    qid = "FE2"
     q=[]
     ans_num=[]
     ans_den=[]
@@ -623,7 +625,7 @@ def whole():
         q.append(que)
     q.insert(1," ")
     # print(q)
-    return render_template('division.html',easy={'ans_num':ans_num,'ans_den':ans_den,'q':q, 'label1': 'Numerator', 'label2': 'Denominator'})
+    return render_template('division.html',easy={'num': 2,'topic': 'Multiple by Whole number','ans_num':ans_num,'ans_den':ans_den,'q':q, 'label1': 'Numerator', 'label2': 'Denominator', 'qid': qid})
 
 
 @app.route('/number-line')
