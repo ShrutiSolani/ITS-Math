@@ -2,6 +2,15 @@
 
 
 {% block script %}
+window.onload = function(){
+    var source = "{{ url_for('static', filename = 'images/algebra_terms.jpeg') }}";
+    if({{ easy.num }} == '2'){ 
+        source = "{{ url_for('static', filename = 'images/algebra_find_value.png') }}";
+    }
+    $("#hint_img").attr("src", source);
+}
+
+
 var ans = [ "{{ easy.answer[0] }}", "{{ easy.answer[1] }}", "{{ easy.answer[2] }}", "{{ easy.answer[3] }}" ];
 console.log(ans);
 function check(i){
@@ -24,75 +33,6 @@ console.log(document.getElementsByTagName("input")[i].value);
     }
 }
 
-        var arrayFromStroage = JSON.parse(localStorage.getItem("textValues"));
-        var arrayLength = arrayFromStroage.length;
-        var total_score = 0;
-        if(localStorage.getItem('textValues') == null || arrayLength >= 4){
-          if(arrayLength == 4){
-            const reducer = (accumulator, curr) => accumulator + curr;
-            total_score = arrayFromStroage.reduce(reducer);
-            // var algebra =[];
-            
-          }
-          var algebra =[];
-        }
-        else{
-          algebra =  JSON.parse(localStorage.getItem('textValues'));
-        }
-
-        console.log(algebra);
-
-        var hint_count = 0;
-        var quesid = "{{ easy.qid }}";
-
-        function addItemToArray(){
-          let score = 25 - (5*hint_count);
-          algebra.push(score);
-          localStorage.setItem('textValues', JSON.stringify(algebra));
-        }
-
-        $(document).ready(function(){
-          $('.toast').toast('hide');
-          console.log(arrayLength);
-          if(arrayLength < 4){
-            for(i = 0;i < arrayLength;i++){
-              document.getElementsByClassName("bi")[i].classList.add("done");
-            }  
-          }
-        
-          $('#hint-btn').click(function(){
-            hint_count++;
-          })
-           
-          $('#next-btn').click(function(){
-            $('.toast').toast('show');
-            addItemToArray();
-            if(arrayLength == 4){
-              var data = {qid: quesid, score: total_score};
-              $.post('/score', {'data': data}, function(response){
-                window.location = "{{url_for('home')}}";
-              });
-              // $.ajax({
-              //     type: 'POST',
-              //     url: '/score',
-              //     contentType: 'application/json; charset=utf-8',
-              //     data: JSON.stringify({'data': data}),
-              //     dataType: 'json',
-              //     success: function(response){
-              //       return location.replace("{{url_for('home')}}");
-              //     }
-              // });
-
-
-              // event.preventDefault();
-            }
-            else{
-              setTimeout(function(){ location.reload() }, 1000);      
-            }
-                  
-          });
-        });
-
 
 {% endblock %}
 {% block chapter %}Algebra{% endblock %} 
@@ -112,6 +52,6 @@ console.log(document.getElementsByTagName("input")[i].value);
 {% endblock %}
 
 {% block hint %}
-<img src="{{ url_for('static', filename = 'images/algebra_terms.jpeg') }}" alt="" style = "width:80%;">
+<img src="" alt="" style = "width:80%;" id="hint_img">
 {% endblock %}
 

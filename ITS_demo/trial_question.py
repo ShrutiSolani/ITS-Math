@@ -105,8 +105,9 @@ def score():
     if request.method == 'POST':
         print(request.form)
         tup = request.form
+        print(tup)
         print(tup['data[qid]'])
-        print(tup['data[score]'])
+        # print(tup['data[\]'])
         # print(tup[0])
         # print(request.args['data'])
         # print(request.json['data'])
@@ -239,6 +240,7 @@ def compare():
 ############################################
 @app.route("/algebra-add")
 def horizontal_add():
+    qid = "AI1"
     coeff = random.sample(range(-50,50),6) #6 coefficient
     varx = ['x','x\u00b2','x\u00b3'] #x3
     vary = ['y','y\u00b2','y\u00b3'] #y2
@@ -260,7 +262,7 @@ def horizontal_add():
     x_sum = sum(x_like)
     y_like = coeff[1:6:2]
     y_sum = sum(y_like)
-    answer = {'que':haddque,'varx':rx,'vary':ry,'coeff':coeff,'x_like':x_like,'y_like':y_like,'x_sum':x_sum,'y_sum':y_sum}
+    answer = {'qid': qid, 'que':haddque,'varx':rx,'vary':ry,'coeff':coeff,'x_like':x_like,'y_like':y_like,'x_sum':x_sum,'y_sum':y_sum}
     h1 = 'Rearrange into like terms (coefficients with same variable and power)'
     h2 = 'Add coefficientts of like terms'
     h3 = 'Solution : '+str(x_sum)+rx+'+'+str(y_sum)+ry+'.'
@@ -272,10 +274,9 @@ def horizontal_add():
     except:
         pct = 0
     scoredict = {'score': scorecnt2, 'total': total, 'totalqts': qtscnt2, 'pct': pct}
-    return render_template('algebra_add.html', answer=answer, hints=hints, scoredict=scoredict)
+    return render_template('algebra_add.html', answer=answer)
 
 
-############################################
 @app.route('/vertical_sub')
 def vertical_sub():
     coeff = random.sample(range(-50, 50), 6)  # 6 coefficient
@@ -502,6 +503,7 @@ def coefficient():
 
 @app.route('/monomial')
 def monomial():
+    qid = 'AE3'
     terms2 = ['2y + 14z', '20', 'a\u00b2 + b\u00b2 - 2ab', '8xy']
     q2 = 'Classify into monomials, binomials and trinomials'
     variable = ["x", "y", "z", "xy", "yz", "xz", "xyz"]
@@ -530,13 +532,14 @@ def monomial():
         terms.append(term)
         count += 1
 
-    contexts={'question': q2, 'options': terms, 'answer': answers, 'num': 1}
+    contexts={'qid': qid, 'question': q2, 'options': terms, 'answer': answers, 'num': 1, 'topic': 'Monomial Binomial Trinomial'}
     return render_template('algebra2.html', easy=contexts)
 
 
 
 @app.route("/like-unlike")
 def like_unlike():
+    qid = 'AE4'
     q3 = 'State whether a given pair of terms is of like or unlike terms'
     term1 = ['x', 'y', 'xy', 'xy\u00b2', 'x\u00b2y']
     term2 = ['x', 'y', 'yx', random.choice(['y\u00b2x', 'xy\u00b2']), random.choice(['yx\u00b2', 'x\u00b2y'])]
@@ -557,7 +560,7 @@ def like_unlike():
         terms.append([t1, t2])
         answers.append(answer)
         count += 1
-    contexts={'question': q3, 'options': terms, 'answer': answers, 'num': 2}
+    contexts={'qid': qid, 'question': q3, 'options': terms, 'answer': answers, 'num': 2, 'topic': 'Like-Unlike Terms'}
     return render_template('algebra2.html',easy=contexts)
 
 @app.route('/division')

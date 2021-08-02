@@ -1,5 +1,4 @@
-{% extends "layout.html" %}
-    {% block title %}Q1{% endblock %}
+{% extends "layout_new.html" %}
     {% block style %}
     
       .quo {
@@ -343,104 +342,44 @@ else
  }
 }
 function right1(){
-<!--    document.getElementsByClassName("ryt1")[0].style.display="inline";-->
-    document.getElementsByClassName('line1')[0].style.display = 'block';
-    document.getElementById("btn1").innerHTML="Add all terms";
-    document.getElementById("btn2").innerHTML="Write like terms together";
-    document.getElementById("btn3").innerHTML="Add coefficient of each polynomial";
-    document.getElementById("btn4").innerHTML="Add first value of each polynomial";
+    if(document.getElementById("btn4").innerHTML==="Write all terms"){
+      $("#myModal").modal('hide');
+        document.getElementsByClassName('line1')[0].style.display = 'block';
+        document.getElementById("btn1").innerHTML="Add all terms";
+        document.getElementById("btn2").innerHTML="Write like terms together";
+        document.getElementById("btn3").innerHTML="Add coefficient of each polynomial";
+        document.getElementById("btn4").innerHTML="Add first value of each polynomial";
+    }    
 }
+
+
+
 function right2(){
     if(document.getElementById("btn2").innerHTML==="Write like terms together"){
+        $("#myModal").modal('hide');
         document.getElementsByClassName('line1')[1].style.display = 'block';
+        document.getElementById("hint-btn").disabled = true;
+        document.getElementById("hint-btn").style.backgroundColor = "grey";
     }
 }
 
-window.onload = function() {
-  var count = 0;
-  
-  var countButton = document.getElementById("hint-btn");
-  var displayCount = document.getElementsByClassName("showhints");
-  countButton.onclick = function(){
-    count++;
-    if(count == 1)
-    {
-      document.getElementById("btn-grp1").style.visibility="visible";
-    }
-    else
-    {
-      if(count == 2)
-       {
-<!--        document.getElementById('line2').style.display = 'block';-->
-       }
-       
-        else {displayCount[2].innerHTML = "Hint 3 :{{ hints.h3 }}\n" ;}
-    }
-    }
-  
-    var subbutton = document.getElementById("b1");
-    subbutton.onclick = function(){
-       document.querySelector(".myform").setAttribute("action","score/"+2+"/"+count+"/"+feedcount);
-       function time(){
-       var s=document.getElementById("scre");
-       s.style.display="none";
-       }
-       var d=setTimeout(time,500);
-       clearInterval(d);
-
-    }
-  }
 {% endblock %}
+{% block chapter %}Algebra{% endblock %} 
+{% block topic %}Horizontal Addition{% endblock %}
 
-        {% block message %}
-<div>
-{% with messages = get_flashed_messages(with_categories=true) %}
-  {% if messages %}
-<div class="alert alert-info" role="alert" id="scre">
-     <span class="closebtn">&times;</span>
-    {% for message in get_flashed_messages() %}
-  <h4 class="alert-heading">{{ message }}</h4>
-    {% endfor %}
-</div>
-  {% endif %}
-{% endwith %}
-</div>
+{% block hint %}
+  <button class="btn btn-info" id = "btn1" style="width: 100%; margin: 10px auto;">Add all coefficients</button>
+  <button class="btn btn-info" id = "btn2" style="width: 100%; margin: 10px auto;" onclick="right2();">Write all terms with same powers</button>
+  <button class="btn btn-info" id = "btn3" style="width: 100%; margin: 10px auto;">Add first value of each polynomials</button>
+  <button class="btn btn-info" id = "btn4" style="width: 100%; margin: 10px auto;" onclick="right1();">Write all terms</button>
 {% endblock %}
-
-{% block progress %}{{scoredict.pct}}%{% endblock %}
-{% block question %}{{scoredict.totalqts }}{% endblock %}
-{% block pvalue %}{{ scoredict.pct }}{% endblock %}
+   
 
 
 {% block content %}
+<h5 class="card-title">{{ answer.que }}</h5>
 
-<div class="project" style="margin-left:55%;">
-  <div style="display:flex;justify-content:center;align-items:center;">
-<div class="task running ">
-    <h2>1</h2>
-    <i class="far fa-check" id="icon1" style="display:none;color:white;margin-bottom:17px;"></i>
-</div>
-      <div class="progress">
-          <div class="running" data-progress="100%"> </div> </div>
-<div  class="task running">
-    <h2>2</h2>
-    <i class="far fa-check" id="icon2" style="display:none;color:white;margin:auto;"></i></div>
-<div class="progress"  ><div class="running" data-progress="100%"> </div></div>
-<div class="progress"  ><div class="running" data-progress="100%"> </div></div>
-      <div class="task running">
-          <h2></h2>
-          <i class="fas fa-pennant" id="icon4" style="color:white;margin:auto;margin-left:10px;margin-top:10px;"></i></div>
-  </div>
-</div>
-<br><br>
-    {{ answer.que }}
-    <br><br>
-    <div class="btn-group btn-group-vertical" id="btn-grp1" role="group" aria-label="Basic example" style="float:right; margin-right:120px;margin-top:-40px;visibility:hidden;">
-              <button type="button" class="btn btn-secondary" style="margin-bottom:30px;" id="btn1">add all coefficients</button>
-              <button type="button" class="btn btn-secondary" style="margin-bottom:30px;" onclick="right2();" id="btn2">Write all terms with same powers</button>
-              <button type="button" class="btn btn-secondary" style="margin-bottom:30px;" id="btn3">Add first value of each polynomials</button>
-            <button type="button" class="btn btn-secondary" style="margin-bottom:30px;" id="btn4" onclick="right1();">Write all terms</button>
-    </div>
+              
     <div class="line1" style="display: none;">
       (<input type="text" class="quo" name="quo" maxlength="3" size="3" onblur="check0();">{{ answer.varx }}+
       <input type="text" class="quo" name="quo" maxlength="3" size="3" onblur="check1();">{{ answer.vary }})+

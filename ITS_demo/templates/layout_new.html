@@ -14,7 +14,7 @@
     <title>Practice</title>
     
     <style>
-  .blue {
+        .blue {
          background-color: #0070BB;
          color: white;
        }
@@ -74,13 +74,37 @@
           margin: 0;
           padding: 0 4em;
         } */
+        .card0 {
+    background-color: #F5F5F5;
+    border-radius: 8px;
+    z-index: 0
+}
+
+.card00 {
+    z-index: 0
+}
+
+.card1 {
+    margin-left: 140px;
+    z-index: 0;
+    border-right: 1px solid #F5F5F5
+}
+
+.card2 {
+    display: none
+}
+
+.card2.show {
+    display: block
+}
 
 
 #progressbar {
     position: absolute;
-    left: 35px;
+    right: 10%;
+    top: 20%;
     overflow: hidden;
-    color: #E53935
+    color: #0070bb
 }
 
 #progressbar li {
@@ -106,7 +130,7 @@
     display: block;
     font-size: 20px;
     background: #fff;
-    border: 2px solid #E53935;
+    border: 2px solid #0070bb;
     border-radius: 50%;
     margin: auto
 }
@@ -146,13 +170,11 @@
 }
 
 #progressbar li.active:after {
-    background: #E53935
+    background: #0070bb
 }
 
 #progressbar li.active:before {
-    background: #E53935;
-    font-family: FontAwesome;
-    content: "\f00c"
+    background: #0070bb;
 }
 
 .tick {
@@ -169,7 +191,11 @@
 }
 
 .prev:hover {
-    color: #D50000 !important
+    color: #0070bb !important
+}
+
+.time-card {
+  height: 50vh;
 }
 
 {% block style %}{% endblock %}
@@ -211,96 +237,19 @@
               <h3>{% block chapter %}{% endblock %} - {% block topic %}{% endblock %}</h3>
               <!-- <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="card" aria-label="Close"></button> -->
             </div>
-            <!-- <div> -->
-              <!-- <div class="stepper-wrapper">
-                <div class="stepper-item completed">
-                  <div class="step-counter">1</div>
-                  <div class="step-name">First</div>
-                </div>
-                <div class="stepper-item completed">
-                  <div class="step-counter">2</div>
-                  <div class="step-name">Second</div>
-                </div>
-                <div class="stepper-item completed">
-                  <div class="step-counter">3</div>
-                  <div class="step-name">Third</div>
-                </div>
-                <div class="stepper-item completed">
-                  <div class="step-counter">4</div>
-                  <div class="step-name">Forth</div>
-                </div>
-              </div> -->
 
-              <!-- <ul id="progressbar" class="text-center">
-                <li class="active step0"></li>
+          <div class="card1">
+            <ul id="progressbar" class="text-center">
                 <li class="step0"></li>
                 <li class="step0"></li>
                 <li class="step0"></li>
-            </ul> -->
-            <!-- <div class="card1">
-              <ul id="progressbar" class="text-center">
-                  <li class="active step0"></li>
-                  <li class="step0"></li>
-                  <li class="step0"></li>
-                  <li class="step0"></li>
-              </ul>
-              <h6 class="mb-5">Enter your Email</h6>
-              <h6 class="mb-5">Set password</h6>
-              <h6 class="mb-5">Select your country</h6>
-          </div> -->
-            
-            <div class = "time-card">
-              
-            <div class="card-body" style="width: 80%;">
-              <!-- <h5 class="card-title">{% block question %}{% endblock %}</h5> -->
+                <!-- <li class="step0"></li> -->
+            </ul>
+        </div>
+        <div class = "time-card">
+          <div class="card-body" style="width: 80%;">
+          
               {% block content %}{% endblock %}
-
-
-              <!-- <h6 class="card-text">5 <br> --- <br> 6</h6> -->
-              <!-- <div class="line1">
-                <label for="quo" >Quotient:</label>
-                <input type="text" id="quo" name="quo" maxlength="2" size="2" onblur="check0();">
-                <img src="{{ url_for('static', filename='images/tick.png') }}" width="32px" height="22px" class="correct">
-                <img src="{{ url_for('static', filename='images/cross.jpg') }}" width="32px" height="22px" class="wrong">
-                <br><br>
-            </div> -->
-            
-            <!-- <div class="line1">
-                <label for="rem">Remainder:</label>
-                <input type="text" id="rem" name="rem" maxlength="2" size="2" onblur="check1();">
-                <img src="{{ url_for('static', filename='images/tick.png') }}" width="32px" height="22px" class="correct">
-                <img src="{{ url_for('static', filename='images/cross.jpg') }}" width="32px" height="22px" class="wrong">
-                <br><br>
-              </div>
-              <table>
-                <tr> -->
-        <!--               numerator-->
-                    <!-- <td></td>
-                    <td><input type="text" id="mf2" name="mf" maxlength="2" size="2" onblur="check3();" required></td>
-                    <td><img src="{{ url_for('static', filename='images/tick.png') }}" width="50px" height="50px" class="correct"></td>
-                    <td><img src="{{ url_for('static', filename='images/cross.jpg') }}" width="50px" height="50px" class="wrong"></td>
-                </tr>
-        
-                <tr>
-         -->
-        <!--                mixed fraction-->
-                    <!-- <td><input type="text" id="mf1" name="mf" maxlength="2" size="2" onblur="check2();"required></td>
-                    <td><hr/></td>
-                    <td><img src="{{ url_for('static', filename='images/tick.png') }}" width="50px" height="50px" class="correct"></td>
-                    <td><img src="{{ url_for('static', filename='images/cross.jpg') }}" width="50px" height="50px" class="wrong"></td>
-        
-                </tr>
-        
-                <tr> -->
-        <!--                denominator-->
-                    <!-- <td></td>
-                    <td><input type="text" id="mf3" name="mf" maxlength="2" size="2" onblur="check4();" required></td>
-                    <td><img src="{{ url_for('static', filename='images/tick.png') }}" width="50px" height="50px" class="correct"></td>
-                    <td><img src="{{ url_for('static', filename='images/cross.jpg') }}" width="50px" height="50px" class="wrong"></td>
-                </tr>
-                <label for="mf1">Mixed Fraction:</label>
-                <br>
-            </table> -->
               
             </div>
          
@@ -317,10 +266,12 @@
                 </div>
                 <div class="modal-body">
                   <p>Select the option you think would be the beginning step of this problem</p>
-                  <button class="btn btn-info" style="width: 100%; margin: 10px auto;">Option 1</button>
-                  <button class="btn btn-info" style="width: 100%; margin: 10px auto;">Option 1</button>
-                  <button class="btn btn-info" style="width: 100%; margin: 10px auto;">Option 1</button>
-                  <button class="btn btn-info" style="width: 100%; margin: 10px auto;">Option 1</button>
+                  {% block hint %}
+                  <!-- <button class="btn btn-info" id = "1" style="width: 100%; margin: 10px auto;">{% block option_1 %}{% endblock%}</button>
+                  <button class="btn btn-info" id = "2" style="width: 100%; margin: 10px auto;">{% block option_2 %}{% endblock%}</button>
+                  <button class="btn btn-info" id = "3" style="width: 100%; margin: 10px auto;">{% block option_3 %}{% endblock%}</button>
+                  <button class="btn btn-info" id = "4" style="width: 100%; margin: 10px auto;">{% block option_4 %}{% endblock%}</button> -->
+                  {% endblock %}
                   <!-- <p>Some text in the modal.</p> -->
                 </div>
                 <div class="modal-footer">
@@ -346,7 +297,7 @@
         
 
             <div class="card-footer text-muted green">
-                <a href="#" class="btn btn-info" data-toggle="modal" data-target="#myModal">Hint</a>
+                <a href="#" class="btn btn-info" data-toggle="modal" data-target="#myModal" id="hint-btn">Hint</a>
                 
                 <i class="bi bi-circle-fill right"></i>
                 <i class="bi bi-circle-fill"></i>
@@ -357,87 +308,81 @@
           </div>
       </div>
       <script>
+        
         $(document).ready(function(){
-          $('.toast').toast('hide');
-          $('#next-btn').click(function(){
-            $('.toast').toast('show');
-          })
-        });
+            $('.toast').toast('hide');
+            var x = sessionStorage.count;
+            console.log(x);
+            for(i = 0;i < Number(sessionStorage.count);i++){
+              document.getElementsByClassName("bi")[i].classList.add("done");
+            }  
+
+
+            $('#home_nav').click(function(){
+              if(sessionStorage.count < 4 || sessionStorage.count == null){
+                  if (confirm("Your score will not be saved")) {
+                    $('#home_nav').attr('href', "{{ url_for('home') }}");
+                  } else {
+                    return false;
+                  }
+                  
+                  let keys = Object.keys(sessionStorage);
+                  for(let key of keys) {
+                    sessionStorage.removeItem(`${key}`);
+                  }
+                  sessionStorage.removeItem(count);
+              }
+              
+            })
+
+            var quesid = "{{ answer.qid }}";
+            var data = {qid: quesid};
+            
+            var hint_count = 0;
+            $('#hint-btn').click(function(){
+              hint_count++;
+            })
+
+            $('#next-btn').click(function(){
+              $('.toast').toast('show');
+              if (sessionStorage.count) {
+                sessionStorage.count = Number(sessionStorage.count)+1;
+              } else {
+                sessionStorage.count = 1;
+              }
+              
+              
+              let score = 25 - (5*hint_count);
+              sessionStorage.setItem(x, score);
+              console.log(sessionStorage.getItem(x));
+         
+              if(sessionStorage.count == 4){
+                
+                let keys = Object.keys(sessionStorage);
+                for(let key of keys) {
+                  data[`${key}`]= `${sessionStorage.getItem(key)}`;
+                  sessionStorage.removeItem(`${key}`);
+                }
+                sessionStorage.removeItem('count');
+                console.log(data);
+
+              alert("Excellent!  You finished all 4 questions");
+              $.post('/score', {'data': data}, function(response){
+                  window.location = "{{url_for('home')}}";
+                });
+                
+
+
+              }
+              else{
+                setTimeout(function(){ location.reload() }, 5000);
+              }
+              
+              
+            })
+        })
       
         </script>
 
-<script>
-// $(document).ready(function(){
-
-// var current_fs, next_fs, previous_fs;
-
-// // No BACK button on first screen
-// if($(".show").hasClass("first-screen")) {
-// $(".prev").css({ 'display' : 'none' });
-// }
-
-// // Next button
-// $(".next-button").click(function(){
-
-// current_fs = $(this).parent().parent();
-// next_fs = $(this).parent().parent().next();
-
-// $(".prev").css({ 'display' : 'block' });
-
-// $(current_fs).removeClass("show");
-// $(next_fs).addClass("show");
-
-// $("#progressbar li").eq($(".card2").index(next_fs)).addClass("active");
-
-// current_fs.animate({}, {
-// step: function() {
-
-// current_fs.css({
-// 'display': 'none',
-// 'position': 'relative'
-// });
-
-// next_fs.css({
-// 'display': 'block'
-// });
-// }
-// });
-// });
-
-// // Previous button
-// $(".prev").click(function(){
-
-// current_fs = $(".show");
-// previous_fs = $(".show").prev();
-
-// $(current_fs).removeClass("show");
-// $(previous_fs).addClass("show");
-
-// $(".prev").css({ 'display' : 'block' });
-
-// if($(".show").hasClass("first-screen")) {
-// $(".prev").css({ 'display' : 'none' });
-// }
-
-// $("#progressbar li").eq($(".card2").index(current_fs)).removeClass("active");
-
-// current_fs.animate({}, {
-// step: function() {
-
-// current_fs.css({
-// 'display': 'none',
-// 'position': 'relative'
-// });
-
-// previous_fs.css({
-// 'display': 'block'
-// });
-// }
-// });
-// });
-
-// });
-
-</script>
 </body>
 </html>
