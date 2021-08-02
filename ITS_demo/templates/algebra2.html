@@ -42,6 +42,11 @@ console.log({{ easy.answer[i] }});
         }
     }
 {% endblock %}
+
+{% block chapter %}Algebra{% endblock %}
+{% block topic %}{{ easy.topic }}{% endblock %}
+
+
 {% block content %}
 <div>{{ easy.question }}</div>
 <p>

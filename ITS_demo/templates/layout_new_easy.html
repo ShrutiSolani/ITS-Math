@@ -11,6 +11,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>  
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <title>Practice</title>
     
     <style>
@@ -213,7 +214,7 @@
         <div class="collapse navbar-collapse " id="navbarSupportedContent">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link a1" href="#">Home</a>
+              <a class="nav-link a1" href="" id="home_nav">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link a1" href="#">About Us</a>
@@ -268,9 +269,6 @@
                   <li class="step0"></li>
                   <li class="step0"></li>
               </ul>
-              <!-- <h6 class="mb-5">Enter your Email</h6>
-              <h6 class="mb-5">Set password</h6>
-              <h6 class="mb-5">Select your country</h6> -->
           </div>
             
             <div class = "time-card">
@@ -377,11 +375,11 @@
                 <i class="bi bi-circle-fill"></i>
                 <i class="bi bi-circle-fill"></i>
                 <i class="bi bi-circle-fill"></i>
-                <a href="#" class="btn btn-success next" id="next-btn">Next</a>
+                <a href="" class="btn btn-success next" id="next-btn">Next</a>
             </div>
           </div>
       </div>
-      <script>
+      <!-- <script>
         var arrayFromStroage = JSON.parse(localStorage.getItem("textValues"));
         var arrayLength = arrayFromStroage.length;
         var total_score = 0;
@@ -430,19 +428,21 @@
               $.post('/score', {'data': data}, function(response){
                 window.location = "{{url_for('home')}}";
               });
-              // $.ajax({
-              //     type: 'POST',
-              //     url: '/score',
-              //     contentType: 'application/json; charset=utf-8',
-              //     data: JSON.stringify({'data': data}),
-              //     dataType: 'json',
-              //     success: function(response){
-              //       return location.replace("{{url_for('home')}}");
-              //     }
-              // });
 
 
-              // event.preventDefault();
+              $.ajax({
+                  type: 'POST',
+                  url: '/score',
+                  contentType: 'application/json; charset=utf-8',
+                  data: JSON.stringify({'data': data}),
+                  dataType: 'json',
+                  success: function(response){
+                    return location.replace("{{url_for('home')}}");
+                  }
+              });
+
+
+              event.preventDefault();
             }
             else{
               setTimeout(function(){ location.reload() }, 1000);      
@@ -450,6 +450,145 @@
                   
           });
         });
+        </script> -->
+
+
+
+        <script>
+
+          $(document).ready(function(){
+            $('.toast').toast('hide');
+            var x = sessionStorage.count;
+            console.log(x);
+            for(i = 0;i < Number(sessionStorage.count);i++){
+              document.getElementsByClassName("bi")[i].classList.add("done");
+            }  
+
+
+            $('#home_nav').click(function(){
+              if(sessionStorage.count < 4 || sessionStorage.count == null){
+                  // confirm("Your score will not be saved");
+                  if (confirm("Your score will not be saved")) {
+                    $('#home_nav').attr('href', "{{ url_for('home') }}");
+                  } else {
+                    return false;
+                  }
+                  
+                  let keys = Object.keys(sessionStorage);
+                  for(let key of keys) {
+                    sessionStorage.removeItem(`${key}`);
+                  }
+                  sessionStorage.removeItem(count);
+              }
+              
+            })
+
+            // window.onbeforeunload = function(e) {
+            //   return "Do you want to exit this page?";
+            // };
+
+            // $(window).bind('beforeunload', function(){
+            //   return 'Are you sure you want to leave?';
+            // });
+
+            // var currentPage = location.href;
+ 
+            // // listen for changes
+            // setInterval(function()
+            // {
+            //     if (currentPage != location.href)
+            //     {
+            //         // page has changed, set new page as 'current'
+            //         // currentPage = location.href;
+            //         alert("Your score will not be saved");
+            //         // your custom code here
+            //     }
+            // }, 500);
+
+
+            var quesid = "{{ easy.qid }}";
+            var data = {qid: quesid};
+            
+            var hint_count = 0;
+            $('#hint-btn').click(function(){
+              hint_count++;
+            })
+
+            $('#next-btn').click(function(){
+              $('.toast').toast('show');
+              if (sessionStorage.count) {
+                sessionStorage.count = Number(sessionStorage.count)+1;
+              } else {
+                sessionStorage.count = 1;
+              }
+              
+              
+              let score = 25 - (5*hint_count);
+              sessionStorage.setItem(x, score);
+              console.log(sessionStorage.getItem(x));
+              // data[x]= sessionStorage.getItem(x);
+              // console.log(data);
+              // sessionStorage.removeItem(x);
+              if(sessionStorage.count == 4){
+                
+                let keys = Object.keys(sessionStorage);
+                for(let key of keys) {
+                  data[`${key}`]= `${sessionStorage.getItem(key)}`;
+                  sessionStorage.removeItem(`${key}`);
+                }
+                sessionStorage.removeItem('count');
+                console.log(data);
+
+                // Swal.fire({
+                //   title: '<strong>Excellent!</strong>',
+                //   icon: 'info',
+                //   html:'You’ve got your brain in gear',
+                //   showCloseButton: true,
+                //   showCancelButton: true,
+                //   focusConfirm: false,
+                //   confirmButtonText:
+                //     '<i class="fa fa-thumbs-up"></i> Go Home, Practice More',
+                //   confirmButtonAriaLabel: 'Thumbs up, great!',
+                //   cancelButtonText:
+                //     '<i class="fa fa-thumbs-down"></i>',
+                //       cancelButtonAriaLabel: 'Just Go home',
+                //       buttonsStyling: true
+                //         }).then(function () {
+                //           $.post('/score', {'data': data}, function(response){
+                //         window.location = "{{url_for('home')}}";
+                //       })
+                //   })
+                  
+         
+                  
+              // swal({
+              //   title: "Excellent!",
+              //   text: "You’ve got your brain in gear",
+              //   type: "success",
+              //   showCancelButton: false,
+              //   closeOnConfirm: false,
+              //   showLoaderOnConfirm: true
+              // }, function () {
+              //   $.post('/score', {'data': data}, function(response){
+              //     window.location = "{{url_for('home')}}";
+              //   });
+              // }); 
+              alert("Excellent!  You finished all 4 questions");
+              $.post('/score', {'data': data}, function(response){
+                  window.location = "{{url_for('home')}}";
+                });
+                
+
+
+              }
+              else{
+                setTimeout(function(){ location.reload() }, 5000);
+              }
+              
+              
+            })
+        })
         </script>
-</body>
+
+  </body>
 </html>
