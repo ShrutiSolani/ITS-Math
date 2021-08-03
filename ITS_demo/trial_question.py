@@ -96,7 +96,7 @@ def question():
         tcp = 0
     scoredict = {'score': scorecnt1, 'total': total, 'totalqts': qtscnt1, 'tcp': tcp}
   #  return render_template('short_display.html', answer=answer, hints=hints, scoredict=scoredict, labels = labels)
-    return render_template('display copy.html', answer=answer, hints=hints, scoredict=scoredict, labels = labels)
+    return render_template('Mixed_fraction.html', answer=answer, hints=hints, scoredict=scoredict, labels = labels)
 
 #################################################################
 @app.route('/score', methods=['POST'])
@@ -341,7 +341,7 @@ def mixed_to_normal():
     num = random.randint(1,50)
     den = random.randint(2,50)
     whole = random.randint(2,20)
-    que = "Convert "+str(whole)+" "+str(num)+"/"+str(den)+" to normal form and find simplest form"
+    que = "Convert "+str(whole)+" ("+str(num)+"/"+str(den)+") to normal form and find simplest form"
     num_ans = (den*whole)+num
     frac = Fraction(num_ans,den)
     answer = {'que':que, 'num_ans':frac.numerator, 'den_ans':frac.denominator,'den':den,'num':num_ans}
@@ -367,8 +367,10 @@ def mixed_to_normal():
     except:
         pct = 0
     scoredict = {'score': scorecnt2, 'total': total, 'totalqts': qtscnt2, 'pct': pct}
-    return render_template('normal-form.html', answer=answer, hints=hints, scoredict=scoredict)
+    # return render_template('normal-form.html', answer=answer, hints=hints, scoredict=scoredict)
     # return render_template('normalForm.html', answer=answer, hints=hints, scoredict=scoredict)
+    return render_template('Normal_form.html', answer=answer, hints=hints, scoredict=scoredict)
+    
 
 @app.route('/unlike-add')
 def unlike_add():
@@ -428,7 +430,8 @@ def unlike_add():
     except:
         pct = 0
     scoredict = {'score': scorecnt2, 'total': total, 'totalqts': qtscnt2, 'pct': pct}
-    return render_template('unlike-add.html', answer=answer, hints=hints, scoredict=scoredict)
+    # return render_template('unlike-add.html', answer=answer, hints=hints, scoredict=scoredict)
+    return render_template('Fraction_operation.html', answer=answer, hints=hints, scoredict=scoredict)
 
 
 # Algebra Easy
