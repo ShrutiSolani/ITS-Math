@@ -211,9 +211,9 @@ def compare():
     print(que)
     print('lcm ',lcm)
     print(eqfrac1,eqfrac2,fract1,fract2)
-    box_ans = [lcm,num1,den1,num2,den2,ans]
-    answer = {'que':que,'ans':box_ans,'f1':f1,'f2':f2}
-    #answer={'que':que,'lcm':lcm,'num1':num1,'den1':den1,'num2':num2,'den2':den2,'ans':ans , 'f1':f1,'f2':f2}
+    # box_ans = [lcm,num1,den1,num2,den2,ans]
+    # answer = {'que':que,'ans':box_ans,'f1':f1,'f2':f2}
+    answer={'que':que,'lcm':lcm,'num1':num1,'den1':den1,'num2':num2,'den2':den2,'ans':ans , 'f1':f1,'f2':f2}
     print(answer)
     h1="LCM of both denominators if Fraction are unlike."
     h2="EXAMPLE : LCM of 5 and 6 is 30."
@@ -603,7 +603,7 @@ def add_easy():
         q.append(qs)
     q.insert(1," ")
     contexts={'ans_num':ans_num,'ans_den':ans_den,'q':q, 'label1': 'Quotient', 'label2' : 'Remainder'}
-    return render_template('division.html',easy=context)
+    return render_template('division.html',easy=contexts)
 
 
 @app.route('/whole')
