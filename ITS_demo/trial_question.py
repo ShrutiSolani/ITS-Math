@@ -96,7 +96,7 @@ def question():
         tcp = 0
     scoredict = {'score': scorecnt1, 'total': total, 'totalqts': qtscnt1, 'tcp': tcp}
   #  return render_template('short_display.html', answer=answer, hints=hints, scoredict=scoredict, labels = labels)
-    return render_template('display copy.html', answer=answer, hints=hints, scoredict=scoredict, labels = labels)
+    return render_template('Mixed_fraction.html', answer=answer, hints=hints, scoredict=scoredict, labels = labels)
 
 #################################################################
 @app.route('/score', methods=['POST'])
@@ -322,15 +322,15 @@ def vertical_sub():
 
 @app.route('/simplest-form')
 def simplest_form():
+    qid = 'FE4'
     num = random.randint(1,50)
     den = random.randint(2,50)
     que = "Find simplest form of fraction "+ str(num)+"/"+ str(den)
     simple = Fraction(num, den)
     answer = {'que': que, 'num_ans': simple.numerator, 'den_ans': simple.denominator}
     print(answer)
-    scoredict={}
-    hints={}
-    return render_template('simplestForm.html',answer=answer,hints=hints,scoredict=scoredict)
+    easy = {'topic': 'Simplest Form', 'qid': qid}
+    return render_template('simplestForm.html',answer=answer, easy = easy)
 
 
 #simplest_form()
@@ -341,7 +341,7 @@ def mixed_to_normal():
     num = random.randint(1,50)
     den = random.randint(2,50)
     whole = random.randint(2,20)
-    que = "Convert "+str(whole)+" "+str(num)+"/"+str(den)+" to normal form and find simplest form"
+    que = "Convert "+str(whole)+" ("+str(num)+"/"+str(den)+") to normal form and find simplest form"
     num_ans = (den*whole)+num
     frac = Fraction(num_ans,den)
     answer = {'que':que, 'num_ans':frac.numerator, 'den_ans':frac.denominator,'den':den,'num':num_ans}
@@ -367,8 +367,10 @@ def mixed_to_normal():
     except:
         pct = 0
     scoredict = {'score': scorecnt2, 'total': total, 'totalqts': qtscnt2, 'pct': pct}
-    return render_template('normal-form.html', answer=answer, hints=hints, scoredict=scoredict)
+    # return render_template('normal-form.html', answer=answer, hints=hints, scoredict=scoredict)
     # return render_template('normalForm.html', answer=answer, hints=hints, scoredict=scoredict)
+    return render_template('Normal_form.html', answer=answer, hints=hints, scoredict=scoredict)
+    
 
 @app.route('/unlike-add')
 def unlike_add():
@@ -428,7 +430,8 @@ def unlike_add():
     except:
         pct = 0
     scoredict = {'score': scorecnt2, 'total': total, 'totalqts': qtscnt2, 'pct': pct}
-    return render_template('unlike-add.html', answer=answer, hints=hints, scoredict=scoredict)
+    # return render_template('unlike-add.html', answer=answer, hints=hints, scoredict=scoredict)
+    return render_template('Fraction_operation.html', answer=answer, hints=hints, scoredict=scoredict)
 
 
 # Algebra Easy
@@ -587,6 +590,7 @@ def division():
 
 @app.route('/add-easy')
 def add_easy():
+    qid = 'FE3'
     q=[]
     ans_num=[]
     ans_den=[]
@@ -602,12 +606,17 @@ def add_easy():
         ans_den.append(ansden)
         q.append(qs)
     q.insert(1," ")
+<<<<<<< HEAD
     contexts={'ans_num':ans_num,'ans_den':ans_den,'q':q, 'label1': 'Quotient', 'label2' : 'Remainder'}
+=======
+    contexts={'num': 1,'qid': qid,'topic': 'Add like fractions','ans_num':ans_num,'ans_den':ans_den,'q':q, 'label1': 'Quotient', 'label2' : 'Remainder'}
+>>>>>>> ff0291993e80f1158c5baea82c29107a37fc2b45
     return render_template('division.html',easy=contexts)
 
 
 @app.route('/whole')
 def whole():
+    qid = "FE2"
     q=[]
     ans_num=[]
     ans_den=[]
@@ -623,7 +632,7 @@ def whole():
         q.append(que)
     q.insert(1," ")
     # print(q)
-    return render_template('division.html',easy={'ans_num':ans_num,'ans_den':ans_den,'q':q, 'label1': 'Numerator', 'label2': 'Denominator'})
+    return render_template('division.html',easy={'num': 2,'topic': 'Multiple by Whole number','ans_num':ans_num,'ans_den':ans_den,'q':q, 'label1': 'Numerator', 'label2': 'Denominator', 'qid': qid})
 
 
 @app.route('/number-line')

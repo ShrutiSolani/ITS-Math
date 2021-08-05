@@ -1,14 +1,15 @@
-{% extends "layout.html" %}
-{% block title %} Fraction {% endblock %}
+{% extends "layout_new_easy.html" %}
+
 
 
 {% block script %}
 
-var ans=["{{ contexts.ans_num[0] }}","{{ contexts.ans_den[0] }}","{{ contexts.ans_num[1] }}","{{ contexts.ans_den[1] }}"]
+var ans=["{{ easy.ans_num[0] }}","{{ easy.ans_den[0] }}","{{ easy.ans_num[1] }}","{{ easy.ans_den[1] }}"]
 console.log(ans)
 function checkQuo(i){
     if(document.getElementsByTagName("input")[i].value == ans[i]){
-        alert("Correct")
+        alert("Correct");
+        document.getElementsByClassName("step0")[i].classList.add("active");
     }
     else{
         alert("you have not divided properly...")
@@ -17,23 +18,36 @@ function checkQuo(i){
 
 function checkRem(i){
     if(document.getElementsByTagName("input")[i].value == ans[i]){
-        alert("Correct")
+        alert("Correct");
+        document.getElementsByClassName("step0")[i].classList.add("active");
     }
     else{
         alert("you have not divided properly...")
     }
 }
 
+window.onload = function(){
+    var source = "{{ url_for('static', filename = 'images/frac_add_like.png') }}";
+    if({{ easy.num }} == '2'){ 
+        source = "{{ url_for('static', filename = 'images/frac_mul_by_whole.png') }}";
+    }
+    $("#hint_img").attr("src", source);
+}
 
 
 {% endblock %}
-
+{% block chapter%}Fraction{% endblock %}
+{% block topic %}{{ easy.topic }}{% endblock %}
 {% block content %}
 {% for i in range(0,3,2) %}
-    <div>{{contexts.q[i]}}</div>
-    {{ contexts.label1 }}: <input type="text" id="quo" onchange="checkQuo({{ i }});">
+    <h5 class="card-title">{{easy.q[i]}}</h5>
+    {{ easy.label1 }}: <input type="text" id="quo" onchange="checkQuo({{ i }});">
     <br>
-    {{ contexts.label2 }}: <input type="text" id="rem" onchange="checkRem({{ i+1 }});">
+    {{ easy.label2 }}: <input type="text" id="rem" onchange="checkRem({{ i+1 }});">
     <br><br>
 {% endfor %}
+{% endblock %}
+
+{% block hint %}
+<img src="" alt="" style = "width:80%;" id="hint_img">
 {% endblock %}
