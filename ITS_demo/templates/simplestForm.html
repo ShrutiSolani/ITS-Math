@@ -1,5 +1,6 @@
-{% extends "layout.html" %}
-{% block title %}Q1{% endblock %}
+{% extends "layout_new_easy.html" %}
+{% block chapter%}Fraction{% endblock %}
+{% block topic %}{{ easy.topic }}{% endblock %}
 
 {% block script %}
 
@@ -9,166 +10,48 @@ var feedcount = 0;
 
 function check_num()
 {
-    if(document.getElementsByTagName("input")[0].value == {{ answer.num_ans }} )
+  if(document.getElementsByTagName("input")[0].value == {{ answer.num_ans }} )
 	{
-	   $(x[0]).show();
-       $(y[0]).hide();
-    }
-	 else
-	 {
-	    feedcount++;
-        $(x[0]).hide();
-        $(y[0]).show();
+	  alert("Correct");
+    document.getElementsByClassName("step0")[0].classList.add("active");
+    document.getElementsByClassName("step0")[1].classList.add("active");
+  }
+	else
+	{
 	    document.getElementsByTagName("input")[0].value = "";
-	    swal(
-	    {
-          title: "Oops, Looks like you are not familiar with LCM ",
-          text: "for example,  LCM of 5 and 6 is 30.",
-          icon: "error",
-          button: true,
-          dangerMode: true,
-        }
-       )
-        .then((willDelete) => {
-          if (willDelete) {
-            swal("Now, try again", {
-
-              icon: "success",
-            });
-          }
-        });
-	 }
+      alert("Try again");
+	    
+	}
 }
 function check_den()
 {
-    if(document.getElementsByTagName("input")[1].value == {{ answer.den_ans }} )
+  if(document.getElementsByTagName("input")[1].value == {{ answer.den_ans }} )
 	{
-	   $(x[1]).show();
-       $(y[1]).hide();
-    }
-	 else
-	 {
-	    feedcount++;
-        $(x[1]).hide();
-        $(y[1]).show();
-	    document.getElementsByTagName("input")[1].value = "";
-	    swal(
-	    {
-          title: "Oops, Looks like you are not familiar with LCM ",
-          text: "for example,  LCM of 5 and 6 is 30.",
-          icon: "error",
-          button: true,
-          dangerMode: true,
-        }
-       )
-        .then((willDelete) => {
-          if (willDelete) {
-            swal("Now, try again", {
-
-              icon: "success",
-            });
-          }
-        });
-	 }
-}
-
-
-window.onload = function() {
-var count = 0;
-
-var countButton = document.getElementById("hint-btn");
-var displayCount = document.getElementsByClassName("showhints");
-countButton.onclick = function(){
-  count++;
-  if(count == 1)
-  {
-  displayCount[0].innerHTML = "Hint 1 :{{ hints.h1 }}\n" ;
-  }
-  else
-  {
-    if(count == 2) {displayCount[1].innerHTML = "Hint 2 :{{ hints.h2 }}\n" ;}
-    else {displayCount[2].innerHTML = "Hint 3 :{{ hints.h3 }}\n" ;}
-  }
-  }
-
-  var subbutton = document.getElementById("b1");
-  subbutton.onclick = function(){
-     document.querySelector(".myform").setAttribute("action","score/"+1+"/"+count+"/"+feedcount);
-     function time(){
-     var s=document.getElementById("scre");
-     s.style.display="none";
-     }
-     var d=setTimeout(time,500);
-     clearInterval(d);
-<!-- setTimeout(function(){s.style.display="none";},500);-->
+	  alert("Correct");
+    document.getElementsByClassName("step0")[2].classList.add("active");
+    document.getElementsByClassName("step0")[3].classList.add("active");
 
   }
-}
-
-function openSlideMenu()
-{
-    document.getElementById('menu').style.width = '250px';
-    document.getElementById('content').style.marginLeft = '250px';
-}
-
-function closeSlideMenu()
-{
-    document.getElementById('menu').style.width = '0px';
-    document.getElementById('content').style.marginLeft = '0px';
-}
-
-var close = document.getElementsByClassName("closebtn");
-var i;
-
-for (i = 0; i < close.length; i++) {
-  close[i].onclick = function(){
-    var div = this.parentElement;
-    div.style.opacity = "0";
-    setTimeout(time,100);
-    function time(){
-     var s=document.getElementById("scre");
-     alert("Bhavya");
-     s.style.display="none";
-    }
-  }
+	else
+	{
+	  document.getElementsByTagName("input")[1].value = "";
+	  alert("Try again");
+	}
 }
 
 {% endblock %}
 
-{% block message %}
-{% with messages = get_flashed_messages(with_categories=true) %}
-  {% if messages %}
-<div class="alert alert-info" role="alert" id="scre">
-     <span class="closebtn">&times;</span>
-    {% for message in get_flashed_messages() %}
-  <h4 class="alert-heading">{{ message }}</h4>
-    {% endfor %}
-</div>
-  {% endif %}
-{% endwith %}
-</div>
-{% endblock %}
 
 
-    {% block progress %}{{scoredict.tcp}}%{% endblock %}
-    {% block question %}{{scoredict.totalqts}}{% endblock %}
-    {% block pvalue %}{{ scoredict.tcp }}{% endblock %}
 {% block content %}
-    {{ answer.que }}
-    <br><br>
-
-      <label for="quo3" style="display:block">Solution : </label>
+    <h5 class="card-title">{{ answer.que }}</h5>
+  
+    <label for="quo3" style="display:block">Solution : </label>
     <input type="text" id="quo3" name="rem" maxlength="8" size="2" class="num" onblur="check_num();" required >
-    <img src="{{ url_for('static', filename='images/tick.png') }}" width="32px" height="22px" class="correct">
-    <img src="{{ url_for('static', filename='images/cross.jpg') }}" width="32px" height="22px" class="wrong">
-    <h5 >---------------</h5>
+    <h5 >---------</h5>
     <input type="text" id="rem4" name="rem" maxlength="8" size="2" class="den" onblur="check_den();" required>
-    <img src="{{ url_for('static', filename='images/tick.png') }}" width="32px" height="22px" class="correct">
-    <img src="{{ url_for('static', filename='images/cross.jpg') }}" width="32px" height="22px" class="wrong">
-    <br><br>
+{% endblock %}
 
-
-
-    <br><br>
-
+{% block hint %}
+  <img src="{{ url_for('static', filename = 'images/frac_simplest_form.png') }}" alt="" style="width: 80%;">
 {% endblock %}

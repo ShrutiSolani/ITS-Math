@@ -1,0 +1,129 @@
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 770-461-705
+INFO:werkzeug: * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO:werkzeug: * Detected change in 'd:\\github desktop\\ITS-Math\\ITS_demo\\trial_question.py', reloading
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 770-461-705
+INFO:werkzeug: * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO:root:User on Index Page
+INFO:werkzeug:127.0.0.1 - - [03/Aug/2021 15:24:03] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Aug/2021 15:24:05] "[36mGET /static/images/Mathematics-bro.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [03/Aug/2021 15:24:05] "[36mGET /static/images/teaching-animate.svg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [03/Aug/2021 15:24:05] "[36mGET /static/images/Online%20test-amico.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [03/Aug/2021 15:24:05] "[36mGET /static/images/User-friendly.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [03/Aug/2021 15:24:05] "[36mGET /static/images/Mobile%20login-bro.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [03/Aug/2021 15:24:05] "[36mGET /static/images/Email%20campaign-bro.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [03/Aug/2021 15:24:05] "[36mGET /static/images/Address-bro.png HTTP/1.1[0m" 304 -
+INFO:root:New user registering
+INFO:werkzeug:127.0.0.1 - - [03/Aug/2021 15:24:06] "GET /signup HTTP/1.1" 200 -
+INFO:root:User successfully landed to home page
+INFO:werkzeug:127.0.0.1 - - [03/Aug/2021 15:24:08] "GET /home HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Aug/2021 15:24:08] "[36mGET /static/images/carimg1.jpg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [03/Aug/2021 15:24:08] "[36mGET /static/images/fractionbg.jpg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [03/Aug/2021 15:24:08] "[36mGET /static/images/algebra_home.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'd:\\github desktop\\ITS-Math\\ITS_demo\\trial_question.py', reloading
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 770-461-705
+INFO:werkzeug: * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO:root:User on Index Page
+INFO:werkzeug:127.0.0.1 - - [03/Aug/2021 15:29:51] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Aug/2021 15:29:52] "[36mGET /static/images/Mobile%20login-bro.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [03/Aug/2021 15:29:52] "[36mGET /static/images/teaching-animate.svg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [03/Aug/2021 15:29:52] "[36mGET /static/images/Address-bro.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [03/Aug/2021 15:29:52] "[36mGET /static/images/User-friendly.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [03/Aug/2021 15:29:52] "[36mGET /static/images/Email%20campaign-bro.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [03/Aug/2021 15:29:52] "[36mGET /static/images/Mathematics-bro.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [03/Aug/2021 15:29:52] "[36mGET /static/images/Online%20test-amico.png HTTP/1.1[0m" 304 -
+INFO:root:User trying to log in
+INFO:werkzeug:127.0.0.1 - - [03/Aug/2021 15:29:53] "GET /login HTTP/1.1" 200 -
+INFO:root:User successfully landed to home page
+INFO:werkzeug:127.0.0.1 - - [03/Aug/2021 15:29:55] "GET /home HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Aug/2021 15:29:55] "[36mGET /static/images/carimg1.jpg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [03/Aug/2021 15:29:55] "[36mGET /static/images/fractionbg.jpg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [03/Aug/2021 15:29:55] "[36mGET /static/images/algebra_home.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'd:\\github desktop\\ITS-Math\\ITS_demo\\trial_question.py', reloading
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 770-461-705
+INFO:werkzeug: * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO:werkzeug: * Detected change in 'd:\\github desktop\\ITS-Math\\ITS_demo\\trial_question.py', reloading
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 770-461-705
+INFO:werkzeug: * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO:werkzeug: * Detected change in 'd:\\github desktop\\ITS-Math\\ITS_demo\\trial_question.py', reloading
+WARNING -  * Debugger is active!
+INFO -  * Debugger PIN: 770-461-705
+INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO - User on Index Page
+INFO - 127.0.0.1 - - [03/Aug/2021 15:36:06] "GET / HTTP/1.1" 200 -
+INFO - 127.0.0.1 - - [03/Aug/2021 15:36:07] "[36mGET /static/images/teaching-animate.svg HTTP/1.1[0m" 304 -
+INFO - 127.0.0.1 - - [03/Aug/2021 15:36:07] "[36mGET /static/images/Mathematics-bro.png HTTP/1.1[0m" 304 -
+INFO - 127.0.0.1 - - [03/Aug/2021 15:36:07] "[36mGET /static/images/Mobile%20login-bro.png HTTP/1.1[0m" 304 -
+INFO - 127.0.0.1 - - [03/Aug/2021 15:36:07] "[36mGET /static/images/Address-bro.png HTTP/1.1[0m" 304 -
+INFO - 127.0.0.1 - - [03/Aug/2021 15:36:07] "[36mGET /static/images/Online%20test-amico.png HTTP/1.1[0m" 304 -
+INFO - 127.0.0.1 - - [03/Aug/2021 15:36:07] "[36mGET /static/images/Email%20campaign-bro.png HTTP/1.1[0m" 304 -
+INFO - 127.0.0.1 - - [03/Aug/2021 15:36:07] "[36mGET /static/images/User-friendly.png HTTP/1.1[0m" 304 -
+INFO - New user registering
+INFO - 127.0.0.1 - - [03/Aug/2021 15:36:08] "GET /signup HTTP/1.1" 200 -
+INFO - User successfully landed to home page
+INFO - 127.0.0.1 - - [03/Aug/2021 15:36:10] "GET /home HTTP/1.1" 200 -
+INFO - 127.0.0.1 - - [03/Aug/2021 15:36:10] "[36mGET /static/images/carimg1.jpg HTTP/1.1[0m" 304 -
+INFO - 127.0.0.1 - - [03/Aug/2021 15:36:10] "[36mGET /static/images/fractionbg.jpg HTTP/1.1[0m" 304 -
+INFO - 127.0.0.1 - - [03/Aug/2021 15:36:10] "[36mGET /static/images/algebra_home.png HTTP/1.1[0m" 304 -
+INFO -  * Detected change in 'd:\\github desktop\\ITS-Math\\ITS_demo\\trial_question.py', reloading
+WARNING - 2021-08-03 15:37:39,754 -   * Debugger is active!
+INFO - 2021-08-03 15:37:39,758 -   * Debugger PIN: 770-461-705
+INFO - 2021-08-03 15:37:39,835 -   * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO - 2021-08-03 15:37:46,150 -  User successfully landed to home page
+INFO - 2021-08-03 15:37:46,159 -  127.0.0.1 - - [03/Aug/2021 15:37:46] "GET /home HTTP/1.1" 200 -
+INFO - 2021-08-03 15:37:46,865 -  127.0.0.1 - - [03/Aug/2021 15:37:46] "[36mGET /static/images/carimg1.jpg HTTP/1.1[0m" 304 -
+INFO - 2021-08-03 15:37:46,866 -  127.0.0.1 - - [03/Aug/2021 15:37:46] "[36mGET /static/images/fractionbg.jpg HTTP/1.1[0m" 304 -
+INFO - 2021-08-03 15:37:46,871 -  127.0.0.1 - - [03/Aug/2021 15:37:46] "[36mGET /static/images/algebra_home.png HTTP/1.1[0m" 304 -
+INFO - 2021-08-03 15:45:13,972 -   * Detected change in 'd:\\github desktop\\ITS-Math\\ITS_demo\\trial_question.py', reloading
+WARNING - 2021-08-03 15:45:14,998 -   * Debugger is active!
+INFO - 2021-08-03 15:45:15,003 -   * Debugger PIN: 770-461-705
+INFO - 2021-08-03 15:45:15,107 -   * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO - 2021-08-03 15:46:03,287 -  User on Index Page
+INFO - 2021-08-03 15:46:03,299 -  127.0.0.1 - - [03/Aug/2021 15:46:03] "GET / HTTP/1.1" 200 -
+INFO - 2021-08-03 15:46:04,581 -  127.0.0.1 - - [03/Aug/2021 15:46:04] "[36mGET /static/images/Address-bro.png HTTP/1.1[0m" 304 -
+INFO - 2021-08-03 15:46:04,583 -  127.0.0.1 - - [03/Aug/2021 15:46:04] "[36mGET /static/images/Mobile%20login-bro.png HTTP/1.1[0m" 304 -
+INFO - 2021-08-03 15:46:04,585 -  127.0.0.1 - - [03/Aug/2021 15:46:04] "[36mGET /static/images/Mathematics-bro.png HTTP/1.1[0m" 304 -
+INFO - 2021-08-03 15:46:04,587 -  127.0.0.1 - - [03/Aug/2021 15:46:04] "[36mGET /static/images/Online%20test-amico.png HTTP/1.1[0m" 304 -
+INFO - 2021-08-03 15:46:04,591 -  127.0.0.1 - - [03/Aug/2021 15:46:04] "[36mGET /static/images/User-friendly.png HTTP/1.1[0m" 304 -
+INFO - 2021-08-03 15:46:04,594 -  127.0.0.1 - - [03/Aug/2021 15:46:04] "[36mGET /static/images/teaching-animate.svg HTTP/1.1[0m" 304 -
+INFO - 2021-08-03 15:46:04,597 -  127.0.0.1 - - [03/Aug/2021 15:46:04] "[36mGET /static/images/Email%20campaign-bro.png HTTP/1.1[0m" 304 -
+INFO - 2021-08-03 15:52:37,124 -   * Detected change in 'd:\\github desktop\\ITS-Math\\ITS_demo\\trial_question.py', reloading
+WARNING - 2021-08-03 15:52:38,721 -   * Debugger is active!
+INFO - 2021-08-03 15:52:38,724 -   * Debugger PIN: 770-461-705
+INFO - 2021-08-03 15:52:38,795 -   * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO - 2021-08-03 15:52:49,237 -  User on Index Page
+INFO - 2021-08-03 15:52:49,247 -  127.0.0.1 - - [03/Aug/2021 15:52:49] "GET / HTTP/1.1" 200 -
+INFO - 2021-08-03 15:52:50,539 -  127.0.0.1 - - [03/Aug/2021 15:52:50] "[36mGET /static/images/Online%20test-amico.png HTTP/1.1[0m" 304 -
+INFO - 2021-08-03 15:52:50,540 -  127.0.0.1 - - [03/Aug/2021 15:52:50] "[36mGET /static/images/Mathematics-bro.png HTTP/1.1[0m" 304 -
+INFO - 2021-08-03 15:52:50,542 -  127.0.0.1 - - [03/Aug/2021 15:52:50] "[36mGET /static/images/Address-bro.png HTTP/1.1[0m" 304 -
+INFO - 2021-08-03 15:52:50,546 -  127.0.0.1 - - [03/Aug/2021 15:52:50] "[36mGET /static/images/Mobile%20login-bro.png HTTP/1.1[0m" 304 -
+INFO - 2021-08-03 15:52:50,547 -  127.0.0.1 - - [03/Aug/2021 15:52:50] "[36mGET /static/images/teaching-animate.svg HTTP/1.1[0m" 304 -
+INFO - 2021-08-03 15:52:50,551 -  127.0.0.1 - - [03/Aug/2021 15:52:50] "[36mGET /static/images/User-friendly.png HTTP/1.1[0m" 304 -
+INFO - 2021-08-03 15:52:50,564 -  127.0.0.1 - - [03/Aug/2021 15:52:50] "[36mGET /static/images/Email%20campaign-bro.png HTTP/1.1[0m" 304 -
+INFO - 2021-08-03 15:53:18,179 -  User trying to log in
+INFO - 2021-08-03 15:53:18,240 -  127.0.0.1 - - [03/Aug/2021 15:53:18] "GET /login HTTP/1.1" 200 -
+INFO - 2021-08-03 15:55:55,635 -   * Detected change in 'd:\\github desktop\\ITS-Math\\ITS_demo\\trial_question.py', reloading
+WARNING - 2021-08-03 16:05:06,826 -   * Debugger is active!
+INFO - 2021-08-03 16:05:06,855 -   * Debugger PIN: 770-461-705
+INFO - 2021-08-03 16:05:06,941 -   * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO - 2021-08-03 16:05:26,363 -  User on Index Page
+INFO - 2021-08-03 16:05:26,429 -  127.0.0.1 - - [03/Aug/2021 16:05:26] "GET / HTTP/1.1" 200 -
+INFO - 2021-08-03 16:05:27,864 -  127.0.0.1 - - [03/Aug/2021 16:05:27] "[36mGET /static/images/Mathematics-bro.png HTTP/1.1[0m" 304 -
+INFO - 2021-08-03 16:05:27,864 -  127.0.0.1 - - [03/Aug/2021 16:05:27] "[36mGET /static/images/Online%20test-amico.png HTTP/1.1[0m" 304 -
+INFO - 2021-08-03 16:05:27,866 -  127.0.0.1 - - [03/Aug/2021 16:05:27] "[36mGET /static/images/User-friendly.png HTTP/1.1[0m" 304 -
+INFO - 2021-08-03 16:05:27,868 -  127.0.0.1 - - [03/Aug/2021 16:05:27] "[36mGET /static/images/teaching-animate.svg HTTP/1.1[0m" 304 -
+INFO - 2021-08-03 16:05:27,869 -  127.0.0.1 - - [03/Aug/2021 16:05:27] "[36mGET /static/images/Address-bro.png HTTP/1.1[0m" 304 -
+INFO - 2021-08-03 16:05:27,872 -  127.0.0.1 - - [03/Aug/2021 16:05:27] "[36mGET /static/images/Mobile%20login-bro.png HTTP/1.1[0m" 304 -
+INFO - 2021-08-03 16:05:27,900 -  127.0.0.1 - - [03/Aug/2021 16:05:27] "[36mGET /static/images/Email%20campaign-bro.png HTTP/1.1[0m" 304 -
+INFO - 2021-08-03 16:05:28,909 -  User trying to log in
+INFO - 2021-08-03 16:05:28,945 -  127.0.0.1 - - [03/Aug/2021 16:05:28] "GET /login HTTP/1.1" 200 -
+INFO - 2021-08-03 16:05:30,179 -  User successfully landed to home page
+INFO - 2021-08-03 16:05:30,215 -  127.0.0.1 - - [03/Aug/2021 16:05:30] "GET /home HTTP/1.1" 200 -
+INFO - 2021-08-03 16:05:30,315 -  127.0.0.1 - - [03/Aug/2021 16:05:30] "[36mGET /static/images/carimg1.jpg HTTP/1.1[0m" 304 -
+INFO - 2021-08-03 16:05:30,345 -  127.0.0.1 - - [03/Aug/2021 16:05:30] "[36mGET /static/images/algebra_home.png HTTP/1.1[0m" 304 -
+INFO - 2021-08-03 16:05:30,359 -  127.0.0.1 - - [03/Aug/2021 16:05:30] "[36mGET /static/images/fractionbg.jpg HTTP/1.1[0m" 304 -
+INFO - 2021-08-03 16:06:12,350 -   * Detected change in 'd:\\github desktop\\ITS-Math\\ITS_demo\\trial_question.py', reloading

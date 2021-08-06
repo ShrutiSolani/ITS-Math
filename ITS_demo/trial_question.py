@@ -6,11 +6,16 @@ import random
 import os
 import math
 import json
+import logging
+ 
+
 
 
 app = Flask(__name__)
 
-
+logging.basicConfig(filename = 'UserLog.log', level=logging.INFO, format = '%(asctime)s %(levelname)s : %(message)s')
+log = logging.getLogger('werkzeug')
+log.setLevel(logging.ERROR)
 values = [Fraction('25/8'), Fraction('17/4'), Fraction('38/7'), Fraction('29/3'), Fraction('44/5')]
 Image_folder = os.path.join('static', 'images')
 
@@ -25,21 +30,25 @@ scorecnt2 = 0 #algebra
 
 @app.route("/")
 def index():
+    app.logger.info('Index Page')
     return render_template('index_new.html')
 
 
 @app.route("/login")
 def login():
+    app.logger.info('Login Page')
     return render_template('login_new.html')
 
 @app.route("/signup")
 def signup():
+    app.logger.info('Signup Page')
     return render_template('signup_new.html')
 
 
 @app.route("/home")
 def home():
-    print("inside home")
+    app.logger.info('Home Page')
+    # print("inside home")
     return render_template('home_new.html')
 
 @app.route("/mixed-fraction1", methods=['POST'])
@@ -105,12 +114,11 @@ def score():
     if request.method == 'POST':
         print(request.form)
         tup = request.form
-        print(tup)
-        print(tup['data[qid]'])
-        # print(tup['data[\]'])
-        # print(tup[0])
-        # print(request.args['data'])
-        # print(request.json['data'])
+        # print(tup)
+        # print(tup['data[qid]'])
+        total = int(tup['data[1]']) + int(tup['data[2]']) +int(tup['data[3]']) +int(tup['data[undefined]']) 
+        app.logger.info(tup['data[qid]'] + "\n" +tup['data[undefined]'] + "\n" + tup['data[1]'] + "\n" + tup['data[2]'] + "\n" +  tup['data[3]'] + "\n" + str(total))
+
         return "Score received"
         # print(request.json[data]['qid'])
         # print(request.json['score'])
@@ -211,9 +219,9 @@ def compare():
     print(que)
     print('lcm ',lcm)
     print(eqfrac1,eqfrac2,fract1,fract2)
-    box_ans = [lcm,num1,den1,num2,den2,ans]
-    answer = {'que':que,'ans':box_ans,'f1':f1,'f2':f2}
-    #answer={'que':que,'lcm':lcm,'num1':num1,'den1':den1,'num2':num2,'den2':den2,'ans':ans , 'f1':f1,'f2':f2}
+    # box_ans = [lcm,num1,den1,num2,den2,ans]
+    # answer = {'que':que,'ans':box_ans,'f1':f1,'f2':f2}
+    answer={'que':que,'lcm':lcm,'num1':num1,'den1':den1,'num2':num2,'den2':den2,'ans':ans , 'f1':f1,'f2':f2}
     print(answer)
     h1="LCM of both denominators if Fraction are unlike."
     h2="EXAMPLE : LCM of 5 and 6 is 30."
@@ -322,15 +330,15 @@ def vertical_sub():
 
 @app.route('/simplest-form')
 def simplest_form():
+    qid = 'FE4'
     num = random.randint(1,50)
     den = random.randint(2,50)
     que = "Find simplest form of fraction "+ str(num)+"/"+ str(den)
     simple = Fraction(num, den)
     answer = {'que': que, 'num_ans': simple.numerator, 'den_ans': simple.denominator}
     print(answer)
-    scoredict={}
-    hints={}
-    return render_template('simplestForm.html',answer=answer,hints=hints,scoredict=scoredict)
+    easy = {'topic': 'Simplest Form', 'qid': qid}
+    return render_template('simplestForm.html',answer=answer, easy = easy)
 
 
 #simplest_form()
@@ -590,6 +598,7 @@ def division():
 
 @app.route('/add-easy')
 def add_easy():
+    qid = 'FE3'
     q=[]
     ans_num=[]
     ans_den=[]
@@ -605,12 +614,13 @@ def add_easy():
         ans_den.append(ansden)
         q.append(qs)
     q.insert(1," ")
-    contexts={'ans_num':ans_num,'ans_den':ans_den,'q':q, 'label1': 'Quotient', 'label2' : 'Remainder'}
-    return render_template('division.html',easy=context)
+    contexts={'num': 1,'qid': qid,'topic': 'Add like fractions','ans_num':ans_num,'ans_den':ans_den,'q':q, 'label1': 'Quotient', 'label2' : 'Remainder'}
+    return render_template('division.html',easy=contexts)
 
 
 @app.route('/whole')
 def whole():
+    qid = "FE2"
     q=[]
     ans_num=[]
     ans_den=[]
@@ -626,7 +636,7 @@ def whole():
         q.append(que)
     q.insert(1," ")
     # print(q)
-    return render_template('division.html',easy={'ans_num':ans_num,'ans_den':ans_den,'q':q, 'label1': 'Numerator', 'label2': 'Denominator'})
+    return render_template('division.html',easy={'num': 2,'topic': 'Multiple by Whole number','ans_num':ans_num,'ans_den':ans_den,'q':q, 'label1': 'Numerator', 'label2': 'Denominator', 'qid': qid})
 
 
 @app.route('/number-line')

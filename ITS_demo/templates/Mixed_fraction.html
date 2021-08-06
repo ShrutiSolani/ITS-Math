@@ -63,14 +63,10 @@ function check0()
 {
 	if(document.getElementsByTagName("input")[0].value == {{ answer.b0 }})
 	{
-	   <!-- $(x[0]).show(); -->
-       
+	   $(x[0]).show();
+     $(y[0]).hide();
      $(x[0]).css("display","inline-block");
      document.getElementsByClassName("step0")[0].classList.add("active");
-     document.getElementsByTagName("h2")[0].innerHTML="";
-     document.getElementById("icon1").style.display="inline";
-       $(y[0]).hide();
-
     }
 	 else
 	 {
@@ -78,23 +74,6 @@ function check0()
         $(x[0]).hide();
         $(y[0]).show();
 	    document.getElementsByTagName("input")[0].value = "";
-	    swal(
-	    {
-          title: "Oops, Looks like you divided wrong ",
-          text: "for example, if you divide 9/4 then quotient is 2 and remainder is 9-(4*2) = 1",
-          icon: "error",
-          button: true,
-          dangerMode: true,
-        }
-       )
-        .then((willDelete) => {
-          if (willDelete) {
-            swal("Now, try again", {
-
-              icon: "success",
-            });
-          }
-        });
 	 }
 }
 
@@ -211,8 +190,8 @@ function check4()
     }
 	else
 	{
-	    feedcount++;
-	    $(x[4]).hide();
+    if(document.getElementsByTagName("input")[4].value != ""){
+      $(x[4]).hide();
         $(y[4]).show();
 	    document.getElementsByTagName("input")[4].value = "";
 	    swal({
@@ -229,6 +208,10 @@ function check4()
     });
   }
 });
+
+    }
+	   
+	    
 	}
 }
 
@@ -273,16 +256,18 @@ function right1(){
 <div class="line1" style="display: none;">
     <label for="quo" >Quotient:</label>
     <input type="text" id="quo" name="quo" maxlength="2" size="2" onblur="check0();">
-    <img src="{{ url_for('static', filename='images/tick.png') }}" width="32px" height="22px" class="correct" style="display: none;">
-    <img src="{{ url_for('static', filename='images/cross.jpg') }}" width="32px" height="22px" class="wrong" style="display: none;">
+    <i class="fal fa-check correct fa-2x" style="display: none; color: green;"></i>
+    <i class="fal fa-times wrong fa-2x" style="display: none; color: red"></i>
+    <!-- <img src="{{ url_for('static', filename='images/tick.png') }}" width="32px" height="22px" class="correct" style="display: none;">
+    <img src="{{ url_for('static', filename='images/cross.jpg') }}" width="32px" height="22px" class="wrong" style="display: none;"> -->
     <br><br>
 </div>
 
 <div class="line1" style="display: none;">
     <label for="rem">Remainder:</label>
     <input type="text" id="rem" name="rem" maxlength="2" size="2" onblur="check1();">
-    <img src="{{ url_for('static', filename='images/tick.png') }}" width="32px" height="22px" class="correct" style="display: none;">
-    <img src="{{ url_for('static', filename='images/cross.jpg') }}" width="32px" height="22px" class="wrong" style="display: none;">
+    <i class="fal fa-check correct fa-2x" style="display: none; color: green;"></i>
+    <i class="fal fa-times wrong fa-2x" style="display: none; color: red"></i>
     <br><br>
   </div>
     <label for="mf1">Mixed Fraction:</label>
@@ -292,8 +277,8 @@ function right1(){
 <!--               numerator-->
             <td></td>
             <td><input type="text" id="mf2" name="mf" maxlength="2" size="2" onblur="check3();" required></td>
-            <td><img src="{{ url_for('static', filename='images/tick.png') }}" width="50px" height="50px" class="correct" style="display: none;"></td>
-            <td><img src="{{ url_for('static', filename='images/cross.jpg') }}" width="50px" height="50px" class="wrong" style="display: none;"></td>
+           <td><i class="fal fa-check correct fa-2x" style="display: none; color: green;"></i></td>
+            <td><i class="fal fa-times wrong fa-2x" style="display: none; color: red"></i></td>
         </tr>
 
         <tr>
@@ -301,8 +286,8 @@ function right1(){
 <!--                mixed fraction-->
             <td><input type="text" id="mf1" name="mf" maxlength="2" size="2" onblur="check2();"required></td>
             <td><hr/></td>
-            <td><img src="{{ url_for('static', filename='images/tick.png') }}" width="50px" height="50px" class="correct" style="display: none;"></td>
-            <td><img src="{{ url_for('static', filename='images/cross.jpg') }}" width="50px" height="50px" class="wrong" style="display: none;"></td>
+            <td><i class="fal fa-check correct fa-2x" style="display: none; color: green;"></i></td>
+            <td><i class="fal fa-times wrong fa-2x" style="display: none; color: red"></i></td>
 
         </tr>
 
@@ -310,8 +295,8 @@ function right1(){
 <!--                denominator-->
             <td></td>
             <td><input type="text" id="mf3" name="mf" maxlength="2" size="2"  onblur="check4();" required></td>
-            <td><img src="{{ url_for('static', filename='images/tick.png') }}" width="50px" height="50px" class="correct" style="display: none;"></td>
-            <td><img src="{{ url_for('static', filename='images/cross.jpg') }}" width="50px" height="50px" class="wrong" style="display: none;"></td>
+            <td><i class="fal fa-check correct fa-2x" style="display: none; color: green;"></i></td>
+            <td><i class="fal fa-times wrong fa-2x" style="display: none; color: red"></i></td>
         </tr>
     </table>
     <br><br>
