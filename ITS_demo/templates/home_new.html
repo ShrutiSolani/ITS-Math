@@ -3,9 +3,13 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
 	<title></title>
 	<link rel="stylesheet" href="">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap" rel="stylesheet">
 
 <!-- jQuery library -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -118,6 +122,41 @@
             /* background-color:#3A6351; */
             height: 100%;
         }
+        #board{
+          width:100%;
+          height: 880px;
+          margin-top: 56px;
+          background-color: #31343a;
+          border:15px solid grey;
+          color:#fbf7f5;
+          font-family: 'Fredericka the Great', cursive;
+        }
+        #date-div{
+          width:30%;
+          margin-top: 30px;
+          padding: 10px;
+        }
+        #date{
+          margin: 10px 5px;
+          padding: 5px;
+          font-size: 2.5rem;
+          transform: rotate(-25deg);
+          text-decoration: underline;
+        }
+        #quote{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          margin-top: 200px;
+        }
+        #quot{
+          font-size: 2.5rem;
+        }
+        #author{
+          font-size: 2.5rem;
+          margin-top: 10px;
+        }
 </style>
 <body>
 	<nav id="n1" class="navbar navbar-expand-lg navbar-light mb-3 navbar-fixed-top nav white">
@@ -143,8 +182,28 @@
               </ul>
             </div>
           </nav>
-          <div id="demo" class="carousel slide" data-ride="carousel">
-            <!-- Indicators -->
+          <div id="board">
+            <div class="container-fluid">
+              <div id="date-div">
+                <h1 id="date"></h1>
+              </div>
+              <div id="quote">
+                <h1 id="quot">The more you practice and study, the better you are... so I still practice and study all the time.</h1>
+                <h3 id="author">-Cyndi Lauper</h3>
+                
+              </div>
+              <div class="col-lg-12 col-md-12 col-12 d-flex justify-content-around align-items-center mt-5">
+                <a href="#algs"><button type="button" class="btn chpt" style="color:#fbf7f5!important;font-size: 1.5rem;border-radius:50px;height:90px;width:200px;padding:5px;background-color: transparent;border:1px solid #fbf7f5;">Algebra</button></a>
+                <a href="#fracs"><button type="button" class="btn chpt" style="color:#fbf7f5!important;font-size: 1.5rem;border-radius:50px;height:90px;width:200px;padding:5px;background-color: transparent;border:1px solid #fbf7f5;">Fraction</button></a>
+              </div>
+            </div>
+          </div>
+          <script>
+            var d=new Date();
+            // console.log(d.getDay());
+            document.getElementById("date").innerHTML=d.toDateString();
+          </script>
+          <!-- <div id="demo" class="carousel slide" data-ride="carousel">
             <ul class="carousel-indicators">
               <li data-target="#demo" data-slide-to="0" class="active"></li>
               <li data-target="#demo" data-slide-to="1"></li>
@@ -152,7 +211,6 @@
               <li data-target="#demo" data-slide-to="3"></li>
               <li data-target="#demo" data-slide-to="4"></li>
             </ul>
-            <!-- The slideshow -->
               <div class="carousel-inner">
                 <div class="carousel-item active">
                   <img src="../static/images/carimg1.jpg" alt="Los Angeles">
@@ -191,14 +249,13 @@
                 </div>
               </div>
             </div>
-            <!-- Left and right controls -->
             <a class="carousel-control-prev" href="#demo" data-slide="prev">
               <span class="carousel-control-prev-icon"></span>
             </a>
             <a class="carousel-control-next" href="#demo" data-slide="next">
               <span class="carousel-control-next-icon"></span>
             </a>
-          </div>
+          </div> -->
           <!-- <section class="s1" style="width:100%">
           		<div class="row">
           			<div class="card col-lg-10 col-md-12 col-sm-11" style="margin-bottom:8px" >
@@ -232,7 +289,7 @@
           </section> -->
 
           <div class="main">
-            <div class="container-fluid white">
+            <div class="container-fluid white" id="fracs">
                 <h1 style="text-align:center; margin: 25px 0 10px 0;">Fractions</h1>
                 <div class="row">
                     <div class="col-lg-5 col-md-12 col-11" id="leftsection">
@@ -254,7 +311,7 @@
             </div>
           </div>
           <div class="alg">
-            <div class="container-fluid blue">
+            <div class="container-fluid blue" id="algs">
                 <h1 style="text-align:center;color:white; margin: 25px 0 10px 0;">Algebra</h1>
                 <div class="row">
                     <div class="col-lg-5 col-md-12 col-11" id="leftsection">
