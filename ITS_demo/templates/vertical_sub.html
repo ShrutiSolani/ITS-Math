@@ -71,11 +71,27 @@ if(document.getElementsByTagName("input")[0].value == {{ answer.coeff[0] }} )
   }
 else
 {
- feedcount++;
+  if(document.getElementsByTagName("input")[0].value !="" ){
+    feedcount++;
       $(x[0]).hide();
       $(y[0]).show();
       document.getElementsByClassName("quo")[0].id = 'error';
     // document.getElementsByTagName("input")[0].value = "";
+    swal({
+      title: "Oops, Looks like you are confused in the format",
+      text: "Denominator in mixed fraction is same as denominator of fraction ",
+      icon: "error",
+      button: true,
+      dangerMode: true,
+    })
+    .then((willDelete) => {
+      if (willDelete) {
+        swal("Now try again", {
+          icon: "success",
+        });
+      }
+    });
+  }
 
  }
 }
@@ -90,11 +106,27 @@ if(document.getElementsByTagName("input")[1].value == {{ answer.coeff[1] }} )
   }
 else
 {
- feedcount++;
+  if(document.getElementsByTagName("input")[1].value !="" ){
+    feedcount++;
       $(x[0]).hide();
       $(y[0]).show();
-    document.getElementsByClassName("quo")[1].id = 'error';
+      document.getElementsByClassName("quo")[1].id = 'error';
     // document.getElementsByTagName("input")[1].value = "";
+    swal({
+      title: "Oops, Looks like you are confused in the format",
+      text: "Denominator in mixed fraction is same as denominator of fraction ",
+      icon: "error",
+      button: true,
+      dangerMode: true,
+    })
+    .then((willDelete) => {
+      if (willDelete) {
+        swal("Now try again", {
+          icon: "success",
+        });
+      }
+    });
+  }
 
  }
 }
@@ -110,11 +142,27 @@ function check2()
     }
   else
   {
-  feedcount++;
+    if(document.getElementsByTagName("input")[2].value !="" ){
+      feedcount++;
         $(x[0]).hide();
         $(y[0]).show();
         document.getElementsByClassName("quo")[2].id = 'error';
       // document.getElementsByTagName("input")[2].value = "";
+      swal({
+        title: "Oops, Looks like you are confused in the format",
+        text: "Denominator in mixed fraction is same as denominator of fraction ",
+        icon: "error",
+        button: true,
+        dangerMode: true,
+      })
+      .then((willDelete) => {
+        if (willDelete) {
+          swal("Now try again", {
+            icon: "success",
+          });
+        }
+      });
+    }
 
   }
 }
@@ -129,11 +177,27 @@ if(document.getElementsByTagName("input")[3].value == {{ answer.coeff[3] }} )
   }
 else
 {
- feedcount++;
-      $(x[0]).hide();
-      $(y[0]).show();
-      document.getElementsByClassName("quo")[3].id = 'error';
-    // document.getElementsByTagName("input")[3].value = "";
+  if(document.getElementsByTagName("input")[3].value !="" ){
+  feedcount++;
+    $(x[0]).hide();
+    $(y[0]).show();
+    document.getElementsByClassName("quo")[3].id = 'error';
+  // document.getElementsByTagName("input")[3].value = "";
+  swal({
+    title: "Oops, Looks like you are confused in the format",
+    text: "Denominator in mixed fraction is same as denominator of fraction ",
+    icon: "error",
+    button: true,
+    dangerMode: true,
+  })
+  .then((willDelete) => {
+    if (willDelete) {
+      swal("Now try again", {
+        icon: "success",
+      });
+    }
+  });
+}
 
  }
 }
@@ -148,11 +212,27 @@ if(document.getElementsByTagName("input")[4].value == {{ answer.coeff[4] }} )
   }
 else
 {
- feedcount++;
+  if(document.getElementsByTagName("input")[4].value !="" ){
+    feedcount++;
       $(x[0]).hide();
       $(y[0]).show();
       document.getElementsByClassName("quo")[4].id = 'error';
     // document.getElementsByTagName("input")[4].value = "";
+    swal({
+      title: "Oops, Looks like you are confused in the format",
+      text: "Denominator in mixed fraction is same as denominator of fraction ",
+      icon: "error",
+      button: true,
+      dangerMode: true,
+    })
+    .then((willDelete) => {
+      if (willDelete) {
+        swal("Now try again", {
+          icon: "success",
+        });
+      }
+    });
+  }
 
  }
 }
@@ -168,11 +248,27 @@ if(document.getElementsByTagName("input")[5].value == {{ answer.coeff[5] }} )
   }
 else
 {
- feedcount++;
+  if(document.getElementsByTagName("input")[5].value !="" ){
+    feedcount++;
       $(x[0]).hide();
       $(y[0]).show();
       document.getElementsByClassName("quo")[5].id = 'error';
     // document.getElementsByTagName("input")[5].value = "";
+    swal({
+      title: "Oops, Looks like you are confused in the format",
+      text: "Denominator in mixed fraction is same as denominator of fraction ",
+      icon: "error",
+      button: true,
+      dangerMode: true,
+    })
+    .then((willDelete) => {
+      if (willDelete) {
+        swal("Now try again", {
+          icon: "success",
+        });
+      }
+    });
+  }
 
  }
 }
@@ -193,18 +289,29 @@ $(x[1]).css("display","block");
 }
 else
 {
-<!-- feedcount++;-->
-<!--      $(x[1]).hide();-->
-<!--      $(y[1]).show();-->
-     document.getElementsByClassName("quo")[6].id = 'error';
-<!--     document.getElementsByTagName("input")[6].value = "";-->
-feedcount++;
-        $(x[0]).hide();
-        $(y[0]).show();
-	    document.getElementsByTagName("input")[0].value = "";
-	 }
-
+  if(document.getElementsByTagName("input")[6].value !="" ){
+    feedcount++;
+      $(x[0]).hide();
+      $(y[0]).show();
+      document.getElementsByClassName("quo")[6].id = 'error';
+    // document.getElementsByTagName("input")[6].value = "";
+    swal({
+      title: "Oops, Looks like you are confused in the format",
+      text: "Denominator in mixed fraction is same as denominator of fraction ",
+      icon: "error",
+      button: true,
+      dangerMode: true,
+    })
+    .then((willDelete) => {
+      if (willDelete) {
+        swal("Now try again", {
+          icon: "success",
+        });
+      }
+    });
   }
+}
+}
 
 function check7()
 {
@@ -222,18 +329,29 @@ $(x[1]).css("display","block");
   }
 else
 {
-<!-- feedcount++;-->
-<!--      $(x[1]).hide();-->
-<!--      $(y[1]).show();-->
-     document.getElementsByClassName("quo")[7].id = 'error';
-<!--    // document.getElementsByTagName("input")[7].value = "";-->
-feedcount++;
-        $(x[0]).hide();
-        $(y[0]).show();
-	    document.getElementsByTagName("input")[0].value = "";
-	 }
-
- }
+  if(document.getElementsByTagName("input")[7].value !="" ){
+    feedcount++;
+      $(x[0]).hide();
+      $(y[0]).show();
+      document.getElementsByClassName("quo")[7].id = 'error';
+    // document.getElementsByTagName("input")[7].value = "";
+    swal({
+      title: "Oops, Looks like you are confused in the format",
+      text: "Denominator in mixed fraction is same as denominator of fraction ",
+      icon: "error",
+      button: true,
+      dangerMode: true,
+    })
+    .then((willDelete) => {
+      if (willDelete) {
+        swal("Now try again", {
+          icon: "success",
+        });
+      }
+    });
+  }
+}
+}
 
 function check8()
 {
@@ -259,14 +377,29 @@ if(document.getElementsByTagName("input")[8].value == {{ answer.z_diff }} )
 else
 {
 
-        feedcount++;
-        $(x[1]).hide();
-        $(y[1]).show();
-        document.getElementsByClassName("quo")[8].id = 'error';
-	    document.getElementsByTagName("input")[0].value = "";
-	 }
-
- }
+  if(document.getElementsByTagName("input")[8].value !="" ){
+    feedcount++;
+      $(x[0]).hide();
+      $(y[0]).show();
+      document.getElementsByClassName("quo")[8].id = 'error';
+    // document.getElementsByTagName("input")[8].value = "";
+    swal({
+      title: "Oops, Looks like you are confused in the format",
+      text: "Denominator in mixed fraction is same as denominator of fraction ",
+      icon: "error",
+      button: true,
+      dangerMode: true,
+    })
+    .then((willDelete) => {
+      if (willDelete) {
+        swal("Now try again", {
+          icon: "success",
+        });
+      }
+    });
+  }
+}
+}
 function right1(){
 <!--    document.getElementsByClassName("ryt1")[0].style.display="inline";-->
     $("#myModal").modal('hide');
