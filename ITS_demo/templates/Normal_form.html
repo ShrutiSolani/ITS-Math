@@ -72,27 +72,29 @@ function check_num1()
     }
 	 else
 	 {
-	    feedcount++;
-        $(x[0]).hide();
-        $(y[0]).show();
-	    document.getElementsByTagName("input")[0].value = "";
-	    swal(
-	    {
-          title: "Oops, Looks like you are not familiar with LCM ",
-          text: "for example,  LCM of 5 and 6 is 30.",
-          icon: "error",
-          button: true,
-          dangerMode: true,
-        }
-       )
-        .then((willDelete) => {
-          if (willDelete) {
-            swal("Now, try again", {
+    if(document.getElementsByTagName("input")[0].value !="" ){
+      $(x[0]).hide();
+      $(y[0]).show();
+    document.getElementsByTagName("input")[0].value = "";
+    swal(
+    {
+        title: "Oops, Looks like you are not familiar with LCM ",
+        text: "for example,  LCM of 5 and 6 is 30.",
+        icon: "error",
+        button: true,
+        dangerMode: true,
+      }
+     )
+      .then((willDelete) => {
+        if (willDelete) {
+          swal("Now, try again", {
 
-              icon: "success",
-            });
-          }
-        });
+            icon: "success",
+          });
+        }
+      });
+
+    }
 	 }
 }
 function check_den1()
@@ -110,27 +112,29 @@ function check_den1()
     }
 	 else
 	 {
-	    feedcount++;
-        $(x[1]).hide();
-        $(y[1]).show();
-	    document.getElementsByTagName("input")[1].value = "";
-	    swal(
-	    {
-          title: "Oops, Looks like you are not familiar with LCM ",
-          text: "for example,  LCM of 5 and 6 is 30.",
-          icon: "error",
-          button: true,
-          dangerMode: true,
-        }
-       )
-        .then((willDelete) => {
-          if (willDelete) {
-            swal("Now, try again", {
+    if(document.getElementsByTagName("input")[1].value !=""){
+      $(x[1]).hide();
+      $(y[1]).show();
+    document.getElementsByTagName("input")[1].value = "";
+    swal(
+    {
+        title: "Oops, Looks like you are not familiar with LCM ",
+        text: "for example,  LCM of 5 and 6 is 30.",
+        icon: "error",
+        button: true,
+        dangerMode: true,
+      }
+     )
+      .then((willDelete) => {
+        if (willDelete) {
+          swal("Now, try again", {
 
-              icon: "success",
-            });
-          }
-        });
+            icon: "success",
+          });
+        }
+      });
+
+    }
 	 }
 }
 
@@ -147,8 +151,8 @@ function check_num2()
     }
 	 else
 	 {
-	    feedcount++;
-        $(x[2]).hide();
+    if(document.getElementsByTagName("input")[2].value !=""){
+      $(x[2]).hide();
         $(y[2]).show();
 	    document.getElementsByTagName("input")[2].value = "";
 	    swal(
@@ -168,18 +172,19 @@ function check_num2()
             });
           }
         });
+
+    }
 	 }
 }
 function check_den2()
 {
     if(document.getElementsByTagName("input")[3].value == {{ answer.den_ans }} )
-	{
+	  {
 	   $(x[3]).show();
        $(y[3]).hide();
        document.getElementsByClassName("step0")[0].classList.add("active");
        document.getElementsByClassName("step0")[1].classList.add("active");
        document.getElementsByClassName("step0")[2].classList.add("active");
-    
        document.getElementById("icon4").style.display="inline";
        document.getElementById("icon4").style.color="green";
       document.getElementsByTagName("h2")[0].innerHTML="";
@@ -188,22 +193,22 @@ function check_den2()
         document.getElementById("icon1").style.display="inline";
         document.getElementById("icon2").style.display="inline";
         document.getElementById("icon3").style.display="inline";
-      }
+    }
 	 else
 	 {
-	    feedcount++;
-        $(x[3]).hide();
-        $(y[3]).show();
-	    document.getElementsByTagName("input")[3].value = "";
-	    swal(
-	    {
+    if(document.getElementsByTagName("input")[3].value !="" ){
+      $(x[3]).hide();
+      $(y[3]).show();
+    document.getElementsByTagName("input")[3].value = "";
+      swal(
+      {
           title: "Oops, Looks like you are not familiar with LCM ",
           text: "for example,  LCM of 5 and 6 is 30.",
           icon: "error",
           button: true,
           dangerMode: true,
         }
-       )
+      )
         .then((willDelete) => {
           if (willDelete) {
             swal("Now, try again", {
@@ -212,7 +217,9 @@ function check_den2()
             });
           }
         });
-      }
+
+    }
+  }
    
 }
 function right1(){
@@ -241,7 +248,7 @@ function right1(){
 {% block content %}
 
 <h5 class="card-title">{{ answer.que }}</h5>
-    <div class="ryt1" style="">
+    <div class="ryt1">
     <!-- <label for="mf1">Mixed Fraction:</label>
     <br>
     
@@ -269,23 +276,23 @@ function right1(){
 
     <label for="spf" style="display:none" class="fbox">Normal Form : </label>
     <input type="text" id="spf" name="rem" maxlength="8" size="2" class="num fbox" onblur="check_num1();" style="display: none;" required >
-    <img src="{{ url_for('static', filename='images/tick.png') }}" width="32px" height="22px" class="correct" style="display: none;">
-    <img src="{{ url_for('static', filename='images/cross.jpg') }}" width="32px" height="22px" class="wrong" style="display: none;">
+    <i class="fal fa-check correct fa-2x" style="display: none; color: green;"></i>
+    <i class="fal fa-times wrong fa-2x" style="display: none; color: red"></i>
     <h5 class="fbox" style="display: none;">-------</h5>
     <input type="text" id="rem4" name="rem" maxlength="8" size="2" class="den fbox" onblur="check_den1();" style="display: none;" required>
-    <img src="{{ url_for('static', filename='images/tick.png') }}" width="32px" height="22px" class="correct" style="display: none;">
-    <img src="{{ url_for('static', filename='images/cross.jpg') }}" width="32px" height="22px" class="wrong" style="display: none;">
+    <i class="fal fa-check correct fa-2x" style="display: none; color: green;"></i>
+    <i class="fal fa-times wrong fa-2x" style="display: none; color: red"></i>
     <br><br>
 
 
       <label for="quo3" style="display:block">Solution : </label>
     <input type="text" id="quo3" name="rem" maxlength="8" size="2" class="num" onblur="check_num2();" required >
-    <img src="{{ url_for('static', filename='images/tick.png') }}" width="32px" height="22px" class="correct" style="display: none;">
-    <img src="{{ url_for('static', filename='images/cross.jpg') }}" width="32px" height="22px" class="wrong" style="display: none;">
+    <i class="fal fa-check correct fa-2x" style="display: none; color: green;"></i>
+    <i class="fal fa-times wrong fa-2x" style="display: none; color: red"></i>
     <h5 >-------</h5>
     <input type="text" id="rem4" name="rem" maxlength="8" size="2" class="den" onblur="check_den2();" required>
-    <img src="{{ url_for('static', filename='images/tick.png') }}" width="32px" height="22px" class="correct" style="display: none;">
-    <img src="{{ url_for('static', filename='images/cross.jpg') }}" width="32px" height="22px" class="wrong" style="display: none;">
+    <i class="fal fa-check correct fa-2x" style="display: none; color: green;"></i>
+    <i class="fal fa-times wrong fa-2x" style="display: none; color: red"></i>
     <br><br>
 
 </div>

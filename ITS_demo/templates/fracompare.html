@@ -63,10 +63,26 @@ const check0=()=>
     }
 	 else
 	 {
-	    feedcount++;
+    if(document.getElementsByTagName("input")[0].value !="" ){
+      feedcount++;
         $(x[0]).hide();
         $(y[0]).show();
 	    document.getElementsByTagName("input")[0].value = "";
+      swal({
+        title: "Oops, Looks like you are confused in the format",
+        text: "Denominator in mixed fraction is same as denominator of fraction ",
+        icon: "error",
+        button: true,
+        dangerMode: true,
+      })
+      .then((willDelete) => {
+        if (willDelete) {
+          swal("Now try again", {
+            icon: "success",
+          });
+        }
+      });
+    }
 	 }
 }
 
@@ -79,10 +95,26 @@ function check1()
     }
 	 else
 	 {
-	    feedcount++;
+    if(document.getElementsByTagName("input")[1].value !="" ){
+      feedcount++;
 	    $(x[1]).hide();
         $(y[1]).show();
 	    document.getElementsByTagName("input")[1].value = "";
+      swal({
+        title: "Oops, Looks like you are confused in the format",
+        text: "Denominator in mixed fraction is same as denominator of fraction ",
+        icon: "error",
+        button: true,
+        dangerMode: true,
+      })
+      .then((willDelete) => {
+        if (willDelete) {
+          swal("Now try again", {
+            icon: "success",
+          });
+        }
+      });
+    }
 	 }
 }
 
@@ -99,11 +131,27 @@ document.getElementsByTagName("h2")[1].innerHTML="";
 	  }
 	else
 	{
-	    feedcount++;
+    if(document.getElementsByTagName("input")[2].value !=""){
+      feedcount++;
 	    $(x[2]).hide();
         $(y[2]).show();
         document.getElementsByTagName("input")[2].value = "";
+        swal({
+          title: "Oops, Looks like you are confused in the format",
+          text: "Denominator in mixed fraction is same as denominator of fraction ",
+          icon: "error",
+          button: true,
+          dangerMode: true,
+        })
+        .then((willDelete) => {
+          if (willDelete) {
+            swal("Now try again", {
+              icon: "success",
+            });
+          }
+        });
     }
+  }
 }
 
 function check3()
@@ -115,10 +163,27 @@ function check3()
 	}
 	else
 	{
-	    feedcount++;
+    if(document.getElementsByTagName("input")[3].value !=""){
+      feedcount++;
 	    $(x[3]).hide();
       $(y[3]).show();
 	    document.getElementsByTagName("input")[3].value = "";
+      swal({
+        title: "Oops, Looks like you are confused in the format",
+        text: "Denominator in mixed fraction is same as denominator of fraction ",
+        icon: "error",
+        button: true,
+        dangerMode: true,
+      })
+      .then((willDelete) => {
+        if (willDelete) {
+          swal("Now try again", {
+            icon: "success",
+          });
+        }
+      });
+
+    }
 	}
 }
 
@@ -134,10 +199,26 @@ function check4()
 }
 	else
 	{
-	    feedcount++;
+    if(document.getElementsByTagName("input")[4].value == {{ answer.den2 }}){
+      feedcount++;
 	    $(x[4]).hide();
         $(y[4]).show();
 	    document.getElementsByTagName("input")[4].value = "";
+      swal({
+        title: "Oops, Looks like you are confused in the format",
+        text: "Denominator in mixed fraction is same as denominator of fraction ",
+        icon: "error",
+        button: true,
+        dangerMode: true,
+      })
+      .then((willDelete) => {
+        if (willDelete) {
+          swal("Now try again", {
+            icon: "success",
+          });
+        }
+      });
+    }
 	}
 }
 
@@ -165,10 +246,27 @@ function check5()
 	}
 	else
 	{
-	    feedcount++;
+    if(document.getElementsByTagName("input")[5].value !=""){
+      feedcount++;
 	    $(x[5]).hide();
         $(y[5]).show();
 	    document.getElementsByTagName("input")[5].value = "";
+      swal({
+        title: "Oops, Looks like you are confused in the format",
+        text: "Denominator in mixed fraction is same as denominator of fraction ",
+        icon: "error",
+        button: true,
+        dangerMode: true,
+      })
+      .then((willDelete) => {
+        if (willDelete) {
+          swal("Now try again", {
+            icon: "success",
+          });
+        }
+      });
+
+    }
 	}
 }
 function right1(){
@@ -216,36 +314,36 @@ function right2(){
     <br><br>
     <label for="quo1" style="display:none;" class="ryt1">LCM:</label>
     <input type="text" id="quo1" name="quo" maxlength="8" size="2" onblur="check0();" class="ryt1" style="display:none;">
-    <img src="{{ url_for('static', filename='images/tick.png') }}" width="32px" height="22px" class="correct" style="display: none;">
-    <img src="{{ url_for('static', filename='images/cross.jpg') }}" width="32px" height="22px" class="wrong" style="display: none;">
+    <i class="fal fa-check correct fa-2x" style="display: none; color: green;"></i>
+    <i class="fal fa-times wrong fa-2x" style="display: none; color: red"></i>
     <br><br>
 
     <label for="rem1" class="ryt2" style="display:none;">Equivalent fraction of {{ answer.f1 }}</label>
     <input type="text" class="ryt2" id="rem1" name="rem" maxlength="8" size="2" onblur="check1();" style="display:none;">
-    <img src="{{ url_for('static', filename='images/tick.png') }}" width="32px" height="22px" class="correct"style="display: none;" >
-    <img src="{{ url_for('static', filename='images/cross.jpg') }}" width="32px" height="22px" class="wrong"style="display: none;">
+    <i class="fal fa-check correct fa-2x" style="display: none; color: green;"></i>
+    <i class="fal fa-times wrong fa-2x" style="display: none; color: red"></i>
     <h5 style="display:none;" class="ryt2">---------------</h5>
     <input type="text" class="ryt2" id="rem2" name="rem" maxlength="8" size="2" onblur="check2();" style="display:none;">
-    <img src="{{ url_for('static', filename='images/tick.png') }}" width="32px" height="22px" class="correct" style="display: none;">
-    <img src="{{ url_for('static', filename='images/cross.jpg') }}" width="32px" height="22px" class="wrong" style="display: none;">
+    <i class="fal fa-check correct fa-2x" style="display: none; color: green;"></i>
+    <i class="fal fa-times wrong fa-2x" style="display: none; color: red"></i>
     <br>
 
     <label for="rem3" class="ryt2" style="display:none;">Equivalent fraction of {{ answer.f2 }}</label>
     <input type="text" id="rem3" name="rem" maxlength="8" size="2" onblur="check3();" class="ryt2" style="display:none;">
-    <img src="{{ url_for('static', filename='images/tick.png') }}" width="32px" height="22px" class="correct" style="display: none;">
-    <img src="{{ url_for('static', filename='images/cross.jpg') }}" width="32px" height="22px" class="wrong"style="display: none;">
+    <i class="fal fa-check correct fa-2x" style="display: none; color: green;"></i>
+    <i class="fal fa-times wrong fa-2x" style="display: none; color: red"></i>
     <h5 style="display:none;" class="ryt2">---------------</h5>
 
     <input type="text" id="rem4" name="rem" maxlength="8" size="2" onblur="check4();" class="ryt2" style="display:none;">
-    <img src="{{ url_for('static', filename='images/tick.png') }}" width="32px" height="22px" class="correct" style="display: none;">
-    <img src="{{ url_for('static', filename='images/cross.jpg') }}" width="32px" height="22px" class="wrong" style="display: none;">
+    <i class="fal fa-check correct fa-2x" style="display: none; color: green;"></i>
+    <i class="fal fa-times wrong fa-2x" style="display: none; color: red"></i>
     <br>
 
     <label for="quo2">Solution : </label>
     {{ answer.f1 }}
     <input type="text" id="quo2" name="quo" maxlength="8" size="2" onblur="check5();">{{ answer.f2 }}
-    <img src="{{ url_for('static', filename='images/tick.png') }}" width="32px" height="22px" class="correct" style="display: none;">
-    <img src="{{ url_for('static', filename='images/cross.jpg') }}" width="32px" height="22px" class="wrong" style="display: none;">
+    <i class="fal fa-check correct fa-2x" style="display: none; color: green;"></i>
+    <i class="fal fa-times wrong fa-2x" style="display: none; color: red"></i>
     <br><br>
 
 {% endblock %}
