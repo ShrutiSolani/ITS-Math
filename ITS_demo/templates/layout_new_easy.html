@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>  
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/> 
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <title>Practice</title>
     
     <style>
@@ -234,34 +236,8 @@
           
             <div class="card-header white" style="color: #0070BB; background-color:rgba(0,0,0,.03);">
               <h3>{% block chapter %}{% endblock %} - {% block topic %}{% endblock %}</h3>
-              <!-- <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="card" aria-label="Close"></button> -->
             </div>
-            <!-- <div> -->
-              <!-- <div class="stepper-wrapper">
-                <div class="stepper-item completed">
-                  <div class="step-counter">1</div>
-                  <div class="step-name">First</div>
-                </div>
-                <div class="stepper-item completed">
-                  <div class="step-counter">2</div>
-                  <div class="step-name">Second</div>
-                </div>
-                <div class="stepper-item completed">
-                  <div class="step-counter">3</div>
-                  <div class="step-name">Third</div>
-                </div>
-                <div class="stepper-item completed">
-                  <div class="step-counter">4</div>
-                  <div class="step-name">Forth</div>
-                </div>
-              </div> -->
-
-              <!-- <ul id="progressbar" class="text-center">
-                <li class="active step0"></li>
-                <li class="step0"></li>
-                <li class="step0"></li>
-                <li class="step0"></li>
-            </ul> -->
+            
             <div class="card1">
               <ul id="progressbar" class="text-center">
                   <li class="step0"></li>
@@ -483,29 +459,6 @@
               
             })
 
-            // window.onbeforeunload = function(e) {
-            //   return "Do you want to exit this page?";
-            // };
-
-            // $(window).bind('beforeunload', function(){
-            //   return 'Are you sure you want to leave?';
-            // });
-
-            // var currentPage = location.href;
- 
-            // // listen for changes
-            // setInterval(function()
-            // {
-            //     if (currentPage != location.href)
-            //     {
-            //         // page has changed, set new page as 'current'
-            //         // currentPage = location.href;
-            //         alert("Your score will not be saved");
-            //         // your custom code here
-            //     }
-            // }, 500);
-
-
             var quesid = "{{ easy.qid }}";
             var data = {qid: quesid};
             
@@ -539,53 +492,15 @@
                 sessionStorage.removeItem('count');
                 console.log(data);
 
-                // Swal.fire({
-                //   title: '<strong>Excellent!</strong>',
-                //   icon: 'info',
-                //   html:'You’ve got your brain in gear',
-                //   showCloseButton: true,
-                //   showCancelButton: true,
-                //   focusConfirm: false,
-                //   confirmButtonText:
-                //     '<i class="fa fa-thumbs-up"></i> Go Home, Practice More',
-                //   confirmButtonAriaLabel: 'Thumbs up, great!',
-                //   cancelButtonText:
-                //     '<i class="fa fa-thumbs-down"></i>',
-                //       cancelButtonAriaLabel: 'Just Go home',
-                //       buttonsStyling: true
-                //         }).then(function () {
-                //           $.post('/score', {'data': data}, function(response){
-                //         window.location = "{{url_for('home')}}";
-                //       })
-                //   })
-                  
-         
-                  
-              // swal({
-              //   title: "Excellent!",
-              //   text: "You’ve got your brain in gear",
-              //   type: "success",
-              //   showCancelButton: false,
-              //   closeOnConfirm: false,
-              //   showLoaderOnConfirm: true
-              // }, function () {
-              //   $.post('/score', {'data': data}, function(response){
-              //     window.location = "{{url_for('home')}}";
-              //   });
-              // }); 
+                
               alert("Excellent!  You finished all 4 questions");
               $.post('/score', {'data': data}, function(response){
                   window.location = "{{url_for('home')}}";
                 });
-                
-
-
               }
               else{
-                setTimeout(function(){ location.reload() }, 5000);
-              }
-              
-              
+                setTimeout(function(){ location.reload() }, 3000);
+              } 
             })
         })
         </script>

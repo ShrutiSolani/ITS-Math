@@ -6,11 +6,16 @@ import random
 import os
 import math
 import json
+import logging
+ 
+
 
 
 app = Flask(__name__)
 
-
+logging.basicConfig(filename = 'UserLog.log', level=logging.INFO, format = '%(asctime)s %(levelname)s : %(message)s')
+log = logging.getLogger('werkzeug')
+log.setLevel(logging.ERROR)
 values = [Fraction('25/8'), Fraction('17/4'), Fraction('38/7'), Fraction('29/3'), Fraction('44/5')]
 Image_folder = os.path.join('static', 'images')
 
@@ -25,21 +30,25 @@ scorecnt2 = 0 #algebra
 
 @app.route("/")
 def index():
+    app.logger.info('Index Page')
     return render_template('index_new.html')
 
 
 @app.route("/login")
 def login():
+    app.logger.info('Login Page')
     return render_template('login_new.html')
 
 @app.route("/signup")
 def signup():
+    app.logger.info('Signup Page')
     return render_template('signup_new.html')
 
 
 @app.route("/home")
 def home():
-    print("inside home")
+    app.logger.info('Home Page')
+    # print("inside home")
     return render_template('home_new.html')
 
 @app.route("/mixed-fraction1", methods=['POST'])
@@ -105,12 +114,11 @@ def score():
     if request.method == 'POST':
         print(request.form)
         tup = request.form
-        print(tup)
-        print(tup['data[qid]'])
-        # print(tup['data[\]'])
-        # print(tup[0])
-        # print(request.args['data'])
-        # print(request.json['data'])
+        # print(tup)
+        # print(tup['data[qid]'])
+        total = int(tup['data[1]']) + int(tup['data[2]']) +int(tup['data[3]']) +int(tup['data[undefined]']) 
+        app.logger.info(tup['data[qid]'] + "\n" +tup['data[undefined]'] + "\n" + tup['data[1]'] + "\n" + tup['data[2]'] + "\n" +  tup['data[3]'] + "\n" + str(total))
+
         return "Score received"
         # print(request.json[data]['qid'])
         # print(request.json['score'])
@@ -172,7 +180,6 @@ def score():
         # return redirect(url_for('horizontal_add'))
 
 
-###############################################################
 @app.route("/compare")
 def compare():
     num1=random.randint(1,100)
@@ -606,11 +613,7 @@ def add_easy():
         ans_den.append(ansden)
         q.append(qs)
     q.insert(1," ")
-<<<<<<< HEAD
-    contexts={'ans_num':ans_num,'ans_den':ans_den,'q':q, 'label1': 'Quotient', 'label2' : 'Remainder'}
-=======
     contexts={'num': 1,'qid': qid,'topic': 'Add like fractions','ans_num':ans_num,'ans_den':ans_den,'q':q, 'label1': 'Quotient', 'label2' : 'Remainder'}
->>>>>>> ff0291993e80f1158c5baea82c29107a37fc2b45
     return render_template('division.html',easy=contexts)
 
 
@@ -690,14 +693,13 @@ def algebra_intermediate():
 #1
 @app.route('/fraction-easy')
 def fraction_easy():
-    full={'f1':{'q1':'Convert to Simmplest Form','h1':'Simplest Form','link':'/simplest-form'},
+    full={'f1':{'q1':'Convert to Simplest Form','h1':'Simplest Form','link':'/simplest-form'},
     'f2':{'q1':'Find Quotient and Remainder','h1':'Fraction Division','link':'/division'},
     'f3':{'q1':'Add / Subtract like Fraction','h1':'Fraction Operation','link':'/add-easy'},
     'f4':{'q1':'Multiply Fraction by Whole Number','h1':'Fraction Multiplication','link':'/whole'}}
     return render_template('easy_qts_choice.html' , topic=full,unit='UNIT: Fractions')
 
 
-#########################################################
 #3
 @app.route('/algebra-easy')
 def algebra_easy():
