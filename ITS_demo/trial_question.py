@@ -180,7 +180,6 @@ def score():
         # return redirect(url_for('horizontal_add'))
 
 
-###############################################################
 @app.route("/compare")
 def compare():
     num1=random.randint(1,100)
@@ -694,14 +693,13 @@ def algebra_intermediate():
 #1
 @app.route('/fraction-easy')
 def fraction_easy():
-    full={'f1':{'q1':'Convert to Simmplest Form','h1':'Simplest Form','link':'/simplest-form'},
+    full={'f1':{'q1':'Convert to Simplest Form','h1':'Simplest Form','link':'/simplest-form'},
     'f2':{'q1':'Find Quotient and Remainder','h1':'Fraction Division','link':'/division'},
     'f3':{'q1':'Add / Subtract like Fraction','h1':'Fraction Operation','link':'/add-easy'},
     'f4':{'q1':'Multiply Fraction by Whole Number','h1':'Fraction Multiplication','link':'/whole'}}
     return render_template('easy_qts_choice.html' , topic=full,unit='UNIT: Fractions')
 
 
-#########################################################
 #3
 @app.route('/algebra-easy')
 def algebra_easy():
