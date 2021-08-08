@@ -19,15 +19,19 @@ console.log(document.getElementsByTagName("input")[i].value);
 <!-- console.log({{ easy.answer[i] }}); -->
     if(document.getElementsByTagName("input")[i].value == ans[i])
 	{
-	    alert("Correct");
+        document.getElementsByClassName("correct")[i].style.display="inline";
+        document.getElementsByClassName("wrong")[i].style.display="none";
+        <!-- document.getElementsByClassName("step0")[i].classList.add("active"); -->
         document.getElementsByClassName("step0")[i].classList.add("active");
     }
     else{
         if({{ easy.num }} == '1'){
-            alert("A coefficient is a number used to multiply a variable");
+            document.getElementsByClassName("wrong")[i].style.display="inline";
+            document.getElementsByClassName("correct")[i].style.display="none";
         }
         else{
-            alert("Simply substitue value of p");
+            document.getElementsByClassName("wrong")[i].style.display="inline";
+            document.getElementsByClassName("correct")[i].style.display="none";
         }
         <!-- alert("Incorrect"); -->
     }
@@ -45,7 +49,10 @@ console.log(document.getElementsByTagName("input")[i].value);
 <p>
 {% for i in range(4) %}
   <div>{{ easy.options[i] }}
-  <input type="text" onchange="check({{ i }});"> <br><br>
+  <input type="text" style="display: inline;" onchange="check({{ i }});"> 
+  <i class="fal fa-check correct fa-2x" style="display: none; color: green;"></i>
+  <i class="fal fa-times wrong fa-2x" style="display: none; color: red"></i><br><br>
+ 
   </div>
 {% endfor %}
 </p>

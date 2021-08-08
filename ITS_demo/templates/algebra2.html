@@ -29,15 +29,20 @@ console.log(document.getElementsByTagName("select")[i].value);
 console.log({{ easy.answer[i] }});
         if(document.getElementsByTagName("select")[i].value == ans[i])
 	{
-	    alert("Correct");
+        document.getElementsByClassName("correct")[i].style.display="inline";
+        document.getElementsByClassName("wrong")[i].style.display="none";
         document.getElementsByClassName("step0")[i].classList.add("active");
     }
         else{
             if({{ easy.num }} == '1'){
-                alert("An expression which contains two unlike terms is called a binomial. Similarly, think of monomial and trinomial.");
+                <!-- alert("An expression which contains two unlike terms is called a binomial. Similarly, think of monomial and trinomial."); -->
+                document.getElementsByClassName("wrong")[i].style.display="inline";
+                document.getElementsByClassName("correct")[i].style.display="none";
             }
             else if({{ easy.num}} == '2'){
-                alert("When term have the same algebraic factors, they are like terms.");
+                document.getElementsByClassName("wrong")[i].style.display="inline";
+                document.getElementsByClassName("correct")[i].style.display="none";
+                <!-- alert("When term have the same algebraic factors, they are like terms."); -->
             }
         }
     }
@@ -55,7 +60,9 @@ console.log({{ easy.answer[i] }});
   <select class="answer_options" onchange="check({{ i }});" style="min-width: 120px;">
 
   </select>
-  <br/><br/>
+  <i class="fal fa-check correct fa-2x" style="display: none; color: green;"></i>
+  <i class="fal fa-times wrong fa-2x" style="display: none; color: red"></i><br><br>
+  <!-- <br/><br/> -->
   </div>
 {% endfor %}
 </p>
