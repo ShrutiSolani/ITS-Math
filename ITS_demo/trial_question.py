@@ -1,4 +1,5 @@
 import re
+from MySQLdb import connect
 from flask import Flask, render_template, request, flash, redirect, url_for, session
 #from flask.ext.session imDortAnacsida
 from fractions import Fraction
@@ -9,13 +10,24 @@ import json
 import logging
  
 
-
-
+from flask_mysqldb import MySQL
+ 
 app = Flask(__name__)
+ 
+app.config['MYSQL_HOST'] = 'localhost'
+app.config['MYSQL_USER'] = 'root'
+app.config['MYSQL_PASSWORD'] = ''
+app.config['MYSQL_DB'] = 'ITS'
+ 
+mysql = MySQL(app)
+
+
+
+# app = Flask(__name__)
 
 logging.basicConfig(filename = 'UserLog.log', level=logging.INFO, format = '%(asctime)s %(levelname)s : %(message)s')
-log = logging.getLogger('werkzeug')
-log.setLevel(logging.ERROR)
+#log = logging.getLogger('werkzeug')
+#log.setLevel(logging.ERROR)
 values = [Fraction('25/8'), Fraction('17/4'), Fraction('38/7'), Fraction('29/3'), Fraction('44/5')]
 Image_folder = os.path.join('static', 'images')
 
@@ -27,11 +39,13 @@ scorecnt1=0   #fraction
 qtscnt2 = 0   #algebra
 scorecnt2 = 0 #algebra
 
-
 @app.route("/")
 def index():
     app.logger.info('Index Page')
     return render_template('index_new.html')
+
+
+
 
 
 @app.route("/login")
@@ -44,6 +58,28 @@ def signup():
     app.logger.info('Signup Page')
     return render_template('signup_new.html')
 
+@app.route("/signup",methods=['POST'])
+def signups():
+    
+    if request.method=="POST":
+        cursor = mysql.connection.cursor()
+        fname = request.form['fname']
+        lname = request.form['lname']
+        email = request.form['email']
+        password = request.form['password']
+        cpassword = request.form['cpassword']
+        dob = request.form['dob']
+
+        if(password == cpassword):
+            query=''' Insert into Student('first_name','last_name','email','password','dob') values(%s,%s,%s,%s,%s)''',(fname,lname,email,password,dob) 
+            with mysql.connection.cursor() as cursor:
+                cursor.execute(query)
+                mysql.connection.commit()
+        
+    
+        return redirect('login')
+    else:
+        return redirect('index')
 
 @app.route("/home")
 def home():
