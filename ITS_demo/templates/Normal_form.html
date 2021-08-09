@@ -72,27 +72,29 @@ function check_num1()
     }
 	 else
 	 {
-	    feedcount++;
-        $(x[0]).hide();
-        $(y[0]).show();
-	    document.getElementsByTagName("input")[0].value = "";
-	    swal(
-	    {
-          title: "Oops, Looks like you are not familiar with LCM ",
-          text: "for example,  LCM of 5 and 6 is 30.",
-          icon: "error",
-          button: true,
-          dangerMode: true,
-        }
-       )
-        .then((willDelete) => {
-          if (willDelete) {
-            swal("Now, try again", {
+    if(document.getElementsByTagName("input")[0].value!=""){
+          feedcount++;
+            $(x[0]).hide();
+            $(y[0]).show();
+          document.getElementsByTagName("input")[0].value = "";
+          swal(
+          {
+              title: "Oops, Looks like you are not familiar with Normal Form format ",
+              text: "for example, Num will be Den * Whole + Num .",
+              icon: "error",
+              button: true,
+              dangerMode: true,
+            }
+          )
+            .then((willDelete) => {
+              if (willDelete) {
+                swal("Now, try again", {
 
-              icon: "success",
+                  icon: "success",
+                });
+              }
             });
-          }
-        });
+    }
 	 }
 }
 function check_den1()
@@ -110,14 +112,15 @@ function check_den1()
     }
 	 else
 	 {
+     if(document.getElementsByTagName("input")[1].value!=""){
 	    feedcount++;
         $(x[1]).hide();
         $(y[1]).show();
 	    document.getElementsByTagName("input")[1].value = "";
 	    swal(
 	    {
-          title: "Oops, Looks like you are not familiar with LCM ",
-          text: "for example,  LCM of 5 and 6 is 30.",
+          title: "Oops, Looks like you are not familiar with Normal Form format ",
+          text: "for example, Num will be Den * Whole + Num and den will be same as Den.",
           icon: "error",
           button: true,
           dangerMode: true,
@@ -131,6 +134,7 @@ function check_den1()
             });
           }
         });
+      }
 	 }
 }
 
@@ -147,14 +151,15 @@ function check_num2()
     }
 	 else
 	 {
+     if(document.getElementsByTagName("input")[2].value!=""){
 	    feedcount++;
         $(x[2]).hide();
         $(y[2]).show();
 	    document.getElementsByTagName("input")[2].value = "";
 	    swal(
 	    {
-          title: "Oops, Looks like you are not familiar with LCM ",
-          text: "for example,  LCM of 5 and 6 is 30.",
+          title: "Oops, Looks like you are not able write Simplest Form ",
+          text: "for example,  Simplest Form of 30/15 is 2/1.",
           icon: "error",
           button: true,
           dangerMode: true,
@@ -168,6 +173,7 @@ function check_num2()
             });
           }
         });
+     }
 	 }
 }
 function check_den2()
@@ -191,15 +197,16 @@ function check_den2()
       }
 	 else
 	 {
+     if(document.getElementsByTagName("input")[3].value!=""){
 	    feedcount++;
         $(x[3]).hide();
         $(y[3]).show();
 	    document.getElementsByTagName("input")[3].value = "";
 	    swal(
 	    {
-          title: "Oops, Looks like you are not familiar with LCM ",
-          text: "for example,  LCM of 5 and 6 is 30.",
-          icon: "error",
+        title: "Oops, Looks like you are not able write Simplest Form ",
+        text: "for example,  Simplest Form of 30/15 is 2/1.",
+        icon: "error",
           button: true,
           dangerMode: true,
         }
@@ -212,7 +219,8 @@ function check_den2()
             });
           }
         });
-      }
+     }
+    }
    
 }
 function right1(){
@@ -241,12 +249,12 @@ function right1(){
 {% block content %}
 
 <h5 class="card-title">{{ answer.que }}</h5>
-    <div class="ryt1" style="">
+    <div class="ryt1">
     <!-- <label for="mf1">Mixed Fraction:</label>
     <br>
     
         <tr >
-<!--               whole+numerator-->
+             whole+numerator-->
             <!-- <td ><span style="font-size:4.3rem;">(</span><input type="text" id="mf0" name="mf" maxlength="2" size="2" onblur="check0();" class="quo" required>*</td>
             <td><input type="text" id="mf1" name="mf" maxlength="2" size="2" onblur="check1();" class="quo" required><span style="font-size:4.3rem;">)</span></td>
             <td>+</td>
@@ -269,23 +277,23 @@ function right1(){
 
     <label for="spf" style="display:none" class="fbox">Normal Form : </label>
     <input type="text" id="spf" name="rem" maxlength="8" size="2" class="num fbox" onblur="check_num1();" style="display: none;" required >
-    <img src="{{ url_for('static', filename='images/tick.png') }}" width="32px" height="22px" class="correct" style="display: none;">
-    <img src="{{ url_for('static', filename='images/cross.jpg') }}" width="32px" height="22px" class="wrong" style="display: none;">
+    <i class="fal fa-check correct fa-2x" style="display: none; color: green;"></i>
+    <i class="fal fa-times wrong fa-2x" style="display: none; color: red"></i>
     <h5 class="fbox" style="display: none;">-------</h5>
     <input type="text" id="rem4" name="rem" maxlength="8" size="2" class="den fbox" onblur="check_den1();" style="display: none;" required>
-    <img src="{{ url_for('static', filename='images/tick.png') }}" width="32px" height="22px" class="correct" style="display: none;">
-    <img src="{{ url_for('static', filename='images/cross.jpg') }}" width="32px" height="22px" class="wrong" style="display: none;">
+    <i class="fal fa-check correct fa-2x" style="display: none; color: green;"></i>
+    <i class="fal fa-times wrong fa-2x" style="display: none; color: red"></i>
     <br><br>
 
 
       <label for="quo3" style="display:block">Solution : </label>
     <input type="text" id="quo3" name="rem" maxlength="8" size="2" class="num" onblur="check_num2();" required >
-    <img src="{{ url_for('static', filename='images/tick.png') }}" width="32px" height="22px" class="correct" style="display: none;">
-    <img src="{{ url_for('static', filename='images/cross.jpg') }}" width="32px" height="22px" class="wrong" style="display: none;">
+    <i class="fal fa-check correct fa-2x" style="display: none; color: green;"></i>
+    <i class="fal fa-times wrong fa-2x" style="display: none; color: red"></i>
     <h5 >-------</h5>
     <input type="text" id="rem4" name="rem" maxlength="8" size="2" class="den" onblur="check_den2();" required>
-    <img src="{{ url_for('static', filename='images/tick.png') }}" width="32px" height="22px" class="correct" style="display: none;">
-    <img src="{{ url_for('static', filename='images/cross.jpg') }}" width="32px" height="22px" class="wrong" style="display: none;">
+    <i class="fal fa-check correct fa-2x" style="display: none; color: green;"></i>
+    <i class="fal fa-times wrong fa-2x" style="display: none; color: red"></i>
     <br><br>
 
 </div>

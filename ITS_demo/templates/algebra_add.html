@@ -69,11 +69,12 @@ if(document.getElementsByTagName("input")[0].value == {{ answer.coeff[0] }} )
   }
 else
 {
- feedcount++;
+  if(document.getElementsByTagName("input")[0].value !="" ) {
       $(x[0]).hide();
       $(y[0]).show();
       document.getElementsByClassName("quo")[0].id = 'error';
     // document.getElementsByTagName("input")[0].value = "";
+  }
     
  }
 }
@@ -88,11 +89,14 @@ if(document.getElementsByTagName("input")[1].value == {{ answer.coeff[1] }} )
   }
 else
 {
- feedcount++;
-      $(x[0]).hide();
-      $(y[0]).show();
-    document.getElementsByClassName("quo")[1].id = 'error';
-    // document.getElementsByTagName("input")[1].value = "";
+  if(document.getElementsByTagName("input")[1].value !="" ) {
+    feedcount++;
+    $(x[0]).hide();
+    $(y[0]).show();
+  document.getElementsByClassName("quo")[1].id = 'error';
+  
+  // document.getElementsByTagName("input")[1].value = "";
+  }
     
  }
 }
@@ -107,11 +111,14 @@ function check2()
     }
   else
   {
-  feedcount++;
-        $(x[0]).hide();
-        $(y[0]).show();
-        document.getElementsByClassName("quo")[2].id = 'error';
-      // document.getElementsByTagName("input")[2].value = "";
+    if(document.getElementsByTagName("input")[2].value !="" ) {
+      feedcount++;
+      $(x[0]).hide();
+      $(y[0]).show();
+    document.getElementsByClassName("quo")[2].id = 'error';
+    
+    // document.getElementsByTagName("input")[2].value = "";
+    }
 
   }
 }
@@ -126,11 +133,14 @@ if(document.getElementsByTagName("input")[3].value == {{ answer.coeff[3] }} )
   }
 else
 {
- feedcount++;
-      $(x[0]).hide();
-      $(y[0]).show();
-      document.getElementsByClassName("quo")[3].id = 'error';
-    // document.getElementsByTagName("input")[3].value = "";
+  if(document.getElementsByTagName("input")[3].value !="" ) {
+    feedcount++;
+    $(x[0]).hide();
+    $(y[0]).show();
+  document.getElementsByClassName("quo")[3].id = 'error';
+  
+  // document.getElementsByTagName("input")[3].value = "";
+  }
     
  }
 }
@@ -145,11 +155,14 @@ if(document.getElementsByTagName("input")[4].value == {{ answer.coeff[4] }} )
   }
 else
 {
- feedcount++;
-      $(x[0]).hide();
-      $(y[0]).show();
-      document.getElementsByClassName("quo")[4].id = 'error';
-    // document.getElementsByTagName("input")[4].value = "";
+  if(document.getElementsByTagName("input")[4].value !="" ) {
+    feedcount++;
+    $(x[0]).hide();
+    $(y[0]).show();
+  document.getElementsByClassName("quo")[4].id = 'error';
+  
+  // document.getElementsByTagName("input")[4].value = "";
+  }
     
  }
 }
@@ -168,11 +181,14 @@ $(x[0]).css("display","block");
   }
 else
 {
- feedcount++;
-      $(x[0]).hide();
-      $(y[0]).show();
-      document.getElementsByClassName("quo")[5].id = 'error';
-    // document.getElementsByTagName("input")[5].value = "";
+  if(document.getElementsByTagName("input")[5].value !="" ) {
+    feedcount++;
+    $(x[0]).hide();
+    $(y[0]).show();
+  document.getElementsByClassName("quo")[5].id = 'error';
+  
+  // document.getElementsByTagName("input")[5].value = "";
+  }
     
  }
 }
@@ -188,11 +204,14 @@ if(document.getElementsByTagName("input")[6].value == {{ answer.coeff[0] }} )
   }
 else
 {
- feedcount++;
+  if(document.getElementsByTagName("input")[6].value !="" ) {
+    feedcount++;
       $(x[1]).hide();
       $(y[1]).show();
       document.getElementsByClassName("quo")[6].id = 'error';
     // document.getElementsByTagName("input")[6].value = "";
+
+  }
     
  }
 }
@@ -207,11 +226,13 @@ if(document.getElementsByTagName("input")[7].value == {{ answer.coeff[2] }} )
   }
 else
 {
- feedcount++;
+  if(document.getElementsByTagName("input")[7].value !="" ) {
+    feedcount++;
       $(x[1]).hide();
       $(y[1]).show();
       document.getElementsByClassName("quo")[7].id = 'error';
     // document.getElementsByTagName("input")[7].value = "";
+
     
  }
 }
@@ -226,11 +247,13 @@ if(document.getElementsByTagName("input")[8].value == {{ answer.coeff[4] }} )
   }
 else
 {
- feedcount++;
+  if(document.getElementsByTagName("input")[8].value !="" ) {
+    feedcount++;
       $(x[1]).hide();
       $(y[1]).show();
       document.getElementsByClassName("quo")[8].id = 'error';
     // document.getElementsByTagName("input")[8].value = "";
+
     
  }
 }
@@ -245,11 +268,13 @@ if(document.getElementsByTagName("input")[9].value == {{ answer.coeff[1] }} )
   }
 else
 {
- feedcount++;
+  if(document.getElementsByTagName("input")[9].value !="" ) {
+    feedcount++;
       $(x[1]).hide();
       $(y[1]).show();
       document.getElementsByClassName("quo")[9].id = 'error';
     // document.getElementsByTagName("input")[9].value = "";
+
     
  }
 }
@@ -264,11 +289,13 @@ if(document.getElementsByTagName("input")[10].value == {{ answer.coeff[3] }} )
   }
 else
 {
- feedcount++;
+  if(document.getElementsByTagName("input")[10].value !="" ) {
+    feedcount++;
       $(x[1]).hide();
       $(y[1]).show();
-      document.getElementsByClassName("quo")[10].id = 'error'; 
+      document.getElementsByClassName("quo")[10].id = 'error';
     // document.getElementsByTagName("input")[10].value = "";
+
     
  }
 }
@@ -287,11 +314,12 @@ $(x[1]).css("display","block");
   }
 else
 {
- feedcount++;
+  if(document.getElementsByTagName("input")[11].value !="" ) {
       $(x[1]).hide();
       $(y[1]).show();
       document.getElementsByClassName("quo")[11].id = 'error';
     // document.getElementsByTagName("input")[11].value = "";
+
     
  }
 }
@@ -306,11 +334,12 @@ if(document.getElementsByTagName("input")[12].value == {{ answer.x_sum }} )
   }
 else
 {
- feedcount++;
+  if(document.getElementsByTagName("input")[12].value !="") {
       $(x[2]).hide();
       $(y[2]).show();
       document.getElementsByClassName("quo")[12].id = 'error';
     // document.getElementsByTagName("input")[12].value = "";
+  }
     
  }
 }
@@ -334,10 +363,12 @@ if(document.getElementsByTagName("input")[13].value == {{ answer.y_sum }} )
   }
 else
 {
- feedcount++;
-      $(x[2]).hide();
-      $(y[2]).show();
-       document.getElementsByClassName("quo")[13].id = 'error';
+  if(document.getElementsByTagName("input")[13].value !="") {
+    $(x[2]).hide();
+    $(y[2]).show();
+    document.getElementsByClassName("quo")[13].id = 'error';
+  // document.getElementsByTagName("input")[13].value = "";
+}
     
  }
 }
