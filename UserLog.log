@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 2021-08-06 10:20:57,188 INFO : Index Page
 2021-08-06 10:21:01,856 INFO : Login Page
 2021-08-06 10:21:03,719 INFO : Home Page
@@ -274,3 +275,17 @@
 2021-08-09 22:13:31,185 INFO : 127.0.0.1 - - [09/Aug/2021 22:13:31] "GET /signup?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
 2021-08-09 22:13:31,203 INFO : 127.0.0.1 - - [09/Aug/2021 22:13:31] "GET /signup?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
 2021-08-09 22:13:31,437 INFO : 127.0.0.1 - - [09/Aug/2021 22:13:31] "GET /signup?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+=======
+
+>>>>>>> 522cbabf798f2d180b49e8350366adccf57d896a
+2021-08-10 09:38:52,901 INFO : Index Page
+2021-08-10 09:39:00,598 INFO : Signup Page
+2021-08-10 09:41:59,840 INFO : Index Page
+2021-08-10 09:42:04,424 INFO : Signup Page
+2021-08-10 09:43:03,311 INFO : Login Page
+2021-08-10 10:01:35,528 INFO : Index Page
+2021-08-10 10:01:40,194 INFO : Login Page
+2021-08-10 10:01:48,412 INFO : Login Page
+2021-08-10 10:03:14,482 INFO : Login Page
+2021-08-10 10:03:24,306 INFO : Login Page
+2021-08-10 10:04:03,015 INFO : Home Page

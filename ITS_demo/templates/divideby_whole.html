@@ -34,12 +34,12 @@ var x = document.getElementsByClassName("correct");
 var y = document.getElementsByClassName("wrong");
 var feedcount = 0;
 
-console.log({{answer.rec_num}})
+<!-- console.log({{answer.rec_num}})
 console.log({{answer.rec_den}})
 console.log({{answer.numerator}})
 console.log({{answer.denominator}})
 console.log({{answer.ans_num}})
-console.log({{answer.ans_den}})
+console.log({{answer.ans_den}}) -->
 
 function check_num()
 {
@@ -51,10 +51,26 @@ function check_num()
     }
 	 else
 	 {
-	    feedcount++;
+    if(document.getElementsByTagName("input")[0].value !="" ){
+      feedcount++;
         $(x[0]).hide();
         $(y[0]).show();
 	    document.getElementsByTagName("input")[0].value = "";
+      swal({
+        title: "Oops, Looks like you are confused in the format",
+        text: "Denominator in mixed fraction is same as denominator of fraction ",
+        icon: "error",
+        button: true,
+        dangerMode: true,
+      })
+      .then((willDelete) => {
+        if (willDelete) {
+          swal("Now try again", {
+            icon: "success",
+          });
+        }
+      });
+    }
 	 }
 }
 function check_den()
@@ -70,10 +86,25 @@ function check_den()
     }
 	 else
 	 {
+    if(document.getElementsByTagName("input")[1].value == {{ answer.rec_den }} )
 	    feedcount++;
         $(x[1]).hide();
         $(y[1]).show();
 	    document.getElementsByTagName("input")[1].value = "";
+      swal({
+        title: "Oops, Looks like you are confused in the format",
+        text: "Denominator in mixed fraction is same as denominator of fraction ",
+        icon: "error",
+        button: true,
+        dangerMode: true,
+      })
+      .then((willDelete) => {
+        if (willDelete) {
+          swal("Now try again", {
+            icon: "success",
+          });
+        }
+      });
 	 }
 }
 
@@ -87,15 +118,31 @@ function check_num1()
     }
 	 else
 	 {
-	    feedcount++;
+    if(document.getElementsByTagName("input")[2].value !="" ){
+      feedcount++;
         $(x[2]).hide();
         $(y[2]).show();
 	    document.getElementsByTagName("input")[2].value = "";
+      swal({
+        title: "Oops, Looks like you are confused in the format",
+        text: "Denominator in mixed fraction is same as denominator of fraction ",
+        icon: "error",
+        button: true,
+        dangerMode: true,
+      })
+      .then((willDelete) => {
+        if (willDelete) {
+          swal("Now try again", {
+            icon: "success",
+          });
+        }
+      });
+    }
 	 }
 }
 function check_den1()
 {
-    if(document.getElementsByTagName("input")[3].value == {{ answer.denominator }} )
+    if(document.getElementsByTagName("input")[3].value !="" )
 	{
     $(x[3]).show();
     $(y[3]).hide();
@@ -104,10 +151,26 @@ function check_den1()
     }
 	 else
 	 {
-	    feedcount++;
+    if(document.getElementsByTagName("input")[3].value !=""){
+      feedcount++;
         $(x[3]).hide();
         $(y[3]).show();
 	    document.getElementsByTagName("input")[3].value = "";
+      swal({
+        title: "Oops, Looks like you are confused in the format",
+        text: "Denominator in mixed fraction is same as denominator of fraction ",
+        icon: "error",
+        button: true,
+        dangerMode: true,
+      })
+      .then((willDelete) => {
+        if (willDelete) {
+          swal("Now try again", {
+            icon: "success",
+          });
+        }
+      });
+    }
 	 }
 }
 
@@ -120,10 +183,26 @@ function check_num2()
     }
 	 else
 	 {
-	    feedcount++;
-        $(x[4]).hide();
-        $(y[4]).show();
-	    document.getElementsByTagName("input")[4].value = "";
+    if(document.getElementsByTagName("input")[4].value !=""){
+      feedcount++;
+      $(x[4]).hide();
+      $(y[4]).show();
+    document.getElementsByTagName("input")[4].value = "";
+    swal({
+      title: "Oops, Looks like you are confused in the format",
+      text: "Denominator in mixed fraction is same as denominator of fraction ",
+      icon: "error",
+      button: true,
+      dangerMode: true,
+    })
+    .then((willDelete) => {
+      if (willDelete) {
+        swal("Now try again", {
+          icon: "success",
+        });
+      }
+    });
+    }
 	 }
 }
 function check_den2()
@@ -146,10 +225,27 @@ function check_den2()
       }
 	 else
 	 {
-	    feedcount++;
+    if(document.getElementsByTagName("input")[5].value !=""){
+      feedcount++;
         $(x[5]).hide();
         $(y[5]).show();
 	    document.getElementsByTagName("input")[5].value = "";
+      swal({
+        title: "Oops, Looks like you are confused in the format",
+        text: "Denominator in mixed fraction is same as denominator of fraction ",
+        icon: "error",
+        button: true,
+        dangerMode: true,
+      })
+      .then((willDelete) => {
+        if (willDelete) {
+          swal("Now try again", {
+            icon: "success",
+          });
+        }
+      });
+    }
+	    
    
 }
 }
@@ -194,33 +290,33 @@ function right2(){
 <div class="ryt1">
 <label for="spf" style="display:none" class="fbox">Reciprocal of Whole No. : </label>
 <input type="text" id="spf" name="rem" maxlength="8" size="2" class="num fbox" onblur="check_num();" style="display: none;" required >
-<img src="{{ url_for('static', filename='images/tick.png') }}" width="32px" height="22px" class="correct" style="display: none;">
-    <img src="{{ url_for('static', filename='images/cross.jpg') }}" width="32px" height="22px" class="wrong" style="display: none;">
+<i class="fal fa-check correct fa-2x" style="display: none; color: green;"></i>
+    <i class="fal fa-times wrong fa-2x" style="display: none; color: red"></i>
 <h5 class="fbox" style="display: none;">---------------</h5>
 <input type="text" id="rem4" name="rem" maxlength="8" size="2" class="den fbox" onblur="check_den();" style="display: none;" required>
-<img src="{{ url_for('static', filename='images/tick.png') }}" width="32px" height="22px" class="correct" style="display: none;">
-    <img src="{{ url_for('static', filename='images/cross.jpg') }}" width="32px" height="22px" class="wrong" style="display: none;">
+<i class="fal fa-check correct fa-2x" style="display: none; color: green;"></i>
+    <i class="fal fa-times wrong fa-2x" style="display: none; color: red"></i>
 <br><br>
 
 <label for="spf" style="display:none" class="fbox">Fractional Form : </label>
 <input type="text" id="spf" name="rem" maxlength="8" size="2" class="num fbox" onblur="check_num1();" style="display: none;" required >
-<img src="{{ url_for('static', filename='images/tick.png') }}" width="32px" height="22px" class="correct" style="display: none;">
-    <img src="{{ url_for('static', filename='images/cross.jpg') }}" width="32px" height="22px" class="wrong" style="display: none;">
+<i class="fal fa-check correct fa-2x" style="display: none; color: green;"></i>
+    <i class="fal fa-times wrong fa-2x" style="display: none; color: red"></i>
 <h5 class="fbox" style="display: none;">---------------</h5>
 <input type="text" id="rem4" name="rem" maxlength="8" size="2" class="den fbox" onblur="check_den1();" style="display: none;" required>
-<img src="{{ url_for('static', filename='images/tick.png') }}" width="32px" height="22px" class="correct" style="display: none;">
-    <img src="{{ url_for('static', filename='images/cross.jpg') }}" width="32px" height="22px" class="wrong" style="display: none;">
+<i class="fal fa-check correct fa-2x" style="display: none; color: green;"></i>
+    <i class="fal fa-times wrong fa-2x" style="display: none; color: red"></i>
 <br><br>
 
 
 <label for="quo3" style="display:block">Simpliest Form : </label>
 <input type="text" id="quo3" name="rem" maxlength="8" size="2" class="num" onblur="check_num2();" required >
-<img src="{{ url_for('static', filename='images/tick.png') }}" width="32px" height="22px" class="correct" style="display: none;">
-    <img src="{{ url_for('static', filename='images/cross.jpg') }}" width="32px" height="22px" class="wrong" style="display: none;">
+<i class="fal fa-check correct fa-2x" style="display: none; color: green;"></i>
+    <i class="fal fa-times wrong fa-2x" style="display: none; color: red"></i>
 <h5 >---------------</h5>
 <input type="text" id="rem4" name="rem" maxlength="8" size="2" class="den" onblur="check_den2();" required>
-<img src="{{ url_for('static', filename='images/tick.png') }}" width="32px" height="22px" class="correct" style="display: none;">
-    <img src="{{ url_for('static', filename='images/cross.jpg') }}" width="32px" height="22px" class="wrong" style="display: none;">
+<i class="fal fa-check correct fa-2x" style="display: none; color: green;"></i>
+    <i class="fal fa-times wrong fa-2x" style="display: none; color: red"></i>
 <br><br>
 
 </div>

@@ -1,0 +1,17 @@
+{
+    "mixed-fraction" : "FI1",
+    "compare": "FI2",
+    "normal-form": "FI3",
+    "divide-with-whole": "FI4",
+    "unlike-add": "FI5",
+    "algebra-add": "AI1",
+    "vertical-sub": "AI2",
+    "simplest-form": "FE1",
+    "division": "FE2",
+    "add-fractions": "FE3",
+    "multiply-with-whole": "FE4",
+    "coefficient": "AE1",
+    "value-of-expression": "AE2",
+    "monomial": "AE3",
+    "like-unlike": "AE4"
+}

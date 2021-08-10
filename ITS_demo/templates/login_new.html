@@ -101,7 +101,7 @@ body {
 	padding-top: 156px;
 }
 
-.login__field 
+.login__field {
 	padding: 20px 0px;	
 	position: relative;	
 }
@@ -193,17 +193,17 @@ body {
     <div class="container">
         <div class="screen">
             <div class="screen__content">
-                <form class="login" method='GET' action="{{ url_for('home') }}">
+                <form class="login" method="POST" action="{{ url_for('logins') }}">
                     <div class="login__field">
                         <i class="login__icon fas fa-user"></i>
-                        <input type="text" class="login__input" placeholder="User name / Email">
+                        <input type="text" class="login__input" name="email" placeholder="User name / Email">
                     </div>
                     <div class="login__field">
                         <i class="login__icon fas fa-lock"></i>
-                        <input type="password" class="login__input" placeholder="Password">
+                        <input type="password" class="login__input" name="password" placeholder="Password">
                     </div>
 					<!-- <a href="../template_new/home.html"> -->
-						<button class="button login__submit">
+						<button type="submit" class="button login__submit">
 							<span class="button__text">Log In Now</span>
 							<i class="button__icon fas fa-chevron-right"></i>
 						</button>				
