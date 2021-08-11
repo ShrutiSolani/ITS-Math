@@ -10,7 +10,7 @@ app = Flask(__name__)
 
 
 
-logging.basicConfig(filename = 'UserLog.log', level=logging.INFO, format = '%(asctime)s %(levelname)s : %(message)s')
+logging.basicConfig(filename = 'UserLog.csv', level=logging.INFO, format = '%(asctime)s , %(message)s')
 log = logging.getLogger('werkzeug')
 log.setLevel(logging.ERROR)
 
@@ -23,6 +23,13 @@ full_filename = os.path.join(app.config['UPLOAD_FOLDER'], 'cross.jpg')
 SITE_ROOT = os.path.realpath(os.path.dirname(__file__))
 json_url = os.path.join(SITE_ROOT, "static/data", "qid.json")
 data = json.load(open(json_url))
+
+mydb = mysql.connector.connect(
+        host="localhost",
+        user="root",
+        password="",
+        database="ITS"
+    )
 
 @app.route("/")
 def index():
@@ -40,20 +47,17 @@ def login():
 
 @app.route("/login",methods=['POST'])
 def logins():
-    mydb = mysql.connector.connect(
-        host="localhost",
-        user="root",
-        password="",
-        database="ITS"
-    )
+    
     mycursor=mydb.cursor()
     if request.method=='POST':
         email=request.form['email']
         password=request.form['password']
         mycursor.execute("select * from Student where email='" + email + "' and password='" + password + "'")
         r = mycursor.fetchall()
+        # print(r[0][0])
         count = mycursor.rowcount
         if (count == 1):
+            session['userid'] = r[0][0]
             return redirect(url_for('home'))
         else:
             return redirect(url_for('logins'))
@@ -68,12 +72,6 @@ def signup():
 @app.route("/signup",methods=['POST'])
 def signups():
     
-    mydb=mysql.connector.connect(
-        host="localhost",
-        user="root",
-        password="",
-        database="ITS"
-    )
     mycursor=mydb.cursor()
 
     if request.method=="POST":
@@ -101,9 +99,11 @@ def home():
 @app.route('/score', methods=['POST'])
 def score():
     if request.method == 'POST':
+        if 'userid' in session:
+            print(session['userid'])
         tup = request.form
         total = int(tup['data[1]']) + int(tup['data[2]']) +int(tup['data[3]']) +int(tup['data[undefined]']) 
-        app.logger.info(tup['data[qid]'] + "\n" +tup['data[undefined]'] + "\n" + tup['data[1]'] + "\n" + tup['data[2]'] + "\n" +  tup['data[3]'] + "\n" + str(total))
+        app.logger.info(tup['data[qid]'] + "," +tup['data[undefined]'] + "," + tup['data[1]'] + "," + tup['data[2]'] + "," +  tup['data[3]'] + "," + str(total))
         return "Score received"
     else:
         return redirect(url_for("login"))
