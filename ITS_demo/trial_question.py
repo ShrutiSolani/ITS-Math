@@ -100,10 +100,14 @@ def home():
 def score():
     if request.method == 'POST':
         if 'userid' in session:
-            print(session['userid'])
+            user_id = session['userid']
+            # print(session['userid'])
         tup = request.form
         total = int(tup['data[1]']) + int(tup['data[2]']) +int(tup['data[3]']) +int(tup['data[undefined]']) 
-        app.logger.info(tup['data[qid]'] + "," +tup['data[undefined]'] + "," + tup['data[1]'] + "," + tup['data[2]'] + "," +  tup['data[3]'] + "," + str(total))
+        # app.logger.info(tup['data[qid]'] + "," +tup['data[undefined]'] + "," + tup['data[1]'] + "," + tup['data[2]'] + "," +  tup['data[3]'] + "," + str(total))
+        #userid, qid, ts1, sq1, Ets1, ts2, sq2, Ets2, ts3, sq3, Ets3, ts4, sq4, Ets4
+        #d       s    s     d   s       s   d   s       s   d     s     s   d      s 
+        app.logger.info("%d,%d,%d,%d,%d", (user_id, tup['data[qid]'],int(tup['data[undefined]']),int(tup['data[1]']),int(tup['data[2]']),int(tup['data[3]'])))
         return "Score received"
     else:
         return redirect(url_for("login"))
