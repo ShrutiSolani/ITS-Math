@@ -3,14 +3,11 @@ from flask import Flask, render_template, request, flash, redirect, url_for, ses
 from fractions import Fraction
 import random, os, math, json, logging
 import mysql.connector
+import datetime
 
 app = Flask(__name__)
 
-
-
-
-
-logging.basicConfig(filename = 'UserLog.csv', level=logging.INFO, format = '%(asctime)s , %(message)s')
+logging.basicConfig(filename = 'UserLog.csv', level=logging.INFO, format = '%(message)s')
 log = logging.getLogger('werkzeug')
 log.setLevel(logging.ERROR)
 
@@ -33,7 +30,7 @@ mydb = mysql.connector.connect(
 
 @app.route("/")
 def index():
-    app.logger.info('Index Page')
+    # app.logger.info('Index Page')
     return render_template('index_new.html')
 
 
@@ -42,7 +39,7 @@ def index():
 
 @app.route("/login")
 def login():
-    app.logger.info('Login Page')
+    # app.logger.info('Login Page')
     return render_template('login_new.html')
 
 @app.route("/login",methods=['POST'])
@@ -66,7 +63,7 @@ def logins():
 
 @app.route("/signup")
 def signup():
-    app.logger.info('Signup Page')
+    # app.logger.info('Signup Page')
     return render_template('signup_new.html')
 
 @app.route("/signup",methods=['POST'])
@@ -92,7 +89,7 @@ def signups():
 
 @app.route("/home")
 def home():
-    app.logger.info('Home Page')
+    # app.logger.info('Home Page')
     return render_template('home_new.html')
 
 
@@ -101,9 +98,16 @@ def score():
     if request.method == 'POST':
         if 'userid' in session:
             print(session['userid'])
+            userid=session['userid']
+        now = datetime.datetime.now()
         tup = request.form
+        # print(tup)
         total = int(tup['data[1]']) + int(tup['data[2]']) +int(tup['data[3]']) +int(tup['data[undefined]']) 
-        app.logger.info(tup['data[qid]'] + "," +tup['data[undefined]'] + "," + tup['data[1]'] + "," + tup['data[2]'] + "," +  tup['data[3]'] + "," + str(total))
+        print(total)
+        # print(type(userid))
+        
+        # userid , timestamp , event ,qid ,ts1, sq1, Ets1 ,ts2, sq2, Ets2 ,ts3, sq3, Ets3 ,ts4, sq4, Ets4 
+        app.logger.info('%d,%s,%s,%d,%s,%s,%d,%s,%s,%d,%s,%s,%d,%s',int(userid),str(tup['data[qid]']),str(datetimes[0]),int(tup['data[undefined]']),str(datetimes[1]),str(datetimes[1]),int(tup['data[1]']),str(datetimes[2]),str(datetimes[2]),int(tup['data[2]']),str(datetimes[3]),str(datetimes[3]),int(tup['data[3]']),str(now))
         return "Score received"
     else:
         return redirect(url_for("login"))
@@ -157,8 +161,14 @@ def compare():
     return render_template('fracompare.html', answer=answer)
 
 
+datetimes=[]
+
 @app.route("/algebra-add")
 def horizontal_add():
+    # print("appp")
+    x=datetime.datetime.now()
+    datetimes.append(x)
+    
     qid = data['algebra-add']
     coeff = random.sample(range(-50,50),6) 
     varx = ['x','x\u00b2','x\u00b3'] 
