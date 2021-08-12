@@ -196,34 +196,34 @@ body {
     <div class="container">
         <div class="screen">
             <div class="screen__content">
-                <form class="login" method="GET" action="{{ url_for('home') }}">
+                <form class="login" method="POST" action="{{ url_for('signups') }}">
 					<div class="login__field">
                         <i class="login__icon fas fa-user"></i>
-                        <input type="text" class="login__input" placeholder="First Name">
+                        <input type="text" class="login__input" name="fname" placeholder="First Name">
                     </div>
 					<div class="login__field">
                         <i class="login__icon fas fa-user"></i>
-                        <input type="text" class="login__input" placeholder="Last Name">
+                        <input type="text" class="login__input" name="lname" placeholder="Last Name">
                     </div>
                     <div class="login__field">
                         <i class="login__icon fas fa-envelope"></i>
-                        <input type="email" class="login__input" placeholder="Email">
+                        <input type="email" class="login__input" name="email" placeholder="Email">
                     </div>
                     <div class="login__field">
                         <i class="login__icon fas fa-lock"></i>
-                        <input type="password" class="login__input" placeholder="Password">
+                        <input type="password" class="login__input" name="password" placeholder="Password">
                     </div>
 					<div class="login__field">
                         <i class="login__icon fas fa-check-circle"></i>
-                        <input type="text" class="login__input" placeholder="Confirm Password">
+                        <input type="text" class="login__input" name="cpassword" placeholder="Confirm Password">
                     </div>
 					<div class="login__field">
                         <i class="login__icon fas fa-birthday-cake"></i>
-                        <input type="date" class="login__input" placeholder="Birthday">
+                        <input type="date" class="login__input" name="dob" placeholder="Birthday">
                     </div>
 					<div class="login__field">
                         <i class="login__icon fas fa-graduation-cap"></i>
-                        <input type="text" class="login__input" placeholder="Current Grade">
+                        <input type="text" class="login__input"  name="grade" placeholder="Current Grade">
                     </div>
                     <button class="button login__submit">
                         <span class="button__text">Sign Up Now</span>

@@ -72,28 +72,28 @@ function check_num1()
     }
 	 else
 	 {
-    if(document.getElementsByTagName("input")[0].value !="" ){
-      $(x[0]).hide();
-      $(y[0]).show();
-    document.getElementsByTagName("input")[0].value = "";
-    swal(
-    {
-        title: "Oops, Looks like you are not familiar with LCM ",
-        text: "for example,  LCM of 5 and 6 is 30.",
-        icon: "error",
-        button: true,
-        dangerMode: true,
-      }
-     )
-      .then((willDelete) => {
-        if (willDelete) {
-          swal("Now, try again", {
+    if(document.getElementsByTagName("input")[0].value!=""){
+          feedcount++;
+            $(x[0]).hide();
+            $(y[0]).show();
+          document.getElementsByTagName("input")[0].value = "";
+          swal(
+          {
+              title: "Oops, Looks like you are not familiar with Normal Form format ",
+              text: "for example, Num will be Den * Whole + Num .",
+              icon: "error",
+              button: true,
+              dangerMode: true,
+            }
+          )
+            .then((willDelete) => {
+              if (willDelete) {
+                swal("Now, try again", {
 
-            icon: "success",
-          });
-        }
-      });
-
+                  icon: "success",
+                });
+              }
+            });
     }
 	 }
 }
@@ -112,29 +112,29 @@ function check_den1()
     }
 	 else
 	 {
-    if(document.getElementsByTagName("input")[1].value !=""){
-      $(x[1]).hide();
-      $(y[1]).show();
-    document.getElementsByTagName("input")[1].value = "";
-    swal(
-    {
-        title: "Oops, Looks like you are not familiar with LCM ",
-        text: "for example,  LCM of 5 and 6 is 30.",
-        icon: "error",
-        button: true,
-        dangerMode: true,
-      }
-     )
-      .then((willDelete) => {
-        if (willDelete) {
-          swal("Now, try again", {
-
-            icon: "success",
-          });
+     if(document.getElementsByTagName("input")[1].value!=""){
+	    feedcount++;
+        $(x[1]).hide();
+        $(y[1]).show();
+	    document.getElementsByTagName("input")[1].value = "";
+	    swal(
+	    {
+          title: "Oops, Looks like you are not familiar with Normal Form format ",
+          text: "for example, Num will be Den * Whole + Num and den will be same as Den.",
+          icon: "error",
+          button: true,
+          dangerMode: true,
         }
-      });
+       )
+        .then((willDelete) => {
+          if (willDelete) {
+            swal("Now, try again", {
 
-    }
+              icon: "success",
+            });
+          }
+        });
+      }
 	 }
 }
 
@@ -151,14 +151,15 @@ function check_num2()
     }
 	 else
 	 {
-    if(document.getElementsByTagName("input")[2].value !=""){
-      $(x[2]).hide();
+     if(document.getElementsByTagName("input")[2].value!=""){
+	    feedcount++;
+        $(x[2]).hide();
         $(y[2]).show();
 	    document.getElementsByTagName("input")[2].value = "";
 	    swal(
 	    {
-          title: "Oops, Looks like you are not familiar with LCM ",
-          text: "for example,  LCM of 5 and 6 is 30.",
+          title: "Oops, Looks like you are not able write Simplest Form ",
+          text: "for example,  Simplest Form of 30/15 is 2/1.",
           icon: "error",
           button: true,
           dangerMode: true,
@@ -172,19 +173,19 @@ function check_num2()
             });
           }
         });
-
-    }
+     }
 	 }
 }
 function check_den2()
 {
     if(document.getElementsByTagName("input")[3].value == {{ answer.den_ans }} )
-	  {
+	{
 	   $(x[3]).show();
        $(y[3]).hide();
        document.getElementsByClassName("step0")[0].classList.add("active");
        document.getElementsByClassName("step0")[1].classList.add("active");
        document.getElementsByClassName("step0")[2].classList.add("active");
+    
        document.getElementById("icon4").style.display="inline";
        document.getElementById("icon4").style.color="green";
       document.getElementsByTagName("h2")[0].innerHTML="";
@@ -193,22 +194,23 @@ function check_den2()
         document.getElementById("icon1").style.display="inline";
         document.getElementById("icon2").style.display="inline";
         document.getElementById("icon3").style.display="inline";
-    }
+      }
 	 else
 	 {
-    if(document.getElementsByTagName("input")[3].value !="" ){
-      $(x[3]).hide();
-      $(y[3]).show();
-    document.getElementsByTagName("input")[3].value = "";
-      swal(
-      {
-          title: "Oops, Looks like you are not familiar with LCM ",
-          text: "for example,  LCM of 5 and 6 is 30.",
-          icon: "error",
+     if(document.getElementsByTagName("input")[3].value!=""){
+	    feedcount++;
+        $(x[3]).hide();
+        $(y[3]).show();
+	    document.getElementsByTagName("input")[3].value = "";
+	    swal(
+	    {
+        title: "Oops, Looks like you are not able write Simplest Form ",
+        text: "for example,  Simplest Form of 30/15 is 2/1.",
+        icon: "error",
           button: true,
           dangerMode: true,
         }
-      )
+       )
         .then((willDelete) => {
           if (willDelete) {
             swal("Now, try again", {
@@ -217,9 +219,8 @@ function check_den2()
             });
           }
         });
-
+     }
     }
-  }
    
 }
 function right1(){
@@ -253,7 +254,7 @@ function right1(){
     <br>
     
         <tr >
-<!--               whole+numerator-->
+             whole+numerator-->
             <!-- <td ><span style="font-size:4.3rem;">(</span><input type="text" id="mf0" name="mf" maxlength="2" size="2" onblur="check0();" class="quo" required>*</td>
             <td><input type="text" id="mf1" name="mf" maxlength="2" size="2" onblur="check1();" class="quo" required><span style="font-size:4.3rem;">)</span></td>
             <td>+</td>
