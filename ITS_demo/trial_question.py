@@ -105,7 +105,6 @@ def score():
         total = int(tup['data[1]']) + int(tup['data[2]']) +int(tup['data[3]']) +int(tup['data[undefined]']) 
         print(total)
         # print(type(userid))
-        
         # userid , timestamp , event ,qid ,ts1, sq1, Ets1 ,ts2, sq2, Ets2 ,ts3, sq3, Ets3 ,ts4, sq4, Ets4 
         app.logger.info('%d,%s,%s,%d,%s,%s,%d,%s,%s,%d,%s,%s,%d,%s',int(userid),str(tup['data[qid]']),str(datetimes[0]),int(tup['data[undefined]']),str(datetimes[1]),str(datetimes[1]),int(tup['data[1]']),str(datetimes[2]),str(datetimes[2]),int(tup['data[2]']),str(datetimes[3]),str(datetimes[3]),int(tup['data[3]']),str(now))
         return "Score received"
