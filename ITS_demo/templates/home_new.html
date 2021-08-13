@@ -157,6 +157,11 @@
           font-size: 2.5rem;
           margin-top: 10px;
         }
+        #div-top{
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
 </style>
 <body>
 	<nav id="n1" class="navbar navbar-expand-lg navbar-light mb-3 navbar-fixed-top nav white">
@@ -173,19 +178,29 @@
                 <li class="nav-item">
                   <a class="nav-link a1" href="#">About Us</a>
                 </li>
-                <li class="nav-item dropdown">
+                <!-- <li class="nav-item dropdown">
                   <a class="nav-link a1" href="#">Our Team</a>
-                </li>
+                </li> -->
                 <li class="nav-item">
                   <a class="nav-link a1" href="#">Contact</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link a1" href="/logout">Logout</a>
                 </li>
               </ul>
             </div>
           </nav>
           <div id="board">
             <div class="container-fluid">
+              <div id="div-top">
               <div id="date-div">
                 <h1 id="date"></h1>
+              </div>
+              <div id="name">
+                <div id="name-div">
+                  <h1>Hello {{ name.name }}</h1>
+                </div>
+              </div>
               </div>
               <div id="quote">
                 <h1 id="quot">The more you practice and study, the better you are... so I still practice and study all the time.</h1>

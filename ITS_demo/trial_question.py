@@ -1,5 +1,6 @@
 import re
 from flask import Flask, render_template, request, flash, redirect, url_for, session
+# from flask_login import current_user
 from fractions import Fraction
 import random, os, math, json, logging
 import mysql.connector
@@ -10,7 +11,7 @@ app = Flask(__name__)
 logging.basicConfig(filename = 'UserLog.csv', level=logging.INFO, format = '%(message)s')
 log = logging.getLogger('werkzeug')
 log.setLevel(logging.ERROR)
-
+file1=logging.basicConfig(filename = 'UserActivity.log', level=logging.INFO, format = '%()%(message)s')
 Image_folder = os.path.join('static', 'images')
 
 app.config['UPLOAD_FOLDER'] = Image_folder
@@ -32,9 +33,6 @@ mydb = mysql.connector.connect(
 def index():
     # app.logger.info('Index Page')
     return render_template('index_new.html')
-
-
-
 
 
 @app.route("/login")
@@ -90,7 +88,13 @@ def signups():
 @app.route("/home")
 def home():
     # app.logger.info('Home Page')
-    return render_template('home_new.html')
+    mycursor=mydb.cursor()
+    if 'userid' in session:
+        mycursor.execute("select * from Student where id="+str(session['userid']))
+        r = mycursor.fetchall()
+        return render_template('home_new.html',name={'name':r[0][1]})
+    else:
+        return redirect(url_for('login'))
 
 
 @app.route('/score', methods=['POST'])
@@ -166,7 +170,10 @@ datetimes=[]
 @app.route("/algebra-add")
 def horizontal_add():
     # print("appp")
+    global datetimes
     x=datetime.datetime.now()
+    if len(datetimes)==4:
+        datetimes=[]
     datetimes.append(x)
     
     qid = data['algebra-add']
@@ -537,6 +544,12 @@ def algebra_easy():
     'f3':{'q1':'Classify into Monomial, Bionomial, Trinomial ','h1':'Classification','link':'/monomial'},
     'f4':{'q1':'Identify Like or Unlike','h1':'Identification','link':'/like-unlike'}}
     return render_template('easy_qts_choice.html' , topic=full , unit='UNIT: Algebra')
+
+
+@app.route('/logout')
+def logout():
+    session.pop('userid',None)
+    return redirect(url_for('index'))
 
 
 app.secret_key = 'super secret key'
