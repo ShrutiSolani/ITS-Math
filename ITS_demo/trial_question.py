@@ -115,6 +115,22 @@ def score():
     else:
         return redirect(url_for("login"))
 
+@app.route("/profile")
+def profile():
+    mycursor=mydb.cursor()
+    if 'userid' in session:
+        userid = session['userid']
+        mycursor.execute("select * from Student where id = '" + str(userid) + "' ")
+        r = mycursor.fetchall()
+        fname = r[0][1]
+        lname = r[0][2]
+        email = r[0][3]
+        grade = r[0][6]
+        dob = r[0][5]
+        context ={'fname':fname,'lname':lname,'email':email,'grade':grade,'dob':dob}
+        return render_template('UserScore.html',context=context)
+    else:
+        return redirect(url_for("login"))
 
 @app.route("/mixed-fraction")
 def question():
