@@ -1,305 +1,55 @@
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-2021-08-06 10:20:57,188 INFO : Index Page
-2021-08-06 10:21:01,856 INFO : Login Page
-2021-08-06 10:21:03,719 INFO : Home Page
-2021-08-06 10:22:11,742 INFO : Home Page
-2021-08-06 10:27:41,757 INFO : Home Page
-2021-08-06 10:27:59,152 INFO : Home Page
-2021-08-06 10:28:20,622 INFO : Home Page
-2021-08-06 10:28:35,364 INFO : AE3
-25
-20
-25
-25
-2021-08-06 10:28:35,418 INFO : Home Page
-2021-08-06 10:29:37,311 INFO : FE1
-25
-25
-25
-25
-2021-08-06 10:29:37,354 INFO : Home Page
-2021-08-06 10:31:33,566 INFO : FE1
-25
-25
-25
-25
-2021-08-06 10:31:33,618 INFO : Home Page
-2021-08-06 10:33:21,366 INFO : Home Page
-2021-08-06 10:33:42,969 INFO : AE4
-25
-20
-20
-25
-25202025
-2021-08-06 10:33:43,010 INFO : Home Page
-2021-08-06 10:34:27,177 INFO : Home Page
-2021-08-06 10:35:32,366 INFO : Home Page
-2021-08-06 10:36:45,536 INFO : Home Page
-2021-08-06 10:37:06,473 INFO : AE2
-20
-25
-25
-25
-95
-2021-08-06 10:37:06,540 INFO : Home Page
-2021-08-06 10:38:04,643 INFO : FE1
-25
-20
-25
-25
-95
-2021-08-06 10:38:04,738 INFO : Home Page
-2021-08-06 10:38:41,617 INFO : AE1
-25
-25
-25
-20
-95
-2021-08-06 10:38:41,714 INFO : Home Page
-2021-08-06 10:58:17,954 INFO : 
-25
-20
-25
-25
-95
-2021-08-06 10:58:18,076 INFO : Home Page
-2021-08-06 18:50:13,609 INFO : Index Page
-2021-08-06 18:50:36,493 INFO : Login Page
-2021-08-06 18:50:39,602 INFO : Home Page
-2021-08-06 19:01:42,457 INFO : Index Page
-2021-08-06 19:16:39,107 INFO : Login Page
-2021-08-06 19:16:44,391 INFO : Home Page
-2021-08-06 19:27:47,985 INFO : Index Page
-2021-08-06 19:27:56,770 INFO : Login Page
-2021-08-06 19:27:57,876 INFO : Home Page
-2021-08-06 19:28:21,394 INFO : AI1
-25
-25
-25
-25
-100
-2021-08-06 19:28:21,641 INFO : Home Page
-2021-08-06 19:29:53,956 INFO : Index Page
-2021-08-06 21:52:44,454 INFO : Index Page
-2021-08-06 22:00:26,817 INFO : Login Page
-2021-08-06 22:00:30,697 INFO : Home Page
-2021-08-06 23:13:15,841 INFO : Index Page
-2021-08-06 23:13:18,088 INFO : Login Page
-2021-08-06 23:13:19,534 INFO : Home Page
-2021-08-07 08:42:51,158 INFO : Index Page
-2021-08-07 08:43:00,689 INFO : Login Page
-2021-08-07 08:43:02,615 INFO : Home Page
-2021-08-07 08:50:32,358 INFO : AE3
-25
-25
-25
-25
-100
-2021-08-07 08:50:41,329 INFO : AE3
-25
-25
-25
-25
-100
-2021-08-07 08:51:17,107 INFO : AE1
-25
-25
-25
-25
-100
-2021-08-07 08:52:33,841 INFO : AE2
-25
-25
-25
-25
-100
-2021-08-07 08:52:34,153 INFO : Home Page
-2021-08-07 09:10:13,546 INFO : AE1
-25
-25
-25
-25
-100
-2021-08-07 09:10:13,786 INFO : Home Page
-2021-08-07 09:11:50,847 INFO : AE4
-25
-25
-25
-25
-100
-2021-08-07 09:12:01,606 INFO : AE4
-25
-25
-25
-25
-100
-2021-08-07 09:12:01,839 INFO : Home Page
-2021-08-07 09:12:17,227 INFO : AE3
-25
-25
-25
-25
-100
-2021-08-07 09:12:26,170 INFO : AE3
-25
-25
-25
-25
-100
-2021-08-07 09:12:33,600 INFO : AE3
-25
-25
-25
-25
-100
-2021-08-07 09:12:48,781 INFO : AE4
-25
-25
-25
-25
-100
-2021-08-07 09:12:49,083 INFO : Home Page
-2021-08-07 09:47:42,211 INFO : Home Page
-2021-08-07 09:47:57,527 INFO : AE1
-25
-25
-25
-25
-100
-2021-08-07 09:48:04,282 INFO : AE1
-25
-25
-25
-25
-100
-2021-08-08 15:15:18,761 INFO : Index Page
-2021-08-08 15:15:21,762 INFO : Login Page
-2021-08-08 15:15:25,210 INFO : Home Page
-2021-08-09 19:19:00,458 INFO : Index Page
-2021-08-09 19:19:04,322 INFO : Login Page
-2021-08-09 19:19:06,055 INFO : Home Page
-2021-08-09 21:56:41,144 INFO : Index Page
-2021-08-09 21:56:45,215 INFO : Signup Page
-2021-08-09 21:58:02,396 INFO : Home Page
-2021-08-09 21:58:02,441 INFO : Home Page
-2021-08-09 21:58:02,882 INFO : Home Page
-2021-08-09 21:58:03,110 INFO : Home Page
-2021-08-09 21:59:51,845 WARNING :  * Debugger is active!
-2021-08-09 21:59:51,850 INFO :  * Debugger PIN: 804-888-352
-2021-08-09 21:59:52,019 INFO :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
-2021-08-09 21:59:53,167 INFO :  * Detected change in 'd:\\USER Data\\Desktop\\ITS-Math\\ITS_demo\\trial_question.py', reloading
-2021-08-09 21:59:53,809 WARNING :  * Debugger is active!
-2021-08-09 21:59:53,814 INFO :  * Debugger PIN: 804-888-352
-2021-08-09 21:59:53,990 INFO :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
-2021-08-09 21:59:55,138 INFO :  * Detected change in 'd:\\USER Data\\Desktop\\ITS-Math\\ITS_demo\\trial_question.py', reloading
-2021-08-09 21:59:55,725 WARNING :  * Debugger is active!
-2021-08-09 21:59:55,730 INFO :  * Debugger PIN: 804-888-352
-2021-08-09 21:59:55,900 INFO :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
-2021-08-09 22:00:09,273 INFO : Home Page
-2021-08-09 22:00:09,285 INFO : 127.0.0.1 - - [09/Aug/2021 22:00:09] "GET /home HTTP/1.1" 200 -
-2021-08-09 22:00:09,623 INFO : 127.0.0.1 - - [09/Aug/2021 22:00:09] "[36mGET /static/images/fractionbg.jpg HTTP/1.1[0m" 304 -
-2021-08-09 22:00:09,743 INFO : 127.0.0.1 - - [09/Aug/2021 22:00:09] "[36mGET /static/images/algebra_home.png HTTP/1.1[0m" 304 -
-2021-08-09 22:01:39,977 INFO : Home Page
-2021-08-09 22:01:39,978 INFO : 127.0.0.1 - - [09/Aug/2021 22:01:39] "GET /home HTTP/1.1" 200 -
-2021-08-09 22:01:40,002 INFO : 127.0.0.1 - - [09/Aug/2021 22:01:40] "[36mGET /static/images/fractionbg.jpg HTTP/1.1[0m" 304 -
-2021-08-09 22:01:40,230 INFO : 127.0.0.1 - - [09/Aug/2021 22:01:40] "[36mGET /static/images/algebra_home.png HTTP/1.1[0m" 304 -
-2021-08-09 22:01:54,906 INFO : Signup Page
-2021-08-09 22:01:54,913 INFO : 127.0.0.1 - - [09/Aug/2021 22:01:54] "GET /signup HTTP/1.1" 200 -
-2021-08-09 22:02:31,707 INFO : 127.0.0.1 - - [09/Aug/2021 22:02:31] "[35m[1mPOST /signup HTTP/1.1[0m" 500 -
-2021-08-09 22:02:31,749 INFO : 127.0.0.1 - - [09/Aug/2021 22:02:31] "GET /signup?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
-2021-08-09 22:02:32,049 INFO : 127.0.0.1 - - [09/Aug/2021 22:02:32] "GET /signup?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
-2021-08-09 22:02:32,367 INFO : 127.0.0.1 - - [09/Aug/2021 22:02:32] "GET /signup?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
-2021-08-09 22:02:32,407 INFO : 127.0.0.1 - - [09/Aug/2021 22:02:32] "GET /signup?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
-2021-08-09 22:02:32,611 INFO : 127.0.0.1 - - [09/Aug/2021 22:02:32] "GET /signup?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
-2021-08-09 22:05:03,376 INFO :  * Detected change in 'd:\\USER Data\\Desktop\\ITS-Math\\ITS_demo\\trial_question.py', reloading
-2021-08-09 22:05:04,056 WARNING :  * Debugger is active!
-2021-08-09 22:05:04,061 INFO :  * Debugger PIN: 804-888-352
-2021-08-09 22:05:04,234 INFO :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
-2021-08-09 22:05:54,739 INFO :  * Detected change in 'd:\\USER Data\\Desktop\\ITS-Math\\ITS_demo\\trial_question.py', reloading
-2021-08-09 22:05:55,351 WARNING :  * Debugger is active!
-2021-08-09 22:05:55,356 INFO :  * Debugger PIN: 804-888-352
-2021-08-09 22:05:55,561 INFO :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
-2021-08-09 22:05:55,577 INFO :  * Detected change in 'd:\\USER Data\\Desktop\\ITS-Math\\ITS_demo\\trial_question.py', reloading
-2021-08-09 22:05:56,404 WARNING :  * Debugger is active!
-2021-08-09 22:05:56,410 INFO :  * Debugger PIN: 804-888-352
-2021-08-09 22:05:56,579 INFO :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
-2021-08-09 22:06:00,022 INFO :  * Detected change in 'd:\\USER Data\\Desktop\\ITS-Math\\ITS_demo\\trial_question.py', reloading
-2021-08-09 22:06:00,788 WARNING :  * Debugger is active!
-2021-08-09 22:06:00,792 INFO :  * Debugger PIN: 804-888-352
-2021-08-09 22:06:00,976 INFO :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
-2021-08-09 22:06:02,111 INFO :  * Detected change in 'd:\\USER Data\\Desktop\\ITS-Math\\ITS_demo\\trial_question.py', reloading
-2021-08-09 22:06:02,721 WARNING :  * Debugger is active!
-2021-08-09 22:06:02,728 INFO :  * Debugger PIN: 804-888-352
-2021-08-09 22:06:02,995 INFO :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
-2021-08-09 22:06:06,424 INFO :  * Detected change in 'd:\\USER Data\\Desktop\\ITS-Math\\ITS_demo\\trial_question.py', reloading
-2021-08-09 22:06:07,049 WARNING :  * Debugger is active!
-2021-08-09 22:06:07,054 INFO :  * Debugger PIN: 804-888-352
-2021-08-09 22:06:07,252 INFO :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
-2021-08-09 22:06:20,846 INFO : 127.0.0.1 - - [09/Aug/2021 22:06:20] "[35m[1mPOST /signup HTTP/1.1[0m" 500 -
-2021-08-09 22:06:21,212 INFO : 127.0.0.1 - - [09/Aug/2021 22:06:21] "GET /signup?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
-2021-08-09 22:06:21,332 INFO : 127.0.0.1 - - [09/Aug/2021 22:06:21] "GET /signup?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
-2021-08-09 22:06:21,646 INFO : 127.0.0.1 - - [09/Aug/2021 22:06:21] "GET /signup?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
-2021-08-09 22:06:21,669 INFO : 127.0.0.1 - - [09/Aug/2021 22:06:21] "GET /signup?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
-2021-08-09 22:06:21,897 INFO : 127.0.0.1 - - [09/Aug/2021 22:06:21] "GET /signup?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
-2021-08-09 22:07:36,886 INFO :  * Detected change in 'd:\\USER Data\\Desktop\\ITS-Math\\ITS_demo\\trial_question.py', reloading
-2021-08-09 22:07:37,555 WARNING :  * Debugger is active!
-2021-08-09 22:07:37,559 INFO :  * Debugger PIN: 804-888-352
-2021-08-09 22:07:37,736 INFO :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
-2021-08-09 22:07:38,883 INFO :  * Detected change in 'd:\\USER Data\\Desktop\\ITS-Math\\ITS_demo\\trial_question.py', reloading
-2021-08-09 22:07:39,709 WARNING :  * Debugger is active!
-2021-08-09 22:07:39,720 INFO :  * Debugger PIN: 804-888-352
-2021-08-09 22:07:40,050 INFO :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
-2021-08-09 22:07:44,399 INFO : 127.0.0.1 - - [09/Aug/2021 22:07:44] "[35m[1mPOST /signup HTTP/1.1[0m" 500 -
-2021-08-09 22:07:44,767 INFO : 127.0.0.1 - - [09/Aug/2021 22:07:44] "GET /signup?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
-2021-08-09 22:07:44,930 INFO : 127.0.0.1 - - [09/Aug/2021 22:07:44] "GET /signup?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
-2021-08-09 22:07:45,242 INFO : 127.0.0.1 - - [09/Aug/2021 22:07:45] "GET /signup?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
-2021-08-09 22:07:45,258 INFO : 127.0.0.1 - - [09/Aug/2021 22:07:45] "GET /signup?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
-2021-08-09 22:07:45,494 INFO : 127.0.0.1 - - [09/Aug/2021 22:07:45] "GET /signup?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
-2021-08-09 22:12:07,275 INFO :  * Detected change in 'd:\\USER Data\\Desktop\\ITS-Math\\ITS_demo\\trial_question.py', reloading
-2021-08-09 22:12:07,971 WARNING :  * Debugger is active!
-2021-08-09 22:12:07,976 INFO :  * Debugger PIN: 804-888-352
-2021-08-09 22:12:08,169 INFO :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
-2021-08-09 22:12:16,987 INFO : 127.0.0.1 - - [09/Aug/2021 22:12:16] "[35m[1mPOST /signup HTTP/1.1[0m" 500 -
-2021-08-09 22:12:17,407 INFO : 127.0.0.1 - - [09/Aug/2021 22:12:17] "GET /signup?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
-2021-08-09 22:12:17,561 INFO : 127.0.0.1 - - [09/Aug/2021 22:12:17] "GET /signup?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
-2021-08-09 22:12:17,875 INFO : 127.0.0.1 - - [09/Aug/2021 22:12:17] "GET /signup?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
-2021-08-09 22:12:17,891 INFO : 127.0.0.1 - - [09/Aug/2021 22:12:17] "GET /signup?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
-2021-08-09 22:12:18,126 INFO : 127.0.0.1 - - [09/Aug/2021 22:12:18] "GET /signup?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
-2021-08-09 22:13:23,830 INFO :  * Detected change in 'd:\\USER Data\\Desktop\\ITS-Math\\ITS_demo\\trial_question.py', reloading
-2021-08-09 22:13:24,527 WARNING :  * Debugger is active!
-2021-08-09 22:13:24,532 INFO :  * Debugger PIN: 804-888-352
-2021-08-09 22:13:24,735 INFO :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
-2021-08-09 22:13:30,378 INFO : 127.0.0.1 - - [09/Aug/2021 22:13:30] "[35m[1mPOST /signup HTTP/1.1[0m" 500 -
-2021-08-09 22:13:30,766 INFO : 127.0.0.1 - - [09/Aug/2021 22:13:30] "GET /signup?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
-2021-08-09 22:13:30,872 INFO : 127.0.0.1 - - [09/Aug/2021 22:13:30] "GET /signup?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
-2021-08-09 22:13:31,185 INFO : 127.0.0.1 - - [09/Aug/2021 22:13:31] "GET /signup?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
-2021-08-09 22:13:31,203 INFO : 127.0.0.1 - - [09/Aug/2021 22:13:31] "GET /signup?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
-2021-08-09 22:13:31,437 INFO : 127.0.0.1 - - [09/Aug/2021 22:13:31] "GET /signup?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
-=======
-
->>>>>>> 522cbabf798f2d180b49e8350366adccf57d896a
-2021-08-10 09:38:52,901 INFO : Index Page
-2021-08-10 09:39:00,598 INFO : Signup Page
-2021-08-10 09:41:59,840 INFO : Index Page
-2021-08-10 09:42:04,424 INFO : Signup Page
-2021-08-10 09:43:03,311 INFO : Login Page
-2021-08-10 10:01:35,528 INFO : Index Page
-2021-08-10 10:01:40,194 INFO : Login Page
-2021-08-10 10:01:48,412 INFO : Login Page
-2021-08-10 10:03:14,482 INFO : Login Page
-2021-08-10 10:03:24,306 INFO : Login Page
-2021-08-10 10:04:03,015 INFO : Home Page
-2021-08-10 19:10:10,295 INFO : Index Page
-2021-08-10 19:10:13,769 INFO : Login Page
-2021-08-10 19:11:19,914 INFO : Home Page
-2021-08-10 19:11:48,415 INFO : Login Page
-2021-08-10 19:11:56,566 INFO : Home Page
-2021-08-10 19:12:03,340 INFO : Login Page
-2021-08-10 19:12:08,437 INFO : Login Page
-2021-08-10 19:13:57,393 INFO : Home Page
-2021-08-10 19:14:03,025 INFO : Login Page
-2021-08-10 19:14:06,650 INFO : Login Page
-2021-08-10 19:14:20,489 INFO : Home Page
->>>>>>> 130928dd88ec022257cb6b3043fd4f65273678bc
+2021-08-18 19:07:51,237,Index Page
+2021-08-18 19:07:55,540,Login Page
+2021-08-18 19:08:00,602,User Id 1 logged in.
+2021-08-18 19:08:00,609,User Id 1on home page
+2021-08-18 19:09:11,058,1 attempting question FE1 count 1
+2021-08-18 19:09:21,155,1 attempting question FE1 count 2
+2021-08-18 19:09:23,301,1 attempting question FE1 count 3
+2021-08-18 19:09:25,066,1 attempting question FE1 count 4
+2021-08-18 19:09:31,204,1 attempting question FE1 count 5
+2021-08-18 19:22:13,282, User Id 1 attempting question FE1 count 1
+2021-08-18 19:22:27,021,Index Page
+2021-08-18 19:22:30,022,Login Page
+2021-08-18 19:22:40,154,User Id 1 logged in.
+2021-08-18 19:22:40,160,User Id 1on home page
+2021-08-18 19:22:43,851,User id 1 choosing easy algebra question. 
+2021-08-18 19:22:46,199, User Id 1 attempting question AE1 count 2
+2021-08-18 19:22:48,777, User Id 1 attempting question AE1 count 3
+2021-08-18 19:22:57,708, User Id 1 attempting question AE1 count 4
+2021-08-18 19:22:58,684, User Id 1 attempting question AE1 count 5
+2021-08-18 19:23:01,892, User Id 1 attempting question AE1 count 6
+2021-08-18 19:23:14,563,User id 1 choosing intermediate fraction question. 
+2021-08-18 19:23:18,376, User Id 1 attempting question FI2 count 7
+2021-08-18 19:23:22,878, User Id 1 attempting question FI2 count 8
+2021-08-18 19:23:29,806, User Id 1 attempting question FI2 count 9
+2021-08-18 19:42:01,031, User Id 1 attempting question FI2 count 1
+2021-08-18 19:42:27,179,User id 1 choosing easy algebra question. 
+2021-08-18 19:42:29,899, User Id 1 attempting question AE1 count 2
+2021-08-18 19:42:32,489, User Id 1 attempting question AE1 count 3
+2021-08-18 19:42:33,577, User Id 1 attempting question AE1 count 4
+2021-08-18 19:42:35,514, User Id 1 attempting question AE1 count 5
+2021-08-18 19:42:39,193, User Id 1 attempting question AE1 count 6
+2021-08-18 19:44:00,581,Index Page
+2021-08-18 19:44:20,896,User id 1 choosing easy algebra question. 
+2021-08-18 19:44:23,395, User Id 1 attempting question AE1 count 1
+2021-08-18 19:49:07,416, User Id 1 attempting question AE1 count 1
+2021-08-18 19:49:27,848, User Id 1 attempting question AE1 count 2
+2021-08-18 19:49:45,244, User Id 1 attempting question AE1 count 3
+2021-08-18 19:49:49,708, User Id 1 attempting question AE1 count 4
+2021-08-18 19:50:40,207, User Id 1 attempting question AE1 count 1
+2021-08-18 19:51:33,405, User Id 1 attempting question AE1 count 1
+2021-08-18 19:51:45,099,User Id 1 Used hint no. 1 for question AE1 at time Wed Aug 18 2021 19:51:45 GMT+0530 (India Standard Time)
+2021-08-18 19:53:54,860, User Id 1 attempting question AE1 count 2
+2021-08-18 19:53:58,689,User id 1 choosing easy algebra question. 
+2021-08-18 19:54:09,955,Index Page
+2021-08-18 19:54:16,926,Login Page
+2021-08-18 19:54:22,409,User Id 1 logged in.
+2021-08-18 19:54:22,415,User Id 1on home page
+2021-08-18 19:54:27,204,User id 1 choosing intermediate fraction question. 
+2021-08-18 19:54:58,568, User Id 1 attempting question FI1 count 1
+2021-08-18 19:55:26,635, User Id 1 attempting question FI1 count 1
+2021-08-18 19:55:32,292,User Id 1 Used hint no. 1 for question FI1 at time Wed Aug 18 2021 19:55:32 GMT+0530 (India Standard Time)
+2021-08-18 19:55:40,418,User Id 1 Used hint no. 2 for question FI1 at time Wed Aug 18 2021 19:55:40 GMT+0530 (India Standard Time)
+2021-08-18 19:55:46,174,User Id 1 Used hint no. 3 for question FI1 at time Wed Aug 18 2021 19:55:45 GMT+0530 (India Standard Time)
+2021-08-18 19:56:34,679, User Id 1 attempting question FI1 count 2
+2021-08-18 19:56:36,334,User Id 1 Used hint no. 1 for question FI1 at time Wed Aug 18 2021 19:56:36 GMT+0530 (India Standard Time)
