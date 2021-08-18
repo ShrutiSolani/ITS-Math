@@ -341,6 +341,10 @@
             var hint_count = 0;
             $('#hint-btn').click(function(){
               hint_count++;
+              var time = new Date();
+              $.get('/getTime', {'quesid':quesid , 'hint_count':hint_count,'time':time}, function(response){
+                  console.log("done");
+                });
             })
 
             $('#next-btn').click(function(){
