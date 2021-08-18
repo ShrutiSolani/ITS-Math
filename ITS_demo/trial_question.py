@@ -1,3 +1,4 @@
+
 import re
 from flask import Flask, render_template, request, flash, redirect, url_for, session
 # from flask_login import current_user
@@ -42,7 +43,7 @@ def login():
 
 @app.route("/login",methods=['POST'])
 def logins():
-    
+
     mycursor=mydb.cursor()
     if request.method=='POST':
         email=request.form['email']
@@ -66,8 +67,6 @@ def signup():
 
 @app.route("/signup",methods=['POST'])
 def signups():
-    
-    mycursor=mydb.cursor()
 
     if request.method=="POST":
         fname = request.form['fname']
@@ -77,7 +76,7 @@ def signups():
         cpassword = request.form['cpassword']
         dob = request.form['dob']
         grade=request.form['grade']
-
+        mycursor=mydb.cursor()
         mycursor.execute("Insert into Student(first_name,last_name,email,password,dob,grade)values(%s,%s,%s,%s,%s,%s)",(fname,lname,email,password,dob,grade))
         mydb.commit()
         mycursor.close()
@@ -106,10 +105,10 @@ def score():
         now = datetime.datetime.now()
         tup = request.form
         # print(tup)
-        total = int(tup['data[1]']) + int(tup['data[2]']) +int(tup['data[3]']) +int(tup['data[undefined]']) 
+        total = int(tup['data[1]']) + int(tup['data[2]']) +int(tup['data[3]']) +int(tup['data[undefined]'])
         print(total)
         # print(type(userid))
-        # userid , timestamp , event ,qid ,ts1, sq1, Ets1 ,ts2, sq2, Ets2 ,ts3, sq3, Ets3 ,ts4, sq4, Ets4 
+        # userid , timestamp , event ,qid ,ts1, sq1, Ets1 ,ts2, sq2, Ets2 ,ts3, sq3, Ets3 ,ts4, sq4, Ets4
         app.logger.info('%d,%s,%s,%d,%s,%s,%d,%s,%s,%d,%s,%s,%d,%s',int(userid),str(tup['data[qid]']),str(datetimes[0]),int(tup['data[undefined]']),str(datetimes[1]),str(datetimes[1]),int(tup['data[1]']),str(datetimes[2]),str(datetimes[2]),int(tup['data[2]']),str(datetimes[3]),str(datetimes[3]),int(tup['data[3]']),str(now))
         return "Score received"
     else:
@@ -190,11 +189,11 @@ def horizontal_add():
     if len(datetimes)==4:
         datetimes=[]
     datetimes.append(x)
-    
+
     qid = data['algebra-add']
-    coeff = random.sample(range(-50,50),6) 
-    varx = ['x','x\u00b2','x\u00b3'] 
-    vary = ['y','y\u00b2','y\u00b3'] 
+    coeff = random.sample(range(-50,50),6)
+    varx = ['x','x\u00b2','x\u00b3']
+    vary = ['y','y\u00b2','y\u00b3']
     rx = random.choice(varx)
     ry = random.choice(vary)
     sign = []
@@ -216,10 +215,10 @@ def horizontal_add():
 @app.route('/vertical_sub')
 def vertical_sub():
     qid = data['vertical-sub']
-    coeff = random.sample(range(-50, 50), 6)  
-    varx = ['x', 'x\u00b2', 'x\u00b3']  
-    vary = ['y', 'y\u00b2', 'y\u00b3']  
-    varz = ['z', 'z\u00b2', 'z\u00b3'] 
+    coeff = random.sample(range(-50, 50), 6)
+    varx = ['x', 'x\u00b2', 'x\u00b3']
+    vary = ['y', 'y\u00b2', 'y\u00b3']
+    varz = ['z', 'z\u00b2', 'z\u00b3']
     rx = random.choice(varx)
     ry = random.choice(vary)
     rz = random.choice(varz)
@@ -268,7 +267,7 @@ def mixed_to_normal():
     frac = Fraction(num_ans,den)
     answer = {'qid': qid,'que':que, 'num_ans':frac.numerator, 'den_ans':frac.denominator,'den':den,'num':num_ans}
     return render_template('Normal_form.html', answer=answer)
-    
+
 
 @app.route('/unlike-add')
 def unlike_add():
@@ -323,10 +322,10 @@ def value_of_expression():
     answers = []
     num=random.randint(2,10)
     q4 = "If p = "+str(num)+", find the value of "
-    while(cnt<4):   
-        c1 =  random.randint(1,10) 
-        c2 =  random.randint(1,10) 
-        c3 =  random.randint(1,10) 
+    while(cnt<4):
+        c1 =  random.randint(1,10)
+        c2 =  random.randint(1,10)
+        c3 =  random.randint(1,10)
         s1 = random.choice(sign)
         s2 = random.choice(sign)
         v1 = random.choice(variable)
@@ -346,13 +345,13 @@ def value_of_expression():
         elif(s1=="-" and s2=="-"):
             answer= c1*var1 - c2*var2 - c3*var3
         elif(s1=="-" and s2=="+"):
-            answer= c1*var1 - c2*var2 + c3*var3 
-        terms.append(term)      
-        answers.append(answer) 
+            answer= c1*var1 - c2*var2 + c3*var3
+        terms.append(term)
+        answers.append(answer)
         cnt += 1
 
     return render_template('algebra_easy.html', easy={'topic': 'Value of Expression','question': q4, 'options': terms, 'answer': answers, 'num': 2, 'qid': qid})
-        
+
 def find_term(v, a):
     return a.index(v)
 
@@ -471,7 +470,7 @@ def add_fractions():
         num1=random.randint(1,25)
         den=random.randint(2,10)
         num2=random.randint(1,25)
-        
+
         qs="Add this two fractions "+str(num1)+"/"+str(den)+" and "+str(num2)+"/"+str(den)+"."
         ansnum=num1+num2
         ansden=den
