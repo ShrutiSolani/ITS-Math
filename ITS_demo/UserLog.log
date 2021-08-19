@@ -1,0 +1,12 @@
+2021-08-19 15:57:15,488,Index Page
+2021-08-19 15:57:17,521,Login Page
+2021-08-19 15:57:26,399,UserId 1 logged in.
+2021-08-19 15:57:26,406,UserId 1 on home page
+2021-08-19 15:57:33,827,UserId 1 choosing intermediate algebra question. 
+2021-08-19 15:57:37,726,UserId 1,qid AI1,count 1
+2021-08-19 15:57:42,456,UserId 1,qid AI1,count 2
+2021-08-19 15:57:43,938,UserId 1,qid AI1,hint 1
+2021-08-19 15:57:55,186,UserId 1,qid AI1,count 3
+2021-08-19 15:57:59,837,UserId 1,qid AI1,count 4
+2021-08-19 15:58:03,601,UserId 1,qid AI1,25 20 25 25
+2021-08-19 15:58:03,658,UserId 1 on home page
