@@ -54,7 +54,7 @@ def logins():
         count = mycursor.rowcount
         if (count == 1):
             session['userid'] = r[0][0]
-            app.logger.info('User Id '+str(r[0][0])+" logged in.")
+            app.logger.info('UserId '+str(r[0][0])+" logged in.")
             return redirect(url_for('home'))
         else:
             return redirect(url_for('logins'))
@@ -89,10 +89,11 @@ def signups():
 def home():
     # app.logger.info('Home Page')
     mycursor=mydb.cursor()
+    print("inside home")
     if 'userid' in session:
         mycursor.execute("select * from Student where id="+str(session['userid']))
         r = mycursor.fetchall()
-        app.logger.info('User Id '+str(session['userid'])+'on home page')
+        app.logger.info('UserId '+str(session['userid'])+' on home page')
         return render_template('home_new.html',name={'name':r[0][1]})
     else:
         return redirect(url_for('login'))
@@ -101,20 +102,19 @@ def home():
 @app.route('/score', methods=['POST'])
 def score():
     if request.method == 'POST':
+        print("Inside score")
         if 'userid' in session:
-            print(session['userid'])
             userid=session['userid']
-        
+
         count = 0
-        now = datetime.datetime.now()
-        tup = request.form
-        # print(tup)
-        total = int(tup['data[1]']) + int(tup['data[2]']) +int(tup['data[3]']) +int(tup['data[undefined]'])
-        print(total)
-        # print(type(userid))
-        # userid , timestamp , event ,qid ,ts1, sq1, Ets1 ,ts2, sq2, Ets2 ,ts3, sq3, Ets3 ,ts4, sq4, Ets4
-        app.logger.info('%d,%s,%s,%d,%s,%s,%d,%s,%s,%d,%s,%s,%d,%s',int(userid),str(tup['data[qid]']),str(datetimes[0]),int(tup['data[undefined]']),str(datetimes[1]),str(datetimes[1]),int(tup['data[1]']),str(datetimes[2]),str(datetimes[2]),int(tup['data[2]']),str(datetimes[3]),str(datetimes[3]),int(tup['data[3]']),str(now))
-        return "Score received"
+
+        tup = request.get_json('data')
+        print(tup['1'])
+        total = int(tup['undefined']) + int(tup['1']) + int(tup['2']) + int(tup['3'])
+        data = {'total': total}
+        app.logger.info("UserId "+ str(userid)+ ",qid "+ str(tup['qid']) + "," + str(tup['undefined']) +" "+str(tup['1'])+" "+str(tup['2'])+" "+str(tup['3']))+" "+str(total)
+        return json.dumps(data)
+
     else:
         return redirect(url_for("login"))
 
@@ -131,7 +131,7 @@ def profile():
         grade = r[0][6]
         dob = r[0][5]
         context ={'fname':fname,'lname':lname,'email':email,'grade':grade,'dob':dob}
-        app.logger.info('User Id '+str(session['userid'])+'on profile page')
+        app.logger.info('UserId '+str(session['userid'])+' on profile page')
         return render_template('UserScore.html',context=context)
     else:
         return redirect(url_for("login"))
@@ -148,20 +148,20 @@ def getTime():
     time = request.args.get('time')
     hint_count = request.args.get('hint_count')
     quesid = request.args.get('quesid')
-    app.logger.info("User Id "+str(session['userid'])+" Used hint no. "+str(hint_count)+" for question "+quesid+" at time "+str(time))
-    return "nasfnaf"
+    app.logger.info("UserId "+str(session['userid'])+",qid "+quesid+",hint "+str(hint_count))
+    return "TimeReceived"
 
 
 @app.route("/mixed-fraction")
 def question():
     global count
-    
+
     global datetimes
     x=datetime.datetime.now()
     if len(datetimes)==4:
         datetimes=[]
     datetimes.append(x)
-    
+
     qid = data['mixed-fraction']
     num = random.randint(1, 100)
     den = random.randint(1, 25)
@@ -173,7 +173,7 @@ def question():
     box_ans = [quo, rem, quo, rem, den]
     answer = {'qid': qid, 'que': que, 'b0': box_ans[0], 'b1': box_ans[1], 'b2': box_ans[2], 'b3': box_ans[3], 'b4': box_ans[4]}
     count+=1
-    app.logger.info(" User Id "+str(session['userid'])+" attempting question "+qid+" count "+str(count))
+    app.logger.info("UserId "+str(session['userid'])+",qid "+qid+",count "+str(count))
     return render_template('Mixed_fraction.html', answer=answer)
 
 
@@ -216,8 +216,8 @@ def compare():
         ans="3"
     answer={'qid': qid, 'que':que,'lcm':lcm,'num1':num1,'den1':den1,'num2':num2,'den2':den2,'ans':ans , 'f1':f1,'f2':f2}
     count+=1
-    app.logger.info(" User Id "+str(session['userid'])+" attempting question "+qid+" count "+str(count))
-    
+    app.logger.info("UserId "+str(session['userid'])+",qid "+qid+",count "+str(count))
+
     return render_template('fracompare.html', answer=answer)
 
 
@@ -252,19 +252,19 @@ def horizontal_add():
     answer = {'qid': qid, 'que':haddque,'varx':rx,'vary':ry,'coeff':coeff,'x_like':x_like,'y_like':y_like,'x_sum':x_sum,'y_sum':y_sum}
     global count
     count+=1
-    app.logger.info(" User Id "+str(session['userid'])+" attempting question "+qid+" count "+str(count))
+    app.logger.info("UserId "+str(session['userid'])+",qid "+qid+",count "+str(count))
     return render_template('algebra_add.html', answer=answer)
 
 
 @app.route('/vertical_sub')
 def vertical_sub():
-    
+
     global datetimes
     x=datetime.datetime.now()
     if len(datetimes)==4:
         datetimes=[]
     datetimes.append(x)
-    
+
 
     qid = data['vertical-sub']
     coeff = random.sample(range(-50, 50), 6)
@@ -293,14 +293,14 @@ def vertical_sub():
     answer = {'qid': qid, 'que': haddque, 'varx': rx, 'vary': ry,'varz':rz,'coeff': coeff,'x_diff': x_diff, 'y_diff': y_diff,'z_diff':z_diff}
     global count
     count+=1
-    app.logger.info(" User Id "+str(session['userid'])+" attempting question "+qid+" count "+str(count))
-    
+    app.logger.info("UserId "+str(session['userid'])+",qid "+qid+",count "+str(count))
+
     return render_template('vertical_sub.html', answer=answer)
 
 count = 0
 @app.route('/simplest-form')
 def simplest_form():
-    
+
     global count
     qid = data['simplest-form']
     num = random.randint(1,50)
@@ -311,8 +311,8 @@ def simplest_form():
     easy = {'topic': 'Simplest Form', 'qid': qid}
     userid = session['userid']
     count+=1
-    app.logger.info(" User Id "+str(userid)+" attempting question "+qid+" count "+str(count))
-    
+    app.logger.info(" UserId "+str(userid)+" ,qid  "+qid+" count "+str(count))
+
     return render_template('simplestForm.html',answer=answer, easy = easy)
 
 
@@ -331,8 +331,8 @@ def mixed_to_normal():
     answer = {'qid': qid,'que':que, 'num_ans':frac.numerator, 'den_ans':frac.denominator,'den':den,'num':num_ans}
     global count
     count+=1
-    app.logger.info(" User Id "+str(session['userid'])+" attempting question "+qid+" count "+str(count))
-    
+    app.logger.info("UserId "+str(session['userid'])+",qid "+qid+",count "+str(count))
+
     return render_template('Normal_form.html', answer=answer)
 
 
@@ -378,8 +378,8 @@ def unlike_add():
     answer = {'qid': qid,'que': que, 'num_ans': ans_frac.numerator, 'den_ans': ans_frac.denominator, 'den': den_ans, 'num': num_ans,'num1':num1,'den1':den1,'num2':num2,'den2':den2,'q':que}
     global count
     count+=1
-    app.logger.info(" User Id "+str(session['userid'])+" attempting question "+qid+" count "+str(count))
-    
+    app.logger.info("UserId "+str(session['userid'])+",qid "+qid+",count "+str(count))
+
     return render_template('Fraction_operation.html', answer=answer)
 
 
@@ -423,8 +423,8 @@ def value_of_expression():
 
     global count
     count+=1
-    app.logger.info(" User Id "+str(session['userid'])+" attempting question "+qid+" count "+str(count))
-    
+    app.logger.info("UserId "+str(session['userid'])+",qid "+qid+",count "+str(count))
+
     return render_template('algebra_easy.html', easy={'topic': 'Value of Expression','question': q4, 'options': terms, 'answer': answers, 'num': 2, 'qid': qid})
 
 def find_term(v, a):
@@ -454,8 +454,8 @@ def coefficient():
         cnt += 1
     global count
     count+=1
-    app.logger.info(" User Id "+str(session['userid'])+" attempting question "+qid+" count "+str(count))
-    
+    app.logger.info("UserId "+str(session['userid'])+",qid "+qid+",count "+str(count))
+
     return render_template('algebra_easy.html', easy={'topic': 'Identifying Coefficient','question': q1, 'options': terms, 'answer': answers, 'num': 1, 'qid': qid})
 
 
@@ -490,8 +490,8 @@ def monomial():
     contexts={'qid': qid, 'question': q2, 'options': terms, 'answer': answers, 'num': 1, 'topic': 'Monomial Binomial Trinomial'}
     global count
     count+=1
-    app.logger.info(" User Id "+str(session['userid'])+" attempting question "+qid+" count "+str(count))
-    
+    app.logger.info("UserId "+str(session['userid'])+",qid "+qid+",count "+str(count))
+
     return render_template('algebra2.html', easy=contexts)
 
 
@@ -522,8 +522,8 @@ def like_unlike():
     contexts={'qid': qid, 'question': q3, 'options': terms, 'answer': answers, 'num': 2, 'topic': 'Like-Unlike Terms'}
     global count
     count+=1
-    app.logger.info(" User Id "+str(session['userid'])+" attempting question "+qid+" count "+str(count))
-    
+    app.logger.info("UserId "+str(session['userid'])+",qid "+qid+",count "+str(count))
+
     return render_template('algebra2.html',easy=contexts)
 
 @app.route('/division')
@@ -545,8 +545,8 @@ def division():
     easy={'ans_num':ans_num,'ans_den':ans_den,'q':q, 'label1': 'Quotient', 'label2': 'Remainder', 'qid': qid}
     global count
     count+=1
-    app.logger.info(" User Id "+str(session['userid'])+" attempting question "+qid+" count "+str(count))
-    
+    app.logger.info("UserId "+str(session['userid'])+",qid "+qid+",count "+str(count))
+
     return render_template('division copy.html',easy=easy)
 
 
@@ -571,8 +571,8 @@ def add_fractions():
     contexts={'num': 1,'qid': qid,'topic': 'Add like fractions','ans_num':ans_num,'ans_den':ans_den,'q':q, 'label1': 'Quotient', 'label2' : 'Remainder'}
     global count
     count+=1
-    app.logger.info(" User Id "+str(session['userid'])+" attempting question "+qid+" count "+str(count))
-    
+    app.logger.info("UserId "+str(session['userid'])+",qid "+qid+",count "+str(count))
+
     return render_template('division.html',easy=contexts)
 
 
@@ -595,8 +595,8 @@ def multiply_with_whole():
     q.insert(1," ")
     global count
     count+=1
-    app.logger.info(" User Id "+str(session['userid'])+" attempting question "+qid+" count "+str(count))
-    
+    app.logger.info("UserId "+str(session['userid'])+",qid "+qid+",count "+str(count))
+
     return render_template('division.html',easy={'num': 2,'topic': 'Multiple by Whole number','ans_num':ans_num,'ans_den':ans_den,'q':q, 'label1': 'Numerator', 'label2': 'Denominator', 'qid': qid})
 
 @app.route('/divide-with-whole')
@@ -622,8 +622,8 @@ def divide_with_whole():
     scoredict = {'score': "", 'total': "", 'totalqts': "", 'pct': ""}
     global count
     count+=1
-    app.logger.info(" User Id "+str(session['userid'])+" attempting question "+qid+" count "+str(count))
-    
+    app.logger.info("UserId "+str(session['userid'])+",qid "+qid+",count "+str(count))
+
     return render_template('divideby_whole.html',answer=context)
 
 
@@ -634,7 +634,7 @@ def fraction_intermediate():
     'f3':{'q1':'Convert Mixed to Normal Form','h1':'Normal Form','link':'/normal-form'},
     'f4':{'q1':'Divide Fraction by Whole Number','h1':'Fraction Division','link':'/divide-with-whole'},
     'f5':{'q1':'Add or Subtract Two Fractions','h1':'Fraction Operation','link':'/unlike-add'}}
-    app.logger.info("User id "+str(session['userid'])+" choosing intermediate fraction question. ")
+    app.logger.info("UserId "+str(session['userid'])+" choosing intermediate fraction question. ")
     return render_template('easy_qts_choice.html' , topic=full,unit='UNIT: Fractions')
 
 
@@ -642,7 +642,7 @@ def fraction_intermediate():
 def algebra_intermediate():
     full={'f1':{'q1':'Addition of Algebraic Expressions','h1':'Horizontal Addition','link':'/algebra-add'},
     'f2':{'q1':'Subtraction of Algebraic Expressions','h1':'Vertical Subtraction','link':'/vertical_sub'}}
-    app.logger.info("User id "+str(session['userid'])+" choosing intermediate algebra question. ")
+    app.logger.info("UserId "+str(session['userid'])+" choosing intermediate algebra question. ")
     return render_template('easy_qts_choice.html' , topic=full,unit='UNIT: Algebra')
 
 
@@ -652,7 +652,7 @@ def fraction_easy():
     'f2':{'q1':'Find Quotient and Remainder','h1':'Fraction Division','link':'/division'},
     'f3':{'q1':'Add / Subtract like Fraction','h1':'Fraction Operation','link':'/add-fractions'},
     'f4':{'q1':'Multiply Fraction by Whole Number','h1':'Fraction Multiplication','link':'/multiply-with-whole'}}
-    app.logger.info("User id "+str(session['userid'])+" choosing easy fraction question. ")
+    app.logger.info("UserId "+str(session['userid'])+" choosing easy fraction question. ")
     return render_template('easy_qts_choice.html' , topic=full,unit='UNIT: Fractions')
 
 
@@ -662,7 +662,7 @@ def algebra_easy():
     'f2':{'q1':'Find value of Variable','h1':'Find value','link':'/value-of-expression'},
     'f3':{'q1':'Classify into Monomial, Bionomial, Trinomial ','h1':'Classification','link':'/monomial'},
     'f4':{'q1':'Identify Like or Unlike','h1':'Identification','link':'/like-unlike'}}
-    app.logger.info("User id "+str(session['userid'])+" choosing easy algebra question. ")
+    app.logger.info("UserId "+str(session['userid'])+" choosing easy algebra question. ")
     return render_template('easy_qts_choice.html' , topic=full , unit='UNIT: Algebra')
 
 
