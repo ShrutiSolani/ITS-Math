@@ -345,7 +345,7 @@
         
 
             <div class="card-footer text-muted green">
-                <a href="#" class="btn btn-info" data-toggle="modal" data-target="#myModal" id="hint-btn">Hint</a>
+                <a href="#" class="btn btn-info" data-toggle="modal"  data-target="#myModal" id="hint-btn">Hint</a>
                 
                 <i class="bi bi-circle-fill right"></i>
                 <i class="bi bi-circle-fill"></i>
@@ -465,6 +465,11 @@
             var hint_count = 0;
             $('#hint-btn').click(function(){
               hint_count++;
+              var time = new Date();
+              $.get('/getTime', {'quesid':quesid , 'hint_count':hint_count,'time':time}, function(response){
+                  console.log("done");
+                });
+
             })
 
             $('#next-btn').click(function(){
