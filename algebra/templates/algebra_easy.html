@@ -1,0 +1,57 @@
+{% extends "layout_easy.html" %}
+
+
+{% block script %}
+  window.onload = function(){
+    var source = "{{ url_for('static', filename = 'images/algebra_terms.jpeg') }}";
+    if({{ easy.num }} == '2'){
+      source = "{{ url_for('static', filename = 'images/algebra_find_value.png') }}";
+    }
+    $("#hint_img").attr("src", source);
+  }
+
+
+  var ans = [ "{{ easy.answer[0] }}", "{{ easy.answer[1] }}", "{{ easy.answer[2] }}", "{{ easy.answer[3] }}" ];
+
+  function check(i){
+    if(document.getElementsByTagName("input")[i].value == ans[i])
+    {
+      document.getElementsByClassName("correct")[i].style.display="inline";
+      document.getElementsByClassName("wrong")[i].style.display="none";
+      document.getElementsByClassName("step0")[i].classList.add("active");
+    }
+    else{
+      if({{ easy.num }} == '1'){
+        document.getElementsByClassName("wrong")[i].style.display="inline";
+        document.getElementsByClassName("correct")[i].style.display="none";
+      }
+      else{
+        document.getElementsByClassName("wrong")[i].style.display="inline";
+        document.getElementsByClassName("correct")[i].style.display="none";
+      }
+    }
+  }
+
+{% endblock %}
+{% block chapter %}Algebra{% endblock %}
+{% block topic %}{{ easy.topic }}{% endblock %}
+
+
+
+{% block content %}
+<h5 class="card-title">{{ easy.question }}</h5>
+<p>
+  {% for i in range(4) %}
+<div>{{ easy.options[i] }}
+  <input type="text" style="display: inline;" onchange="check({{ i }});">
+  <i class="fal fa-check correct fa-2x" style="display: none; color: green;"></i>
+  <i class="fal fa-times wrong fa-2x" style="display: none; color: red"></i><br><br>
+
+</div>
+{% endfor %}
+</p>
+{% endblock %}
+
+{% block hint %}
+<img src="" alt="" style="width:80%;" id="hint_img">
+{% endblock %}

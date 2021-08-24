@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/User.css') }}">
+
+    <title>Score</title>
+    <!-- Styles -->
+    <style>
+      .chartdiv {
+        width: 100%;
+        height: 500px;
+      }
+
+      </style>
+
+</head>
+<body>
+    <div class="container">
+        <div class="main-body">
+
+              <!-- Breadcrumb -->
+              <nav aria-label="breadcrumb" class="main-breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                  <li class="breadcrumb-item"><a href="javascript:void(0)">User</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">User Profile</li>
+                </ol>
+              </nav>
+              <!-- /Breadcrumb -->
+
+              <div class="row gutters-sm">
+                <div class="col-md-4 mb-3">
+                  <div class="card">
+                    <div class="card-body">
+                      <div class="d-flex flex-column align-items-center text-center">
+                        <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150">
+                        <div class="mt-3">
+                          <h4 style="text-transform:capitalize;">{{context.fname}} {{context.lname}}</h4>
+                          <p class="text-secondary mb-1">Grade {{context.grade}}</p>
+                          <p class="text-muted font-size-sm">School name</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+                <div class="col-md-8">
+                  <div class="card mb-3">
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col-sm-3">
+                          <h6 class="mb-0" >Full Name</h6>
+                        </div>
+                        <div class="col-sm-9 text-secondary" style="text-transform: capitalize;">
+                          {{ context.fname }}  {{context.lname }}
+                        </div>
+                      </div>
+                      <hr>
+                      <div class="row">
+                        <div class="col-sm-3">
+                          <h6 class="mb-0">Email</h6>
+                        </div>
+                        <div class="col-sm-9 text-secondary">
+                          {{context.email}}
+                        </div>
+                      </div>
+                      <hr>
+                      <div class="row">
+                        <div class="col-sm-3">
+                          <h6 class="mb-0">School Name</h6>
+                        </div>
+                        <div class="col-sm-9 text-secondary">
+                          D.J.Sanghvi
+                        </div>
+                      </div>
+                      <hr>
+                      <div class="row">
+                        <div class="col-sm-3">
+
+                          <h6 class="mb-0">Grade</h6>
+                        </div>
+                        <div class="col-sm-9 text-secondary">
+                          {{context.grade}}
+                        </div>
+                      </div>
+                      <hr>
+                      <div class="row">
+                        <div class="col-sm-3">
+                          <h6 class="mb-0">D.O.B</h6>
+                        </div>
+                        <div class="col-sm-9 text-secondary">
+                          {{context.dob}}
+                        </div>
+                      </div>
+                      <hr>
+                      <div class="row">
+                        <div class="col-sm-12">
+                          <a class="btn btn-info "  href="EditUserScore.html">Edit</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row gutters-sm">
+
+
+                  </div>
+
+
+
+                </div>
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col-md-6 mb-3">
+                      <div class="card h-100">
+                        <h1 class="card-title">Algebra</h1>
+                        <div class="card-body">
+
+                          <div id='myDiv2'><!-- Plotly chart will be drawn inside this DIV --></div>
+
+
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <div class="card h-100">
+                        <h1 class="card-title">Fraction</h1>
+                        <div class="card-body">
+
+
+                          <div id='myDiv'><!-- Plotly chart will be drawn inside this DIV --></div>
+
+
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <h6 class="d-flex align-items-center mb-3 "><i class="material-icons text-info mr-2"></i>Algebra</h6>
+                      <small>Coefficient</small>
+                      <div class="progress mb-3" style="height: 5px">
+                        <div class="progress-bar bg-primary" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                      </div>
+                      <small>Value of Expression</small>
+                      <div class="progress mb-3" style="height: 5px">
+                        <div class="progress-bar bg-primary" role="progressbar" style="width: 72%" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100"></div>
+                      </div>
+                      <small>Classification</small>
+                      <div class="progress mb-3" style="height: 5px">
+                        <div class="progress-bar bg-primary" role="progressbar" style="width: 89%" aria-valuenow="89" aria-valuemin="0" aria-valuemax="100"></div>
+                      </div>
+                      <small>Identification</small>
+                      <div class="progress mb-3" style="height: 5px">
+                        <div class="progress-bar bg-primary" role="progressbar" style="width: 55%" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
+                      </div>
+                      <small>Horizontal Addition</small>
+                      <div class="progress mb-3" style="height: 5px">
+                        <div class="progress-bar bg-primary" role="progressbar" style="width: 66%" aria-valuenow="66" aria-valuemin="0" aria-valuemax="100"></div>
+                      </div>
+                      <small>Vertical Subtraction</small>
+                        <div class="progress mb-3" style="height: 5px">
+                          <div class="progress-bar bg-primary" role="progressbar" style="width: 66%" aria-valuenow="66" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <h6 class="d-flex align-items-center mb-3"><i class="material-icons text-info mr-2"></i>Fraction</h6>
+                        <small>Simplest Form</small>
+                        <div class="progress mb-3" style="height: 5px">
+                          <div class="progress-bar bg-primary" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        <small>Division</small>
+                        <div class="progress mb-3" style="height: 5px">
+                          <div class="progress-bar bg-primary" role="progressbar" style="width: 72%" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        <small>Operation</small>
+                        <div class="progress mb-3" style="height: 5px">
+                          <div class="progress-bar bg-primary" role="progressbar" style="width: 89%" aria-valuenow="89" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        <small>Multiplication</small>
+                        <div class="progress mb-3" style="height: 5px">
+                          <div class="progress-bar bg-primary" role="progressbar" style="width: 55%" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        <small>Mixed Fraction</small>
+                        <div class="progress mb-3" style="height: 5px">
+                          <div class="progress-bar bg-primary" role="progressbar" style="width: 66%" aria-valuenow="66" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        <small>Compare</small>
+                        <div class="progress mb-3" style="height: 5px">
+                          <div class="progress-bar bg-primary" role="progressbar" style="width: 66%" aria-valuenow="66" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        <small>Normal Form</small>
+                        <div class="progress mb-3" style="height: 5px">
+                          <div class="progress-bar bg-primary" role="progressbar" style="width: 66%" aria-valuenow="66" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        <small>Fraction Division</small>
+                        <div class="progress mb-3" style="height: 5px">
+                          <div class="progress-bar bg-primary" role="progressbar" style="width: 66%" aria-valuenow="66" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        <small>Fraction Operation </small>
+                        <div class="progress mb-3" style="height: 5px">
+                          <div class="progress-bar bg-primary" role="progressbar" style="width: 66%" aria-valuenow="66" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+        </div>
+
+
+        <script src="https://cdn.amcharts.com/lib/4/core.js"></script>
+<script src="https://cdn.amcharts.com/lib/4/charts.js"></script>
+<script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
+<script src='https://cdn.plot.ly/plotly-2.3.1.min.js'></script>
+
+
+<!-- Chart code -->
+<script src='https://cdn.plot.ly/plotly-2.3.1.min.js'></script>
+<script>
+  var fraction = [{
+  values: [2,2,3,2],
+  labels: ['Easy','Easy Incomplete', 'Intermediate','Indermediate InComplete'],
+  type: 'pie'
+}];
+
+var algebra = [{
+  values: [3,1,1,1],
+  labels: ['Easy','Easy Incomplete', 'Intermediate','Indermediate InComplete'],
+  type: 'pie'
+}];
+
+var layout = {
+  height: 400,
+  width: 500
+};
+
+Plotly.newPlot('myDiv', fraction, layout);
+
+Plotly.newPlot('myDiv2', algebra, layout);
+
+</script>
+
+</body>
+</html>

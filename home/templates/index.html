@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,200&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+  <title>Home</title>
+
+</head>
+
+<body>
+  <nav id="n1" class="navbar navbar-expand-lg navbar-light mb-3 navbar-fixed-top nav white">
+    <a class="navbar-brand" href="#">Logo PhiloMath</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse " id="navbarSupportedContent">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link a1" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link a1" href="#">About Us</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link a1" href="#">Our Team</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link a1" href="#">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="main blue">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-7 col-md-12 col-11 d-flex justify-content-around align-items-center" id="leftsection">
+          <img src="{{ url_for('static', filename='images/teaching-animate.svg') }}">
+        </div>
+        <div class="col-lg-5 col-md-12 col-11" id="rightsection">
+          <h1>All you need is a Tutor. PhiloMath - The Ultimate Tutoring System</h1>
+          <a href="{{ url_for('home_bp.signup') }}"><button type="button" class="btn signup white" style="font-size: 1.5rem;">Sign Up Now</button></a>
+          <a href="{{ url_for('home_bp.login') }}"><button type="button" class="btn signup white" style="font-size: 1.5rem;">Login </button></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <section class="sec white">
+    <h1 style="text-align: center;font-size: 3.8rem;text-decoration: underline;padding: 10px 0;">Our Features</h1>
+    <div class="container-fluid" style="width:80%;">
+      <div class="row">
+        <div class="col-lg-4 col-md-12 col-sm-11">
+          <div class="card grey-light">
+            <h5 class="card-title" style="text-align: center;font-size: 3rem;">Personalized Learning</h5>
+            <img src="../static/images/Mathematics-bro.png" class="card-img-top" alt="...">
+            <div class="card-body">
+              <p class="card-text" style="font-size: 1.7rem;text-align: justify;">Students practice at their own pace,getting clear understanding of concepts.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-12 col-sm-11">
+          <div class="card grey-light">
+            <h5 class="card-title" style="text-align: center;font-size: 3rem;">User-Friendly Interface</h5>
+            <img src="../static/images/Online test-amico.png" class="card-img-top" alt="...">
+            <div class="card-body">
+              <p class="card-text" style="font-size: 1.7rem;text-align: justify;">Simple & straight forward interface enabling users to built instant connect with system</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-12 col-sm-11">
+          <div class="card grey-light">
+            <h5 class="card-title" style="text-align: center;font-size: 3rem;">Anywhere Accessibility</h5>
+            <img src="../static/images/User-friendly.png" class="card-img-top" alt="...">
+            <div class="card-body">
+              <p class="card-text" style="font-size: 1.7rem;text-align: justify;">Practice questions using any devices from anywhere.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <section class="sec blue" style="padding: 3rem;">
+
+    <div class="container" style="border-radius: 30px;background-color:blanchedalmond;">
+
+      <div style="padding-top: 30px;">
+        <h1 style="text-align: center;color: #0070BB;">Get in touch!</h1>
+        <p style="font-weight: bolder ;color: #0070BB;text-align: center;">Contact us for a quote, help at to join the team</p>
+      </div>
+
+      <div class="row" style="padding:3% 5%;">
+        <div class="col-lg-4 cpl-md-4 col-sm-12">
+          <div style="display: flex;flex-direction: column;justify-content: center;align-items: center;margin-bottom: 1rem;">
+            <i class="fas fa-map-marker-alt fa-3x" style="color:#0070BB;margin-bottom: 5px;"></i>
+            <h6 style="color: gray;font-weight: bolder ;">102 Street 2714 Don</h6>
+            <h6 style="color: gray;font-weight: bolder ;">102 Street 2714 Don</h6>
+            <h6 style="color: gray;font-weight: bolder ;">102 Street 2714 Don</h6>
+          </div>
+        </div>
+
+        <div class="col-lg-4 cpl-md-4 col-sm-12">
+          <div style="display: flex;flex-direction: column;justify-content: center;align-items: center;margin-bottom: 1rem;">
+            <i class="fas fa-phone-alt fa-3x" style="color:#0070BB;margin-bottom: 5px;"></i>
+            <h6 style="color: gray;font-weight: bolder ;">+02 1234 567</h6>
+            <h6 style="color: gray;font-weight: bolder ;">+02 1234 568</h6>
+            <h6 style="color: gray;font-weight: bolder ;">+02 1234 569</h6>
+          </div>
+        </div>
+
+        <div class="col-lg-4 cpl-md-4 col-sm-12">
+          <div style="display: flex;flex-direction: column;justify-content: center;align-items: center;">
+            <i class="fas fa-envelope fa-3x" style="color:#0070BB;margin-bottom: 5px;"></i>
+            <h6 style="color: gray;font-weight: bolder ;">Contact1@gmail.com</h6>
+            <h6 style="color: gray;font-weight: bolder ;">Contact2@gmail.com</h6>
+            <h6 style="color: gray;font-weight: bolder ;">Contact3@gmail.com</h6>
+          </div>
+        </div>
+      </div>
+
+      <form>
+        <div class="row" style="padding: 1rem 2rem;">
+          <div class="col-lg-6 col-md-12 col-sm-12">
+            <input style=" width: 100%;color: blue;" placeholder="Your Name" type="text" id="name"><br>
+            <input style="width: 100%;color: blue;" placeholder="Email" type="email" id="mail"><br>
+            <input style="  width: 100%;color: blue;" placeholder="Phone" type="text" id="phone"><br>
+          </div>
+          <div class="col-lg-6 col-md-12 col-sm-12">
+            <textarea style="border: gray; height: 88%;width: 100%;" placeholder="Message" id="msg"></textarea><br>
+          </div>
+          <button style="color:white;margin-top: 30px; width: 100%;font-size: 25px;background-color:#0070BB;padding: 12px 7px;">Send Message</button>
+        </div>
+      </form>
+    </div>
+  </section>
+  </div>
+  </div>
+  </div>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,143 @@
+* {
+  margin: 0;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+.blue {
+  background-color: #0070BB;
+}
+
+.white {
+  background-color: white;
+}
+
+#n1 {
+  position: fixed;
+  height: calc(100%-200px);
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+}
+
+.navbar-brand, .nav-link {
+  color: #000 !important;
+}
+
+.carousel-item {
+  width: 100%;
+  height: 950px;
+  position: relative;
+  z-index: 1;
+}
+
+.carousel-item img {
+  height: 100%;
+  width: 100%;
+}
+
+.s1 {
+  margin-top: 40px;
+}
+
+.carousel-caption {
+  width: 50%;
+  position: absolute;
+  top: 90px;
+  left: 50%;
+  padding-right: 70px;
+  color: white;
+}
+
+.carousel-caption h2 {
+  color: white;
+  font-size: 3rem;
+  margin-bottom: 20px;
+  text-align: start;
+}
+
+.carousel-caption h3 {
+  color: white;
+  font-size: 1.8rem;
+  position: absolute;
+  right: 70px;
+}
+
+.main {
+  width: 100%;
+  height: 100%;
+}
+
+#leftsection, #rightsection {
+  padding: 20px 10px;
+}
+
+#righttsection h3 {
+  font-family: 'Poppins', sans-serif;
+  color: black;
+  font-size: 2vw;
+}
+
+#rightsection, #leftsection {
+  margin: 0 auto;
+  display: block;
+}
+
+#leftsection img {
+  border-radius: 10px;
+  width: 100%;
+  height: 98%;
+}
+
+.alg {
+  width: 100%;
+  height: 100%;
+}
+
+#board {
+  width: 100%;
+  height: 880px;
+  margin-top: 56px;
+  background-color: #31343a;
+  border: 15px solid grey;
+  color: #fbf7f5;
+  font-family: 'Fredericka the Great', cursive;
+}
+
+#date-div {
+  width: 30%;
+  margin-top: 30px;
+  padding: 10px;
+}
+
+#date {
+  margin: 10px 5px;
+  padding: 5px;
+  font-size: 2.5rem;
+  transform: rotate(-25deg);
+  text-decoration: underline;
+}
+
+#quote {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 200px;
+}
+
+#quot {
+  font-size: 2.5rem;
+}
+
+#author {
+  font-size: 2.5rem;
+  margin-top: 10px;
+}
+
+#div-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

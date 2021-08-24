@@ -1,0 +1,171 @@
+.blue {
+  background-color: #0070BB;
+  color: white;
+}
+
+.white {
+  background-color: white;
+}
+
+#n1 {
+  position: fixed;
+  height: calc(100%-200px);
+  width: 100vw;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+}
+
+.navbar-brand, .nav-link {
+  color: #fff !important;
+}
+
+.main {
+  margin-top: 70px;
+  width: 100vw;
+  height: 100%;
+}
+
+.green {
+  color: white;
+}
+
+.right {
+  margin-left: 75%;
+}
+
+.next {
+  margin-left: 5%;
+}
+
+i {
+  color: #0070bb;
+}
+
+.done {
+  color: #C0E218;
+}
+
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700");
+
+.card0 {
+  background-color: #F5F5F5;
+  border-radius: 8px;
+  z-index: 0
+}
+
+.card00 {
+  z-index: 0
+}
+
+.card1 {
+  margin-left: 140px;
+  z-index: 0;
+  border-right: 1px solid #F5F5F5
+}
+
+.card2 {
+  display: none
+}
+
+.card2.show {
+  display: block
+}
+
+#progressbar {
+  position: absolute;
+  right: 10%;
+  top: 20%;
+  overflow: hidden;
+  color: #0070bb
+}
+
+#progressbar li {
+  list-style-type: none;
+  font-size: 8px;
+  font-weight: 400;
+  margin-bottom: 36px
+}
+
+#progressbar li:nth-child(3) {
+  margin-bottom: 88px
+}
+
+#progressbar .step0:before {
+  content: "";
+  color: #fff
+}
+
+#progressbar li:before {
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  display: block;
+  font-size: 20px;
+  background: #fff;
+  border: 2px solid #0070bb;
+  border-radius: 50%;
+  margin: auto
+}
+
+#progressbar li:last-child:before {
+  width: 40px;
+  height: 40px
+}
+
+#progressbar li:after {
+  content: '';
+  width: 3px;
+  height: 66px;
+  background: #BDBDBD;
+  position: absolute;
+  left: 58px;
+  top: 15px;
+  z-index: -1
+}
+
+#progressbar li:last-child:after {
+  top: 147px
+}
+
+#progressbar li:nth-child(3):after {
+  top: 81px
+}
+
+#progressbar li:nth-child(2):after {
+  top: 0px
+}
+
+#progressbar li:first-child:after {
+  position: absolute;
+  top: -81px
+}
+
+#progressbar li.active:after {
+  background: #0070bb
+}
+
+#progressbar li.active:before {
+  background: #0070bb;
+}
+
+.tick {
+  width: 100px;
+  height: 100px
+}
+
+.prev {
+  display: block;
+  position: absolute;
+  left: 40px;
+  top: 20px;
+  cursor: pointer
+}
+
+.prev:hover {
+  color: #0070bb !important
+}
+
+.time-card {
+  height: 50vh;
+}

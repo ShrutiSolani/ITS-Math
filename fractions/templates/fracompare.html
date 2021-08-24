@@ -1,0 +1,344 @@
+{% extends "layout.html" %}
+{% block style %}
+.project {
+width: 400px;
+margin-bottom: 1em;
+}
+.project > div {
+display: inline-block;
+margin: 0 -5px 0 0;
+vertical-align: middle;
+}
+h2{
+padding:17px;
+}
+.task {
+width: 42rem;
+height: 7rem;
+border: .4em solid #E4E4E7;
+background: #E4E4E7;
+border-radius: 100%;
+}
+.progress {
+width: calc( 50% - 3em);
+height: .6em;
+padding: .2em 0;
+background: #E4E4E7;
+position: relative;
+}
+.progress>div {
+height: .2em;
+left: -.4em;
+right: -.4em;
+position: absolute;
+}
+.pending { background: #F8AC59; }
+.running { background: #1C84C6; }
+.passed { background: #1AB394; }
+.failed { background: #ED5565; }
+{% endblock %}
+
+{% block script %}
+$(function() {
+$('.progress>div').each(function() {
+$(this).css('width', $(this).data('progress') );
+});
+})
+
+var x = document.getElementsByClassName("correct");
+var y = document.getElementsByClassName("wrong");
+
+var feedcount = 0;
+
+const check0=()=>
+{
+if(document.getElementsByTagName("input")[0].value == {{ answer.lcm }} )
+{
+$(x[0]).show();
+$(y[0]).hide();
+document.getElementsByTagName("h2")[0].innerHTML="";
+document.getElementById("icon1").style.display="inline";
+document.getElementsByClassName("step0")[0].classList.add("active");
+}
+else
+{
+if(document.getElementsByTagName("input")[0].value !="" ){
+feedcount++;
+$(x[0]).hide();
+$(y[0]).show();
+document.getElementsByTagName("input")[0].value = "";
+swal({
+title: "Oops, Looks like you are confused in the format",
+text: "Denominator in mixed fraction is same as denominator of fraction ",
+icon: "error",
+button: true,
+dangerMode: true,
+})
+.then((willDelete) => {
+if (willDelete) {
+swal("Now try again", {
+icon: "success",
+});
+}
+});
+}
+}
+}
+
+function check1()
+{
+if(document.getElementsByTagName("input")[1].value == {{ answer.num1 }} )
+{
+$(x[1]).show();
+$(y[1]).hide();
+}
+else
+{
+if(document.getElementsByTagName("input")[1].value !="" ){
+feedcount++;
+$(x[1]).hide();
+$(y[1]).show();
+document.getElementsByTagName("input")[1].value = "";
+swal({
+title: "Oops, Looks like you are confused in the format",
+text: "Denominator in mixed fraction is same as denominator of fraction ",
+icon: "error",
+button: true,
+dangerMode: true,
+})
+.then((willDelete) => {
+if (willDelete) {
+swal("Now try again", {
+icon: "success",
+});
+}
+});
+}
+}
+}
+
+function check2()
+{
+if(document.getElementsByTagName("input")[2].value == {{ answer.den1 }})
+{
+$(x[2]).show();
+$(y[2]).hide();
+document.getElementsByTagName("h2")[1].innerHTML="";
+document.getElementById("icon2").style.display="inline";
+}
+else
+{
+if(document.getElementsByTagName("input")[2].value !=""){
+feedcount++;
+$(x[2]).hide();
+$(y[2]).show();
+document.getElementsByTagName("input")[2].value = "";
+swal({
+title: "Oops, Looks like you are confused in the format",
+text: "Denominator in mixed fraction is same as denominator of fraction ",
+icon: "error",
+button: true,
+dangerMode: true,
+})
+.then((willDelete) => {
+if (willDelete) {
+swal("Now try again", {
+icon: "success",
+});
+}
+});
+}
+}
+}
+
+function check3()
+{
+if(document.getElementsByTagName("input")[3].value == {{ answer.num2 }})
+{
+$(x[3]).show();
+$(y[3]).hide();
+}
+else
+{
+if(document.getElementsByTagName("input")[3].value !=""){
+feedcount++;
+$(x[3]).hide();
+$(y[3]).show();
+document.getElementsByTagName("input")[3].value = "";
+swal({
+title: "Oops, Looks like you are confused in the format",
+text: "Denominator in mixed fraction is same as denominator of fraction ",
+icon: "error",
+button: true,
+dangerMode: true,
+})
+.then((willDelete) => {
+if (willDelete) {
+swal("Now try again", {
+icon: "success",
+});
+}
+});
+
+}
+}
+}
+
+function check4()
+{
+if(document.getElementsByTagName("input")[4].value == {{ answer.den2 }})
+{
+$(x[4]).show();
+$(y[4]).hide();
+document.getElementsByTagName("h2")[2].innerHTML="";
+document.getElementById("icon3").style.display="inline";
+document.getElementsByClassName("step0")[1].classList.add("active");
+}
+else
+{
+if(document.getElementsByTagName("input")[4].value == {{ answer.den2 }}){
+feedcount++;
+$(x[4]).hide();
+$(y[4]).show();
+document.getElementsByTagName("input")[4].value = "";
+swal({
+title: "Oops, Looks like you are confused in the format",
+text: "Denominator in mixed fraction is same as denominator of fraction ",
+icon: "error",
+button: true,
+dangerMode: true,
+})
+.then((willDelete) => {
+if (willDelete) {
+swal("Now try again", {
+icon: "success",
+});
+}
+});
+}
+}
+}
+
+function check5()
+{
+if(document.getElementsByTagName("input")[5].value == {{ answer.ans }})
+{
+
+$(x[5]).show();
+$(y[5]).hide();
+document.getElementsByClassName("step0")[0].classList.add("active");
+document.getElementsByClassName("step0")[1].classList.add("active");
+document.getElementsByClassName("step0")[2].classList.add("active");
+document.getElementById("icon4").style.display="inline";
+document.getElementById("icon4").style.color="green";
+document.getElementsByTagName("h2")[0].innerHTML="";
+document.getElementsByTagName("h2")[1].innerHTML="";
+document.getElementsByTagName("h2")[2].innerHTML="";
+document.getElementById("icon1").style.display="inline";
+document.getElementById("icon2").style.display="inline";
+document.getElementById("icon3").style.display="inline";
+
+}
+else
+{
+if(document.getElementsByTagName("input")[5].value !=""){
+feedcount++;
+$(x[5]).hide();
+$(y[5]).show();
+document.getElementsByTagName("input")[5].value = "";
+swal({
+title: "Oops, Looks like you are confused in the format",
+text: "Denominator in mixed fraction is same as denominator of fraction ",
+icon: "error",
+button: true,
+dangerMode: true,
+})
+.then((willDelete) => {
+if (willDelete) {
+swal("Now try again", {
+icon: "success",
+});
+}
+});
+
+}
+}
+}
+function right1(){
+if(document.getElementById("btn3").innerHTML==="LCM"){
+$("#myModal").modal('hide');
+document.getElementsByClassName("ryt1")[0].style.display="inline";
+document.getElementsByClassName("ryt1")[1].style.display="inline";
+document.getElementById("btn1").innerHTML="Find Equivalent";
+document.getElementById("btn2").innerHTML="Simplest Form";
+document.getElementById("btn3").innerHTML="Compare Denominators";
+document.getElementById("btn4").innerHTML="Compare Numerators";
+}
+}
+function right2(){
+if(document.getElementById("btn1").innerHTML==="Find Equivalent"){
+$("#myModal").modal('hide');
+document.getElementsByClassName("ryt2")[0].style.display="block";
+document.getElementsByClassName("ryt2")[1].style.display="inline";
+document.getElementsByClassName("ryt2")[2].style.display="block";
+document.getElementsByClassName("ryt2")[3].style.display="block";
+document.getElementsByClassName("ryt2")[4].style.display="block";
+document.getElementsByClassName("ryt2")[5].style.display="inline";
+document.getElementsByClassName("ryt2")[6].style.display="block";
+document.getElementsByClassName("ryt2")[7].style.display="block";
+document.getElementById("hint-btn").disabled = true;
+document.getElementById("hint-btn").style.backgroundColor = "grey";
+}
+}
+
+
+{% endblock %}
+{% block chapter %}Fraction{% endblock %}
+{% block topic %}Compare Two Fraction{% endblock %}
+
+
+{% block hint %}
+<button type="button" class="btn btn-primary" style="margin-bottom:30px;width:100%" id="btn1" onclick="right2();">HCF</button>
+<button type="button" class="btn btn-secondary" style="margin-bottom:30px;width:100%" id="btn2">Average</button>
+<button type="button" class="btn btn-secondary" style="margin-bottom:30px;width:100%" onclick="right1();" id="btn3">LCM</button>
+<button type="button" class="btn btn-secondary" style="margin-bottom:30px;width:100%" id="btn4">Multiply</button>
+{% endblock %}
+
+{% block content %}
+<h5 class="card-title">{{ answer.que }}</h5>
+<br><br>
+<label for="quo1" style="display:none;" class="ryt1">LCM:</label>
+<input type="text" id="quo1" name="quo" maxlength="8" size="2" onblur="check0();" class="ryt1" style="display:none;">
+<i class="fal fa-check correct fa-2x" style="display: none; color: green;"></i>
+<i class="fal fa-times wrong fa-2x" style="display: none; color: red"></i>
+<br><br>
+
+<label for="rem1" class="ryt2" style="display:none;">Equivalent fraction of {{ answer.f1 }}</label>
+<input type="text" class="ryt2" id="rem1" name="rem" maxlength="8" size="2" onblur="check1();" style="display:none;">
+<i class="fal fa-check correct fa-2x" style="display: none; color: green;"></i>
+<i class="fal fa-times wrong fa-2x" style="display: none; color: red"></i>
+<h5 style="display:none;" class="ryt2">---------------</h5>
+<input type="text" class="ryt2" id="rem2" name="rem" maxlength="8" size="2" onblur="check2();" style="display:none;">
+<i class="fal fa-check correct fa-2x" style="display: none; color: green;"></i>
+<i class="fal fa-times wrong fa-2x" style="display: none; color: red"></i>
+<br>
+
+<label for="rem3" class="ryt2" style="display:none;">Equivalent fraction of {{ answer.f2 }}</label>
+<input type="text" id="rem3" name="rem" maxlength="8" size="2" onblur="check3();" class="ryt2" style="display:none;">
+<i class="fal fa-check correct fa-2x" style="display: none; color: green;"></i>
+<i class="fal fa-times wrong fa-2x" style="display: none; color: red"></i>
+<h5 style="display:none;" class="ryt2">---------------</h5>
+
+<input type="text" id="rem4" name="rem" maxlength="8" size="2" onblur="check4();" class="ryt2" style="display:none;">
+<i class="fal fa-check correct fa-2x" style="display: none; color: green;"></i>
+<i class="fal fa-times wrong fa-2x" style="display: none; color: red"></i>
+<br>
+
+<label for="quo2">Solution : </label>
+{{ answer.f1 }}
+<input type="text" id="quo2" name="quo" maxlength="8" size="2" onblur="check5();">{{ answer.f2 }}
+<i class="fal fa-check correct fa-2x" style="display: none; color: green;"></i>
+<i class="fal fa-times wrong fa-2x" style="display: none; color: red"></i>
+<br><br>
+
+{% endblock %}

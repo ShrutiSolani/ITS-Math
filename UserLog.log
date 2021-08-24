@@ -1,0 +1,22 @@
+2021-08-24 14:28:18,059,{"message": "Signup Page"}
+2021-08-24 14:31:04,625,{"message": "Login Page"}
+2021-08-24 14:31:12,957,{"userid": 4, "message": "Logged In"}
+2021-08-24 14:31:12,966,{"userid": 4, "message": "Home Page"}
+2021-08-24 14:31:46,412,{"userid": 4, "message": "Choosing Question", "topic": "Fractions", "level": "Easy"}
+2021-08-24 14:31:54,986,{"userid": 4, "qid": "FE3", "qcount": 1}
+2021-08-24 14:32:01,168,{"userid": 4, "qid": "FE3", "hint_no": "1"}
+2021-08-24 14:32:06,604,{"userid": 4, "qid": "FE3", "qcount": 2}
+2021-08-24 14:32:07,898,{"userid": 4, "qid": "FE3", "qcount": 3}
+2021-08-24 14:32:09,103,{"userid": 4, "qid": "FE3", "qcount": 4}
+2021-08-24 14:32:30,776,{"userid": 4, "qid": "FE3", "q1": "20", "q2": "25", "q3": "25", "q4": "25", "total": 95}
+2021-08-24 14:32:30,795,{"userid": 4, "message": "Home Page"}
+2021-08-24 14:32:35,203,{"userid": 4, "message": "Choosing Question", "topic": "Fractions", "level": "Intermediate"}
+2021-08-24 14:33:52,129,{"userid": 4, "message": "Choosing Question", "topic": "Fractions", "level": "Intermediate"}
+2021-08-24 14:37:05,107,{"message": "Login Page"}
+2021-08-24 14:37:30,250,{"userid": 4, "message": "Logged In"}
+2021-08-24 14:37:30,256,{"userid": 4, "message": "Home Page"}
+2021-08-24 14:37:33,190,{"userid": 4, "message": "Choosing Question", "topic": "Fractions", "level": "Intermediate"}
+2021-08-24 14:37:34,560,{"userid": 4, "qid": "FI1", "qcount": 1}
+2021-08-24 14:37:40,682,{"userid": 4, "qid": "FI1", "qcount": 2}
+2021-08-24 14:39:25,517,{"userid": 4, "qid": "FI1", "qcount": 3}
+2021-08-24 14:39:31,418,{"userid": 4, "qid": "FI1", "qcount": 4}

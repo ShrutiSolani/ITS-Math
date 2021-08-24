@@ -1,0 +1,71 @@
+{% extends "layout_easy.html" %}
+{% block chapter%}Fraction{% endblock %}
+{% block topic %}{{ easy.topic }}{% endblock %}
+
+{% block script %}
+
+var x = document.getElementsByClassName("correct");
+var y = document.getElementsByClassName("wrong");
+var feedcount = 0;
+
+function check_num()
+{
+if(document.getElementsByTagName("input")[0].value == {{ answer.num_ans }} )
+{
+$(x[0]).show();
+$(y[0]).hide();
+document.getElementsByClassName("step0")[0].classList.add("active");
+document.getElementsByClassName("step0")[1].classList.add("active");
+}
+else
+{
+if(document.getElementsByTagName("input")[0].value != ""){
+$(x[0]).hide();
+$(y[0]).show();
+document.getElementsByTagName("input")[0].value = "";
+swal("Oops!", "Checkout hint for help", "error");
+}
+}
+}
+
+function check_den()
+{
+if(document.getElementsByTagName("input")[1].value == {{ answer.den_ans }} )
+{
+$(x[1]).show();
+$(y[1]).hide();
+document.getElementsByClassName("step0")[2].classList.add("active");
+document.getElementsByClassName("step0")[3].classList.add("active");
+
+}
+else
+{
+if(document.getElementsByTagName("input")[1].value != ""){
+$(x[1]).hide();
+$(y[1]).show();
+document.getElementsByTagName("input")[1].value = "";
+swal("Oops!", "Checkout hint for help", "error");
+}
+}
+}
+
+{% endblock %}
+
+
+
+{% block content %}
+<h5 class="card-title">{{ answer.que }}</h5>
+
+<label for="quo3" style="display:block">Solution : </label>
+<input type="text" id="quo3" name="rem" maxlength="8" size="2" class="num" onblur="check_num();" required>
+<i class="fal fa-check correct fa-2x" style="display: none; color: green;"></i>
+<i class="fal fa-times wrong fa-2x" style="display: none; color: red"></i>
+<h5>---------</h5>
+<input type="text" id="rem4" name="rem" maxlength="8" size="2" class="den" onblur="check_den();" required>
+<i class="fal fa-check correct fa-2x" style="display: none; color: green;"></i>
+<i class="fal fa-times wrong fa-2x" style="display: none; color: red"></i>
+{% endblock %}
+
+{% block hint %}
+<img src="{{ url_for('static', filename = 'images/frac_simplest_form.png') }}" alt="" style="width: 80%;">
+{% endblock %}

@@ -1,0 +1,133 @@
+* {
+  margin: 0;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+.blue {
+  background-color: #0070BB;
+}
+
+.white {
+  background-color: white;
+}
+
+#n1 {
+  position: fixed;
+  height: calc(100%-200px);
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+}
+
+.navbar-brand,
+.nav-link {
+  color: #000 !important;
+}
+
+.main {
+  margin-top: 50px;
+  height: 100%;
+}
+
+#leftsection,
+#rightsection {
+  padding: 20px 10px;
+}
+
+#rightsection h1 {
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+  font-size: 4vw;
+}
+
+#leftsection,
+#rightsection {
+  margin: 0% auto;
+}
+
+#leftsection img {
+  width: 100%;
+  height: 98%;
+}
+
+#leftsection img {
+  width: 100%;
+  height: 90%;
+}
+
+.signup {
+  font-family: 'Libre Baskerville', serif;
+  margin: 40px 0;
+  width: 100%;
+  height: auto;
+  border-radius: 500px;
+}
+
+.sec {
+  width: 100%;
+}
+
+.sec .card,
+.secTeam .card {
+  margin: 20px 0;
+}
+
+@media (max-width:758px) {
+  #rightsection h1 {
+    font-size: 10vw;
+  }
+}
+
+.contact-title {
+  color: white;
+  text-align: center;
+}
+
+.contact-form-box {
+  padding: 5%;
+}
+
+input {
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-bottom-style: groove;
+  background-color: inherit;
+  font-family: 'Poppins', sans-serif;
+  color: #0070BB;
+  background-color: white;
+  margin-bottom: 1rem;
+  padding: 5px;
+}
+
+textarea {
+  padding: 5px;
+  margin-bottom: 2rem;
+  color: #0070BB;
+}
+
+.contact {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  color: white;
+}
+
+.coin {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-icons {
+  height: 100px;
+}
+
+.text-white {
+  color: white;
+}
+
+::placeholder {
+  color: blue;
+}
