@@ -120,6 +120,9 @@
     </div>
   </div>
   <script>
+  window.onload = (event) => {
+    sessionStorage.removeItem(count);
+  };
     $(document).ready(function() {
       $('.toast').toast('hide');
       var x = sessionStorage.count;

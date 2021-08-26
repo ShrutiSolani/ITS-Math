@@ -128,6 +128,14 @@ def getTime():
     current_app.logger.info(json.dumps(dict))
     return "TimeReceived"
 
+@home_bp.route("/endTime", methods=["GET"])
+def endTime():
+    qcount = request.args.get('qcount')
+    qid = request.args.get('quesid')
+    dict = {"userid": session['userid'], "qid": qid, "qcount": qcount, "message": "End"}
+    current_app.logger.info(json.dumps(dict))
+    return "TimeReceived"
+
 @home_bp.route('/logout')
 def logout():
     dict = {"userid": session['userid'], "message": "Logged out"}

@@ -16,7 +16,7 @@ def create_app():
     # formatter = jsonlogger.JsonFormatter()
     # logHandler.setFormatter(formatter)
     # logger.addHandler(logHandler)
-    logging.basicConfig(filename = 'UserLog.log', level=logging.INFO, format = '%(asctime)s,%(message)s')
+    logging.basicConfig(filename = 'UserLog.log', level=logging.INFO, format = '%(asctime)s|%(message)s')
     app.secret_key = 'super secret key'
     log = logging.getLogger('werkzeug')
     log.setLevel(logging.ERROR)

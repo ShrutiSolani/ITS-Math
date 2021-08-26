@@ -190,6 +190,12 @@
           }
           sessionStorage.removeItem('count');
           console.log(data);
+          $.get('/endTime', {
+            'quesid': quesid,
+            'qcount': Number(sessionStorage.count)
+          }, function(response) {
+            console.log("done");
+          });
 
           alert("Excellent!  You finished all 4 questions");
           $.ajax({
@@ -208,6 +214,12 @@
           });
 
         } else {
+          $.get('/endTime', {
+            'quesid': quesid,
+            'qcount': Number(sessionStorage.count)
+          }, function(response) {
+            console.log("done");
+          });
           setTimeout(function() {
             location.reload()
           }, 3000);
