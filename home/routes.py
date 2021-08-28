@@ -95,7 +95,8 @@ def score():
         total = int(tup['undefined']) + int(tup['1']) + int(tup['2']) + int(tup['3'])
         dict = {"userid": userid,"qid": myList[3], "q1": myList[4], "q2": myList[0], "q3": myList[1], "q4": myList[2],"total": total}
         current_app.logger.info(json.dumps(dict))
-        return json.dumps(dict)
+        return "Score received"
+        # return json.dumps(dict)
 
     else:
         return redirect("login")

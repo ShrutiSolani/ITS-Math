@@ -1,6 +1,20 @@
 {% extends "layout_easy.html" %}
 
 {% block script %}
+$( document ).ready(function() {
+  var source = "{{ url_for('static', filename = 'images/frac_add_like.png') }}";
+  if({{ easy.num }} == '2'){
+    source = "{{ url_for('static', filename = 'images/frac_mul_by_whole.png') }}";
+  }
+  document.getElementById("hint_img").src = source;
+    console.log( "ready!" );
+});
+
+
+
+  <!-- $("#hint_img").attr("src", source); -->
+
+
 var x = document.getElementsByClassName("correct");
 var y = document.getElementsByClassName("wrong");
 var ans=["{{ easy.ans_num[0] }}","{{ easy.ans_den[0] }}","{{ easy.ans_num[1] }}","{{ easy.ans_den[1] }}"]
@@ -61,8 +75,4 @@ $("#hint_img").attr("src", source);
 <i class="fal fa-times wrong fa-2x" style="display: none; color: red"></i>
 <br><br>
 {% endfor %}
-{% endblock %}
-
-{% block hint %}
-<img src="" alt="" style="width:80%;" id="hint_img">
 {% endblock %}
