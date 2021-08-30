@@ -61,7 +61,7 @@
 2021-08-26 15:48:46,294|{"userid": 3, "qid": "FI1", "qcount": 3}
 2021-08-26 15:48:47,398|{"userid": 3, "qid": "FI1", "qcount": "3", "message": "End"}
 2021-08-26 15:48:50,408|{"userid": 3, "qid": "FI1", "qcount": 4}
-2021-08-26 15:48:51,644|{"userid": 3, "qid": "FI1", "qcount": "NaN", "message": "End"}
+2021-08-26 15:48:51,644|{"userid": 3, "qid": "FI1", "qcount": 4, "message": "End"}
 2021-08-26 15:48:52,674|{"userid": 3, "qid": "FI1", "q1": "25", "q2": "25", "q3": "25", "q4": "25", "total": 100}
 2021-08-26 15:48:52,692|{"userid": 3, "message": "Home Page"}
 2021-08-26 15:49:35,335|{"userid": 3, "message": "Logged out"}

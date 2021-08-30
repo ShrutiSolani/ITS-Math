@@ -16,7 +16,9 @@
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <title>Practice</title>
   <link rel="stylesheet" href="{{ url_for('static', filename="css/layout_easy.css") }}">
-  <script>{% block script %}{% endblock %}</script>
+  <script>
+  {% block script %}{% endblock %}
+  </script>
 </head>
 
 <body>
@@ -77,9 +79,9 @@
 
             </div>
             <div class="modal-body">
-              {{% block hint %}
+
               <img src="" alt="" style="width:80%;" id="hint_img">
-              {% endblock %}
+
               <!-- <p>Select the option you think would be the beginning step of this problem</p>
                   <button class="btn btn-info" style="width: 100%; margin: 10px auto;">Option 1</button>
                   <button class="btn btn-info" style="width: 100%; margin: 10px auto;">Option 1</button>
@@ -120,28 +122,35 @@
     </div>
   </div>
   <script>
+      window.onload = (event) => {
+        localStorage.removeItem('key');
+    };
+
     $(document).ready(function() {
       $('.toast').toast('hide');
-      var x = sessionStorage.count;
-      console.log(x);
-      for (i = 0; i < Number(sessionStorage.count); i++) {
+      var x = localStorage.count;
+      console.log("count " + x);
+      if(Number(localStorage.count) > 4){
+        localStorage.count = 0;
+      }
+      for (i = 0; i < Number(localStorage.count); i++) {
         document.getElementsByClassName("bi")[i].classList.add("done");
       }
 
 
       $('#home_nav').click(function() {
-        if (sessionStorage.count < 4 || sessionStorage.count == null) {
+        if (localStorage.count < 4 || localStorage.count == null) {
           if (confirm("Your score will not be saved")) {
             $('#home_nav').attr('href', "{{ url_for('home_bp.home') }}");
           } else {
             return false;
           }
 
-          let keys = Object.keys(sessionStorage);
+          let keys = Object.keys(localStorage);
           for (let key of keys) {
-            sessionStorage.removeItem(`${key}`);
+            localStorage.removeItem(`${key}`);
           }
-          sessionStorage.removeItem(count);
+          localStorage.removeItem(count);
         }
 
       })
@@ -164,26 +173,26 @@
 
       })
 
-      $('#next-btn').click(function(event) {
+      $('#next-btn').click(function() {
         $('.toast').toast('show');
-        if (sessionStorage.count) {
-          sessionStorage.count = Number(sessionStorage.count) + 1;
+        if (localStorage.count) {
+          localStorage.count = Number(localStorage.count) + 1;
         } else {
-          sessionStorage.count = 1;
+          localStorage.count = 1;
         }
 
 
         let score = 25 - (5 * hint_count);
-        sessionStorage.setItem(x, score);
-        console.log(sessionStorage.getItem(x));
-        if (sessionStorage.count >= 4) {
-          console.log(sessionStorage.count);
-          let keys = Object.keys(sessionStorage);
+        localStorage.setItem(x, score);
+        console.log(localStorage.getItem(x));
+        if (localStorage.count == 4) {
+          alert(localStorage.count);
+          let keys = Object.keys(localStorage);
           for (let key of keys) {
-            data[`${key}`] = `${sessionStorage.getItem(key)}`;
-            sessionStorage.removeItem(`${key}`);
+            data[`${key}`] = `${localStorage.getItem(key)}`;
+            localStorage.removeItem(`${key}`);
           }
-          sessionStorage.removeItem('count');
+          localStorage.removeItem('count');
           console.log(data);
 
 
@@ -203,14 +212,15 @@
               window.location.href = "{{ url_for('home_bp.home') }}";
             }
           });
-          // window.location.href = "{{ url_for('home_bp.home') }}";
-        } else {
+          console.log("After ajax call");
+        }
+        else {
           setTimeout(function() {
             location.reload()
           }, 3000);
         }
       })
-    })
+    });
   </script>
 
 </body>

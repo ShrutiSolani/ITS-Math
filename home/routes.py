@@ -98,7 +98,6 @@ def score():
         current_app.logger.info(json.dumps(dict))
         return json.dumps(dict)
         # return redirect('home')
-
     else:
         return redirect("login")
 

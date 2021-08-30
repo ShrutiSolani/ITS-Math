@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, request, flash, redirect, url_for, session, current_app
-import os, json, random, datetime
+import os, json, random, datetime, math
 from fractions import Fraction
 
 SITE_ROOT = os.path.realpath(os.path.dirname(__file__))
@@ -242,20 +242,20 @@ def compare():
     global count
 
     qid = data["compare"]
-    num1=random.randint(1,100)
-    den1=random.randint(2,25)
+    num1 = random.randint(1,100)
+    den1 = random.randint(2,25)
     num2 = random.randint(1, 100)
     den2 = random.randint(2, 25)
-    f1= Fraction(num1,den1)
-    f2= Fraction(num2,den2)
+    f1 = Fraction(num1,den1)
+    f2 = Fraction(num2,den2)
     que = "Compare "+str(f1)+" and "+str(f2)+" . "
-    lcm=LCM(f1.denominator,f2.denominator)
-    eqfrac1=lcm//den1
-    eqfrac2=lcm//den2
-    num1=num1*eqfrac1
-    den1=den1*eqfrac1
-    num2 = num2 * eqfrac2
-    den2 = den2 * eqfrac2
+    lcm = LCM(f1.denominator,f2.denominator)
+    eqfrac1 = lcm//den1
+    eqfrac2 = lcm//den2
+    num1 = num1*eqfrac1
+    den1 = den1*eqfrac1
+    num2 = num2*eqfrac2
+    den2 = den2*eqfrac2
     fract1=Fraction(num1,den1)
     fract2=Fraction(num2,den2)
     if(fract1>fract2):

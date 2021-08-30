@@ -41,7 +41,7 @@ padding: .2em 0;
 background: #E4E4E7;
 position: relative;
 }
-.progress>div {
+.progress div {
 height: .2em;
 left: -.4em;
 right: -.4em;
@@ -438,7 +438,6 @@ icon: "success",
 }
 }
 
-
 function right1(){
 if(document.getElementById("btn1").innerHTML==="Write all terms"){
 $("#myModal").modal('hide');
@@ -456,6 +455,7 @@ document.getElementById("hint-btn").disabled = true;
 document.getElementById("hint-btn").style.backgroundColor = "grey";
 document.getElementsByClassName('line1')[1].style.display = 'block';
 }
+
 }
 
 
@@ -463,13 +463,14 @@ document.getElementsByClassName('line1')[1].style.display = 'block';
 {% block chapter %}Fraction{% endblock %}
 {% block topic %}Fraction Operation{% endblock %}
 
+
+
 {% block hint %}
 <button class="btn btn-info" id="btn1" style="width: 100%; margin: 10px auto;" onclick="right1();">Write all terms</button>
 <button class="btn btn-info" id="btn2" style="width: 100%; margin: 10px auto;">Add first value of each polynomials</button>
 <button class="btn btn-info" id="btn3" style="width: 100%; margin: 10px auto;" onclick="right2();">Write all terms with same powers</button>
 <button class="btn btn-info" id="btn4" style="width: 100%; margin: 10px auto;">Add all coefficients</button>
 {% endblock %}
-
 
 {% block content %}
 <h5 class="card-title">{{ answer.que }}</h5>
