@@ -94,10 +94,10 @@ def score():
         myList = list(tup.values())
         total = int(tup['undefined']) + int(tup['1']) + int(tup['2']) + int(tup['3'])
         dict = {"userid": userid,"qid": myList[3], "q1": myList[4], "q2": myList[0], "q3": myList[1], "q4": myList[2],"total": total}
+        flash(f"You scored {total} out of 100")
         current_app.logger.info(json.dumps(dict))
-        return "Score received"
-        # return json.dumps(dict)
-
+        return json.dumps(dict)
+        # return redirect('home')
     else:
         return redirect("login")
 
@@ -119,6 +119,41 @@ def profile():
         return render_template('UserScore.html',context=context)
     else:
         return redirect("login")
+
+@home_bp.route("/EditUserScore")
+def EditUserScore():
+    mycursor=mydb.cursor()
+    if 'userid' in session:
+        userid = session['userid']
+        mycursor.execute("select * from Student where id = '" + str(userid) + "' ")
+        r = mycursor.fetchall()
+        fname = r[0][1]
+        lname = r[0][2]
+        email = r[0][3]
+        grade = r[0][6]
+        dob = r[0][5]
+        context ={'fname':fname,'lname':lname,'email':email,'grade':grade,'dob':dob}
+        return render_template('EditUserScore.html',context=context)
+    else:
+        return redirect("login")
+
+@home_bp.route("/EditUserScore", methods=['POST'])
+def EditUserScores():
+    if request.method == 'POST':
+        if 'userid' in session:
+            userid = session['userid']
+        fname = request.form['fname']
+        lname = request.form['lname']
+        email = request.form['email']
+        grade = request.form['grade']
+        # dob = request.form['dob']
+        mycursor=mydb.cursor()
+        mycursor.execute("update student set first_name='" + fname + "',last_name='" + lname +"',email='" + email +"',grade='"+grade+"' where id='" +str(userid)+"' ")
+        mydb.commit()
+        mycursor.close()
+        return redirect('profile')
+        # else:
+        #     return redirect('login')
 
 @home_bp.route("/getTime",methods=["GET"])
 def getTime():
