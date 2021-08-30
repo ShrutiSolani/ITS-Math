@@ -220,6 +220,7 @@ $(y[1]).show();
 document.getElementsByClassName("quo")[7].id = 'error';
 }
 }
+}
 
 function check8()
 {
@@ -236,6 +237,7 @@ feedcount++;
 $(x[1]).hide();
 $(y[1]).show();
 document.getElementsByClassName("quo")[8].id = 'error';
+}
 }
 }
 
@@ -256,6 +258,7 @@ $(y[1]).show();
 document.getElementsByClassName("quo")[9].id = 'error';
 }
 }
+}
 
 function check10()
 {
@@ -272,6 +275,7 @@ feedcount++;
 $(x[1]).hide();
 $(y[1]).show();
 document.getElementsByClassName("quo")[10].id = 'error';
+}
 }
 }
 
@@ -293,6 +297,7 @@ if(document.getElementsByTagName("input")[11].value !="" ) {
 $(x[1]).hide();
 $(y[1]).show();
 document.getElementsByClassName("quo")[11].id = 'error';
+}
 }
 }
 
@@ -317,50 +322,52 @@ document.getElementsByClassName("quo")[12].id = 'error';
 
 function check13()
 {
-if(document.getElementsByTagName("input")[13].value == {{ answer.y_sum }} )
-{
-$(x[2]).show();
-$(y[2]).hide();
-document.getElementsByClassName("quo")[13].id = 'right';
+  if(document.getElementsByTagName("input")[13].value == {{ answer.y_sum }} )
+  {
+    $(x[2]).show();
+    $(y[2]).hide();
+    document.getElementsByClassName("quo")[13].id = 'right';
 
-document.getElementById("icon4").style.display="inline";
-document.getElementById("icon4").style.color="green";
-document.getElementsByTagName("h2")[0].innerHTML="";
-document.getElementsByTagName("h2")[1].innerHTML="";
-document.getElementById("icon1").style.display="inline";
-document.getElementById("icon2").style.display="inline";
-document.getElementById("icon3").style.display="inline";
-}
-else
-{
-if(document.getElementsByTagName("input")[13].value !="") {
-$(x[2]).hide();
-$(y[2]).show();
-document.getElementsByClassName("quo")[13].id = 'error';
-}
-
-}
-}
-function right1(){
-if(document.getElementById("btn4").innerHTML==="Write all terms"){
-$("#myModal").modal('hide');
-document.getElementsByClassName('line1')[0].style.display = 'block';
-document.getElementById("btn1").innerHTML="Add all terms";
-document.getElementById("btn2").innerHTML="Write like terms together";
-document.getElementById("btn3").innerHTML="Add coefficient of each polynomial";
-document.getElementById("btn4").innerHTML="Add first value of each polynomial";
-}
+    document.getElementById("icon4").style.display="inline";
+    document.getElementById("icon4").style.color="green";
+    document.getElementsByTagName("h2")[0].innerHTML="";
+    document.getElementsByTagName("h2")[1].innerHTML="";
+    document.getElementById("icon1").style.display="inline";
+    document.getElementById("icon2").style.display="inline";
+    document.getElementById("icon3").style.display="inline";
+  }
+  else
+  {
+    if(document.getElementsByTagName("input")[13].value !="")
+    {
+      $(x[2]).hide();
+      $(y[2]).show();
+      document.getElementsByClassName("quo")[13].id = 'error';
+    }
+  }
 }
 
 
+  function right1(){
+    if(document.getElementById("btn4").innerHTML==="Write all terms"){
+      $("#myModal").modal('hide');
+      document.getElementsByClassName('line1')[0].style.display = 'block';
+      document.getElementById("btn1").innerHTML="Add all terms";
+      document.getElementById("btn2").innerHTML="Write like terms together";
+      document.getElementById("btn3").innerHTML="Add coefficient of each polynomial";
+      document.getElementById("btn4").innerHTML="Add first value of each polynomial";
+    }
+  }
 
-function right2(){
-if(document.getElementById("btn2").innerHTML==="Write like terms together"){
-$("#myModal").modal('hide');
-document.getElementsByClassName('line1')[1].style.display = 'block';
-document.getElementById("hint-btn").disabled = true;
-document.getElementById("hint-btn").style.backgroundColor = "grey";
-}
+
+
+  function right2(){
+  if(document.getElementById("btn2").innerHTML==="Write like terms together"){
+    $("#myModal").modal('hide');
+    document.getElementsByClassName('line1')[1].style.display = 'block';
+    document.getElementById("hint-btn").disabled = true;
+    document.getElementById("hint-btn").style.backgroundColor = "grey";
+  }
 }
 
 {% endblock %}

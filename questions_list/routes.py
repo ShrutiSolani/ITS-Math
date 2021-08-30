@@ -9,7 +9,7 @@ def fraction_intermediate():
     full={'f1':{'q1':'Expressed as Mixed Fraction','h1':'Mixed Fraction','link':'/mixed-fraction'},
     'f2':{'q1':'Compare Two Fraction','h1':'Compare','link':'/compare'},
     'f3':{'q1':'Convert Mixed to Normal Form','h1':'Normal Form','link':'/normal-form'},
-    'f4':{'q1':'Divide Fraction by Whole Number','h1':'Fraction Division','link':'/divide-with-whole'},
+    'f4':{'q1':'Divide Fraction by Whole Number','h1':'Fraction Division','link':'/divide_with_whole'},
     'f5':{'q1':'Add or Subtract Two Fractions','h1':'Fraction Operation','link':'/unlike-add'}}
     dict = {"userid": session['userid'], "message":'Choosing Question', "topic": 'Fractions', "level": "Intermediate"}
     current_app.logger.info(json.dumps(dict))

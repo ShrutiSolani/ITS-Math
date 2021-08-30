@@ -383,3 +383,305 @@ KeyError: 'userid'
 2021-08-28 20:27:33,477|{"userid": 3, "qid": "FE3", "q1": "25", "q2": "25", "q3": "25", "q4": "25", "total": 100}
 2021-08-28 20:27:33,508|{"userid": 3, "qid": "FE3", "qcount": 24}
 2021-08-28 20:27:36,753|{"userid": 3, "message": "Home Page"}
+2021-08-29 14:40:34,347|{"message": "Login Page"}
+2021-08-29 14:40:47,867|{"userid": 1, "message": "Logged In"}
+2021-08-29 14:40:47,954|{"userid": 1, "message": "Home Page"}
+2021-08-29 14:40:52,399|{"userid": 1, "message": "Choosing Question", "topic": "Fractions", "level": "Intermediate"}
+2021-08-29 14:40:54,442|Exception on /compare [GET]
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/flask/app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/flask/app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/flask/app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/flask/app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/home/ubuntu/github_repos/ITS-Math/fractions/routes.py", line 252, in compare
+    lcm=LCM(f1.denominator,f2.denominator)
+  File "/home/ubuntu/github_repos/ITS-Math/fractions/routes.py", line 232, in LCM
+    return abs(a * b) // math.gcd(a, b)
+NameError: name 'math' is not defined
+2021-08-29 14:41:30,379|Exception on /compare [GET]
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/flask/app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/flask/app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/flask/app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/flask/app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/home/ubuntu/github_repos/ITS-Math/fractions/routes.py", line 252, in compare
+    lcm=LCM(f1.denominator,f2.denominator)
+  File "/home/ubuntu/github_repos/ITS-Math/fractions/routes.py", line 232, in LCM
+    return abs(a * b) // math.gcd(a, b)
+NameError: name 'math' is not defined
+2021-08-29 14:41:44,243|{"userid": 1, "qid": "FI2", "qcount": 1}
+2021-08-29 14:41:49,190|{"userid": 1, "qid": "FI2", "hint_no": "1"}
+2021-08-29 14:41:57,321|{"userid": 1, "qid": "FI2", "hint_no": "2"}
+2021-08-29 14:42:10,994|{"userid": 1, "qid": "FI2", "qcount": "1", "message": "End"}
+2021-08-29 14:42:14,005|{"userid": 1, "qid": "FI2", "qcount": 2}
+2021-08-29 14:42:16,359|{"userid": 1, "qid": "FI2", "qcount": "2", "message": "End"}
+2021-08-29 14:42:19,370|{"userid": 1, "qid": "FI2", "qcount": 3}
+2021-08-29 14:42:21,286|{"userid": 1, "qid": "FI2", "qcount": "3", "message": "End"}
+2021-08-29 14:42:24,296|Exception on /compare [GET]
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/flask/app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/flask/app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/flask/app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/flask/app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/home/ubuntu/github_repos/ITS-Math/fractions/routes.py", line 259, in compare
+    fract1=Fraction(num1,den1)
+  File "/usr/lib/python3.8/fractions.py", line 178, in __new__
+    raise ZeroDivisionError('Fraction(%s, 0)' % numerator)
+ZeroDivisionError: Fraction(0, 0)
+2021-08-29 14:47:36,315|Exception on /compare [GET]
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/flask/app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/flask/app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/flask/app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/flask/app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/home/ubuntu/github_repos/ITS-Math/fractions/routes.py", line 259, in compare
+    fract1=Fraction(num1,den1)
+  File "/usr/lib/python3.8/fractions.py", line 178, in __new__
+    raise ZeroDivisionError('Fraction(%s, 0)' % numerator)
+ZeroDivisionError: Fraction(0, 0)
+2021-08-29 14:47:39,526|{"userid": 1, "message": "Choosing Question", "topic": "Fractions", "level": "Intermediate"}
+2021-08-29 14:47:40,998|{"userid": 1, "qid": "FI2", "qcount": 4}
+2021-08-29 14:47:42,754|{"userid": 1, "qid": "FI2", "qcount": "NaN", "message": "End"}
+2021-08-29 14:47:44,655|{"userid": 1, "qid": "FI2", "q1": "15", "q2": "25", "q3": "25", "q4": "25", "total": 90}
+2021-08-29 14:47:44,676|{"userid": 1, "message": "Home Page"}
+2021-08-29 14:47:49,993|{"userid": 1, "message": "Choosing Question", "topic": "Fractions", "level": "Easy"}
+2021-08-29 14:48:01,562|{"userid": 1, "message": "Choosing Question", "topic": "Fractions", "level": "Intermediate"}
+2021-08-29 14:48:06,063|{"userid": 1, "qid": "FI5", "qcount": 5}
+2021-08-29 14:48:06,096|Exception on /unlike-add [GET]
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/flask/app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/flask/app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/flask/app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/flask/app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/home/ubuntu/github_repos/ITS-Math/fractions/routes.py", line 166, in unlike_add
+    return render_template("Fraction_operation.html", answer=answer)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/flask/templating.py", line 147, in render_template
+    return _render(
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/flask/templating.py", line 128, in _render
+    rv = template.render(context)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/jinja2/environment.py", line 1304, in render
+    self.environment.handle_exception()
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/jinja2/environment.py", line 925, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/ubuntu/github_repos/ITS-Math/fractions/templates/Fraction_operation.html", line 1, in top-level template code
+    {% extends "layout_easy.html" %}
+  File "/home/ubuntu/github_repos/ITS-Math/fractions/templates/layout_easy.html", line 158, in top-level template code
+    var quesid = "{{ easy.qid }}";
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/jinja2/environment.py", line 474, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'easy' is undefined
+2021-08-29 14:51:05,983|{"userid": 1, "message": "Choosing Question", "topic": "Fractions", "level": "Intermediate"}
+2021-08-29 14:51:07,232|{"userid": 1, "message": "Choosing Question", "topic": "Fractions", "level": "Intermediate"}
+2021-08-29 14:52:41,396|{"userid": 1, "message": "Choosing Question", "topic": "Fractions", "level": "Intermediate"}
+2021-08-29 14:52:43,931|{"userid": 1, "qid": "FI4", "qcount": 1}
+2021-08-29 14:52:47,245|{"userid": 1, "qid": "FI4", "hint_no": "1"}
+2021-08-29 14:52:53,118|{"userid": 1, "qid": "FI4", "hint_no": "2"}
+2021-08-29 14:52:59,062|{"userid": 1, "qid": "FI4", "qcount": "1", "message": "End"}
+2021-08-29 14:53:02,070|{"userid": 1, "qid": "FI4", "qcount": 2}
+2021-08-29 14:53:03,527|{"userid": 1, "qid": "FI4", "qcount": "2", "message": "End"}
+2021-08-29 14:53:06,536|{"userid": 1, "qid": "FI4", "qcount": 3}
+2021-08-29 14:53:07,797|{"userid": 1, "qid": "FI4", "qcount": "3", "message": "End"}
+2021-08-29 14:53:10,808|{"userid": 1, "qid": "FI4", "qcount": 4}
+2021-08-29 14:53:11,697|{"userid": 1, "qid": "FI4", "qcount": "NaN", "message": "End"}
+2021-08-29 14:53:13,615|{"userid": 1, "qid": "FI4", "q1": "15", "q2": "25", "q3": "25", "q4": "25", "total": 90}
+2021-08-29 14:53:13,634|{"userid": 1, "message": "Home Page"}
+2021-08-29 14:53:17,434|{"userid": 1, "message": "Choosing Question", "topic": "Fractions", "level": "Intermediate"}
+2021-08-29 14:53:19,063|{"userid": 1, "qid": "FI5", "qcount": 5}
+2021-08-29 14:53:20,865|{"userid": 1, "qid": "FI5", "hint_no": "1"}
+2021-08-29 14:53:32,549|{"userid": 1, "qid": "FI5", "qcount": "1", "message": "End"}
+2021-08-29 14:53:35,560|{"userid": 1, "qid": "FI5", "qcount": 6}
+2021-08-29 14:53:37,528|{"userid": 1, "qid": "FI5", "qcount": "2", "message": "End"}
+2021-08-29 14:53:40,541|{"userid": 1, "qid": "FI5", "qcount": 7}
+2021-08-29 14:53:41,402|{"userid": 1, "qid": "FI5", "qcount": "3", "message": "End"}
+2021-08-29 14:53:44,412|{"userid": 1, "qid": "FI5", "qcount": 8}
+2021-08-29 14:53:45,344|{"userid": 1, "qid": "FI5", "qcount": "NaN", "message": "End"}
+2021-08-29 14:53:47,918|{"userid": 1, "qid": "FI5", "q1": "20", "q2": "25", "q3": "25", "q4": "25", "total": 95}
+2021-08-29 14:53:47,945|{"userid": 1, "message": "Home Page"}
+2021-08-29 14:57:51,481|{"userid": 1, "message": "Home Page"}
+2021-08-29 14:57:55,416|{"userid": 1, "message": "Choosing Question", "topic": "Fractions", "level": "Intermediate"}
+2021-08-29 14:57:57,404|{"userid": 1, "qid": "FI5", "qcount": 1}
+2021-08-29 14:57:58,950|{"userid": 1, "qid": "FI5", "hint_no": "1"}
+2021-08-29 14:58:05,649|{"userid": 1, "qid": "FI5", "hint_no": "2"}
+2021-08-29 14:58:12,086|{"userid": 1, "qid": "FI5", "qcount": "1", "message": "End"}
+2021-08-29 14:58:15,097|{"userid": 1, "qid": "FI5", "qcount": 2}
+2021-08-29 14:58:15,985|{"userid": 1, "qid": "FI5", "qcount": "2", "message": "End"}
+2021-08-29 14:58:18,996|{"userid": 1, "qid": "FI5", "qcount": 3}
+2021-08-29 14:58:20,093|{"userid": 1, "qid": "FI5", "qcount": "3", "message": "End"}
+2021-08-29 14:58:23,104|{"userid": 1, "qid": "FI5", "qcount": 4}
+2021-08-29 14:58:23,952|{"userid": 1, "qid": "FI5", "qcount": "NaN", "message": "End"}
+2021-08-29 14:58:25,147|{"userid": 1, "qid": "FI5", "q1": "15", "q2": "25", "q3": "25", "q4": "25", "total": 90}
+2021-08-29 14:58:25,166|{"userid": 1, "message": "Home Page"}
+2021-08-29 14:58:30,370|{"userid": 1, "message": "Choosing Question", "topic": "Algebra", "level": "Intermediate"}
+2021-08-29 14:58:31,449|{"userid": 1, "qid": "AI1", "qcount": 1}
+2021-08-29 14:58:32,631|{"userid": 1, "qid": "AI1", "hint_no": "1"}
+2021-08-29 14:59:21,496|{"userid": 1, "qid": "AI1", "hint_no": "2"}
+2021-08-29 14:59:46,221|Exception on /algebra-add [GET]
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/flask/app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/flask/app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/flask/app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/flask/app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/home/ubuntu/github_repos/ITS-Math/algebra/routes.py", line 188, in horizontal_add
+    dict = {"userid": session['userid'], "qid": qid, "qcount": count}
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/flask/sessions.py", line 79, in __getitem__
+    return super().__getitem__(key)
+KeyError: 'userid'
+2021-08-29 15:02:53,691|{"userid": 1, "qid": "AI1", "qcount": 1}
+2021-08-29 15:03:31,114|{"userid": 1, "qid": "AI1", "qcount": 1}
+2021-08-29 15:04:08,719|{"userid": 1, "qid": "AI1", "qcount": 1}
+2021-08-29 15:04:16,551|{"userid": 1, "qid": "AI1", "hint_no": "1"}
+2021-08-29 15:04:22,238|{"userid": 1, "qid": "AI1", "hint_no": "2"}
+2021-08-29 15:04:28,718|{"userid": 1, "qid": "AI1", "qcount": "1", "message": "End"}
+2021-08-29 15:04:31,798|{"userid": 1, "qid": "AI1", "qcount": 2}
+2021-08-29 15:04:34,556|{"userid": 1, "qid": "AI1", "qcount": "2", "message": "End"}
+2021-08-29 15:04:37,612|{"userid": 1, "qid": "AI1", "qcount": 3}
+2021-08-29 15:04:38,318|{"userid": 1, "qid": "AI1", "qcount": "3", "message": "End"}
+2021-08-29 15:04:41,367|{"userid": 1, "qid": "AI1", "qcount": 4}
+2021-08-29 15:04:43,290|{"userid": 1, "qid": "AI1", "qcount": "NaN", "message": "End"}
+2021-08-29 15:04:46,626|{"userid": 1, "qid": "AI1", "q1": "15", "q2": "25", "q3": "25", "q4": "25", "total": 90}
+2021-08-29 15:04:46,703|{"userid": 1, "message": "Home Page"}
+2021-08-29 15:04:49,888|{"userid": 1, "message": "Choosing Question", "topic": "Algebra", "level": "Intermediate"}
+2021-08-29 15:05:24,941|{"userid": 1, "message": "Logged out"}
+2021-08-30 10:43:26,894|{"message": "Login Page"}
+2021-08-30 10:43:36,307|{"userid": 1, "message": "Logged In"}
+2021-08-30 10:43:36,314|{"userid": 1, "message": "Home Page"}
+2021-08-30 10:43:51,820|{"userid": 1, "message": "Choosing Question", "topic": "Algebra", "level": "Easy"}
+2021-08-30 10:43:53,950|{"userid": 1, "qid": "AE1", "qcount": 1}
+2021-08-30 10:43:55,787|{"userid": 1, "qid": "AE1", "hint_no": "1"}
+2021-08-30 10:45:17,333|{"userid": 1, "qid": "AE1", "qcount": 1}
+2021-08-30 10:45:19,317|{"userid": 1, "qid": "AE1", "hint_no": "1"}
+2021-08-30 10:47:19,390|{"userid": 1, "qid": "AE1", "hint_no": "2"}
+2021-08-30 10:49:45,407|{"userid": 1, "qid": "AE1", "qcount": 1}
+2021-08-30 10:49:50,034|{"userid": 1, "qid": "AE1", "hint_no": "1"}
+2021-08-30 10:49:56,943|{"userid": 1, "qid": "AE1", "qcount": 2}
+2021-08-30 10:50:04,846|{"userid": 1, "qid": "AE1", "qcount": 3}
+2021-08-30 10:50:06,962|{"userid": 1, "qid": "AE1", "qcount": 4}
+2021-08-30 10:50:09,517|{"userid": 1, "qid": "AE1", "q1": "20", "q2": "25", "q3": "25", "q4": "25", "total": 95}
+2021-08-30 10:50:09,592|{"userid": 1, "qid": "AE1", "qcount": 5}
+2021-08-30 10:50:13,726|{"userid": 1, "qid": "AE1", "qcount": 6}
+2021-08-30 10:50:19,147|{"userid": 1, "qid": "AE1", "qcount": 7}
+2021-08-30 10:50:21,260|{"userid": 1, "qid": "AE1", "qcount": 8}
+2021-08-30 10:50:24,072|{"userid": 1, "qid": "AE1", "q1": "25", "q2": "25", "q3": "25", "q4": "25", "total": 100}
+2021-08-30 10:50:24,136|{"userid": 1, "qid": "AE1", "qcount": 9}
+2021-08-30 10:50:29,382|{"userid": 1, "message": "Home Page"}
+2021-08-30 10:50:32,989|{"userid": 1, "message": "Choosing Question", "topic": "Algebra", "level": "Easy"}
+2021-08-30 10:50:34,840|{"userid": 1, "qid": "AE2", "qcount": 10}
+2021-08-30 10:50:36,589|{"userid": 1, "qid": "AE2", "hint_no": "1"}
+2021-08-30 10:50:41,862|{"userid": 1, "qid": "AE2", "qcount": 11}
+2021-08-30 10:50:43,124|{"userid": 1, "qid": "AE2", "qcount": 12}
+2021-08-30 10:50:44,072|{"userid": 1, "qid": "AE2", "qcount": 13}
+2021-08-30 10:50:46,653|{"userid": 1, "qid": "AE2", "q1": "20", "q2": "25", "q3": "25", "q4": "25", "total": 95}
+2021-08-30 10:50:46,746|{"userid": 1, "message": "Home Page"}
+2021-08-30 10:50:51,241|{"userid": 1, "message": "Choosing Question", "topic": "Algebra", "level": "Easy"}
+2021-08-30 10:50:53,107|{"userid": 1, "qid": "AE3", "qcount": 14}
+2021-08-30 10:51:05,245|{"userid": 1, "qid": "AE3", "hint_no": "1"}
+2021-08-30 10:51:07,978|{"userid": 1, "qid": "AE3", "qcount": 15}
+2021-08-30 10:51:09,977|{"userid": 1, "qid": "AE3", "qcount": 16}
+2021-08-30 10:51:12,106|{"userid": 1, "qid": "AE3", "qcount": 17}
+2021-08-30 10:51:14,955|{"userid": 1, "qid": "AE3", "q1": "20", "q2": "25", "q3": "25", "q4": "25", "total": 95}
+2021-08-30 10:51:15,021|{"userid": 1, "qid": "AE3", "qcount": 18}
+2021-08-30 10:51:17,596|{"userid": 1, "qid": "AE3", "qcount": 19}
+2021-08-30 10:51:21,727|{"userid": 1, "qid": "AE3", "qcount": 20}
+2021-08-30 10:51:23,457|{"userid": 1, "qid": "AE3", "qcount": 21}
+2021-08-30 10:51:26,177|{"userid": 1, "qid": "AE3", "q1": "25", "q2": "25", "q3": "25", "q4": "25", "total": 100}
+2021-08-30 10:51:26,243|{"userid": 1, "qid": "AE3", "qcount": 22}
+2021-08-30 10:51:28,933|{"userid": 1, "qid": "AE3", "qcount": 23}
+2021-08-30 10:51:30,310|{"userid": 1, "qid": "AE3", "qcount": 24}
+2021-08-30 10:51:31,799|{"userid": 1, "qid": "AE3", "qcount": 25}
+2021-08-30 10:51:36,827|{"userid": 1, "qid": "AE3", "q1": "25", "q2": "25", "q3": "25", "q4": "25", "total": 100}
+2021-08-30 10:51:36,909|{"userid": 1, "qid": "AE3", "qcount": 26}
+2021-08-30 10:51:45,191|{"userid": 1, "message": "Home Page"}
+2021-08-30 10:51:49,224|{"userid": 1, "message": "Choosing Question", "topic": "Algebra", "level": "Easy"}
+2021-08-30 10:51:52,775|{"userid": 1, "qid": "AE4", "qcount": 27}
+2021-08-30 10:51:59,518|{"userid": 1, "qid": "AE4", "hint_no": "1"}
+2021-08-30 10:52:03,820|{"userid": 1, "qid": "AE4", "hint_no": "2"}
+2021-08-30 10:52:06,397|{"userid": 1, "qid": "AE4", "qcount": 28}
+2021-08-30 10:52:07,597|{"userid": 1, "qid": "AE4", "qcount": 29}
+2021-08-30 10:52:08,922|{"userid": 1, "qid": "AE4", "qcount": 30}
+2021-08-30 10:52:12,581|{"userid": 1, "qid": "AE4", "q1": "15", "q2": "25", "q3": "25", "q4": "25", "total": 90}
+2021-08-30 10:52:12,643|{"userid": 1, "message": "Home Page"}
+2021-08-30 10:53:52,438|{"userid": 1, "message": "Home Page"}
+2021-08-30 10:53:58,444|{"userid": 1, "message": "Choosing Question", "topic": "Algebra", "level": "Easy"}
+2021-08-30 10:54:00,152|{"userid": 1, "qid": "AE1", "qcount": 1}
+2021-08-30 10:54:03,590|{"userid": 1, "qid": "AE1", "qcount": 2}
+2021-08-30 10:54:05,646|{"userid": 1, "qid": "AE1", "qcount": 3}
+2021-08-30 10:54:07,498|{"userid": 1, "qid": "AE1", "qcount": 4}
+2021-08-30 10:54:11,060|{"userid": 1, "qid": "AE1", "q1": "25", "q2": "25", "q3": "25", "q4": "25", "total": 100}
+2021-08-30 10:54:11,126|{"userid": 1, "qid": "AE1", "qcount": 5}
+2021-08-30 10:54:14,210|{"userid": 1, "qid": "AE1", "qcount": 6}
+2021-08-30 10:54:16,366|{"userid": 1, "qid": "AE1", "qcount": 7}
+2021-08-30 10:54:18,000|{"userid": 1, "qid": "AE1", "qcount": 8}
+2021-08-30 10:54:22,345|{"userid": 1, "qid": "AE1", "q1": "25", "q2": "25", "q3": "25", "q4": "25", "total": 100}
+2021-08-30 10:54:22,428|{"userid": 1, "qid": "AE1", "qcount": 9}
+2021-08-30 10:57:27,064|{"userid": 1, "qid": "AE1", "qcount": 1}
+2021-08-30 10:57:30,112|{"userid": 1, "qid": "AE1", "qcount": 2}
+2021-08-30 10:57:32,676|{"userid": 1, "qid": "AE1", "qcount": 3}
+2021-08-30 10:57:34,264|{"userid": 1, "qid": "AE1", "qcount": 4}
+2021-08-30 10:57:38,242|{"userid": 1, "qid": "AE1", "q1": "25", "q2": "25", "q3": "25", "q4": "25", "total": 100}
+2021-08-30 10:57:38,308|{"userid": 1, "qid": "AE1", "qcount": 5}
+2021-08-30 10:57:41,211|{"userid": 1, "qid": "AE1", "qcount": 6}
+2021-08-30 10:57:43,772|{"userid": 1, "qid": "AE1", "qcount": 7}
+2021-08-30 10:57:45,829|{"userid": 1, "qid": "AE1", "qcount": 8}
+2021-08-30 10:57:48,526|{"userid": 1, "qid": "AE1", "q1": "25", "q2": "25", "q3": "25", "q4": "25", "total": 100}
+2021-08-30 10:57:48,594|{"userid": 1, "qid": "AE1", "qcount": 9}
+2021-08-30 10:57:51,269|{"userid": 1, "qid": "AE1", "hint_no": "1"}
+2021-08-30 10:58:53,373|{"userid": 1, "qid": "AE1", "qcount": 10}
+2021-08-30 10:58:55,877|{"userid": 1, "qid": "AE1", "qcount": 11}
+2021-08-30 10:58:57,398|{"userid": 1, "qid": "AE1", "qcount": 12}
+2021-08-30 10:59:00,782|{"userid": 1, "qid": "AE1", "q1": "20", "q2": "25", "q3": "25", "q4": "25", "total": 95}
+2021-08-30 10:59:00,925|{"userid": 1, "message": "Home Page"}
+2021-08-30 11:01:44,396|{"userid": 1, "message": "Home Page"}
+2021-08-30 11:01:47,696|{"userid": 1, "message": "Choosing Question", "topic": "Algebra", "level": "Easy"}
+2021-08-30 11:01:50,827|{"userid": 1, "qid": "AE1", "qcount": 1}
+2021-08-30 11:01:53,076|{"userid": 1, "qid": "AE1", "qcount": 2}
+2021-08-30 11:01:55,057|{"userid": 1, "qid": "AE1", "qcount": 3}
+2021-08-30 11:01:57,728|{"userid": 1, "qid": "AE1", "qcount": 4}
+2021-08-30 11:02:01,379|{"userid": 1, "qid": "AE1", "q1": "25", "q2": "25", "q3": "25", "q4": "25", "total": 100}
+2021-08-30 11:02:01,446|{"userid": 1, "qid": "AE1", "qcount": 5}
+2021-08-30 11:02:05,257|{"userid": 1, "qid": "AE1", "qcount": 6}
+2021-08-30 11:02:07,720|{"userid": 1, "qid": "AE1", "qcount": 7}
+2021-08-30 11:02:09,541|{"userid": 1, "qid": "AE1", "qcount": 8}
+2021-08-30 11:02:13,032|{"userid": 1, "qid": "AE1", "q1": "25", "q2": "25", "q3": "25", "q4": "25", "total": 100}
+2021-08-30 11:02:13,093|{"userid": 1, "qid": "AE1", "qcount": 9}
+2021-08-30 11:03:10,761|{"userid": 1, "qid": "AE1", "qcount": 1}
+2021-08-30 11:03:14,585|{"userid": 1, "qid": "AE1", "qcount": 2}
+2021-08-30 11:03:16,601|{"userid": 1, "qid": "AE1", "qcount": 3}
+2021-08-30 11:03:18,729|{"userid": 1, "qid": "AE1", "qcount": 4}
+2021-08-30 11:03:22,836|{"userid": 1, "qid": "AE1", "q1": "25", "q2": "25", "q3": "25", "q4": "25", "total": 100}
+2021-08-30 11:03:22,904|{"userid": 1, "qid": "AE1", "qcount": 5}
+2021-08-30 11:03:53,501|{"userid": 1, "qid": "AE1", "qcount": 1}
+2021-08-30 11:03:55,649|{"userid": 1, "qid": "AE1", "qcount": 2}
+2021-08-30 11:03:58,185|{"userid": 1, "qid": "AE1", "qcount": 3}
+2021-08-30 11:03:59,722|{"userid": 1, "qid": "AE1", "qcount": 4}
+2021-08-30 11:04:03,248|{"userid": 1, "qid": "AE1", "q1": "25", "q2": "25", "q3": "25", "q4": "25", "total": 100}
+2021-08-30 11:04:03,315|{"userid": 1, "qid": "AE1", "qcount": 5}
+2021-08-30 11:05:20,298|{"userid": 1, "qid": "AE1", "qcount": 6}
+2021-08-30 11:05:22,980|{"userid": 1, "qid": "AE1", "qcount": 7}
+2021-08-30 11:05:25,096|{"userid": 1, "qid": "AE1", "qcount": 8}
+2021-08-30 11:05:33,613|{"userid": 1, "qid": "AE1", "q1": "25", "q2": "25", "q3": "25", "q4": "25", "total": 100}
+2021-08-30 11:05:33,674|{"userid": 1, "qid": "AE1", "qcount": 9}
+2021-08-30 11:31:31,646|{"userid": 1, "message": "Home Page"}

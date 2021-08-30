@@ -2,13 +2,14 @@
 
 
 {% block script %}
-  window.onload = function(){
+  $( document ).ready(function() {
     var source = "{{ url_for('static', filename = 'images/algebra_terms.jpeg') }}";
-    if({{ easy.num }} == '2'){
+    if({{ easy.num }} == '2')
+    {
       source = "{{ url_for('static', filename = 'images/algebra_find_value.png') }}";
     }
     $("#hint_img").attr("src", source);
-  }
+  });
 
 
   var ans = [ "{{ easy.answer[0] }}", "{{ easy.answer[1] }}", "{{ easy.answer[2] }}", "{{ easy.answer[3] }}" ];
@@ -50,8 +51,4 @@
 </div>
 {% endfor %}
 </p>
-{% endblock %}
-
-{% block hint %}
-<img src="" alt="" style="width:80%;" id="hint_img">
 {% endblock %}
