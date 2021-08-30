@@ -41,6 +41,15 @@
 			</ul>
 		</div>
 	</nav>
+	{% with messages = get_flashed_messages() %}
+	{% if messages %}
+		<ul class=flashes style="margin-top: 70px;color: black;">
+		{% for message in messages %}
+		<li>{{ message }}</li>
+		{% endfor %}
+		</ul>
+	{% endif %}
+	{% endwith %}
 	<div id="board">
 		<div class="container-fluid">
 			<div id="div-top">
