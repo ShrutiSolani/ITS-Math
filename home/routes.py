@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, request, flash, redirect, url_for, session, Flask, current_app
 import json, os, random
-
+from werkzeug.security import generate_password_hash , check_password_hash
 
 import mysql.connector
 mydb = mysql.connector.connect(
@@ -11,7 +11,6 @@ mydb = mysql.connector.connect(
 )
 
 home_bp = Blueprint('home_bp', __name__, template_folder = 'templates', static_folder='static')
-
 
 @home_bp.route('/')
 def index():
@@ -30,18 +29,23 @@ def logins():
     if request.method=='POST':
         email=request.form['email']
         password=request.form['password']
-        mycursor.execute("select * from Student where email='" + email + "' and password='" + password + "'")
+        mycursor.execute("select * from Student where email='" + email + "' ")
         r = mycursor.fetchall()
         count = mycursor.rowcount
         mydb.commit()
         mycursor.close()
         if (count == 1):
-            session['userid'] = r[0][0]
-            dict = {"userid": session['userid'], "message": "Logged In"}
-            current_app.logger.info(json.dumps(dict))
-            return redirect('home')
+            if check_password_hash(r[0][4],password):
+                session['userid'] = r[0][0]
+                dict = {"userid": session['userid'], "message": "Logged In"}
+                current_app.logger.info(json.dumps(dict))
+                return redirect('home')
+            else:
+                flash("Invalid Credentials",'danger')
+                return redirect('login')    
         else:
-            return redirect('logins')
+            flash("Invalid Credentials",'danger')
+            return redirect('login')
 
 
 
@@ -54,6 +58,7 @@ def signup():
 
 @home_bp.route("/signup",methods=['POST'])
 def signups():
+    mycursor=mydb.cursor()
 
     if request.method=="POST":
         fname = request.form['fname']
@@ -63,10 +68,27 @@ def signups():
         cpassword = request.form['cpassword']
         dob = request.form['dob']
         grade=request.form['grade']
-        mycursor=mydb.cursor()
-        mycursor.execute("Insert into Student(first_name,last_name,email,password,dob,grade)values(%s,%s,%s,%s,%s,%s)",(fname,lname,email,password,dob,grade))
+
+        mycursor.execute("select * from Student where email='" + email + "' ")
+        r = mycursor.fetchall()
+        count = mycursor.rowcount
         mydb.commit()
         mycursor.close()
+        if count == 1:
+            flash("User with that email already exist",'danger')
+            return redirect('signup')
+
+        if password != cpassword:
+            flash("Both Password didn't match.",'danger')
+            return redirect('signup')
+
+        hashed_password = generate_password_hash(password)
+
+        mycursor=mydb.cursor()
+        mycursor.execute("Insert into Student(first_name,last_name,email,password,dob,grade)values(%s,%s,%s,%s,%s,%s)",(fname,lname,email,hashed_password,dob,grade))
+        mydb.commit()
+        mycursor.close()
+        flash("User created succesfully.",'success')
         return redirect('login')
     else:
         return redirect('signup')

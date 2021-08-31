@@ -613,3 +613,169 @@ KeyError: '1'
 2021-08-30 19:27:23,836|{"userid": 1, "qid": "AE2", "qcount": 12}
 2021-08-30 19:27:26,609|{"userid": 1, "qid": "AE2", "q1": "20", "q2": "25", "q3": "25", "q4": "25", "total": 95}
 2021-08-30 19:27:26,940|{"userid": 1, "message": "Home Page"}
+2021-08-31 14:14:52,086|{"message": "Signup Page"}
+2021-08-31 14:15:12,343|{"message": "Signup Page"}
+2021-08-31 14:16:45,662|{"message": "Signup Page"}
+2021-08-31 14:17:22,996|{"message": "Signup Page"}
+2021-08-31 14:17:47,115|{"message": "Signup Page"}
+2021-08-31 14:18:04,878|{"message": "Signup Page"}
+2021-08-31 14:18:38,765|{"message": "Signup Page"}
+2021-08-31 14:20:29,466|{"message": "Signup Page"}
+2021-08-31 14:20:32,135|{"message": "Signup Page"}
+2021-08-31 14:20:58,780|{"message": "Signup Page"}
+2021-08-31 14:21:18,833|{"message": "Signup Page"}
+2021-08-31 14:21:54,170|{"message": "Signup Page"}
+2021-08-31 14:22:21,719|{"message": "Login Page"}
+2021-08-31 14:26:23,311|{"message": "Login Page"}
+2021-08-31 14:26:30,729|{"message": "Login Page"}
+2021-08-31 14:26:37,451|{"message": "Login Page"}
+2021-08-31 14:29:58,272|{"message": "Login Page"}
+2021-08-31 14:30:03,968|{"message": "Login Page"}
+2021-08-31 14:34:02,805|{"message": "Login Page"}
+2021-08-31 14:34:07,888|{"message": "Login Page"}
+2021-08-31 14:35:04,933|{"message": "Login Page"}
+2021-08-31 14:35:14,624|{"message": "Login Page"}
+2021-08-31 14:37:39,627|{"message": "Login Page"}
+2021-08-31 14:37:44,733|{"message": "Login Page"}
+2021-08-31 14:37:53,125|{"message": "Login Page"}
+2021-08-31 14:38:56,448|{"message": "Login Page"}
+2021-08-31 14:39:01,623|{"message": "Login Page"}
+2021-08-31 14:39:11,332|{"message": "Login Page"}
+2021-08-31 14:40:09,249|{"message": "Signup Page"}
+2021-08-31 14:40:42,983|{"message": "Login Page"}
+2021-08-31 14:40:52,468|{"userid": 3, "message": "Logged In"}
+2021-08-31 14:40:52,474|{"userid": 3, "message": "Home Page"}
+2021-08-31 14:52:10,036|{"userid": 3, "message": "Logged out"}
+2021-08-31 14:52:12,290|{"message": "Signup Page"}
+2021-08-31 14:52:38,034|{"message": "Login Page"}
+2021-08-31 14:52:53,470|{"message": "Login Page"}
+2021-08-31 14:52:57,375|{"userid": 4, "message": "Logged In"}
+2021-08-31 14:52:57,683|{"userid": 4, "message": "Home Page"}
+2021-08-31 15:00:34,011|{"userid": 4, "message": "Logged out"}
+2021-08-31 15:00:39,361|{"message": "Signup Page"}
+2021-08-31 15:01:08,419|{"message": "Signup Page"}
+2021-08-31 15:08:35,861|{"message": "Signup Page"}
+2021-08-31 15:10:04,790|Exception on /signup [POST]
+Traceback (most recent call last):
+  File "c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "D:\USER Data\Desktop\ITS-Math\home\routes.py", line 82, in signups
+    hashed_password = bcrypt.hashpw(password,bcrypt.gensalt())
+  File "c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages\bcrypt\__init__.py", line 80, in hashpw
+    raise TypeError("Unicode-objects must be encoded before hashing")
+TypeError: Unicode-objects must be encoded before hashing
+2021-08-31 15:12:08,841|{"message": "Signup Page"}
+2021-08-31 15:12:29,062|Exception on /signup [POST]
+Traceback (most recent call last):
+  File "c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "D:\USER Data\Desktop\ITS-Math\home\routes.py", line 81, in signups
+    bpassword = bytes(password)
+TypeError: string argument without an encoding
+2021-08-31 15:14:00,400|{"message": "Signup Page"}
+2021-08-31 15:14:20,251|{"message": "Login Page"}
+2021-08-31 15:19:00,285|{"message": "Login Page"}
+2021-08-31 15:19:05,960|Exception on /login [POST]
+Traceback (most recent call last):
+  File "c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "D:\USER Data\Desktop\ITS-Math\home\routes.py", line 39, in logins
+    if bcrypt.checkpw(password,r[0][4]):
+  File "c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages\bcrypt\__init__.py", line 120, in checkpw
+    raise TypeError("Unicode-objects must be encoded before checking")
+TypeError: Unicode-objects must be encoded before checking
+2021-08-31 15:19:53,628|{"message": "Login Page"}
+2021-08-31 15:19:59,246|Exception on /login [POST]
+Traceback (most recent call last):
+  File "c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "D:\USER Data\Desktop\ITS-Math\home\routes.py", line 39, in logins
+    if bcrypt.checkpw(password.encode('utf-8'),r[0][4]):
+  File "c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages\bcrypt\__init__.py", line 120, in checkpw
+    raise TypeError("Unicode-objects must be encoded before checking")
+TypeError: Unicode-objects must be encoded before checking
+2021-08-31 15:22:35,456|{"message": "Login Page"}
+2021-08-31 15:22:43,909|Exception on /login [POST]
+Traceback (most recent call last):
+  File "c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "D:\USER Data\Desktop\ITS-Math\home\routes.py", line 39, in logins
+    if bcrypt.checkpw(password.encode('utf-8'),r[0][4]):
+  File "c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages\bcrypt\__init__.py", line 120, in checkpw
+    raise TypeError("Unicode-objects must be encoded before checking")
+TypeError: Unicode-objects must be encoded before checking
+2021-08-31 15:26:22,080|{"message": "Signup Page"}
+2021-08-31 15:26:40,856|{"message": "Login Page"}
+2021-08-31 15:27:02,156|Exception on /login [POST]
+Traceback (most recent call last):
+  File "c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "D:\USER Data\Desktop\ITS-Math\home\routes.py", line 40, in logins
+    if bcrypt.checkpw(password.encode('utf-8'),r[0][4]):
+  File "c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages\bcrypt\__init__.py", line 120, in checkpw
+    raise TypeError("Unicode-objects must be encoded before checking")
+TypeError: Unicode-objects must be encoded before checking
+2021-08-31 15:32:42,956|{"message": "Login Page"}
+2021-08-31 15:32:47,460|{"message": "Signup Page"}
+2021-08-31 15:33:05,768|Exception on /signup [POST]
+Traceback (most recent call last):
+  File "c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "D:\USER Data\Desktop\ITS-Math\home\routes.py", line 87, in signups
+    hashed_password = bcrypt.generate_password_hash(password)
+AttributeError: module 'bcrypt' has no attribute 'generate_password_hash'
+2021-08-31 15:49:47,343|{"message": "Signup Page"}
+2021-08-31 15:50:04,837|{"message": "Login Page"}
+2021-08-31 15:50:11,683|{"userid": 7, "message": "Logged In"}
+2021-08-31 15:50:11,848|{"userid": 7, "message": "Home Page"}
+2021-08-31 15:50:45,426|{"message": "Signup Page"}
+2021-08-31 15:51:23,563|{"message": "Signup Page"}
+2021-08-31 15:51:36,401|{"message": "Signup Page"}
+2021-08-31 15:51:49,287|{"message": "Signup Page"}
+2021-08-31 15:52:20,061|{"message": "Login Page"}
+2021-08-31 15:52:30,769|{"message": "Login Page"}
+2021-08-31 15:52:36,154|{"message": "Login Page"}
+2021-08-31 15:52:44,402|{"userid": 8, "message": "Logged In"}
+2021-08-31 15:52:44,559|{"userid": 8, "message": "Home Page"}
