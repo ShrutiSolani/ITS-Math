@@ -107,6 +107,7 @@ def home():
 
 @home_bp.route('/score', methods=['POST'])
 def score():
+    mycursor=mydb.cursor()
     if request.method == 'POST':
         if 'userid' in session:
             userid=session['userid']
@@ -118,8 +119,23 @@ def score():
         dict = {"userid": userid,"qid": myList[3], "q1": myList[4], "q2": myList[0], "q3": myList[1], "q4": myList[2],"total": total}
         flash(f"You scored {total} out of 100")
         current_app.logger.info(json.dumps(dict))
+        qids = myList[3]
+        mycursor.execute("select * from Question where qid='" + qids + "' ")
+        r = mycursor.fetchall()
+        qid = r[0][0]
+        userid = session['userid']
+        mycursor.execute("select * from Student where id='" + str(userid) + "' ")
+        rs= mycursor.fetchall()
+        uid = rs[0][0]
+        # mycursor.execute("Insert into Student(first_name,last_name,email,password,dob,grade)values(%s,%s,%s,%s,%s,%s)",(fname,lname,email,hashed_password,dob,grade))
+        mycursor.execute("INSERT INTO Student_Score(sid,qid,score)values(%s,%s,%s)",(uid,qid,total))
+        
+        # querys = "INSERT INTO Student_Score(sid,qid,score)values(%d,%d,%d)",(userid,qid,total)
+        # mycursor.execute(querys)
+        mydb.commit()
         return json.dumps(dict)
         # return redirect('home')
+
     else:
         return redirect("login")
 
