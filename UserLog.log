@@ -779,3 +779,27 @@ AttributeError: module 'bcrypt' has no attribute 'generate_password_hash'
 2021-08-31 15:52:36,154|{"message": "Login Page"}
 2021-08-31 15:52:44,402|{"userid": 8, "message": "Logged In"}
 2021-08-31 15:52:44,559|{"userid": 8, "message": "Home Page"}
+2021-09-01 15:13:25,316|{"message": "Login Page"}
+2021-09-01 15:13:36,559|{"message": "Login Page"}
+2021-09-01 15:13:57,339|{"message": "Login Page"}
+2021-09-01 15:14:08,396|{"message": "Signup Page"}
+2021-09-01 15:14:44,825|{"message": "Login Page"}
+2021-09-01 15:15:01,017|{"userid": 2, "message": "Logged In"}
+2021-09-01 15:15:01,032|{"userid": 2, "message": "Home Page"}
+2021-09-01 15:15:11,227|{"userid": 2, "message": "Choosing Question", "topic": "Algebra", "level": "Intermediate"}
+2021-09-01 15:15:16,379|{"userid": 2, "qid": "AI1", "qcount": 1}
+2021-09-01 15:15:19,626|{"userid": 2, "qid": "AI1", "hint_no": "1"}
+2021-09-01 15:15:30,157|{"userid": 2, "qid": "AI1", "hint_no": "2"}
+2021-09-01 15:15:36,490|{"userid": 2, "qid": "AI1", "qcount": "1", "message": "End"}
+2021-09-01 15:15:39,196|{"userid": 2, "qid": "AI1", "qcount": 2}
+2021-09-01 15:15:40,785|{"userid": 2, "qid": "AI1", "qcount": "2", "message": "End"}
+2021-09-01 15:15:44,108|{"userid": 2, "qid": "AI1", "qcount": 3}
+2021-09-01 15:15:45,420|{"userid": 2, "qid": "AI1", "qcount": "3", "message": "End"}
+2021-09-01 15:15:48,448|{"userid": 2, "qid": "AI1", "qcount": 4}
+2021-09-01 15:15:51,586|{"userid": 2, "qid": "AI1", "qcount": "NaN", "message": "End"}
+2021-09-01 15:15:55,009|{"userid": 2, "qid": "AI1", "q1": "15", "q2": "25", "q3": "25", "q4": "25", "total": 90}
+2021-09-01 15:15:55,266|{"userid": 2, "message": "Home Page"}
+2021-09-01 15:19:24,602|{"userid": 2, "message": "Home Page"}
+2021-09-01 15:19:27,793|{"userid": 2, "message": "Profile Page"}
+2021-09-01 15:23:18,010|{"userid": 2, "message": "Profile Page"}
+2021-09-01 15:24:51,389|{"userid": 2, "message": "Profile Page"}
