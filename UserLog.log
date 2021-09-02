@@ -779,3 +779,275 @@ AttributeError: module 'bcrypt' has no attribute 'generate_password_hash'
 2021-08-31 15:52:36,154|{"message": "Login Page"}
 2021-08-31 15:52:44,402|{"userid": 8, "message": "Logged In"}
 2021-08-31 15:52:44,559|{"userid": 8, "message": "Home Page"}
+2021-09-01 16:24:46,051|{"message": "Login Page"}
+2021-09-01 16:24:53,263|{"userid": 8, "message": "Logged In"}
+2021-09-01 16:24:53,269|{"userid": 8, "message": "Home Page"}
+2021-09-01 16:25:01,799|{"userid": 8, "message": "Choosing Question", "topic": "Algebra", "level": "Easy"}
+2021-09-01 16:25:04,614|{"userid": 8, "qid": "AE1", "qcount": 1}
+2021-09-01 16:25:08,570|{"userid": 8, "qid": "AE1", "qcount": 2}
+2021-09-01 16:25:11,199|{"userid": 8, "qid": "AE1", "hint_no": "1"}
+2021-09-01 16:25:15,229|{"userid": 8, "qid": "AE1", "qcount": 3}
+2021-09-01 16:25:16,402|{"userid": 8, "qid": "AE1", "qcount": 4}
+2021-09-01 16:25:18,658|{"userid": 8, "qid": "AE1", "hint_no": "1"}
+2021-09-01 16:25:24,180|{"userid": 8, "qid": "AE1", "q1": "25", "q2": "20", "q3": "25", "q4": "20", "total": 90}
+2021-09-01 16:25:24,191|Exception on /score [POST]
+Traceback (most recent call last):
+  File "c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "D:\USER Data\Desktop\ITS-Math\home\routes.py", line 123, in score
+    mycursor.execute(query)
+  File "c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages\mysql\connector\cursor.py", line 551, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages\mysql\connector\connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages\mysql\connector\connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.ProgrammingError: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'likeAE1' at line 1
+2021-09-01 16:25:24,493|{"userid": 8, "message": "Home Page"}
+2021-09-01 16:25:31,248|{"userid": 8, "message": "Choosing Question", "topic": "Fractions", "level": "Intermediate"}
+2021-09-01 16:25:33,561|{"userid": 8, "qid": "FI3", "qcount": 1}
+2021-09-01 16:25:35,338|{"userid": 8, "qid": "FI3", "qcount": "1", "message": "End"}
+2021-09-01 16:25:38,662|{"userid": 8, "qid": "FI3", "qcount": 2}
+2021-09-01 16:25:39,620|{"userid": 8, "qid": "FI3", "qcount": "2", "message": "End"}
+2021-09-01 16:25:42,936|{"userid": 8, "qid": "FI3", "qcount": 3}
+2021-09-01 16:25:43,862|{"userid": 8, "qid": "FI3", "hint_no": "1"}
+2021-09-01 16:25:47,183|{"userid": 8, "qid": "FI3", "qcount": "3", "message": "End"}
+2021-09-01 16:25:49,890|{"userid": 8, "qid": "FI3", "qcount": 4}
+2021-09-01 16:25:51,748|{"userid": 8, "qid": "FI3", "qcount": "NaN", "message": "End"}
+2021-09-01 16:25:53,584|{"userid": 8, "qid": "FI3", "q1": "25", "q2": "25", "q3": "20", "q4": "25", "total": 95}
+2021-09-01 16:25:53,585|Exception on /score [POST]
+Traceback (most recent call last):
+  File "c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "D:\USER Data\Desktop\ITS-Math\home\routes.py", line 123, in score
+    mycursor.execute(query)
+  File "c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages\mysql\connector\cursor.py", line 551, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages\mysql\connector\connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages\mysql\connector\connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.ProgrammingError: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'likeFI3' at line 1
+2021-09-01 16:25:53,924|{"userid": 8, "message": "Home Page"}
+2021-09-01 16:30:14,132|{"userid": 8, "message": "Home Page"}
+2021-09-01 16:30:17,740|{"userid": 8, "message": "Home Page"}
+2021-09-01 16:30:21,813|{"userid": 8, "message": "Choosing Question", "topic": "Algebra", "level": "Easy"}
+2021-09-01 16:30:25,178|{"userid": 8, "qid": "AE3", "qcount": 1}
+2021-09-01 16:30:30,742|{"userid": 8, "qid": "AE3", "qcount": 2}
+2021-09-01 16:30:32,255|{"userid": 8, "qid": "AE3", "qcount": 3}
+2021-09-01 16:30:33,906|{"userid": 8, "qid": "AE3", "hint_no": "1"}
+2021-09-01 16:30:38,105|{"userid": 8, "qid": "AE3", "qcount": 4}
+2021-09-01 16:30:42,985|{"userid": 8, "qid": "AE3", "q1": "25", "q2": "25", "q3": "20", "q4": "25", "total": 95}
+2021-09-01 16:30:42,986|Exception on /score [POST]
+Traceback (most recent call last):
+  File "c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "D:\USER Data\Desktop\ITS-Math\home\routes.py", line 123, in score
+    mycursor.execute(query)
+  File "c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages\mysql\connector\cursor.py", line 551, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages\mysql\connector\connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages\mysql\connector\connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.ProgrammingError: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'likeAE3' at line 1
+2021-09-01 16:30:43,302|{"userid": 8, "message": "Home Page"}
+2021-09-01 16:32:04,988|{"userid": 8, "message": "Home Page"}
+2021-09-01 16:32:08,708|{"userid": 8, "message": "Choosing Question", "topic": "Algebra", "level": "Easy"}
+2021-09-01 16:32:11,732|{"userid": 8, "qid": "AE2", "qcount": 1}
+2021-09-01 16:32:13,467|{"userid": 8, "qid": "AE2", "qcount": 2}
+2021-09-01 16:32:14,356|{"userid": 8, "qid": "AE2", "qcount": 3}
+2021-09-01 16:32:15,068|{"userid": 8, "qid": "AE2", "qcount": 4}
+2021-09-01 16:32:17,434|{"userid": 8, "qid": "AE2", "q1": "25", "q2": "25", "q3": "25", "q4": "25", "total": 100}
+2021-09-01 16:32:17,436|Exception on /score [POST]
+Traceback (most recent call last):
+  File "c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "D:\USER Data\Desktop\ITS-Math\home\routes.py", line 123, in score
+    mycursor.execute(query)
+  File "c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages\mysql\connector\cursor.py", line 551, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages\mysql\connector\connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages\mysql\connector\connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'AE2' in 'where clause'
+2021-09-01 16:32:17,758|{"userid": 8, "message": "Home Page"}
+2021-09-01 16:34:54,543|{"userid": 8, "message": "Home Page"}
+2021-09-01 16:34:58,362|{"userid": 8, "message": "Choosing Question", "topic": "Fractions", "level": "Easy"}
+2021-09-01 16:35:02,323|{"userid": 8, "qid": "FE1", "qcount": 1}
+2021-09-01 16:35:04,890|{"userid": 8, "qid": "FE1", "qcount": 2}
+2021-09-01 16:35:06,438|{"userid": 8, "qid": "FE1", "qcount": 3}
+2021-09-01 16:35:07,591|{"userid": 8, "qid": "FE1", "qcount": 4}
+2021-09-01 16:35:10,478|{"userid": 8, "qid": "FE1", "qcount": 5}
+2021-09-01 16:35:10,492|{"userid": 8, "qid": "FE1", "q1": "25", "q2": "25", "q3": "25", "q4": "25", "total": 100}
+2021-09-01 16:35:10,493|Exception on /score [POST]
+Traceback (most recent call last):
+  File "c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "D:\USER Data\Desktop\ITS-Math\home\routes.py", line 123, in score
+    mycursor.execute(query)
+  File "c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages\mysql\connector\cursor.py", line 551, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages\mysql\connector\connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages\mysql\connector\connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'FE1' in 'where clause'
+2021-09-01 16:35:19,216|{"userid": 8, "message": "Home Page"}
+2021-09-01 16:37:33,887|{"userid": 8, "message": "Home Page"}
+2021-09-01 16:37:38,308|{"userid": 8, "message": "Choosing Question", "topic": "Fractions", "level": "Easy"}
+2021-09-01 16:37:40,693|{"userid": 8, "qid": "FE1", "qcount": 1}
+2021-09-01 16:37:42,983|{"userid": 8, "qid": "FE1", "qcount": 2}
+2021-09-01 16:37:43,795|{"userid": 8, "qid": "FE1", "qcount": 3}
+2021-09-01 16:37:45,173|{"userid": 8, "qid": "FE1", "qcount": 4}
+2021-09-01 16:37:48,169|{"userid": 8, "qid": "FE1", "q1": "25", "q2": "25", "q3": "25", "q4": "25", "total": 100}
+2021-09-01 16:37:48,172|Exception on /score [POST]
+Traceback (most recent call last):
+  File "c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "D:\USER Data\Desktop\ITS-Math\home\routes.py", line 129, in score
+    mycursor.execute(querys)
+  File "c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages\mysql\connector\cursor.py", line 528, in execute
+    stmt = operation.encode(self._connection.python_charset)
+AttributeError: 'tuple' object has no attribute 'encode'
+2021-09-01 16:37:48,482|{"userid": 8, "message": "Home Page"}
+2021-09-01 16:39:13,492|{"userid": 8, "message": "Home Page"}
+2021-09-01 16:39:20,028|{"userid": 8, "message": "Choosing Question", "topic": "Fractions", "level": "Easy"}
+2021-09-01 16:39:22,998|{"userid": 8, "qid": "FE1", "qcount": 1}
+2021-09-01 16:39:26,549|{"userid": 8, "qid": "FE1", "qcount": 2}
+2021-09-01 16:39:27,314|{"userid": 8, "qid": "FE1", "qcount": 3}
+2021-09-01 16:39:28,761|{"userid": 8, "qid": "FE1", "qcount": 4}
+2021-09-01 16:39:36,208|{"userid": 8, "qid": "FE1", "q1": "25", "q2": "25", "q3": "25", "q4": "25", "total": 100}
+2021-09-01 16:39:36,212|Exception on /score [POST]
+Traceback (most recent call last):
+  File "c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "D:\USER Data\Desktop\ITS-Math\home\routes.py", line 130, in score
+    mycursor.execute(querys)
+  File "c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages\mysql\connector\cursor.py", line 528, in execute
+    stmt = operation.encode(self._connection.python_charset)
+AttributeError: 'tuple' object has no attribute 'encode'
+2021-09-01 16:39:36,479|{"userid": 8, "message": "Home Page"}
+2021-09-01 16:45:04,232|{"userid": 8, "message": "Home Page"}
+2021-09-01 16:45:08,169|{"userid": 8, "message": "Home Page"}
+2021-09-01 16:45:09,919|{"userid": 8, "message": "Choosing Question", "topic": "Algebra", "level": "Intermediate"}
+2021-09-01 16:45:12,224|{"userid": 8, "qid": "AI1", "qcount": 1}
+2021-09-01 16:45:14,737|{"userid": 8, "qid": "AI1", "qcount": "1", "message": "End"}
+2021-09-01 16:45:17,447|{"userid": 8, "qid": "AI1", "qcount": 2}
+2021-09-01 16:45:19,229|{"userid": 8, "qid": "AI1", "qcount": "2", "message": "End"}
+2021-09-01 16:45:21,932|{"userid": 8, "qid": "AI1", "qcount": 3}
+2021-09-01 16:45:23,608|{"userid": 8, "qid": "AI1", "qcount": "3", "message": "End"}
+2021-09-01 16:45:26,317|{"userid": 8, "qid": "AI1", "qcount": 4}
+2021-09-01 16:45:28,509|{"userid": 8, "qid": "AI1", "qcount": "NaN", "message": "End"}
+2021-09-01 16:45:30,204|{"userid": 8, "qid": "AI1", "q1": "25", "q2": "25", "q3": "25", "q4": "25", "total": 100}
+2021-09-01 16:45:30,207|Exception on /score [POST]
+Traceback (most recent call last):
+  File "c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "D:\USER Data\Desktop\ITS-Math\home\routes.py", line 127, in score
+    mycursor.execute("select * from Student where id='" + userid + "' ")
+TypeError: can only concatenate str (not "int") to str
+2021-09-01 16:45:30,537|{"userid": 8, "message": "Home Page"}
+2021-09-01 16:46:28,696|{"userid": 8, "message": "Home Page"}
+2021-09-01 16:46:40,709|{"userid": 8, "message": "Choosing Question", "topic": "Algebra", "level": "Easy"}
+2021-09-01 16:46:43,424|{"userid": 8, "qid": "AE4", "qcount": 1}
+2021-09-01 16:46:45,228|{"userid": 8, "qid": "AE4", "qcount": 2}
+2021-09-01 16:46:46,851|{"userid": 8, "qid": "AE4", "qcount": 3}
+2021-09-01 16:46:47,788|{"userid": 8, "qid": "AE4", "qcount": 4}
+2021-09-01 16:46:51,255|{"userid": 8, "qid": "AE4", "q1": "25", "q2": "25", "q3": "25", "q4": "25", "total": 100}
+2021-09-01 16:46:51,268|Exception on /score [POST]
+Traceback (most recent call last):
+  File "c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "D:\USER Data\Desktop\ITS-Math\home\routes.py", line 131, in score
+    mycursor.execute("INSERT INTO Student_Score(sid,qid,score)values(%d,%d,%d)",(uid,qid,total))
+  File "c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages\mysql\connector\cursor.py", line 542, in execute
+    raise errors.ProgrammingError(
+mysql.connector.errors.ProgrammingError: Not all parameters were used in the SQL statement
+2021-09-01 16:46:51,566|{"userid": 8, "message": "Home Page"}
+2021-09-01 16:49:23,927|{"userid": 8, "message": "Home Page"}
+2021-09-01 16:49:27,450|{"userid": 8, "message": "Choosing Question", "topic": "Fractions", "level": "Easy"}
+2021-09-01 16:49:29,618|{"userid": 8, "qid": "FE3", "qcount": 1}
+2021-09-01 16:49:31,782|{"userid": 8, "qid": "FE3", "qcount": 2}
+2021-09-01 16:49:34,222|{"userid": 8, "qid": "FE3", "qcount": 3}
+2021-09-01 16:49:35,119|{"userid": 8, "qid": "FE3", "qcount": 4}
+2021-09-01 16:49:37,729|{"userid": 8, "qid": "FE3", "q1": "25", "q2": "25", "q3": "25", "q4": "25", "total": 100}
+2021-09-01 16:49:37,732|Exception on /score [POST]
+Traceback (most recent call last):
+  File "c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "D:\USER Data\Desktop\ITS-Math\home\routes.py", line 131, in score
+    mycursor.execute("INSERT INTO Student_Score(sid,qid,score)values(%d,%d,%d)",(uid,qid,total))
+  File "c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages\mysql\connector\cursor.py", line 542, in execute
+    raise errors.ProgrammingError(
+mysql.connector.errors.ProgrammingError: Not all parameters were used in the SQL statement
+2021-09-01 16:49:38,038|{"userid": 8, "message": "Home Page"}
+2021-09-01 16:51:53,911|{"userid": 8, "message": "Home Page"}
+2021-09-01 16:51:58,109|{"userid": 8, "message": "Choosing Question", "topic": "Fractions", "level": "Easy"}
+2021-09-01 16:52:00,556|{"userid": 8, "qid": "FE1", "qcount": 1}
+2021-09-01 16:52:03,422|{"userid": 8, "qid": "FE1", "qcount": 2}
+2021-09-01 16:52:04,219|{"userid": 8, "qid": "FE1", "qcount": 3}
+2021-09-01 16:52:05,751|{"userid": 8, "qid": "FE1", "qcount": 4}
+2021-09-01 16:52:08,882|{"userid": 8, "qid": "FE1", "q1": "25", "q2": "25", "q3": "25", "q4": "25", "total": 100}
+2021-09-01 16:52:09,189|{"userid": 8, "message": "Home Page"}
