@@ -144,69 +144,21 @@
                   <div class="row">
                     <div class="col-sm-6">
                       <h6 class="d-flex align-items-center mb-3 "><i class="material-icons text-info mr-2"></i>Algebra</h6>
-                      <small>Coefficient</small>
+                      {% for key,value in algebra.items() %}
+                      <small>{{key}}</small>
                       <div class="progress mb-3" style="height: 5px">
-                        <div class="progress-bar bg-primary" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                        <div class="progress-bar bg-primary" role="progressbar" style="width: {{value}}%" aria-valuenow="{{value}}" aria-valuemin="0" aria-valuemax="100"></div>
                       </div>
-                      <small>Value of Expression</small>
-                      <div class="progress mb-3" style="height: 5px">
-                        <div class="progress-bar bg-primary" role="progressbar" style="width: 72%" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100"></div>
-                      </div>
-                      <small>Classification</small>
-                      <div class="progress mb-3" style="height: 5px">
-                        <div class="progress-bar bg-primary" role="progressbar" style="width: 89%" aria-valuenow="89" aria-valuemin="0" aria-valuemax="100"></div>
-                      </div>
-                      <small>Identification</small>
-                      <div class="progress mb-3" style="height: 5px">
-                        <div class="progress-bar bg-primary" role="progressbar" style="width: 55%" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
-                      </div>
-                      <small>Horizontal Addition</small>
-                      <div class="progress mb-3" style="height: 5px">
-                        <div class="progress-bar bg-primary" role="progressbar" style="width: 66%" aria-valuenow="66" aria-valuemin="0" aria-valuemax="100"></div>
-                      </div>
-                      <small>Vertical Subtraction</small>
-                        <div class="progress mb-3" style="height: 5px">
-                          <div class="progress-bar bg-primary" role="progressbar" style="width: 66%" aria-valuenow="66" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
+                        {% endfor %}
                     </div>
                     <div class="col-sm-6">
                       <h6 class="d-flex align-items-center mb-3"><i class="material-icons text-info mr-2"></i>Fraction</h6>
-                        <small>Simplest Form</small>
-                        <div class="progress mb-3" style="height: 5px">
-                          <div class="progress-bar bg-primary" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                        <small>Division</small>
-                        <div class="progress mb-3" style="height: 5px">
-                          <div class="progress-bar bg-primary" role="progressbar" style="width: 72%" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                        <small>Operation</small>
-                        <div class="progress mb-3" style="height: 5px">
-                          <div class="progress-bar bg-primary" role="progressbar" style="width: 89%" aria-valuenow="89" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                        <small>Multiplication</small>
-                        <div class="progress mb-3" style="height: 5px">
-                          <div class="progress-bar bg-primary" role="progressbar" style="width: 55%" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                        <small>Mixed Fraction</small>
-                        <div class="progress mb-3" style="height: 5px">
-                          <div class="progress-bar bg-primary" role="progressbar" style="width: 66%" aria-valuenow="66" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                        <small>Compare</small>
-                        <div class="progress mb-3" style="height: 5px">
-                          <div class="progress-bar bg-primary" role="progressbar" style="width: 66%" aria-valuenow="66" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                        <small>Normal Form</small>
-                        <div class="progress mb-3" style="height: 5px">
-                          <div class="progress-bar bg-primary" role="progressbar" style="width: 66%" aria-valuenow="66" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                        <small>Fraction Division</small>
-                        <div class="progress mb-3" style="height: 5px">
-                          <div class="progress-bar bg-primary" role="progressbar" style="width: 66%" aria-valuenow="66" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                        <small>Fraction Operation </small>
-                        <div class="progress mb-3" style="height: 5px">
-                          <div class="progress-bar bg-primary" role="progressbar" style="width: 66%" aria-valuenow="66" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
+                      {% for key,value in fraction.items() %}
+                      <small>{{key}}</small>
+                      <div class="progress mb-3" style="height: 5px">
+                        <div class="progress-bar bg-primary" role="progressbar" style="width: {{value}}%" aria-valuenow="{{value}}" aria-valuemin="0" aria-valuemax="100"></div>
+                      </div>
+                        {% endfor %}
                     </div>
                   </div>
                 </div>
@@ -226,13 +178,13 @@
 <script src='https://cdn.plot.ly/plotly-2.3.1.min.js'></script>
 <script>
   var fraction = [{
-  values: [2,2,3,2],
+  values: ["{{context2.FE}}",4-"{{context2.FE}}","{{context2.FI}}",5-"{{context2.FI}}"],
   labels: ['Easy','Easy Incomplete', 'Intermediate','Indermediate InComplete'],
   type: 'pie'
 }];
 
 var algebra = [{
-  values: [3,1,1,1],
+  values: ["{{context2.AE}}",4-"{{context2.AE}}","{{context2.AI}}",2-"{{context2.AI}}"],
   labels: ['Easy','Easy Incomplete', 'Intermediate','Indermediate InComplete'],
   type: 'pie'
 }];
