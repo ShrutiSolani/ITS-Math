@@ -154,7 +154,43 @@ def profile():
         context ={'fname':fname,'lname':lname,'email':email,'grade':grade,'dob':dob}
         dict = {"userid": session['userid'], "message": "Profile Page"}
         current_app.logger.info(json.dumps(dict))
-        return render_template('UserScore.html',context=context)
+
+        mycursor.execute("select * from Student where id='" + str(userid) + "' ")
+        rs= mycursor.fetchall()
+        uid = rs[0][0]
+
+        mycursor.execute("select distinct qid , score from Student_Score where sid='" + str(userid) + "' ")
+        r2= mycursor.fetchall()
+        
+        AE = 0
+        AI = 0
+        FE = 0
+        FI = 0
+        algebra= {}
+        fraction = {}
+        for i in r2:
+            qid = i[0]
+            mycursor.execute("select * from Question where id='" + str(qid) + "' ")
+            r3= mycursor.fetchall()
+            chapter = r3[0][2]
+            level = r3[0][3]
+            topic = r3[0][4]
+            if level == "Easy" and chapter == "Algebra":
+                AE+=1
+                algebra[topic] = i[1]
+            elif level == "Easy" and chapter == "Fraction":
+                FE+=1
+                fraction[topic] = i[1]
+            elif level == "Intermediate" and chapter == "Algebra":
+                AI+=1
+                algebra[topic] = i[1]
+            elif level == "Intermediate" and chapter == "Fraction":
+                FI+=1
+                fraction[topic] = i[1]
+        context2 = {'AE':AE,'AI':AI,'FE':FE,'FI':FI}
+
+
+        return render_template('UserScore.html',context=context,context2=context2,algebra=algebra,fraction=fraction)
     else:
         return redirect("login")
 
