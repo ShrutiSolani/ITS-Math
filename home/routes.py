@@ -107,6 +107,7 @@ def home():
 
 @home_bp.route('/score', methods=['POST'])
 def score():
+    mycursor=mydb.cursor()
     if request.method == 'POST':
         if 'userid' in session:
             userid=session['userid']
@@ -118,8 +119,23 @@ def score():
         dict = {"userid": userid,"qid": myList[3], "q1": myList[4], "q2": myList[0], "q3": myList[1], "q4": myList[2],"total": total}
         flash(f"You scored {total} out of 100")
         current_app.logger.info(json.dumps(dict))
+        qids = myList[3]
+        mycursor.execute("select * from Question where qid='" + qids + "' ")
+        r = mycursor.fetchall()
+        qid = r[0][0]
+        userid = session['userid']
+        mycursor.execute("select * from Student where id='" + str(userid) + "' ")
+        rs= mycursor.fetchall()
+        uid = rs[0][0]
+        # mycursor.execute("Insert into Student(first_name,last_name,email,password,dob,grade)values(%s,%s,%s,%s,%s,%s)",(fname,lname,email,hashed_password,dob,grade))
+        mycursor.execute("INSERT INTO Student_Score(sid,qid,score)values(%s,%s,%s)",(uid,qid,total))
+        
+        # querys = "INSERT INTO Student_Score(sid,qid,score)values(%d,%d,%d)",(userid,qid,total)
+        # mycursor.execute(querys)
+        mydb.commit()
         return json.dumps(dict)
         # return redirect('home')
+
     else:
         return redirect("login")
 
@@ -138,7 +154,43 @@ def profile():
         context ={'fname':fname,'lname':lname,'email':email,'grade':grade,'dob':dob}
         dict = {"userid": session['userid'], "message": "Profile Page"}
         current_app.logger.info(json.dumps(dict))
-        return render_template('UserScore.html',context=context)
+
+        mycursor.execute("select * from Student where id='" + str(userid) + "' ")
+        rs= mycursor.fetchall()
+        uid = rs[0][0]
+
+        mycursor.execute("select distinct qid , score from Student_Score where sid='" + str(userid) + "' ")
+        r2= mycursor.fetchall()
+        
+        AE = 0
+        AI = 0
+        FE = 0
+        FI = 0
+        algebra= {}
+        fraction = {}
+        for i in r2:
+            qid = i[0]
+            mycursor.execute("select * from Question where id='" + str(qid) + "' ")
+            r3= mycursor.fetchall()
+            chapter = r3[0][2]
+            level = r3[0][3]
+            topic = r3[0][4]
+            if level == "Easy" and chapter == "Algebra":
+                AE+=1
+                algebra[topic] = i[1]
+            elif level == "Easy" and chapter == "Fraction":
+                FE+=1
+                fraction[topic] = i[1]
+            elif level == "Intermediate" and chapter == "Algebra":
+                AI+=1
+                algebra[topic] = i[1]
+            elif level == "Intermediate" and chapter == "Fraction":
+                FI+=1
+                fraction[topic] = i[1]
+        context2 = {'AE':AE,'AI':AI,'FE':FE,'FI':FI}
+
+
+        return render_template('UserScore.html',context=context,context2=context2,algebra=algebra,fraction=fraction)
     else:
         return redirect("login")
 
