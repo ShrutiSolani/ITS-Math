@@ -151,7 +151,8 @@ def profile():
         email = r[0][3]
         grade = r[0][6]
         dob = r[0][5]
-        context ={'fname':fname,'lname':lname,'email':email,'grade':grade,'dob':dob}
+        school = r[0][7]
+        context ={'fname':fname,'lname':lname,'school':school,'email':email,'grade':grade,'dob':dob}
         dict = {"userid": session['userid'], "message": "Profile Page"}
         current_app.logger.info(json.dumps(dict))
 
@@ -206,7 +207,8 @@ def EditUserScore():
         email = r[0][3]
         grade = r[0][6]
         dob = r[0][5]
-        context ={'fname':fname,'lname':lname,'email':email,'grade':grade,'dob':dob}
+        school = r[0][7]
+        context ={'fname':fname, 'school':school,'lname':lname,'email':email,'grade':grade,'dob':dob}
         return render_template('EditUserScore.html',context=context)
     else:
         return redirect("login")
@@ -220,9 +222,10 @@ def EditUserScores():
         lname = request.form['lname']
         email = request.form['email']
         grade = request.form['grade']
+        school = request.form['school']
         # dob = request.form['dob']
         mycursor=mydb.cursor()
-        mycursor.execute("update student set first_name='" + fname + "',last_name='" + lname +"',email='" + email +"',grade='"+grade+"' where id='" +str(userid)+"' ")
+        mycursor.execute("update student set first_name='" + fname + "',last_name='" + lname +"',email='" + email +"',grade='"+grade+"',school='"+school+"'  where id='" +str(userid)+"' ")
         mydb.commit()
         mycursor.close()
         return redirect('profile')

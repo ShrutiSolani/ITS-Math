@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <title>Practice</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename="css/layout_easy.css") }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/layout_easy.css') }}">
   <script>
   {% block script %}{% endblock %}
   </script>
@@ -31,17 +31,14 @@
     <div class="collapse navbar-collapse " id="navbarSupportedContent">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link a1" href="" id="home_nav">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link a1" href="#">About Us</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link a1" href="#">Our Team</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link a1" href="#">Contact</a>
-        </li>
+					<a class="nav-link a1" href="{{ url_for('home_bp.home') }}">Home</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link a1" href="{{ url_for('home_bp.profile') }}">Profile</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link a1" href="/logout">Logout</a>
+				</li>
       </ul>
     </div>
   </nav>
@@ -64,7 +61,7 @@
 
       <div class="time-card">
 
-        <div class="card-body" style="width: 80%;">
+        <div class="card-body" style="width: 80%;height: 50vh;">
           {% block content %}{% endblock %}
         </div>
 

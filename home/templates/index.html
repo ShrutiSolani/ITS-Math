@@ -30,16 +30,13 @@
     <div class="collapse navbar-collapse " id="navbarSupportedContent">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link a1" href="#">Home</a>
+          <a class="nav-link a1" href="{{ url_for('home_bp.login') }}">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link a1" href="#">About Us</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link a1" href="#">Our Team</a>
+          <a class="nav-link a1" href="#features">Features</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link a1" href="#">Contact</a>
+          <a class="nav-link a1" href="#contacts">Contact</a>
         </li>
       </ul>
     </div>
@@ -60,7 +57,7 @@
   </div>
 
 
-  <section class="sec white">
+  <section class="sec white" id="features">
     <h1 style="text-align: center;font-size: 3.8rem;text-decoration: underline;padding: 10px 0;">Our Features</h1>
     <div class="container-fluid" style="width:80%;">
       <div class="row">
@@ -95,7 +92,7 @@
 
     </div>
   </section>
-  <section class="sec blue" style="padding: 3rem;">
+  <section id="contacts" class="sec blue" style="padding: 3rem;">
 
     <div class="container" style="border-radius: 30px;background-color:blanchedalmond;">
 
