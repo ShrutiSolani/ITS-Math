@@ -265,14 +265,14 @@ document.getElementById("hint-btn").style.backgroundColor = "grey";
 {% block topic %}Fraction Division{% endblock %}
 {% block hint %}
 <button type="button" class="btn btn-primary" style="margin-bottom:30px;width: 100%;" onclick="right2();" id="btn1">Reciprocal of Fraction.</button>
-<button type="button" class="btn btn-secondary" style="margin-bottom:30px;width: 100%;" id="btn2">Reciprocal of Numerator</button>
-<button type="button" class="btn btn-secondary" style="margin-bottom:30px;width: 100%;" onclick="right1();" id="btn3">Reciprocal of Whole No.</button>
-<button type="button" class="btn btn-secondary" style="margin-bottom:30px;width: 100%;" id="btn4">Reciprocal of Denominator</button>
+<button type="button" class="btn btn-primary" style="margin-bottom:30px;width: 100%;" id="btn2">Reciprocal of Numerator</button>
+<button type="button" class="btn btn-primary" style="margin-bottom:30px;width: 100%;" onclick="right1();" id="btn3">Reciprocal of Whole No.</button>
+<button type="button" class="btn btn-primary" style="margin-bottom:30px;width: 100%;" id="btn4">Reciprocal of Denominator</button>
 {% endblock %}
 {% block content %}
 
 <h5 class="card-title">{{ answer.que }}</h5>
-<br><br>
+
 <div class="ryt1">
   <label for="spf" style="display:none" class="fbox">Reciprocal of Whole No. : </label>
   <input type="text" id="spf" name="rem" maxlength="8" size="2" class="num fbox" onblur="check_num();" style="display: none;" required>
