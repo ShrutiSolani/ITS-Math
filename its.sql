@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 01, 2021 at 01:26 PM
+-- Generation Time: Sep 03, 2021 at 12:54 PM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 7.3.29
 
@@ -69,15 +69,16 @@ CREATE TABLE `student` (
   `email` varchar(100) NOT NULL,
   `password` varchar(10000) NOT NULL,
   `dob` date NOT NULL,
-  `grade` int(20) NOT NULL
+  `grade` int(20) NOT NULL,
+  `school` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `student`
 --
 
-INSERT INTO `student` (`id`, `first_name`, `last_name`, `email`, `password`, `dob`, `grade`) VALUES
-(8, 'admin', 'malhotra', 'admin@gmail.com', 'pbkdf2:sha256:260000$jkAtIT4usgqFXU6n$9462947114530579098196cfcdf1dd4053a88696befec4b28201996827ce6dba', '2016-03-28', 5);
+INSERT INTO `student` (`id`, `first_name`, `last_name`, `email`, `password`, `dob`, `grade`, `school`) VALUES
+(8, 'admin', 'malhotra', 'admin@gmail.com', 'pbkdf2:sha256:260000$jkAtIT4usgqFXU6n$9462947114530579098196cfcdf1dd4053a88696befec4b28201996827ce6dba', '2016-03-28', 5, 'D.J Sanghvi');
 
 -- --------------------------------------------------------
 
@@ -97,7 +98,14 @@ CREATE TABLE `student_score` (
 --
 
 INSERT INTO `student_score` (`id`, `sid`, `qid`, `score`) VALUES
-(1, 8, 1, 100);
+(1, 8, 1, 100),
+(2, 8, 1, 100),
+(3, 8, 10, 100),
+(4, 8, 12, 100),
+(5, 8, 14, 85),
+(6, 8, 7, 90),
+(7, 8, 1, 100),
+(8, 8, 6, 90);
 
 --
 -- Indexes for dumped tables
@@ -143,7 +151,7 @@ ALTER TABLE `student`
 -- AUTO_INCREMENT for table `student_score`
 --
 ALTER TABLE `student_score`
-  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- Constraints for dumped tables
