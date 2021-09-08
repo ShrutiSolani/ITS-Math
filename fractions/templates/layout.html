@@ -153,16 +153,20 @@
       };
 
       var hint_count = 0;
+      var getTimes=[];
       $('#hint-btn').click(function() {
-        hint_count++;
-        var time = new Date();
-        $.get('/getTime', {
-          'quesid': quesid,
-          'hint_count': hint_count,
-          'time': time
-        }, function(response) {
-          console.log("done");
-        });
+        getTimes[hint_count++]=new Date().getTime();
+        // console.log(getTime);
+        // hint_count++;
+        // getTime = new Date();
+        // $.get('/getTime', {
+        //   'quesid': quesid,
+        //   'hint_count': hint_count,
+        //   'time': time
+        // }, function(response) {
+        //   console.log("done");
+        // });
+
       })
 
       $('#next-btn').click(function(event) {
@@ -174,7 +178,7 @@
         }
 
 
-        let score = 25 - (5 * hint_count);
+        let score = 25 - (5 * hint_count)-wronghint;
         sessionStorage.setItem(x, score);
         console.log(sessionStorage.getItem(x));
 
@@ -191,7 +195,12 @@
           console.log(data);
           $.get('/endTime', {
             'quesid': quesid,
-            'qcount': Number(sessionStorage.count)
+            'qcount': Number(sessionStorage.count),
+            'hcount' : hint_count,
+            'htime' : JSON.stringify(getTimes),
+            'score' : score,
+            'wrong' : feedcount,
+            'wronghint':wronghint
           }, function(response) {
             console.log("done");
           });
@@ -216,7 +225,12 @@
         } else {
           $.get('/endTime', {
             'quesid': quesid,
-            'qcount': Number(sessionStorage.count)
+            'qcount': Number(sessionStorage.count),
+            'hcount' : hint_count,
+            'htime' : JSON.stringify(getTimes),
+            'score' : score,
+            'wrong' : feedcount,
+            'wronghint':wronghint
           }, function(response) {
             console.log("done");
           });

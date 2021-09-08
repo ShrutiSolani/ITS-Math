@@ -58,6 +58,7 @@ position: absolute;
 var x = document.getElementsByClassName("correct");
 var y = document.getElementsByClassName("wrong");
 var feedcount = 0;
+var wronghint = 0;
 
 function check0()
 {
@@ -212,6 +213,7 @@ document.getElementById("icon3").style.display="inline";
 else
 {
 if(document.getElementsByTagName("input")[4].value != ""){
+  feedcount++;
 $(x[4]).hide();
 $(y[4]).show();
 document.getElementsByTagName("input")[4].value = "";
@@ -236,6 +238,7 @@ icon: "success",
 }
 }
 
+
 function right1(){
 if(document.getElementById("btn2").innerHTML==="Divide and write quotient"){
 $("#myModal").modal('hide');
@@ -245,6 +248,9 @@ document.getElementById("btn2").innerHTML="subtract quotient from numerator";
 document.getElementById("btn3").innerHTML="subtract denominator from denominator";
 document.getElementById("btn4").innerHTML="write remainder";
 }
+else{
+  wronghint++;
+}
 }
 function right2(){
 if(document.getElementById("btn4").innerHTML==="write remainder"){
@@ -253,6 +259,12 @@ document.getElementById("hint-btn").disabled = true;
 document.getElementById("hint-btn").style.backgroundColor = "grey";
 document.getElementsByClassName('line1')[1].style.display = 'block';
 }
+else{
+  wronghint++;
+}
+}
+function wrong(){
+  wronghint++;
 }
 
 {% endblock %}
@@ -260,9 +272,9 @@ document.getElementsByClassName('line1')[1].style.display = 'block';
 {% block topic %}Mixed Fraction{% endblock %}
 
 {% block hint %}
-<button class="btn btn-info" id="btn1" style="width: 100%; margin: 10px auto;">Subtract denominator from numerator</button>
+<button class="btn btn-info" id="btn1" style="width: 100%; margin: 10px auto;" onclick="wrong();">Subtract denominator from numerator</button>
 <button class="btn btn-info" id="btn2" style="width: 100%; margin: 10px auto;" onclick="right1();">Divide and write quotient</button>
-<button class="btn btn-info" id="btn3" style="width: 100%; margin: 10px auto;">Find equivalent fraction</button>
+<button class="btn btn-info" id="btn3" style="width: 100%; margin: 10px auto;" onclick="wrong();">Find equivalent fraction</button>
 <button class="btn btn-info" id="btn4" style="width: 100%; margin: 10px auto;" onclick="right2();">Divide and write remainder</button>
 {% endblock %}
 
