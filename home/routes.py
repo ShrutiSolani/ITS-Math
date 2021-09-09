@@ -1,5 +1,7 @@
+from datetime import datetime
 from flask import Blueprint, render_template, request, flash, redirect, url_for, session, Flask, current_app
 import json, os, random
+from ..fractions import routes
 from werkzeug.security import generate_password_hash , check_password_hash
 
 import mysql.connector
@@ -243,10 +245,43 @@ def getTime():
 
 @home_bp.route("/endTime", methods=["GET"])
 def endTime():
+    mycursor=mydb.cursor()
     qcount = request.args.get('qcount')
     qid = request.args.get('quesid')
-    dict = {"userid": session['userid'], "qid": qid, "qcount": qcount, "message": "End"}
-    current_app.logger.info(json.dumps(dict))
+    hcount =request.args.get('hcount')
+    htime = json.loads(request.args.get('htime'))
+    score = request.args.get('score')
+    startTym = routes.startTym
+    endTym = datetime.now()
+    wrong = request.args.get('wrong')
+    wronghint = request.args.get('wronghint')
+    mycursor.execute("select * from Question where qid = '" + str(qid) + "' ")
+    r = mycursor.fetchall()
+    chapter = r[0][2]
+    lod = r[0][3] #Level Of Difficulty
+    if(len(htime)==1):
+        hintTime1 = datetime.fromtimestamp(htime[0]/1000)
+        hintTime2 = 0
+    elif(len(htime)==2):
+        hintTime1 = datetime.fromtimestamp(htime[0]/1000)
+        hintTime2 = datetime.fromtimestamp(htime[1]/1000)
+    else:
+        hintTime1 = 0
+        hintTime2 = 0
+    endhtym1=0
+    endhtym2=0
+    if(hintTime1!=0):
+        endhtym1 = endTym - hintTime1
+        if(hintTime2!=0):
+            tyms = hintTime2
+        else:
+            tyms=endTym
+        difference = tyms-hintTime1
+    if(hintTime2!=0):
+        endhtym2 = endTym - hintTime2
+    # totalTym = endhtym1 + endhtym2
+    dict = {"userid": session['userid'], "qid": qid, "qcount": qcount, "startTime" : startTym, "endTime" : endTym, "levelofdifficulty":lod,"chapter":chapter,"hintCount" : hcount, "h1time":hintTime1,"h2time":hintTime2,"diffh1":endhtym1,"diffh2":endhtym2,"wrongCount":wrong,"wronghintcount":wronghint,"score":score}
+    current_app.logger.info(json.dumps(dict,default=str))
     return "TimeReceived"
 
 @home_bp.route('/logout')

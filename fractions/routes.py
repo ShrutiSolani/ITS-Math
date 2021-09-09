@@ -202,15 +202,16 @@ def mixed_to_normal():
 
     return render_template("Normal_form.html", answer=answer)
 
-
+startTym=datetime.datetime.now()
 @fractions_bp.route("/mixed-fraction")
 def question():
     global count
     global datetimes
-    x=datetime.datetime.now()
-    if len(datetimes)==4:
-        datetimes=[]
-    datetimes.append(x)
+    global startTym
+    startTym=datetime.datetime.now()
+    # if len(datetimes)==4:
+    #     datetimes=[]
+    # datetimes.append(x)
 
     qid = data["mixed-fraction"]
     num = random.randint(1, 100)
