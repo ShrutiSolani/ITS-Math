@@ -7,13 +7,20 @@ SITE_ROOT = os.path.realpath(os.path.dirname(__file__))
 
 json_url = os.path.join(SITE_ROOT, "static/data", "qid.json")
 data = json.load(open(json_url))
-count = 0
 datetimes = []
+count=0
 
 fractions_bp = Blueprint("fractions_bp", __name__, template_folder = "templates", static_folder="static")
 
+startTym=datetime.datetime.now()
+
+
 @fractions_bp.route("/divide_with_whole")
 def divide_with_whole():
+    global count
+    global datetimes
+    global startTym
+    startTym=datetime.datetime.now()
     qid = data["divide-with-whole"]
     num=random.randint(2,30)
     den=random.randint(2,20)
@@ -33,7 +40,6 @@ def divide_with_whole():
     hints = {"h1": h1, "h2": h2, "h3": h3}
     context={"qid": qid,"que":que,"numerator":numerator,"hints":hints,"denominator":denominator,"ans_num":ans_num,"ans_den":ans_den,"rec_num":1,"rec_den":div}
     scoredict = {"score": "", "total": "", "totalqts": "", "pct": ""}
-    global count
     count+=1
     dict = {"userid": session['userid'], "qid": qid, "qcount": count}
     current_app.logger.info(json.dumps(dict))
@@ -43,6 +49,10 @@ def divide_with_whole():
 
 @fractions_bp.route("/multiply-with-whole")
 def multiply_with_whole():
+    global count
+    global datetimes
+    global startTym
+    startTym=datetime.datetime.now()
     qid = data["multiply-with-whole"]
     q=[]
     ans_num=[]
@@ -58,7 +68,6 @@ def multiply_with_whole():
         ans_den.append(ansden)
         q.append(que)
     q.insert(1," ")
-    global count
     count+=1
     dict = {"userid": session['userid'], "qid": qid, "qcount": count}
     current_app.logger.info(json.dumps(dict))
@@ -68,6 +77,10 @@ def multiply_with_whole():
 
 @fractions_bp.route("/add-fractions")
 def add_fractions():
+    global count
+    global datetimes
+    global startTym
+    startTym=datetime.datetime.now()
     qid = data["add-fractions"]
     q=[]
     ans_num=[]
@@ -85,7 +98,6 @@ def add_fractions():
         q.append(qs)
     q.insert(1," ")
     contexts={"num": 1,"qid": qid,"topic": "Add like fractions","ans_num":ans_num,"ans_den":ans_den,"q":q, "label1": "Quotient", "label2" : "Remainder"}
-    global count
     count+=1
     dict = {"userid": session['userid'], "qid": qid, "qcount": count}
     current_app.logger.info(json.dumps(dict))
@@ -95,6 +107,10 @@ def add_fractions():
 
 @fractions_bp.route("/division")
 def division():
+    global count
+    global datetimes
+    global startTym
+    startTym=datetime.datetime.now()
     qid = data["division"]
     q=[]
     ans_num=[]
@@ -110,7 +126,6 @@ def division():
         ans_den.append(ansden)
     q.insert(1," ")
     easy={"ans_num":ans_num,"ans_den":ans_den,"q":q, "label1": "Quotient", "label2": "Remainder", "qid": qid}
-    global count
     count+=1
     dict = {"userid": session['userid'], "qid": qid, "qcount": count}
     current_app.logger.info(json.dumps(dict))
@@ -120,6 +135,10 @@ def division():
 
 @fractions_bp.route("/unlike-add")
 def unlike_add():
+    global count
+    global datetimes
+    global startTym
+    startTym=datetime.datetime.now()
     qid = data["unlike-add"]
     num1=random.randint(2,50)
     den1=random.randint(2,20)
@@ -158,7 +177,6 @@ def unlike_add():
 
 
     answer = {"qid": qid,"que": que, "num_ans": ans_frac.numerator, "den_ans": ans_frac.denominator, "den": den_ans, "num": num_ans,"num1":num1,"den1":den1,"num2":num2,"den2":den2,"q":que}
-    global count
     count+=1
     dict = {"userid": session['userid'], "qid": qid, "qcount": count}
     current_app.logger.info(json.dumps(dict))
@@ -168,8 +186,10 @@ def unlike_add():
 
 @fractions_bp.route("/simplest-form")
 def simplest_form():
-
     global count
+    global datetimes
+    global startTym
+    startTym=datetime.datetime.now()
     qid = data["simplest-form"]
     num = random.randint(1,50)
     den = random.randint(2,50)
@@ -187,6 +207,10 @@ def simplest_form():
 
 @fractions_bp.route("/normal-form")
 def mixed_to_normal():
+    global count
+    global datetimes
+    global startTym
+    startTym=datetime.datetime.now()
     qid = data["normal-form"]
     num = random.randint(1,50)
     den = random.randint(2,50)
@@ -195,14 +219,13 @@ def mixed_to_normal():
     num_ans = (den*whole)+num
     frac = Fraction(num_ans,den)
     answer = {"qid": qid,"que":que, "num_ans":frac.numerator, "den_ans":frac.denominator,"den":den,"num":num_ans}
-    global count
     count+=1
     dict = {"userid": session['userid'], "qid": qid, "qcount": count}
     current_app.logger.info(json.dumps(dict))
 
     return render_template("Normal_form.html", answer=answer)
 
-startTym=datetime.datetime.now()
+
 @fractions_bp.route("/mixed-fraction")
 def question():
     global count
@@ -235,13 +258,10 @@ def LCM(a, b):
 
 @fractions_bp.route("/compare")
 def compare():
-    global datetimes
-    x=datetime.datetime.now()
-    if len(datetimes)==4:
-        datetimes=[]
-    datetimes.append(x)
     global count
-
+    global datetimes
+    global startTym
+    startTym=datetime.datetime.now()
     qid = data["compare"]
     num1 = random.randint(1,100)
     den1 = random.randint(2,25)

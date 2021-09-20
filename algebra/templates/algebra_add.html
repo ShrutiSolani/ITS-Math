@@ -58,6 +58,7 @@ var x = document.getElementsByClassName("correct");
 var y = document.getElementsByClassName("wrong");
 
 var feedcount = 0;
+var wronghint = 0;
 
 function check0()
 {
@@ -70,6 +71,7 @@ document.getElementsByClassName("quo")[0].id = 'right';
 else
 {
 if(document.getElementsByTagName("input")[0].value !="" ) {
+feedcount++
 $(x[0]).hide();
 $(y[0]).show();
 document.getElementsByClassName("quo")[0].id = 'error';
@@ -294,6 +296,7 @@ $(y[1]).hide();
 else
 {
 if(document.getElementsByTagName("input")[11].value !="" ) {
+feedcount++
 $(x[1]).hide();
 $(y[1]).show();
 document.getElementsByClassName("quo")[11].id = 'error';
@@ -312,6 +315,7 @@ document.getElementsByClassName("quo")[12].id = 'right';
 else
 {
 if(document.getElementsByTagName("input")[12].value !="") {
+feedcount++;
 $(x[2]).hide();
 $(y[2]).show();
 document.getElementsByClassName("quo")[12].id = 'error';
@@ -340,6 +344,7 @@ function check13()
   {
     if(document.getElementsByTagName("input")[13].value !="")
     {
+      feedcount++;
       $(x[2]).hide();
       $(y[2]).show();
       document.getElementsByClassName("quo")[13].id = 'error';
@@ -357,6 +362,9 @@ function check13()
       document.getElementById("btn3").innerHTML="Add coefficient of each polynomial";
       document.getElementById("btn4").innerHTML="Add first value of each polynomial";
     }
+    else{
+      wronghint++;
+    }
   }
 
 
@@ -368,6 +376,13 @@ function check13()
     document.getElementById("hint-btn").disabled = true;
     document.getElementById("hint-btn").style.backgroundColor = "grey";
   }
+  else{
+    wronghint++;
+  }
+}
+
+function wrong(){
+  wronghint++;
 }
 
 {% endblock %}
@@ -375,9 +390,9 @@ function check13()
 {% block topic %}Horizontal Addition{% endblock %}
 
 {% block hint %}
-<button class="btn btn-info" id="btn1" style="width: 100%; margin: 10px auto;width:100%">Add all coefficients</button>
+<button class="btn btn-info" id="btn1" style="width: 100%; margin: 10px auto;width:100%" onclick="wrong()">Add all coefficients</button>
 <button class="btn btn-info" id="btn2" style="width: 100%; margin: 10px auto;width:100%" onclick="right2();">Write all terms with same powers</button>
-<button class="btn btn-info" id="btn3" style="width: 100%; margin: 10px auto;width:100%">Add first value of each polynomials</button>
+<button class="btn btn-info" id="btn3" style="width: 100%; margin: 10px auto;width:100%" onclick="wrong()">Add first value of each polynomials</button>
 <button class="btn btn-info" id="btn4" style="width: 100%; margin: 10px auto;width:100%" onclick="right1();">Write all terms</button>
 {% endblock %}
 

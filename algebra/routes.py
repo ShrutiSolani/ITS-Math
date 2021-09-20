@@ -10,9 +10,14 @@ json_url = os.path.join(SITE_ROOT, "static/data", "qid.json")
 data = json.load(open(json_url))
 count = 0
 datetimes = []
+startTym=datetime.datetime.now()
 
 @algebra_bp.route("/like-unlike")
 def like_unlike():
+    global count
+    global datetimes
+    global startTym
+    startTym=datetime.datetime.now()
     qid = data['like-unlike']
     q3 = 'State whether a given pair of terms is of like or unlike terms'
     term1 = ['x', 'y', 'xy', 'xy\u00b2', 'x\u00b2y']
@@ -35,7 +40,6 @@ def like_unlike():
         answers.append(answer)
         cnt += 1
     contexts={'qid': qid, 'question': q3, 'options': terms, 'answer': answers, 'num': 2, 'topic': 'Like-Unlike Terms'}
-    global count
     count+=1
     dict = {"userid": session['userid'], "qid": qid, "qcount": count}
     current_app.logger.info(json.dumps(dict))
@@ -44,6 +48,10 @@ def like_unlike():
 
 @algebra_bp.route('/value-of-expression')
 def value_of_expression():
+    global count
+    global datetimes
+    global startTym
+    startTym=datetime.datetime.now()
     qid = data['value-of-expression']
     cnt=0
     variable=["","p","p\u00b2","p\u00b3"]
@@ -79,8 +87,6 @@ def value_of_expression():
         terms.append(term)
         answers.append(answer)
         cnt += 1
-
-    global count
     count+=1
     dict = {"userid": session['userid'], "qid": qid, "qcount": count}
     current_app.logger.info(json.dumps(dict))
@@ -93,6 +99,10 @@ def find_term(v, a):
 
 @algebra_bp.route('/coefficient')
 def coefficient():
+    global count
+    global datetimes
+    global startTym
+    startTym=datetime.datetime.now()
     qid = data['coefficient']
     q1 = 'Identify the numerical coefficients of terms (other than constants) in the following expressions'
     variable = ["x", "x\u00b2", "x\u00b3"]
@@ -112,7 +122,6 @@ def coefficient():
         else:
             answers.append(coeff)
         cnt += 1
-    global count
     count+=1
     dict = {"userid": session['userid'], "qid": qid, "qcount": count}
     current_app.logger.info(json.dumps(dict))
@@ -121,6 +130,10 @@ def coefficient():
 
 @algebra_bp.route('/monomial')
 def monomial():
+    global count
+    global datetimes
+    global startTym
+    startTym=datetime.datetime.now()
     qid = data['monomial']
     terms2 = ['2y + 14z', '20', 'a\u00b2 + b\u00b2 - 2ab', '8xy']
     q2 = 'Classify into monomials, binomials and trinomials'
@@ -148,7 +161,6 @@ def monomial():
         cnt += 1
 
     contexts={'qid': qid, 'question': q2, 'options': terms, 'answer': answers, 'num': 1, 'topic': 'Monomial Binomial Trinomial'}
-    global count
     count+=1
     dict = {"userid": session['userid'], "qid": qid, "qcount": count}
     current_app.logger.info(json.dumps(dict))
@@ -158,12 +170,10 @@ def monomial():
 
 @algebra_bp.route("/algebra-add")
 def horizontal_add():
+    global count
     global datetimes
-    x=datetime.datetime.now()
-    if len(datetimes)==4:
-        datetimes=[]
-    datetimes.append(x)
-
+    global startTym
+    startTym=datetime.datetime.now()
     qid = data['algebra-add']
     coeff = random.sample(range(-50,50),6)
     varx = ['x','x\u00b2','x\u00b3']
@@ -183,7 +193,6 @@ def horizontal_add():
     y_like = coeff[1:6:2]
     y_sum = sum(y_like)
     answer = {'qid': qid, 'que':haddque,'varx':rx,'vary':ry,'coeff':coeff,'x_like':x_like,'y_like':y_like,'x_sum':x_sum,'y_sum':y_sum}
-    global count
     count+=1
     dict = {"userid": session['userid'], "qid": qid, "qcount": count}
     current_app.logger.info(json.dumps(dict))
@@ -193,11 +202,10 @@ def horizontal_add():
 @algebra_bp.route('/vertical_sub')
 def vertical_sub():
 
+    global count
     global datetimes
-    x=datetime.datetime.now()
-    if len(datetimes)==4:
-        datetimes=[]
-    datetimes.append(x)
+    global startTym
+    startTym=datetime.datetime.now()
 
 
     qid = data['vertical-sub']
@@ -225,7 +233,6 @@ def vertical_sub():
     y_diff = coeff[1] - coeff[4]
     z_diff = coeff[2] - coeff[5]
     answer = {'qid': qid, 'que': haddque, 'varx': rx, 'vary': ry,'varz':rz,'coeff': coeff,'x_diff': x_diff, 'y_diff': y_diff,'z_diff':z_diff}
-    global count
     count+=1
     dict = {"userid": session['userid'], "qid": qid, "qcount": count}
     current_app.logger.info(json.dumps(dict))

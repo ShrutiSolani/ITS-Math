@@ -59,6 +59,7 @@ var x = document.getElementsByClassName("correct");
 var y = document.getElementsByClassName("wrong");
 
 var feedcount = 0;
+var wronghint = 0;
 
 function check0()
 {
@@ -446,6 +447,8 @@ document.getElementById("btn1").innerHTML="Add all terms";
 document.getElementById("btn2").innerHTML="Write like terms together";
 document.getElementById("btn3").innerHTML="Add coefficient of each polynomial";
 document.getElementById("btn4").innerHTML="Add first value of each polynomial";
+}else{
+  wronghint++;
 }
 }
 function right2(){
@@ -454,8 +457,14 @@ $("#myModal").modal('hide');
 document.getElementById("hint-btn").disabled = true;
 document.getElementById("hint-btn").style.backgroundColor = "grey";
 document.getElementsByClassName('line1')[1].style.display = 'block';
+}else{
+  wronghint++;
 }
 
+}
+
+function wrong(){
+  wronghint++;
 }
 
 
@@ -467,9 +476,9 @@ document.getElementsByClassName('line1')[1].style.display = 'block';
 
 {% block hint %}
 <button class="btn btn-info" id="btn1" style="width: 100%; margin: 10px auto;" onclick="right1();">Write all terms</button>
-<button class="btn btn-info" id="btn2" style="width: 100%; margin: 10px auto;">Add first value of each polynomials</button>
+<button class="btn btn-info" id="btn2" style="width: 100%; margin: 10px auto;" onclick="wrong();">Add first value of each polynomials</button>
 <button class="btn btn-info" id="btn3" style="width: 100%; margin: 10px auto;" onclick="right2();">Write all terms with same powers</button>
-<button class="btn btn-info" id="btn4" style="width: 100%; margin: 10px auto;">Add all coefficients</button>
+<button class="btn btn-info" id="btn4" style="width: 100%; margin: 10px auto;" onclick="wrong();">Add all coefficients</button>
 {% endblock %}
 
 {% block content %}

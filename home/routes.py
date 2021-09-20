@@ -2,6 +2,7 @@ from datetime import datetime
 from flask import Blueprint, render_template, request, flash, redirect, url_for, session, Flask, current_app
 import json, os, random
 from ..fractions import routes
+from ..algebra import routes
 from werkzeug.security import generate_password_hash , check_password_hash
 
 import mysql.connector
@@ -113,8 +114,6 @@ def score():
     if request.method == 'POST':
         if 'userid' in session:
             userid=session['userid']
-        count = 0
-
         tup = request.get_json('data')
         myList = list(tup.values())
         total = int(tup['undefined']) + int(tup['1']) + int(tup['2']) + int(tup['3'])

@@ -58,6 +58,7 @@ position: absolute;
 var x = document.getElementsByClassName("correct");
 var y = document.getElementsByClassName("wrong");
 var feedcount = 0;
+var wronghint=0;
 
 function check_num1()
 {
@@ -233,6 +234,12 @@ document.getElementsByClassName("fbox")[1].style.display="inline";
 document.getElementsByClassName("fbox")[2].style.display="block";
 document.getElementsByClassName("fbox")[3].style.display="inline";
 }
+else{
+  wronghint++;
+}
+}
+function wrong(){
+  wronghint++;
 }
 
 {% endblock %}
@@ -240,10 +247,10 @@ document.getElementsByClassName("fbox")[3].style.display="inline";
 {% block topic %}Normal Form{% endblock %}
 
 {% block hint %}
-<button class="btn btn-info" id="btn1" style="width: 100%; margin: 10px auto;">HCF</button>
-<button class="btn btn-info" id="btn2" style="width: 100%; margin: 10px auto;">NF</button>
+<button class="btn btn-info" id="btn1" style="width: 100%; margin: 10px auto;" onclick="wrong();">HCF</button>
+<button class="btn btn-info" id="btn2" style="width: 100%; margin: 10px auto;" onclick="wrong();">NF</button>
 <button class="btn btn-info" id="btn3" style="width: 100%; margin: 10px auto;" onclick="right1();" id="btn3">LCM</button>
-<button class="btn btn-info" id="btn4" style="width: 100%; margin: 10px auto;">Multiply</button>
+<button class="btn btn-info" id="btn4" style="width: 100%; margin: 10px auto;" onclick="wrong();">Multiply</button>
 {% endblock %}
 
 {% block content %}
