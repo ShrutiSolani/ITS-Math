@@ -32,6 +32,7 @@ position: relative;
 var x = document.getElementsByClassName("correct");
 var y = document.getElementsByClassName("wrong");
 var feedcount = 0;
+var wronghint = 0;
 
 function check_num()
 {
@@ -246,6 +247,8 @@ document.getElementById("btn1").innerHTML="Multiply Fraction with Reciprocate No
 document.getElementById("btn2").innerHTML="Add Fraction with Reciprocate No.";
 document.getElementById("btn3").innerHTML="Subtract Fraction with Reciprocate No.";
 document.getElementById("btn4").innerHTML=" Write Fraction as it is.";
+}else{
+  wronghint++;
 }
 }
 function right2(){
@@ -257,7 +260,12 @@ document.getElementsByClassName("fbox")[6].style.display="block";
 document.getElementsByClassName("fbox")[7].style.display="inline";
 document.getElementById("hint-btn").disabled = true;
 document.getElementById("hint-btn").style.backgroundColor = "grey";
+}else{
+  wronghint++
 }
+}
+function wrong(){
+  wronghint++;
 }
 
 {% endblock %}
@@ -265,9 +273,9 @@ document.getElementById("hint-btn").style.backgroundColor = "grey";
 {% block topic %}Fraction Division{% endblock %}
 {% block hint %}
 <button type="button" class="btn btn-primary" style="margin-bottom:30px;width: 100%;" onclick="right2();" id="btn1">Reciprocal of Fraction.</button>
-<button type="button" class="btn btn-primary" style="margin-bottom:30px;width: 100%;" id="btn2">Reciprocal of Numerator</button>
+<button type="button" class="btn btn-primary" style="margin-bottom:30px;width: 100%;" id="btn2" onclick="wrong();">Reciprocal of Numerator</button>
 <button type="button" class="btn btn-primary" style="margin-bottom:30px;width: 100%;" onclick="right1();" id="btn3">Reciprocal of Whole No.</button>
-<button type="button" class="btn btn-primary" style="margin-bottom:30px;width: 100%;" id="btn4">Reciprocal of Denominator</button>
+<button type="button" class="btn btn-primary" style="margin-bottom:30px;width: 100%;" id="btn4" onclick="wrong();">Reciprocal of Denominator</button>
 {% endblock %}
 {% block content %}
 

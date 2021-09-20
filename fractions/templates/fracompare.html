@@ -49,6 +49,7 @@ var x = document.getElementsByClassName("correct");
 var y = document.getElementsByClassName("wrong");
 
 var feedcount = 0;
+var wronghint = 0;
 
 const check0=()=>
 {
@@ -274,6 +275,9 @@ document.getElementById("btn2").innerHTML="Simplest Form";
 document.getElementById("btn3").innerHTML="Compare Denominators";
 document.getElementById("btn4").innerHTML="Compare Numerators";
 }
+else{
+    wronghint++;
+}
 }
 function right2(){
 if(document.getElementById("btn1").innerHTML==="Find Equivalent"){
@@ -288,7 +292,12 @@ document.getElementsByClassName("ryt2")[6].style.display="block";
 document.getElementsByClassName("ryt2")[7].style.display="block";
 document.getElementById("hint-btn").disabled = true;
 document.getElementById("hint-btn").style.backgroundColor = "grey";
+}else{
+    wronghint++;
 }
+}
+function wrong(){
+    wronghint++;
 }
 
 
@@ -299,9 +308,9 @@ document.getElementById("hint-btn").style.backgroundColor = "grey";
 
 {% block hint %}
 <button type="button" class="btn btn-primary" style="margin-bottom:30px;width:100%" id="btn1" onclick="right2();">HCF</button>
-<button type="button" class="btn btn-secondary" style="margin-bottom:30px;width:100%" id="btn2">Average</button>
+<button type="button" class="btn btn-secondary" style="margin-bottom:30px;width:100%" id="btn2" onclick="wrong();">Average</button>
 <button type="button" class="btn btn-secondary" style="margin-bottom:30px;width:100%" onclick="right1();" id="btn3">LCM</button>
-<button type="button" class="btn btn-secondary" style="margin-bottom:30px;width:100%" id="btn4">Multiply</button>
+<button type="button" class="btn btn-secondary" style="margin-bottom:30px;width:100%" id="btn4" onclick="wrong()">Multiply</button>
 {% endblock %}
 
 {% block content %}
