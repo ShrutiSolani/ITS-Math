@@ -161,6 +161,7 @@ def unlike_add():
         num_ans=(numerator1*denominator2) + (numerator2*denominator1)
         den_ans=denominator1*denominator2
         ans_frac=Fraction(num_ans,den_ans)
+        opsign='+'
     else:
         que = q[1] + " (" + str(num2) + "/" + str(den2) + ") by " + "(" + str(num1) + "/" + str(den1) + ")" + "."
         numerator1 = num1
@@ -174,9 +175,10 @@ def unlike_add():
         num_ans = (numerator1 * denominator2) - (numerator2 * denominator1)
         den_ans = denominator1 * denominator2
         ans_frac = Fraction(num_ans, den_ans)
+        opsign='-'
 
 
-    answer = {"qid": qid,"que": que, "num_ans": ans_frac.numerator, "den_ans": ans_frac.denominator, "den": den_ans, "num": num_ans,"num1":num1,"den1":den1,"num2":num2,"den2":den2,"q":que}
+    answer = {"qid": qid,"que": que, "num_ans": ans_frac.numerator, "den_ans": ans_frac.denominator, "den": den_ans, "num": num_ans,"num1":num1,"den1":den1,"num2":num2,"den2":den2,"q":que,"opsign":opsign}
     count+=1
     dict = {"userid": session['userid'], "qid": qid, "qcount": count}
     current_app.logger.info(json.dumps(dict))
