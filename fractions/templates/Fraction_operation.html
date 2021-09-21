@@ -59,6 +59,7 @@ var x = document.getElementsByClassName("correct");
 var y = document.getElementsByClassName("wrong");
 
 var feedcount = 0;
+var wronghint = 0;
 
 function check0()
 {
@@ -439,23 +440,31 @@ icon: "success",
 }
 
 function right1(){
-if(document.getElementById("btn1").innerHTML==="Write all terms"){
+if(document.getElementById("btn1").innerHTML==="Cross Multiply"){
 $("#myModal").modal('hide');
 document.getElementsByClassName('line1')[0].style.display = 'block';
-document.getElementById("btn1").innerHTML="Add all terms";
-document.getElementById("btn2").innerHTML="Write like terms together";
-document.getElementById("btn3").innerHTML="Add coefficient of each polynomial";
-document.getElementById("btn4").innerHTML="Add first value of each polynomial";
+document.getElementById("btn1").innerHTML="Find LCM of Denominator";
+document.getElementById("btn2").innerHTML="Find Simplest form";
+document.getElementById("btn3").innerHTML="Evaluate Numerator and Denominator";
+document.getElementById("btn4").innerHTML="Add both the Denominator";
+}else{
+  wronghint++;
 }
 }
 function right2(){
-if(document.getElementById("btn3").innerHTML==="Add coefficient of each polynomial"){
+if(document.getElementById("btn3").innerHTML==="Evaluate Numerator and Denominator"){
 $("#myModal").modal('hide');
 document.getElementById("hint-btn").disabled = true;
 document.getElementById("hint-btn").style.backgroundColor = "grey";
 document.getElementsByClassName('line1')[1].style.display = 'block';
+}else{
+  wronghint++;
 }
 
+}
+
+function wrong(){
+  wronghint++;
 }
 
 
@@ -466,10 +475,10 @@ document.getElementsByClassName('line1')[1].style.display = 'block';
 
 
 {% block hint %}
-<button class="btn btn-info" id="btn1" style="width: 100%; margin: 10px auto;" onclick="right1();">Write all terms</button>
-<button class="btn btn-info" id="btn2" style="width: 100%; margin: 10px auto;">Add first value of each polynomials</button>
-<button class="btn btn-info" id="btn3" style="width: 100%; margin: 10px auto;" onclick="right2();">Write all terms with same powers</button>
-<button class="btn btn-info" id="btn4" style="width: 100%; margin: 10px auto;">Add all coefficients</button>
+<button class="btn btn-info" id="btn1" style="width: 100%; margin: 10px auto;" onclick="right1();">Cross Multiply</button>
+<button class="btn btn-info" id="btn2" style="width: 100%; margin: 10px auto;" onclick="wrong();">Find LCM</button>
+<button class="btn btn-info" id="btn3" style="width: 100%; margin: 10px auto;" onclick="right2();">Add/Subtract Numerator</button>
+<button class="btn btn-info" id="btn4" style="width: 100%; margin: 10px auto;" onclick="wrong();">Add/Subtract Denominator</button>
 {% endblock %}
 
 {% block content %}
@@ -479,7 +488,7 @@ document.getElementsByClassName('line1')[1].style.display = 'block';
 <div class="line1" style="display: none;">
   <div>
     (<input type="text" class="quo" name="quo" maxlength="3" size="3" onblur="check0();"> x
-    <input type="text" class="quo" name="quo" maxlength="3" size="3" onblur="check1();">) +
+    <input type="text" class="quo" name="quo" maxlength="3" size="3" onblur="check1();">) {{answer.opsign}}
     (<input type="text" class="quo" name="quo" maxlength="3" size="3" onblur="check2();"> x
     <input type="text" class="quo" name="quo" maxlength="3" size="3" onblur="check3();">)
     <i class="fal fa-check correct fa-2x" style="display: none; color: green;"></i>
@@ -499,14 +508,14 @@ document.getElementsByClassName('line1')[1].style.display = 'block';
 <div class="line1" style="display: none;">
   <label for="spf" class="fbox"> Ans : </label>
   <div>
-    <input type="text" id="spf" name="rem" maxlength="8" size="2" class="quo " onblur="check6();" required>
+    <input type="text" id="spf" name="rem" maxlength="8" size="2" class="quo " onblur="check6();">
     <i class="fal fa-check correct fa-2x" style="display: none; color: green;"></i>
     <i class="fal fa-times wrong fa-2x" style="display: none; color: red"></i>
 
   </div>
   <h5>-------</h5>
   <div>
-    <input type="text" name="rem" maxlength="8" size="2" class="quo fbox" onblur="check7();" required>
+    <input type="text" name="rem" maxlength="8" size="2" class="quo fbox" onblur="check7();">
     <i class="fal fa-check correct fa-2x" style="display: none; color: green;"></i>
     <i class="fal fa-times wrong fa-2x" style="display: none; color: red"></i>
 

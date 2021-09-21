@@ -32,7 +32,7 @@
     <div class="collapse navbar-collapse " id="navbarSupportedContent">
       <ul class="navbar-nav">
         <li class="nav-item">
-					<a class="nav-link a1" href="{{ url_for('home_bp.home') }}">Home</a>
+					<a class="nav-link a1" id="home_nav" href="">Home</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link a1" href="{{ url_for('home_bp.profile') }}">Profile</a>
@@ -150,16 +150,18 @@
       };
 
       var hint_count = 0;
+      var getTimes=[];
       $('#hint-btn').click(function() {
-        hint_count++;
-        var time = new Date();
-        $.get('/getTime', {
-          'quesid': quesid,
-          'hint_count': hint_count,
-          'time': time
-        }, function(response) {
-          console.log("done");
-        });
+        getTimes[hint_count++]=new Date().getTime();
+        // hint_count++;
+        // var time = new Date();
+        // $.get('/getTime', {
+        //   'quesid': quesid,
+        //   'hint_count': hint_count,
+        //   'time': time
+        // }, function(response) {
+        //   console.log("done");
+        // });
       })
 
       $('#next-btn').click(function() {
@@ -171,19 +173,28 @@
         }
 
 
-        let score = 25 - (5 * hint_count);
+        let score = 25 - (5 * hint_count)-wronghint;
         sessionStorage.setItem(x, score);
         console.log(sessionStorage.getItem(x));
 
         if (sessionStorage.count == 4) {
-
+          $.get('/endTime', {
+            'quesid': quesid,
+            'qcount': Number(sessionStorage.count),
+            'hcount' : hint_count,
+            'htime' : JSON.stringify(getTimes),
+            'score' : score,
+            'wrong' : feedcount,
+            'wronghint':wronghint
+          }, function(response) {
+            console.log("done");
+          });
           let keys = Object.keys(sessionStorage);
           for (let key of keys) {
             data[`${key}`] = `${sessionStorage.getItem(key)}`;
             sessionStorage.removeItem(`${key}`);
           }
           sessionStorage.removeItem('count');
-          console.log(data);
 
           alert("Excellent!  You finished all 4 questions");
           $.ajax({
@@ -202,6 +213,17 @@
           });
 
         } else {
+          $.get('/endTime', {
+            'quesid': quesid,
+            'qcount': Number(sessionStorage.count),
+            'hcount' : hint_count,
+            'htime' : JSON.stringify(getTimes),
+            'score' : score,
+            'wrong' : feedcount,
+            'wronghint':wronghint
+          }, function(response) {
+            console.log("done");
+          });
           setTimeout(function() {
             location.reload()
           }, 3000);

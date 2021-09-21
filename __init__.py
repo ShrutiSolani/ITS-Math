@@ -1,6 +1,6 @@
 from flask import Flask
 import mysql.connector, datetime, logging, json_logging, sys
-from .home.routes import home_bp
+from .home.routes import home_bp, page_not_found
 from .fractions.routes import fractions_bp
 from .questions_list.routes import choice_bp
 from .algebra.routes import algebra_bp
@@ -31,5 +31,6 @@ def create_app():
     app.register_blueprint(choice_bp)
     app.register_blueprint(fractions_bp)
     app.register_blueprint(algebra_bp)
+    app.register_error_handler(500,page_not_found)
 
     return app

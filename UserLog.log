@@ -1,134 +1,316 @@
-2021-09-03 14:59:41,254|{"message": "Login Page"}
-2021-09-03 15:10:02,861|{"message": "Login Page"}
-2021-09-03 15:10:09,019|{"userid": 8, "message": "Logged In"}
-2021-09-03 15:10:09,150|{"userid": 8, "message": "Home Page"}
-2021-09-03 15:10:21,085|{"userid": 8, "message": "Profile Page"}
-2021-09-03 15:11:23,744|{"userid": 8, "message": "Profile Page"}
-2021-09-03 15:11:38,964|{"userid": 8, "message": "Profile Page"}
-2021-09-03 15:12:12,987|{"userid": 8, "message": "Profile Page"}
-2021-09-03 15:13:37,900|{"userid": 8, "message": "Profile Page"}
-2021-09-03 15:20:38,275|{"userid": 8, "message": "Profile Page"}
-2021-09-03 15:22:18,918|{"userid": 8, "message": "Profile Page"}
-2021-09-03 15:24:54,758|{"userid": 8, "message": "Profile Page"}
-2021-09-03 15:25:24,888|{"userid": 8, "message": "Profile Page"}
-2021-09-03 15:26:06,378|{"userid": 8, "message": "Profile Page"}
-2021-09-03 15:27:56,874|{"userid": 8, "message": "Profile Page"}
-2021-09-03 15:31:54,476|{"userid": 8, "message": "Profile Page"}
-2021-09-03 15:34:19,052|{"userid": 8, "message": "Profile Page"}
-2021-09-03 15:45:02,540|{"userid": 8, "message": "Profile Page"}
-2021-09-03 15:45:48,564|{"userid": 8, "message": "Profile Page"}
-2021-09-03 15:46:01,516|{"userid": 8, "message": "Profile Page"}
-2021-09-03 15:46:45,837|{"userid": 8, "message": "Profile Page"}
-2021-09-03 15:49:12,753|{"userid": 8, "message": "Profile Page"}
-2021-09-03 15:49:21,475|{"userid": 8, "message": "Logged out"}
-2021-09-03 15:49:24,188|{"message": "Login Page"}
-2021-09-03 15:49:29,813|{"userid": 8, "message": "Logged In"}
-2021-09-03 15:49:29,819|{"userid": 8, "message": "Home Page"}
-2021-09-03 15:49:37,364|{"userid": 8, "message": "Profile Page"}
-2021-09-03 15:52:00,406|{"userid": 8, "message": "Home Page"}
-2021-09-03 15:55:21,013|{"userid": 8, "message": "Choosing Question", "topic": "Algebra", "level": "Easy"}
-2021-09-03 16:04:37,095|{"userid": 8, "message": "Choosing Question", "topic": "Algebra", "level": "Easy"}
-2021-09-03 16:04:44,614|{"userid": 8, "message": "Home Page"}
-2021-09-03 16:04:48,942|{"userid": 8, "message": "Choosing Question", "topic": "Fractions", "level": "Easy"}
-2021-09-03 16:04:58,431|{"userid": 8, "qid": "FE1", "qcount": 1}
-2021-09-03 16:05:32,460|{"userid": 8, "qid": "FE1", "qcount": 2}
-2021-09-03 16:05:34,330|{"userid": 8, "qid": "FE1", "qcount": 3}
-2021-09-03 16:05:35,695|{"userid": 8, "qid": "FE1", "qcount": 4}
-2021-09-03 16:05:38,421|{"userid": 8, "qid": "FE1", "q1": "25", "q2": "25", "q3": "25", "q4": "25", "total": 100}
-2021-09-03 16:05:38,727|{"userid": 8, "message": "Home Page"}
-2021-09-03 16:06:54,745|{"userid": 8, "message": "Home Page"}
-2021-09-03 16:06:59,164|{"userid": 8, "message": "Choosing Question", "topic": "Fractions", "level": "Intermediate"}
-2021-09-03 16:07:02,475|{"userid": 8, "qid": "FI1", "qcount": 1}
-2021-09-03 16:07:11,740|{"userid": 8, "message": "Choosing Question", "topic": "Fractions", "level": "Easy"}
-2021-09-03 16:07:22,240|{"userid": 8, "qid": "FE1", "qcount": 2}
-2021-09-03 16:08:43,508|{"userid": 8, "qid": "FE1", "qcount": 1}
-2021-09-03 16:09:14,329|{"userid": 8, "qid": "FE4", "qcount": 2}
-2021-09-03 16:09:52,129|{"userid": 8, "message": "Choosing Question", "topic": "Algebra", "level": "Easy"}
-2021-09-03 16:09:54,169|{"userid": 8, "qid": "AE1", "qcount": 1}
-2021-09-03 16:10:26,916|{"userid": 8, "message": "Choosing Question", "topic": "Fractions", "level": "Intermediate"}
-2021-09-03 16:10:29,642|{"userid": 8, "qid": "FI1", "qcount": 3}
-2021-09-03 16:10:36,790|{"userid": 8, "qid": "FI2", "qcount": 4}
-2021-09-03 16:10:39,585|{"userid": 8, "qid": "FI2", "hint_no": "1"}
-2021-09-03 16:10:45,878|{"userid": 8, "qid": "FI2", "hint_no": "2"}
-2021-09-03 16:10:55,132|{"userid": 8, "qid": "FI2", "hint_no": "3"}
-2021-09-03 16:12:23,494|{"userid": 8, "qid": "FI2", "qcount": 1}
-2021-09-03 16:12:27,164|{"userid": 8, "qid": "FI2", "hint_no": "1"}
-2021-09-03 16:12:31,736|{"userid": 8, "qid": "FI2", "hint_no": "2"}
-2021-09-03 16:13:05,381|Exception on /compare [GET]
+2021-09-20 15:54:49,525|{"userid": 8, "message": "Home Page"}
+2021-09-20 15:54:52,579|{"userid": 8, "message": "Choosing Question", "topic": "Fractions", "level": "Intermediate"}
+2021-09-20 15:54:56,029|{"userid": 8, "qid": "FI1", "qcount": 1}
+2021-09-20 15:54:58,527|{"userid": 8, "qid": "FI1", "qcount": "1", "startTime": "2021-09-20 15:54:56.029804", "endTime": "2021-09-20 15:54:58.526874", "levelofdifficulty": "Intermediate", "chapter": "Fraction", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "25"}
+2021-09-20 15:55:01,848|{"userid": 8, "qid": "FI1", "qcount": 2}
+2021-09-20 15:55:04,246|{"userid": 8, "qid": "FI1", "qcount": "2", "startTime": "2021-09-20 15:55:01.848736", "endTime": "2021-09-20 15:55:04.244782", "levelofdifficulty": "Intermediate", "chapter": "Fraction", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "25"}
+2021-09-20 15:55:07,264|{"userid": 8, "qid": "FI1", "qcount": 3}
+2021-09-20 15:55:16,286|{"userid": 8, "qid": "FI1", "qcount": "3", "startTime": "2021-09-20 15:55:07.264870", "endTime": "2021-09-20 15:55:16.284567", "levelofdifficulty": "Intermediate", "chapter": "Fraction", "hintCount": "1", "h1time": "2021-09-20 15:55:12.088000", "h2time": 0, "diffh1": "0:00:04.196567", "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "20"}
+2021-09-20 15:55:19,608|{"userid": 8, "qid": "FI1", "qcount": 4}
+2021-09-20 15:55:21,750|{"userid": 8, "qid": "FI1", "qcount": "NaN", "startTime": "2021-09-20 15:55:19.608380", "endTime": "2021-09-20 15:55:21.749981", "levelofdifficulty": "Intermediate", "chapter": "Fraction", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "25"}
+2021-09-20 15:55:23,945|{"userid": 8, "qid": "FI1", "q1": "25", "q2": "25", "q3": "20", "q4": "25", "total": 95}
+2021-09-20 15:55:24,302|{"userid": 8, "message": "Home Page"}
+2021-09-20 15:55:35,714|{"userid": 8, "message": "Choosing Question", "topic": "Fractions", "level": "Intermediate"}
+2021-09-20 15:55:51,216|{"userid": 8, "qid": "FI5", "qcount": 5}
+2021-09-20 15:56:03,330|{"userid": 8, "qid": "FI5", "qcount": "1", "startTime": "2021-09-20 15:55:51.216940", "endTime": "2021-09-20 15:56:03.328896", "levelofdifficulty": "Intermediate", "chapter": "Fraction", "hintCount": "1", "h1time": "2021-09-20 15:55:54.829000", "h2time": 0, "diffh1": "0:00:08.499896", "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "20"}
+2021-09-20 15:56:06,662|{"userid": 8, "qid": "FI5", "qcount": 6}
+2021-09-20 15:56:18,449|{"userid": 8, "message": "Home Page"}
+2021-09-20 15:57:36,579|{"userid": 8, "message": "Home Page"}
+2021-09-20 15:57:40,939|{"userid": 8, "message": "Choosing Question", "topic": "Fractions", "level": "Intermediate"}
+2021-09-20 15:57:44,173|{"userid": 8, "qid": "FI3", "qcount": 1}
+2021-09-20 15:57:46,491|{"userid": 8, "qid": "FI3", "qcount": "1", "startTime": "2021-09-20 15:57:44.172234", "endTime": "2021-09-20 15:57:46.488965", "levelofdifficulty": "Intermediate", "chapter": "Fraction", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "25"}
+2021-09-20 15:57:49,805|{"userid": 8, "qid": "FI3", "qcount": 2}
+2021-09-20 15:57:51,183|{"userid": 8, "qid": "FI3", "qcount": "2", "startTime": "2021-09-20 15:57:49.805672", "endTime": "2021-09-20 15:57:51.182677", "levelofdifficulty": "Intermediate", "chapter": "Fraction", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "25"}
+2021-09-20 15:57:54,209|{"userid": 8, "qid": "FI3", "qcount": 3}
+2021-09-20 15:57:55,551|{"userid": 8, "qid": "FI3", "qcount": "3", "startTime": "2021-09-20 15:57:54.209151", "endTime": "2021-09-20 15:57:55.549513", "levelofdifficulty": "Intermediate", "chapter": "Fraction", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "25"}
+2021-09-20 15:57:58,882|{"userid": 8, "qid": "FI3", "qcount": 4}
+2021-09-20 15:58:01,143|{"userid": 8, "qid": "FI3", "qcount": "4", "startTime": "2021-09-20 15:57:58.882614", "endTime": "2021-09-20 15:58:01.141544", "levelofdifficulty": "Intermediate", "chapter": "Fraction", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "25"}
+2021-09-20 15:58:03,849|{"userid": 8, "qid": "FI3", "q1": "25", "q2": "25", "q3": "25", "q4": "25", "total": 100}
+2021-09-20 15:58:04,213|{"userid": 8, "message": "Home Page"}
+2021-09-20 16:06:45,302|{"userid": 8, "message": "Home Page"}
+2021-09-20 16:06:52,195|{"userid": 8, "message": "Choosing Question", "topic": "Algebra", "level": "Intermediate"}
+2021-09-20 16:06:55,405|{"userid": 8, "qid": "AI2", "qcount": 1}
+2021-09-20 16:07:05,176|{"userid": 8, "qid": "AI2", "qcount": "1", "startTime": "2021-09-20 16:06:55.396363", "endTime": "2021-09-20 16:07:05.173320", "levelofdifficulty": "Intermediate", "chapter": "Algebra", "hintCount": "1", "h1time": "2021-09-20 16:06:59.173000", "h2time": 0, "diffh1": "0:00:06.000320", "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "20"}
+2021-09-20 16:07:08,509|{"userid": 8, "qid": "AI2", "qcount": 2}
+2021-09-20 16:07:09,904|{"userid": 8, "qid": "AI2", "qcount": "2", "startTime": "2021-09-20 16:07:08.508507", "endTime": "2021-09-20 16:07:09.899340", "levelofdifficulty": "Intermediate", "chapter": "Algebra", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "25"}
+2021-09-20 16:07:12,915|{"userid": 8, "qid": "AI2", "qcount": 3}
+2021-09-20 16:07:14,373|{"userid": 8, "qid": "AI2", "qcount": "3", "startTime": "2021-09-20 16:07:12.914462", "endTime": "2021-09-20 16:07:14.371258", "levelofdifficulty": "Intermediate", "chapter": "Algebra", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "25"}
+2021-09-20 16:07:17,691|{"userid": 8, "qid": "AI2", "qcount": 4}
+2021-09-20 16:07:48,045|{"userid": 8, "message": "Home Page"}
+2021-09-20 16:07:52,238|{"userid": 8, "message": "Choosing Question", "topic": "Fractions", "level": "Intermediate"}
+2021-09-20 16:07:55,333|{"userid": 8, "qid": "FI2", "qcount": 1}
+2021-09-20 16:07:58,693|{"userid": 8, "qid": "FI2", "qcount": "1", "startTime": "2021-09-20 16:07:17.690363", "endTime": "2021-09-20 16:07:58.692273", "levelofdifficulty": "Intermediate", "chapter": "Fraction", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "25"}
+2021-09-20 16:08:01,711|{"userid": 8, "qid": "FI2", "qcount": 2}
+2021-09-20 16:08:34,022|{"userid": 8, "message": "Home Page"}
+2021-09-20 16:14:08,111|{"userid": 8, "message": "Choosing Question", "topic": "Fractions", "level": "Intermediate"}
+2021-09-20 16:14:10,631|{"userid": 8, "qid": "FI1", "qcount": 3}
+2021-09-20 16:21:20,292|{"userid": 8, "qid": "FI1", "qcount": 1}
+2021-09-20 16:22:13,769|{"userid": 8, "qid": "FI1", "qcount": 2}
+2021-09-20 16:23:00,483|{"userid": 8, "qid": "FI1", "qcount": 3}
+2021-09-21 16:11:03,019|{"message": "Login Page"}
+2021-09-21 16:11:13,908|{"userid": 8, "message": "Logged In"}
+2021-09-21 16:11:14,069|{"userid": 8, "message": "Home Page"}
+2021-09-21 16:14:12,448|{"userid": 8, "message": "Choosing Question", "topic": "Fractions", "level": "Intermediate"}
+2021-09-21 16:14:17,225|{"userid": 8, "qid": "FI3", "qcount": 1}
+2021-09-21 16:19:24,850|{"userid": 8, "qid": "FI3", "qcount": 1}
+2021-09-21 16:19:29,086|{"userid": 8, "qid": "FI3", "qcount": "1", "startTime": "2021-09-21 16:19:18.394444", "endTime": "2021-09-21 16:19:29.085247", "levelofdifficulty": "Intermediate", "chapter": "Fraction", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "25"}
+2021-09-21 16:19:32,098|{"userid": 8, "qid": "FI3", "qcount": 2}
+2021-09-21 16:24:03,849|{"userid": 8, "qid": "FI3", "qcount": 1}
+2021-09-21 16:24:45,903|{"userid": 8, "message": "Home Page"}
+2021-09-21 16:24:50,304|{"userid": 8, "message": "Choosing Question", "topic": "Fractions", "level": "Intermediate"}
+2021-09-21 16:24:56,779|{"userid": 8, "qid": "FI1", "qcount": 2}
+2021-09-21 16:25:15,189|{"userid": 8, "qid": "FI1", "qcount": 3}
+2021-09-21 16:26:18,098|{"userid": 8, "qid": "FI1", "qcount": 4}
+2021-09-21 16:27:50,587|{"userid": 8, "qid": "FI1", "qcount": 1}
+2021-09-21 16:28:11,298|{"userid": 8, "qid": "FI1", "qcount": 2}
+2021-09-21 16:32:28,931|{"userid": 8, "qid": "FI1", "qcount": 1}
+2021-09-21 16:32:34,953|{"userid": 8, "qid": "FI1", "qcount": 2}
+2021-09-21 16:32:42,583|{"userid": 8, "qid": "FI1", "qcount": 3}
+2021-09-21 16:32:59,820|{"userid": 8, "qid": "FI1", "qcount": "1", "startTime": "2021-09-21 16:32:22.043611", "endTime": "2021-09-21 16:32:59.819566", "levelofdifficulty": "Intermediate", "chapter": "Fraction", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "25"}
+2021-09-21 16:33:03,156|{"userid": 8, "qid": "FI1", "qcount": 4}
+2021-09-21 16:33:36,749|{"userid": 8, "qid": "FI1", "qcount": "2", "startTime": "2021-09-21 16:32:22.043611", "endTime": "2021-09-21 16:33:36.748863", "levelofdifficulty": "Intermediate", "chapter": "Fraction", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "1", "wronghintcount": "0", "score": "25"}
+2021-09-21 16:33:39,762|{"userid": 8, "qid": "FI1", "qcount": 5}
+2021-09-21 16:34:08,749|{"userid": 8, "qid": "FI1", "qcount": "3", "startTime": "2021-09-21 16:32:22.043611", "endTime": "2021-09-21 16:34:08.749454", "levelofdifficulty": "Intermediate", "chapter": "Fraction", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "25"}
+2021-09-21 16:34:12,066|{"userid": 8, "qid": "FI1", "qcount": 6}
+2021-09-21 16:34:41,584|{"userid": 8, "qid": "FI1", "qcount": "4", "startTime": "2021-09-21 16:32:22.043611", "endTime": "2021-09-21 16:34:41.584265", "levelofdifficulty": "Intermediate", "chapter": "Fraction", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "25"}
+2021-09-21 16:34:43,706|{"userid": 8, "qid": "FI1", "q1": "25", "q2": "25", "q3": "25", "q4": "25", "total": 100}
+2021-09-21 16:34:44,041|{"userid": 8, "message": "Home Page"}
+2021-09-21 16:36:02,872|{"userid": 8, "message": "Choosing Question", "topic": "Fractions", "level": "Easy"}
+2021-09-21 16:36:05,764|{"userid": 8, "qid": "FE1", "qcount": 7}
+2021-09-21 16:36:14,425|{"userid": 8, "message": "Home Page"}
+2021-09-21 16:36:16,119|{"userid": 8, "message": "Choosing Question", "topic": "Fractions", "level": "Intermediate"}
+2021-09-21 16:36:24,041|{"userid": 8, "qid": "FI4", "qcount": 8}
+2021-09-21 16:38:02,082|{"userid": 8, "qid": "FI4", "qcount": 1}
+2021-09-21 16:41:25,345|{"userid": 8, "qid": "FI4", "qcount": 1}
+2021-09-21 16:43:29,802|{"userid": 8, "qid": "FI4", "qcount": 1}
+2021-09-21 16:44:48,131|{"userid": 8, "qid": "FI4", "qcount": 1}
+2021-09-21 16:47:10,622|{"userid": 8, "qid": "FI4", "qcount": 2}
+2021-09-21 16:49:38,381|{"userid": 8, "qid": "FI4", "qcount": 1}
+2021-09-21 16:49:59,828|{"userid": 8, "qid": "FI4", "qcount": "1", "startTime": "2021-09-21 16:49:34.231242", "endTime": "2021-09-21 16:49:59.828231", "levelofdifficulty": "Intermediate", "chapter": "Fraction", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "1", "wronghintcount": "0", "score": "25"}
+2021-09-21 16:50:02,839|{"userid": 8, "qid": "FI4", "qcount": 2}
+2021-09-21 16:51:32,992|{"userid": 8, "message": "Home Page"}
+2021-09-21 16:51:36,510|{"userid": 8, "message": "Choosing Question", "topic": "Fractions", "level": "Intermediate"}
+2021-09-21 16:51:45,166|{"userid": 8, "qid": "FI3", "qcount": 3}
+2021-09-21 16:52:08,875|{"userid": 8, "qid": "FI3", "qcount": "1", "startTime": "2021-09-21 16:49:34.231242", "endTime": "2021-09-21 16:52:08.874778", "levelofdifficulty": "Intermediate", "chapter": "Fraction", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "25"}
+2021-09-21 16:52:12,193|{"userid": 8, "qid": "FI3", "qcount": 4}
+2021-09-21 16:53:31,273|{"userid": 8, "qid": "FI3", "qcount": "2", "startTime": "2021-09-21 16:49:34.231242", "endTime": "2021-09-21 16:53:31.273407", "levelofdifficulty": "Intermediate", "chapter": "Fraction", "hintCount": "1", "h1time": "2021-09-21 16:52:24.583000", "h2time": 0, "diffh1": "0:01:06.690407", "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "20"}
+2021-09-21 16:53:33,967|{"userid": 8, "qid": "FI3", "qcount": 5}
+2021-09-21 16:53:39,647|{"userid": 8, "message": "Home Page"}
+2021-09-21 16:53:43,530|{"userid": 8, "message": "Choosing Question", "topic": "Fractions", "level": "Intermediate"}
+2021-09-21 16:53:50,322|{"userid": 8, "qid": "FI5", "qcount": 6}
+2021-09-21 16:56:01,621|{"userid": 8, "qid": "FI5", "qcount": 1}
+2021-09-21 16:56:42,658|{"userid": 8, "qid": "FI5", "qcount": "1", "startTime": "2021-09-21 16:55:50.827637", "endTime": "2021-09-21 16:56:42.656313", "levelofdifficulty": "Intermediate", "chapter": "Fraction", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "1", "wronghintcount": "0", "score": "25"}
+2021-09-21 16:56:45,374|{"userid": 8, "qid": "FI5", "qcount": 2}
+2021-09-21 17:07:16,951|{"userid": 8, "qid": "FI5", "qcount": 1}
+2021-09-21 17:07:20,910|{"userid": 8, "qid": "FI5", "qcount": 2}
+2021-09-21 17:07:22,002|{"userid": 8, "qid": "FI5", "qcount": 3}
+2021-09-21 17:08:16,296|{"userid": 8, "qid": "FI5", "qcount": 1}
+2021-09-21 17:08:16,344|Exception on /unlike-add [GET]
 Traceback (most recent call last):
-  File "c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+  File "C:\Python39\lib\site-packages\flask\app.py", line 2447, in wsgi_app
     response = self.full_dispatch_request()
-  File "c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages\flask\app.py", line 1515, in full_dispatch_request
+  File "C:\Python39\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
     rv = self.handle_user_exception(e)
-  File "c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+  File "C:\Python39\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Python39\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Python39\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
     rv = self.dispatch_request()
-  File "c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages\flask\app.py", line 1499, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
-  File "D:\USER Data\Desktop\ITS-Math\fractions\routes.py", line 260, in compare
+  File "C:\Python39\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\ITS-Math\fractions\routes.py", line 186, in unlike_add
+    return render_template("Fraction_operation.html", answer=answer)
+  File "C:\Python39\lib\site-packages\flask\templating.py", line 137, in render_template
+    return _render(
+  File "C:\Python39\lib\site-packages\flask\templating.py", line 120, in _render
+    rv = template.render(context)
+  File "C:\Python39\lib\site-packages\jinja2\environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "C:\Python39\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "C:\Python39\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "D:\ITS-Math\fractions\templates\Fraction_operation.html", line 1, in top-level template code
+    {% extends "layout.html" %}
+  File "D:\ITS-Math\fractions\templates\layout.html", line 65, in top-level template code
+    {% block content %}{% endblock %}
+  File "D:\ITS-Math\fractions\templates\Fraction_operation.html", line 491, in block "content"
+    <input type="text" class="quo" name="quo" maxlength="3" size="3" onblur="check1();">) {{ans.opsign}}
+  File "C:\Python39\lib\site-packages\jinja2\environment.py", line 471, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'ans' is undefined
+2021-09-21 17:08:25,139|{"userid": 8, "qid": "FI5", "qcount": 2}
+2021-09-21 17:08:25,143|Exception on /unlike-add [GET]
+Traceback (most recent call last):
+  File "C:\Python39\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Python39\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Python39\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Python39\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Python39\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Python39\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\ITS-Math\fractions\routes.py", line 186, in unlike_add
+    return render_template("Fraction_operation.html", answer=answer)
+  File "C:\Python39\lib\site-packages\flask\templating.py", line 137, in render_template
+    return _render(
+  File "C:\Python39\lib\site-packages\flask\templating.py", line 120, in _render
+    rv = template.render(context)
+  File "C:\Python39\lib\site-packages\jinja2\environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "C:\Python39\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "C:\Python39\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "D:\ITS-Math\fractions\templates\Fraction_operation.html", line 1, in top-level template code
+    {% extends "layout.html" %}
+  File "D:\ITS-Math\fractions\templates\layout.html", line 65, in top-level template code
+    {% block content %}{% endblock %}
+  File "D:\ITS-Math\fractions\templates\Fraction_operation.html", line 491, in block "content"
+    <input type="text" class="quo" name="quo" maxlength="3" size="3" onblur="check1();">) {{ans.opsign}}
+  File "C:\Python39\lib\site-packages\jinja2\environment.py", line 471, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'ans' is undefined
+2021-09-21 17:08:54,700|{"userid": 8, "message": "Choosing Question", "topic": "Fractions", "level": "Intermediate"}
+2021-09-21 17:08:57,370|{"userid": 8, "qid": "FI5", "qcount": 1}
+2021-09-21 17:09:06,941|{"userid": 8, "qid": "FI5", "qcount": 2}
+2021-09-21 17:10:15,031|{"userid": 8, "message": "Home Page"}
+2021-09-21 17:10:18,554|{"userid": 8, "message": "Choosing Question", "topic": "Fractions", "level": "Intermediate"}
+2021-09-21 17:10:22,267|{"userid": 8, "qid": "FI2", "qcount": 3}
+2021-09-21 17:10:32,186|{"userid": 8, "qid": "FI2", "qcount": 4}
+2021-09-21 17:15:55,014|{"userid": 8, "qid": "FI2", "qcount": 5}
+2021-09-21 17:16:06,453|{"userid": 8, "qid": "FI2", "qcount": 1}
+2021-09-21 17:18:00,725|{"userid": 8, "qid": "FI2", "qcount": 1}
+2021-09-21 17:18:55,378|{"userid": 8, "qid": "FI2", "qcount": "1", "startTime": "2021-09-21 17:17:55.061436", "endTime": "2021-09-21 17:18:55.377125", "levelofdifficulty": "Intermediate", "chapter": "Fraction", "hintCount": "1", "h1time": "2021-09-21 17:18:06.963000", "h2time": 0, "diffh1": "0:00:48.414125", "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "20"}
+2021-09-21 17:18:58,096|Exception on /compare [GET]
+Traceback (most recent call last):
+  File "C:\Python39\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Python39\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Python39\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Python39\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Python39\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Python39\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\ITS-Math\fractions\routes.py", line 283, in compare
     fract2=Fraction(num2,den2)
-  File "c:\users\lenovo\appdata\local\programs\python\python39\lib\fractions.py", line 156, in __new__
+  File "C:\Python39\lib\fractions.py", line 156, in __new__
     raise ZeroDivisionError('Fraction(%s, 0)' % numerator)
 ZeroDivisionError: Fraction(0, 0)
-2021-09-03 16:13:39,524|Exception on /compare [GET]
+2021-09-21 17:19:02,774|{"userid": 8, "qid": "FI2", "qcount": 2}
+2021-09-21 17:19:21,976|{"userid": 8, "qid": "FI2", "qcount": "2", "startTime": "2021-09-21 17:17:55.061436", "endTime": "2021-09-21 17:19:21.975032", "levelofdifficulty": "Intermediate", "chapter": "Fraction", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "25"}
+2021-09-21 17:19:25,287|{"userid": 8, "qid": "FI2", "qcount": 3}
+2021-09-21 17:19:34,913|{"userid": 8, "qid": "FI2", "qcount": "3", "startTime": "2021-09-21 17:17:55.061436", "endTime": "2021-09-21 17:19:34.913531", "levelofdifficulty": "Intermediate", "chapter": "Fraction", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "25"}
+2021-09-21 17:19:37,934|{"userid": 8, "qid": "FI2", "qcount": 4}
+2021-09-21 17:19:49,742|{"userid": 8, "qid": "FI2", "qcount": "4", "startTime": "2021-09-21 17:17:55.061436", "endTime": "2021-09-21 17:19:49.741125", "levelofdifficulty": "Intermediate", "chapter": "Fraction", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "25"}
+2021-09-21 17:19:52,106|{"userid": 8, "qid": "FI2", "q1": "20", "q2": "25", "q3": "25", "q4": "25", "total": 95}
+2021-09-21 17:19:52,367|{"userid": 8, "message": "Home Page"}
+2021-09-21 17:21:05,684|{"userid": 8, "message": "Choosing Question", "topic": "Fractions", "level": "Intermediate"}
+2021-09-21 17:21:12,710|{"userid": 8, "qid": "FI1", "qcount": 5}
+2021-09-21 17:22:11,856|{"userid": 8, "message": "Home Page"}
+2021-09-21 17:30:27,498|{"userid": 8, "message": "Home Page"}
+2021-09-21 17:30:38,548|{"userid": 8, "message": "Choosing Question", "topic": "Fractions", "level": "Intermediate"}
+2021-09-21 17:30:41,455|{"userid": 8, "qid": "FI2", "qcount": 1}
+2021-09-21 17:30:44,617|{"userid": 8, "qid": "FI2", "qcount": 2}
+2021-09-21 17:30:45,909|{"userid": 8, "qid": "FI2", "qcount": 3}
+2021-09-21 17:30:47,056|{"userid": 8, "qid": "FI2", "qcount": 4}
+2021-09-21 17:30:48,116|Exception on /compare [GET]
 Traceback (most recent call last):
-  File "c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+  File "C:\Python39\lib\site-packages\flask\app.py", line 2447, in wsgi_app
     response = self.full_dispatch_request()
-  File "c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages\flask\app.py", line 1515, in full_dispatch_request
+  File "C:\Python39\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
     rv = self.handle_user_exception(e)
-  File "c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+  File "C:\Python39\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Python39\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Python39\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
     rv = self.dispatch_request()
-  File "c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages\flask\app.py", line 1499, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
-  File "D:\USER Data\Desktop\ITS-Math\fractions\routes.py", line 259, in compare
+  File "C:\Python39\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\ITS-Math\fractions\routes.py", line 282, in compare
     fract1=Fraction(num1,den1)
-  File "c:\users\lenovo\appdata\local\programs\python\python39\lib\fractions.py", line 156, in __new__
+  File "C:\Python39\lib\fractions.py", line 156, in __new__
     raise ZeroDivisionError('Fraction(%s, 0)' % numerator)
 ZeroDivisionError: Fraction(0, 0)
-2021-09-03 16:13:40,452|{"userid": 8, "qid": "FI2", "qcount": 1}
-2021-09-03 16:13:51,507|{"userid": 8, "qid": "FI2", "hint_no": "1"}
-2021-09-03 16:13:54,025|{"userid": 8, "qid": "FI2", "hint_no": "2"}
-2021-09-03 16:18:47,992|{"userid": 8, "qid": "FI2", "qcount": 1}
-2021-09-03 16:19:26,192|Exception on /compare [GET]
+2021-09-21 17:32:04,175|{"userid": 8, "message": "Choosing Question", "topic": "Fractions", "level": "Intermediate"}
+2021-09-21 17:32:07,918|{"userid": 8, "qid": "FI2", "qcount": 1}
+2021-09-21 17:32:10,344|{"userid": 8, "qid": "FI2", "qcount": 2}
+2021-09-21 17:32:11,828|{"userid": 8, "qid": "FI2", "qcount": 3}
+2021-09-21 17:32:14,128|{"userid": 8, "qid": "FI2", "qcount": 4}
+2021-09-21 17:32:16,265|{"userid": 8, "qid": "FI2", "qcount": 5}
+2021-09-21 17:32:17,761|{"userid": 8, "qid": "FI2", "qcount": 6}
+2021-09-21 17:32:23,558|{"userid": 8, "qid": "FI2", "qcount": 7}
+2021-09-21 17:32:25,302|Exception on /compare [GET]
 Traceback (most recent call last):
-  File "c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+  File "C:\Python39\lib\site-packages\flask\app.py", line 2447, in wsgi_app
     response = self.full_dispatch_request()
-  File "c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages\flask\app.py", line 1515, in full_dispatch_request
+  File "C:\Python39\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
     rv = self.handle_user_exception(e)
-  File "c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+  File "C:\Python39\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Python39\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Python39\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
     rv = self.dispatch_request()
-  File "c:\users\lenovo\appdata\local\programs\python\python39\lib\site-packages\flask\app.py", line 1499, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
-  File "D:\USER Data\Desktop\ITS-Math\fractions\routes.py", line 259, in compare
-    fract1=Fraction(num1,den1)
-  File "c:\users\lenovo\appdata\local\programs\python\python39\lib\fractions.py", line 156, in __new__
+  File "C:\Python39\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\ITS-Math\fractions\routes.py", line 283, in compare
+    fract2=Fraction(num2,den2)
+  File "C:\Python39\lib\fractions.py", line 156, in __new__
     raise ZeroDivisionError('Fraction(%s, 0)' % numerator)
 ZeroDivisionError: Fraction(0, 0)
-2021-09-03 16:19:28,047|{"userid": 8, "qid": "FI2", "qcount": 1}
-2021-09-03 16:19:31,243|{"userid": 8, "qid": "FI2", "hint_no": "1"}
-2021-09-03 16:19:34,041|{"userid": 8, "qid": "FI2", "hint_no": "2"}
-2021-09-03 16:20:13,013|{"userid": 8, "qid": "FI2", "qcount": 1}
-2021-09-03 16:20:15,377|{"userid": 8, "qid": "FI2", "hint_no": "1"}
-2021-09-03 16:20:18,912|{"userid": 8, "qid": "FI2", "hint_no": "2"}
-2021-09-03 16:20:29,564|{"userid": 8, "qid": "FI2", "qcount": "1", "message": "End"}
-2021-09-03 16:20:32,869|{"userid": 8, "qid": "FI2", "qcount": 2}
-2021-09-03 16:20:36,172|{"userid": 8, "qid": "FI2", "qcount": "2", "message": "End"}
-2021-09-03 16:20:39,488|{"userid": 8, "qid": "FI2", "qcount": 3}
-2021-09-03 16:20:42,897|{"userid": 8, "qid": "FI2", "qcount": "3", "message": "End"}
-2021-09-03 16:20:46,204|{"userid": 8, "qid": "FI2", "qcount": 4}
-2021-09-03 16:20:47,190|{"userid": 8, "qid": "FI2", "qcount": "NaN", "message": "End"}
-2021-09-03 16:20:48,928|{"userid": 8, "qid": "FI2", "q1": "15", "q2": "25", "q3": "25", "q4": "25", "total": 90}
-2021-09-03 16:20:49,198|{"userid": 8, "message": "Home Page"}
-2021-09-03 16:20:54,167|{"userid": 8, "message": "Choosing Question", "topic": "Fractions", "level": "Intermediate"}
-2021-09-03 16:20:56,479|{"userid": 8, "qid": "FI3", "qcount": 5}
-2021-09-03 16:21:01,463|{"userid": 8, "qid": "FI3", "hint_no": "1"}
-2021-09-03 16:21:08,790|{"userid": 8, "qid": "FI5", "qcount": 6}
-2021-09-03 16:21:10,888|{"userid": 8, "qid": "FI5", "hint_no": "1"}
-2021-09-03 16:21:16,339|{"userid": 8, "qid": "FI5", "hint_no": "2"}
-2021-09-03 16:21:23,730|{"userid": 8, "qid": "FI4", "qcount": 7}
-2021-09-03 16:21:26,315|{"userid": 8, "qid": "FI4", "hint_no": "1"}
-2021-09-03 16:21:31,144|{"userid": 8, "qid": "FI4", "hint_no": "2"}
-2021-09-03 16:22:58,055|{"userid": 8, "qid": "FI4", "qcount": 1}
-2021-09-03 16:23:01,010|{"userid": 8, "qid": "FI4", "hint_no": "1"}
-2021-09-03 16:23:06,896|{"userid": 8, "qid": "FI4", "hint_no": "2"}
-2021-09-03 16:23:22,493|{"userid": 8, "qid": "FI4", "qcount": 2}
-2021-09-03 16:23:39,939|{"userid": 8, "qid": "FI4", "qcount": 3}
+2021-09-21 17:32:34,637|{"userid": 8, "qid": "FI2", "qcount": 8}
+2021-09-21 17:32:46,503|Exception on /compare [GET]
+Traceback (most recent call last):
+  File "C:\Python39\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Python39\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Python39\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Python39\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Python39\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Python39\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\ITS-Math\fractions\routes.py", line 282, in compare
+    fract1=Fraction(num1,den1)
+  File "C:\Python39\lib\fractions.py", line 156, in __new__
+    raise ZeroDivisionError('Fraction(%s, 0)' % numerator)
+ZeroDivisionError: Fraction(0, 0)
+2021-09-21 17:32:50,781|{"userid": 8, "qid": "FI2", "qcount": 9}
+2021-09-21 17:32:53,228|{"userid": 8, "qid": "FI2", "qcount": 10}
+2021-09-21 17:32:54,233|{"userid": 8, "qid": "FI2", "qcount": 11}
+2021-09-21 17:32:55,191|{"userid": 8, "qid": "FI2", "qcount": 12}
+2021-09-21 17:32:56,088|{"userid": 8, "qid": "FI2", "qcount": 13}
+2021-09-21 17:32:57,044|Exception on /compare [GET]
+Traceback (most recent call last):
+  File "C:\Python39\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Python39\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Python39\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Python39\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Python39\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Python39\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\ITS-Math\fractions\routes.py", line 283, in compare
+    fract2=Fraction(num2,den2)
+  File "C:\Python39\lib\fractions.py", line 156, in __new__
+    raise ZeroDivisionError('Fraction(%s, 0)' % numerator)
+ZeroDivisionError: Fraction(0, 0)
+2021-09-21 17:33:08,675|{"userid": 8, "qid": "FI2", "qcount": 14}
