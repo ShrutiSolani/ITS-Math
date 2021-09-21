@@ -307,14 +307,15 @@ function wrong(){
 
 
 {% block hint %}
-<button type="button" class="btn btn-primary" style="margin-bottom:30px;width:100%" id="btn1" onclick="right2();">HCF</button>
-<button type="button" class="btn btn-secondary" style="margin-bottom:30px;width:100%" id="btn2" onclick="wrong();">Average</button>
-<button type="button" class="btn btn-secondary" style="margin-bottom:30px;width:100%" onclick="right1();" id="btn3">LCM</button>
-<button type="button" class="btn btn-secondary" style="margin-bottom:30px;width:100%" id="btn4" onclick="wrong()">Multiply</button>
+<button type="button" class="btn btn-info" style="margin-bottom:30px;width:100%" id="btn1" onclick="right2();">HCF</button>
+<button type="button" class="btn btn-info" style="margin-bottom:30px;width:100%" id="btn2" onclick="wrong();">Average</button>
+<button type="button" class="btn btn-info" style="margin-bottom:30px;width:100%" onclick="right1();" id="btn3">LCM</button>
+<button type="button" class="btn btn-info" style="margin-bottom:30px;width:100%" id="btn4" onclick="wrong()">Multiply</button>
 {% endblock %}
 
 {% block content %}
 <h5 class="card-title">{{ answer.que }}</h5>
+<h5 class="card-title">If fraction 1 is greater enter <b>1</b>. If fraction 2 is greater enter <b>2</b>. If equivalent then enter <b>3</b>.</h5>
 <br><br>
 <label for="quo1" style="display:none;" class="ryt1">LCM:</label>
 <input type="text" id="quo1" name="quo" maxlength="8" size="2" onblur="check0();" class="ryt1" style="display:none;">
@@ -326,7 +327,7 @@ function wrong(){
 <input type="text" class="ryt2" id="rem1" name="rem" maxlength="8" size="2" onblur="check1();" style="display:none;">
 <i class="fal fa-check correct fa-2x" style="display: none; color: green;"></i>
 <i class="fal fa-times wrong fa-2x" style="display: none; color: red"></i>
-<h5 style="display:none;" class="ryt2">---------------</h5>
+<h5 style="display:none;" class="ryt2">----------</h5>
 <input type="text" class="ryt2" id="rem2" name="rem" maxlength="8" size="2" onblur="check2();" style="display:none;">
 <i class="fal fa-check correct fa-2x" style="display: none; color: green;"></i>
 <i class="fal fa-times wrong fa-2x" style="display: none; color: red"></i>
@@ -336,7 +337,7 @@ function wrong(){
 <input type="text" id="rem3" name="rem" maxlength="8" size="2" onblur="check3();" class="ryt2" style="display:none;">
 <i class="fal fa-check correct fa-2x" style="display: none; color: green;"></i>
 <i class="fal fa-times wrong fa-2x" style="display: none; color: red"></i>
-<h5 style="display:none;" class="ryt2">---------------</h5>
+<h5 style="display:none;" class="ryt2">----------</h5>
 
 <input type="text" id="rem4" name="rem" maxlength="8" size="2" onblur="check4();" class="ryt2" style="display:none;">
 <i class="fal fa-check correct fa-2x" style="display: none; color: green;"></i>
@@ -345,7 +346,7 @@ function wrong(){
 
 <label for="quo2">Solution : </label>
 {{ answer.f1 }}
-<input type="text" id="quo2" name="quo" maxlength="8" size="2" onblur="check5();">{{ answer.f2 }}
+<input type="text" id="quo2" name="quo" maxlength="8" size="2" onblur="check5();" required>{{ answer.f2 }}
 <i class="fal fa-check correct fa-2x" style="display: none; color: green;"></i>
 <i class="fal fa-times wrong fa-2x" style="display: none; color: red"></i>
 <br><br>

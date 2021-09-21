@@ -59,7 +59,7 @@
         </ul>
       </div>
       <div class="time-card" style="height: 55vh;">
-        <form onsubmit="nextfunc();">
+        <form id="submit-form" method="POST">
         <div class="card-body" style="width: 80%;">
 
           {% block content %}{% endblock %}
@@ -174,8 +174,8 @@
 
       })
 
-      
-      function nextfunc(){
+      $("#submit-form").submit(function(e){
+        e.preventDefault();
         $('.toast').toast('show');
         if (sessionStorage.count) {
           sessionStorage.count = Number(sessionStorage.count) + 1;
@@ -247,7 +247,7 @@
 
 
     
-  }
+      })
 
 })
       

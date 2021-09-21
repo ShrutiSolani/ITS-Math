@@ -283,6 +283,9 @@ def endTime():
     current_app.logger.info(json.dumps(dict,default=str))
     return "TimeReceived"
 
+def page_not_found(e):
+  return redirect("compare"),500
+
 @home_bp.route('/logout')
 def logout():
     dict = {"userid": session['userid'], "message": "Logged out"}

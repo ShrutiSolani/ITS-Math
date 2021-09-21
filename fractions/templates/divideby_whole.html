@@ -201,14 +201,7 @@ $(y[5]).hide();
 document.getElementsByClassName("step0")[0].classList.add("active");
 document.getElementsByClassName("step0")[1].classList.add("active");
 document.getElementsByClassName("step0")[2].classList.add("active");
-document.getElementById("icon4").style.display="inline";
-document.getElementById("icon4").style.color="green";
-document.getElementsByTagName("h2")[0].innerHTML="";
-document.getElementsByTagName("h2")[1].innerHTML="";
-document.getElementsByTagName("h2")[2].innerHTML="";
-document.getElementById("icon1").style.display="inline";
-document.getElementById("icon2").style.display="inline";
-document.getElementById("icon3").style.display="inline";
+
 }
 else
 {
@@ -283,32 +276,32 @@ function wrong(){
 
 <div class="ryt1">
   <label for="spf" style="display:none" class="fbox">Reciprocal of Whole No. : </label>
-  <input type="text" id="spf" name="rem" maxlength="8" size="2" class="num fbox" onblur="check_num();" style="display: none;" required>
+  <input type="text" id="spf" name="rem1" maxlength="8" size="2" class="num fbox" onblur="check_num();" style="display: none;" >
   <i class="fal fa-check correct fa-2x" style="display: none; color: green;"></i>
   <i class="fal fa-times wrong fa-2x" style="display: none; color: red"></i>
   <h5 class="fbox" style="display: none;">---------------</h5>
-  <input type="text" id="rem4" name="rem" maxlength="8" size="2" class="den fbox" onblur="check_den();" style="display: none;" required>
+  <input type="text" id="rem4" name="rem2" maxlength="8" size="2" class="den fbox" onblur="check_den();" style="display: none;" >
   <i class="fal fa-check correct fa-2x" style="display: none; color: green;"></i>
   <i class="fal fa-times wrong fa-2x" style="display: none; color: red"></i>
   <br><br>
 
   <label for="spf" style="display:none" class="fbox">Fractional Form : </label>
-  <input type="text" id="spf" name="rem" maxlength="8" size="2" class="num fbox" onblur="check_num1();" style="display: none;" required>
+  <input type="text" id="spf" name="rem3" maxlength="8" size="2" class="num fbox" onblur="check_num1();" style="display: none;" >
   <i class="fal fa-check correct fa-2x" style="display: none; color: green;"></i>
   <i class="fal fa-times wrong fa-2x" style="display: none; color: red"></i>
   <h5 class="fbox" style="display: none;">---------------</h5>
-  <input type="text" id="rem4" name="rem" maxlength="8" size="2" class="den fbox" onblur="check_den1();" style="display: none;" required>
+  <input type="text" id="rem4" name="rem4" maxlength="8" size="2" class="den fbox" onblur="check_den1();" style="display: none;" >
   <i class="fal fa-check correct fa-2x" style="display: none; color: green;"></i>
   <i class="fal fa-times wrong fa-2x" style="display: none; color: red"></i>
   <br><br>
 
 
   <label for="quo3" style="display:block">Simpliest Form : </label>
-  <input type="text" id="quo3" name="rem" maxlength="8" size="2" class="num" onblur="check_num2();" required>
+  <input type="text" id="quo3" name="rem5" maxlength="8" size="2" class="num" onblur="check_num2();" required>
   <i class="fal fa-check correct fa-2x" style="display: none; color: green;"></i>
   <i class="fal fa-times wrong fa-2x" style="display: none; color: red"></i>
   <h5>---------------</h5>
-  <input type="text" id="rem4" name="rem" maxlength="8" size="2" class="den" onblur="check_den2();" required>
+  <input type="text" id="rem4" name="rem6" maxlength="8" size="2" class="den" onblur="check_den2();" required>
   <i class="fal fa-check correct fa-2x" style="display: none; color: green;"></i>
   <i class="fal fa-times wrong fa-2x" style="display: none; color: red"></i>
   <br><br>
