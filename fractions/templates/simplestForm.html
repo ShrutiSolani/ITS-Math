@@ -8,6 +8,12 @@ var x = document.getElementsByClassName("correct");
 var y = document.getElementsByClassName("wrong");
 var feedcount = 0;
 
+$( document ).ready(function() {
+    var source = "{{ url_for('static', filename = 'images/frac_simplest_form.png') }}";
+    document.getElementById("hint_img").src = source;
+      console.log( "ready!" );
+  });
+
 function check_num()
 {
 if(document.getElementsByTagName("input")[0].value == {{ answer.num_ans }} )
@@ -66,6 +72,6 @@ swal("Oops!", "Checkout hint for help", "error");
 <i class="fal fa-times wrong fa-2x" style="display: none; color: red"></i>
 {% endblock %}
 
-{% block hint %}
+<!-- {% block hint %}
 <img src="{{ url_for('static', filename = 'images/frac_simplest_form.png') }}" alt="" style="width: 80%;">
-{% endblock %}
+{% endblock %} -->

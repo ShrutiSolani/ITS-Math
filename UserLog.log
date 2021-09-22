@@ -126,3 +126,97 @@ ZeroDivisionError: Fraction(0, 0)
 2021-09-22 11:50:01,828|{"userid": 8, "message": "Home Page"}
 2021-09-22 11:52:00,237|{"userid": 8, "message": "Choosing Question", "topic": "Fractions", "level": "Easy"}
 2021-09-22 11:52:03,144|{"userid": 8, "qid": "FE1", "qcount": 7}
+2021-09-22 15:43:28,221|{"message": "Login Page"}
+2021-09-22 15:43:40,356|{"userid": 8, "message": "Logged In"}
+2021-09-22 15:43:40,377|{"userid": 8, "message": "Home Page"}
+2021-09-22 15:43:55,973|{"userid": 8, "message": "Choosing Question", "topic": "Fractions", "level": "Intermediate"}
+2021-09-22 15:44:11,917|{"userid": 8, "message": "Home Page"}
+2021-09-22 15:44:14,729|{"userid": 8, "message": "Choosing Question", "topic": "Fractions", "level": "Easy"}
+2021-09-22 15:44:17,809|{"userid": 8, "qid": "FE1", "qcount": 1}
+2021-09-22 15:44:29,508|{"userid": 8, "message": "Home Page"}
+2021-09-22 15:44:34,147|{"userid": 8, "message": "Choosing Question", "topic": "Fractions", "level": "Easy"}
+2021-09-22 15:44:36,712|{"userid": 8, "qid": "FE1", "qcount": 2}
+2021-09-22 15:45:02,752|{"userid": 8, "message": "Home Page"}
+2021-09-22 15:45:05,739|{"userid": 8, "message": "Choosing Question", "topic": "Fractions", "level": "Easy"}
+2021-09-22 15:53:41,516|{"userid": 8, "message": "Choosing Question", "topic": "Fractions", "level": "Easy"}
+2021-09-22 15:53:44,515|{"userid": 8, "qid": "FE1", "qcount": 1}
+2021-09-22 15:54:38,231|{"userid": 8, "qid": "FE1", "qcount": 1}
+2021-09-22 15:56:02,582|{"userid": 8, "qid": "FE1", "qcount": "1", "startTime": "2021-09-22 15:54:31.970837", "endTime": "2021-09-22 15:56:02.580540", "levelofdifficulty": "Easy", "chapter": "Fraction", "hintCount": "1", "h1time": "2021-09-22 15:54:41.454000", "h2time": 0, "diffh1": "0:01:21.126540", "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "20"}
+2021-09-22 15:56:05,329|{"userid": 8, "qid": "FE1", "qcount": 2}
+2021-09-22 15:56:42,939|{"userid": 8, "message": "Home Page"}
+2021-09-22 15:57:06,401|{"userid": 8, "message": "Choosing Question", "topic": "Fractions", "level": "Easy"}
+2021-09-22 15:57:10,032|{"userid": 8, "qid": "FE2", "qcount": 3}
+2021-09-22 16:04:33,549|{"userid": 8, "qid": "FE2", "qcount": 1}
+2021-09-22 16:05:13,353|{"userid": 8, "qid": "FE2", "qcount": 1}
+2021-09-22 16:05:43,915|{"userid": 8, "qid": "FE2", "qcount": "2", "startTime": "2021-09-22 16:05:06.333959", "endTime": "2021-09-22 16:05:43.912944", "levelofdifficulty": "Easy", "chapter": "Fraction", "hintCount": "1", "h1time": "2021-09-22 16:05:16.715000", "h2time": 0, "diffh1": "0:00:27.197944", "diffh2": 0, "wrongCount": "1", "wronghintcount": "0", "score": "20"}
+2021-09-22 16:05:47,253|{"userid": 8, "qid": "FE2", "qcount": 2}
+2021-09-22 16:06:17,594|{"userid": 8, "qid": "FE2", "qcount": "3", "startTime": "2021-09-22 16:05:06.333959", "endTime": "2021-09-22 16:06:17.591510", "levelofdifficulty": "Easy", "chapter": "Fraction", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "25"}
+2021-09-22 16:06:20,607|{"userid": 8, "qid": "FE2", "qcount": 3}
+2021-09-22 16:06:36,616|{"userid": 8, "qid": "FE2", "qcount": "4", "startTime": "2021-09-22 16:05:06.333959", "endTime": "2021-09-22 16:06:36.614296", "levelofdifficulty": "Easy", "chapter": "Fraction", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "25"}
+2021-09-22 16:06:39,074|{"userid": 8, "qid": "FE2", "q1": "25", "q2": "20", "q3": "25", "q4": "25", "total": 95}
+2021-09-22 16:06:39,340|{"userid": 8, "message": "Home Page"}
+2021-09-22 16:06:42,816|{"userid": 8, "message": "Choosing Question", "topic": "Fractions", "level": "Easy"}
+2021-09-22 16:06:46,256|{"userid": 8, "qid": "FE3", "qcount": 4}
+2021-09-22 16:09:08,532|{"userid": 8, "qid": "FE3", "qcount": 1}
+2021-09-22 16:10:28,602|{"userid": 8, "qid": "FE3", "qcount": 1}
+2021-09-22 16:10:46,558|{"userid": 8, "qid": "FE3", "qcount": "2", "startTime": "2021-09-22 16:10:20.672071", "endTime": "2021-09-22 16:10:46.555503", "levelofdifficulty": "Easy", "chapter": "Fraction", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "25"}
+2021-09-22 16:10:49,905|{"userid": 8, "qid": "FE3", "qcount": 2}
+2021-09-22 16:10:55,180|{"userid": 8, "message": "Home Page"}
+2021-09-22 16:10:58,779|{"userid": 8, "message": "Choosing Question", "topic": "Fractions", "level": "Easy"}
+2021-09-22 16:11:02,171|{"userid": 8, "qid": "FE4", "qcount": 3}
+2021-09-22 16:11:49,616|{"userid": 8, "qid": "FE4", "qcount": "1", "startTime": "2021-09-22 16:10:20.672071", "endTime": "2021-09-22 16:11:49.614037", "levelofdifficulty": "Easy", "chapter": "Fraction", "hintCount": "1", "h1time": "2021-09-22 16:11:26.368000", "h2time": 0, "diffh1": "0:00:23.246037", "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "20"}
+2021-09-22 16:11:52,930|{"userid": 8, "qid": "FE4", "qcount": 4}
+2021-09-22 16:11:58,586|{"userid": 8, "message": "Home Page"}
+2021-09-22 16:12:02,395|{"userid": 8, "message": "Choosing Question", "topic": "Fractions", "level": "Intermediate"}
+2021-09-22 16:12:05,438|{"userid": 8, "qid": "FI1", "qcount": 5}
+2021-09-22 16:13:43,861|{"userid": 8, "qid": "FI1", "qcount": "1", "startTime": "2021-09-22 16:10:20.672071", "endTime": "2021-09-22 16:13:43.860127", "levelofdifficulty": "Intermediate", "chapter": "Fraction", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "1", "wronghintcount": "0", "score": "25"}
+2021-09-22 16:13:46,589|{"userid": 8, "qid": "FI1", "qcount": 6}
+2021-09-22 16:14:29,057|{"userid": 8, "qid": "FI1", "qcount": "2", "startTime": "2021-09-22 16:10:20.672071", "endTime": "2021-09-22 16:14:29.055420", "levelofdifficulty": "Intermediate", "chapter": "Fraction", "hintCount": "2", "h1time": "2021-09-22 16:13:58.807000", "h2time": "2021-09-22 16:14:03.952000", "diffh1": "0:00:30.248420", "diffh2": "0:00:25.103420", "wrongCount": "0", "wronghintcount": "0", "score": "15"}
+2021-09-22 16:14:32,390|{"userid": 8, "qid": "FI1", "qcount": 7}
+2021-09-22 16:15:57,136|{"userid": 8, "qid": "FI1", "qcount": "3", "startTime": "2021-09-22 16:10:20.672071", "endTime": "2021-09-22 16:15:57.134944", "levelofdifficulty": "Intermediate", "chapter": "Fraction", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "25"}
+2021-09-22 16:15:59,868|{"userid": 8, "qid": "FI1", "qcount": 8}
+2021-09-22 16:20:00,689|{"userid": 8, "qid": "FI1", "qcount": 1}
+2021-09-22 16:21:22,822|{"userid": 8, "qid": "FI1", "qcount": "4", "startTime": "2021-09-22 16:19:57.271501", "endTime": "2021-09-22 16:21:22.821690", "levelofdifficulty": "Intermediate", "chapter": "Fraction", "hintCount": "2", "h1time": "2021-09-22 16:20:03.271000", "h2time": "2021-09-22 16:20:07.619000", "diffh1": "0:01:19.550690", "diffh2": "0:01:15.202690", "wrongCount": "5", "wronghintcount": "0", "score": "15"}
+2021-09-22 16:21:24,370|{"userid": 8, "qid": "FI1", "q1": "25", "q2": "15", "q3": "25", "q4": "15", "total": 80}
+2021-09-22 16:21:24,709|{"userid": 8, "message": "Home Page"}
+2021-09-22 16:21:32,069|{"userid": 8, "message": "Choosing Question", "topic": "Algebra", "level": "Easy"}
+2021-09-22 16:21:35,259|{"userid": 8, "qid": "AE1", "qcount": 1}
+2021-09-22 16:31:21,140|{"userid": 8, "qid": "AE1", "qcount": 1}
+2021-09-22 16:32:44,489|{"userid": 8, "qid": "AE1", "qcount": 2}
+2021-09-22 16:34:09,706|{"userid": 8, "qid": "AE1", "qcount": 1}
+2021-09-22 16:34:34,917|{"userid": 8, "qid": "AE1", "qcount": "3", "startTime": "2021-09-22 16:34:16.350476", "endTime": "2021-09-22 16:34:34.917417", "levelofdifficulty": "Easy", "chapter": "Algebra", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "25"}
+2021-09-22 16:34:37,625|{"userid": 8, "qid": "AE1", "qcount": 1}
+2021-09-22 16:34:57,959|{"userid": 8, "qid": "AE1", "qcount": "4", "startTime": "2021-09-22 16:34:37.625191", "endTime": "2021-09-22 16:34:57.958456", "levelofdifficulty": "Easy", "chapter": "Algebra", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "25"}
+2021-09-22 16:35:00,318|{"userid": 8, "qid": "AE1", "q1": "20", "q2": "25", "q3": "25", "q4": "25", "total": 95}
+2021-09-22 16:35:00,575|{"userid": 8, "message": "Home Page"}
+2021-09-22 16:35:04,450|{"userid": 8, "message": "Choosing Question", "topic": "Algebra", "level": "Easy"}
+2021-09-22 16:35:08,157|{"userid": 8, "qid": "AE2", "qcount": 2}
+2021-09-22 16:36:19,614|{"userid": 8, "message": "Home Page"}
+2021-09-22 16:36:22,708|{"userid": 8, "message": "Choosing Question", "topic": "Algebra", "level": "Easy"}
+2021-09-22 16:36:25,295|{"userid": 8, "qid": "AE3", "qcount": 3}
+2021-09-22 16:38:06,910|{"userid": 8, "qid": "AE3", "qcount": 1}
+2021-09-22 16:38:58,262|{"userid": 8, "qid": "AE3", "qcount": 1}
+2021-09-22 16:39:19,615|{"userid": 8, "qid": "AE3", "qcount": "1", "startTime": "2021-09-22 16:38:58.262689", "endTime": "2021-09-22 16:39:19.615221", "levelofdifficulty": "Easy", "chapter": "Algebra", "hintCount": "1", "h1time": "2021-09-22 16:39:12.125000", "h2time": 0, "diffh1": "0:00:07.490221", "diffh2": 0, "wrongCount": "1", "wronghintcount": "0", "score": "20"}
+2021-09-22 16:39:22,633|{"userid": 8, "qid": "AE3", "qcount": 2}
+2021-09-22 16:39:32,395|{"userid": 8, "message": "Home Page"}
+2021-09-22 16:39:35,698|{"userid": 8, "message": "Choosing Question", "topic": "Algebra", "level": "Easy"}
+2021-09-22 16:39:38,985|{"userid": 8, "qid": "AE4", "qcount": 3}
+2021-09-22 16:40:05,347|{"userid": 8, "qid": "AE4", "qcount": "1", "startTime": "2021-09-22 16:39:38.985983", "endTime": "2021-09-22 16:40:05.347611", "levelofdifficulty": "Easy", "chapter": "Algebra", "hintCount": "1", "h1time": "2021-09-22 16:39:48.208000", "h2time": 0, "diffh1": "0:00:17.139611", "diffh2": 0, "wrongCount": "1", "wronghintcount": "0", "score": "20"}
+2021-09-22 16:40:08,671|{"userid": 8, "qid": "AE4", "qcount": 4}
+2021-09-22 16:40:23,876|{"userid": 8, "message": "Home Page"}
+2021-09-22 16:40:27,784|{"userid": 8, "message": "Choosing Question", "topic": "Algebra", "level": "Intermediate"}
+2021-09-22 16:40:31,371|{"userid": 8, "qid": "AI1", "qcount": 5}
+2021-09-22 16:42:24,743|{"userid": 8, "qid": "AI1", "qcount": "1", "startTime": "2021-09-22 16:40:31.363401", "endTime": "2021-09-22 16:42:24.742456", "levelofdifficulty": "Intermediate", "chapter": "Algebra", "hintCount": "2", "h1time": "2021-09-22 16:40:33.600000", "h2time": "2021-09-22 16:40:37.847000", "diffh1": "0:01:51.142456", "diffh2": "0:01:46.895456", "wrongCount": "3", "wronghintcount": "0", "score": "15"}
+2021-09-22 16:42:27,462|{"userid": 8, "qid": "AI1", "qcount": 6}
+2021-09-22 16:42:36,678|{"userid": 8, "message": "Home Page"}
+2021-09-22 16:42:40,606|{"userid": 8, "message": "Choosing Question", "topic": "Algebra", "level": "Intermediate"}
+2021-09-22 16:42:43,079|{"userid": 8, "qid": "AI2", "qcount": 7}
+2021-09-22 16:44:42,442|{"userid": 8, "qid": "AI2", "qcount": "1", "startTime": "2021-09-22 16:42:43.079116", "endTime": "2021-09-22 16:44:42.441952", "levelofdifficulty": "Intermediate", "chapter": "Algebra", "hintCount": "1", "h1time": "2021-09-22 16:42:45.445000", "h2time": 0, "diffh1": "0:01:56.996952", "diffh2": 0, "wrongCount": "3", "wronghintcount": "0", "score": "20"}
+2021-09-22 16:44:45,160|{"userid": 8, "qid": "AI2", "qcount": 8}
+2021-09-22 16:44:49,447|{"userid": 8, "message": "Home Page"}
+2021-09-22 16:47:38,787|{"userid": 8, "message": "Home Page"}
+2021-09-22 16:47:42,785|{"userid": 8, "message": "Choosing Question", "topic": "Algebra", "level": "Intermediate"}
+2021-09-22 16:47:45,414|{"userid": 8, "qid": "AI2", "qcount": 1}
+2021-09-22 16:48:24,047|{"userid": 8, "message": "Home Page"}
+2021-09-22 16:48:46,168|{"userid": 8, "message": "Profile Page"}
+2021-09-22 16:49:47,328|{"userid": 8, "message": "Home Page"}
