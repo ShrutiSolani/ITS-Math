@@ -97,7 +97,7 @@ def add_fractions():
         ans_den.append(ansden)
         q.append(qs)
     q.insert(1," ")
-    contexts={"num": 1,"qid": qid,"topic": "Add like fractions","ans_num":ans_num,"ans_den":ans_den,"q":q, "label1": "Quotient", "label2" : "Remainder"}
+    contexts={"num": 1,"qid": qid,"topic": "Add like fractions","ans_num":ans_num,"ans_den":ans_den,"q":q, "label1": "Numerator", "label2" : "Denominator"}
     count+=1
     dict = {"userid": session['userid'], "qid": qid, "qcount": count}
     current_app.logger.info(json.dumps(dict))

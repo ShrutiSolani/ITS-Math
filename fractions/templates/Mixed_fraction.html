@@ -99,10 +99,10 @@ function check1()
 if(document.getElementsByTagName("input")[1].value == {{ answer.b1 }})
 {
 $(x[1]).css("display","inline-block");
+$(y[1]).hide();
 document.getElementsByClassName("step0")[1].classList.add("active");
 document.getElementsByTagName("h2")[1].innerHTML="";
 document.getElementById("icon2").style.display="inline";
-$(y[1]).hide();
 }
 else
 {
