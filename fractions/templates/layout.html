@@ -47,8 +47,9 @@
   <div class="container main">
     <div class="card" >
 
-      <div class="card-header white" style="color: #0070BB; background-color:rgba(0,0,0,.03);">
+      <div class="card-header white" style="display: flex;justify-content: space-between;align-items: center;color: #0070BB; background-color:rgba(0,0,0,.03);">
         <h3>{% block chapter %}{% endblock %} - {% block topic %}{% endblock %}</h3>
+        <a href="#" class="btn btn-danger" onclick="quit();" id="quit">Quit</a>
       </div>
 
       <div class="card1">
@@ -134,7 +135,22 @@
         document.getElementsByClassName("bi")[i].classList.add("done");
       }
 
+      $('#quit').click(function() {
+        if (sessionStorage.count < 4 || sessionStorage.count == null) {
+          if (confirm("Your score will not be saved")) {
+            $('#quit').attr('href', "{{ url_for('home_bp.home') }}");
+          } else {
+            return false;
+          }
 
+          let keys = Object.keys(sessionStorage);
+          for (let key of keys) {
+            sessionStorage.removeItem(`${key}`);
+          }
+          sessionStorage.removeItem(count);
+        }
+
+      })
       $('#home_nav').click(function() {
         if (sessionStorage.count < 4 || sessionStorage.count == null) {
           if (confirm("Your score will not be saved")) {

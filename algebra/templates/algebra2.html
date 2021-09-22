@@ -48,7 +48,7 @@ function check(i){
   {% for i in range(4) %}
   <div>
     {{ easy.options[i] }}
-    <select class="answer_options" onchange="check({{ i }});" style="min-width: 120px;"></select>
+    <select class="answer_options"  onchange="check({{ i }});" style="min-width: 120px;" required></select>
     <i class="fal fa-check correct fa-2x" style="display: none; color: green;"></i>
     <i class="fal fa-times wrong fa-2x" style="display: none; color: red"></i>
     <br><br>

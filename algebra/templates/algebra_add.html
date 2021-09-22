@@ -171,6 +171,7 @@ $(x[0]).css("display","block");
 document.getElementsByTagName("h2")[0].innerHTML="";
 document.getElementById("icon1").style.display="inline";
 $(y[0]).hide();
+document.getElementsByClassName("step0")[0].classList.add("active");
 }
 else
 {
@@ -292,6 +293,7 @@ $(x[1]).css("display","block");
 document.getElementsByTagName("h2")[1].innerHTML="";
 document.getElementById("icon2").style.display="inline";
 $(y[1]).hide();
+document.getElementsByClassName("step0")[1].classList.add("active");
 }
 else
 {
@@ -331,14 +333,10 @@ function check13()
     $(x[2]).show();
     $(y[2]).hide();
     document.getElementsByClassName("quo")[13].id = 'right';
-
-    document.getElementById("icon4").style.display="inline";
-    document.getElementById("icon4").style.color="green";
-    document.getElementsByTagName("h2")[0].innerHTML="";
-    document.getElementsByTagName("h2")[1].innerHTML="";
-    document.getElementById("icon1").style.display="inline";
-    document.getElementById("icon2").style.display="inline";
-    document.getElementById("icon3").style.display="inline";
+    document.getElementsByClassName("step0")[0].classList.add("active");
+    document.getElementsByClassName("step0")[1].classList.add("active");
+    document.getElementsByClassName("step0")[2].classList.add("active");
+    
   }
   else
   {

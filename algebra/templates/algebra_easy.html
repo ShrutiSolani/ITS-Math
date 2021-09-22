@@ -44,7 +44,7 @@
 <p>
   {% for i in range(4) %}
 <div>{{ easy.options[i] }}
-  <input type="text" style="display: inline;" onchange="check({{ i }});">
+  <input type="text"  style="display: inline;" onchange="check({{ i }});" required>
   <i class="fal fa-check correct fa-2x" style="display: none; color: green;"></i>
   <i class="fal fa-times wrong fa-2x" style="display: none; color: red"></i><br><br>
 
