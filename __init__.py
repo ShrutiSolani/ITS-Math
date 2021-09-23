@@ -22,10 +22,15 @@ def create_app():
     log.setLevel(logging.ERROR)
     # app.debug = True
     mydb = mysql.connector.connect(
-        host="localhost",
-        user="root",
-        password="",
-        database="ITS"
+        Server = "sql6.freemysqlhosting.net",
+        Name = "sql6439475",
+        Username = "sql6439475",
+        Password ="PYuKCwuDVE",
+        Port = 3306
+        # host="localhost",
+        # user="root",
+        # password="",
+        # database="ITS"
     )
     app.register_blueprint(home_bp)
     app.register_blueprint(choice_bp)
