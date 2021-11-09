@@ -1,4 +1,4 @@
-#!/home/ubuntu/github_repos/ITS_Math/venv/bin/python3
+#!/home/ubuntu/philomath/venv/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys

@@ -12,6 +12,30 @@ count = 0
 datetimes = []
 startTym=datetime.datetime.now()
 
+import mysql.connector
+mydb = mysql.connector.connect(
+    host = "sql6.freesqldatabase.com",
+    user = "sql6449635",
+    database = "sql6449635",
+    password ="EH7dFtDVqR",
+    port = "3306"
+)
+
+
+def log_entry(dict):
+    try:
+        mycursor=mydb.cursor()
+        sql = "Insert into log(entry)values('%s')" %(dict)
+        mycursor.execute(sql)
+        mydb.commit()
+        mycursor.close()
+    except Exception as e:
+        mycursor.close()
+        print(e)
+    finally:
+        return "Success"
+
+
 @algebra_bp.route("/like-unlike")
 def like_unlike():
     global count
@@ -42,7 +66,7 @@ def like_unlike():
     contexts={'qid': qid, 'question': q3, 'options': terms, 'answer': answers, 'num': 2, 'topic': 'Like-Unlike Terms'}
     count+=1
     dict = {"userid": session['userid'], "qid": qid, "qcount": count}
-    current_app.logger.info(json.dumps(dict))
+    log_entry(json.dumps(dict))
 
     return render_template('algebra2.html',easy=contexts)
 
@@ -89,7 +113,7 @@ def value_of_expression():
         cnt += 1
     count+=1
     dict = {"userid": session['userid'], "qid": qid, "qcount": count}
-    current_app.logger.info(json.dumps(dict))
+    log_entry(json.dumps(dict))
 
     return render_template('algebra_easy.html', easy={'topic': 'Value of Expression','question': q4, 'options': terms, 'answer': answers, 'num': 2, 'qid': qid})
 
@@ -124,7 +148,7 @@ def coefficient():
         cnt += 1
     count+=1
     dict = {"userid": session['userid'], "qid": qid, "qcount": count}
-    current_app.logger.info(json.dumps(dict))
+    log_entry(json.dumps(dict))
     return render_template('algebra_easy.html', easy={'topic': 'Identifying Coefficient','question': q1, 'options': terms, 'answer': answers, 'num': 1, 'qid': qid})
 
 
@@ -163,7 +187,7 @@ def monomial():
     contexts={'qid': qid, 'question': q2, 'options': terms, 'answer': answers, 'num': 1, 'topic': 'Monomial Binomial Trinomial'}
     count+=1
     dict = {"userid": session['userid'], "qid": qid, "qcount": count}
-    current_app.logger.info(json.dumps(dict))
+    log_entry(json.dumps(dict))
 
     return render_template('algebra2.html', easy=contexts)
 
@@ -195,7 +219,7 @@ def horizontal_add():
     answer = {'qid': qid, 'que':haddque,'varx':rx,'vary':ry,'coeff':coeff,'x_like':x_like,'y_like':y_like,'x_sum':x_sum,'y_sum':y_sum}
     count+=1
     dict = {"userid": session['userid'], "qid": qid, "qcount": count}
-    current_app.logger.info(json.dumps(dict))
+    log_entry(json.dumps(dict))
     return render_template('algebra_add.html', answer=answer)
 
 
@@ -235,5 +259,5 @@ def vertical_sub():
     answer = {'qid': qid, 'que': haddque, 'varx': rx, 'vary': ry,'varz':rz,'coeff': coeff,'x_diff': x_diff, 'y_diff': y_diff,'z_diff':z_diff}
     count+=1
     dict = {"userid": session['userid'], "qid": qid, "qcount": count}
-    current_app.logger.info(json.dumps(dict))
+    log_entry(json.dumps(dict))
     return render_template('vertical_sub.html', answer=answer)

@@ -1,19 +1,36 @@
 from datetime import datetime
 from flask import Blueprint, render_template, request, flash, redirect, url_for, session, Flask, current_app
 import json, os, random
-from ..fractions import routes
+
+from ..fractions1 import routes
 from ..algebra import routes
-from werkzeug.security import generate_password_hash , check_password_hash
+from werkzeug.security import generate_password_hash, check_password_hash
 
 import mysql.connector
 mydb = mysql.connector.connect(
-    host="localhost",
-    user="root",
-    password="",
-    database="ITS"
+    host = "sql6.freesqldatabase.com",
+    user = "sql6449635",
+    database = "sql6449635",
+    password ="EH7dFtDVqR",
+    port = "3306"
 )
 
 home_bp = Blueprint('home_bp', __name__, template_folder = 'templates', static_folder='static')
+
+def log_entry(dict):
+    try:
+        mycursor=mydb.cursor()
+        sql = "Insert into log(entry)values('%s')" %(dict)
+        mycursor.execute(sql)
+        mydb.commit()
+        mycursor.close()
+    except Exception as e:
+        mycursor.close()
+        print(e)
+    finally:
+        return "Success"
+
+
 
 @home_bp.route('/')
 def index():
@@ -21,18 +38,16 @@ def index():
 
 @home_bp.route("/login")
 def login():
-    dict = {"message": "Login Page"}
-    current_app.logger.info(json.dumps(dict))
     return render_template('login.html')
 
-@home_bp.route("/login",methods=['POST'])
+@home_bp.route("/logins",methods=['POST'])
 def logins():
 
     mycursor=mydb.cursor()
     if request.method=='POST':
         email=request.form['email']
         password=request.form['password']
-        mycursor.execute("select * from Student where email='" + email + "' ")
+        mycursor.execute("select * from student where email='" + email + "' ")
         r = mycursor.fetchall()
         count = mycursor.rowcount
         mydb.commit()
@@ -41,11 +56,11 @@ def logins():
             if check_password_hash(r[0][4],password):
                 session['userid'] = r[0][0]
                 dict = {"userid": session['userid'], "message": "Logged In"}
-                current_app.logger.info(json.dumps(dict))
+                log_entry(json.dumps(dict))
                 return redirect('home')
             else:
                 flash("Invalid Credentials",'danger')
-                return redirect('login')    
+                return redirect('login')
         else:
             flash("Invalid Credentials",'danger')
             return redirect('login')
@@ -55,12 +70,11 @@ def logins():
 
 @home_bp.route("/signup")
 def signup():
-    dict = {"message": "Signup Page"}
-    current_app.logger.info(json.dumps(dict))
     return render_template('signup.html')
 
 @home_bp.route("/signup",methods=['POST'])
 def signups():
+    print("in signups")
     mycursor=mydb.cursor()
 
     if request.method=="POST":
@@ -71,8 +85,8 @@ def signups():
         cpassword = request.form['cpassword']
         dob = request.form['dob']
         grade=request.form['grade']
-
-        mycursor.execute("select * from Student where email='" + email + "' ")
+        print("got form data")
+        mycursor.execute("select * from student where email='" + email + "' ")
         r = mycursor.fetchall()
         count = mycursor.rowcount
         mydb.commit()
@@ -88,22 +102,24 @@ def signups():
         hashed_password = generate_password_hash(password)
 
         mycursor=mydb.cursor()
-        mycursor.execute("Insert into Student(first_name,last_name,email,password,dob,grade)values(%s,%s,%s,%s,%s,%s)",(fname,lname,email,hashed_password,dob,grade))
+        mycursor.execute("Insert into student(first_name,last_name,email,password,dob,grade)values(%s,%s,%s,%s,%s,%s)",(fname,lname,email,hashed_password,dob,grade))
         mydb.commit()
         mycursor.close()
+        print("inserted")
         flash("User created succesfully.",'success')
         return redirect('login')
     else:
+        print("else")
         return redirect('signup')
 
 @home_bp.route("/home")
 def home():
     mycursor=mydb.cursor()
     if 'userid' in session:
-        mycursor.execute("select * from Student where id="+str(session['userid']))
+        mycursor.execute("select * from student where id="+str(session['userid']))
         r = mycursor.fetchall()
-        dict = {"userid": session['userid'], "message": "Home Page"}
-        current_app.logger.info(json.dumps(dict))
+        dict = {"userid": session["userid"], "message": "Home Page"}
+        log_entry(json.dumps(dict))
         return render_template('home.html',name={'name':r[0][1]})
     else:
         return redirect('login')
@@ -119,19 +135,19 @@ def score():
         total = int(tup['undefined']) + int(tup['1']) + int(tup['2']) + int(tup['3'])
         dict = {"userid": userid,"qid": myList[3], "q1": myList[4], "q2": myList[0], "q3": myList[1], "q4": myList[2],"total": total}
         flash(f"You scored {total} out of 100")
-        current_app.logger.info(json.dumps(dict))
+        log_entry(json.dumps(dict))
         qids = myList[3]
-        mycursor.execute("select * from Question where qid='" + qids + "' ")
+        mycursor.execute("select * from question where qid='" + qids + "' ")
         r = mycursor.fetchall()
         qid = r[0][0]
         userid = session['userid']
-        mycursor.execute("select * from Student where id='" + str(userid) + "' ")
+        mycursor.execute("select * from student where id='" + str(userid) + "' ")
         rs= mycursor.fetchall()
         uid = rs[0][0]
-        # mycursor.execute("Insert into Student(first_name,last_name,email,password,dob,grade)values(%s,%s,%s,%s,%s,%s)",(fname,lname,email,hashed_password,dob,grade))
-        mycursor.execute("INSERT INTO Student_Score(sid,qid,score)values(%s,%s,%s)",(uid,qid,total))
-        
-        # querys = "INSERT INTO Student_Score(sid,qid,score)values(%d,%d,%d)",(userid,qid,total)
+        # mycursor.execute("Insert into student(first_name,last_name,email,password,dob,grade)values(%s,%s,%s,%s,%s,%s)",(fname,lname,email,hashed_password,dob,grade))
+        mycursor.execute("INSERT INTO student_score(sid,qid,score)values(%s,%s,%s)",(uid,qid,total))
+
+        # querys = "INSERT INTO student_score(sid,qid,score)values(%d,%d,%d)",(userid,qid,total)
         # mycursor.execute(querys)
         mydb.commit()
         return json.dumps(dict)
@@ -145,7 +161,7 @@ def profile():
     mycursor=mydb.cursor()
     if 'userid' in session:
         userid = session['userid']
-        mycursor.execute("select * from Student where id = '" + str(userid) + "' ")
+        mycursor.execute("select * from student where id = '" + str(userid) + "' ")
         r = mycursor.fetchall()
         fname = r[0][1]
         lname = r[0][2]
@@ -155,15 +171,15 @@ def profile():
         school = r[0][7]
         context ={'fname':fname,'lname':lname,'school':school,'email':email,'grade':grade,'dob':dob}
         dict = {"userid": session['userid'], "message": "Profile Page"}
-        current_app.logger.info(json.dumps(dict))
+        log_entry(json.dumps(dict))
 
-        mycursor.execute("select * from Student where id='" + str(userid) + "' ")
+        mycursor.execute("select * from student where id='" + str(userid) + "' ")
         rs= mycursor.fetchall()
         uid = rs[0][0]
 
-        mycursor.execute("select distinct qid , score from Student_Score where sid='" + str(userid) + "' ")
+        mycursor.execute("select distinct qid , score from student_score where sid='" + str(userid) + "' ")
         r2= mycursor.fetchall()
-        
+
         AE = 0
         AI = 0
         FE = 0
@@ -172,7 +188,7 @@ def profile():
         fraction = {}
         for i in r2:
             qid = i[0]
-            mycursor.execute("select * from Question where id='" + str(qid) + "' ")
+            mycursor.execute("select * from question where id='" + str(qid) + "' ")
             r3= mycursor.fetchall()
             chapter = r3[0][2]
             level = r3[0][3]
@@ -190,8 +206,6 @@ def profile():
                 FI+=1
                 fraction[topic] = i[1]
         context2 = {'AE':AE,'AI':AI,'FE':FE,'FI':FI}
-
-
         return render_template('UserScore.html',context=context,context2=context2,algebra=algebra,fraction=fraction)
     else:
         return redirect("login")
@@ -201,7 +215,7 @@ def EditUserScore():
     mycursor=mydb.cursor()
     if 'userid' in session:
         userid = session['userid']
-        mycursor.execute("select * from Student where id = '" + str(userid) + "' ")
+        mycursor.execute("select * from student where id = '" + str(userid) + "' ")
         r = mycursor.fetchall()
         fname = r[0][1]
         lname = r[0][2]
@@ -239,22 +253,41 @@ def getTime():
     hint_count = request.args.get('hint_count')
     quesid = request.args.get('quesid')
     dict = {"userid": session['userid'], "qid": quesid, "hint_no": hint_count}
-    current_app.logger.info(json.dumps(dict))
+    log_entry(json.dumps(dict))
     return "TimeReceived"
 
 @home_bp.route("/endTime", methods=["GET"])
 def endTime():
+    print("In endTime")
     mycursor=mydb.cursor()
+    print(263)
     qcount = request.args.get('qcount')
+    print(265)
     qid = request.args.get('quesid')
+    print(267)
     hcount =request.args.get('hcount')
+    print(269)
     htime = json.loads(request.args.get('htime'))
+    print(271)
     score = request.args.get('score')
-    startTym = routes.startTym
-    endTym = datetime.now()
+    print(273)
+    try:
+        startTym = routes.startTym
+    except Exception as e:
+        print(e)
+    print(275)
+    try:
+        endTym = datetime.now()
+    except Exception as e:
+        print(e)
+    print(277)
     wrong = request.args.get('wrong')
+    print(279)
     wronghint = request.args.get('wronghint')
-    mycursor.execute("select * from Question where qid = '" + str(qid) + "' ")
+    print(281)
+    print("before query ")
+    mycursor.execute("select * from question where qid = '" + str(qid) + "' ")
+    print("after query ")
     r = mycursor.fetchall()
     chapter = r[0][2]
     lod = r[0][3] #Level Of Difficulty
@@ -279,16 +312,17 @@ def endTime():
     if(hintTime2!=0):
         endhtym2 = endTym - hintTime2
     # totalTym = endhtym1 + endhtym2
+    print("After data")
     dict = {"userid": session['userid'], "qid": qid, "qcount": qcount, "startTime" : startTym, "endTime" : endTym, "levelofdifficulty":lod,"chapter":chapter,"hintCount" : hcount, "h1time":hintTime1,"h2time":hintTime2,"diffh1":endhtym1,"diffh2":endhtym2,"wrongCount":wrong,"wronghintcount":wronghint,"score":score}
-    current_app.logger.info(json.dumps(dict,default=str))
+    print(dict)
+    log_entry(json.dumps(dict,default=str))
+    print("After log")
     return "TimeReceived"
 
-def page_not_found(e):
-  return redirect("compare"),500
 
 @home_bp.route('/logout')
 def logout():
     dict = {"userid": session['userid'], "message": "Logged out"}
-    current_app.logger.info(json.dumps(dict))
+    log_entry(json.dumps(dict))
     session.pop('userid',None)
     return redirect('/')
