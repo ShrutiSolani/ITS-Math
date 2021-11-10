@@ -15,6 +15,7 @@ mydb = mysql.connector.connect(
     port = "3306"
 )
 
+
 home_bp = Blueprint('home_bp', __name__, template_folder = 'templates', static_folder='static')
 
 def log_entry(dict):

@@ -24,7 +24,6 @@ mydb = mysql.connector.connect(
 )
 
 
-
 def log_entry(dict):
     try:
         mycursor=mydb.cursor()
