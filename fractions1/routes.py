@@ -1,6 +1,8 @@
 from flask import Blueprint, render_template, request, flash, redirect, url_for, session, current_app
 import os, json, random, datetime, math
 from fractions import Fraction
+from ..database import mydb
+
 
 SITE_ROOT = os.path.realpath(os.path.dirname(__file__))
 
@@ -14,14 +16,14 @@ fractions1_bp = Blueprint("fractions1_bp", __name__, template_folder = "template
 
 startTym = datetime.datetime.now()
 
-import mysql.connector
-mydb = mysql.connector.connect(
-    host = "sql6.freesqldatabase.com",
-    user = "sql6449635",
-    database = "sql6449635",
-    password ="EH7dFtDVqR",
-    port = "3306"
-)
+# import mysql.connector
+# mydb = mysql.connector.connect(
+#     host = "sql6.freesqldatabase.com",
+#     user = "sql6449635",
+#     database = "sql6449635",
+#     password ="EH7dFtDVqR",
+#     port = "3306"
+# )
 
 
 def log_entry(dict):

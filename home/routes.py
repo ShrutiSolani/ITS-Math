@@ -6,14 +6,16 @@ from ..fractions1 import routes
 from ..algebra import routes
 from werkzeug.security import generate_password_hash, check_password_hash
 
-import mysql.connector
-mydb = mysql.connector.connect(
-    host = "sql6.freesqldatabase.com",
-    user = "sql6449635",
-    database = "sql6449635",
-    password ="EH7dFtDVqR",
-    port = "3306"
-)
+from ..database import mydb
+
+# import mysql.connector
+# mydb = mysql.connector.connect(
+#     host = "sql6.freesqldatabase.com",
+#     user = "sql6449635",
+#     database = "sql6449635",
+#     password ="EH7dFtDVqR",
+#     port = "3306"
+# )
 
 
 home_bp = Blueprint('home_bp', __name__, template_folder = 'templates', static_folder='static')
