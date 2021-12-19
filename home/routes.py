@@ -22,6 +22,7 @@ home_bp = Blueprint('home_bp', __name__, template_folder = 'templates', static_f
 
 def log_entry(dict):
     try:
+        current_app.logger.info(json.dumps(dict))
         mycursor=mydb.cursor()
         sql = "Insert into log(entry)values('%s')" %(dict)
         mycursor.execute(sql)
