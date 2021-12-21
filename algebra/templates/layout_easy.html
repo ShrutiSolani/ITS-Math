@@ -78,12 +78,6 @@
               {{% block hint %}
               <img src="" alt="" style="width:80%;" id="hint_img">
               {% endblock %}
-              <!-- <p>Select the option you think would be the beginning step of this problem</p>
-                  <button class="btn btn-info" style="width: 100%; margin: 10px auto;">Option 1</button>
-                  <button class="btn btn-info" style="width: 100%; margin: 10px auto;">Option 1</button>
-                  <button class="btn btn-info" style="width: 100%; margin: 10px auto;">Option 1</button>
-                  <button class="btn btn-info" style="width: 100%; margin: 10px auto;">Option 1</button> -->
-              <!-- <p>Some text in the modal.</p> -->
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -170,16 +164,6 @@
       var getTimes=[];
       $('#hint-btn').click(function() {
         getTimes[hint_count++]=new Date().getTime();
-        // hint_count++;
-        // var time = new Date();
-        // $.get('/getTime', {
-        //   'quesid': quesid,
-        //   'hint_count': hint_count,
-        //   'time': time
-        // }, function(response) {
-        //   console.log("done");
-        // });
-
       })
 
       
@@ -232,7 +216,6 @@
               window.location.href = "{{ url_for('home_bp.home') }}";
             }
           });
-          // window.location.href = "{{ url_for('home_bp.home') }}";
         } else {
           $.get('/endTime', {
             'quesid': quesid,
