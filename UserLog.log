@@ -43,3 +43,4 @@
 2021-12-22 14:02:03.124034|{"userid": 8, "qid": "AE4", "qcount": 3}
 2021-12-22 14:02:24.973806|{"userid": 8, "qid": "AE4", "qcount": "1", "startTime": "2021-12-22 14:02:02.339486", "endTime": "2021-12-22 14:02:24.323455", "levelofdifficulty": "Easy", "chapter": "Algebra", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "1", "wronghintcount": "0", "score": "25"}
 2021-12-22 14:02:28.373698|{"userid": 8, "qid": "AE4", "qcount": 4}
+2021-12-22 14:02:33.161743|{"userid": 8, "message": "Home Page"}
