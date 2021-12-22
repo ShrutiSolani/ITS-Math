@@ -37,3 +37,4 @@
 2021-12-22 14:00:32.231688|{"userid": 8, "qid": "FE1", "qcount": 8}
 2021-12-22 14:00:48.361484|{"userid": 8, "message": "Home Page"}
 2021-12-22 14:00:56.832185|{"userid": 8, "qid": "AI1", "qcount": 1}
+2021-12-22 14:01:43.420964|{"userid": 8, "qid": "AI1", "qcount": "1", "startTime": "2021-12-22 14:00:56.170793", "endTime": "2021-12-22 14:01:42.740625", "levelofdifficulty": "Intermediate", "chapter": "Algebra", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "25"}
