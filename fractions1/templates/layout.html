@@ -66,10 +66,8 @@
           {% block content %}{% endblock %}
 
         </div>
-
       </div>
 
-      <!-- </div> -->
       <div class="modal fade" id="myModal" role="dialog" style="margin-top: 50px;">
         <div class="modal-dialog">
           <div class="modal-content">
@@ -81,10 +79,6 @@
             <div class="modal-body">
               <p>Select the option you think would be the beginning step of this problem</p>
               {% block hint %}
-              <!-- <button class="btn btn-info" id = "1" style="width: 100%; margin: 10px auto;">{% block option_1 %}{% endblock%}</button>
-                  <button class="btn btn-info" id = "2" style="width: 100%; margin: 10px auto;">{% block option_2 %}{% endblock%}</button>
-                  <button class="btn btn-info" id = "3" style="width: 100%; margin: 10px auto;">{% block option_3 %}{% endblock%}</button>
-                  <button class="btn btn-info" id = "4" style="width: 100%; margin: 10px auto;">{% block option_4 %}{% endblock%}</button> -->
               {% endblock %}
             </div>
             <div class="modal-footer">
@@ -121,12 +115,6 @@
   </form>
   </div>
   <script>
-    
-      // window.onload = (event) => {
-      //   if (sessionStorage.count) { 
-      //     sessionStorage.removeItem(count);
-      //   }
-      // };
     $(document).ready(function() {
       $('.toast').toast('hide');
       var x = sessionStorage.count;
@@ -177,17 +165,6 @@
       var getTimes=[];
       $('#hint-btn').click(function() {
         getTimes[hint_count++]=new Date().getTime();
-        // console.log(getTime);
-        // hint_count++;
-        // getTime = new Date();
-        // $.get('/getTime', {
-        //   'quesid': quesid,
-        //   'hint_count': hint_count,
-        //   'time': time
-        // }, function(response) {
-        //   console.log("done");
-        // });
-
       })
 
       $("#submit-form").submit(function(e){
@@ -205,9 +182,6 @@
         console.log(sessionStorage.getItem(x));
 
         if (sessionStorage.count == 4) {
-
-          // event.preventDefault();
-          // event.stopPropagation();
           $.get('/endTime', {
             'quesid': quesid,
             'qcount': Number(sessionStorage.count),
@@ -260,11 +234,7 @@
             location.reload()
           }, 3000);
         }
-
-
-    
       })
-
 })
       
   </script>
