@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+
+
+
+
 .blue {
   background-color: #0070BB;
 }
@@ -14,13 +18,15 @@
 
 #n1 {
   position: fixed;
-  height: calc(100%-200px);
+  /* height: calc(100%-200px); */
   width: 100%;
   top: 0;
   left: 0;
   z-index: 9999;
 }
-
+#name-div{
+  margin-right: 1rem;
+}
 .navbar-brand, .nav-link {
   color: #000 !important;
 }
@@ -66,7 +72,7 @@
 
 .main {
   width: 100%;
-  height: 100%;
+  height: 92.5vh;
 }
 
 #leftsection, #rightsection {
@@ -90,19 +96,31 @@
   height: 98%;
 }
 
-.alg {
+#algs {
+  padding:100px 10px 50px 10px;
   width: 100%;
-  height: 100%;
+  min-height: 100vh;
+  background-color: #0070BB;
+}
+#fracs{
+  padding:100px 10px 50px 10px;
+  width: 100%;
+  padding-bottom: 50px;
+  min-height: 100vh;
 }
 
 #board {
   width: 100%;
-  height: 880px;
+  min-height:92.5vh ;
   margin-top: 56px;
   background-color: #31343a;
   border: 15px solid grey;
   color: #fbf7f5;
   font-family: 'Fredericka the Great', cursive;
+  
+}
+.signup{
+  margin-bottom: 1rem;
 }
 
 #date-div {
@@ -124,11 +142,17 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-top: 200px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
 }
 
 #quot {
   font-size: 2.5rem;
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
 }
 
 #author {
@@ -140,4 +164,75 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+
 }
+.flex-btn{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.board-btn{
+  color:#fbf7f5!important;
+  font-size: 1.5rem;
+  border-radius:50px;
+  height:90px;
+  width:200px;
+  padding:5px;
+  background-color: transparent;
+  border:1px solid #fbf7f5;
+}
+.frac-btn{
+  color:white!important;
+  font-size: 1.5rem;
+  border-radius:50px;
+  height:90px;
+  width:200px;
+  padding:5px;
+}
+.alg-btn{
+  color:black!important;
+  font-size: 1.5rem;
+  border-radius:50px;
+  height:90px;
+  width:200px;
+  padding:5px;
+}
+.toasts{
+  margin-left: 65%;
+}
+@media screen and (max-width:992px) {
+  #quot,#author{
+    font-size: 2rem !important;
+  }
+  #quote{
+    top: 60%;
+  }
+}
+
+@media screen and (max-width:767px) {
+  .board-btn,.alg-btn,.frac-btn{
+    height: 50px;
+  }
+  .toasts{
+    margin-left:4%
+  }
+  #quot,#author{
+    font-size: 1.3rem !important;
+  }
+  .flex-btn{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+  #date-div{
+    width: 62%;
+  }
+  #date{
+    font-size: 2rem;
+  }
+  #quote{
+    top: 72%;
+  }
+} 
+

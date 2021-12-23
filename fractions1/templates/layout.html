@@ -44,7 +44,7 @@
     </div>
   </nav>
 
-  <div class="container main">
+  <div class="container main" style="margin-bottom: 2rem;overflow-x: hidden;">
     <div class="card" >
 
       <div class="card-header white" style="display: flex;justify-content: space-between;align-items: center;color: #0070BB; background-color:rgba(0,0,0,.03);">
@@ -59,9 +59,9 @@
           <li class="step0"></li>
         </ul>
       </div>
-      <div class="time-card" style="height: 55vh;">
+      <div class="time-card card_body" >
         <form id="submit-form" method="POST">
-        <div class="card-body" style="width: 80%;">
+        <div class="card-body" style="width: 100%;">
 
           {% block content %}{% endblock %}
 
@@ -87,14 +87,17 @@
                   <button class="btn btn-info" id = "4" style="width: 100%; margin: 10px auto;">{% block option_4 %}{% endblock%}</button> -->
               {% endblock %}
             </div>
-            <div class="modal-footer">
+            <div class="modal-footer ">
               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="container" style="margin-left: 65%;">
+     
+
+
+      <div class="container toasts" >
         <div class="toast" data-autohide="false" id="mytoast">
           <div class="toast-header">
             <strong class="mr-auto text-primary">Correct</strong>
@@ -105,10 +108,7 @@
           </div>
         </div>
       </div>
-
-
-
-      <div class="card-footer text-muted green">
+      <div class="card-footer text-muted green footerStyling" >
         <a href="#" class="btn btn-info" data-toggle="modal" data-target="#myModal" id="hint-btn">Hint</a>
 
         <i class="bi bi-circle-fill right"></i>

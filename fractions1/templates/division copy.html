@@ -57,7 +57,7 @@ swal("Oops!", "Checkout hint for help", "error");
 {% block content %}
 
 {% for i in range(0,3,2) %}
-<h5 class="card-title">{{easy.q[i]}}</h5>
+<h5 class="card-title easy_qts">{{easy.q[i]}}</h5>
 {{ easy.label1 }}: <input type="text" class="quo"  required onchange="checkQuo({{ i }});">
 <i class="fal fa-check correct fa-2x" style="display: none; color: green;"></i>
 <i class="fal fa-times wrong fa-2x" style="display: none; color: red"></i>

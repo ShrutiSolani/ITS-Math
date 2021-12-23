@@ -1,3 +1,9 @@
+
+.card_body{
+  min-height: 58vh;
+}
+
+
 .blue {
   background-color: #0070BB;
   color: white;
@@ -153,7 +159,9 @@ i {
   width: 100px;
   height: 100px
 }
-
+/* .card_body{
+  overflow-y: scroll;
+} */
 .prev {
   display: block;
   position: absolute;
@@ -168,4 +176,43 @@ i {
 
 .time-card {
   height: 50vh;
+}
+.toasts{
+  margin-left: 65%;
+}
+@media screen and (max-width:768px) {
+  #progressbar {
+    
+    top: 38%;
+  }
+  .card_body{
+    min-height: 80vh;
+  }
+  .toasts{
+    margin-left:4%
+  }
+}
+
+@media screen and (max-width:400px) {
+  .card_body{
+    min-height: 100vh;
+  }
+}
+
+@media screen and (max-width:350px) {
+  .card_body{
+    min-height: 100vh;
+  }
+  #progressbar {
+    right: 6%;
+    top: 25%;
+  }
+  
+  .footerStyling{
+    margin-top: 3rem !important;
+  }
+  .toasts{
+    margin-bottom: -3rem;
+  }
+  
 }
