@@ -56,3 +56,4 @@
 2021-12-23 13:45:29.297193|{"userid": 8, "qid": "FI1", "qcount": 2}
 2021-12-23 13:48:20.275113|{"userid": 8, "qid": "FI1", "qcount": 1}
 2021-12-23 13:48:32.449238|{"userid": 8, "qid": "FI1", "qcount": "1", "startTime": "2021-12-23 13:48:14.396381", "endTime": "2021-12-23 13:48:31.756007", "levelofdifficulty": "Intermediate", "chapter": "Fraction", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "25"}
+2021-12-23 13:48:35.405343|{"userid": 8, "qid": "FI1", "qcount": 2}
