@@ -167,3 +167,53 @@ i {
 .prev:hover {
   color: #0070bb !important
 }
+@media screen and (max-width:768px) {
+  .right{
+    margin-left: 54%;
+  }
+  .next{
+    margin-left: 0;
+    margin-top: 1rem;
+  }
+  .easy_qts{
+    width: 80%;
+  }
+  #progressbar {
+    
+    top: 20%;
+    right:0%;
+  }
+  .card_body{
+    min-height: 45vh;
+  }
+  .toasts{
+    margin-left:4%
+  }
+}
+
+@media screen and (max-width:768px) {
+  .right{
+    margin-left: 50%;
+  }
+}
+
+@media screen and (max-width:350px) {
+  .right{
+    margin-left: 44%;
+  }
+  .card_body{
+    min-height: 85vh;
+  }
+  #progressbar {
+    right: 0%;
+    top: 27%;
+  }
+  
+  .footerStyling{
+    margin-top: 3rem !important;
+  }
+  .toasts{
+    margin-bottom: -3rem;
+  }
+  
+}

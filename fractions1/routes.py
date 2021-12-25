@@ -40,6 +40,28 @@ def log_entry(dict):
         return "Success"
 
 
+@fractions1_bp.route("/copy-qts")
+def copyqts():
+    global count
+    global datetimes
+    global startTym
+    startTym=datetime.datetime.now()
+    qid = data["mixed-fraction"]
+    num = random.randint(1, 100)
+    den = random.randint(1, 25)
+    while num < den:
+        num = random.randint(1, 100)
+    que = "Express as mixed fraction : " + str(num) + "/" + str(den) + "."
+    quo = num // den
+    rem = num % den
+    box_ans = [quo, rem, quo, rem, den]
+    answer = {"qid": qid, "que": que, "b0": box_ans[0], "b1": box_ans[1], "b2": box_ans[2], "b3": box_ans[3], "b4": box_ans[4]}
+    count+=1
+    dict = {"userid": session['userid'], "qid": qid, "qcount": count}
+    log_entry(json.dumps(dict))
+    return render_template("Intermediate_layout.html", answer=answer)
+    
+
 
 @fractions1_bp.route("/divide_with_whole")
 def divide_with_whole():
