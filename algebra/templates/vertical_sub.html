@@ -3,7 +3,7 @@
 
 .quo {
 display: inline;
-width: 6%;
+width: 60px;
 height: calc(1.5em + .75rem + -6px);
 }
 
@@ -285,7 +285,7 @@ function wrong(){
 <h5 class="card-title">{{ answer.que }}</h5>
 <br><br>
 <div class="line1" style="display:none">
-  <div style="margin-left:50px;">
+  <div >
     <input type="text" class="quo"  name="quo" maxlength="3" size="3" onblur="check0();">{{ answer.varx }}+
     <input type="text" class="quo"  name="quo" maxlength="3" size="3" onblur="check1();">{{ answer.vary }}+
     <input type="text" class="quo"  name="quo" maxlength="3" size="3" onblur="check2();">{{ answer.varz }}
@@ -296,7 +296,7 @@ function wrong(){
   <div>
     <h1>-</h1>
   </div>
-  <div style="margin-left:50px;">
+  <div >
     <input type="text" class="quo" name="quo"  maxlength="3" size="3" onblur="check3();">{{ answer.varx }}+
     <input type="text" class="quo" name="quo"  maxlength="3" size="3" onblur="check4();">{{ answer.vary }}+
     <input type="text" class="quo" name="quo"  maxlength="3" size="3" onblur="check5();">{{ answer.varz }}
@@ -306,7 +306,7 @@ function wrong(){
     <br>
   </div>
 </div>
-<div style="margin-left:50px;">
+<div >
   <input type="text" class="quo" name="quo" maxlength="3" size="3" onblur="check6()" required>{{ answer.varx }}+
   <input type="text" class="quo" name="quo" maxlength="3" size="3" onblur="check7();" required>{{ answer.vary }}+
   <input type="text" class="quo" name="quo" maxlength="3" size="3" onchange="check8();" required>{{ answer.varz }}

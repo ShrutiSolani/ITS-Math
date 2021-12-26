@@ -40,6 +40,10 @@ def log_entry(dict):
 def index():
     return render_template('index.html')
 
+@home_bp.route('/copy')
+def copy():
+    return render_template('home-copy.html',name={'name':'raj'})
+
 @home_bp.route("/login")
 def login():
     return render_template('login.html')
