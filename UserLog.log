@@ -10,3 +10,4 @@ abc
 2021-12-28 19:21:02.664971|{"userid": 8, "qid": "FI1", "qcount": 2}
 2021-12-28 19:21:14.380759|{"userid": 8, "qid": "FI1", "qcount": "4", "startTime": "2021-12-28 19:20:40.786839", "endTime": "2021-12-28 19:21:13.806337", "levelofdifficulty": "Intermediate", "chapter": "Fraction", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "25"}
 2021-12-28 19:21:16.647931|{"userid": 8, "qid": "FI1", "q1": "25", "q2": "25", "q3": "25", "q4": "25", "total": 100}
+2021-12-28 19:21:18.008243|{"userid": 8, "message": "Home Page"}
