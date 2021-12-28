@@ -20,3 +20,4 @@ abc
 2021-12-28 19:22:37.249359|{"userid": 8, "qid": "AE4", "qcount": 2}
 2021-12-28 19:22:52.958421|{"userid": 8, "message": "Home Page"}
 2021-12-28 19:23:02.066735|{"userid": 8, "qid": "AI1", "qcount": 3}
+2021-12-28 19:23:23.501303|{"userid": 8, "qid": "AI1", "qcount": "1", "startTime": "2021-12-28 19:23:01.386974", "endTime": "2021-12-28 19:23:22.852347", "levelofdifficulty": "Intermediate", "chapter": "Algebra", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "25"}
