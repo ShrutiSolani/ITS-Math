@@ -24,3 +24,4 @@ abc
 2021-12-28 19:23:26.469780|{"userid": 8, "qid": "AI1", "qcount": 4}
 2021-12-28 19:24:03.031595|{"userid": 8, "message": "Home Page"}
 2021-12-28 19:24:32.544448|{"userid": 8, "qid": "FE3", "qcount": 5}
+2021-12-28 19:25:49.805661|{"userid": 8, "qid": "FE3", "qcount": "1", "startTime": "2021-12-28 19:23:25.864015", "endTime": "2021-12-28 19:25:49.196527", "levelofdifficulty": "Easy", "chapter": "Fraction", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "3", "wronghintcount": "0", "score": "25"}
