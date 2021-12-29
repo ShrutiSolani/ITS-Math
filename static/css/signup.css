@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Raleway:400,700');
+@import url("https://fonts.googleapis.com/css?family=Raleway:400,700");
 
 * {
   box-sizing: border-box;
@@ -21,11 +21,12 @@ body {
 
 .screen {
   /* background-color: #AAD8D3; */
-  background-color: #0070BB;
+  background-color: #0070bb;
   position: relative;
+  margin-top: 60px;
   height: 700px;
   width: 460px;
-  box-shadow: 0px 0px 24px #0070BB;
+  box-shadow: 0px 0px 24px #0070bb;
 }
 
 .screen__content {
@@ -53,7 +54,7 @@ body {
 .screen__background__shape1 {
   height: 660px;
   width: 620px;
-  background: #FFF;
+  background: #fff;
   top: -50px;
   right: 120px;
   border-radius: 0 72px 0 0;
@@ -62,7 +63,7 @@ body {
 .screen__background__shape2 {
   height: 620px;
   width: 620px;
-  background: #0070BB;
+  background: #0070bb;
   top: -272px;
   right: 0;
   border-radius: 32px;
@@ -101,25 +102,25 @@ body {
 .login__icon {
   position: absolute;
   top: 30px;
-  color: #0070BB;
+  color: #0070bb;
 }
 
 .login__input {
   border: none;
-  border-bottom: 2px solid #0070BB;
+  border-bottom: 2px solid #0070bb;
   background: none;
   padding: 10px;
   padding-left: 24px;
   font-weight: 700;
   width: 75%;
-  transition: .2s;
+  transition: 0.2s;
 }
 
 .login__input:active,
 .login__input:focus,
 .login__input:hover {
   outline: none;
-  border-bottom-color: #0070BB;
+  border-bottom-color: #0070bb;
 }
 
 .login__submit {
@@ -128,29 +129,29 @@ body {
   margin-top: 10px;
   padding: 10px 20px;
   border-radius: 26px;
-  border: 1px solid #0070BB;
+  border: 1px solid #0070bb;
   text-transform: uppercase;
   font-weight: 700;
   display: flex;
   align-items: center;
   width: 100%;
   color: #212529;
-  box-shadow: 0px 2px 2px #0070BB;
+  box-shadow: 0px 2px 2px #0070bb;
   cursor: pointer;
-  transition: .2s;
+  transition: 0.2s;
 }
 
 .login__submit:active,
 .login__submit:focus,
 .login__submit:hover {
-  border-color: #0070BB;
+  border-color: #0070bb;
   outline: none;
 }
 
 .button__icon {
   font-size: 24px;
   margin-left: auto;
-  color: #0070BB;
+  color: #0070bb;
 }
 
 .social-login {
@@ -173,7 +174,7 @@ body {
   padding: 20px 10px;
   color: #000;
   text-decoration: none;
-  text-shadow: 0px 0px 8px #0070BB;
+  text-shadow: 0px 0px 8px #0070bb;
 }
 
 .social-login__icon:hover {
