@@ -23,3 +23,4 @@ abc
 2022-01-01 14:46:35.315866|{"userid": 10, "message": "Logged In"}
 2022-01-01 14:46:37.060997|{"userid": 10, "message": "Home Page"}
 2022-01-01 14:47:04.850633|{"userid": 10, "qid": "AE3", "qcount": 1}
+2022-01-01 14:47:39.631206|{"userid": 10, "qid": "AE3", "qcount": "1", "startTime": "2022-01-01 14:47:03.970992", "endTime": "2022-01-01 14:47:38.857151", "levelofdifficulty": "Easy", "chapter": "Algebra", "hintCount": "1", "h1time": "2022-01-01 14:47:25.677000", "h2time": 0, "diffh1": "0:00:13.180151", "diffh2": 0, "wrongCount": "1", "wronghintcount": "0", "score": "20"}
