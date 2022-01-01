@@ -14,3 +14,4 @@ abc
 2022-01-01 12:07:16.910289|{"userid": 8, "message": "Logged In"}
 2022-01-01 12:07:18.508493|{"userid": 8, "message": "Home Page"}
 2022-01-01 12:07:27.384847|{"userid": 8, "message": "Profile Page"}
+2022-01-01 12:07:37.249264|{"userid": 8, "message": "Logged out"}
