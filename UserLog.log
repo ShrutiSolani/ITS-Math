@@ -34,3 +34,4 @@ abc
 2022-01-01 14:48:48.745364|{"userid": 10, "message": "Home Page"}
 2022-01-01 14:49:05.950925|{"userid": 10, "qid": "FI1", "qcount": 1}
 2022-01-01 14:49:33.500161|{"userid": 10, "qid": "FI1", "qcount": "1", "startTime": "2022-01-01 14:48:24.628106", "endTime": "2022-01-01 14:49:32.478955", "levelofdifficulty": "Intermediate", "chapter": "Fraction", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "1", "wronghintcount": "0", "score": "25"}
+2022-01-01 14:49:36.157162|{"userid": 10, "qid": "FI1", "qcount": 2}
