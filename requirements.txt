@@ -9,4 +9,4 @@ PyMySQL==1.0.2
 Werkzeug==2.0.1
 PyGithub==1.55
 python-decouple==3.5
-cryptography==2.8
+cryptography==36.0.1
