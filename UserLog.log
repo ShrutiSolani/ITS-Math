@@ -146,3 +146,4 @@ abc
 2022-01-21 09:46:25.347401|{"userid": 20, "qid": "FE1", "qcount": 2}
 2022-01-21 09:46:40.577082|{"userid": 20, "qid": "FE1", "qcount": 3}
 2022-01-21 09:46:41.968882|{"userid": 20, "message": "Home Page"}
+2022-01-21 09:46:52.816913|{"userid": 20, "message": "Logged out"}
