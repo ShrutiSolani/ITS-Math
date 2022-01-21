@@ -132,3 +132,4 @@ abc
 2022-01-21 09:39:24.950124|{"userid": 20, "message": "Home Page"}
 2022-01-21 09:42:19.146577|{"userid": 20, "message": "Logged In"}
 2022-01-21 09:42:22.006569|{"userid": 20, "message": "Home Page"}
+2022-01-21 09:42:39.478448|{"userid": 20, "qid": "AI1", "qcount": 1}
