@@ -32,7 +32,6 @@ swal("Oops!", "Checkout hint for help", "error");
 
 function checkRem(i){
 if(document.getElementsByTagName("input")[i].value == ans[i]){
-<!-- alert("Correct"); -->
 $(x[i]).show();
 $(y[i]).hide();
 document.getElementsByClassName("step0")[i].classList.add("active");
@@ -57,7 +56,7 @@ swal("Oops!", "Checkout hint for help", "error");
 {% block content %}
 
 {% for i in range(0,3,2) %}
-<h5 class="card-title">{{easy.q[i]}}</h5>
+<h5 class="card-title easy_qts">{{easy.q[i]}}</h5>
 {{ easy.label1 }}: <input type="text" class="quo"  required onchange="checkQuo({{ i }});">
 <i class="fal fa-check correct fa-2x" style="display: none; color: green;"></i>
 <i class="fal fa-times wrong fa-2x" style="display: none; color: red"></i>
@@ -68,7 +67,3 @@ swal("Oops!", "Checkout hint for help", "error");
 <br><br>
 {% endfor %}
 {% endblock %}
-
-<!-- {% block hint %}
-<img src="{{ url_for('static', filename = 'images/longDivision.png') }}" alt="" style="margin-left: 30%;">
-{% endblock %} -->

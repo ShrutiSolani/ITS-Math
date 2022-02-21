@@ -238,7 +238,7 @@ function wrong(){
 {% block content %}
 <h5 class="card-title">{{ answer.que }}</h5>
 <h5 class="card-title">If fraction 1 is greater enter <b>1</b>. If fraction 2 is greater enter <b>2</b>. If equivalent then enter <b>3</b>.</h5>
-<br><br>
+<br>
 <label for="quo1" style="display:none;" class="ryt1">LCM:</label>
 <input type="text" id="quo1" name="quo" maxlength="8" size="2" onblur="check0();" class="ryt1" style="display:none;">
 <i class="fal fa-check correct fa-2x" style="display: none; color: green;"></i>
@@ -271,6 +271,6 @@ function wrong(){
 <input type="text" id="quo2" name="quo" maxlength="8" size="2" onblur="check5();" required>{{ answer.f2 }}
 <i class="fal fa-check correct fa-2x" style="display: none; color: green;"></i>
 <i class="fal fa-times wrong fa-2x" style="display: none; color: red"></i>
-<br><br>
+<br>
 
 {% endblock %}

@@ -21,7 +21,7 @@
 </head>
 
 <body>
-  <nav id="n1" class="navbar navbar-expand-lg navbar-light mb-3 navbar-fixed-top nav white">
+  <nav id="n1" class="navbar navbar-expand-lg navbar-light mb-3 navbar-fixed-top nav blue">
     <a class="navbar-brand" href="#">PhiloMath</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -30,14 +30,14 @@
     <div class="collapse navbar-collapse " id="navbarSupportedContent">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link a1" href="{{ url_for('home_bp.login') }}">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link a1" href="#features">Features</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link a1" href="#">Contact</a>
-        </li>
+					<a class="nav-link a1" id="home_nav" href="#">Home</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link a1" href="{{ url_for('home_bp.profile') }}">Profile</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link a1" href="/logout">Logout</a>
+				</li>
       </ul>
     </div>
   </nav>
@@ -92,59 +92,6 @@
 
     </div>
   </section>
-  <!-- <section id="contacts" class="sec blue" style="padding: 3rem;">
-
-    <div class="container" style="border-radius: 30px;background-color:blanchedalmond;">
-
-      <div style="padding-top: 30px;">
-        <h1 style="text-align: center;color: #0070BB;">Get in touch!</h1>
-        <p style="font-weight: bolder ;color: #0070BB;text-align: center;">Contact us for a quote, help at to join the team</p>
-      </div>
-
-      <div class="row" style="padding:3% 5%;">
-        <div class="col-lg-4 cpl-md-4 col-sm-12">
-          <div style="display: flex;flex-direction: column;justify-content: center;align-items: center;margin-bottom: 1rem;">
-            <i class="fas fa-map-marker-alt fa-3x" style="color:#0070BB;margin-bottom: 5px;"></i>
-            <h6 style="color: gray;font-weight: bolder ;">102 Street 2714 Don</h6>
-            <h6 style="color: gray;font-weight: bolder ;">102 Street 2714 Don</h6>
-            <h6 style="color: gray;font-weight: bolder ;">102 Street 2714 Don</h6>
-          </div>
-        </div>
-
-        <div class="col-lg-4 cpl-md-4 col-sm-12">
-          <div style="display: flex;flex-direction: column;justify-content: center;align-items: center;margin-bottom: 1rem;">
-            <i class="fas fa-phone-alt fa-3x" style="color:#0070BB;margin-bottom: 5px;"></i>
-            <h6 style="color: gray;font-weight: bolder ;">+02 1234 567</h6>
-            <h6 style="color: gray;font-weight: bolder ;">+02 1234 568</h6>
-            <h6 style="color: gray;font-weight: bolder ;">+02 1234 569</h6>
-          </div>
-        </div>
-
-        <div class="col-lg-4 cpl-md-4 col-sm-12">
-          <div style="display: flex;flex-direction: column;justify-content: center;align-items: center;">
-            <i class="fas fa-envelope fa-3x" style="color:#0070BB;margin-bottom: 5px;"></i>
-            <h6 style="color: gray;font-weight: bolder ;">Contact1@gmail.com</h6>
-            <h6 style="color: gray;font-weight: bolder ;">Contact2@gmail.com</h6>
-            <h6 style="color: gray;font-weight: bolder ;">Contact3@gmail.com</h6>
-          </div>
-        </div>
-      </div>
-
-      <form>
-        <div class="row" style="padding: 1rem 2rem;">
-          <div class="col-lg-6 col-md-12 col-sm-12">
-            <input style=" width: 100%;color: blue;" placeholder="Your Name" type="text" id="name"><br>
-            <input style="width: 100%;color: blue;" placeholder="Email" type="email" id="mail"><br>
-            <input style="  width: 100%;color: blue;" placeholder="Phone" type="text" id="phone"><br>
-          </div>
-          <div class="col-lg-6 col-md-12 col-sm-12">
-            <textarea style="border: gray; height: 88%;width: 100%;" placeholder="Message" id="msg"></textarea><br>
-          </div>
-          <button style="color:white;margin-top: 30px; width: 100%;font-size: 25px;background-color:#0070BB;padding: 12px 7px;">Send Message</button>
-        </div>
-      </form>
-    </div>
-  </section> -->
   <footer class="page-footer font-small blue pt-4">
     <div class="footer-copyright text-center py-3">
       <a href="https://storyset.com/" style="color: white;">Illustrations by Storyset</a>

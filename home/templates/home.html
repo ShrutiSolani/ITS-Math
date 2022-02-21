@@ -1,24 +1,44 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Home</title>
-	<link rel="stylesheet" href="">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap" rel="stylesheet">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous" />
-	<link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
-</head>
-
-<body>
-	<nav id="n1" class="navbar navbar-expand-lg navbar-light mb-3 navbar-fixed-top nav white">
+    <title>Home</title>
+    <link rel="stylesheet" href="" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+      integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw=="
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/home.css') }}"
+    />
+  </head>
+  <body>
+    <!-- <nav id="n1"  class="navbar navbar-expand-lg navbar-light mb-3 navbar-fixed-top nav white">
 		<a class="navbar-brand" href="#">PhiloMath</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
@@ -37,87 +57,204 @@
 				</li>
 			</ul>
 		</div>
-	</nav>
+	</nav> -->
+    <nav
+      id="n1"
+      class="navbar navbar-expand-lg navbar-light mb-3 navbar-fixed-top nav"
+    >
+      <a class="navbar-brand" href="#">PhiloMath</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-	<div id="board">
-		<div class="container-fluid">
-			<div id="div-top">
-				<div id="date-div">
-					<h1 id="date"></h1>
-				</div>
-				{% with messages = get_flashed_messages() %}
-					{% if messages %}
-						<ul class=flashes style="color: white;margin-top:70px;margin-right: 2rem;font-size:2rem ;">
-						{% for message in messages %}
-						<li>{{ message }}</li>
-						{% endfor %}
-						</ul>
-					{% endif %}
-				{% endwith %}
-				<div id="name">
-					<div id="name-div">
-						<h1>Hello {{ name.name }}</h1>
-					</div>
-				</div>
-			</div>
-			<div id="quote">
-				<h1 id="quot">The more you practice and study, the better you are... so I still practice and study all the time.</h1>
-				<h3 id="author">-Cyndi Lauper</h3>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link a1" id="home_nav" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link a1" href="{{ url_for('home_bp.profile') }}"
+              >Profile</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link a1" href="/logout">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
 
-			</div>
-			<div class="col-lg-12 col-md-12 col-12 d-flex justify-content-around align-items-center mt-5">
-				<a href="#algs"><button type="button" class="btn chpt" style="color:#fbf7f5!important;font-size: 1.5rem;border-radius:50px;height:90px;width:200px;padding:5px;background-color: transparent;border:1px solid #fbf7f5;">Algebra</button></a>
-				<a href="#fracs"><button type="button" class="btn chpt" style="color:#fbf7f5!important;font-size: 1.5rem;border-radius:50px;height:90px;width:200px;padding:5px;background-color: transparent;border:1px solid #fbf7f5;">Fraction</button></a>
-			</div>
-		</div>
-	</div>
-	<script>
-		var d = new Date();
-		document.getElementById("date").innerHTML = d.toDateString();
-	</script>
+    <div id="board">
+      <div id="div-top">
+        <div id="date-div">
+          <h1 id="date">date</h1>
+        </div>
 
-	<div class="main">
-		<div class="container-fluid white" id="fracs">
-			<h1 style="text-align:center; margin: 25px 0 10px 0;">Fractions</h1>
-			<div class="row">
-				<div class="col-lg-5 col-md-12 col-11" id="leftsection">
-					<img src="{{ url_for('static', filename = 'images/fractionbg.jpg') }}" style="padding: 5px;">
-				</div>
-				<div class="col-lg-7 col-md-12 col-11" id="rightsection">
-					<h3 style="text-align: justify;">fractions are defined as the parts of a whole. The whole can
-						be a number or any specific value or a thing. In other words,
-						it is also termed as a portion or section of any quantity.
-						It is denoted by using ‘/’ symbol, such as a/b. For example,
-						in 2/4 is a fraction where the upper part denotes the numerator
-						and lower part is the denominator.</h3>
-					<div class="col-lg-12 col-md-12 col-12 d-flex justify-content-around align-items-center mt-5">
-						<a href="{{ url_for('choice_bp.fraction_easy') }}"><button type="button" class="btn signup blue" style="color:white!important;font-size: 1.5rem;border-radius:50px;height:90px;width:200px;padding:5px">EASY</button></a>
-						<a href="{{ url_for('choice_bp.fraction_intermediate') }}"><button type="button" class="btn signup blue" style="color:white!important;font-size: 1.5rem;border-radius:50px;height:90px;width:200px;padding:5px;">INTERMEDIATE</button></a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="alg">
-		<div class="container-fluid blue" id="algs">
-			<h1 style="text-align:center;color:white; margin: 25px 0 10px 0;">Algebra</h1>
-			<div class="row">
-				<div class="col-lg-5 col-md-12 col-11" id="leftsection">
-					<img src="{{ url_for('static', filename = 'images/algebra_home.png') }}" style="padding: 5px;">
-				</div>
-				<div class="col-lg-7 col-md-12 col-11" id="rightsection">
-					<h3 style="color:white; text-align: justify;">With Algebra you play with letters, numbers and symbols, and you also get to
-						find secret things! And once you learn some of the "tricks",
-						it becomes a fun challenge to work out how to use your skills
-						in solving each "puzzle".</h3>
-					<div class="col-lg-12 col-md-12 col-12 d-flex justify-content-around align-items-center mt-5">
-						<a href="{{ url_for('choice_bp.algebra_easy') }}"><button type="button" class="btn signup white" style="color:black!important;font-size: 1.5rem;border-radius:50px;height:90px;width:200px;padding:5px">EASY</button></a>
-						<a href="{{ url_for('choice_bp.algebra_intermediate') }}"><button type="button" class="btn signup white" style="color:black!important;font-size: 1.5rem;border-radius:50px;height:90px;width:200px;padding:5px;">INTERMEDIATE</button></a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</body>
+        <div id="name">
+          <div id="name-div">
+            <h1>Hello {{ name.name }}</h1>
+          </div>
+        </div>
+      </div>
+      <div id="quote">
+        <h1 id="quot">
+          The more you practice and study, the better you are... so I still
+          practice and study all the time.
+        </h1>
+        <h3 id="author">-Cyndi Lauper</h3>
 
+        <div class="col-lg-12 col-md-12 col-12 flex-btn mt-5">
+          <a href="#algs"
+            ><button type="button" class="btn chpt signup board-btn">
+              Algebra
+            </button></a
+          >
+          <a href="#fracs"
+            ><button type="button" class="btn chpt signup board-btn">
+              Fraction
+            </button></a
+          >
+        </div>
+      </div>
+    </div>
+    <div id="fracs" class="">
+      <h1 style="text-align: center; margin-bottom: 20px">Fraction</h1>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-6 col-md-12 col-sm-12" style="margin-bottom: 1rem">
+            <img
+              style="height: 100%; width: 100%"
+              src="{{ url_for('static', filename = 'images/fractionbg.jpg') }}"
+              style="padding: 5px"
+            />
+          </div>
+          <div class="col-lg-6 col-md-12 col-sm-12">
+            <h3
+              style="
+                text-align: justify;
+                border: 1px solid #0070bb;
+                padding: 1rem;
+                border-radius: 10px;
+                border: 2px solid #0070bb;
+              "
+            >
+              Fractions are defined as the parts of a whole. The whole can be a
+              number or any specific value or a thing. In other words, it is
+              also termed as a portion or section of any quantity. It is denoted
+              by using ‘/’ symbol, such as a/b. For example, in 2/4 is a
+              fraction where the upper part denotes the numerator and lower part
+              is the denominator.
+            </h3>
+            <div class="col-lg-12 col-md-12 col-12 flex-btn mt-5">
+              <a
+                class="frac-left"
+                href="{{ url_for('choice_bp.fraction_easy') }}"
+                ><button
+                  type="button"
+                  class="btn signup blue frac-btn"
+                  style=""
+                >
+                  EASY
+                </button></a
+              >
+              <a
+                class="frac-right"
+                href="{{ url_for('choice_bp.fraction_intermediate') }}"
+                ><button
+                  type="button"
+                  class="btn signup blue frac-btn"
+                  style=""
+                >
+                  INTERMEDIATE
+                </button></a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="algs" class="" style="background-color: #0070bb">
+      <h1 style="text-align: center; margin-bottom: 20px; color: white">
+        Algebra
+      </h1>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-6 col-md-12 col-sm-12" style="margin-bottom: 1rem">
+            <img
+              style="height: 100%; width: 100%"
+              src="{{ url_for('static', filename = 'images/algebra_home.png') }}"
+              style="padding: 5px"
+            />
+          </div>
+          <div class="col-lg-6 col-md-12 col-sm-12">
+            <h3
+              style="
+                color: white;
+                text-align: justify;
+                padding: 1rem;
+                border-radius: 10px;
+                border: 2px solid white;
+              "
+            >
+              With Algebra you play with letters, numbers and symbols, and you
+              also get to find secret things! And once you learn some of the
+              "tricks", it becomes a fun challenge to work out how to use your
+              skills in solving each "puzzle".
+            </h3>
+            <div class="col-lg-12 col-md-12 col-sm-12 flex-btn mt-5">
+              <a class="alg-left" href="{{ url_for('choice_bp.algebra_easy') }}"
+                ><button
+                  type="button"
+                  class="btn signup white alg-btn"
+                  style=""
+                >
+                  EASY
+                </button></a
+              >
+              <a
+                class="alg-right"
+                href="{{ url_for('choice_bp.algebra_intermediate') }}"
+                ><button
+                  type="button"
+                  class="btn signup white alg-btn"
+                  style=""
+                >
+                  INTERMEDIATE
+                </button></a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+      integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+      integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      var d = new Date();
+      document.getElementById("date").innerHTML = d.toDateString();
+    </script>
+  </body>
 </html>
