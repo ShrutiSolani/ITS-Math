@@ -80,13 +80,7 @@
             <div class="modal-body">
 
               <img src="" alt="" style="width:80%;" id="hint_img">
-
-              <!-- <p>Select the option you think would be the beginning step of this problem</p>
-                  <button class="btn btn-info" style="width: 100%; margin: 10px auto;">Option 1</button>
-                  <button class="btn btn-info" style="width: 100%; margin: 10px auto;">Option 1</button>
-                  <button class="btn btn-info" style="width: 100%; margin: 10px auto;">Option 1</button>
-                  <button class="btn btn-info" style="width: 100%; margin: 10px auto;">Option 1</button> -->
-              <!-- <p>Some text in the modal.</p> -->
+              {% endblock %}
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -178,16 +172,6 @@
       var getTimes=[];
       $('#hint-btn').click(function() {
         getTimes[hint_count++]=new Date().getTime();
-        // hint_count++;
-        // var time = new Date();
-        // $.get('/getTime', {
-        //   'quesid': quesid,
-        //   'hint_count': hint_count,
-        //   'time': time
-        // }, function(response) {
-        //   console.log("done");
-        // });
-
       })
 
       
@@ -241,9 +225,7 @@
               window.location.href = "{{ url_for('home_bp.home') }}";
             }
           });
-          console.log("After ajax call");
-        }
-        else {
+        } else {
           $.get('/endTime', {
             'quesid': quesid,
             'qcount': Number(sessionStorage.count),

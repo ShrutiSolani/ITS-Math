@@ -32,7 +32,6 @@ swal("Oops!", "Checkout hint for help", "error");
 
 function checkRem(i){
 if(document.getElementsByTagName("input")[i].value == ans[i]){
-<!-- alert("Correct"); -->
 $(x[i]).show();
 $(y[i]).hide();
 document.getElementsByClassName("step0")[i].classList.add("active");
@@ -68,7 +67,3 @@ swal("Oops!", "Checkout hint for help", "error");
 <br><br>
 {% endfor %}
 {% endblock %}
-
-<!-- {% block hint %}
-<img src="{{ url_for('static', filename = 'images/longDivision.png') }}" alt="" style="margin-left: 30%;">
-{% endblock %} -->
