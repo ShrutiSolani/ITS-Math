@@ -24,7 +24,6 @@ fractions1_bp = Blueprint("fractions1_bp", __name__, template_folder="templates"
 log_object = Log()
 startTym = datetime.datetime.now()
 
-
 @fractions1_bp.route("/divide_with_whole")
 def divide_with_whole():
     global count
