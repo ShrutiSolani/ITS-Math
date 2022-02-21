@@ -1,1 +1,240 @@
-abc
+{"userid": 8, "message": "Home Page"}
+2021-12-29 18:49:48.691150|{"userid": 8, "message": "Logged In"}
+2021-12-29 18:49:50.009913|{"userid": 8, "message": "Home Page"}
+2021-12-29 18:50:25.073445|{"userid": 8, "qid": "FI1", "qcount": 1}
+2021-12-29 18:50:52.176433|{"userid": 8, "message": "Logged In"}
+2021-12-29 18:50:53.524909|{"userid": 8, "message": "Home Page"}
+2021-12-29 18:51:17.756102|{"userid": 8, "message": "Home Page"}
+2021-12-29 18:51:46.468620|{"userid": 8, "qid": "FI1", "qcount": 2}
+2021-12-29 18:52:33.682939|{"userid": 8, "message": "Home Page"}
+2021-12-29 18:52:54.268371|{"userid": 8, "qid": "FE1", "qcount": 3}
+2021-12-29 19:14:24.929492|{"userid": 8, "message": "Logged In"}
+2021-12-29 19:14:26.269187|{"userid": 8, "message": "Home Page"}
+2022-01-01 12:07:16.910289|{"userid": 8, "message": "Logged In"}
+2022-01-01 12:07:18.508493|{"userid": 8, "message": "Home Page"}
+2022-01-01 12:07:27.384847|{"userid": 8, "message": "Profile Page"}
+2022-01-01 12:07:37.249264|{"userid": 8, "message": "Logged out"}
+2022-01-01 14:24:11.846566|{"userid": 10, "message": "Logged In"}
+2022-01-01 14:24:13.137180|{"userid": 10, "message": "Home Page"}
+2022-01-01 14:43:53.726154|{"userid": 9, "message": "Logged In"}
+2022-01-01 14:43:55.578749|{"userid": 9, "message": "Home Page"}
+2022-01-01 14:44:16.258414|{"userid": 9, "message": "Logged out"}
+2022-01-01 14:46:35.315866|{"userid": 10, "message": "Logged In"}
+2022-01-01 14:46:37.060997|{"userid": 10, "message": "Home Page"}
+2022-01-01 14:47:04.850633|{"userid": 10, "qid": "AE3", "qcount": 1}
+2022-01-01 14:47:39.631206|{"userid": 10, "qid": "AE3", "qcount": "1", "startTime": "2022-01-01 14:47:03.970992", "endTime": "2022-01-01 14:47:38.857151", "levelofdifficulty": "Easy", "chapter": "Algebra", "hintCount": "1", "h1time": "2022-01-01 14:47:25.677000", "h2time": 0, "diffh1": "0:00:13.180151", "diffh2": 0, "wrongCount": "1", "wronghintcount": "0", "score": "20"}
+2022-01-01 14:47:42.959727|{"userid": 10, "qid": "AE3", "qcount": 2}
+2022-01-01 14:48:02.149821|{"userid": 10, "qid": "AE3", "qcount": "2", "startTime": "2022-01-01 14:47:42.199080", "endTime": "2022-01-01 14:48:01.469144", "levelofdifficulty": "Easy", "chapter": "Algebra", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "25"}
+2022-01-01 14:48:05.034020|{"userid": 10, "qid": "AE3", "qcount": 3}
+2022-01-01 14:48:22.019030|{"userid": 10, "qid": "AE3", "qcount": "3", "startTime": "2022-01-01 14:48:04.182245", "endTime": "2022-01-01 14:48:21.286161", "levelofdifficulty": "Easy", "chapter": "Algebra", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "25"}
+2022-01-01 14:48:25.397928|{"userid": 10, "qid": "AE3", "qcount": 4}
+2022-01-01 14:48:43.121373|{"userid": 10, "qid": "AE3", "qcount": "4", "startTime": "2022-01-01 14:48:24.628106", "endTime": "2022-01-01 14:48:42.366142", "levelofdifficulty": "Easy", "chapter": "Algebra", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "25"}
+2022-01-01 14:48:46.596138|{"userid": 10, "qid": "AE3", "q1": "20", "q2": "25", "q3": "25", "q4": "25", "total": 95}
+2022-01-01 14:48:48.745364|{"userid": 10, "message": "Home Page"}
+2022-01-01 14:49:05.950925|{"userid": 10, "qid": "FI1", "qcount": 1}
+2022-01-01 14:49:33.500161|{"userid": 10, "qid": "FI1", "qcount": "1", "startTime": "2022-01-01 14:48:24.628106", "endTime": "2022-01-01 14:49:32.478955", "levelofdifficulty": "Intermediate", "chapter": "Fraction", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "1", "wronghintcount": "0", "score": "25"}
+2022-01-01 14:49:36.157162|{"userid": 10, "qid": "FI1", "qcount": 2}
+2022-01-01 14:49:58.893441|{"userid": 10, "qid": "FI1", "qcount": "2", "startTime": "2022-01-01 14:48:24.628106", "endTime": "2022-01-01 14:49:58.051673", "levelofdifficulty": "Intermediate", "chapter": "Fraction", "hintCount": "1", "h1time": "2022-01-01 14:49:40.013000", "h2time": 0, "diffh1": "0:00:18.038673", "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "20"}
+2022-01-01 14:50:01.555441|{"userid": 10, "qid": "FI1", "qcount": 3}
+2022-01-01 14:50:08.018545|{"userid": 10, "message": "Home Page"}
+2022-01-01 14:50:12.466430|{"userid": 10, "message": "Profile Page"}
+2022-01-04 15:45:22.446622|{"userid": 12, "message": "Logged In"}
+2022-01-04 15:45:24.071593|{"userid": 12, "message": "Home Page"}
+2022-01-04 15:46:10.862645|{"userid": 12, "message": "Logged out"}
+2022-01-04 15:48:53.876657|{"userid": 13, "message": "Logged In"}
+2022-01-04 15:48:55.372507|{"userid": 13, "message": "Home Page"}
+2022-01-04 15:49:34.342981|{"userid": 13, "message": "Logged out"}
+2022-01-04 15:52:28.041999|{"userid": 14, "message": "Logged In"}
+2022-01-04 15:52:29.471368|{"userid": 14, "message": "Home Page"}
+2022-01-04 15:52:41.350853|{"userid": 14, "message": "Logged out"}
+2022-01-05 07:31:43.351348|{"userid": 18, "message": "Logged In"}
+2022-01-05 07:31:45.068384|{"userid": 18, "message": "Home Page"}
+2022-01-05 07:32:23.929169|{"userid": 18, "qid": "AE3", "qcount": 1}
+2022-01-05 07:32:45.847335|{"userid": 18, "qid": "AE3", "qcount": 1}
+2022-01-05 07:33:08.635401|{"userid": 18, "qid": "AE3", "qcount": 2}
+2022-01-05 07:33:26.627342|{"userid": 18, "qid": "AE3", "qcount": 2}
+2022-01-05 07:33:47.951344|{"userid": 18, "qid": "AE3", "q1": "25", "q2": "20", "q3": "25", "q4": "25", "total": 95}
+2022-01-05 07:33:50.683338|{"userid": 18, "message": "Home Page"}
+2022-01-05 07:34:10.078930|{"userid": 18, "qid": "FI1", "qcount": 1}
+2022-01-05 07:34:44.644107|{"userid": 18, "qid": "FI1", "qcount": 1}
+2022-01-05 07:35:29.711186|{"userid": 18, "qid": "FI1", "qcount": 2}
+2022-01-05 07:36:01.157492|{"userid": 18, "qid": "FI1", "qcount": 2}
+2022-01-05 07:36:24.857620|{"userid": 18, "qid": "FI1", "q1": "15", "q2": "20", "q3": "25", "q4": "25", "total": 85}
+2022-01-05 07:36:27.473616|{"userid": 18, "message": "Home Page"}
+2022-01-05 07:36:43.885825|{"userid": 18, "qid": "FE3", "qcount": 3}
+2022-01-05 07:37:23.530899|{"userid": 18, "qid": "FE3", "qcount": 4}
+2022-01-05 07:37:46.451377|{"userid": 18, "qid": "FE3", "qcount": 5}
+2022-01-05 07:38:11.484083|{"userid": 18, "qid": "FE3", "qcount": 3}
+2022-01-05 07:38:34.419289|{"userid": 18, "qid": "FE3", "q1": "25", "q2": "20", "q3": "25", "q4": "20", "total": 90}
+2022-01-05 07:38:36.877991|{"userid": 18, "message": "Home Page"}
+2022-01-05 07:38:45.259369|{"userid": 18, "qid": "AI2", "qcount": 3}
+2022-01-05 07:39:33.179413|{"userid": 18, "qid": "AI2", "qcount": 4}
+2022-01-05 07:40:38.427341|{"userid": 18, "qid": "AI2", "qcount": 3}
+2022-01-05 07:46:12.349770|{"userid": 18, "qid": "AI2", "qcount": 5}
+2022-01-05 07:47:05.895367|{"userid": 18, "qid": "AI2", "q1": "25", "q2": "19", "q3": "25", "q4": "25", "total": 94}
+2022-01-05 07:47:08.870216|{"userid": 18, "message": "Home Page"}
+2022-01-05 07:47:24.719346|{"userid": 18, "message": "Home Page"}
+2022-01-05 07:47:33.826141|{"userid": 18, "message": "Logged out"}
+2022-01-05 07:49:51.143608|{"userid": 19, "message": "Logged In"}
+2022-01-05 07:49:52.531402|{"userid": 19, "message": "Home Page"}
+2022-01-05 07:50:11.863988|{"userid": 19, "qid": "FE1", "qcount": 6}
+2022-01-05 07:50:27.874793|{"userid": 19, "qid": "FE1", "qcount": 4}
+2022-01-05 07:50:42.795337|{"userid": 19, "qid": "FE1", "qcount": 7}
+2022-01-05 07:51:02.519599|{"userid": 19, "qid": "FE1", "qcount": 5}
+2022-01-05 07:51:14.631275|{"userid": 19, "qid": "FE1", "q1": "25", "q2": "25", "q3": "20", "q4": "25", "total": 95}
+2022-01-05 07:51:16.994236|{"userid": 19, "message": "Home Page"}
+2022-01-05 07:51:32.506230|{"userid": 19, "qid": "AI1", "qcount": 6}
+2022-01-05 07:52:55.478501|{"userid": 19, "qid": "AI1", "qcount": 7}
+2022-01-05 07:53:28.095466|{"userid": 19, "qid": "AI1", "qcount": 4}
+2022-01-05 07:55:04.727657|{"userid": 19, "qid": "AI1", "qcount": 5}
+2022-01-05 07:56:40.507763|{"userid": 19, "qid": "AI1", "q1": "20", "q2": "25", "q3": "15", "q4": "15", "total": 75}
+2022-01-05 07:56:42.998633|{"userid": 19, "message": "Home Page"}
+2022-01-05 07:57:11.869831|{"userid": 19, "qid": "FI5", "qcount": 6}
+2022-01-05 07:58:33.849116|{"userid": 19, "qid": "FI5", "qcount": 8}
+2022-01-05 07:59:02.921690|{"userid": 19, "message": "Home Page"}
+2022-01-05 07:59:08.347472|{"userid": 19, "message": "Logged out"}
+2022-01-05 08:42:44.778001|{"userid": 16, "message": "Logged In"}
+2022-01-05 08:42:46.257036|{"userid": 16, "message": "Home Page"}
+2022-01-05 08:59:51.098558|{"userid": 16, "qid": "AE1", "qcount": 1}
+2022-01-05 09:01:37.389432|{"userid": 16, "qid": "AE1", "qcount": 2}
+2022-01-05 09:02:42.098724|{"userid": 16, "qid": "AE1", "qcount": 1}
+2022-01-05 09:03:36.505304|{"userid": 16, "qid": "AE1", "qcount": 2}
+2022-01-05 09:04:21.977042|{"userid": 16, "qid": "AE1", "q1": "25", "q2": "20", "q3": "20", "q4": "25", "total": 90}
+2022-01-05 09:04:24.762456|{"userid": 16, "message": "Home Page"}
+2022-01-05 09:20:35.347250|{"userid": 16, "message": "Logged In"}
+2022-01-05 09:20:37.123938|{"userid": 16, "message": "Home Page"}
+2022-01-05 09:20:44.651434|{"userid": 16, "qid": "AE2", "qcount": 3}
+2022-01-05 09:22:27.251219|{"userid": 16, "qid": "AE2", "qcount": 4}
+2022-01-05 09:24:20.698780|{"userid": 16, "qid": "AE2", "qcount": 5}
+2022-01-05 09:26:01.894926|{"userid": 16, "qid": "AE2", "qcount": 6}
+2022-01-05 09:27:16.276804|{"userid": 16, "qid": "AE2", "q1": "20", "q2": "20", "q3": "15", "q4": "20", "total": 75}
+2022-01-05 09:27:18.749161|{"userid": 16, "message": "Home Page"}
+2022-01-06 08:26:26.125254|{"userid": 17, "message": "Logged In"}
+2022-01-06 08:26:27.893367|{"userid": 17, "message": "Home Page"}
+2022-01-06 08:26:56.567934|{"userid": 17, "qid": "FE1", "qcount": 1}
+2022-01-06 08:27:54.483764|{"userid": 17, "qid": "FE1", "qcount": 1}
+2022-01-06 08:29:49.606554|{"userid": 17, "qid": "FE1", "qcount": 2}
+2022-01-06 08:30:02.520934|{"userid": 17, "qid": "FE1", "qcount": 2}
+2022-01-06 08:30:30.930262|{"userid": 17, "qid": "FE1", "q1": "25", "q2": "20", "q3": "25", "q4": "20", "total": 90}
+2022-01-06 08:30:33.902009|{"userid": 17, "message": "Home Page"}
+2022-01-06 08:30:45.829955|{"userid": 17, "qid": "FE3", "qcount": 3}
+2022-01-06 08:31:23.637357|{"userid": 17, "qid": "FE3", "qcount": 3}
+2022-01-06 08:32:02.912029|{"userid": 17, "qid": "FE3", "qcount": 4}
+2022-01-06 08:32:27.953551|{"userid": 17, "message": "Home Page"}
+2022-01-06 08:32:45.506934|{"userid": 17, "qid": "FE3", "qcount": 4}
+2022-01-06 08:33:04.788452|{"userid": 17, "qid": "FE3", "qcount": 5}
+2022-01-06 08:33:33.350319|{"userid": 17, "qid": "FE3", "qcount": 6}
+2022-01-06 08:35:00.531313|{"userid": 17, "qid": "FE3", "qcount": 7}
+2022-01-06 08:35:19.425707|{"userid": 17, "qid": "FE3", "q1": "25", "q2": "15", "q3": "25", "q4": "15", "total": 80}
+2022-01-06 08:35:22.419342|{"userid": 17, "message": "Home Page"}
+2022-01-21 09:39:23.349267|{"userid": 20, "message": "Logged In"}
+2022-01-21 09:39:24.950124|{"userid": 20, "message": "Home Page"}
+2022-01-21 09:42:19.146577|{"userid": 20, "message": "Logged In"}
+2022-01-21 09:42:22.006569|{"userid": 20, "message": "Home Page"}
+2022-01-21 09:42:39.478448|{"userid": 20, "qid": "AI1", "qcount": 1}
+2022-01-21 09:42:55.494824|{"userid": 20, "qid": "AE1", "qcount": 1}
+2022-01-21 09:43:02.734590|{"userid": 20, "qid": "AI1", "qcount": 2}
+2022-01-21 09:43:14.794559|{"userid": 20, "qid": "AI1", "qcount": 3}
+2022-01-21 09:43:26.094680|{"userid": 20, "qid": "FE1", "qcount": 1}
+2022-01-21 09:43:49.651847|{"userid": 20, "message": "Home Page"}
+2022-01-21 09:44:04.437313|{"userid": 20, "qid": "AE1", "qcount": 4}
+2022-01-21 09:44:06.566628|{"userid": 20, "message": "Profile Page"}
+2022-01-21 09:45:33.792057|{"userid": 20, "message": "Logged In"}
+2022-01-21 09:45:36.326123|{"userid": 20, "message": "Home Page"}
+2022-01-21 09:45:59.760370|{"userid": 20, "qid": "FE1", "qcount": 1}
+2022-01-21 09:46:25.347401|{"userid": 20, "qid": "FE1", "qcount": 2}
+2022-01-21 09:46:40.577082|{"userid": 20, "qid": "FE1", "qcount": 3}
+2022-01-21 09:46:41.968882|{"userid": 20, "message": "Home Page"}
+2022-01-21 09:46:52.816913|{"userid": 20, "message": "Logged out"}
+2022-01-24 18:58:11.407257|{"userid": 8, "message": "Logged In"}
+2022-01-24 18:58:13.095185|{"userid": 8, "message": "Home Page"}
+2022-01-24 18:58:24.256493|{"userid": 8, "message": "Home Page"}
+2022-01-24 18:58:35.075318|{"userid": 8, "message": "Home Page"}
+2022-01-24 18:59:30.024258|{"userid": 8, "qid": "FI1", "qcount": 1}
+2022-01-24 18:59:37.955072|{"userid": 8, "qid": "FI1", "qcount": 2}
+2022-01-24 19:00:37.908105|{"userid": 8, "message": "Home Page"}
+2022-01-24 19:00:55.473787|{"userid": 8, "message": "Profile Page"}
+2022-01-24 19:01:26.391044|{"userid": 8, "message": "Home Page"}
+2022-01-24 19:07:25.703920|{"userid": 8, "message": "Home Page"}
+2022-01-25 10:54:04.337367|{"userid": 8, "message": "Logged In"}
+2022-01-25 10:54:05.875875|{"userid": 8, "message": "Home Page"}
+2022-01-25 10:56:11.473797|{"userid": 8, "message": "Home Page"}
+2022-01-25 10:56:21.350232|{"userid": 8, "qid": "FI1", "qcount": 1}
+2022-01-25 10:56:48.462939|{"userid": 8, "message": "Home Page"}
+2022-01-25 11:43:27.668958|{"userid": 8, "qid": "AI1", "qcount": 1}
+2022-01-25 11:45:17.888074|{"userid": 8, "message": "Home Page"}
+2022-01-25 11:46:21.385482|{"userid": 8, "qid": "FE3", "qcount": 2}
+2022-01-25 11:47:43.889653|{"userid": 8, "message": "Home Page"}
+2022-01-25 12:14:28.532339|{"userid": 8, "message": "Logged out"}
+2022-02-07 09:40:13.044283|{"userid": 8, "message": "Logged In"}
+2022-02-07 09:40:15.288329|{"userid": 8, "message": "Home Page"}
+2022-02-07 09:40:21.397966|{"userid": 8, "message": "Logged out"}
+2022-02-07 18:46:34.403736|{"userid": 0, "message": "Logged In"}
+2022-02-07 18:46:36.379071|{"userid": 0, "message": "Home Page"}
+2022-02-07 18:47:04.613755|{"userid": 0, "qid": "AE1", "qcount": 1}
+2022-02-07 18:47:58.521946|{"userid": 0, "qid": "AE1", "qcount": 1}
+2022-02-07 18:48:18.029207|{"userid": 0, "qid": "AE1", "qcount": 2}
+2022-02-07 18:48:38.293950|{"userid": 0, "qid": "AE1", "qcount": 2}
+2022-02-07 18:48:58.288672|{"userid": 0, "message": "Home Page"}
+2022-02-07 18:49:15.205130|{"userid": 0, "message": "Profile Page"}
+2022-02-07 18:49:25.806663|{"userid": 0, "message": "Home Page"}
+2022-02-07 18:49:37.243642|{"userid": 0, "message": "Home Page"}
+2022-02-07 18:49:57.595543|{"userid": 0, "message": "Home Page"}
+2022-02-07 18:55:07.011596|{"userid": 0, "message": "Home Page"}
+2022-02-07 18:55:10.398724|{"userid": 0, "message": "Logged out"}
+2022-02-08 04:45:10.225781|{"userid": 0, "message": "Logged In"}
+2022-02-08 04:45:12.286850|{"userid": 0, "message": "Home Page"}
+2022-02-10 15:41:16.924376|{"userid": 8, "message": "Logged In"}
+2022-02-10 15:41:18.808121|{"userid": 8, "message": "Home Page"}
+2022-02-10 15:45:06.710352|{"userid": 8, "message": "Logged In"}
+2022-02-10 15:45:08.744887|{"userid": 8, "message": "Home Page"}
+2022-02-10 15:45:24.067974|{"userid": 8, "message": "Home Page"}
+2022-02-11 08:50:22.117655|{"userid": 8, "message": "Logged In"}
+2022-02-11 08:50:24.280443|{"userid": 8, "message": "Home Page"}
+2022-02-11 08:52:40.437617|{"userid": 8, "message": "Home Page"}
+2022-02-11 08:52:50.796222|{"userid": 8, "message": "Home Page"}
+2022-02-11 09:02:27.753173|{"userid": 8, "qid": "FI1", "qcount": 1}
+2022-02-11 09:03:46.577015|{"userid": 8, "message": "Home Page"}
+2022-02-11 09:03:49.550315|{"userid": 8, "message": "Logged out"}
+2022-02-14 14:10:20.214000|{"userid": 8, "message": "Logged In"}
+2022-02-14 14:10:21.750455|{"userid": 8, "message": "Home Page"}
+2022-02-14 14:11:19.162931|{"userid": 8, "qid": "FI1", "qcount": 1}
+2022-02-14 14:29:13.230492|{"userid": 8, "message": "Home Page"}
+2022-02-14 14:29:16.732388|{"userid": 8, "message": "Logged out"}
+2022-02-15 07:47:39.042429|{"userid": 8, "message": "Logged In"}
+2022-02-15 07:47:40.922739|{"userid": 8, "message": "Logged In"}
+2022-02-15 07:47:42.439862|{"userid": 8, "message": "Home Page"}
+2022-02-15 07:47:59.896714|{"userid": 8, "qid": "FI1", "qcount": 1}
+2022-02-15 07:48:31.274684|{"userid": 8, "qid": "FI1", "qcount": 1}
+2022-02-15 08:02:26.640909|{"userid": 8, "message": "Profile Page"}
+2022-02-15 08:11:40.449604|{"userid": 8, "message": "Home Page"}
+2022-02-21 12:03:51.099662|{"userid": 8, "message": "Logged In"}
+2022-02-21 12:03:53.919503|{"userid": 8, "message": "Home Page"}
+2022-02-21 12:04:47.458950|{"userid": 8, "qid": "FI1", "qcount": 1}
+2022-02-21 12:07:19.439091|{"userid": 8, "message": "Logged In"}
+2022-02-21 12:07:21.486333|{"userid": 8, "message": "Home Page"}
+2022-02-21 12:07:36.987142|{"userid": 8, "qid": "FI1", "qcount": 1}
+2022-02-21 12:07:45.039219|{"userid": 8, "qid": "FI1", "qcount": 2}
+2022-02-21 12:21:58.864785|{"userid": 8, "qid": "FI1", "qcount": "1", "startTime": "2022-02-21 12:06:56.144416", "endTime": "2022-02-21 12:21:58.123612", "levelofdifficulty": "Intermediate", "chapter": "Fraction", "hintCount": "2", "h1time": "2022-02-21 12:15:31.909000", "h2time": "2022-02-21 12:17:47.502000", "diffh1": "0:06:26.214612", "diffh2": "0:04:10.621612", "wrongCount": "1", "wronghintcount": "0", "score": "15"}
+2022-02-21 12:22:01.743750|{"userid": 8, "qid": "FI1", "qcount": 3}
+2022-02-21 12:22:36.957234|{"userid": 8, "qid": "FI1", "qcount": "2", "startTime": "2022-02-21 12:06:56.144416", "endTime": "2022-02-21 12:22:35.208074", "levelofdifficulty": "Intermediate", "chapter": "Fraction", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "25"}
+2022-02-21 12:22:38.698865|{"userid": 8, "qid": "FI1", "qcount": 4}
+2022-02-21 12:23:01.141531|{"userid": 8, "qid": "FI1", "qcount": "3", "startTime": "2022-02-21 12:06:56.144416", "endTime": "2022-02-21 12:23:00.224884", "levelofdifficulty": "Intermediate", "chapter": "Fraction", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "25"}
+2022-02-21 12:23:04.234230|{"userid": 8, "qid": "FI1", "qcount": 5}
+2022-02-21 12:23:24.678397|{"userid": 8, "qid": "FI1", "qcount": "4", "startTime": "2022-02-21 12:06:56.144416", "endTime": "2022-02-21 12:23:23.939491", "levelofdifficulty": "Intermediate", "chapter": "Fraction", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "25"}
+2022-02-21 12:23:28.569556|{"userid": 8, "qid": "FI1", "q1": "15", "q2": "25", "q3": "25", "q4": "25", "total": 90}
+2022-02-21 12:23:30.414829|{"userid": 8, "message": "Home Page"}
+2022-02-21 06:55:31.663127|{"userid": 8, "message": "Logged In"}
+2022-02-21 06:55:33.801121|{"userid": 8, "message": "Home Page"}
+2022-02-21 06:55:51.296841|{"userid": 8, "qid": "FI1", "qcount": 1}
+2022-02-21 06:56:10.598484|{"userid": 8, "qid": "FI1", "qcount": 2}
+2022-02-21 06:56:39.335440|{"userid": 8, "qid": "FI1", "qcount": 3}
+2022-02-21 06:56:58.391980|{"userid": 8, "qid": "FI1", "qcount": 1}
+2022-02-21 07:03:33.423373|{"userid": 8, "qid": "FI1", "q1": "25", "q2": "15", "q3": "25", "q4": "25", "total": 90}
+2022-02-21 07:03:36.833752|{"userid": 8, "message": "Home Page"}
+2022-02-21 12:35:03.671458|{"userid": 8, "message": "Profile Page"}
+2022-02-21 12:38:06.048232|{"userid": 8, "message": "Logged out"}
+2022-02-21 07:08:21.730961|{"userid": 8, "message": "Logged out"}
+2022-02-21 16:08:21.678683|{"userid": 8, "message": "Logged In"}
+2022-02-21 16:08:23.187564|{"userid": 8, "message": "Home Page"}
+
