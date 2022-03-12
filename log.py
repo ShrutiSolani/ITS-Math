@@ -1,5 +1,5 @@
 from datetime import datetime
-
+from cryptography.fernet import Fernet
 from github import Github
 from github.InputGitAuthor import InputGitAuthor
 from decouple import config
@@ -12,6 +12,9 @@ class Log:
     def log_entry(self, message):
         try:
             token = config('GITHUB_TOKEN')
+            key = config('CRYPT_KEY')
+            fernet = Fernet(bytes(key, 'utf-8'))
+            token = fernet.decrypt(bytes(token, 'utf-8')).decode()
             file_path = config('LOG_FILE')
             g = Github(token)
             repo = g.get_repo(config('GITHUB_REPO'))
