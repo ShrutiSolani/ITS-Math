@@ -11,13 +11,14 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <title>Practice</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/layout_easy.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename = 'css/layout.css') }}">
+  <style>
+    {% block style %}{% endblock %}
+  </style>
   <script>
-  {% block script %}{% endblock %}
+    {% block script %}{% endblock %}
   </script>
 </head>
 
@@ -43,13 +44,12 @@
     </div>
   </nav>
 
-
   <div class="container main">
-    <div class="card">
+    <div class="card" >
 
-      <div  class="card-header white" style=" display: flex;justify-content: space-between;align-items: center;color: #0070BB; background-color:rgba(0,0,0,.03);">
+      <div class="card-header white" style="display: flex;justify-content: space-between;align-items: center;color: #0070BB; background-color:rgba(0,0,0,.03);">
         <h3>{% block chapter %}{% endblock %} - {% block topic %}{% endblock %}</h3>
-        <a href="#" onclick="quit();" id="quit" class="btn btn-danger">Quit</a>
+        <a href="#" class="btn btn-danger" onclick="quit();" id="quit">Quit</a>
       </div>
 
       <div class="card1">
@@ -57,18 +57,19 @@
           <li class="step0"></li>
           <li class="step0"></li>
           <li class="step0"></li>
-          <li class="step0"></li>
         </ul>
       </div>
-
-      <div class="time-card card_body">
+      <div class="time-card" style="height: 55vh;">
         <form id="submit-form" method="POST">
-        <div class="card-body" style="width: 100%;">
+        <div class="card-body" style="width: 80%;">
+
           {% block content %}{% endblock %}
+
         </div>
 
       </div>
 
+      <!-- </div> -->
       <div class="modal fade" id="myModal" role="dialog" style="margin-top: 50px;">
         <div class="modal-dialog">
           <div class="modal-content">
@@ -78,8 +79,8 @@
 
             </div>
             <div class="modal-body">
-
-              <img src="" alt="" style="width:80%;" id="hint_img">
+              <p>Select the option you think would be the beginning step of this problem</p>
+              {% block hint %}
               {% endblock %}
             </div>
             <div class="modal-footer">
@@ -89,7 +90,7 @@
         </div>
       </div>
 
-      <div class="container toasts" >
+      <!-- <div class="container" style="margin-left: 65%;">
         <div class="toast" data-autohide="false" id="mytoast">
           <div class="toast-header">
             <strong class="mr-auto text-primary">Correct</strong>
@@ -99,7 +100,9 @@
             Keep It Up!!!
           </div>
         </div>
-      </div>
+      </div> -->
+
+
 
       <div class="card-footer text-muted green">
         <a href="#" class="btn btn-info" data-toggle="modal" data-target="#myModal" id="hint-btn">Hint</a>
@@ -108,25 +111,22 @@
         <i class="bi bi-circle-fill"></i>
         <i class="bi bi-circle-fill"></i>
         <i class="bi bi-circle-fill"></i>
-        <button type="submit" class="btn btn-success next" id="next-btn">Next</button>
+        <button type="submit" class="btn btn-success next" id="next-btn"> Next</button>
       </div>
     </div>
   </form>
   </div>
   <script>
     
-      window.onload = (event) => {
-        sessionStorage.removeItem('key');
-    };
-
+      // window.onload = (event) => {
+      //   if (sessionStorage.count) { 
+      //     sessionStorage.removeItem(count);
+      //   }
+      // };
     $(document).ready(function() {
-      let wronghint = 0;
       $('.toast').toast('hide');
       var x = sessionStorage.count;
-      console.log("count " + x);
-      if(Number(sessionStorage.count) > 4){
-        sessionStorage.count = 0;
-      }
+      console.log(x);
       for (i = 0; i < Number(sessionStorage.count); i++) {
         document.getElementsByClassName("bi")[i].classList.add("done");
       }
@@ -164,19 +164,29 @@
 
       })
 
-      var quesid = "{{ easy.qid }}";
+      var quesid = "{{ answer.qid }}";
       var data = {
         qid: quesid
       };
+
       var hint_count = 0;
       var getTimes=[];
       $('#hint-btn').click(function() {
         getTimes[hint_count++]=new Date().getTime();
+        // console.log(getTime);
+        // hint_count++;
+        // getTime = new Date();
+        // $.get('/getTime', {
+        //   'quesid': quesid,
+        //   'hint_count': hint_count,
+        //   'time': time
+        // }, function(response) {
+        //   console.log("done");
+        // });
+
       })
 
-      
-
-        $("#submit-form").submit(function(e){
+      $("#submit-form").submit(function(e){
         e.preventDefault();
         $('.toast').toast('show');
         if (sessionStorage.count) {
@@ -185,10 +195,15 @@
           sessionStorage.count = 1;
         }
 
+
         let score = 25 - (5 * hint_count)-wronghint;
         sessionStorage.setItem(x, score);
         console.log(sessionStorage.getItem(x));
+
         if (sessionStorage.count == 4) {
+
+          // event.preventDefault();
+          // event.stopPropagation();
           $.get('/endTime', {
             'quesid': quesid,
             'qcount': Number(sessionStorage.count),
@@ -208,9 +223,7 @@
           }
           sessionStorage.removeItem('count');
 
-
           alert("Excellent!  You finished all 4 questions");
-
           $.ajax({
             url: '/score',
             data: JSON.stringify(data),
@@ -219,12 +232,14 @@
               console.log("Success");
               console.log(response);
               window.location.href = "{{ url_for('home_bp.home') }}";
+
             },
             error: function(error) {
               console.log(error);
-              window.location.href = "{{ url_for('home_bp.home') }}";
+               window.location.href = "{{ url_for('home_bp.home') }}";
             }
           });
+
         } else {
           $.get('/endTime', {
             'quesid': quesid,
@@ -241,13 +256,15 @@
             location.reload()
           }, 3000);
         }
+
+
+    
       })
-    });
+
+})
+      
   </script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
- 
+
 </body>
 
 </html>
