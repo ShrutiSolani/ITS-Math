@@ -53,8 +53,7 @@ def signup():
 @home_bp.route("/signup", methods=['POST'])
 def signups():
     print("in signups")
-    mycursor = mydb.cursor()
-
+    mycursor = mydb.cursor(buffered=True)
     if request.method == "POST":
         fname = request.form['fname']
         lname = request.form['lname']
