@@ -1,5 +1,7 @@
 {% extends "layout_easy.html" %}
 {% block script %}
+
+var feedcount=0;
 $( document ).ready(function() {
   monobitri = ["","Monomial", "Binomial", "Trinomial"];
   likeunlike = ["", "Like", "Unlike"];
@@ -28,6 +30,7 @@ function check(i){
     document.getElementsByClassName("step0")[i].classList.add("active");
   }
   else {
+    feedcount++;
     if({{ easy.num }}=='1' ){
       document.getElementsByClassName("wrong")[i].style.display="inline";
       document.getElementsByClassName("correct")[i].style.display="none";
@@ -36,6 +39,7 @@ function check(i){
       document.getElementsByClassName("wrong")[i].style.display="inline";
       document.getElementsByClassName("correct")[i].style.display="none";
     }
+    swal("Oops!", "Checkout hint for help", "error");
   }
 }
 {% endblock %}
@@ -48,7 +52,7 @@ function check(i){
   {% for i in range(4) %}
   <div>
     {{ easy.options[i] }}
-    <select class="answer_options" onchange="check({{ i }});" style="min-width: 120px;"></select>
+    <select class="answer_options"  onchange="check({{ i }});" style="min-width: 120px;" required></select>
     <i class="fal fa-check correct fa-2x" style="display: none; color: green;"></i>
     <i class="fal fa-times wrong fa-2x" style="display: none; color: red"></i>
     <br><br>

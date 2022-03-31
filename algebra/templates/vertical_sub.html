@@ -3,7 +3,7 @@
 
 .quo {
 display: inline;
-width: 6%;
+width: 60px;
 height: calc(1.5em + .75rem + -6px);
 }
 
@@ -58,6 +58,7 @@ var x = document.getElementsByClassName("correct");
 var y = document.getElementsByClassName("wrong");
 
 var feedcount = 0;
+var wronghint = 0;
 
 
 function check0()
@@ -75,20 +76,6 @@ feedcount++;
 $(x[0]).hide();
 $(y[0]).show();
 document.getElementsByClassName("quo")[0].id = 'error';
-swal({
-title: "Oops, Looks like you are confused in the format",
-text: "Denominator in mixed fraction is same as denominator of fraction ",
-icon: "error",
-button: true,
-dangerMode: true,
-})
-.then((willDelete) => {
-if (willDelete) {
-swal("Now try again", {
-icon: "success",
-});
-}
-});
 }
 
 }
@@ -109,20 +96,7 @@ feedcount++;
 $(x[0]).hide();
 $(y[0]).show();
 document.getElementsByClassName("quo")[1].id = 'error';
-swal({
-title: "Oops, Looks like you are confused in the format",
-text: "Denominator in mixed fraction is same as denominator of fraction ",
-icon: "error",
-button: true,
-dangerMode: true,
-})
-.then((willDelete) => {
-if (willDelete) {
-swal("Now try again", {
-icon: "success",
-});
-}
-});
+
 }
 
 }
@@ -144,20 +118,7 @@ feedcount++;
 $(x[0]).hide();
 $(y[0]).show();
 document.getElementsByClassName("quo")[2].id = 'error';
-swal({
-title: "Oops, Looks like you are confused in the format",
-text: "Denominator in mixed fraction is same as denominator of fraction ",
-icon: "error",
-button: true,
-dangerMode: true,
-})
-.then((willDelete) => {
-if (willDelete) {
-swal("Now try again", {
-icon: "success",
-});
-}
-});
+
 }
 
 }
@@ -178,20 +139,6 @@ feedcount++;
 $(x[0]).hide();
 $(y[0]).show();
 document.getElementsByClassName("quo")[3].id = 'error';
-swal({
-title: "Oops, Looks like you are confused in the format",
-text: "Denominator in mixed fraction is same as denominator of fraction ",
-icon: "error",
-button: true,
-dangerMode: true,
-})
-.then((willDelete) => {
-if (willDelete) {
-swal("Now try again", {
-icon: "success",
-});
-}
-});
 }
 
 }
@@ -212,20 +159,7 @@ feedcount++;
 $(x[0]).hide();
 $(y[0]).show();
 document.getElementsByClassName("quo")[4].id = 'error';
-swal({
-title: "Oops, Looks like you are confused in the format",
-text: "Denominator in mixed fraction is same as denominator of fraction ",
-icon: "error",
-button: true,
-dangerMode: true,
-})
-.then((willDelete) => {
-if (willDelete) {
-swal("Now try again", {
-icon: "success",
-});
-}
-});
+
 }
 
 }
@@ -247,20 +181,7 @@ feedcount++;
 $(x[0]).hide();
 $(y[0]).show();
 document.getElementsByClassName("quo")[5].id = 'error';
-swal({
-title: "Oops, Looks like you are confused in the format",
-text: "Denominator in mixed fraction is same as denominator of fraction ",
-icon: "error",
-button: true,
-dangerMode: true,
-})
-.then((willDelete) => {
-if (willDelete) {
-swal("Now try again", {
-icon: "success",
-});
-}
-});
+
 }
 
 }
@@ -284,20 +205,6 @@ feedcount++;
 $(x[0]).hide();
 $(y[0]).show();
 document.getElementsByClassName("quo")[6].id = 'error';
-swal({
-title: "Oops, Looks like you are confused in the format",
-text: "Denominator in mixed fraction is same as denominator of fraction ",
-icon: "error",
-button: true,
-dangerMode: true,
-})
-.then((willDelete) => {
-if (willDelete) {
-swal("Now try again", {
-icon: "success",
-});
-}
-});
 }
 }
 }
@@ -321,20 +228,7 @@ feedcount++;
 $(x[0]).hide();
 $(y[0]).show();
 document.getElementsByClassName("quo")[7].id = 'error';
-swal({
-title: "Oops, Looks like you are confused in the format",
-text: "Denominator in mixed fraction is same as denominator of fraction ",
-icon: "error",
-button: true,
-dangerMode: true,
-})
-.then((willDelete) => {
-if (willDelete) {
-swal("Now try again", {
-icon: "success",
-});
-}
-});
+
 }
 }
 }
@@ -349,13 +243,6 @@ $(y[0]).hide();
 document.getElementsByClassName("step0")[0].classList.add("active");
 document.getElementsByClassName("step0")[1].classList.add("active");
 document.getElementsByClassName("step0")[2].classList.add("active");
-document.getElementById("icon4").style.display="inline";
-document.getElementById("icon4").style.color="green";
-document.getElementsByTagName("h2")[0].innerHTML="";
-document.getElementsByTagName("h2")[1].innerHTML="";
-document.getElementById("icon1").style.display="inline";
-document.getElementById("icon2").style.display="inline";
-document.getElementById("icon3").style.display="inline";
 }
 else
 {
@@ -365,20 +252,6 @@ feedcount++;
 $(x[0]).hide();
 $(y[0]).show();
 document.getElementsByClassName("quo")[8].id = 'error';
-swal({
-title: "Oops, Looks like you are confused in the format",
-text: "Denominator in mixed fraction is same as denominator of fraction ",
-icon: "error",
-button: true,
-dangerMode: true,
-})
-.then((willDelete) => {
-if (willDelete) {
-swal("Now try again", {
-icon: "success",
-});
-}
-});
 }
 }
 }
@@ -388,6 +261,11 @@ document.getElementsByClassName('line1')[0].style.display = 'block';
 document.getElementsByClassName('line1')[1].style.display = 'block';
 document.getElementById("hint-btn").disabled = true;
 document.getElementById("hint-btn").style.backgroundColor = "grey";
+
+}
+
+function wrong(){
+  wronghint++;
 }
 
 {% endblock %}
@@ -396,10 +274,10 @@ document.getElementById("hint-btn").style.backgroundColor = "grey";
 {% block topic %}Vertical Subtraction{% endblock %}
 
 {% block hint %}
-<button type="button" class="btn btn-secondary" style="margin-bottom:30px;width:100%;" id="btn1">Change sign of Eq1</button>
-<button type="button" class="btn btn-secondary" style="margin-bottom:30px;width:100%;" id="btn2">Write Eq1 & change sign of Eq2</button>
-<button type="button" class="btn btn-secondary" style="margin-bottom:30px;width:100%;" onclick="right1();" id="btn3">Write Eq1 & Eq2</button>
-<button type="button" class="btn btn-secondary" style="margin-bottom:30px;width:100%;" id="btn4">Change sign of Eq2</button>
+<button type="button" class="btn btn-info" style="margin-bottom:30px;width:100%;" id="btn1" onclick="wrong();">Change sign of Eq1</button>
+<button type="button" class="btn btn-info" style="margin-bottom:30px;width:100%;" id="btn2" onclick="wrong();">Write Eq1 & change sign of Eq2</button>
+<button type="button" class="btn btn-info" style="margin-bottom:30px;width:100%;" onclick="right1();" id="btn3">Write Eq1 & Eq2</button>
+<button type="button" class="btn btn-info" style="margin-bottom:30px;width:100%;" id="btn4" onclick="wrong();">Change sign of Eq2</button>
 {% endblock %}
 
 
@@ -407,10 +285,10 @@ document.getElementById("hint-btn").style.backgroundColor = "grey";
 <h5 class="card-title">{{ answer.que }}</h5>
 <br><br>
 <div class="line1" style="display:none">
-  <div style="margin-left:50px;">
-    <input type="text" class="quo" name="quo" maxlength="3" size="3" onblur="check0();">{{ answer.varx }}+
-    <input type="text" class="quo" name="quo" maxlength="3" size="3" onblur="check1();">{{ answer.vary }}+
-    <input type="text" class="quo" name="quo" maxlength="3" size="3" onblur="check2();">{{ answer.varz }}
+  <div >
+    <input type="text" class="quo"  name="quo" maxlength="3" size="3" onblur="check0();">{{ answer.varx }}+
+    <input type="text" class="quo"  name="quo" maxlength="3" size="3" onblur="check1();">{{ answer.vary }}+
+    <input type="text" class="quo"  name="quo" maxlength="3" size="3" onblur="check2();">{{ answer.varz }}
     <br><br>
   </div>
 </div>
@@ -418,17 +296,17 @@ document.getElementById("hint-btn").style.backgroundColor = "grey";
   <div>
     <h1>-</h1>
   </div>
-  <div style="margin-left:50px;">
-    <input type="text" class="quo" name="quo" maxlength="3" size="3" onblur="check3();">{{ answer.varx }}+
-    <input type="text" class="quo" name="quo" maxlength="3" size="3" onblur="check4();">{{ answer.vary }}+
-    <input type="text" class="quo" name="quo" maxlength="3" size="3" onblur="check5();">{{ answer.varz }}
+  <div >
+    <input type="text" class="quo" name="quo"  maxlength="3" size="3" onblur="check3();">{{ answer.varx }}+
+    <input type="text" class="quo" name="quo"  maxlength="3" size="3" onblur="check4();">{{ answer.vary }}+
+    <input type="text" class="quo" name="quo"  maxlength="3" size="3" onblur="check5();">{{ answer.varz }}
 
     <br>
-    <h1>---------------------</h1>
+    <h1>------------</h1>
     <br>
   </div>
 </div>
-<div style="margin-left:50px;">
+<div >
   <input type="text" class="quo" name="quo" maxlength="3" size="3" onblur="check6()" required>{{ answer.varx }}+
   <input type="text" class="quo" name="quo" maxlength="3" size="3" onblur="check7();" required>{{ answer.vary }}+
   <input type="text" class="quo" name="quo" maxlength="3" size="3" onchange="check8();" required>{{ answer.varz }}

@@ -2,6 +2,7 @@
 
 
 {% block script %}
+var feedcount=0;
   $( document ).ready(function() {
     var source = "{{ url_for('static', filename = 'images/algebra_terms.jpeg') }}";
     if({{ easy.num }} == '2')
@@ -22,6 +23,7 @@
       document.getElementsByClassName("step0")[i].classList.add("active");
     }
     else{
+      feedcount++;
       if({{ easy.num }} == '1'){
         document.getElementsByClassName("wrong")[i].style.display="inline";
         document.getElementsByClassName("correct")[i].style.display="none";
@@ -29,7 +31,9 @@
       else{
         document.getElementsByClassName("wrong")[i].style.display="inline";
         document.getElementsByClassName("correct")[i].style.display="none";
+        
       }
+      swal("Oops!", "Checkout hint for help", "error");
     }
   }
 
@@ -44,7 +48,7 @@
 <p>
   {% for i in range(4) %}
 <div>{{ easy.options[i] }}
-  <input type="text" style="display: inline;" onchange="check({{ i }});">
+  <input type="text"  style="display: inline;" onchange="check({{ i }});" required>
   <i class="fal fa-check correct fa-2x" style="display: none; color: green;"></i>
   <i class="fal fa-times wrong fa-2x" style="display: none; color: red"></i><br><br>
 
