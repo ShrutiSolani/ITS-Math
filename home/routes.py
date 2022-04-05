@@ -2,7 +2,8 @@ from datetime import datetime
 from flask import Blueprint, render_template, request, flash, redirect, url_for, session, Flask, current_app
 from werkzeug.security import generate_password_hash, check_password_hash
 import json
-
+import pickle
+import numpy as np
 from ..fractions1 import routes
 from ..algebra import routes
 from ..database import mydb
@@ -10,11 +11,14 @@ from ..log import Log
 
 home_bp = Blueprint('home_bp', __name__, template_folder='templates', static_folder='static')
 log_object = Log()
+model = pickle.load(open('home/model.pkl', 'rb'))
+
 
 @home_bp.route('/')
 def index():
     return render_template('index.html')
-  
+
+
 @home_bp.route("/login")
 def login():
     return render_template('login.html')
@@ -272,4 +276,15 @@ def logout():
     message = {"userid": session['userid'], "message": "Logged out"}
     log_object.log_entry(json.dumps(message))
     session.pop('userid', None)
+    return redirect('/')
+
+
+@home_bp.route('/predict')
+def predict():
+    # int_features = [float(x) for x in request.form.values()]
+    int_features = [2, 4, 1, 1, 1, 0, 85]
+    final_features = [np.array(int_features)]
+    prediction = model.predict(final_features)
+    output = round(prediction[0], 2)
+    print(output)
     return redirect('/')
