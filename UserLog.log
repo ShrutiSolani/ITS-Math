@@ -512,3 +512,4 @@
 2022-04-06 16:14:39.268335|{"userid": 8, "message": "Logged In"}
 2022-04-06 16:14:40.697205|{"userid": 8, "message": "Home Page"}
 2022-04-06 16:18:07.890520|{"userid": 8, "qid": "FE1", "qcount": 1}
+2022-04-06 16:18:28.866439|{"userid": 8, "qid": "FE1", "qcount": "1", "startTime": "2022-04-06 16:13:56.487255", "endTime": "2022-04-06 16:18:28.286653", "levelofdifficulty": "Easy", "chapter": "Fraction", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "25"}
