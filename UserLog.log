@@ -540,3 +540,4 @@
 2022-04-21 19:54:40.293276|{"userid": 8, "qid": "FI1", "qcount": 2}
 2022-04-21 19:55:59.420694|{"userid": 8, "qid": "FI1", "qcount": 1}
 2022-04-21 19:56:23.298838|{"userid": 8, "qid": "FI1", "qcount": "3", "startTime": "2022-04-21 19:55:49.696180", "endTime": "2022-04-21 19:56:22.675462", "levelofdifficulty": "Intermediate", "chapter": "Fraction", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "1", "wronghintcount": "0", "score": "25"}
+2022-04-21 19:56:26.614417|{"userid": 8, "qid": "FI1", "qcount": 2}
