@@ -216,6 +216,7 @@
             console.log("done");
           });
 
+
           let keys = Object.keys(sessionStorage);
           for (let key of keys) {
             data[`${key}`] = `${sessionStorage.getItem(key)}`;
@@ -255,6 +256,8 @@
           setTimeout(function() {
             location.reload()
           }, 3000);
+
+
         }
 
 

@@ -268,6 +268,12 @@ def endTime():
             "levelofdifficulty": lod, "chapter": chapter, "hintCount": hcount, "h1time": hintTime1, "h2time": hintTime2,
             "diffh1": endhtym1, "diffh2": endhtym2, "wrongCount": wrong, "wronghintcount": wronghint, "score": score}
     log_object.log_entry(json.dumps(message, default=str))
+    int_features = [hcount, qcount, 0, 1, wrong, wronghint, 85]
+    final_features = [np.array(int_features)]
+    prediction = model.predict(final_features) 
+    # no model
+    output = round(prediction[0], 2)
+    print(f"Done {output}")
     return "TimeReceived"
 
 
@@ -278,13 +284,32 @@ def logout():
     session.pop('userid', None)
     return redirect('/')
 
+# df[['hintCount', 'qcount', 'chapter', 'levelofdifficulty', 'wrongCount','wronghintcount', 'time_second']]
 
-@home_bp.route('/predict')
-def predict():
-    # int_features = [float(x) for x in request.form.values()]
-    int_features = [2, 4, 1, 1, 1, 0, 85]
-    final_features = [np.array(int_features)]
-    prediction = model.predict(final_features)
-    output = round(prediction[0], 2)
-    print(output)
-    return redirect('/')
+# @home_bp.route('/predict')
+# def predict():
+#     mycursor = mydb.cursor()
+#     qcount = request.args.get('qcount')
+#     qid = request.args.get('quesid')
+#     hcount = request.args.get('hcount')
+#     htime = json.loads(request.args.get('htime'))
+#     score = request.args.get('score')
+#     try:
+#         startTym = routes.startTym
+#     except Exception as e:
+#         print(e)
+#     endTym = datetime.now()
+#     wrong = request.args.get('wrong')
+#     wronghint = request.args.get('wronghint')
+#     mycursor.execute("select * from question where qid = '" + str(qid) + "' ")
+#     r = mycursor.fetchall()
+#     chapter = r[0][2]
+#     lod = r[0][3]  
+#     # int_features = [float(x) for x in request.form.values()]
+#     int_features = [hcount, qcount, 0, 1, wrong, wronghint, endTym]
+#     final_features = [np.array(int_features)]
+#     prediction = model.predict(final_features)
+#     output = round(prediction[0], 2)
+#     print(output)
+#     return 'done'
+    # return redirect('/')
