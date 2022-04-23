@@ -567,3 +567,4 @@
 2022-04-23 19:07:12.477191|{"userid": 8, "qid": "FI1", "qcount": 2}
 2022-04-23 19:09:33.640380|{"userid": 8, "qid": "FI1", "qcount": 1}
 2022-04-23 19:09:54.084863|{"userid": 8, "qid": "FI1", "qcount": "2", "startTime": "2022-04-23 19:09:26.857968", "endTime": "2022-04-23 19:09:53.286089", "levelofdifficulty": "Intermediate", "chapter": "Fraction", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "25"}
+2022-04-23 19:09:57.359560|{"userid": 8, "qid": "FI1", "qcount": 2}
