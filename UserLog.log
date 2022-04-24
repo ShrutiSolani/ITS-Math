@@ -614,3 +614,4 @@
 2022-04-24 13:51:20.045309|{"userid": 8, "qid": "AE3", "qcount": 5}
 2022-04-24 13:51:31.472653|{"userid": 8, "qid": "AE3", "qcount": "3", "startTime": "2022-04-24 13:51:16.487263", "endTime": "2022-04-24 13:51:30.790347", "levelofdifficulty": "Easy", "chapter": "Algebra", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "25"}
 2022-04-24 13:51:37.851741|{"userid": 8, "qid": "AE3", "qcount": 6}
+2022-04-24 13:51:53.469636|{"userid": 8, "qid": "AE3", "qcount": "4", "startTime": "2022-04-24 13:51:33.825308", "endTime": "2022-04-24 13:51:51.241371", "levelofdifficulty": "Easy", "chapter": "Algebra", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "25"}
