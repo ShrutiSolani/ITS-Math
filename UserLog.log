@@ -719,3 +719,4 @@
 2022-04-27 13:32:52.204046|{"userid": 8, "qid": "AE4", "qcount": "4", "startTime": "2022-04-27 13:32:30.895273", "endTime": "2022-04-27 13:32:51.500545", "levelofdifficulty": "Easy", "chapter": "Algebra", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "1", "wronghintcount": "0", "score": "25"}
 2022-04-27 13:32:54.781330|{"userid": 8, "qid": "AE4", "q1": "25", "q2": "25", "q3": "25", "q4": "25", "total": 100}
 2022-04-27 13:32:56.645484|{"userid": 8, "message": "Home Page"}
+2022-04-27 13:34:46.261097|{"userid": 8, "qid": "FI1", "qcount": 1}
