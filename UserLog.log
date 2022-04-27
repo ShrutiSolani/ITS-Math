@@ -800,3 +800,4 @@
 2022-04-27 22:11:24.572245|{"userid": 8, "qid": "FI1", "qcount": "4", "startTime": "2022-04-27 22:03:33.577621", "endTime": "2022-04-27 22:11:23.867658", "levelofdifficulty": "Intermediate", "chapter": "Fraction", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "25"}
 2022-04-27 22:11:27.215448|{"userid": 8, "qid": "FI1", "q1": "25", "q2": "13", "q3": "25", "q4": "25", "total": 88}
 2022-04-27 22:11:29.226068|{"userid": 8, "message": "Home Page"}
+2022-04-27 22:12:07.788228|{"userid": 8, "message": "Profile Page"}
