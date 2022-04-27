@@ -660,3 +660,4 @@
 2022-04-27 12:43:47.044562|{"userid": 8, "qid": "FI1", "q1": "25", "q2": "25", "q3": "20", "q4": "25", "total": 95}
 2022-04-27 12:43:48.819925|{"userid": 8, "message": "Home Page"}
 2022-04-27 12:47:58.064179|{"userid": 8, "qid": "AE3", "qcount": 1}
+2022-04-27 12:48:13.851351|{"userid": 8, "qid": "AE3", "qcount": "1", "startTime": "2022-04-27 12:47:57.393405", "endTime": "2022-04-27 12:48:13.173534", "levelofdifficulty": "Easy", "chapter": "Algebra", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "25"}
