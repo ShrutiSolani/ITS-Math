@@ -853,3 +853,4 @@
 2022-05-30 22:33:09.469924|{"userid": 8, "qid": "AE1", "qcount": 3}
 2022-05-30 22:46:05.936885|{"userid": 8, "message": "Home Page"}
 2022-05-30 22:46:33.604213|{"userid": 8, "qid": "FE2", "qcount": 2}
+2022-05-30 22:53:35.748183|{"userid": 8, "qid": "FE2", "qcount": "1", "startTime": "2022-05-30 22:33:08.736000", "endTime": "2022-05-30 22:53:34.829010", "levelofdifficulty": "Easy", "chapter": "Fraction", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "1", "wronghintcount": "0", "score": "23"}
