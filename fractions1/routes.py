@@ -233,10 +233,10 @@ def question():
     global startTym
     startTym = datetime.datetime.now()
     qid = data["mixed-fraction"]
-    num = random.randint(1, 100)
-    den = random.randint(1, 25)
+    num = random.randint(2, 50)
+    den = random.randint(2, 25)
     while num < den:
-        num = random.randint(1, 100)
+        num = random.randint(2, 50)
     que = "Express as mixed fraction : " + str(num) + "/" + str(den) + "."
     quo = num // den
     rem = num % den

@@ -5,49 +5,59 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <title>Practice</title>
   <link rel="stylesheet" href="{{ url_for('static', filename = 'css/layout.css') }}">
   <style>
-    {% block style %}{% endblock %}
+    {
+      % block style %
+    }
+
+      {
+      % endblock %
+    }
   </style>
   <script>
-    {% block script %}{% endblock %}
+    {% block script %} {% endblock %}
   </script>
 </head>
 
 <body>
   <nav id="n1" class="navbar navbar-expand-lg navbar-light mb-3 navbar-fixed-top nav blue">
     <a class="navbar-brand" href="#">PhiloMath</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse " id="navbarSupportedContent">
       <ul class="navbar-nav">
         <li class="nav-item">
-					<a class="nav-link a1" id="home_nav" href="#">Home</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link a1" href="{{ url_for('home_bp.profile') }}">Profile</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link a1" href="/logout">Logout</a>
-				</li>
+          <a class="nav-link a1" id="home_nav" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link a1" href="{{ url_for('home_bp.profile') }}">Profile</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link a1" href="/logout">Logout</a>
+        </li>
       </ul>
     </div>
   </nav>
 
   <div class="container main">
-    <div class="card" >
+    <div class="card">
 
-      <div class="card-header white" style="display: flex;justify-content: space-between;align-items: center;color: #0070BB; background-color:rgba(0,0,0,.03);">
+      <div class="card-header white"
+        style="display: flex;justify-content: space-between;align-items: center;color: #0070BB; background-color:rgba(0,0,0,.03);">
         <h3>{% block chapter %}{% endblock %} - {% block topic %}{% endblock %}</h3>
         <a href="#" class="btn btn-danger" onclick="quit();" id="quit">Quit</a>
       </div>
@@ -61,11 +71,11 @@
       </div>
       <div class="time-card" style="height: 55vh;">
         <form id="submit-form" method="POST">
-        <div class="card-body" style="width: 80%;">
+          <div class="card-body" style="width: 80%;">
 
-          {% block content %}{% endblock %}
+            {% block content %}{% endblock %}
 
-        </div>
+          </div>
 
       </div>
 
@@ -114,16 +124,16 @@
         <button type="submit" class="btn btn-success next" id="next-btn"> Next</button>
       </div>
     </div>
-  </form>
+    </form>
   </div>
   <script>
-    
-      // window.onload = (event) => {
-      //   if (sessionStorage.count) { 
-      //     sessionStorage.removeItem(count);
-      //   }
-      // };
-    $(document).ready(function() {
+
+    // window.onload = (event) => {
+    //   if (sessionStorage.count) { 
+    //     sessionStorage.removeItem(count);
+    //   }
+    // };
+    $(document).ready(function () {
       $('.toast').toast('hide');
       var x = sessionStorage.count;
       console.log(x);
@@ -131,7 +141,7 @@
         document.getElementsByClassName("bi")[i].classList.add("done");
       }
 
-      $('#quit').click(function() {
+      $('#quit').click(function () {
         if (sessionStorage.count < 4 || sessionStorage.count == null) {
           if (confirm("Your score will not be saved")) {
             $('#quit').attr('href', "{{ url_for('home_bp.home') }}");
@@ -147,7 +157,7 @@
         }
 
       })
-      $('#home_nav').click(function() {
+      $('#home_nav').click(function () {
         if (sessionStorage.count < 4 || sessionStorage.count == null) {
           if (confirm("Your score will not be saved")) {
             $('#home_nav').attr('href', "{{ url_for('home_bp.home') }}");
@@ -170,9 +180,9 @@
       };
 
       var hint_count = 0;
-      var getTimes=[];
-      $('#hint-btn').click(function() {
-        getTimes[hint_count++]=new Date().getTime();
+      var getTimes = [];
+      $('#hint-btn').click(function () {
+        getTimes[hint_count++] = new Date().getTime();
         // console.log(getTime);
         // hint_count++;
         // getTime = new Date();
@@ -186,7 +196,7 @@
 
       })
 
-      $("#submit-form").submit(function(e){
+      $("#submit-form").submit(function (e) {
         e.preventDefault();
         $('.toast').toast('show');
         if (sessionStorage.count) {
@@ -196,9 +206,10 @@
         }
 
 
-        let score = 25 - (5 * hint_count)-wronghint;
+        let score = 25 - (5 * hint_count) - wronghint - feedcount;
         sessionStorage.setItem(x, score);
         console.log(sessionStorage.getItem(x));
+        console.log(sessionStorage.count);
 
         if (sessionStorage.count == 4) {
 
@@ -207,12 +218,12 @@
           $.get('/endTime', {
             'quesid': quesid,
             'qcount': Number(sessionStorage.count),
-            'hcount' : hint_count,
-            'htime' : JSON.stringify(getTimes),
-            'score' : score,
-            'wrong' : feedcount,
-            'wronghint':wronghint
-          }, function(response) {
+            'hcount': hint_count,
+            'htime': JSON.stringify(getTimes),
+            'score': score,
+            'wrong': feedcount,
+            'wronghint': wronghint
+          }, function (response) {
             console.log("done");
           });
 
@@ -229,15 +240,15 @@
             url: '/score',
             data: JSON.stringify(data),
             type: 'POST',
-            success: function(response) {
+            success: function (response) {
               console.log("Success");
               console.log(response);
               window.location.href = "{{ url_for('home_bp.home') }}";
 
             },
-            error: function(error) {
+            error: function (error) {
               console.log(error);
-               window.location.href = "{{ url_for('home_bp.home') }}";
+              window.location.href = "{{ url_for('home_bp.home') }}";
             }
           });
 
@@ -245,15 +256,15 @@
           $.get('/endTime', {
             'quesid': quesid,
             'qcount': Number(sessionStorage.count),
-            'hcount' : hint_count,
-            'htime' : JSON.stringify(getTimes),
-            'score' : score,
-            'wrong' : feedcount,
-            'wronghint':wronghint
-          }, function(response) {
+            'hcount': hint_count,
+            'htime': JSON.stringify(getTimes),
+            'score': score,
+            'wrong': feedcount,
+            'wronghint': wronghint
+          }, function (response) {
             console.log("done");
           });
-          setTimeout(function() {
+          setTimeout(function () {
             location.reload()
           }, 3000);
 
@@ -261,11 +272,11 @@
         }
 
 
-    
+
       })
 
-})
-      
+    })
+
   </script>
 
 </body>

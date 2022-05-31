@@ -1,4 +1,5 @@
 from datetime import datetime
+from time import strftime
 from flask import Blueprint, render_template, request, flash, redirect, url_for, session, Flask, current_app
 from werkzeug.security import generate_password_hash, check_password_hash
 import json
@@ -103,7 +104,7 @@ def home():
     else:
         return redirect('login')
 
-
+count=0
 @home_bp.route('/score', methods=['POST'])
 def score():
     mycursor = mydb.cursor()
@@ -115,7 +116,12 @@ def score():
         total = int(tup['undefined']) + int(tup['1']) + int(tup['2']) + int(tup['3'])
         message = {"userid": userid, "qid": myList[3], "q1": myList[4], "q2": myList[0], "q3": myList[1], "q4": myList[2],
                 "total": total}
-        flash(f"You scored {total} out of 100")
+        if count>total:
+            print(count)
+            flash(f"You scored {total} out of 100,but you need more practice.")
+        else:
+            print(count)
+            flash(f"You scored {total} out of 100,You can continue solving next topic.")
         log_object.log_entry(json.dumps(message))
         qids = myList[3]
         mycursor.execute("select * from question where qid='" + qids + "' ")
@@ -263,17 +269,23 @@ def endTime():
             tyms = endTym
     if hintTime2 != 0:
         endhtym2 = endTym - hintTime2
+    # print("msg")
 
     message = {"userid": session['userid'], "qid": qid, "qcount": qcount, "startTime": startTym, "endTime": endTym,
             "levelofdifficulty": lod, "chapter": chapter, "hintCount": hcount, "h1time": hintTime1, "h2time": hintTime2,
             "diffh1": endhtym1, "diffh2": endhtym2, "wrongCount": wrong, "wronghintcount": wronghint, "score": score}
     log_object.log_entry(json.dumps(message, default=str))
-    int_features = [hcount, qcount, 0, 1, wrong, wronghint, 85]
+    print(type(endTym))
+    int_features = [hcount, qcount, 0, 1, wrong, wronghint, int(endTym.strftime("%Y%m%d%H%M%S"))-int(startTym.strftime("%Y%m%d%H%M%S"))]
+    # print("2")
     final_features = [np.array(int_features)]
     prediction = model.predict(final_features) 
     # no model
     output = round(prediction[0], 2)
-    print(f"Done {output}")
+    # print(f"Done {output}")
+    # if(output>score):
+    count+=output
+    # if()
     return "TimeReceived"
 
 
