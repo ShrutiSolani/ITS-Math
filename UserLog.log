@@ -930,3 +930,4 @@
 2022-06-01 10:46:24.390690|{"userid": 8, "qid": "AE3", "qcount": "4", "startTime": "2022-06-01 10:46:07.840519", "endTime": "2022-06-01 10:46:23.692873", "levelofdifficulty": "Easy", "chapter": "Algebra", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "25"}
 2022-06-01 10:46:28.078773|{"userid": 8, "qid": "AE3", "q1": "18", "q2": "25", "q3": "25", "q4": "25", "total": 93}
 2022-06-01 10:46:29.816434|{"userid": 8, "message": "Home Page"}
+2022-06-01 10:47:19.893723|{"userid": 8, "message": "Home Page"}
