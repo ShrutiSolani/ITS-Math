@@ -934,3 +934,4 @@
 2022-06-01 10:48:24.813283|{"userid": 8, "message": "Profile Page"}
 2022-06-01 10:49:17.558576|{"userid": 8, "qid": "FI1", "qcount": 7}
 2022-06-01 10:51:32.007505|{"userid": 8, "qid": "FI1", "qcount": "1", "startTime": "2022-06-01 10:46:07.840519", "endTime": "2022-06-01 10:51:31.287346", "levelofdifficulty": "Intermediate", "chapter": "Fraction", "hintCount": "2", "h1time": "2022-06-01 10:49:27.033000", "h2time": "2022-06-01 10:50:24.040000", "diffh1": "0:02:04.254346", "diffh2": "0:01:07.247346", "wrongCount": "1", "wronghintcount": "0", "score": "14"}
+2022-06-01 10:51:34.638006|{"userid": 8, "qid": "FI1", "qcount": 8}
