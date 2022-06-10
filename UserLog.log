@@ -964,3 +964,4 @@
 2022-06-10 16:48:07.807477|{"userid": 8, "qid": "AI1", "qcount": "2", "startTime": "2022-06-10 16:47:23.387725", "endTime": "2022-06-10 16:48:07.201221", "levelofdifficulty": "Intermediate", "chapter": "Algebra", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "1", "wronghintcount": "0", "score": "24"}
 2022-06-10 16:48:10.557513|{"userid": 8, "qid": "AI1", "qcount": 3}
 2022-06-10 16:48:42.290700|{"userid": 8, "qid": "AI1", "qcount": "3", "startTime": "2022-06-10 16:48:09.925258", "endTime": "2022-06-10 16:48:41.681066", "levelofdifficulty": "Intermediate", "chapter": "Algebra", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "25"}
+2022-06-10 16:48:45.203997|{"userid": 8, "qid": "AI1", "qcount": 4}
