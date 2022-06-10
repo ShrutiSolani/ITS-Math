@@ -970,3 +970,4 @@
 2022-06-10 16:49:35.576780|{"userid": 8, "message": "Home Page"}
 2022-06-10 16:50:07.971061|{"userid": 8, "qid": "AI2", "qcount": 5}
 2022-06-10 16:50:35.293799|{"userid": 8, "qid": "AI2", "qcount": "1", "startTime": "2022-06-10 16:50:07.297704", "endTime": "2022-06-10 16:50:34.673994", "levelofdifficulty": "Intermediate", "chapter": "Algebra", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "1", "wronghintcount": "0", "score": "24"}
+2022-06-10 16:50:38.644390|{"userid": 8, "qid": "AI2", "qcount": 6}
