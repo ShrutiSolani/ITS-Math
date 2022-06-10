@@ -940,3 +940,4 @@
 2022-06-10 16:10:41.670809|{"userid": 8, "message": "Logged In"}
 2022-06-10 16:10:43.851034|{"userid": 8, "message": "Home Page"}
 2022-06-10 16:11:01.278193|{"userid": 8, "qid": "AI1", "qcount": 1}
+2022-06-10 16:12:02.060089|{"userid": 8, "qid": "AI1", "qcount": "1", "startTime": "2022-06-10 16:11:00.165149", "endTime": "2022-06-10 16:12:01.336177", "levelofdifficulty": "Intermediate", "chapter": "Algebra", "hintCount": "1", "h1time": "2022-06-10 16:11:50.139000", "h2time": 0, "diffh1": "0:00:11.197177", "diffh2": 0, "wrongCount": "2", "wronghintcount": "1", "score": "19"}
