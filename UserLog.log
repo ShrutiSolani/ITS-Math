@@ -1028,3 +1028,4 @@
 2022-06-11 10:59:40.811102|{"userid": 8, "qid": "FI1", "qcount": "1", "startTime": "2022-06-11 09:45:49.751420", "endTime": "2022-06-11 10:59:40.092138", "levelofdifficulty": "Intermediate", "chapter": "Fraction", "hintCount": "2", "h1time": "2022-06-11 10:57:58.028000", "h2time": "2022-06-11 10:58:35.220000", "diffh1": "0:01:42.064138", "diffh2": "0:01:04.872138", "wrongCount": "1", "wronghintcount": "0", "score": "14"}
 2022-06-11 10:59:43.577219|{"userid": 8, "qid": "FI1", "qcount": 4}
 2022-06-11 10:59:58.020148|{"userid": 8, "qid": "FI1", "qcount": "2", "startTime": "2022-06-11 09:45:49.751420", "endTime": "2022-06-11 10:59:57.097036", "levelofdifficulty": "Intermediate", "chapter": "Fraction", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "25"}
+2022-06-11 11:00:00.580203|{"userid": 8, "qid": "FI1", "qcount": 5}
