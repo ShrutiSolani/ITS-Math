@@ -17,13 +17,8 @@
   <title>Practice</title>
   <link rel="stylesheet" href="{{ url_for('static', filename = 'css/layout.css') }}">
   <style>
-    {
-      % block style %
-    }
-
-      {
-      % endblock %
-    }
+    {% block style %}
+    {% endblock %}
   </style>
   <script>
     {% block script %} {% endblock %}

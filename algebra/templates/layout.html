@@ -17,16 +17,12 @@
   <title>Practice</title>
   <link rel="stylesheet" href="{{ url_for('static', filename = 'css/layout.css') }}">
   <style>
-    {
-      % block style %
-    }
-
-      {
-      % endblock %
-    }
+    {% block style %}
+    {% endblock %}
   </style>
   <script>
-    {% block script %} {% endblock %}
+    {% block script %}
+    {% endblock %}
   </script>
 </head>
 
@@ -214,8 +210,6 @@
               sessionStorage.removeItem(`${key}`);
             }
             sessionStorage.removeItem('count');
-
-            alert("Excellent!  You finished all 4 questions");
             $.ajax({
               url: '/score',
               data: JSON.stringify(data),
