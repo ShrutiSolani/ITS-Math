@@ -500,3 +500,551 @@
 2022-02-21 07:08:21.730961|{"userid": 8, "message": "Logged out"}
 2022-02-21 16:08:21.678683|{"userid": 8, "message": "Logged In"}
 2022-02-21 16:08:23.187564|{"userid": 8, "message": "Home Page"}
+
+2022-04-04 20:06:51.358445|{"userid": 11, "message": "Logged In"}
+2022-04-04 20:06:52.796158|{"userid": 11, "message": "Home Page"}
+2022-04-04 20:06:59.432436|{"userid": 11, "message": "Logged In"}
+2022-04-04 20:07:01.891322|{"userid": 11, "message": "Logged In"}
+2022-04-04 20:07:03.637655|{"userid": 11, "message": "Home Page"}
+2022-04-04 20:07:45.120881|{"userid": 11, "qid": "FE1", "qcount": 1}
+2022-04-04 20:07:51.797277|{"userid": 11, "message": "Home Page"}
+2022-04-04 20:07:56.996242|{"userid": 11, "message": "Logged out"}
+2022-04-06 16:14:39.268335|{"userid": 8, "message": "Logged In"}
+2022-04-06 16:14:40.697205|{"userid": 8, "message": "Home Page"}
+2022-04-06 16:18:07.890520|{"userid": 8, "qid": "FE1", "qcount": 1}
+2022-04-06 16:18:28.866439|{"userid": 8, "qid": "FE1", "qcount": "1", "startTime": "2022-04-06 16:13:56.487255", "endTime": "2022-04-06 16:18:28.286653", "levelofdifficulty": "Easy", "chapter": "Fraction", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "25"}
+2022-04-06 16:18:31.885742|{"userid": 8, "qid": "FE1", "qcount": 2}
+2022-04-06 16:18:51.622456|{"userid": 8, "qid": "FE1", "qcount": 3}
+2022-04-06 16:19:02.345825|{"userid": 8, "qid": "FE1", "qcount": 4}
+2022-04-06 16:19:27.479073|{"userid": 8, "message": "Home Page"}
+2022-04-06 16:42:05.140387|{"userid": 8, "message": "Logged In"}
+2022-04-06 16:42:06.500120|{"userid": 8, "message": "Home Page"}
+2022-04-06 16:42:57.679644|{"userid": 8, "qid": "AE4", "qcount": 1}
+2022-04-06 16:43:21.240389|{"userid": 8, "qid": "AE4", "qcount": "1", "startTime": "2022-04-06 16:42:57.085372", "endTime": "2022-04-06 16:43:20.673965", "levelofdifficulty": "Easy", "chapter": "Algebra", "hintCount": "1", "h1time": "2022-04-06 16:43:13.817000", "h2time": 0, "diffh1": "0:00:06.856965", "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "20"}
+2022-04-06 16:43:24.068604|{"userid": 8, "qid": "AE4", "qcount": 2}
+2022-04-06 16:43:49.357625|{"userid": 8, "qid": "AE4", "qcount": "2", "startTime": "2022-04-06 16:43:23.388093", "endTime": "2022-04-06 16:43:48.768589", "levelofdifficulty": "Easy", "chapter": "Algebra", "hintCount": "1", "h1time": "2022-04-06 16:43:36.362000", "h2time": 0, "diffh1": "0:00:12.406589", "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "20"}
+2022-04-06 16:43:52.722340|{"userid": 8, "qid": "AE4", "qcount": 3}
+2022-04-06 16:44:09.533694|{"userid": 8, "qid": "AE4", "qcount": "3", "startTime": "2022-04-06 16:43:52.087232", "endTime": "2022-04-06 16:44:08.955582", "levelofdifficulty": "Easy", "chapter": "Algebra", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "25"}
+2022-04-06 16:44:12.268152|{"userid": 8, "qid": "AE4", "qcount": 4}
+2022-04-06 16:44:30.998303|{"userid": 8, "qid": "AE4", "qcount": "4", "startTime": "2022-04-06 16:44:11.663931", "endTime": "2022-04-06 16:44:30.389090", "levelofdifficulty": "Easy", "chapter": "Algebra", "hintCount": "1", "h1time": "2022-04-06 16:44:23.745000", "h2time": 0, "diffh1": "0:00:06.644090", "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "20"}
+2022-04-06 16:44:34.784243|{"userid": 8, "qid": "AE4", "q1": "20", "q2": "20", "q3": "25", "q4": "20", "total": 85}
+2022-04-06 16:44:36.447197|{"userid": 8, "message": "Home Page"}
+2022-04-21 19:19:46.695461|{"userid": 8, "message": "Logged In"}
+2022-04-21 19:19:48.182457|{"userid": 8, "message": "Home Page"}
+2022-04-21 19:41:29.030453|{"userid": 8, "message": "Home Page"}
+2022-04-21 19:42:08.184594|{"userid": 8, "qid": "FI1", "qcount": 1}
+2022-04-21 19:42:32.400820|{"userid": 8, "qid": "FI1", "qcount": "1", "startTime": "2022-04-21 19:41:13.640302", "endTime": "2022-04-21 19:42:31.807480", "levelofdifficulty": "Intermediate", "chapter": "Fraction", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "25"}
+2022-04-21 19:42:35.579631|{"userid": 8, "qid": "FI1", "qcount": 2}
+2022-04-21 19:53:32.645056|{"userid": 8, "qid": "FI1", "qcount": 1}
+2022-04-21 19:54:37.600931|{"userid": 8, "qid": "FI1", "qcount": "2", "startTime": "2022-04-21 19:53:19.925999", "endTime": "2022-04-21 19:54:36.977849", "levelofdifficulty": "Intermediate", "chapter": "Fraction", "hintCount": "1", "h1time": "2022-04-21 19:54:12.840000", "h2time": 0, "diffh1": "0:00:24.137849", "diffh2": 0, "wrongCount": "1", "wronghintcount": "1", "score": "19"}
+2022-04-21 19:54:40.293276|{"userid": 8, "qid": "FI1", "qcount": 2}
+2022-04-21 19:55:59.420694|{"userid": 8, "qid": "FI1", "qcount": 1}
+2022-04-21 19:56:23.298838|{"userid": 8, "qid": "FI1", "qcount": "3", "startTime": "2022-04-21 19:55:49.696180", "endTime": "2022-04-21 19:56:22.675462", "levelofdifficulty": "Intermediate", "chapter": "Fraction", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "1", "wronghintcount": "0", "score": "25"}
+2022-04-21 19:56:26.614417|{"userid": 8, "qid": "FI1", "qcount": 2}
+2022-04-21 20:13:14.739125|{"userid": 8, "message": "Logged In"}
+2022-04-21 20:13:16.835588|{"userid": 8, "message": "Home Page"}
+2022-04-21 20:13:37.274394|{"userid": 8, "qid": "FI1", "qcount": 1}
+2022-04-21 20:14:03.669340|{"userid": 8, "qid": "FI1", "qcount": "1", "startTime": "2022-04-21 20:12:33.309717", "endTime": "2022-04-21 20:14:01.445513", "levelofdifficulty": "Intermediate", "chapter": "Fraction", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "25"}
+2022-04-21 20:14:05.797373|{"userid": 8, "qid": "FI1", "qcount": 2}
+2022-04-21 20:18:12.389325|{"userid": 8, "qid": "FI1", "qcount": 1}
+2022-04-21 20:18:28.865931|{"userid": 8, "qid": "FI1", "qcount": "2", "startTime": "2022-04-21 20:18:04.706809", "endTime": "2022-04-21 20:18:28.059927", "levelofdifficulty": "Intermediate", "chapter": "Fraction", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "25"}
+2022-04-21 20:18:32.000208|{"userid": 8, "qid": "FI1", "qcount": 2}
+2022-04-21 20:22:36.727481|{"userid": 8, "qid": "FI1", "qcount": 1}
+2022-04-21 20:23:14.690856|{"userid": 8, "qid": "FI1", "qcount": "3", "startTime": "2022-04-21 20:22:08.297668", "endTime": "2022-04-21 20:23:13.911043", "levelofdifficulty": "Intermediate", "chapter": "Fraction", "hintCount": "1", "h1time": "2022-04-21 20:22:51.898000", "h2time": 0, "diffh1": "0:00:22.013043", "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "20"}
+2022-04-21 20:23:17.887405|{"userid": 8, "qid": "FI1", "qcount": 2}
+2022-04-21 20:27:19.508487|{"userid": 8, "qid": "FI1", "qcount": 1}
+2022-04-21 20:27:42.981514|{"userid": 8, "qid": "FI1", "qcount": "4", "startTime": "2022-04-21 20:27:11.795978", "endTime": "2022-04-21 20:27:42.189949", "levelofdifficulty": "Intermediate", "chapter": "Fraction", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "25"}
+2022-04-21 20:27:45.416795|{"userid": 8, "qid": "FI1", "q1": "25", "q2": "25", "q3": "20", "q4": "25", "total": 95}
+2022-04-21 20:27:47.002019|{"userid": 8, "message": "Home Page"}
+2022-04-23 19:04:22.831802|{"userid": 8, "message": "Logged In"}
+2022-04-23 19:04:24.755682|{"userid": 8, "message": "Home Page"}
+2022-04-23 19:04:39.194659|{"userid": 8, "qid": "FI1", "qcount": 1}
+2022-04-23 19:04:54.840741|{"userid": 8, "qid": "FI1", "qcount": 2}
+2022-04-23 19:06:24.416302|{"userid": 8, "message": "Logged In"}
+2022-04-23 19:06:25.781182|{"userid": 8, "message": "Home Page"}
+2022-04-23 19:06:39.728086|{"userid": 8, "qid": "FI1", "qcount": 1}
+2022-04-23 19:07:07.742898|{"userid": 8, "qid": "FI1", "qcount": "1", "startTime": "2022-04-23 19:05:40.270192", "endTime": "2022-04-23 19:07:06.954659", "levelofdifficulty": "Intermediate", "chapter": "Fraction", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "1", "wronghintcount": "0", "score": "25"}
+2022-04-23 19:07:12.477191|{"userid": 8, "qid": "FI1", "qcount": 2}
+2022-04-23 19:09:33.640380|{"userid": 8, "qid": "FI1", "qcount": 1}
+2022-04-23 19:09:54.084863|{"userid": 8, "qid": "FI1", "qcount": "2", "startTime": "2022-04-23 19:09:26.857968", "endTime": "2022-04-23 19:09:53.286089", "levelofdifficulty": "Intermediate", "chapter": "Fraction", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "25"}
+2022-04-23 19:09:57.359560|{"userid": 8, "qid": "FI1", "qcount": 2}
+2022-04-23 19:13:00.777917|{"userid": 8, "qid": "FI1", "qcount": 1}
+2022-04-23 19:13:12.173884|{"userid": 8, "qid": "FI1", "qcount": "3", "startTime": "2022-04-23 19:12:52.187998", "endTime": "2022-04-23 19:13:11.581433", "levelofdifficulty": "Intermediate", "chapter": "Fraction", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "25"}
+2022-04-23 19:13:15.659156|{"userid": 8, "qid": "FI1", "qcount": 2}
+2022-04-23 19:16:14.934983|{"userid": 8, "qid": "FI1", "qcount": 1}
+2022-04-23 19:16:28.410754|{"userid": 8, "qid": "FI1", "qcount": "4", "startTime": "2022-04-23 19:16:07.075452", "endTime": "2022-04-23 19:16:27.638506", "levelofdifficulty": "Intermediate", "chapter": "Fraction", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "25"}
+2022-04-23 19:16:31.342341|{"userid": 8, "qid": "FI1", "q1": "25", "q2": "25", "q3": "25", "q4": "25", "total": 100}
+2022-04-23 19:16:33.030680|{"userid": 8, "message": "Home Page"}
+2022-04-23 19:17:34.160073|{"userid": 8, "qid": "FI1", "qcount": 1}
+2022-04-23 19:18:07.417816|{"userid": 8, "qid": "FI1", "qcount": "1", "startTime": "2022-04-23 19:17:27.413941", "endTime": "2022-04-23 19:18:06.831883", "levelofdifficulty": "Intermediate", "chapter": "Fraction", "hintCount": "1", "h1time": "2022-04-23 19:17:47.783000", "h2time": 0, "diffh1": "0:00:19.048883", "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "20"}
+2022-04-23 19:18:10.912187|{"userid": 8, "qid": "FI1", "qcount": 2}
+2022-04-23 19:30:27.290563|{"userid": 8, "qid": "FI1", "qcount": 1}
+2022-04-23 19:30:44.072531|{"userid": 8, "qid": "FI1", "qcount": "2", "startTime": "2022-04-23 19:30:19.677474", "endTime": "2022-04-23 19:30:43.321760", "levelofdifficulty": "Intermediate", "chapter": "Fraction", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "25"}
+2022-04-23 19:30:47.239064|{"userid": 8, "qid": "FI1", "qcount": 2}
+2022-04-23 19:31:03.917128|{"userid": 8, "qid": "FI1", "qcount": "3", "startTime": "2022-04-23 19:30:19.677474", "endTime": "2022-04-23 19:31:03.172976", "levelofdifficulty": "Intermediate", "chapter": "Fraction", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "25"}
+2022-04-23 19:31:07.074589|{"userid": 8, "qid": "FI1", "qcount": 3}
+2022-04-23 19:31:31.842812|{"userid": 8, "qid": "FI1", "qcount": "4", "startTime": "2022-04-23 19:30:19.677474", "endTime": "2022-04-23 19:31:31.051661", "levelofdifficulty": "Intermediate", "chapter": "Fraction", "hintCount": "1", "h1time": "2022-04-23 19:31:09.731000", "h2time": 0, "diffh1": "0:00:21.320661", "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "20"}
+2022-04-23 19:31:34.213047|{"userid": 8, "qid": "FI1", "q1": "20", "q2": "25", "q3": "25", "q4": "20", "total": 90}
+2022-04-23 19:31:35.863177|{"userid": 8, "message": "Home Page"}
+2022-04-23 19:34:15.322676|{"userid": 8, "qid": "FI1", "qcount": 1}
+2022-04-23 19:34:54.811594|{"userid": 8, "qid": "FI1", "qcount": "1", "startTime": "2022-04-23 19:34:06.034637", "endTime": "2022-04-23 19:34:54.002217", "levelofdifficulty": "Intermediate", "chapter": "Fraction", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "2", "wronghintcount": "0", "score": "25"}
+2022-04-23 19:34:58.011359|{"userid": 8, "qid": "FI1", "qcount": 2}
+2022-04-23 19:35:08.420047|{"userid": 8, "qid": "FI1", "qcount": "2", "startTime": "2022-04-23 19:34:06.034637", "endTime": "2022-04-23 19:35:07.672975", "levelofdifficulty": "Intermediate", "chapter": "Fraction", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "25"}
+2022-04-23 19:35:11.790909|{"userid": 8, "qid": "FI1", "qcount": 3}
+2022-04-23 19:35:28.690032|{"userid": 8, "qid": "FI1", "qcount": "3", "startTime": "2022-04-23 19:34:06.034637", "endTime": "2022-04-23 19:35:28.100967", "levelofdifficulty": "Intermediate", "chapter": "Fraction", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "25"}
+2022-04-23 19:35:32.004220|{"userid": 8, "qid": "FI1", "qcount": 4}
+2022-04-23 19:35:44.127595|{"userid": 8, "qid": "FI1", "qcount": "4", "startTime": "2022-04-23 19:34:06.034637", "endTime": "2022-04-23 19:35:43.564650", "levelofdifficulty": "Intermediate", "chapter": "Fraction", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "25"}
+2022-04-23 19:35:47.883194|{"userid": 8, "qid": "FI1", "q1": "25", "q2": "25", "q3": "25", "q4": "25", "total": 100}
+2022-04-23 19:35:49.356589|{"userid": 8, "message": "Home Page"}
+2022-04-24 13:42:42.210956|{"userid": 8, "message": "Logged In"}
+2022-04-24 13:42:44.213317|{"userid": 8, "message": "Home Page"}
+2022-04-24 13:43:14.037248|{"userid": 8, "qid": "FE1", "qcount": 1}
+2022-04-24 13:43:39.823453|{"userid": 8, "qid": "FE1", "qcount": "1", "startTime": "2022-04-24 13:41:03.843665", "endTime": "2022-04-24 13:43:38.989580", "levelofdifficulty": "Easy", "chapter": "Fraction", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "25"}
+2022-04-24 13:43:42.349910|{"userid": 8, "qid": "FE1", "qcount": 2}
+2022-04-24 13:44:11.013956|{"userid": 8, "qid": "FE1", "qcount": "2", "startTime": "2022-04-24 13:41:03.843665", "endTime": "2022-04-24 13:44:10.292077", "levelofdifficulty": "Easy", "chapter": "Fraction", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "25"}
+2022-04-24 13:44:13.990893|{"userid": 8, "qid": "FE1", "qcount": 3}
+2022-04-24 13:44:34.677268|{"userid": 8, "qid": "FE1", "qcount": "3", "startTime": "2022-04-24 13:41:03.843665", "endTime": "2022-04-24 13:44:33.859507", "levelofdifficulty": "Easy", "chapter": "Fraction", "hintCount": "2", "h1time": "2022-04-24 13:44:20.032000", "h2time": "2022-04-24 13:44:22.400000", "diffh1": "0:00:13.827507", "diffh2": "0:00:11.459507", "wrongCount": "0", "wronghintcount": "0", "score": "15"}
+2022-04-24 13:44:37.242442|{"userid": 8, "qid": "FE1", "qcount": 4}
+2022-04-24 13:44:53.167843|{"userid": 8, "qid": "FE1", "qcount": "4", "startTime": "2022-04-24 13:41:03.843665", "endTime": "2022-04-24 13:44:52.506300", "levelofdifficulty": "Easy", "chapter": "Fraction", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "25"}
+2022-04-24 13:44:56.629091|{"userid": 8, "qid": "FE1", "q1": "25", "q2": "25", "q3": "15", "q4": "25", "total": 90}
+2022-04-24 13:44:58.288836|{"userid": 8, "message": "Home Page"}
+2022-04-24 13:50:24.077918|{"userid": 8, "qid": "AE3", "qcount": 3}
+2022-04-24 13:50:51.461721|{"userid": 8, "qid": "AE3", "qcount": 4}
+2022-04-24 13:51:15.459976|{"userid": 8, "qid": "AE3", "qcount": "2", "startTime": "2022-04-24 13:50:45.892518", "endTime": "2022-04-24 13:51:13.752465", "levelofdifficulty": "Easy", "chapter": "Algebra", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "25"}
+2022-04-24 13:51:20.045309|{"userid": 8, "qid": "AE3", "qcount": 5}
+2022-04-24 13:51:31.472653|{"userid": 8, "qid": "AE3", "qcount": "3", "startTime": "2022-04-24 13:51:16.487263", "endTime": "2022-04-24 13:51:30.790347", "levelofdifficulty": "Easy", "chapter": "Algebra", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "25"}
+2022-04-24 13:51:37.851741|{"userid": 8, "qid": "AE3", "qcount": 6}
+2022-04-24 13:51:53.469636|{"userid": 8, "qid": "AE3", "qcount": "4", "startTime": "2022-04-24 13:51:33.825308", "endTime": "2022-04-24 13:51:51.241371", "levelofdifficulty": "Easy", "chapter": "Algebra", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "25"}
+2022-04-24 13:51:56.017757|{"userid": 8, "qid": "AE3", "q1": "25", "q2": "25", "q3": "25", "q4": "25", "total": 100}
+2022-04-24 13:51:58.399518|{"userid": 8, "message": "Home Page"}
+2022-04-24 13:54:17.473845|{"userid": 8, "message": "Home Page"}
+2022-04-24 13:54:24.895040|{"userid": 8, "qid": "AE3", "qcount": 7}
+2022-04-24 13:54:42.159779|{"userid": 8, "qid": "AE3", "qcount": "1", "startTime": "2022-04-24 13:54:24.090361", "endTime": "2022-04-24 13:54:40.846662", "levelofdifficulty": "Easy", "chapter": "Algebra", "hintCount": "1", "h1time": "2022-04-24 13:54:31.113000", "h2time": 0, "diffh1": "0:00:09.733662", "diffh2": 0, "wrongCount": "1", "wronghintcount": "0", "score": "20"}
+2022-04-24 13:54:44.232164|{"userid": 8, "qid": "AE3", "qcount": 8}
+2022-04-24 13:54:56.152356|{"userid": 8, "qid": "AE3", "qcount": "2", "startTime": "2022-04-24 13:54:43.558082", "endTime": "2022-04-24 13:54:54.945773", "levelofdifficulty": "Easy", "chapter": "Algebra", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "25"}
+2022-04-24 13:54:58.314922|{"userid": 8, "qid": "AE3", "qcount": 9}
+2022-04-24 13:55:16.185840|{"userid": 8, "qid": "AE3", "qcount": "3", "startTime": "2022-04-24 13:54:57.665429", "endTime": "2022-04-24 13:55:15.452762", "levelofdifficulty": "Easy", "chapter": "Algebra", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "2", "wronghintcount": "0", "score": "25"}
+2022-04-24 13:55:18.847280|{"userid": 8, "qid": "AE3", "qcount": 10}
+2022-04-24 13:55:38.906096|{"userid": 8, "qid": "AE3", "qcount": "4", "startTime": "2022-04-24 13:55:18.176129", "endTime": "2022-04-24 13:55:38.104233", "levelofdifficulty": "Easy", "chapter": "Algebra", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "1", "wronghintcount": "0", "score": "25"}
+2022-04-24 13:55:39.982050|{"userid": 8, "qid": "AE3", "q1": "20", "q2": "25", "q3": "25", "q4": "25", "total": 95}
+2022-04-24 13:55:42.538914|{"userid": 8, "message": "Home Page"}
+2022-04-24 13:59:31.769141|{"userid": 8, "qid": "AE4", "qcount": 11}
+2022-04-24 13:59:51.876293|{"userid": 8, "qid": "AE4", "qcount": "1", "startTime": "2022-04-24 13:59:29.919984", "endTime": "2022-04-24 13:59:51.051351", "levelofdifficulty": "Easy", "chapter": "Algebra", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "2", "wronghintcount": "0", "score": "25"}
+2022-04-24 13:59:54.404394|{"userid": 8, "qid": "AE4", "qcount": 12}
+2022-04-24 14:00:13.151041|{"userid": 8, "qid": "AE4", "qcount": 13}
+2022-04-24 14:00:30.135725|{"userid": 8, "qid": "AE4", "qcount": "2", "startTime": "2022-04-24 14:00:12.499154", "endTime": "2022-04-24 14:00:29.498101", "levelofdifficulty": "Easy", "chapter": "Algebra", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "25"}
+2022-04-24 14:00:32.893836|{"userid": 8, "qid": "AE4", "qcount": 14}
+2022-04-24 14:00:46.843675|{"userid": 8, "qid": "AE4", "qcount": "3", "startTime": "2022-04-24 14:00:32.238717", "endTime": "2022-04-24 14:00:46.052005", "levelofdifficulty": "Easy", "chapter": "Algebra", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "25"}
+2022-04-24 14:00:49.411543|{"userid": 8, "qid": "AE4", "qcount": 15}
+2022-04-24 14:01:18.585736|{"userid": 8, "qid": "AE4", "qcount": "4", "startTime": "2022-04-24 14:00:48.766374", "endTime": "2022-04-24 14:01:17.890985", "levelofdifficulty": "Easy", "chapter": "Algebra", "hintCount": "1", "h1time": "2022-04-24 14:01:01.841000", "h2time": 0, "diffh1": "0:00:16.049985", "diffh2": 0, "wrongCount": "1", "wronghintcount": "0", "score": "20"}
+2022-04-24 14:01:24.466997|{"userid": 8, "qid": "AE4", "q1": "25", "q2": "25", "q3": "25", "q4": "20", "total": 95}
+2022-04-24 14:01:29.037010|{"userid": 8, "message": "Home Page"}
+2022-04-24 14:04:58.403006|{"userid": 8, "message": "Home Page"}
+2022-04-24 14:05:06.885680|{"userid": 8, "qid": "AE1", "qcount": 1}
+2022-04-24 14:05:28.972540|{"userid": 8, "qid": "AE1", "qcount": "1", "startTime": "2022-04-24 14:05:06.017117", "endTime": "2022-04-24 14:05:28.306305", "levelofdifficulty": "Easy", "chapter": "Algebra", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "25"}
+2022-04-24 14:05:32.515893|{"userid": 8, "qid": "AE1", "qcount": 2}
+2022-04-24 14:05:46.531953|{"userid": 8, "qid": "AE1", "qcount": "2", "startTime": "2022-04-24 14:05:31.036980", "endTime": "2022-04-24 14:05:45.581989", "levelofdifficulty": "Easy", "chapter": "Algebra", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "25"}
+2022-04-24 14:05:49.202591|{"userid": 8, "qid": "AE1", "qcount": "3", "startTime": "2022-04-24 14:05:48.295819", "endTime": "2022-04-24 14:05:48.569566", "levelofdifficulty": "Easy", "chapter": "Algebra", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "25"}
+2022-04-24 14:06:04.906662|{"userid": 8, "qid": "AE1", "qcount": "4", "startTime": "2022-04-24 14:05:48.295819", "endTime": "2022-04-24 14:06:04.252581", "levelofdifficulty": "Easy", "chapter": "Algebra", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "25"}
+2022-04-24 14:06:08.498362|{"userid": 8, "message": "Home Page"}
+2022-04-27 12:41:05.556238|{"userid": 8, "message": "Logged In"}
+2022-04-27 12:41:07.731235|{"userid": 8, "message": "Home Page"}
+2022-04-27 12:41:19.699394|{"userid": 8, "qid": "FI1", "qcount": 1}
+2022-04-27 12:41:34.028542|{"userid": 8, "qid": "FI1", "qcount": "1", "startTime": "2022-04-27 12:40:31.705095", "endTime": "2022-04-27 12:41:33.167333", "levelofdifficulty": "Intermediate", "chapter": "Fraction", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "25"}
+2022-04-27 12:41:36.806968|{"userid": 8, "qid": "FI1", "qcount": 2}
+2022-04-27 12:42:10.070004|{"userid": 8, "qid": "FI1", "qcount": "2", "startTime": "2022-04-27 12:40:31.705095", "endTime": "2022-04-27 12:42:09.390539", "levelofdifficulty": "Intermediate", "chapter": "Fraction", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "1", "wronghintcount": "0", "score": "25"}
+2022-04-27 12:42:12.776166|{"userid": 8, "qid": "FI1", "qcount": 3}
+2022-04-27 12:43:16.291235|{"userid": 8, "qid": "FI1", "qcount": "3", "startTime": "2022-04-27 12:40:31.705095", "endTime": "2022-04-27 12:43:15.634646", "levelofdifficulty": "Intermediate", "chapter": "Fraction", "hintCount": "1", "h1time": "2022-04-27 12:42:19.687000", "h2time": 0, "diffh1": "0:00:55.947646", "diffh2": 0, "wrongCount": "2", "wronghintcount": "0", "score": "20"}
+2022-04-27 12:43:19.164268|{"userid": 8, "qid": "FI1", "qcount": 4}
+2022-04-27 12:43:44.751792|{"userid": 8, "qid": "FI1", "qcount": "4", "startTime": "2022-04-27 12:40:31.705095", "endTime": "2022-04-27 12:43:44.108170", "levelofdifficulty": "Intermediate", "chapter": "Fraction", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "1", "wronghintcount": "0", "score": "25"}
+2022-04-27 12:43:47.044562|{"userid": 8, "qid": "FI1", "q1": "25", "q2": "25", "q3": "20", "q4": "25", "total": 95}
+2022-04-27 12:43:48.819925|{"userid": 8, "message": "Home Page"}
+2022-04-27 12:47:58.064179|{"userid": 8, "qid": "AE3", "qcount": 1}
+2022-04-27 12:48:13.851351|{"userid": 8, "qid": "AE3", "qcount": "1", "startTime": "2022-04-27 12:47:57.393405", "endTime": "2022-04-27 12:48:13.173534", "levelofdifficulty": "Easy", "chapter": "Algebra", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "25"}
+2022-04-27 12:48:16.712661|{"userid": 8, "qid": "AE3", "qcount": 2}
+2022-04-27 12:48:31.123406|{"userid": 8, "qid": "AE3", "qcount": "2", "startTime": "2022-04-27 12:48:15.880343", "endTime": "2022-04-27 12:48:30.497878", "levelofdifficulty": "Easy", "chapter": "Algebra", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "25"}
+2022-04-27 12:48:33.826420|{"userid": 8, "qid": "AE3", "qcount": 3}
+2022-04-27 12:48:49.729195|{"userid": 8, "qid": "AE3", "qcount": "3", "startTime": "2022-04-27 12:48:33.198770", "endTime": "2022-04-27 12:48:49.102303", "levelofdifficulty": "Easy", "chapter": "Algebra", "hintCount": "1", "h1time": "2022-04-27 12:48:36.869000", "h2time": 0, "diffh1": "0:00:12.233303", "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "20"}
+2022-04-27 12:48:52.450859|{"userid": 8, "qid": "AE3", "qcount": 4}
+2022-04-27 12:49:13.670995|{"userid": 8, "qid": "AE3", "qcount": "4", "startTime": "2022-04-27 12:48:51.817364", "endTime": "2022-04-27 12:49:13.042448", "levelofdifficulty": "Easy", "chapter": "Algebra", "hintCount": "1", "h1time": "2022-04-27 12:48:57.422000", "h2time": 0, "diffh1": "0:00:15.620448", "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "20"}
+2022-04-27 12:49:15.925225|{"userid": 8, "qid": "AE3", "q1": "25", "q2": "25", "q3": "20", "q4": "20", "total": 90}
+2022-04-27 12:49:17.840966|{"userid": 8, "message": "Home Page"}
+2022-04-27 12:51:10.086498|{"userid": 8, "qid": "AE1", "qcount": 1}
+2022-04-27 12:55:09.016049|{"userid": 8, "qid": "AE1", "qcount": 2}
+2022-04-27 12:55:25.772273|{"userid": 8, "qid": "AE1", "qcount": 1}
+2022-04-27 12:55:33.935568|{"userid": 8, "message": "Home Page"}
+2022-04-27 12:55:43.416146|{"userid": 8, "qid": "FI1", "qcount": 1}
+2022-04-27 12:57:53.207381|{"userid": 8, "qid": "FI1", "qcount": 1}
+2022-04-27 12:58:01.210047|{"userid": 8, "message": "Home Page"}
+2022-04-27 12:58:09.560855|{"userid": 8, "qid": "FE1", "qcount": 2}
+2022-04-27 12:58:17.820519|{"userid": 8, "message": "Home Page"}
+2022-04-27 12:58:26.371155|{"userid": 8, "qid": "FI1", "qcount": 3}
+2022-04-27 13:10:06.391336|{"userid": 8, "message": "Home Page"}
+2022-04-27 13:10:14.174530|{"userid": 8, "qid": "AI1", "qcount": 1}
+2022-04-27 13:10:35.749243|{"userid": 8, "message": "Home Page"}
+2022-04-27 13:10:45.627532|{"userid": 8, "qid": "AI1", "qcount": 2}
+2022-04-27 13:10:57.838153|{"userid": 8, "message": "Home Page"}
+2022-04-27 13:11:23.526626|{"userid": 8, "message": "Logged In"}
+2022-04-27 13:11:25.264441|{"userid": 8, "message": "Home Page"}
+2022-04-27 13:11:35.533190|{"userid": 8, "qid": "FI1", "qcount": 4}
+2022-04-27 13:12:26.263416|{"userid": 8, "message": "Home Page"}
+2022-04-27 13:12:37.339962|{"userid": 8, "qid": "FI1", "qcount": 5}
+2022-04-27 13:17:01.351657|{"userid": 8, "message": "Home Page"}
+2022-04-27 13:17:11.390604|{"userid": 8, "qid": "FI1", "qcount": 1}
+2022-04-27 13:25:02.460503|{"userid": 8, "qid": "FI1", "qcount": 1}
+2022-04-27 13:25:06.690856|{"userid": 8, "qid": "FI1", "qcount": 2}
+2022-04-27 13:26:03.267712|{"userid": 11, "message": "Logged In"}
+2022-04-27 13:26:05.123410|{"userid": 11, "message": "Home Page"}
+2022-04-27 13:26:35.195513|{"userid": 11, "qid": "FI1", "qcount": 1}
+2022-04-27 13:27:26.668547|{"userid": 11, "message": "Home Page"}
+2022-04-27 13:27:40.573158|{"userid": 11, "qid": "FE1", "qcount": 2}
+2022-04-27 13:27:50.463207|{"userid": 11, "message": "Home Page"}
+2022-04-27 13:27:57.769101|{"userid": 11, "qid": "AI1", "qcount": 1}
+2022-04-27 13:29:22.526646|{"userid": 8, "message": "Logged In"}
+2022-04-27 13:29:24.200500|{"userid": 8, "message": "Home Page"}
+2022-04-27 13:29:28.752429|{"userid": 8, "message": "Logged In"}
+2022-04-27 13:29:30.409681|{"userid": 8, "message": "Home Page"}
+2022-04-27 13:29:43.375438|{"userid": 8, "qid": "FI1", "qcount": 1}
+2022-04-27 13:29:45.595485|{"userid": 8, "qid": "FI1", "qcount": 1}
+2022-04-27 13:30:39.002161|{"userid": 8, "message": "Home Page"}
+2022-04-27 13:30:52.262319|{"userid": 8, "qid": "AI1", "qcount": 1}
+2022-04-27 13:31:32.001384|{"userid": 8, "message": "Home Page"}
+2022-04-27 13:31:42.132599|{"userid": 8, "qid": "AE4", "qcount": 2}
+2022-04-27 13:31:57.114449|{"userid": 8, "qid": "AE4", "qcount": "1", "startTime": "2022-04-27 13:31:41.472481", "endTime": "2022-04-27 13:31:56.466007", "levelofdifficulty": "Easy", "chapter": "Algebra", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "25"}
+2022-04-27 13:31:59.808959|{"userid": 8, "qid": "AE4", "qcount": 3}
+2022-04-27 13:32:13.210164|{"userid": 8, "qid": "AE4", "qcount": "2", "startTime": "2022-04-27 13:31:59.182744", "endTime": "2022-04-27 13:32:12.580378", "levelofdifficulty": "Easy", "chapter": "Algebra", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "25"}
+2022-04-27 13:32:16.563568|{"userid": 8, "qid": "AE4", "qcount": 4}
+2022-04-27 13:32:28.835965|{"userid": 8, "qid": "AE4", "qcount": "3", "startTime": "2022-04-27 13:32:15.899200", "endTime": "2022-04-27 13:32:28.189739", "levelofdifficulty": "Easy", "chapter": "Algebra", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "25"}
+2022-04-27 13:32:31.535158|{"userid": 8, "qid": "AE4", "qcount": 5}
+2022-04-27 13:32:52.204046|{"userid": 8, "qid": "AE4", "qcount": "4", "startTime": "2022-04-27 13:32:30.895273", "endTime": "2022-04-27 13:32:51.500545", "levelofdifficulty": "Easy", "chapter": "Algebra", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "1", "wronghintcount": "0", "score": "25"}
+2022-04-27 13:32:54.781330|{"userid": 8, "qid": "AE4", "q1": "25", "q2": "25", "q3": "25", "q4": "25", "total": 100}
+2022-04-27 13:32:56.645484|{"userid": 8, "message": "Home Page"}
+2022-04-27 13:34:46.261097|{"userid": 8, "qid": "FI1", "qcount": 1}
+2022-04-27 13:35:27.768513|{"userid": 8, "qid": "FI1", "qcount": 2}
+2022-04-27 13:35:40.646481|{"userid": 8, "qid": "FI1", "qcount": 1}
+2022-04-27 13:38:37.725704|{"userid": 8, "qid": "FI1", "qcount": 2}
+2022-04-27 13:39:31.061918|{"userid": 8, "qid": "FI1", "qcount": 1}
+2022-04-27 13:40:26.164078|{"userid": 8, "message": "Logged In"}
+2022-04-27 13:40:27.748593|{"userid": 8, "message": "Home Page"}
+2022-04-27 13:40:39.915198|{"userid": 8, "qid": "FI1", "qcount": 1}
+2022-04-27 13:41:45.268992|{"userid": 8, "message": "Logged In"}
+2022-04-27 13:41:47.184667|{"userid": 8, "message": "Home Page"}
+2022-04-27 13:42:02.187926|{"userid": 8, "qid": "FI1", "qcount": 1}
+2022-04-27 13:42:08.772700|{"userid": 8, "qid": "FI1", "qcount": 1}
+2022-04-27 13:44:18.621445|{"userid": 8, "qid": "FI1", "qcount": 1}
+2022-04-27 13:47:48.131248|{"userid": 8, "qid": "FI1", "qcount": 1}
+2022-04-27 13:50:20.192371|{"userid": 8, "qid": "FI1", "qcount": 1}
+2022-04-27 13:50:26.907680|{"userid": 8, "message": "Home Page"}
+2022-04-27 13:50:37.330197|{"userid": 8, "qid": "FI2", "qcount": 2}
+2022-04-27 13:51:44.992268|{"userid": 8, "message": "Home Page"}
+2022-04-27 13:51:52.222061|{"userid": 8, "qid": "AI1", "qcount": 1}
+2022-04-27 13:53:03.458484|{"userid": 8, "message": "Home Page"}
+2022-04-27 13:53:18.351520|{"userid": 8, "message": "Home Page"}
+2022-04-27 13:53:26.561386|{"userid": 8, "qid": "FI1", "qcount": 1}
+2022-04-27 13:53:57.064223|{"userid": 8, "qid": "FI1", "qcount": "1", "startTime": "2022-04-27 13:53:13.293942", "endTime": "2022-04-27 13:53:56.231813", "levelofdifficulty": "Intermediate", "chapter": "Fraction", "hintCount": "2", "h1time": "2022-04-27 13:53:29.774000", "h2time": "2022-04-27 13:53:35.118000", "diffh1": "0:00:26.457813", "diffh2": "0:00:21.113813", "wrongCount": "0", "wronghintcount": "0", "score": "15"}
+2022-04-27 13:54:00.254472|{"userid": 8, "qid": "FI1", "qcount": 2}
+2022-04-27 13:54:31.571600|{"userid": 8, "qid": "FI1", "qcount": "2", "startTime": "2022-04-27 13:53:13.293942", "endTime": "2022-04-27 13:54:30.924834", "levelofdifficulty": "Intermediate", "chapter": "Fraction", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "1", "wronghintcount": "0", "score": "25"}
+2022-04-27 13:54:35.079915|{"userid": 8, "qid": "FI1", "qcount": 3}
+2022-04-27 13:54:57.375640|{"userid": 8, "qid": "FI1", "qcount": "3", "startTime": "2022-04-27 13:53:13.293942", "endTime": "2022-04-27 13:54:56.752898", "levelofdifficulty": "Intermediate", "chapter": "Fraction", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "25"}
+2022-04-27 13:55:00.688533|{"userid": 8, "qid": "FI1", "qcount": 4}
+2022-04-27 13:55:16.239577|{"userid": 8, "qid": "FI1", "qcount": "4", "startTime": "2022-04-27 13:53:13.293942", "endTime": "2022-04-27 13:55:15.566245", "levelofdifficulty": "Intermediate", "chapter": "Fraction", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "25"}
+2022-04-27 13:55:19.251586|{"userid": 8, "qid": "FI1", "q1": "15", "q2": "25", "q3": "25", "q4": "25", "total": 90}
+2022-04-27 13:55:20.967876|{"userid": 8, "message": "Home Page"}
+2022-04-27 13:55:28.468974|{"userid": 8, "message": "Profile Page"}
+2022-04-27 13:55:57.962945|{"userid": 8, "message": "Profile Page"}
+2022-04-27 13:56:11.823198|{"userid": 8, "message": "Profile Page"}
+2022-04-27 13:56:16.216947|{"userid": 8, "message": "Logged out"}
+2022-04-27 14:06:07.486034|{"userid": 8, "message": "Profile Page"}
+2022-04-27 14:11:32.236698|{"userid": 8, "message": "Logged In"}
+2022-04-27 14:11:34.104211|{"userid": 8, "message": "Home Page"}
+2022-04-27 14:11:53.020344|{"userid": 8, "qid": "FI1", "qcount": 1}
+2022-04-27 14:12:32.984319|{"userid": 8, "qid": "FI1", "qcount": "1", "startTime": "2022-04-27 14:11:01.689870", "endTime": "2022-04-27 14:12:32.320039", "levelofdifficulty": "Intermediate", "chapter": "Fraction", "hintCount": "2", "h1time": "2022-04-27 14:11:58.972000", "h2time": "2022-04-27 14:12:04.464000", "diffh1": "0:00:33.348039", "diffh2": "0:00:27.856039", "wrongCount": "1", "wronghintcount": "0", "score": "14"}
+2022-04-27 14:12:36.314688|{"userid": 8, "qid": "FI1", "qcount": 2}
+2022-04-27 14:12:55.447842|{"userid": 8, "qid": "FI1", "qcount": "2", "startTime": "2022-04-27 14:11:01.689870", "endTime": "2022-04-27 14:12:54.790552", "levelofdifficulty": "Intermediate", "chapter": "Fraction", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "25"}
+2022-04-27 14:12:58.753397|{"userid": 8, "qid": "FI1", "qcount": 3}
+2022-04-27 14:13:12.758940|{"userid": 8, "qid": "FI1", "qcount": "3", "startTime": "2022-04-27 14:11:01.689870", "endTime": "2022-04-27 14:13:11.926617", "levelofdifficulty": "Intermediate", "chapter": "Fraction", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "25"}
+2022-04-27 14:13:15.912563|{"userid": 8, "qid": "FI1", "qcount": 4}
+2022-04-27 14:13:39.415304|{"userid": 8, "qid": "FI1", "qcount": "4", "startTime": "2022-04-27 14:11:01.689870", "endTime": "2022-04-27 14:13:38.755390", "levelofdifficulty": "Intermediate", "chapter": "Fraction", "hintCount": "1", "h1time": "2022-04-27 14:13:18.845000", "h2time": 0, "diffh1": "0:00:19.910390", "diffh2": 0, "wrongCount": "0", "wronghintcount": "1", "score": "19"}
+2022-04-27 14:13:42.153019|{"userid": 8, "qid": "FI1", "q1": "14", "q2": "25", "q3": "25", "q4": "19", "total": 83}
+2022-04-27 14:13:43.765300|{"userid": 8, "message": "Home Page"}
+2022-04-27 14:14:09.632688|{"userid": 8, "qid": "AE3", "qcount": 1}
+2022-04-27 14:14:28.972944|{"userid": 8, "qid": "AE3", "qcount": "1", "startTime": "2022-04-27 14:14:08.793381", "endTime": "2022-04-27 14:14:28.088433", "levelofdifficulty": "Easy", "chapter": "Algebra", "hintCount": "1", "h1time": "2022-04-27 14:14:13.949000", "h2time": 0, "diffh1": "0:00:14.139433", "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "20"}
+2022-04-27 14:14:31.468681|{"userid": 8, "qid": "AE3", "qcount": 2}
+2022-04-27 14:15:16.797957|{"userid": 8, "qid": "AE3", "qcount": "2", "startTime": "2022-04-27 14:14:30.805263", "endTime": "2022-04-27 14:15:16.134251", "levelofdifficulty": "Easy", "chapter": "Algebra", "hintCount": "3", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "4", "wronghintcount": "0", "score": "2"}
+2022-04-27 14:15:20.079362|{"userid": 8, "qid": "AE3", "qcount": 3}
+2022-04-27 14:15:52.133899|{"userid": 8, "qid": "AE3", "qcount": "3", "startTime": "2022-04-27 14:15:19.449384", "endTime": "2022-04-27 14:15:51.487593", "levelofdifficulty": "Easy", "chapter": "Algebra", "hintCount": "2", "h1time": "2022-04-27 14:15:36.515000", "h2time": "2022-04-27 14:15:44.703000", "diffh1": "0:00:14.972593", "diffh2": "0:00:06.784593", "wrongCount": "2", "wronghintcount": "0", "score": "11"}
+2022-04-27 14:15:55.060957|{"userid": 8, "qid": "AE3", "qcount": 4}
+2022-04-27 14:16:20.182702|{"userid": 8, "qid": "AE3", "qcount": "4", "startTime": "2022-04-27 14:15:54.208132", "endTime": "2022-04-27 14:16:19.264681", "levelofdifficulty": "Easy", "chapter": "Algebra", "hintCount": "2", "h1time": "2022-04-27 14:15:58.195000", "h2time": "2022-04-27 14:16:06.045000", "diffh1": "0:00:21.069681", "diffh2": "0:00:13.219681", "wrongCount": "1", "wronghintcount": "0", "score": "13"}
+2022-04-27 14:16:22.429896|{"userid": 8, "qid": "AE3", "q1": "20", "q2": "2", "q3": "11", "q4": "13", "total": 46}
+2022-04-27 14:16:24.364248|{"userid": 8, "message": "Home Page"}
+2022-04-27 14:20:25.955823|{"userid": 8, "message": "Home Page"}
+2022-04-27 14:20:55.500400|{"userid": 8, "qid": "AE3", "qcount": 1}
+2022-04-27 14:21:26.274381|{"userid": 8, "qid": "AE3", "qcount": "1", "startTime": "2022-04-27 14:20:54.644620", "endTime": "2022-04-27 14:21:25.624282", "levelofdifficulty": "Easy", "chapter": "Algebra", "hintCount": "2", "h1time": "2022-04-27 14:20:59.705000", "h2time": "2022-04-27 14:21:12.656000", "diffh1": "0:00:25.919282", "diffh2": "0:00:12.968282", "wrongCount": "2", "wronghintcount": "0", "score": "11"}
+2022-04-27 14:21:28.954428|{"userid": 8, "qid": "AE3", "qcount": 2}
+2022-04-27 14:21:54.429318|{"userid": 8, "qid": "AE3", "qcount": "2", "startTime": "2022-04-27 14:21:28.326210", "endTime": "2022-04-27 14:21:53.780665", "levelofdifficulty": "Easy", "chapter": "Algebra", "hintCount": "3", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "10"}
+2022-04-27 14:21:57.817299|{"userid": 8, "qid": "AE3", "qcount": 3}
+2022-04-27 14:22:29.732973|{"userid": 8, "qid": "AE3", "qcount": "3", "startTime": "2022-04-27 14:21:57.104693", "endTime": "2022-04-27 14:22:29.107633", "levelofdifficulty": "Easy", "chapter": "Algebra", "hintCount": "1", "h1time": "2022-04-27 14:22:22.345000", "h2time": 0, "diffh1": "0:00:06.762633", "diffh2": 0, "wrongCount": "2", "wronghintcount": "0", "score": "16"}
+2022-04-27 14:22:32.461281|{"userid": 8, "qid": "AE3", "qcount": 4}
+2022-04-27 14:22:55.061671|{"userid": 8, "qid": "AE3", "qcount": "4", "startTime": "2022-04-27 14:22:31.826700", "endTime": "2022-04-27 14:22:54.422122", "levelofdifficulty": "Easy", "chapter": "Algebra", "hintCount": "1", "h1time": "2022-04-27 14:22:40.188000", "h2time": 0, "diffh1": "0:00:14.234122", "diffh2": 0, "wrongCount": "1", "wronghintcount": "0", "score": "18"}
+2022-04-27 14:22:57.933573|{"userid": 8, "qid": "AE3", "q1": "11", "q2": "10", "q3": "16", "q4": "18", "total": 55}
+2022-04-27 14:22:59.556045|{"userid": 8, "message": "Home Page"}
+2022-04-27 22:08:03.449647|{"userid": 8, "message": "Logged In"}
+2022-04-27 22:08:05.392534|{"userid": 8, "message": "Home Page"}
+2022-04-27 22:08:51.240189|{"userid": 8, "qid": "FI1", "qcount": 1}
+2022-04-27 22:09:14.261895|{"userid": 8, "qid": "FI1", "qcount": "1", "startTime": "2022-04-27 22:03:33.577621", "endTime": "2022-04-27 22:09:13.579563", "levelofdifficulty": "Intermediate", "chapter": "Fraction", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "25"}
+2022-04-27 22:09:17.526872|{"userid": 8, "qid": "FI1", "qcount": 2}
+2022-04-27 22:10:39.638903|{"userid": 8, "qid": "FI1", "qcount": "2", "startTime": "2022-04-27 22:03:33.577621", "endTime": "2022-04-27 22:10:38.775743", "levelofdifficulty": "Intermediate", "chapter": "Fraction", "hintCount": "2", "h1time": "2022-04-27 22:09:27.942000", "h2time": "2022-04-27 22:09:58.153000", "diffh1": "0:01:10.833743", "diffh2": "0:00:40.622743", "wrongCount": "1", "wronghintcount": "1", "score": "13"}
+2022-04-27 22:10:42.334998|{"userid": 8, "qid": "FI1", "qcount": 3}
+2022-04-27 22:11:08.245106|{"userid": 8, "qid": "FI1", "qcount": "3", "startTime": "2022-04-27 22:03:33.577621", "endTime": "2022-04-27 22:11:07.514296", "levelofdifficulty": "Intermediate", "chapter": "Fraction", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "25"}
+2022-04-27 22:11:10.890862|{"userid": 8, "qid": "FI1", "qcount": 4}
+2022-04-27 22:11:24.572245|{"userid": 8, "qid": "FI1", "qcount": "4", "startTime": "2022-04-27 22:03:33.577621", "endTime": "2022-04-27 22:11:23.867658", "levelofdifficulty": "Intermediate", "chapter": "Fraction", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "25"}
+2022-04-27 22:11:27.215448|{"userid": 8, "qid": "FI1", "q1": "25", "q2": "13", "q3": "25", "q4": "25", "total": 88}
+2022-04-27 22:11:29.226068|{"userid": 8, "message": "Home Page"}
+2022-04-27 22:12:07.788228|{"userid": 8, "message": "Profile Page"}
+2022-04-27 22:12:53.676980|{"userid": 8, "message": "Logged out"}
+2022-04-28 12:40:44.367950|{"userid": 8, "message": "Logged In"}
+2022-04-28 12:40:46.108426|{"userid": 8, "message": "Home Page"}
+2022-04-28 12:41:01.470702|{"userid": 8, "qid": "FI1", "qcount": 1}
+2022-04-28 12:41:24.461606|{"userid": 8, "message": "Home Page"}
+2022-04-28 12:41:57.387740|{"userid": 8, "message": "Logged out"}
+2022-04-28 12:46:24.347381|{"userid": 8, "message": "Logged In"}
+2022-04-28 12:46:26.373470|{"userid": 8, "message": "Home Page"}
+2022-04-28 12:46:58.846932|{"userid": 8, "qid": "FI1", "qcount": 2}
+2022-04-28 12:48:36.336760|{"userid": 8, "qid": "FI1", "qcount": "1", "startTime": "2022-04-28 12:39:42.356929", "endTime": "2022-04-28 12:48:35.569776", "levelofdifficulty": "Intermediate", "chapter": "Fraction", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "1", "wronghintcount": "0", "score": "24"}
+2022-04-28 12:48:39.290316|{"userid": 8, "qid": "FI1", "qcount": 3}
+2022-04-28 12:49:24.468749|{"userid": 8, "qid": "FI1", "qcount": "2", "startTime": "2022-04-28 12:39:42.356929", "endTime": "2022-04-28 12:49:23.771756", "levelofdifficulty": "Intermediate", "chapter": "Fraction", "hintCount": "1", "h1time": "2022-04-28 12:48:44.525000", "h2time": 0, "diffh1": "0:00:39.246756", "diffh2": 0, "wrongCount": "0", "wronghintcount": "1", "score": "19"}
+2022-04-28 12:49:27.333238|{"userid": 8, "qid": "FI1", "qcount": 4}
+2022-04-28 12:49:50.678520|{"userid": 8, "qid": "FI1", "qcount": "3", "startTime": "2022-04-28 12:39:42.356929", "endTime": "2022-04-28 12:49:49.918100", "levelofdifficulty": "Intermediate", "chapter": "Fraction", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "25"}
+2022-04-28 12:49:53.248476|{"userid": 8, "qid": "FI1", "qcount": 5}
+2022-04-28 12:50:10.339748|{"userid": 8, "qid": "FI1", "qcount": "4", "startTime": "2022-04-28 12:39:42.356929", "endTime": "2022-04-28 12:50:09.502087", "levelofdifficulty": "Intermediate", "chapter": "Fraction", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "25"}
+2022-04-28 12:50:13.615371|{"userid": 8, "qid": "FI1", "q1": "24", "q2": "19", "q3": "25", "q4": "25", "total": 93}
+2022-04-28 12:50:16.073285|{"userid": 8, "message": "Home Page"}
+2022-04-28 12:51:05.240736|{"userid": 8, "message": "Profile Page"}
+2022-04-28 13:09:02.935497|{"userid": 8, "message": "Logged out"}
+2022-04-28 14:04:27.760816|{"userid": 8, "message": "Logged In"}
+2022-04-28 14:04:29.702062|{"userid": 8, "message": "Home Page"}
+2022-04-28 14:04:58.883520|{"userid": 8, "qid": "FI1", "qcount": 6}
+2022-04-28 14:06:01.047887|{"userid": 8, "qid": "FI1", "qcount": "1", "startTime": "2022-04-28 12:39:42.356929", "endTime": "2022-04-28 14:06:00.284714", "levelofdifficulty": "Intermediate", "chapter": "Fraction", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "1", "wronghintcount": "0", "score": "24"}
+2022-04-28 14:06:03.805755|{"userid": 8, "qid": "FI1", "qcount": 7}
+2022-04-28 14:07:17.635873|{"userid": 8, "qid": "FI1", "qcount": "2", "startTime": "2022-04-28 12:39:42.356929", "endTime": "2022-04-28 14:07:16.877723", "levelofdifficulty": "Intermediate", "chapter": "Fraction", "hintCount": "1", "h1time": "2022-04-28 14:06:07.944000", "h2time": 0, "diffh1": "0:01:08.933723", "diffh2": 0, "wrongCount": "1", "wronghintcount": "1", "score": "18"}
+2022-04-28 14:07:20.502611|{"userid": 8, "qid": "FI1", "qcount": 8}
+2022-04-28 14:07:42.729623|{"userid": 8, "qid": "FI1", "qcount": "3", "startTime": "2022-04-28 12:39:42.356929", "endTime": "2022-04-28 14:07:41.949130", "levelofdifficulty": "Intermediate", "chapter": "Fraction", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "1", "wronghintcount": "0", "score": "24"}
+2022-04-28 14:07:45.587664|{"userid": 8, "qid": "FI1", "qcount": 9}
+2022-04-28 14:08:03.720481|{"userid": 8, "qid": "FI1", "qcount": "4", "startTime": "2022-04-28 12:39:42.356929", "endTime": "2022-04-28 14:08:02.837580", "levelofdifficulty": "Intermediate", "chapter": "Fraction", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "25"}
+2022-04-28 14:08:06.176206|{"userid": 8, "qid": "FI1", "q1": "24", "q2": "18", "q3": "24", "q4": "25", "total": 91}
+2022-04-28 14:08:08.719925|{"userid": 8, "message": "Home Page"}
+2022-04-28 14:08:41.501079|{"userid": 8, "message": "Profile Page"}
+2022-04-28 14:09:38.544087|{"userid": 8, "message": "Logged out"}
+2022-05-29 21:39:37.473586|{"userid": 8, "message": "Logged In"}
+2022-05-29 21:39:39.646748|{"userid": 8, "message": "Home Page"}
+2022-05-29 21:40:27.083328|{"userid": 8, "qid": "AE1", "qcount": 1}
+2022-05-29 21:40:46.367370|{"userid": 8, "message": "Home Page"}
+2022-05-29 21:40:49.964808|{"userid": 8, "message": "Profile Page"}
+2022-05-30 22:12:04.012194|{"userid": 8, "message": "Logged In"}
+2022-05-30 22:12:06.137734|{"userid": 8, "message": "Home Page"}
+2022-05-30 22:24:28.564927|{"userid": 8, "qid": "AE1", "qcount": 1}
+2022-05-30 22:25:13.223845|{"userid": 8, "message": "Home Page"}
+2022-05-30 22:25:26.143359|{"userid": 8, "qid": "FE2", "qcount": 1}
+2022-05-30 22:26:22.162777|{"userid": 8, "message": "Profile Page"}
+2022-05-30 22:27:54.437854|{"userid": 8, "message": "Logged out"}
+2022-05-30 22:28:18.664928|{"userid": 8, "message": "Logged In"}
+2022-05-30 22:28:20.485937|{"userid": 8, "message": "Home Page"}
+2022-05-30 22:33:01.750482|{"userid": 8, "qid": "AE1", "qcount": 2}
+2022-05-30 22:33:09.469924|{"userid": 8, "qid": "AE1", "qcount": 3}
+2022-05-30 22:46:05.936885|{"userid": 8, "message": "Home Page"}
+2022-05-30 22:46:33.604213|{"userid": 8, "qid": "FE2", "qcount": 2}
+2022-05-30 22:53:35.748183|{"userid": 8, "qid": "FE2", "qcount": "1", "startTime": "2022-05-30 22:33:08.736000", "endTime": "2022-05-30 22:53:34.829010", "levelofdifficulty": "Easy", "chapter": "Fraction", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "1", "wronghintcount": "0", "score": "23"}
+2022-05-30 22:53:38.465059|{"userid": 8, "qid": "FE2", "qcount": 3}
+2022-05-30 22:54:22.493957|{"userid": 8, "qid": "FE2", "qcount": "2", "startTime": "2022-05-30 22:33:08.736000", "endTime": "2022-05-30 22:54:21.772884", "levelofdifficulty": "Easy", "chapter": "Fraction", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "25"}
+2022-05-30 22:54:25.817883|{"userid": 8, "qid": "FE2", "qcount": 4}
+2022-05-30 22:55:55.252407|{"userid": 8, "qid": "FE2", "qcount": "3", "startTime": "2022-05-30 22:33:08.736000", "endTime": "2022-05-30 22:55:54.481569", "levelofdifficulty": "Easy", "chapter": "Fraction", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "25"}
+2022-05-30 22:55:57.895296|{"userid": 8, "qid": "FE2", "qcount": 5}
+2022-05-30 22:56:21.245645|{"userid": 8, "qid": "FE2", "qcount": "4", "startTime": "2022-05-30 22:33:08.736000", "endTime": "2022-05-30 22:56:20.580086", "levelofdifficulty": "Easy", "chapter": "Fraction", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "25"}
+2022-05-30 22:56:40.085931|{"userid": 8, "qid": "FE2", "q1": "23", "q2": "25", "q3": "25", "q4": "25", "total": 98}
+2022-05-30 22:56:42.007606|{"userid": 8, "message": "Home Page"}
+2022-05-30 23:00:45.912643|{"userid": 8, "qid": "AE1", "qcount": 4}
+2022-05-30 23:05:59.488583|{"userid": 8, "message": "Home Page"}
+2022-05-30 23:06:14.657559|{"userid": 8, "qid": "FE2", "qcount": 6}
+2022-05-30 23:06:31.722803|{"userid": 8, "qid": "FE2", "qcount": "1", "startTime": "2022-05-30 23:00:45.103848", "endTime": "2022-05-30 23:06:31.028832", "levelofdifficulty": "Easy", "chapter": "Fraction", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "25"}
+2022-05-30 23:06:34.435888|{"userid": 8, "qid": "FE2", "qcount": 7}
+2022-05-30 23:06:51.227874|{"userid": 8, "qid": "FE2", "qcount": "2", "startTime": "2022-05-30 23:00:45.103848", "endTime": "2022-05-30 23:06:50.488004", "levelofdifficulty": "Easy", "chapter": "Fraction", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "25"}
+2022-05-30 23:06:54.505142|{"userid": 8, "qid": "FE2", "qcount": 8}
+2022-05-30 23:07:17.506950|{"userid": 8, "qid": "FE2", "qcount": "3", "startTime": "2022-05-30 23:00:45.103848", "endTime": "2022-05-30 23:07:16.607742", "levelofdifficulty": "Easy", "chapter": "Fraction", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "25"}
+2022-05-30 23:07:20.232891|{"userid": 8, "qid": "FE2", "qcount": 9}
+2022-05-30 23:08:13.284589|{"userid": 8, "qid": "FE2", "qcount": "4", "startTime": "2022-05-30 23:00:45.103848", "endTime": "2022-05-30 23:08:12.526068", "levelofdifficulty": "Easy", "chapter": "Fraction", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "25"}
+2022-05-30 23:08:37.373147|{"userid": 8, "qid": "FE2", "q1": "25", "q2": "25", "q3": "25", "q4": "25", "total": 100}
+2022-05-30 23:08:39.364024|{"userid": 8, "message": "Home Page"}
+2022-05-30 23:18:55.916695|{"userid": 8, "qid": "FI1", "qcount": 10}
+2022-05-31 19:20:56.569304|{"userid": 8, "message": "Logged In"}
+2022-05-31 19:20:58.811190|{"userid": 8, "message": "Home Page"}
+2022-05-31 19:22:01.048541|{"userid": 8, "qid": "AE1", "qcount": 1}
+2022-05-31 19:25:59.282322|{"userid": 8, "message": "Profile Page"}
+2022-05-31 19:28:44.852154|{"userid": 8, "message": "Profile Page"}
+2022-05-31 19:34:04.770904|{"userid": 8, "message": "Logged out"}
+2022-05-31 19:36:42.203000|{"userid": 8, "message": "Logged In"}
+2022-05-31 19:36:44.201262|{"userid": 8, "message": "Home Page"}
+2022-05-31 19:36:46.581279|{"userid": 8, "message": "Logged In"}
+2022-05-31 19:36:48.429962|{"userid": 8, "message": "Logged In"}
+2022-05-31 19:36:49.812041|{"userid": 8, "message": "Logged In"}
+2022-05-31 19:36:51.826013|{"userid": 8, "message": "Home Page"}
+2022-05-31 19:37:31.825834|{"userid": 8, "qid": "FI1", "qcount": 1}
+2022-05-31 19:37:51.979431|{"userid": 8, "qid": "AE3", "qcount": 2}
+2022-05-31 19:39:54.153058|{"userid": 8, "qid": "AE3", "qcount": "1", "startTime": "2022-05-31 19:37:51.299138", "endTime": "2022-05-31 19:39:53.407042", "levelofdifficulty": "Easy", "chapter": "Algebra", "hintCount": "1", "h1time": "2022-05-31 19:39:07.965000", "h2time": 0, "diffh1": "0:00:45.442042", "diffh2": 0, "wrongCount": "2", "wronghintcount": "0", "score": "16"}
+2022-05-31 19:39:56.782862|{"userid": 8, "qid": "AE3", "qcount": 3}
+2022-05-31 19:40:34.709946|{"userid": 8, "qid": "AE3", "qcount": "2", "startTime": "2022-05-31 19:39:56.117324", "endTime": "2022-05-31 19:40:34.013966", "levelofdifficulty": "Easy", "chapter": "Algebra", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "25"}
+2022-05-31 19:40:38.033193|{"userid": 8, "qid": "AE3", "qcount": 4}
+2022-05-31 19:40:52.379321|{"userid": 8, "qid": "AE3", "qcount": "3", "startTime": "2022-05-31 19:40:37.345017", "endTime": "2022-05-31 19:40:51.652326", "levelofdifficulty": "Easy", "chapter": "Algebra", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "25"}
+2022-05-31 19:40:55.080117|{"userid": 8, "qid": "AE3", "qcount": 5}
+2022-05-31 19:41:17.696051|{"userid": 8, "qid": "AE3", "qcount": "4", "startTime": "2022-05-31 19:40:54.364870", "endTime": "2022-05-31 19:41:16.999431", "levelofdifficulty": "Easy", "chapter": "Algebra", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "25"}
+2022-05-31 19:41:25.997272|{"userid": 8, "qid": "AE3", "q1": "16", "q2": "25", "q3": "25", "q4": "25", "total": 91}
+2022-05-31 19:41:28.096152|{"userid": 8, "message": "Home Page"}
+2022-05-31 19:42:26.769174|{"userid": 8, "message": "Profile Page"}
+2022-05-31 20:16:35.104199|{"userid": 8, "message": "Logged out"}
+2022-06-01 10:20:13.200944|{"userid": 8, "message": "Logged In"}
+2022-06-01 10:20:15.241314|{"userid": 8, "message": "Home Page"}
+2022-06-01 10:20:35.534263|{"userid": 8, "qid": "FI1", "qcount": 1}
+2022-06-01 10:20:53.133795|{"userid": 8, "qid": "FI1", "qcount": "1", "startTime": "2022-06-01 10:19:46.116589", "endTime": "2022-06-01 10:20:52.358891", "levelofdifficulty": "Intermediate", "chapter": "Fraction", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "25"}
+2022-06-01 10:20:56.408839|{"userid": 8, "qid": "FI1", "qcount": 2}
+2022-06-01 10:21:18.065191|{"userid": 8, "qid": "FI1", "qcount": "2", "startTime": "2022-06-01 10:19:46.116589", "endTime": "2022-06-01 10:21:17.135313", "levelofdifficulty": "Intermediate", "chapter": "Fraction", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "25"}
+2022-06-01 10:21:21.176558|{"userid": 8, "qid": "FI1", "qcount": 3}
+2022-06-01 10:22:04.299622|{"userid": 8, "qid": "FI1", "qcount": "3", "startTime": "2022-06-01 10:19:46.116589", "endTime": "2022-06-01 10:22:03.645322", "levelofdifficulty": "Intermediate", "chapter": "Fraction", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "25"}
+2022-06-01 10:22:07.681854|{"userid": 8, "qid": "FI1", "qcount": 4}
+2022-06-01 10:35:06.288917|{"userid": 8, "message": "Home Page"}
+2022-06-01 10:35:57.798979|{"userid": 8, "qid": "FI1", "qcount": 5}
+2022-06-01 10:38:04.979395|{"userid": 8, "message": "Home Page"}
+2022-06-01 10:39:59.565758|{"userid": 8, "qid": "AI1", "qcount": 1}
+2022-06-01 10:40:40.939292|{"userid": 8, "qid": "AI1", "qcount": 2}
+2022-06-01 10:41:38.854546|{"userid": 8, "message": "Home Page"}
+2022-06-01 10:41:48.837373|{"userid": 8, "qid": "FI1", "qcount": 6}
+2022-06-01 10:42:06.214663|{"userid": 8, "message": "Home Page"}
+2022-06-01 10:42:28.552418|{"userid": 8, "qid": "AE3", "qcount": 3}
+2022-06-01 10:42:39.050965|{"userid": 8, "qid": "AI2", "qcount": 4}
+2022-06-01 10:43:56.415635|{"userid": 8, "message": "Home Page"}
+2022-06-01 10:44:05.944358|{"userid": 8, "qid": "AE3", "qcount": 5}
+2022-06-01 10:45:19.981766|{"userid": 8, "qid": "AE3", "qcount": "1", "startTime": "2022-06-01 10:44:05.253718", "endTime": "2022-06-01 10:45:19.252078", "levelofdifficulty": "Easy", "chapter": "Algebra", "hintCount": "1", "h1time": "2022-06-01 10:44:52.821000", "h2time": 0, "diffh1": "0:00:26.431078", "diffh2": 0, "wrongCount": "1", "wronghintcount": "0", "score": "18"}
+2022-06-01 10:45:22.642812|{"userid": 8, "qid": "AE3", "qcount": 6}
+2022-06-01 10:45:48.346016|{"userid": 8, "qid": "AE3", "qcount": "2", "startTime": "2022-06-01 10:45:21.958578", "endTime": "2022-06-01 10:45:47.574514", "levelofdifficulty": "Easy", "chapter": "Algebra", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "25"}
+2022-06-01 10:45:51.623618|{"userid": 8, "qid": "AE3", "qcount": 7}
+2022-06-01 10:46:05.856008|{"userid": 8, "qid": "AE3", "qcount": "3", "startTime": "2022-06-01 10:45:50.905335", "endTime": "2022-06-01 10:46:05.129967", "levelofdifficulty": "Easy", "chapter": "Algebra", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "25"}
+2022-06-01 10:46:08.519711|{"userid": 8, "qid": "AE3", "qcount": 8}
+2022-06-01 10:46:24.390690|{"userid": 8, "qid": "AE3", "qcount": "4", "startTime": "2022-06-01 10:46:07.840519", "endTime": "2022-06-01 10:46:23.692873", "levelofdifficulty": "Easy", "chapter": "Algebra", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "25"}
+2022-06-01 10:46:28.078773|{"userid": 8, "qid": "AE3", "q1": "18", "q2": "25", "q3": "25", "q4": "25", "total": 93}
+2022-06-01 10:46:29.816434|{"userid": 8, "message": "Home Page"}
+2022-06-01 10:47:19.893723|{"userid": 8, "message": "Home Page"}
+2022-06-01 10:48:24.813283|{"userid": 8, "message": "Profile Page"}
+2022-06-01 10:49:17.558576|{"userid": 8, "qid": "FI1", "qcount": 7}
+2022-06-01 10:51:32.007505|{"userid": 8, "qid": "FI1", "qcount": "1", "startTime": "2022-06-01 10:46:07.840519", "endTime": "2022-06-01 10:51:31.287346", "levelofdifficulty": "Intermediate", "chapter": "Fraction", "hintCount": "2", "h1time": "2022-06-01 10:49:27.033000", "h2time": "2022-06-01 10:50:24.040000", "diffh1": "0:02:04.254346", "diffh2": "0:01:07.247346", "wrongCount": "1", "wronghintcount": "0", "score": "14"}
+2022-06-01 10:51:34.638006|{"userid": 8, "qid": "FI1", "qcount": 8}
+2022-06-01 10:53:03.955884|{"userid": 8, "message": "Home Page"}
+2022-06-01 10:53:27.616509|{"userid": 8, "qid": "FI3", "qcount": 9}
+2022-06-10 16:10:41.670809|{"userid": 8, "message": "Logged In"}
+2022-06-10 16:10:43.851034|{"userid": 8, "message": "Home Page"}
+2022-06-10 16:11:01.278193|{"userid": 8, "qid": "AI1", "qcount": 1}
+2022-06-10 16:12:02.060089|{"userid": 8, "qid": "AI1", "qcount": "1", "startTime": "2022-06-10 16:11:00.165149", "endTime": "2022-06-10 16:12:01.336177", "levelofdifficulty": "Intermediate", "chapter": "Algebra", "hintCount": "1", "h1time": "2022-06-10 16:11:50.139000", "h2time": 0, "diffh1": "0:00:11.197177", "diffh2": 0, "wrongCount": "2", "wronghintcount": "1", "score": "19"}
+2022-06-10 16:12:04.423376|{"userid": 8, "qid": "AI1", "qcount": "2", "startTime": "2022-06-10 16:11:00.165149", "endTime": "2022-06-10 16:12:03.808108", "levelofdifficulty": "Intermediate", "chapter": "Algebra", "hintCount": "1", "h1time": "2022-06-10 16:11:50.139000", "h2time": 0, "diffh1": "0:00:13.669108", "diffh2": 0, "wrongCount": "2", "wronghintcount": "2", "score": "18"}
+2022-06-10 16:12:05.896126|{"userid": 8, "qid": "AI1", "qcount": "3", "startTime": "2022-06-10 16:12:04.347441", "endTime": "2022-06-10 16:12:05.238121", "levelofdifficulty": "Intermediate", "chapter": "Algebra", "hintCount": "1", "h1time": "2022-06-10 16:11:50.139000", "h2time": 0, "diffh1": "0:00:15.099121", "diffh2": 0, "wrongCount": "2", "wronghintcount": "3", "score": "17"}
+2022-06-10 16:12:25.747219|{"userid": 8, "qid": "AI1", "qcount": 3}
+2022-06-10 16:13:00.828828|{"userid": 8, "message": "Home Page"}
+2022-06-10 16:13:07.401015|{"userid": 8, "qid": "AI1", "qcount": 4}
+2022-06-10 16:19:28.984164|{"userid": 8, "message": "Logged In"}
+2022-06-10 16:19:30.877026|{"userid": 8, "message": "Home Page"}
+2022-06-10 16:19:47.632622|{"userid": 8, "qid": "AI1", "qcount": 1}
+2022-06-10 16:20:32.509429|{"userid": 8, "qid": "AI1", "qcount": 2}
+2022-06-10 16:22:50.234470|{"userid": 8, "qid": "AI1", "qcount": 1}
+2022-06-10 16:25:22.714366|{"userid": 8, "qid": "AI1", "qcount": 1}
+2022-06-10 16:26:29.267613|{"userid": 8, "message": "Logged In"}
+2022-06-10 16:26:31.021999|{"userid": 8, "message": "Home Page"}
+2022-06-10 16:26:46.215283|{"userid": 8, "qid": "AI1", "qcount": 2}
+2022-06-10 16:39:27.742386|{"userid": 8, "qid": "AI1", "qcount": 1}
+2022-06-10 16:43:21.393669|{"userid": 8, "qid": "AI1", "qcount": 5}
+2022-06-10 16:43:28.478836|{"userid": 8, "qid": "AI1", "qcount": 6}
+2022-06-10 16:44:38.004083|{"userid": 8, "qid": "AI1", "qcount": 1}
+2022-06-10 16:47:21.324124|{"userid": 8, "qid": "AI1", "qcount": "1", "startTime": "2022-06-10 16:44:37.252365", "endTime": "2022-06-10 16:47:20.674934", "levelofdifficulty": "Intermediate", "chapter": "Algebra", "hintCount": "2", "h1time": "2022-06-10 16:44:45.748000", "h2time": "2022-06-10 16:44:53.847000", "diffh1": "0:02:34.926934", "diffh2": "0:02:26.827934", "wrongCount": "2", "wronghintcount": "0", "score": "13"}
+2022-06-10 16:47:24.121079|{"userid": 8, "qid": "AI1", "qcount": 2}
+2022-06-10 16:48:07.807477|{"userid": 8, "qid": "AI1", "qcount": "2", "startTime": "2022-06-10 16:47:23.387725", "endTime": "2022-06-10 16:48:07.201221", "levelofdifficulty": "Intermediate", "chapter": "Algebra", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "1", "wronghintcount": "0", "score": "24"}
+2022-06-10 16:48:10.557513|{"userid": 8, "qid": "AI1", "qcount": 3}
+2022-06-10 16:48:42.290700|{"userid": 8, "qid": "AI1", "qcount": "3", "startTime": "2022-06-10 16:48:09.925258", "endTime": "2022-06-10 16:48:41.681066", "levelofdifficulty": "Intermediate", "chapter": "Algebra", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "25"}
+2022-06-10 16:48:45.203997|{"userid": 8, "qid": "AI1", "qcount": 4}
+2022-06-10 16:49:25.056827|{"userid": 8, "qid": "AI1", "qcount": "4", "startTime": "2022-06-10 16:48:44.383574", "endTime": "2022-06-10 16:49:24.256664", "levelofdifficulty": "Intermediate", "chapter": "Algebra", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "25"}
+2022-06-10 16:49:33.370732|{"userid": 8, "qid": "AI1", "q1": "13", "q2": "24", "q3": "25", "q4": "25", "total": 87}
+2022-06-10 16:49:35.576780|{"userid": 8, "message": "Home Page"}
+2022-06-10 16:50:07.971061|{"userid": 8, "qid": "AI2", "qcount": 5}
+2022-06-10 16:50:35.293799|{"userid": 8, "qid": "AI2", "qcount": "1", "startTime": "2022-06-10 16:50:07.297704", "endTime": "2022-06-10 16:50:34.673994", "levelofdifficulty": "Intermediate", "chapter": "Algebra", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "1", "wronghintcount": "0", "score": "24"}
+2022-06-10 16:50:38.644390|{"userid": 8, "qid": "AI2", "qcount": 6}
+2022-06-10 16:52:23.940976|{"userid": 8, "qid": "AI2", "qcount": "2", "startTime": "2022-06-10 16:50:37.999784", "endTime": "2022-06-10 16:52:23.292405", "levelofdifficulty": "Intermediate", "chapter": "Algebra", "hintCount": "2", "h1time": "2022-06-10 16:50:42.337000", "h2time": "2022-06-10 16:51:05.546000", "diffh1": "0:01:40.955405", "diffh2": "0:01:17.746405", "wrongCount": "3", "wronghintcount": "1", "score": "11"}
+2022-06-10 16:52:26.645739|{"userid": 8, "qid": "AI2", "qcount": 7}
+2022-06-10 16:54:03.973977|{"userid": 8, "qid": "AI2", "qcount": "3", "startTime": "2022-06-10 16:52:26.025525", "endTime": "2022-06-10 16:54:03.248375", "levelofdifficulty": "Intermediate", "chapter": "Algebra", "hintCount": "1", "h1time": "2022-06-10 16:52:31.156000", "h2time": 0, "diffh1": "0:01:32.092375", "diffh2": 0, "wrongCount": "1", "wronghintcount": "0", "score": "19"}
+2022-06-10 16:54:06.590507|{"userid": 8, "qid": "AI2", "qcount": 8}
+2022-06-10 16:54:42.924120|{"userid": 8, "qid": "AI2", "qcount": "4", "startTime": "2022-06-10 16:54:05.960688", "endTime": "2022-06-10 16:54:42.295321", "levelofdifficulty": "Intermediate", "chapter": "Algebra", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "1", "wronghintcount": "0", "score": "24"}
+2022-06-10 16:54:44.790451|{"userid": 8, "qid": "AI2", "q1": "24", "q2": "11", "q3": "19", "q4": "24", "total": 78}
+2022-06-10 16:54:46.618611|{"userid": 8, "message": "Home Page"}
+2022-06-10 16:57:32.493498|{"userid": 8, "message": "Home Page"}
+2022-06-10 16:57:40.970724|{"userid": 8, "qid": "AI1", "qcount": 1}
+2022-06-10 16:58:35.712679|{"userid": 8, "message": "Home Page"}
+2022-06-10 16:59:23.872344|{"userid": 8, "message": "Home Page"}
+2022-06-10 16:59:48.641925|{"userid": 8, "qid": "AI1", "qcount": 1}
+2022-06-10 17:01:31.931730|{"userid": 8, "qid": "AI1", "qcount": "1", "startTime": "2022-06-10 16:59:47.843766", "endTime": "2022-06-10 17:01:31.324154", "levelofdifficulty": "Intermediate", "chapter": "Algebra", "hintCount": "2", "h1time": "2022-06-10 16:59:55.316000", "h2time": "2022-06-10 16:59:59.376000", "diffh1": "0:01:36.008154", "diffh2": "0:01:31.948154", "wrongCount": "0", "wronghintcount": "0", "score": "15"}
+2022-06-10 17:01:34.925334|{"userid": 8, "qid": "AI1", "qcount": 2}
+2022-06-10 17:16:05.057581|{"userid": 8, "qid": "AI1", "qcount": 1}
+2022-06-10 17:18:52.240205|{"userid": 8, "qid": "AI1", "qcount": 1}
+2022-06-10 17:22:39.104364|{"userid": 8, "qid": "AI1", "qcount": 2}
+2022-06-10 17:23:14.008790|{"userid": 8, "message": "Home Page"}
+2022-06-10 17:23:26.313735|{"userid": 8, "qid": "AI1", "qcount": 1}
+2022-06-10 17:27:48.820726|{"userid": 8, "qid": "AI1", "qcount": 1}
+2022-06-10 17:33:51.721105|{"userid": 8, "qid": "AI1", "qcount": 1}
+2022-06-10 17:36:43.705947|{"userid": 8, "qid": "AI1", "qcount": 2}
+2022-06-10 17:37:35.766263|{"userid": 8, "qid": "AI1", "qcount": 1}
+2022-06-10 17:39:36.314509|{"userid": 8, "qid": "AI1", "qcount": 1}
+2022-06-10 17:42:18.661997|{"userid": 8, "message": "Home Page"}
+2022-06-10 17:42:28.561539|{"userid": 8, "qid": "FI1", "qcount": 1}
+2022-06-10 17:48:27.799330|{"userid": 8, "qid": "FI1", "qcount": 1}
+2022-06-10 17:53:44.069212|{"userid": 8, "qid": "FI1", "qcount": 1}
+2022-06-10 17:53:51.278281|{"userid": 8, "message": "Home Page"}
+2022-06-10 17:54:12.139236|{"userid": 8, "qid": "AI1", "qcount": 1}
+2022-06-10 17:54:27.016381|{"userid": 8, "message": "Home Page"}
+2022-06-10 19:56:54.639908|{"userid": 8, "message": "Logged In"}
+2022-06-10 19:56:56.364087|{"userid": 8, "message": "Home Page"}
+2022-06-10 19:57:19.239328|{"userid": 8, "qid": "AE1", "qcount": 1}
+2022-06-10 20:51:57.368896|{"userid": 8, "message": "Home Page"}
+2022-06-11 09:39:30.435467|{"userid": 8, "message": "Logged In"}
+2022-06-11 09:39:32.814091|{"userid": 8, "message": "Home Page"}
+2022-06-11 09:43:15.714411|{"userid": 8, "qid": "FI1", "qcount": 1}
+2022-06-11 09:43:42.952287|{"userid": 8, "qid": "FI1", "qcount": "1", "startTime": "2022-06-11 09:37:38.082684", "endTime": "2022-06-11 09:43:42.091099", "levelofdifficulty": "Intermediate", "chapter": "Fraction", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "1", "wronghintcount": "0", "score": "24"}
+2022-06-11 09:43:46.297893|{"userid": 8, "qid": "FI1", "qcount": 2}
+2022-06-11 09:44:39.988623|{"userid": 8, "message": "Home Page"}
+2022-06-11 09:44:56.073942|{"userid": 8, "qid": "AI1", "qcount": 1}
+2022-06-11 09:45:47.272626|{"userid": 8, "qid": "AI1", "qcount": "1", "startTime": "2022-06-11 09:44:55.352035", "endTime": "2022-06-11 09:45:46.427336", "levelofdifficulty": "Intermediate", "chapter": "Algebra", "hintCount": "1", "h1time": "2022-06-11 09:45:44.546000", "h2time": 0, "diffh1": "0:00:01.881336", "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "20"}
+2022-06-11 09:45:50.427003|{"userid": 8, "qid": "AI1", "qcount": 2}
+2022-06-11 09:46:01.807844|{"userid": 8, "message": "Home Page"}
+2022-06-11 09:46:13.585935|{"userid": 8, "message": "Profile Page"}
+2022-06-11 09:46:26.079452|{"userid": 8, "message": "Profile Page"}
+2022-06-11 09:46:47.511092|{"userid": 8, "message": "Logged out"}
+2022-06-11 10:34:00.336781|{"userid": 11, "message": "Logged In"}
+2022-06-11 10:34:02.858142|{"userid": 11, "message": "Home Page"}
+2022-06-11 10:34:07.787317|{"userid": 11, "message": "Logged out"}
+2022-06-11 10:55:50.309469|{"userid": 8, "message": "Logged In"}
+2022-06-11 10:55:52.253756|{"userid": 8, "message": "Home Page"}
+2022-06-11 10:57:02.090853|{"userid": 8, "qid": "FI1", "qcount": 3}
+2022-06-11 10:59:40.811102|{"userid": 8, "qid": "FI1", "qcount": "1", "startTime": "2022-06-11 09:45:49.751420", "endTime": "2022-06-11 10:59:40.092138", "levelofdifficulty": "Intermediate", "chapter": "Fraction", "hintCount": "2", "h1time": "2022-06-11 10:57:58.028000", "h2time": "2022-06-11 10:58:35.220000", "diffh1": "0:01:42.064138", "diffh2": "0:01:04.872138", "wrongCount": "1", "wronghintcount": "0", "score": "14"}
+2022-06-11 10:59:43.577219|{"userid": 8, "qid": "FI1", "qcount": 4}
+2022-06-11 10:59:58.020148|{"userid": 8, "qid": "FI1", "qcount": "2", "startTime": "2022-06-11 09:45:49.751420", "endTime": "2022-06-11 10:59:57.097036", "levelofdifficulty": "Intermediate", "chapter": "Fraction", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "25"}
+2022-06-11 11:00:00.580203|{"userid": 8, "qid": "FI1", "qcount": 5}
+2022-06-11 11:00:11.224965|{"userid": 8, "qid": "FI1", "qcount": "3", "startTime": "2022-06-11 09:45:49.751420", "endTime": "2022-06-11 11:00:10.525213", "levelofdifficulty": "Intermediate", "chapter": "Fraction", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "25"}
+2022-06-11 11:00:13.880738|{"userid": 8, "qid": "FI1", "qcount": 6}
+2022-06-11 11:00:52.390248|{"userid": 8, "qid": "FI1", "q1": "14", "q2": "25", "q3": "25", "q4": "25", "total": 89}
+2022-06-11 11:00:54.854646|{"userid": 8, "message": "Home Page"}
+2022-06-11 11:01:19.705969|{"userid": 8, "message": "Profile Page"}
+2022-06-11 11:06:05.946520|{"userid": 8, "message": "Logged out"}
+2022-06-15 14:30:41.888216|{"userid": 8, "message": "Logged In"}
+2022-06-15 14:30:43.930178|{"userid": 8, "message": "Home Page"}
+2022-06-15 14:31:00.649629|{"userid": 8, "qid": "AE3", "qcount": 1}
+2022-06-15 14:31:17.197526|{"userid": 8, "qid": "AE3", "qcount": "1", "startTime": "2022-06-15 14:30:59.912099", "endTime": "2022-06-15 14:31:16.411565", "levelofdifficulty": "Easy", "chapter": "Algebra", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "25"}
+2022-06-15 14:31:20.051944|{"userid": 8, "qid": "AE3", "qcount": 2}
+2022-06-15 14:31:41.328857|{"userid": 8, "qid": "AE3", "qcount": "2", "startTime": "2022-06-15 14:31:19.120532", "endTime": "2022-06-15 14:31:40.281873", "levelofdifficulty": "Easy", "chapter": "Algebra", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "1", "wronghintcount": "0", "score": "23"}
+2022-06-15 14:31:44.291506|{"userid": 8, "qid": "AE3", "qcount": 3}
+2022-06-15 14:32:02.429853|{"userid": 8, "qid": "AE3", "qcount": "3", "startTime": "2022-06-15 14:31:43.581775", "endTime": "2022-06-15 14:32:01.615223", "levelofdifficulty": "Easy", "chapter": "Algebra", "hintCount": "1", "h1time": "2022-06-15 14:31:47.791000", "h2time": 0, "diffh1": "0:00:13.824223", "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "20"}
+2022-06-15 14:32:05.081853|{"userid": 8, "qid": "AE3", "qcount": 4}
+2022-06-15 14:32:20.626891|{"userid": 8, "qid": "AE3", "qcount": "4", "startTime": "2022-06-15 14:32:04.323743", "endTime": "2022-06-15 14:32:19.706606", "levelofdifficulty": "Easy", "chapter": "Algebra", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "25"}
+2022-06-15 14:32:23.816144|{"userid": 8, "qid": "AE3", "q1": "25", "q2": "23", "q3": "20", "q4": "25", "total": 93}
+2022-06-15 14:32:25.966011|{"userid": 8, "message": "Home Page"}
+2022-06-15 14:47:58.451938|{"userid": 8, "message": "Logged out"}
