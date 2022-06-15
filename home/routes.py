@@ -1,4 +1,5 @@
 from datetime import datetime
+from time import strftime
 from flask import Blueprint, render_template, request, flash, redirect, url_for, session, Flask, current_app
 from werkzeug.security import generate_password_hash, check_password_hash
 import json
@@ -103,7 +104,7 @@ def home():
     else:
         return redirect('login')
 
-
+count=0
 @home_bp.route('/score', methods=['POST'])
 def score():
     mycursor = mydb.cursor()
@@ -115,7 +116,12 @@ def score():
         total = int(tup['undefined']) + int(tup['1']) + int(tup['2']) + int(tup['3'])
         message = {"userid": userid, "qid": myList[3], "q1": myList[4], "q2": myList[0], "q3": myList[1], "q4": myList[2],
                 "total": total}
-        flash(f"You scored {total} out of 100")
+        if count>total:
+            print(count)
+            flash(f"You scored {total} out of 100,but you need more practice.")
+        else:
+            print(count)
+            flash(f"You scored {total} out of 100,You can continue solving next topic.")
         log_object.log_entry(json.dumps(message))
         qids = myList[3]
         mycursor.execute("select * from question where qid='" + qids + "' ")
@@ -263,11 +269,23 @@ def endTime():
             tyms = endTym
     if hintTime2 != 0:
         endhtym2 = endTym - hintTime2
+    # print("msg")
 
     message = {"userid": session['userid'], "qid": qid, "qcount": qcount, "startTime": startTym, "endTime": endTym,
             "levelofdifficulty": lod, "chapter": chapter, "hintCount": hcount, "h1time": hintTime1, "h2time": hintTime2,
             "diffh1": endhtym1, "diffh2": endhtym2, "wrongCount": wrong, "wronghintcount": wronghint, "score": score}
     log_object.log_entry(json.dumps(message, default=str))
+    print(type(endTym))
+    int_features = [hcount, qcount, 0, 1, wrong, wronghint, int(endTym.strftime("%Y%m%d%H%M%S"))-int(startTym.strftime("%Y%m%d%H%M%S"))]
+    # print("2")
+    final_features = [np.array(int_features)]
+    prediction = model.predict(final_features) 
+    # no model
+    output = round(prediction[0], 2)
+    # print(f"Done {output}")
+    # if(output>score):
+    count+=output
+    # if()
     return "TimeReceived"
 
 
@@ -278,13 +296,32 @@ def logout():
     session.pop('userid', None)
     return redirect('/')
 
+# df[['hintCount', 'qcount', 'chapter', 'levelofdifficulty', 'wrongCount','wronghintcount', 'time_second']]
 
-@home_bp.route('/predict')
-def predict():
-    # int_features = [float(x) for x in request.form.values()]
-    int_features = [2, 4, 1, 1, 1, 0, 85]
-    final_features = [np.array(int_features)]
-    prediction = model.predict(final_features)
-    output = round(prediction[0], 2)
-    print(output)
-    return redirect('/')
+# @home_bp.route('/predict')
+# def predict():
+#     mycursor = mydb.cursor()
+#     qcount = request.args.get('qcount')
+#     qid = request.args.get('quesid')
+#     hcount = request.args.get('hcount')
+#     htime = json.loads(request.args.get('htime'))
+#     score = request.args.get('score')
+#     try:
+#         startTym = routes.startTym
+#     except Exception as e:
+#         print(e)
+#     endTym = datetime.now()
+#     wrong = request.args.get('wrong')
+#     wronghint = request.args.get('wronghint')
+#     mycursor.execute("select * from question where qid = '" + str(qid) + "' ")
+#     r = mycursor.fetchall()
+#     chapter = r[0][2]
+#     lod = r[0][3]  
+#     # int_features = [float(x) for x in request.form.values()]
+#     int_features = [hcount, qcount, 0, 1, wrong, wronghint, endTym]
+#     final_features = [np.array(int_features)]
+#     prediction = model.predict(final_features)
+#     output = round(prediction[0], 2)
+#     print(output)
+#     return 'done'
+    # return redirect('/')

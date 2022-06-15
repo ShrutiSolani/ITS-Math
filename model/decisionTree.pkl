@@ -115,7 +115,7 @@ X_train, X_test, y_train, y_test = train_test_split(
 clf_gini = DecisionTreeClassifier(criterion="gini", random_state=100, max_depth=3, min_samples_leaf=5)
 clf_gini.fit(X_train, y_train)
 y_pred = clf_gini.predict(X_test)
-
+# no model
 # accuracy_score_gini = accuracy_score(y_test, y_pred) * 100
 # print(accuracy_score_gini)
 

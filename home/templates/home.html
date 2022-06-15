@@ -37,6 +37,12 @@
       rel="stylesheet"
       href="{{ url_for('static', filename='css/home.css') }}"
     />
+    <style>
+      #flash {
+        text-align: center;
+        color: white;
+      }
+    </style>
   </head>
   <body>
     <nav
@@ -85,6 +91,9 @@
           </div>
         </div>
       </div>
+      {% for message in get_flashed_messages() %}
+      <h2 id="flash">{{ message }}</h2>
+      {% endfor %}
       <div id="quote">
         <h1 id="quot">
           The more you practice and study, the better you are... so I still
