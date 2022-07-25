@@ -1075,3 +1075,4 @@
 2022-07-25 21:39:06.521466|{"userid": 11, "qid": "FE1", "qcount": 3}
 2022-07-25 21:39:19.947040|{"userid": 11, "qid": "FE1", "qcount": "3", "startTime": "2022-07-25 21:38:13.668104", "endTime": "2022-07-25 21:39:19.280856", "levelofdifficulty": "Easy", "chapter": "Fraction", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "25"}
 2022-07-25 21:39:22.920809|{"userid": 11, "qid": "FE1", "qcount": 4}
+2022-07-25 21:39:36.781644|{"userid": 11, "qid": "FE1", "qcount": "4", "startTime": "2022-07-25 21:38:13.668104", "endTime": "2022-07-25 21:39:36.058339", "levelofdifficulty": "Easy", "chapter": "Fraction", "hintCount": "0", "h1time": 0, "h2time": 0, "diffh1": 0, "diffh2": 0, "wrongCount": "0", "wronghintcount": "0", "score": "25"}
