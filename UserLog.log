@@ -1129,3 +1129,4 @@
 2022-07-26 09:17:22.952360|{"userid": 11, "message": "Home Page"}
 2022-07-26 09:17:48.592019|{"userid": 11, "message": "Home Page"}
 2022-07-26 09:17:58.236386|{"userid": 11, "qid": "AI1", "qcount": 1}
+2022-07-26 09:18:39.374915|{"userid": 11, "qid": "AI1", "qcount": "1", "startTime": "2022-07-26 09:17:57.237385", "endTime": "2022-07-26 09:18:38.553855", "levelofdifficulty": "Intermediate", "chapter": "Algebra", "hintCount": "1", "h1time": "2022-07-26 09:18:02.046000", "h2time": 0, "diffh1": "0:00:36.507855", "diffh2": 0, "wrongCount": "1", "wronghintcount": "0", "score": "19"}
