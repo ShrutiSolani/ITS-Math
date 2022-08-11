@@ -51,7 +51,7 @@ def divide_with_whole():
 
     count += 1
     message = {"userid": session['userid'], "qid": qid, "qcount": count}
-    log_object.log_entry(json.dumps(message))
+    # log_object.log_entry(json.dumps(message))
 
     return render_template("divideby_whole.html", answer=context)
 
@@ -78,7 +78,7 @@ def multiply_with_whole():
     q.insert(1, " ")
     count += 1
     message = {"userid": session['userid'], "qid": qid, "qcount": count}
-    log_object.log_entry(json.dumps(message))
+    # log_object.log_entry(json.dumps(message))
 
     return render_template("division.html",
                            easy={"num": 2, "topic": "Multiple by Whole number", "ans_num": ans_num,
@@ -111,7 +111,7 @@ def add_fractions():
                 "label1": "Numerator", "label2": "Denominator"}
     count += 1
     message = {"userid": session['userid'], "qid": qid, "qcount": count}
-    log_object.log_entry(json.dumps(message))
+    # log_object.log_entry(json.dumps(message))
 
     return render_template("division.html", easy=contexts)
 
@@ -138,7 +138,7 @@ def division():
     easy = {"ans_num": ans_num, "ans_den": ans_den, "q": q, "label1": "Quotient", "label2": "Remainder", "qid": qid}
     count += 1
     message = {"userid": session['userid'], "qid": qid, "qcount": count}
-    log_object.log_entry(json.dumps(message))
+    # log_object.log_entry(json.dumps(message))
 
     return render_template("division copy.html", easy=easy)
 
@@ -182,7 +182,7 @@ def unlike_add():
               "num": num_ans, "num1": num1, "den1": den1, "num2": num2, "den2": den2, "q": que, "opsign": opsign}
     count += 1
     message = {"userid": session['userid'], "qid": qid, "qcount": count}
-    log_object.log_entry(json.dumps(message))
+    # log_object.log_entry(json.dumps(message))
 
     return render_template("Fraction_operation.html", answer=answer)
 
@@ -201,7 +201,7 @@ def simplest_form():
     easy = {"topic": "Simplest Form", "qid": qid}
     count += 1
     message = {"userid": session['userid'], "qid": qid, "qcount": count}
-    log_object.log_entry(json.dumps(message))
+    # log_object.log_entry(json.dumps(message))
 
     return render_template("simplestForm.html", answer=answer, easy=easy)
 
@@ -222,7 +222,7 @@ def mixed_to_normal():
               "num": num_ans}
     count += 1
     message = {"userid": session['userid'], "qid": qid, "qcount": count}
-    log_object.log_entry(json.dumps(message))
+    # log_object.log_entry(json.dumps(message))
 
     return render_template("Normal_form.html", answer=answer)
 
@@ -245,7 +245,7 @@ def question():
               "b4": box_ans[4]}
     count += 1
     message = {"userid": session['userid'], "qid": qid, "qcount": count}
-    log_object.log_entry(json.dumps(message))
+    # log_object.log_entry(json.dumps(message))
     return render_template("Mixed_fraction.html", answer=answer)
 
 
@@ -286,7 +286,7 @@ def compare():
                   "ans": ans, "f1": f1, "f2": f2}
         count += 1
         message = {"userid": session['userid'], "qid": qid, "qcount": count}
-        log_object.log_entry(json.dumps(message))
+        # log_object.log_entry(json.dumps(message))
         return render_template("fracompare.html", answer=answer)
     except:
         return redirect('compare')

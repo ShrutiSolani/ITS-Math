@@ -23,11 +23,11 @@ class Log:
             data = file.decoded_content.decode("utf-8")
             entry = str(datetime.now()) + '|' + message
             data += "\n" + entry
-            author = InputGitAuthor(
-                config('GITHUB_USERNAME'),
-                config('GITHUB_EMAIL')
-            )
-            contents = repo.get_contents(file_path, ref=branch)
-            repo.update_file(contents.path, "log entry", data, contents.sha, branch=branch, author=author)
+            # author = InputGitAuthor(
+            #     config('GITHUB_USERNAME'),
+            #     config('GITHUB_EMAIL')
+            # )
+            # contents = repo.get_contents(file_path, ref=branch)
+            # repo.update_file(contents.path, "log entry", data, contents.sha, branch=branch, author=author)
         except Exception as e:
             print(e)

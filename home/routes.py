@@ -13,7 +13,7 @@ from ..log import Log
 home_bp = Blueprint('home_bp', __name__, template_folder='templates', static_folder='static')
 log_object = Log()
 model = pickle.load(open('home/model.pkl', 'rb'))
-
+count = 0
 
 @home_bp.route('/')
 def index():
@@ -40,7 +40,7 @@ def logins():
             if check_password_hash(r[0][4], password):
                 session['userid'] = r[0][0]
                 message = {"userid": session['userid'], "message": "Logged In"}
-                log_object.log_entry(json.dumps(message))
+                # log_object.log_entry(json.dumps(message))
                 return redirect('home')
             else:
                 flash("Invalid Credentials", 'danger')
@@ -99,12 +99,15 @@ def home():
         mycursor.execute("select * from student where id=" + str(session['userid']))
         r = mycursor.fetchall()
         message = {"userid": session["userid"], "message": "Home Page"}
-        log_object.log_entry(json.dumps(message))
+        # log_object.log_entry(json.dumps(message))
         return render_template('home.html', name={'name': r[0][1]})
     else:
         return redirect('login')
 
-count=0
+
+
+
+
 @home_bp.route('/score', methods=['POST'])
 def score():
     mycursor = mydb.cursor()
@@ -114,15 +117,16 @@ def score():
         tup = request.get_json('data')
         myList = list(tup.values())
         total = int(tup['undefined']) + int(tup['1']) + int(tup['2']) + int(tup['3'])
-        message = {"userid": userid, "qid": myList[3], "q1": myList[4], "q2": myList[0], "q3": myList[1], "q4": myList[2],
-                "total": total}
-        if count>total:
+        message = {"userid": userid, "qid": myList[3], "q1": myList[4], "q2": myList[0], "q3": myList[1],
+                   "q4": myList[2],
+                   "total": total}
+        if count > total:
             print(count)
             flash(f"You scored {total} out of 100,but you need more practice.")
         else:
             print(count)
             flash(f"You scored {total} out of 100,You can continue solving next topic.")
-        log_object.log_entry(json.dumps(message))
+        # log_object.log_entry(json.dumps(message))
         qids = myList[3]
         mycursor.execute("select * from question where qid='" + qids + "' ")
         r = mycursor.fetchall()
@@ -153,7 +157,8 @@ def profile():
         school = r[0][7]
         context = {'fname': fname, 'lname': lname, 'school': school, 'email': email, 'grade': grade, 'dob': dob}
         message = {"userid": session['userid'], "message": "Profile Page"}
-        log_object.log_entry(json.dumps(message))
+        print(message)
+        # log_object.log_entry(json.dumps(message))
 
         mycursor.execute("select * from student where id='" + str(userid) + "' ")
         rs = mycursor.fetchall()
@@ -233,6 +238,7 @@ def EditUserScores():
 
 @home_bp.route("/endTime", methods=["GET"])
 def endTime():
+    global count
     mycursor = mydb.cursor()
     qcount = request.args.get('qcount')
     qid = request.args.get('quesid')
@@ -249,7 +255,7 @@ def endTime():
     mycursor.execute("select * from question where qid = '" + str(qid) + "' ")
     r = mycursor.fetchall()
     chapter = r[0][2]
-    lod = r[0][3]  
+    lod = r[0][3]
     if len(htime) == 1:
         hintTime1 = datetime.fromtimestamp(htime[0] / 1000)
         hintTime2 = 0
@@ -272,19 +278,21 @@ def endTime():
     # print("msg")
 
     message = {"userid": session['userid'], "qid": qid, "qcount": qcount, "startTime": startTym, "endTime": endTym,
-            "levelofdifficulty": lod, "chapter": chapter, "hintCount": hcount, "h1time": hintTime1, "h2time": hintTime2,
-            "diffh1": endhtym1, "diffh2": endhtym2, "wrongCount": wrong, "wronghintcount": wronghint, "score": score}
-    log_object.log_entry(json.dumps(message, default=str))
+               "levelofdifficulty": lod, "chapter": chapter, "hintCount": hcount, "h1time": hintTime1,
+               "h2time": hintTime2,
+               "diffh1": endhtym1, "diffh2": endhtym2, "wrongCount": wrong, "wronghintcount": wronghint, "score": score}
+    # log_object.log_entry(json.dumps(message, default=str))
     print(type(endTym))
-    int_features = [hcount, qcount, 0, 1, wrong, wronghint, int(endTym.strftime("%Y%m%d%H%M%S"))-int(startTym.strftime("%Y%m%d%H%M%S"))]
+    int_features = [hcount, qcount, 0, 1, wrong, wronghint,
+                    int(endTym.strftime("%Y%m%d%H%M%S")) - int(startTym.strftime("%Y%m%d%H%M%S"))]
     # print("2")
     final_features = [np.array(int_features)]
-    prediction = model.predict(final_features) 
+    prediction = model.predict(final_features)
     # no model
     output = round(prediction[0], 2)
     # print(f"Done {output}")
     # if(output>score):
-    count+=output
+    count += output
     # if()
     return "TimeReceived"
 
@@ -292,7 +300,7 @@ def endTime():
 @home_bp.route('/logout')
 def logout():
     message = {"userid": session['userid'], "message": "Logged out"}
-    log_object.log_entry(json.dumps(message))
+    # log_object.log_entry(json.dumps(message))
     session.pop('userid', None)
     return redirect('/')
 
@@ -324,4 +332,4 @@ def logout():
 #     output = round(prediction[0], 2)
 #     print(output)
 #     return 'done'
-    # return redirect('/')
+# return redirect('/')

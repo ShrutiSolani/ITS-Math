@@ -65,7 +65,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link a1" id="home_nav" href="#">Home</a>
+            <a class="nav-link a1" id="home_nav" href="{{ url_for('home_bp.home') }}">Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link a1" href="{{ url_for('home_bp.profile') }}"
@@ -91,10 +91,12 @@
           </div>
         </div>
       </div>
-      {% for message in get_flashed_messages() %}
+
+      <div></div>
+      <div id="quote">
+         {% for message in get_flashed_messages() %}
       <h2 id="flash">{{ message }}</h2>
       {% endfor %}
-      <div id="quote">
         <h1 id="quot">
           The more you practice and study, the better you are... so I still
           practice and study all the time.
