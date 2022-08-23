@@ -47,7 +47,7 @@ def like_unlike():
     contexts = {'qid': qid, 'question': q3, 'options': terms, 'answer': answers, 'num': 2, 'topic': 'Like-Unlike Terms'}
     count += 1
     message = {"userid": session['userid'], "qid": qid, "qcount": count}
-    # log_object.log_entry(json.dumps(message))
+    log_object.log_entry(json.dumps(message))
 
     return render_template('algebra2.html', easy=contexts)
 
@@ -94,7 +94,7 @@ def value_of_expression():
         cnt += 1
     count += 1
     message = {"userid": session['userid'], "qid": qid, "qcount": count}
-    # log_object.log_entry(json.dumps(message))
+    log_object.log_entry(json.dumps(message))
 
     return render_template('algebra_easy.html',
                            easy={'topic': 'Value of Expression', 'question': q4, 'options': terms, 'answer': answers,
@@ -130,7 +130,7 @@ def coefficient():
         cnt += 1
     count += 1
     message = {"userid": session['userid'], "qid": qid, "qcount": count}
-    # log_object.log_entry(json.dumps(message))
+    log_object.log_entry(json.dumps(message))
     return render_template('algebra_easy.html',
                            easy={'topic': 'Identifying Coefficient', 'question': q1, 'options': terms,
                                  'answer': answers, 'num': 1, 'qid': qid})
@@ -170,7 +170,7 @@ def monomial():
                 'topic': 'Monomial Binomial Trinomial'}
     count += 1
     message = {"userid": session['userid'], "qid": qid, "qcount": count}
-    # log_object.log_entry(json.dumps(message))
+    log_object.log_entry(json.dumps(message))
 
     return render_template('algebra2.html', easy=contexts)
 
@@ -203,7 +203,7 @@ def horizontal_add():
               'x_sum': x_sum, 'y_sum': y_sum}
     count += 1
     message = {"userid": session['userid'], "qid": qid, "qcount": count}
-    # log_object.log_entry(json.dumps(message))
+    log_object.log_entry(json.dumps(message))
     return render_template('algebra_add.html', answer=answer)
 
 
@@ -243,5 +243,5 @@ def vertical_sub():
               'y_diff': y_diff, 'z_diff': z_diff}
     count += 1
     message = {"userid": session['userid'], "qid": qid, "qcount": count}
-    # log_object.log_entry(json.dumps(message))
+    log_object.log_entry(json.dumps(message))
     return render_template('vertical_sub.html', answer=answer)

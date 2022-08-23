@@ -15,6 +15,7 @@ log_object = Log()
 model = pickle.load(open('home/model.pkl', 'rb'))
 count = 0
 
+
 @home_bp.route('/')
 def index():
     return render_template('index.html')
@@ -40,7 +41,7 @@ def logins():
             if check_password_hash(r[0][4], password):
                 session['userid'] = r[0][0]
                 message = {"userid": session['userid'], "message": "Logged In"}
-                # log_object.log_entry(json.dumps(message))
+                log_object.log_entry(json.dumps(message))
                 return redirect('home')
             else:
                 flash("Invalid Credentials", 'danger')
@@ -99,13 +100,10 @@ def home():
         mycursor.execute("select * from student where id=" + str(session['userid']))
         r = mycursor.fetchall()
         message = {"userid": session["userid"], "message": "Home Page"}
-        # log_object.log_entry(json.dumps(message))
+        log_object.log_entry(json.dumps(message))
         return render_template('home.html', name={'name': r[0][1]})
     else:
         return redirect('login')
-
-
-
 
 
 @home_bp.route('/score', methods=['POST'])
@@ -126,7 +124,7 @@ def score():
         else:
             print(count)
             flash(f"You scored {total} out of 100,You can continue solving next topic.")
-        # log_object.log_entry(json.dumps(message))
+        log_object.log_entry(json.dumps(message))
         qids = myList[3]
         mycursor.execute("select * from question where qid='" + qids + "' ")
         r = mycursor.fetchall()
@@ -158,7 +156,7 @@ def profile():
         context = {'fname': fname, 'lname': lname, 'school': school, 'email': email, 'grade': grade, 'dob': dob}
         message = {"userid": session['userid'], "message": "Profile Page"}
         print(message)
-        # log_object.log_entry(json.dumps(message))
+        log_object.log_entry(json.dumps(message))
 
         mycursor.execute("select * from student where id='" + str(userid) + "' ")
         rs = mycursor.fetchall()
@@ -300,7 +298,7 @@ def endTime():
 @home_bp.route('/logout')
 def logout():
     message = {"userid": session['userid'], "message": "Logged out"}
-    # log_object.log_entry(json.dumps(message))
+    log_object.log_entry(json.dumps(message))
     session.pop('userid', None)
     return redirect('/')
 
