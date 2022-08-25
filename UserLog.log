@@ -1158,3 +1158,4 @@
 2022-08-25 10:25:34.910754|{"userid": 11, "qid": "AE1", "qcount": 6}
 2022-08-25 10:26:16.540631|{"userid": 11, "qid": "AE1", "qcount": "1", "startTime": "2022-08-25 10:25:33.794115", "endTime": "2022-08-25 10:26:15.233880", "levelofdifficulty": "Easy", "chapter": "Algebra", "hintCount": "1", "h1time": "2022-08-25 10:25:45.535000", "h2time": 0, "diffh1": "0:00:29.698880", "diffh2": 0, "wrongCount": "1", "wronghintcount": "0", "score": "18"}
 2022-08-25 10:26:19.157699|{"userid": 11, "qid": "AE1", "qcount": 7}
+2022-08-25 10:26:39.224376|{"userid": 11, "message": "Home Page"}
