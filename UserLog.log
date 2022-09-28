@@ -1263,3 +1263,4 @@
 2022-09-28 12:18:01.346236|{"userid": 8, "qid": "FI1", "qcount": 4}
 2022-09-28 12:19:06.661494|{"userid": 8, "qid": "FI1", "qcount": "2", "startTime": "2022-09-28 12:09:54.542366", "endTime": "2022-09-28 12:19:05.567692", "levelofdifficulty": "Intermediate", "chapter": "Fraction", "hintCount": "2", "h1time": "2022-09-28 12:18:04.245000", "h2time": "2022-09-28 12:18:07.404000", "diffh1": "0:01:01.322692", "diffh2": "0:00:58.163692", "wrongCount": "2", "wronghintcount": "0", "score": "13"}
 2022-09-28 12:19:09.137215|{"userid": 8, "qid": "FI1", "qcount": 5}
+2022-09-28 12:24:13.172031|{"userid": 8, "message": "Home Page"}
